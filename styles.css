@@ -345,6 +345,7 @@ summary{
 .split{
   display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:start;
 }
+.splitSingle{grid-template-columns: 1fr}
 @media (max-width: 920px){ .split{grid-template-columns:1fr} }
 
 .callout{
