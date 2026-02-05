@@ -1,4 +1,13 @@
+@font-face{
+  font-family:"Supercell Magic";
+  src: url("./assets/Supercell-Magic%20Regular.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
 :root{
+  --display-font: "Supercell Magic", "Luckiest Guy", system-ui, sans-serif;
   --bg0:#070610;
   --bg1:#0B0920;
   --ink:#F7F4FF;
@@ -65,7 +74,7 @@ a{color:inherit}
   border: 1px solid rgba(255,255,255,.16);
 }
 .brand strong{
-  font-family: "Luckiest Guy", system-ui, sans-serif;
+  font-family: var(--display-font);
   letter-spacing: .7px;
   font-size: 18px;
   text-transform: uppercase;
@@ -120,6 +129,17 @@ nav a:hover{
 .card > *{position:relative}
 
 .heroMain{padding:26px 26px 22px}
+.heroLogo{
+  width: 120px;
+  height: 120px;
+  display:block;
+  margin: 12px 0 6px;
+  border-radius: 18px;
+  box-shadow: 0 12px 26px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  object-fit: cover;
+}
 .kicker{
   display:inline-flex; align-items:center; gap:10px;
   font-weight:800; font-size:12px; letter-spacing:.18em;
@@ -138,7 +158,7 @@ nav a:hover{
 
 .title{
   margin:16px 0 10px;
-  font-family:"Luckiest Guy", system-ui, sans-serif;
+  font-family: var(--display-font);
   text-transform: uppercase;
   font-size: clamp(44px, 5.5vw, 86px);
   letter-spacing: 1px;
@@ -166,6 +186,65 @@ nav a:hover{
 .ctaRow{
   display:flex; gap:12px; flex-wrap:wrap;
   margin-top: 14px;
+}
+.heroMetrics{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 14px;
+}
+.hitCounter{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.85);
+  font-weight:800;
+  font-size: 13px;
+  letter-spacing: .02em;
+}
+.countryCounter{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.85);
+  font-weight:800;
+  font-size: 13px;
+  letter-spacing: .02em;
+}
+.hitEmoji{font-size:14px}
+.hitLabel{color: rgba(255,255,255,.7)}
+.tinylytics_kudos{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.9);
+  font-weight:800;
+  font-size: 13px;
+  cursor:pointer;
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+}
+.tinylytics_kudos:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.2);
+}
+.tinylytics_kudos.did_select{
+  background: rgba(245,200,76,.16);
+  border-color: rgba(245,200,76,.3);
 }
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
@@ -230,11 +309,17 @@ nav a:hover{
 /* Sections */
 section{padding: 26px 0}
 .sectionTitle{
-  font-family:"Luckiest Guy", system-ui, sans-serif;
+  font-family: var(--display-font);
   text-transform:uppercase;
   letter-spacing: 1px;
   font-size: 34px;
   margin: 0 0 10px;
+}
+
+.panelTitle,
+.kicker,
+summary{
+  font-family: var(--display-font);
 }
 .sectionDesc{color: rgba(255,255,255,.82); margin: 0 0 16px; line-height:1.6}
 

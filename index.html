@@ -4,12 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="POAP KINGS — a Clash Royale clan celebrating seasons, generosity, and Proof of Arena Push." />
+  <meta property="og:image" content="/assets/poapkings.png" />
+  <meta property="og:image:alt" content="POAP KINGS crest" />
   <title>POAP KINGS</title>
 
   <!-- Fonts (optional). Remove if you want 100% local-only. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -39,6 +41,8 @@
         <div class="card heroMain">
           <div class="kicker"><span class="dot"></span> Proof of Arena Push</div>
 
+          <img class="heroLogo" src="./assets/poapkings.png" alt="POAP KINGS crest" loading="lazy" />
+
           <h1 class="title">
             <span class="gold">POAP</span>
             <span class="purple">KINGS</span>
@@ -50,7 +54,7 @@
           </p>
 
           <div class="ctaRow">
-            <a class="btn btnPrimary" href="#join">
+            <a class="btn btnPrimary" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer">
               Join the clan
               <svg class="crownIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 18h16l-1.4-9-4.6 4-2-7-2 7-4.6-4L4 18Z" stroke="#231500" stroke-width="2" stroke-linejoin="round"/>
@@ -62,6 +66,19 @@
             </a>
 
             <a class="btn btnGhost" href="#how">See how it works</a>
+          </div>
+
+          <div class="heroMetrics" aria-label="Site metrics">
+            <div class="hitCounter">
+              <span class="hitEmoji" aria-hidden="true">👑</span>
+              <span class="tinylytics_hits"></span>
+              <span class="hitLabel">hits</span>
+            </div>
+            <button class="tinylytics_kudos" aria-label="Send kudos"></button>
+            <div class="countryCounter" aria-label="Visited countries">
+              <span class="hitEmoji" aria-hidden="true">🌍</span>
+              <span class="tinylytics_countries"></span>
+            </div>
           </div>
 
           <p class="tiny" style="margin:12px 0 0">
@@ -203,13 +220,10 @@
             <h3>In Clash Royale</h3>
             <ul class="list">
               <li><strong>Clan Name:</strong> POAP KINGS</li>
-              <li><strong>Clan Tag:</strong> <span class="mono">#J2RGCRVG</span></li>
+              <li><strong>Clan Tag:</strong> <a class="mono" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer">#J2RGCRVG</a></li>
               <li><strong>Type:</strong> Open</li>
               <li><strong>Minimum trophies:</strong> 2,000</li>
             </ul>
-            <p class="tiny" style="margin:10px 0 0">
-              Replace <span class="mono">#PUT_TAG_HERE</span> once the clan is created.
-            </p>
           </div>
 
           <div class="tile" style="background:rgba(0,0,0,.18)">
@@ -231,22 +245,10 @@
       <div class="card" style="padding:18px 18px 16px">
         <h2 class="sectionTitle" style="margin:0 0 6px">Clan Roster</h2>
         <p class="sectionDesc" style="margin:0 0 12px">
-          Tap a player to view their details on RoyaleAPI. Leaders update the roster by editing <span class="mono">roster.json</span>.
+          Tap a player to view their details on RoyaleAPI.
         </p>
 
         <div class="split">
-          <div class="tile" style="background:rgba(0,0,0,.18)">
-            <h3>How to update</h3>
-            <ul class="list">
-              <li>Edit <span class="mono">roster.json</span></li>
-              <li>Add/remove players (name + tag)</li>
-              <li>Upload the updated file to the S3 bucket</li>
-            </ul>
-            <p class="tiny" style="margin:10px 0 0">
-              Tags should look like <span class="mono">#ABC123</span>. The page handles encoding.
-            </p>
-          </div>
-
           <div class="tile" style="background:rgba(0,0,0,.18)">
             <h3>Members</h3>
             <div id="rosterStatus" class="tiny" style="margin:6px 0 10px;color:rgba(255,255,255,.72)">
@@ -311,5 +313,6 @@
   </main>
 
   <script src="./app.js"></script>
+  <script src="https://tinylytics.app/embed/NnbTPjJ2AWXF8GZDuy54.js?hits&kudos=%E2%9A%94%EF%B8%8F&countries" defer></script>
 </body>
 </html>
