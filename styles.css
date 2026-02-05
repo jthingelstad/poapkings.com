@@ -1,0 +1,364 @@
+:root{
+  --bg0:#070610;
+  --bg1:#0B0920;
+  --ink:#F7F4FF;
+  --muted:#C8C1E6;
+
+  --purple:#6D28D9;
+  --purple2:#3B1D7A;
+  --gold:#F5C84C;
+  --gold2:#C98C10;
+  --white:#FFFFFF;
+
+  --shadow: 0 18px 60px rgba(0,0,0,.55);
+  --radius: 22px;
+  --radius2: 28px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(1200px 700px at 20% 0%, rgba(109,40,217,.35), transparent 55%),
+    radial-gradient(900px 600px at 90% 20%, rgba(245,200,76,.22), transparent 55%),
+    radial-gradient(1000px 700px at 50% 100%, rgba(109,40,217,.22), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  overflow-x:hidden;
+}
+
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Top bar */
+.top{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background: rgba(7,6,16,.55);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.top .inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+  gap:14px;
+}
+.brand{
+  display:flex; align-items:center; gap:12px; text-decoration:none;
+  min-width: 230px;
+}
+.badge{
+  width:38px;height:38px;border-radius:12px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 55%),
+    linear-gradient(145deg, rgba(245,200,76,.95), rgba(201,140,16,.95));
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  position:relative;
+  border: 1px solid rgba(255,255,255,.18);
+}
+.badge:before{
+  content:"";
+  position:absolute; inset:9px 10px 10px 10px;
+  border-radius:10px;
+  background: linear-gradient(145deg, rgba(109,40,217,.90), rgba(59,29,122,.95));
+  border: 1px solid rgba(255,255,255,.16);
+}
+.brand strong{
+  font-family: "Luckiest Guy", system-ui, sans-serif;
+  letter-spacing: .7px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+nav{
+  display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+  font-weight:600; font-size:14px; color:var(--muted);
+}
+nav a{
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid transparent;
+  transition: all .18s ease;
+}
+nav a:hover{
+  color:var(--white);
+  border-color: rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+}
+
+/* Hero */
+.hero{padding:56px 0 22px}
+.heroGrid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap:20px;
+  align-items:stretch;
+}
+@media (max-width: 920px){
+  .heroGrid{grid-template-columns:1fr}
+  nav{display:none}
+  .brand{min-width:auto}
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+.card::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background: radial-gradient(900px 380px at 20% 0%, rgba(109,40,217,.35), transparent 55%),
+            radial-gradient(700px 330px at 80% 20%, rgba(245,200,76,.22), transparent 55%);
+  pointer-events:none;
+  opacity:.85;
+}
+.card > *{position:relative}
+
+.heroMain{padding:26px 26px 22px}
+.kicker{
+  display:inline-flex; align-items:center; gap:10px;
+  font-weight:800; font-size:12px; letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.82);
+  background: rgba(109,40,217,.18);
+  border: 1px solid rgba(109,40,217,.35);
+  padding:9px 12px;
+  border-radius:999px;
+}
+.kicker .dot{
+  width:8px;height:8px;border-radius:50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245,200,76,.15);
+}
+
+.title{
+  margin:16px 0 10px;
+  font-family:"Luckiest Guy", system-ui, sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(44px, 5.5vw, 86px);
+  letter-spacing: 1px;
+  line-height: .92;
+  text-shadow: 0 10px 0 rgba(0,0,0,.18);
+}
+.title .gold{
+  background: linear-gradient(180deg, #FFF3C7, var(--gold) 50%, var(--gold2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+}
+.title .purple{
+  color: #D7C8FF;
+  text-shadow: 0 10px 0 rgba(0,0,0,.16);
+}
+.subtitle{
+  margin: 0 0 18px;
+  font-size: 16px;
+  color: rgba(255,255,255,.86);
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
+.ctaRow{
+  display:flex; gap:12px; flex-wrap:wrap;
+  margin-top: 14px;
+}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:10px;
+  font-weight:800;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  text-decoration:none;
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+  user-select:none;
+  white-space:nowrap;
+}
+.btn:hover{transform: translateY(-1px)}
+.btnPrimary{
+  background: linear-gradient(180deg, rgba(245,200,76,.95), rgba(201,140,16,.95));
+  color: #231500;
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 10px 30px rgba(245,200,76,.18);
+}
+.btnGhost{
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+}
+.btnPurple{
+  background: linear-gradient(180deg, rgba(109,40,217,.90), rgba(59,29,122,.95));
+  color: var(--white);
+  border-color: rgba(255,255,255,.16);
+  box-shadow: 0 10px 30px rgba(109,40,217,.22);
+}
+
+.heroSide{padding:22px}
+.panelTitle{
+  font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+  font-size:12px; color: rgba(255,255,255,.75);
+  margin: 0 0 12px;
+}
+.stat{
+  display:grid; grid-template-columns: 1fr auto;
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(0,0,0,.20);
+  border: 1px solid rgba(255,255,255,.10);
+  margin-bottom: 10px;
+}
+.stat strong{font-size:14px}
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  font-weight:800; font-size:12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.9);
+}
+.pill .mini{
+  width:10px;height:10px;border-radius:3px;
+  background: var(--purple);
+  box-shadow: 0 0 0 3px rgba(109,40,217,.18);
+}
+
+/* Sections */
+section{padding: 26px 0}
+.sectionTitle{
+  font-family:"Luckiest Guy", system-ui, sans-serif;
+  text-transform:uppercase;
+  letter-spacing: 1px;
+  font-size: 34px;
+  margin: 0 0 10px;
+}
+.sectionDesc{color: rgba(255,255,255,.82); margin: 0 0 16px; line-height:1.6}
+
+.grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+@media (max-width: 920px){ .grid3{grid-template-columns:1fr} }
+
+.tile{
+  padding: 16px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.tile h3{margin: 0 0 8px; font-size: 16px}
+.tile p{margin: 0; color: rgba(255,255,255,.82); line-height:1.55}
+
+.list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,.86);
+  line-height: 1.7;
+}
+
+.split{
+  display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:start;
+}
+@media (max-width: 920px){ .split{grid-template-columns:1fr} }
+
+.callout{
+  padding: 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(109,40,217,.18), rgba(109,40,217,.10));
+  border: 1px solid rgba(109,40,217,.35);
+}
+.callout strong{color: rgba(255,255,255,.95)}
+.callout p{margin: 8px 0 0; color: rgba(255,255,255,.86); line-height:1.6}
+
+/* FAQ */
+details{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+details + details{margin-top:10px}
+summary{cursor:pointer;font-weight:900;list-style:none}
+summary::-webkit-details-marker{display:none}
+details p{margin: 8px 0 0; color: rgba(255,255,255,.82); line-height:1.6}
+
+/* Footer */
+footer{
+  padding: 30px 0 40px;
+  color: rgba(255,255,255,.70);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.footerGrid{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.tiny{font-size:12px; color: rgba(255,255,255,.62)}
+.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}
+.tag{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 6px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.16);
+  font-size:12px; font-weight:700;
+}
+
+.crownIcon{width:18px;height:18px;display:inline-block}
+
+/* Roster grid (rendered by app.js) */
+.rosterGrid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px;
+}
+@media (max-width: 720px){
+  .rosterGrid{grid-template-columns:1fr}
+}
+.rosterCard{
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius:16px;
+  padding:12px 12px;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+}
+.rosterCard:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.16);
+}
+.rosterAvatar{
+  width:36px; height:36px; border-radius:12px;
+  background: linear-gradient(145deg, rgba(109,40,217,.90), rgba(59,29,122,.95));
+  border:1px solid rgba(255,255,255,.16);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900;
+}
+.rosterNameRow{
+  display:flex; justify-content:space-between; gap:10px; align-items:center;
+}
+.rosterName{
+  font-weight:900; color:rgba(255,255,255,.95);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rolePill{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:6px 10px; border-radius:999px;
+  font-size:12px; font-weight:800; letter-spacing:.02em;
+  white-space:nowrap;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.90);
+}
+.roleLeader{ background: rgba(245,200,76,.18); border-color: rgba(245,200,76,.35); }
+.roleCoLeader{ background: rgba(109,40,217,.18); border-color: rgba(109,40,217,.35); }
+.roleElder{ background: rgba(215,200,255,.16); border-color: rgba(215,200,255,.28); }
+
+.rosterMeta{
+  margin-top:4px; font-size:12px; color:rgba(255,255,255,.72)
+}
+.rosterNote{
+  margin-top:6px; color:rgba(255,255,255,.75); font-size:12px;
+}
