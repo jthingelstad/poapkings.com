@@ -390,45 +390,59 @@ footer{
 
 .crownIcon{width:18px;height:18px;display:inline-block}
 
-/* Roster grid (rendered by app.js) */
-.rosterGrid{
+/* Roster table (rendered by app.js) */
+.rosterTile{width:100%}
+.rosterHeader,
+.rosterRow{
   display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:10px;
+  grid-template-columns: 52px minmax(0, 1.4fr) minmax(0, .9fr) minmax(0, .9fr);
+  gap:12px;
+  align-items:center;
 }
-@media (max-width: 720px){
-  .rosterGrid{grid-template-columns:1fr}
+.rosterHeader{
+  padding:8px 10px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  color: rgba(255,255,255,.60);
+  border-bottom:1px solid rgba(255,255,255,.12);
 }
-.rosterCard{
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.05);
-  border-radius:16px;
-  padding:12px 12px;
+.rosterGrid{
   display:flex;
-  gap:10px;
-  align-items:flex-start;
-  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+  flex-direction:column;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:14px;
+  overflow:hidden;
+  background: rgba(255,255,255,.03);
 }
-.rosterCard:hover{
-  transform: translateY(-1px);
+.rosterRow{
+  text-decoration:none;
+  color:inherit;
+  padding:10px 10px;
+  border-top:1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.04);
+  transition: background .14s ease, border-color .14s ease;
+}
+.rosterRow:first-child{border-top:none}
+.rosterRow:hover{
   background: rgba(255,255,255,.07);
-  border-color: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.14);
 }
+.rosterCell{min-width:0}
+.rosterAvatarCell{display:flex; align-items:center; justify-content:center}
 .rosterAvatar{
-  width:36px; height:36px; border-radius:12px;
+  width:34px; height:34px; border-radius:10px;
   background: linear-gradient(145deg, rgba(109,40,217,.90), rgba(59,29,122,.95));
   border:1px solid rgba(255,255,255,.16);
   display:flex; align-items:center; justify-content:center;
   font-weight:900;
 }
-.rosterNameRow{
-  display:flex; justify-content:space-between; gap:10px; align-items:center;
-}
 .rosterName{
   font-weight:900; color:rgba(255,255,255,.95);
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  white-space:normal; overflow:visible; text-overflow:unset;
 }
+.rosterRoleCell{display:flex}
+.rosterTagCell .mono{font-size:12px}
 .rolePill{
   display:inline-flex; align-items:center; justify-content:center;
   padding:6px 10px; border-radius:999px;
@@ -443,8 +457,19 @@ footer{
 .roleElder{ background: rgba(215,200,255,.16); border-color: rgba(215,200,255,.28); }
 
 .rosterMeta{
-  margin-top:4px; font-size:12px; color:rgba(255,255,255,.72)
+  margin-top:2px; font-size:11px; color:rgba(255,255,255,.65)
 }
 .rosterNote{
-  margin-top:6px; color:rgba(255,255,255,.75); font-size:12px;
+  margin-top:4px; color:rgba(255,255,255,.75); font-size:12px;
+}
+@media (max-width: 720px){
+  .rosterHeader{display:none}
+  .rosterRow{
+    grid-template-columns: 46px minmax(0, 1fr);
+    row-gap:8px;
+  }
+  .rosterRoleCell,
+  .rosterTagCell{grid-column:2}
+  .rosterRoleCell{justify-self:start}
+  .rosterTagCell{justify-self:start}
 }

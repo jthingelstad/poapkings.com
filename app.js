@@ -49,19 +49,22 @@ async function loadRoster() {
       const tagSafe = escapeHtml(tag);
       const url = royaleApiUrl(tag);
 
-      const role = m.role ? `<span class="${roleClass(m.role)}">${escapeHtml(m.role)}</span>` : "";
+      const roleText = m.role ? escapeHtml(m.role) : "Member";
+      const role = `<span class="${roleClass(roleText)}">${roleText}</span>`;
       const note = m.note ? `<div class="rosterNote">${escapeHtml(m.note)}</div>` : "";
+      const tagDisplay = tagSafe || "—";
 
       return `
-        <a class="rosterCard" href="${url}" target="_blank" rel="noreferrer">
-          <div class="rosterAvatar">👑</div>
-          <div style="min-width:0; flex:1">
-            <div class="rosterNameRow">
-              <div class="rosterName">${name}</div>
-              ${role}
-            </div>
-            <div class="rosterMeta"><span class="mono">${tagSafe}</span> · RoyaleAPI</div>
+        <a class="rosterRow" href="${url}" target="_blank" rel="noreferrer">
+          <div class="rosterCell rosterAvatarCell"><div class="rosterAvatar">👑</div></div>
+          <div class="rosterCell rosterNameCell">
+            <div class="rosterName">${name}</div>
             ${note}
+          </div>
+          <div class="rosterCell rosterRoleCell">${role}</div>
+          <div class="rosterCell rosterTagCell">
+            <div class="mono">${tagDisplay}</div>
+            <div class="rosterMeta">RoyaleAPI</div>
           </div>
         </a>
       `;
