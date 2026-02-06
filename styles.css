@@ -392,20 +392,11 @@ footer{
 
 /* Roster table (rendered by app.js) */
 .rosterTile{width:100%}
-.rosterHeader,
 .rosterRow{
   display:grid;
   grid-template-columns: 52px minmax(0, 1.4fr) minmax(0, .9fr) minmax(0, .9fr);
   gap:12px;
   align-items:center;
-}
-.rosterHeader{
-  padding:8px 10px;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  color: rgba(255,255,255,.60);
-  border-bottom:1px solid rgba(255,255,255,.12);
 }
 .rosterGrid{
   display:flex;
@@ -463,7 +454,6 @@ footer{
   margin-top:4px; color:rgba(255,255,255,.75); font-size:12px;
 }
 @media (max-width: 720px){
-  .rosterHeader{display:none}
   .rosterRow{
     grid-template-columns: 46px minmax(0, 1fr);
     row-gap:8px;
