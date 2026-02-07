@@ -34,87 +34,62 @@
   </header>
 
   <main id="top" class="wrap pageMain">
-    <section class="hero">
-      <div class="heroGrid">
-        <div class="card heroMain">
-          <div class="kicker"><span class="dot"></span> Proof of Arena Push</div>
-
-          <div class="heroIntro">
-            <div class="heroIntroCopy">
-              <h1 class="title">POAP KINGS</h1>
-              <p class="subtitle">
-                A <strong>Clash Royale</strong> clan for players who like to <strong>push together</strong>, donate often,
-                and collect a season-by-season badge of glory. Monthly POAPs, a war champ spotlight, and zero drama.
-              </p>
-            </div>
-            <img class="heroLogo" src="/assets/poapkings.png" alt="POAP KINGS crest" loading="lazy" />
-          </div>
-
-          <div class="ctaRow">
-            <a class="btn btnPrimary" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer" data-tinylytics-event="button.join">
-              Join the clan
-              <svg class="crownIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 18h16l-1.4-9-4.6 4-2-7-2 7-4.6-4L4 18Z" stroke="#231500" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </a>
-
-            <a class="btn btnPurple" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer" data-tinylytics-event="button.poap">
-              View POAP Vault
-            </a>
-
-            <a class="btn btnGhost" href="#how">See how it works</a>
-          </div>
-
-          <div class="heroMetrics" aria-label="Site metrics">
-            <div class="hitCounter">
-              <span class="hitEmoji" aria-hidden="true">👑</span>
-              <span class="tinylytics_hits"></span>
-              <span class="hitLabel">hits</span>
-            </div>
-            <button class="tinylytics_kudos" aria-label="Send kudos"></button>
-            <div class="countryCounter" aria-label="Visited countries">
-              <span class="hitEmoji" aria-hidden="true">🌍</span>
-              <div class="countryStack">
-                <span class="countryLabel">Clash on to our visitors from around the world!</span>
-                <span class="tinylytics_countries"></span>
-              </div>
-            </div>
-          </div>
-
+    <section class="pageIntro card">
+      <h1 class="pageTitle">POAP KINGS</h1>
+      <p class="sectionDesc">
+        A <strong>Clash Royale</strong> clan for players who like to <strong>push together</strong>, donate often,
+        and collect a season-by-season badge of glory. Monthly POAPs, a war champ spotlight, and zero drama.
+      </p>
+      <div class="ctaRow mt-sm">
+        <a class="btn btnPrimary" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer" data-tinylytics-event="button.join">
+          Join the clan
+          <svg class="crownIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 18h16l-1.4-9-4.6 4-2-7-2 7-4.6-4L4 18Z" stroke="#231500" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="btn btnPurple" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer" data-tinylytics-event="button.poap">
+          View POAP Vault
+        </a>
+        <a class="btn btnGhost" href="#how">See how it works</a>
+      </div>
+      <div class="heroMetrics mt-sm" aria-label="Site metrics">
+        <div class="hitCounter">
+          <span class="hitEmoji" aria-hidden="true">👑</span>
+          <span class="tinylytics_hits"></span>
+          <span class="hitLabel">hits</span>
         </div>
-
-        <aside class="card heroSide">
-          <p class="panelTitle">Clan snapshot</p>
-
-          <div class="stat">
-            <div>
-              <strong>Clan Type</strong><br>
-              <span class="tiny">Open — jump in and start pushing</span>
-            </div>
-            <div class="pill"><span class="mini"></span> OPEN</div>
+        <button class="tinylytics_kudos" aria-label="Send kudos"></button>
+        <div class="countryCounter" aria-label="Visited countries">
+          <span class="hitEmoji" aria-hidden="true">🌍</span>
+          <div class="countryStack">
+            <span class="countryLabel">Clash on to our visitors from around the world!</span>
+            <span class="tinylytics_countries"></span>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="stat">
-            <div>
-              <strong>Minimum trophies</strong><br>
-              <span class="tiny">Required to join</span>
-            </div>
-            <div class="pill"><span class="mini" style="background:var(--gold)"></span> 2,000</div>
+    <section>
+      <div class="card card-padded">
+        <h2 class="sectionTitle m-0 mb-xs">Clan Snapshot</h2>
+        <div class="grid3">
+          <div class="tile bg-surface-dark">
+            <h3>Clan Type</h3>
+            <p>Open — jump in and start pushing</p>
           </div>
-
-          <div class="stat">
-            <div>
-              <strong>Seasonal POAP</strong><br>
-              <span class="tiny">A collectible for active members each season</span>
-            </div>
-            <div class="pill"><span class="mini" style="background:#D7C8FF"></span> Monthly</div>
+          <div class="tile bg-surface-dark">
+            <h3>Minimum Trophies</h3>
+            <p>2,000 required to join</p>
           </div>
-
-          <div class="callout" style="margin-top:12px">
-            <strong>Founder window:</strong>
-            <p>Join in the first two months to earn the <strong>FOUNDER</strong> POAP.</p>
+          <div class="tile bg-surface-dark">
+            <h3>Seasonal POAP</h3>
+            <p>A collectible for active members each season</p>
           </div>
-        </aside>
+        </div>
+        <div class="callout mt-sm">
+          <strong>Founder window:</strong>
+          <p>Join in the first two months to earn the <strong>FOUNDER</strong> POAP.</p>
+        </div>
       </div>
     </section>
 
@@ -141,15 +116,15 @@
     </section>
 
     <section id="vault">
-      <div class="card" style="padding:18px 18px 16px">
-        <h2 class="sectionTitle" style="margin:0 0 6px">POAP Vault</h2>
-        <p class="sectionDesc" style="margin:0 0 12px">
-          The clan’s collection — seasonal proof, war champs, and the Founder era. Browse the trophies of time.
+      <div class="card card-padded">
+        <h2 class="sectionTitle m-0 mb-xs">POAP Vault</h2>
+        <p class="sectionDesc m-0 mb-sm">
+          The clan's collection — seasonal proof, war champs, and the Founder era. Browse the trophies of time.
         </p>
 
         <div class="split splitSingle">
-          <div class="tile" style="background:rgba(0,0,0,.18)">
-            <h3>What you’ll find</h3>
+          <div class="tile bg-surface-dark">
+            <h3>What you'll find</h3>
             <ul class="list">
               <li><strong>Season POAPs</strong> for active members</li>
               <li><strong>War Champ highlights</strong> (featured each season)</li>
@@ -157,12 +132,10 @@
             </ul>
           </div>
 
-          <div class="tile" style="background:rgba(0,0,0,.18)">
+          <div class="tile bg-surface-dark">
             <h3>Open the Vault</h3>
-            <p style="margin:0;color:rgba(255,255,255,.86);line-height:1.6">
-              This link goes to the clan’s public POAP collection.
-            </p>
-            <div class="ctaRow" style="margin-top:12px">
+            <p>This link goes to the clan's public POAP collection.</p>
+            <div class="ctaRow mt-sm">
               <a class="btn btnPurple" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">
                 View POAP Collection
               </a>
@@ -176,8 +149,8 @@
     <section id="rules">
       <div class="split">
         <div class="tile">
-          <h2 class="sectionTitle" style="margin:0 0 6px;font-size:30px">Clan Rules</h2>
-          <p class="sectionDesc" style="margin:0 0 10px">
+          <h2 class="sectionTitle m-0 mb-xs section-title-sm">Clan Rules</h2>
+          <p class="sectionDesc m-0 mb-sm">
             Keep it clean. Keep it fun. Keep it moving.
           </p>
           <ul class="list">
@@ -189,8 +162,8 @@
         </div>
 
         <div class="tile">
-          <h2 class="sectionTitle" style="margin:0 0 6px;font-size:30px">Season Awards</h2>
-          <p class="sectionDesc" style="margin:0 0 10px">
+          <h2 class="sectionTitle m-0 mb-xs section-title-sm">Season Awards</h2>
+          <p class="sectionDesc m-0 mb-sm">
             One spotlight per season. Earned in the arena.
           </p>
           <ul class="list">
@@ -203,14 +176,14 @@
     </section>
 
     <section id="join">
-      <div class="card" style="padding:18px 18px 16px">
-        <h2 class="sectionTitle" style="margin:0 0 6px">Join POAP KINGS</h2>
-        <p class="sectionDesc" style="margin:0 0 12px">
-          We’re <strong>Open</strong>. If you’ve got <strong>2,000+ trophies</strong>, you’re welcome to jump in and start pushing.
+      <div class="card card-padded">
+        <h2 class="sectionTitle m-0 mb-xs">Join POAP KINGS</h2>
+        <p class="sectionDesc m-0 mb-sm">
+          We're <strong>Open</strong>. If you've got <strong>2,000+ trophies</strong>, you're welcome to jump in and start pushing.
         </p>
 
         <div class="split">
-          <div class="tile" style="background:rgba(0,0,0,.18)">
+          <div class="tile bg-surface-dark">
             <h3>In Clash Royale</h3>
             <ul class="list">
               <li><strong>Clan Name:</strong> POAP KINGS</li>
@@ -220,13 +193,13 @@
             </ul>
           </div>
 
-          <div class="tile" style="background:rgba(0,0,0,.18)">
+          <div class="tile bg-surface-dark">
             <h3>Founder POAP</h3>
-            <p style="margin:0;color:rgba(255,255,255,.86);line-height:1.6">
+            <p>
               Join within the first two months to earn the <strong>FOUNDER</strong> POAP.
               After that, seasonal POAPs continue for active members.
             </p>
-            <div class="ctaRow" style="margin-top:12px">
+            <div class="ctaRow mt-sm">
               <a class="btn btnPrimary" href="/members">Read King's Keep</a>
               <a class="btn btnGhost" href="#faq">Read the FAQ</a>
             </div>
@@ -273,21 +246,15 @@
       <div class="footerGrid">
         <div>
           <div class="tag">👑 <strong>POAP KINGS</strong> <span class="tiny">— Proof of Arena Push</span></div>
-          <p class="tiny" style="margin:10px 0 0">
+          <p class="tiny mt-sm">
             This fan community is not affiliated with Supercell. Clash Royale is a trademark of its respective owner.
           </p>
         </div>
         <div class="tiny">
           <div><strong>Links</strong></div>
-          <div style="margin-top:6px">
-            <a href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">POAP Vault</a>
-          </div>
-          <div style="margin-top:6px">
-            <a href="/roster">Roster</a>
-          </div>
-          <div style="margin-top:6px">
-            <a href="/members">King's Keep</a>
-          </div>
+          <div class="mt-xs"><a href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">POAP Vault</a></div>
+          <div class="mt-xs"><a href="/roster">Roster</a></div>
+          <div class="mt-xs"><a href="/members">King's Keep</a></div>
         </div>
       </div>
     </footer>
