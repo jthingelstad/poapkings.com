@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="POAP KINGS roster — current clan members and profile links." />
+  <meta name="description" content="POAP KINGS vault — browse our collection of seasonal POAPs and milestone badges." />
   <meta property="og:image" content="/assets/poapkings.png" />
   <meta property="og:image:alt" content="POAP KINGS crest" />
-  <title>Roster | POAP KINGS</title>
+  <title>Vault | POAP KINGS</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 
-<body data-roster-path="/roster.json">
+<body data-vault-path="/vault.json">
   <header class="top">
     <div class="wrap inner">
       <a class="brand" href="/">
@@ -27,8 +27,8 @@
 
       <nav aria-label="Primary">
         <a href="/">Home</a>
-        <a class="active" href="/roster">Roster</a>
-        <a href="/vault">Vault</a>
+        <a href="/roster">Roster</a>
+        <a class="active" href="/vault">Vault</a>
         <a href="/members">King's Keep</a>
       </nav>
     </div>
@@ -36,14 +36,14 @@
 
   <main class="wrap pageMain">
     <section class="pageIntro card">
-      <h1 class="pageTitle">POAP KINGS Roster</h1>
+      <h1 class="pageTitle">POAP Vault</h1>
       <p class="sectionDesc">
-        This is the full clan roster. Each member can include links for RoyaleAPI, a personal profile, and their POAP collection.
-        This page is designed to scale as the roster grows.
+        The clan's collection of POAPs — seasonal proof, milestones, and event badges.
+        Each POAP marks a moment in POAP KINGS history.
       </p>
       <div class="ctaRow mt-sm">
-        <a class="btn btnPrimary" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer">Join the clan</a>
-        <a class="btn btnGhost" href="/members">Open King's Keep</a>
+        <a class="btn btnPurple" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">View on POAP.xyz</a>
+        <a class="btn btnGhost" href="/roster">Meet the Kings</a>
       </div>
     </section>
 
@@ -51,26 +51,25 @@
       <div class="card rosterPageCard">
         <div class="rosterHeaderRow">
           <div>
-            <h2 class="sectionTitle m-0">Members</h2>
-            <div class="tiny mt-xs" id="rosterUpdated">Last updated: —</div>
+            <h2 class="sectionTitle m-0">Collection</h2>
+            <div class="tiny mt-xs" id="vaultUpdated">Last updated: —</div>
           </div>
-          <div id="rosterStatus" class="tiny rosterCount">Loading roster…</div>
+          <div id="vaultStatus" class="tiny rosterCount">Loading vault…</div>
         </div>
 
-        <div class="rosterControls">
+        <div class="rosterControls" style="grid-template-columns: 1fr">
           <label class="rosterControl">
-            <span>Search</span>
-            <input id="rosterSearch" type="search" placeholder="Name, tag, role, note" />
-          </label>
-          <label class="rosterControl">
-            <span>Role</span>
-            <select id="rosterRoleFilter">
-              <option value="">All roles</option>
+            <span>Type</span>
+            <select id="vaultTypeFilter">
+              <option value="">All types</option>
+              <option value="Season">Season</option>
+              <option value="Milestone">Milestone</option>
+              <option value="Event">Event</option>
             </select>
           </label>
         </div>
 
-        <div id="rosterGrid" class="rosterGrid"></div>
+        <div id="vaultGrid" class="vaultGrid"></div>
       </div>
     </section>
 
@@ -82,6 +81,7 @@
         <div class="tiny">
           <div><strong>Links</strong></div>
           <div class="mt-xs"><a href="/">Home</a></div>
+          <div class="mt-xs"><a href="/roster">Roster</a></div>
           <div class="mt-xs"><a href="/members">King's Keep</a></div>
         </div>
       </div>

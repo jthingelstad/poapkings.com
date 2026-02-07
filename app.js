@@ -183,4 +183,109 @@ async function loadRoster() {
   }
 }
 
+function poapEventUrl(eventId) {
+  if (!eventId) return "";
+  return `https://poap.gallery/event/${encodeURIComponent(eventId)}`;
+}
+
+function typeClass(type) {
+  if (!type) return "typePill";
+  const t = type.toLowerCase();
+  if (t === "season") return "typePill typeSeason";
+  if (t === "milestone") return "typePill typeMilestone";
+  if (t === "event") return "typePill typeEvent";
+  return "typePill";
+}
+
+function formatPoapDate(date) {
+  if (!date) return "";
+  const raw = String(date).trim();
+  if (!raw) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    const parsed = new Date(`${raw}T00:00:00`);
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    }
+  }
+  return raw;
+}
+
+function renderVaultCards(grid, poaps) {
+  grid.innerHTML = poaps.map((p) => {
+    const name = escapeHtml(p.name || "Untitled POAP");
+    const image = escapeHtml(p.image || "");
+    const type = p.type ? escapeHtml(p.type) : "POAP";
+    const date = formatPoapDate(p.date);
+    const description = p.description ? escapeHtml(p.description) : "";
+    const eventUrl = poapEventUrl(p.event_id);
+    const dateDisplay = date ? `<div class="vaultCardDate">${date}</div>` : "";
+    const descDisplay = description ? `<div class="vaultCardDesc">${description}</div>` : "";
+
+    const cardContent = `
+      <div class="vaultCardImage">
+        ${image ? `<img src="${image}" alt="${name}" loading="lazy" />` : `<div class="vaultCardPlaceholder">👑</div>`}
+      </div>
+      <div class="vaultCardBody">
+        <span class="${typeClass(p.type)}">${type}</span>
+        <div class="vaultCardName">${name}</div>
+        ${dateDisplay}
+        ${descDisplay}
+      </div>
+    `;
+
+    if (eventUrl) {
+      return `<a class="vaultCard" href="${eventUrl}" target="_blank" rel="noreferrer">${cardContent}</a>`;
+    }
+    return `<div class="vaultCard">${cardContent}</div>`;
+  }).join("");
+}
+
+async function loadVault() {
+  const status = document.getElementById("vaultStatus");
+  const grid = document.getElementById("vaultGrid");
+  if (!status || !grid) return;
+
+  const typeFilter = document.getElementById("vaultTypeFilter");
+  const updatedLabel = document.getElementById("vaultUpdated");
+  const vaultPath = document.body?.dataset?.vaultPath || "/vault.json";
+
+  try {
+    const res = await fetch(vaultPath, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    const allPoaps = Array.isArray(data.poaps) ? data.poaps : [];
+
+    if (updatedLabel) {
+      updatedLabel.textContent = toUpdatedDateLabel(data.updated);
+    }
+
+    const updateVisibleCards = () => {
+      const selectedType = (typeFilter?.value || "").trim();
+
+      const filtered = allPoaps.filter((p) => {
+        if (!selectedType) return true;
+        return String(p.type || "").toLowerCase() === selectedType.toLowerCase();
+      });
+
+      status.textContent = `Showing ${filtered.length} of ${allPoaps.length} POAP${allPoaps.length === 1 ? "" : "s"}`;
+
+      if (!filtered.length) {
+        grid.innerHTML = "<div class=\"vaultEmpty\">No POAPs match the current filter.</div>";
+        return;
+      }
+
+      renderVaultCards(grid, filtered);
+    };
+
+    typeFilter?.addEventListener("change", updateVisibleCards);
+    updateVisibleCards();
+
+  } catch (e) {
+    status.textContent = "Vault failed to load. Check vault.json is uploaded and public.";
+    grid.innerHTML = "";
+    console.error(e);
+  }
+}
+
 loadRoster();
+loadVault();
