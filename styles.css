@@ -106,7 +106,8 @@ nav a:hover{
 }
 @media (max-width: 920px){
   .heroGrid{grid-template-columns:1fr}
-  nav{display:none}
+  nav{gap:8px}
+  nav a{padding:7px 9px;font-size:13px}
   .brand{min-width:auto}
 }
 
@@ -462,4 +463,123 @@ footer{
   .rosterTagCell{grid-column:2}
   .rosterRoleCell{justify-self:start}
   .rosterTagCell{justify-self:start}
+}
+
+nav a.active{
+  color: var(--white);
+  border-color: rgba(255,255,255,.20);
+  background: rgba(255,255,255,.10);
+}
+
+.pageMain{padding-top: 10px}
+.pageIntro{padding:22px}
+.pageTitle{
+  margin: 10px 0 8px;
+  font-family: var(--display-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+.rosterPageCard{padding:18px}
+.rosterHeaderRow{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.rosterCount{
+  font-size:13px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background: rgba(0,0,0,.20);
+  padding:8px 12px;
+}
+.rosterControls{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:12px;
+  margin-bottom:12px;
+}
+.rosterControl{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  font-size:12px;
+  color: rgba(255,255,255,.8);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 800;
+}
+.rosterControl input,
+.rosterControl select{
+  width:100%;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size:14px;
+  text-transform:none;
+  letter-spacing:normal;
+  outline:none;
+}
+.rosterControl input:focus,
+.rosterControl select:focus{
+  border-color: rgba(245,200,76,.45);
+  box-shadow: 0 0 0 3px rgba(245,200,76,.14);
+}
+.rosterEmpty{
+  padding:16px;
+  text-align:center;
+  color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.03);
+}
+
+.stepsGrid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+.stepCard{
+  padding:16px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.stepNumber{
+  width:32px;
+  height:32px;
+  border-radius: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  color:#231500;
+  background: linear-gradient(180deg, rgba(245,200,76,.95), rgba(201,140,16,.95));
+  margin-bottom:10px;
+}
+.stepCard h3{margin:0 0 7px; font-size:18px}
+.stepCard p{margin:0; color: rgba(255,255,255,.82); line-height:1.55}
+
+.promoGrid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:10px;
+}
+.promoMessage{
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.20);
+  padding: 13px 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.88);
+}
+
+@media (max-width: 920px){
+  .rosterControls{grid-template-columns: 1fr}
+  .stepsGrid{grid-template-columns:1fr}
 }

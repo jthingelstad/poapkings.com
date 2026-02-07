@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="POAP KINGS roster — current clan members and profile links." />
+  <meta property="og:image" content="/assets/poapkings.png" />
+  <meta property="og:image:alt" content="POAP KINGS crest" />
+  <title>Roster | POAP KINGS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body data-roster-path="/roster.json">
+  <header class="top">
+    <div class="wrap inner">
+      <a class="brand" href="/">
+        <span class="badge" aria-hidden="true"></span>
+        <strong>POAP KINGS</strong>
+      </a>
+
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a class="active" href="/roster">Roster</a>
+        <a href="/members">King's Keep</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap pageMain">
+    <section class="pageIntro card">
+      <div class="kicker"><span class="dot"></span> Clan Directory</div>
+      <h1 class="pageTitle">POAP KINGS Roster</h1>
+      <p class="sectionDesc">
+        This is the full clan roster. Tap any player to view their RoyaleAPI profile.
+        This page is designed to scale as the roster grows.
+      </p>
+      <div class="ctaRow" style="margin-top:12px">
+        <a class="btn btnPrimary" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer">Join the clan</a>
+        <a class="btn btnGhost" href="/members">Open King's Keep</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="card rosterPageCard">
+        <div class="rosterHeaderRow">
+          <div>
+            <h2 class="sectionTitle" style="margin:0">Members</h2>
+            <div class="tiny" id="rosterUpdated" style="margin-top:6px">Last updated: —</div>
+          </div>
+          <div id="rosterStatus" class="tiny rosterCount">Loading roster…</div>
+        </div>
+
+        <div class="rosterControls">
+          <label class="rosterControl">
+            <span>Search</span>
+            <input id="rosterSearch" type="search" placeholder="Name, tag, role, note" />
+          </label>
+          <label class="rosterControl">
+            <span>Role</span>
+            <select id="rosterRoleFilter">
+              <option value="">All roles</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="rosterGrid" class="rosterGrid"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footerGrid">
+        <div>
+          <div class="tag">👑 <strong>POAP KINGS</strong> <span class="tiny">— Proof of Arena Push</span></div>
+        </div>
+        <div class="tiny">
+          <div><strong>Links</strong></div>
+          <div style="margin-top:6px"><a href="/">Home</a></div>
+          <div style="margin-top:6px"><a href="/members">King's Keep</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -8,42 +8,38 @@
   <meta property="og:image:alt" content="POAP KINGS crest" />
   <title>POAP KINGS</title>
 
-  <!-- Fonts (optional). Remove if you want 100% local-only. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link rel="webmention" href="https://tinylytics.app/webmention/NnbTPjJ2AWXF8GZDuy54" />
 
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
   <header class="top">
     <div class="wrap inner">
-      <a class="brand" href="#top">
+      <a class="brand" href="/">
         <span class="badge" aria-hidden="true"></span>
         <strong>POAP KINGS</strong>
       </a>
 
       <nav aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#vault">POAP Vault</a>
-        <a href="#rules">Rules</a>
-        <a href="#join">Join</a>
-        <a href="#roster">Roster</a>
-        <a href="#faq">FAQ</a>
+        <a class="active" href="/">Home</a>
+        <a href="/roster">Roster</a>
+        <a href="/members">King's Keep</a>
       </nav>
     </div>
   </header>
 
-  <main id="top" class="wrap">
+  <main id="top" class="wrap pageMain">
     <section class="hero">
       <div class="heroGrid">
         <div class="card heroMain">
           <div class="kicker"><span class="dot"></span> Proof of Arena Push</div>
 
-          <img class="heroLogo" src="./assets/poapkings.png" alt="POAP KINGS crest" loading="lazy" />
+          <img class="heroLogo" src="/assets/poapkings.png" alt="POAP KINGS crest" loading="lazy" />
 
           <h1 class="title">
             <span class="gold">POAP</span>
@@ -168,7 +164,7 @@
               <a class="btn btnPurple" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">
                 View POAP Collection
               </a>
-              <a class="btn btnGhost" href="#roster">Meet the Kings</a>
+              <a class="btn btnGhost" href="/roster">Meet the Kings</a>
             </div>
           </div>
         </div>
@@ -229,27 +225,10 @@
               After that, seasonal POAPs continue for active members.
             </p>
             <div class="ctaRow" style="margin-top:12px">
-              <a class="btn btnPrimary" href="#vault">See the Vault</a>
+              <a class="btn btnPrimary" href="/members">Read King's Keep</a>
               <a class="btn btnGhost" href="#faq">Read the FAQ</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="roster">
-      <div class="card" style="padding:18px 18px 16px">
-        <h2 class="sectionTitle" style="margin:0 0 6px">Clan Roster</h2>
-        <p class="sectionDesc" style="margin:0 0 12px">
-          Tap a player to view their details on RoyaleAPI.
-        </p>
-
-        <div class="tile rosterTile" style="background:rgba(0,0,0,.18)">
-          <h3>Members</h3>
-          <div id="rosterStatus" class="tiny" style="margin:6px 0 10px;color:rgba(255,255,255,.72)">
-            Loading roster…
-          </div>
-          <div id="rosterGrid" class="rosterGrid"></div>
         </div>
       </div>
     </section>
@@ -301,12 +280,18 @@
           <div style="margin-top:6px">
             <a href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">POAP Vault</a>
           </div>
+          <div style="margin-top:6px">
+            <a href="/roster">Roster</a>
+          </div>
+          <div style="margin-top:6px">
+            <a href="/members">King's Keep</a>
+          </div>
         </div>
       </div>
     </footer>
   </main>
 
-  <script src="./app.js"></script>
+  <script src="/app.js"></script>
   <script src="https://tinylytics.app/embed/NnbTPjJ2AWXF8GZDuy54.js?hits&kudos=%E2%9A%94%EF%B8%8F&countries&events&beacon" defer></script>
 </body>
 </html>
