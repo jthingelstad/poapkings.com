@@ -118,6 +118,7 @@ async function loadRoster() {
   const searchInput = document.getElementById("rosterSearch");
   const roleFilter = document.getElementById("rosterRoleFilter");
   const updatedLabel = document.getElementById("rosterUpdated");
+  const openSpotsEl = document.getElementById("openSpots");
   const rosterPath = document.body?.dataset?.rosterPath || "/roster.json";
 
   try {
@@ -128,6 +129,16 @@ async function loadRoster() {
 
     if (updatedLabel) {
       updatedLabel.textContent = toUpdatedDateLabel(data.updated);
+    }
+
+    if (openSpotsEl) {
+      const maxMembers = 50;
+      const openSpots = Math.max(0, maxMembers - allMembers.length);
+      if (openSpots > 0) {
+        openSpotsEl.textContent = `${openSpots} spot${openSpots === 1 ? "" : "s"} open`;
+      } else {
+        openSpotsEl.textContent = "Clan is currently full";
+      }
     }
 
     if (roleFilter) {
