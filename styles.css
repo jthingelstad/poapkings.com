@@ -77,26 +77,26 @@ a{color:inherit}
   padding-top:14px; padding-bottom:14px;
   gap:14px;
 }
-.brand{
-  display:flex; align-items:center; gap:12px; text-decoration:none;
+.brandGroup{
+  display:flex; align-items:center; gap:12px;
   min-width: 230px;
 }
-.badge{
-  width:38px;
-  height:38px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:12px;
-  background: var(--surface);
-  border: 1px solid rgba(255,255,255,.16);
-  box-shadow: 0 8px 24px rgba(0,0,0,.28);
+.brand{
+  display:flex; align-items:center; text-decoration:none;
 }
-.badge:before{
-  content:"👑";
-  font-size:20px;
-  line-height:1;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.4));
+.navJoin{
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(245,200,76,.95), rgba(201,140,16,.95));
+  color: #231500;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.18);
+  transition: transform .14s ease;
+}
+.navJoin:hover{
+  transform: translateY(-1px);
 }
 .brand strong{
   font-family: var(--display-font);
