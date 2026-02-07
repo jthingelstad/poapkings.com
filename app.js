@@ -28,6 +28,39 @@ function roleClass(role) {
   return "rolePill";
 }
 
+function normalizeUrl(url) {
+  if (!url) return "";
+  const value = String(url).trim();
+  if (!value) return "";
+  try {
+    const parsed = new URL(value);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
+    return parsed.href;
+  } catch {
+    return "";
+  }
+}
+
+function poapCollectionUrl(address) {
+  if (!address) return "";
+  const value = String(address).trim();
+  if (!value) return "";
+  return `https://app.poap.xyz/scan/${encodeURIComponent(value)}`;
+}
+
+function formatJoinedDate(dateJoined) {
+  if (!dateJoined) return "";
+  const raw = String(dateJoined).trim();
+  if (!raw) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    const parsed = new Date(`${raw}T00:00:00`);
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    }
+  }
+  return raw;
+}
+
 function renderRosterRows(grid, members) {
   grid.innerHTML = members.map((m) => {
     const name = escapeHtml(m.name || "Unnamed");
@@ -38,21 +71,41 @@ function renderRosterRows(grid, members) {
     const roleText = m.role ? escapeHtml(m.role) : "Member";
     const role = `<span class="${roleClass(roleText)}">${roleText}</span>`;
     const note = m.note ? `<div class="rosterNote">${escapeHtml(m.note)}</div>` : "";
+    const joined = formatJoinedDate(m.date_joined);
+    const joinedText = joined ? `<div class="rosterJoined">Joined ${escapeHtml(joined)}</div>` : "";
     const tagDisplay = tagSafe || "—";
+    const profileUrl = normalizeUrl(m.profile_url);
+    const poapUrl = poapCollectionUrl(m.address);
+    const profileLink = profileUrl
+      ? `<a class="rosterAction" href="${escapeHtml(profileUrl)}" target="_blank" rel="noreferrer">Profile</a>`
+      : "";
+    const poapLink = poapUrl
+      ? `<a class="rosterAction" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">POAP</a>`
+      : "";
+    const links = `
+      <div class="rosterLinks">
+        <a class="rosterAction" href="${url}" target="_blank" rel="noreferrer">RoyaleAPI</a>
+        ${profileLink}
+        ${poapLink}
+      </div>
+    `;
 
     return `
-      <a class="rosterRow" href="${url}" target="_blank" rel="noreferrer">
+      <div class="rosterRow">
         <div class="rosterCell rosterAvatarCell"><div class="rosterAvatar">👑</div></div>
         <div class="rosterCell rosterNameCell">
           <div class="rosterName">${name}</div>
           ${note}
+          ${joinedText}
         </div>
         <div class="rosterCell rosterRoleCell">${role}</div>
         <div class="rosterCell rosterTagCell">
           <div class="mono">${tagDisplay}</div>
-          <div class="rosterMeta">RoyaleAPI</div>
         </div>
-      </a>
+        <div class="rosterCell rosterLinksCell">
+          ${links}
+        </div>
+      </div>
     `;
   }).join("");
 }
@@ -103,7 +156,7 @@ async function loadRoster() {
 
       const filtered = allMembers.filter((m) => {
         const role = String(m.role || "Member");
-        const combined = `${m.name || ""} ${m.tag || ""} ${role} ${m.note || ""}`.toLowerCase();
+        const combined = `${m.name || ""} ${m.tag || ""} ${role} ${m.note || ""} ${m.profile_url || ""} ${m.address || ""} ${m.date_joined || ""}`.toLowerCase();
         const roleMatch = !selectedRole || role.toLowerCase() === selectedRole;
         const searchMatch = !search || combined.includes(search);
         return roleMatch && searchMatch;
