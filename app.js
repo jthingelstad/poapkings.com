@@ -65,45 +65,34 @@ function renderRosterRows(grid, members) {
   grid.innerHTML = members.map((m) => {
     const name = escapeHtml(m.name || "Unnamed");
     const tag = normalizeTag(m.tag || "");
-    const tagSafe = escapeHtml(tag);
     const url = royaleApiUrl(tag);
 
     const roleText = m.role ? escapeHtml(m.role) : "Member";
     const role = `<span class="${roleClass(roleText)}">${roleText}</span>`;
-    const note = m.note ? `<div class="rosterNote">${escapeHtml(m.note)}</div>` : "";
     const joined = formatJoinedDate(m.date_joined);
     const joinedText = joined ? `<div class="rosterJoined">Joined ${escapeHtml(joined)}</div>` : "";
-    const tagDisplay = tagSafe || "—";
+    const note = m.note ? `<div class="rosterNote">${escapeHtml(m.note)}</div>` : "";
     const profileUrl = normalizeUrl(m.profile_url);
     const poapUrl = poapCollectionUrl(m.address);
     const profileLink = profileUrl
-      ? `<a class="rosterAction" href="${escapeHtml(profileUrl)}" target="_blank" rel="noreferrer">Profile</a>`
+      ? `<a class="rosterLink" href="${escapeHtml(profileUrl)}" target="_blank" rel="noreferrer">🔗 Profile</a>`
       : "";
     const poapLink = poapUrl
-      ? `<a class="rosterAction" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">POAP</a>`
+      ? `<a class="rosterLink" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">🏅 POAP</a>`
       : "";
-    const links = `
-      <div class="rosterLinks">
-        <a class="rosterAction" href="${url}" target="_blank" rel="noreferrer">RoyaleAPI</a>
-        ${profileLink}
-        ${poapLink}
-      </div>
-    `;
 
     return `
       <div class="rosterRow">
-        <div class="rosterCell rosterAvatarCell"><div class="rosterAvatar">👑</div></div>
-        <div class="rosterCell rosterNameCell">
-          <div class="rosterName">${name}</div>
-          ${note}
-          ${joinedText}
+        <div class="rosterHeader">
+          <span class="rosterName">${name}</span>
+          ${role}
         </div>
-        <div class="rosterCell rosterRoleCell">${role}</div>
-        <div class="rosterCell rosterTagCell">
-          <div class="mono">${tagDisplay}</div>
-        </div>
-        <div class="rosterCell rosterLinksCell">
-          ${links}
+        ${joinedText}
+        ${note}
+        <div class="rosterLinks">
+          <a class="rosterLink" href="${url}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
+          ${profileLink}
+          ${poapLink}
         </div>
       </div>
     `;
@@ -142,22 +131,33 @@ async function loadRoster() {
     }
 
     if (roleFilter) {
-      const roles = [...new Set(
+      const rawRoles = [...new Set(
         allMembers.map((m) => String(m.role || "Member").trim()).filter(Boolean)
-      )].sort((a, b) => a.localeCompare(b));
-      roleFilter.innerHTML = `<option value="">All roles</option>${roles.map((role) => (
+      )];
+      const hasLeadership = rawRoles.some((r) => r.toLowerCase() === "leader" || r.toLowerCase() === "co-leader");
+      const filterRoles = rawRoles
+        .filter((r) => r.toLowerCase() !== "leader" && r.toLowerCase() !== "co-leader")
+        .sort((a, b) => a.localeCompare(b));
+      if (hasLeadership) filterRoles.unshift("Leadership");
+      roleFilter.innerHTML = `<option value="">All roles</option>${filterRoles.map((role) => (
         `<option value="${escapeHtml(role)}">${escapeHtml(role)}</option>`
       )).join("")}`;
     }
 
     const updateVisibleRows = () => {
       const search = (searchInput?.value || "").trim().toLowerCase();
-      const selectedRole = (roleFilter?.value || "").trim().toLowerCase();
+      const selectedRole = (roleFilter?.value || "").trim();
 
       const filtered = allMembers.filter((m) => {
         const role = String(m.role || "Member");
+        const roleLower = role.toLowerCase();
         const combined = `${m.name || ""} ${m.tag || ""} ${role} ${m.note || ""} ${m.profile_url || ""} ${m.address || ""} ${m.date_joined || ""}`.toLowerCase();
-        const roleMatch = !selectedRole || role.toLowerCase() === selectedRole;
+        let roleMatch = !selectedRole;
+        if (selectedRole === "Leadership") {
+          roleMatch = roleLower === "leader" || roleLower === "co-leader";
+        } else if (selectedRole) {
+          roleMatch = roleLower === selectedRole.toLowerCase();
+        }
         const searchMatch = !search || combined.includes(search);
         return roleMatch && searchMatch;
       });
