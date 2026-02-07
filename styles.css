@@ -110,6 +110,15 @@ nav a:hover{
   nav{gap:8px}
   nav a{padding:7px 9px;font-size:13px}
   .brand{min-width:auto}
+  .heroIntro{
+    grid-template-columns: 1fr;
+    gap:14px;
+  }
+  .heroLogo{
+    width: 132px;
+    height: 132px;
+    justify-self:start;
+  }
 }
 
 .card{
@@ -131,11 +140,18 @@ nav a:hover{
 .card > *{position:relative}
 
 .heroMain{padding:26px 26px 22px}
+.heroIntro{
+  display:grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap:20px;
+  align-items:center;
+  margin-top: 12px;
+}
 .heroLogo{
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   display:block;
-  margin: 12px 0 6px;
+  margin: 0;
   border-radius: 18px;
   box-shadow: 0 12px 26px rgba(0,0,0,.35);
   border: 1px solid rgba(255,255,255,.14);
@@ -159,23 +175,13 @@ nav a:hover{
 }
 
 .title{
-  margin:16px 0 10px;
+  margin:0 0 10px;
   font-family: var(--display-font);
+  color: var(--ink);
   text-transform: uppercase;
-  font-size: clamp(44px, 5.5vw, 86px);
+  font-size: clamp(42px, 5.2vw, 74px);
   letter-spacing: 1px;
-  line-height: .92;
-  text-shadow: 0 10px 0 rgba(0,0,0,.18);
-}
-.title .gold{
-  background: linear-gradient(180deg, #FFF3C7, var(--gold) 50%, var(--gold2));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color: transparent;
-}
-.title .purple{
-  color: #D7C8FF;
-  text-shadow: 0 10px 0 rgba(0,0,0,.16);
+  line-height: .94;
 }
 .subtitle{
   margin: 0 0 18px;
@@ -211,7 +217,7 @@ nav a:hover{
 }
 .countryCounter{
   display:inline-flex;
-  align-items:center;
+  align-items:flex-start;
   gap:8px;
   padding: 8px 12px;
   border-radius: 999px;
@@ -221,6 +227,17 @@ nav a:hover{
   font-weight:800;
   font-size: 13px;
   letter-spacing: .02em;
+}
+.countryStack{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.countryLabel{
+  font-size:11px;
+  color: rgba(255,255,255,.74);
+  font-weight:700;
+  letter-spacing:.01em;
 }
 .hitEmoji{font-size:14px}
 .hitLabel{color: rgba(255,255,255,.7)}
