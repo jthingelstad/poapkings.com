@@ -104,10 +104,17 @@ function renderRosterRows(grid, members) {
 }
 
 function reinitTinylytics() {
-  const existing = document.querySelector('script[src*="tinylytics.app"]');
-  if (!existing) return;
-  const src = existing.src;
-  existing.remove();
+  // If an active script already ran, remove it so we don't double-bind listeners
+  const live = document.querySelector('script[src*="tinylytics.app"]');
+  if (live) live.remove();
+
+  // Resolve the URL: either from the live script we just removed, or from the
+  // deferred placeholder (data-tinylytics-src) used on pages with dynamic content.
+  const placeholder = document.querySelector("script[data-tinylytics-src]");
+  const src = live?.src || placeholder?.dataset.tinylyticsSrc;
+  if (!src) return;
+  if (placeholder) placeholder.remove();
+
   const script = document.createElement("script");
   script.src = src;
   document.body.appendChild(script);
