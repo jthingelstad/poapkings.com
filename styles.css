@@ -450,13 +450,24 @@ footer{
 }
 .rosterRow{
   display:flex;
-  flex-direction:column;
-  gap:6px;
+  flex-direction:row;
+  align-items:center;
+  gap:12px;
   color:inherit;
   padding:12px 14px;
   border-top:1px solid rgba(255,255,255,.08);
   background: rgba(255,255,255,.04);
   transition: background .14s ease, border-color .14s ease;
+}
+.rosterRowContent{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  flex:1;
+  min-width:0;
+}
+.rosterRow > .tinylytics_kudos{
+  flex-shrink:0;
 }
 .rosterRow:first-child{border-top:none}
 .rosterRow:hover{

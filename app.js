@@ -65,6 +65,7 @@ function renderRosterRows(grid, members) {
   grid.innerHTML = members.map((m) => {
     const name = escapeHtml(m.name || "Unnamed");
     const tag = normalizeTag(m.tag || "");
+    const rawTag = tag.replace("#", "");
     const url = royaleApiUrl(tag);
 
     const roleText = m.role ? escapeHtml(m.role) : "Member";
@@ -83,20 +84,33 @@ function renderRosterRows(grid, members) {
 
     return `
       <div class="rosterRow">
-        <div class="rosterHeader">
-          <span class="rosterName">${name}</span>
-          ${role}
-        </div>
-        ${joinedText}
-        ${note}
-        <div class="rosterLinks">
-          <a class="rosterLink" href="${url}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
-          ${profileLink}
-          ${poapLink}
+        <button class="tinylytics_kudos" data-path="/roster/${escapeHtml(rawTag)}"></button>
+        <div class="rosterRowContent">
+          <div class="rosterHeader">
+            <span class="rosterName">${name}</span>
+            ${role}
+          </div>
+          ${joinedText}
+          ${note}
+          <div class="rosterLinks">
+            <a class="rosterLink" href="${url}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
+            ${profileLink}
+            ${poapLink}
+          </div>
         </div>
       </div>
     `;
   }).join("");
+}
+
+function reinitTinylytics() {
+  const existing = document.querySelector('script[src*="tinylytics.app"]');
+  if (!existing) return;
+  const src = existing.src;
+  existing.remove();
+  const script = document.createElement("script");
+  script.src = src;
+  document.body.appendChild(script);
 }
 
 function toUpdatedDateLabel(updated) {
@@ -181,6 +195,7 @@ async function loadRoster() {
       }
 
       renderRosterRows(grid, filtered);
+      reinitTinylytics();
     };
 
     searchInput?.addEventListener("input", updateVisibleRows);
