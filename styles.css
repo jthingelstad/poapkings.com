@@ -661,6 +661,58 @@ nav a.active{
   color: rgba(255,255,255,.88);
 }
 
+/* Promote channels */
+.promoChannels{
+  display:flex;
+  flex-direction:column;
+}
+.promoChannel{
+  padding: 14px 0;
+}
+.promoChannel:not(:first-child){
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.promoChannelHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:6px;
+}
+.promoChannelLabel{
+  margin:0;
+  font-size:16px;
+  font-weight:800;
+}
+.promoChannelHint{
+  margin:0 0 8px;
+  font-size:13px;
+  color: var(--text-secondary);
+  line-height:1.4;
+}
+.promoChannelText{
+  display:block;
+  width:100%;
+  background: rgba(255,255,255,.08);
+  border:1px solid var(--border-light);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size:14px;
+  line-height:1.5;
+  resize: vertical;
+  outline:none;
+}
+.promoChannelText:focus{
+  border-color: rgba(245,200,76,.45);
+  box-shadow: 0 0 0 3px rgba(245,200,76,.14);
+}
+.promoChannelCopy{
+  padding: 8px 12px;
+  font-size:12px;
+}
+
 /* Changelog */
 .changelogBlock{
   border-radius: 14px;
