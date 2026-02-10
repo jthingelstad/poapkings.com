@@ -661,6 +661,35 @@ nav a.active{
   color: rgba(255,255,255,.88);
 }
 
+/* Changelog */
+.changelogBlock{
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: var(--surface-dark);
+  overflow:hidden;
+}
+.changelogDate{
+  padding: 10px 14px 0;
+  font-size:11px;
+  color:rgba(255,255,255,.50);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  font-weight:700;
+}
+.changelogDate:not(:first-child){
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top:10px;
+}
+.changelogEntry{
+  padding: 4px 14px 4px;
+  line-height: 1.5;
+  color: rgba(255,255,255,.88);
+  font-size:14px;
+}
+.changelogEntry:last-child{
+  padding-bottom:10px;
+}
+
 @media (max-width: 920px){
   .rosterControls{grid-template-columns: 1fr}
   .stepsGrid{grid-template-columns:1fr}
