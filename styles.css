@@ -782,6 +782,14 @@ nav a.active{
   border-color: rgba(76,200,245,.35);
 }
 
+.vaultCardUpcoming{
+  opacity: 0.5;
+  transition: transform .14s ease, border-color .14s ease, box-shadow .14s ease, opacity .14s ease;
+}
+.vaultCardUpcoming:hover{
+  opacity: 0.7;
+}
+
 @media (max-width: 600px){
   .vaultGrid{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

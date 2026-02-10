@@ -8,6 +8,30 @@
       "type": "Milestone",
       "date": "2026-02-04",
       "description": "This Founder POAP recognizes the players who were there at the start — pushing, donating, and building the traditions that define the clan."
+    },
+    {
+      "name": "First War Win",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Event",
+      "date": "TBD",
+      "description": "Awarded when the clan wins its first Clan War."
+    },
+    {
+      "name": "Season 1 Champion",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Season",
+      "date": "TBD",
+      "description": "Awarded to every member who completes the first full clan season."
+    },
+    {
+      "name": "50 Members",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Milestone",
+      "date": "TBD",
+      "description": "Awarded when the clan reaches a full roster of 50 members."
     }
   ]
 }

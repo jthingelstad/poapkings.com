@@ -266,10 +266,12 @@ function renderVaultCards(grid, poaps) {
       </div>
     `;
 
+    const upcomingClass = p.upcoming ? " vaultCardUpcoming" : "";
+
     if (eventUrl) {
-      return `<a class="vaultCard" href="${eventUrl}" target="_blank" rel="noreferrer">${cardContent}</a>`;
+      return `<a class="vaultCard${upcomingClass}" href="${eventUrl}" target="_blank" rel="noreferrer">${cardContent}</a>`;
     }
-    return `<div class="vaultCard">${cardContent}</div>`;
+    return `<div class="vaultCard${upcomingClass}">${cardContent}</div>`;
   }).join("");
 }
 
@@ -306,6 +308,8 @@ async function loadVault() {
         grid.innerHTML = "<div class=\"vaultEmpty\">No POAPs match the current filter.</div>";
         return;
       }
+
+      filtered.sort((a, b) => (a.upcoming ? 1 : 0) - (b.upcoming ? 1 : 0));
 
       renderVaultCards(grid, filtered);
     };
