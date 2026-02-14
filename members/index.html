@@ -38,9 +38,12 @@
     <section class="pageIntro card">
       <h1 class="pageTitle">Welcome KING...</h1>
       <p class="sectionDesc">
-        King's Keep is your resource hub for clan news, promotion tools, and site updates.
+        King's Keep is your resource hub for clan news, awards, promotion tools, and site updates. Everything you need as a POAP KINGS member is right here.
       </p>
-      <p class="mt-sm"><strong>New to the clan?</strong> <a class="btn btnPrimary" href="/members/setup/" data-tinylytics-event="members.clan-setup">Clan Setup</a></p>
+      <p class="sectionDesc"><strong>New to the clan?</strong> Get connected with leaders, set up your wallet, and register for the roster.</p>
+      <div class="mt-sm">
+        <a class="btn btnPrimary" href="/members/setup/" data-tinylytics-event="members.clan-setup">Clan Setup</a>
+      </div>
     </section>
 
     <section>
@@ -55,16 +58,16 @@
             <div class="awardWinner">Winner: TBD</div>
           </div>
           <div class="awardCard">
-            <h3>Bronze Warrior</h3>
-            <span class="typePill typeMilestone">One-Time</span>
-            <p>Awarded to the member who earns the most fame through our Bronze league levels. Claimed when the clan reaches Silver.</p>
-            <div class="awardWinner">Winner: TBD</div>
-          </div>
-          <div class="awardCard">
             <h3>Iron King</h3>
             <span class="typePill typeSeason">Repeating</span>
             <p>Details coming soon.</p>
             <div class="awardWinner">&mdash;</div>
+          </div>
+          <div class="awardCard">
+            <h3>Bronze Warrior</h3>
+            <span class="typePill typeMilestone">One-Time</span>
+            <p>Awarded to the member who earns the most fame through our Bronze league levels. Claimed when the clan reaches Silver.</p>
+            <div class="awardWinner">Winner: TBD</div>
           </div>
         </div>
       </div>
@@ -89,7 +92,10 @@
           <div class="promoChannel">
             <div class="promoChannelHeader">
               <h3 class="promoChannelLabel">Text</h3>
-              <button class="btn btnPrimary promoChannelCopy" type="button">COPY</button>
+              <div class="promoChannelButtons">
+                <a class="btn btnGhost btnSm promoSms" href="#" data-tinylytics-event="members.send-text">Send Message</a>
+                <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-text">COPY</button>
+              </div>
             </div>
             <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
             <textarea class="promoChannelText" readonly rows="3">
@@ -100,7 +106,7 @@ Hey! We’re starting a new Clash Royale clan called POAP KINGS — active play,
           <div class="promoChannel">
             <div class="promoChannelHeader">
               <h3 class="promoChannelLabel">Social</h3>
-              <button class="btn btnPrimary promoChannelCopy" type="button">COPY</button>
+              <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-social">COPY</button>
             </div>
             <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
             <textarea class="promoChannelText" readonly rows="3">
@@ -111,9 +117,14 @@ Hey! We’re starting a new Clash Royale clan called POAP KINGS — active play,
           <div class="promoChannel">
             <div class="promoChannelHeader">
               <h3 class="promoChannelLabel">Mail</h3>
-              <button class="btn btnPrimary promoChannelCopy" type="button">COPY</button>
+              <div class="promoChannelButtons">
+                <a class="btn btnGhost btnSm promoMailto" href="#" data-tinylytics-event="members.send-email">Send Email</a>
+                <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-email">COPY</button>
+              </div>
             </div>
             <p class="promoChannelHint">Email-friendly pitch for friends or group chats.</p>
+            <label class="promoFieldLabel">Subject</label>
+            <input class="promoFieldInput" type="text" readonly value="POAP KINGS | A Clash Royale Clan With Proof" />
             <textarea class="promoChannelText" readonly rows="5">
 Hi there,
 
@@ -150,7 +161,7 @@ Hope to see you in the arena.
           <div class="promoChannel">
             <div class="promoChannelHeader">
               <h3 class="promoChannelLabel">Discord</h3>
-              <button class="btn btnPrimary promoChannelCopy" type="button">COPY</button>
+              <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-discord">COPY</button>
             </div>
             <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
             <textarea class="promoChannelText" readonly rows="4">
@@ -178,12 +189,12 @@ Hope to see you in the arena.
           <div class="promoChannel">
             <div class="promoChannelHeader">
               <h3 class="promoChannelLabel">Reddit</h3>
-              <button class="btn btnPrimary promoChannelCopy" type="button">COPY</button>
+              <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-reddit">COPY</button>
             </div>
             <p class="promoChannelHint">Post this into <a href="https://www.reddit.com/r/RoyaleRecruit/">r/RoyaleRecruit</a>. Do not attempt to include the clan invite link!</p>
+            <label class="promoFieldLabel">Title</label>
+            <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #J2RGCRVG [2000]" />
             <textarea class="promoChannelText" readonly rows="5">
-SUBJECT: POAP KINGS: A CLAN WITH PROOF #J2RGCRVG [2000]
-
 👑 POAP KINGS | A CLAN WITH PROOF  
 🏷️ Clan Tag: #J2RGCRVG  
 🇺🇸 Region: United States  
@@ -231,6 +242,24 @@ SUBJECT: POAP KINGS: A CLAN WITH PROOF #J2RGCRVG [2000]
         setTimeout(function() { btn.textContent = 'COPY'; }, 1500);
       });
     });
+    var sms = document.querySelector('.promoSms');
+    if (sms) {
+      sms.addEventListener('click', function(e) {
+        e.preventDefault();
+        var body = sms.closest('.promoChannel').querySelector('textarea').value.trim();
+        window.location.href = 'sms:?&body=' + encodeURIComponent(body);
+      });
+    }
+    var mailto = document.querySelector('.promoMailto');
+    if (mailto) {
+      mailto.addEventListener('click', function(e) {
+        e.preventDefault();
+        var channel = mailto.closest('.promoChannel');
+        var subject = channel.querySelector('.promoFieldInput').value;
+        var body = channel.querySelector('textarea').value.trim();
+        window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    }
   </script>
 </body>
 </html>

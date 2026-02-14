@@ -659,6 +659,7 @@ nav a.active{
   margin-bottom:10px;
 }
 .stepCard h3{margin:0 0 7px; font-size:18px}
+.stepTitle{ font-family: var(--display-font) }
 .stepCard p{margin:0; color: var(--text-secondary); line-height:1.55}
 
 .promoGrid{
@@ -693,6 +694,7 @@ nav a.active{
   gap:12px;
   margin-bottom:6px;
 }
+.promoChannelButtons{ display:flex; gap:8px; align-items:center }
 .promoChannelLabel{
   margin:0;
   font-family: var(--display-font);
@@ -704,6 +706,28 @@ nav a.active{
   font-size:13px;
   color: var(--text-secondary);
   line-height:1.4;
+}
+.promoFieldLabel{
+  display:block;
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color: rgba(255,255,255,.55);
+  margin-bottom:4px;
+}
+.promoFieldInput{
+  display:block;
+  width:100%;
+  background: rgba(255,255,255,.08);
+  border:1px solid var(--border-light);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size:14px;
+  outline:none;
+  margin-bottom:8px;
 }
 .promoChannelText{
   display:block;
@@ -904,7 +928,7 @@ nav a.active{
 }
 
 /* Awards */
-.awardsGrid{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px }
+.awardsGrid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:14px }
 @media(max-width:920px){ .awardsGrid{ grid-template-columns:1fr } }
 .awardCard{ padding:16px; border-radius: var(--radius); background: var(--surface); border:1px solid var(--border) }
 .awardCard h3{ margin:0 0 8px; font-size:18px; font-family: var(--display-font) }
