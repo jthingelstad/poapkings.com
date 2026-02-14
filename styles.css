@@ -481,8 +481,16 @@ footer{
   flex-wrap:wrap;
 }
 .rosterName{
-  font-weight:900; color:rgba(255,255,255,.95);
+  font-family: var(--display-font);
+  font-weight:900;
   font-size:15px;
+  color: var(--lavender);
+  text-shadow: 0 0 6px rgba(109,40,217,.6), 0 0 18px rgba(109,40,217,.3);
+  animation: nameGlow 3s ease-in-out infinite;
+}
+@keyframes nameGlow{
+  0%,100%{ text-shadow: 0 0 6px rgba(109,40,217,.6), 0 0 18px rgba(109,40,217,.3) }
+  50%{ text-shadow: 0 0 10px rgba(109,40,217,.8), 0 0 28px rgba(109,40,217,.45), 0 0 46px rgba(109,40,217,.2) }
 }
 .rosterJoined{
   color:rgba(255,255,255,.65);
@@ -681,6 +689,7 @@ nav a.active{
 }
 .promoChannelLabel{
   margin:0;
+  font-family: var(--display-font);
   font-size:16px;
   font-weight:800;
 }
@@ -808,6 +817,7 @@ nav a.active{
   gap:6px;
 }
 .vaultCardName{
+  font-family: var(--display-font);
   font-weight:900;
   font-size:16px;
   color:rgba(255,255,255,.95);
@@ -870,6 +880,14 @@ nav a.active{
 .vaultCardUpcoming:hover{
   opacity: 0.7;
 }
+
+/* Awards */
+.awardsGrid{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px }
+@media(max-width:920px){ .awardsGrid{ grid-template-columns:1fr } }
+.awardCard{ padding:16px; border-radius: var(--radius); background: var(--surface); border:1px solid var(--border) }
+.awardCard h3{ margin:0 0 8px; font-size:18px; font-family: var(--display-font) }
+.awardCard p{ margin:0; font-size:14px; color: var(--muted) }
+.awardWinner{ margin-top:10px; font-size:13px; font-weight:700; color: var(--gold) }
 
 @media (max-width: 600px){
   .vaultGrid{
