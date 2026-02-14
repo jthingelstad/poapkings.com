@@ -785,7 +785,8 @@ nav a.active{
 .stepCardWide{ grid-column: 1 / -1 }
 .btnSm{ padding:9px 12px; font-size:13px; border-radius:10px }
 .setupFriendLinks{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
-.setupAltConnect{ display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:14px; border-top:1px solid var(--border) }
+.setupAltConnect{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:14px; padding-top:14px; border-top:1px solid var(--border) }
+.setupAltHeading{ margin:0 0 7px; font-size:18px; font-weight:bold; color: var(--ink) }
 .setupAltLabel{ font-size:12px; color: var(--muted); font-weight:700 }
 .setupSubActions{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px }
 @media(max-width:920px){ .setupSubActions{ grid-template-columns:1fr } }
