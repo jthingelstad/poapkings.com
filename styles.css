@@ -317,6 +317,12 @@ nav a:hover{
   background: var(--surface);
   color: var(--white);
 }
+.btnWhite{
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(220,220,230,.90));
+  color: #1a1a2e;
+  border-color: rgba(255,255,255,.30);
+  box-shadow: 0 10px 30px rgba(255,255,255,.08);
+}
 .btnPurple{
   background: linear-gradient(180deg, rgba(109,40,217,.90), rgba(59,29,122,.95));
   color: var(--white);
@@ -631,7 +637,7 @@ nav a.active{
 
 .stepsGrid{
   display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap:14px;
 }
 .stepCard{
@@ -750,6 +756,22 @@ nav a.active{
 .changelogEntry:last-child{
   padding-bottom:10px;
 }
+
+/* Setup page */
+.stepCardWide{ grid-column: 1 / -1 }
+.btnSm{ padding:9px 12px; font-size:13px; border-radius:10px }
+.setupFriendLinks{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
+.setupAltConnect{ display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:14px; border-top:1px solid var(--border) }
+.setupAltLabel{ font-size:12px; color: var(--muted); font-weight:700 }
+.setupSubActions{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px }
+@media(max-width:920px){ .setupSubActions{ grid-template-columns:1fr } }
+.setupSubAction{ padding:16px; border-radius:var(--radius); background:var(--surface-dark); border:1px solid var(--border) }
+.setupSubAction h4{ margin:0 0 6px; font-size:15px }
+.setupSubAction p{ margin:0; font-size:14px; color:var(--text-secondary); line-height:1.55 }
+.setupAppLinks{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px }
+.setupAppLink{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:12px; background:var(--surface); border:1px solid var(--border-light); text-decoration:none; font-weight:700; font-size:14px; color:var(--ink); transition: transform .14s ease, border-color .14s ease }
+.setupAppLink:hover{ transform:translateY(-1px); border-color:rgba(255,255,255,.25) }
+.setupAppIcon{ width:28px; height:28px; border-radius:6px; object-fit:contain }
 
 @media (max-width: 920px){
   .rosterControls{grid-template-columns: 1fr}
