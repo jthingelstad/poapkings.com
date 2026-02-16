@@ -505,6 +505,18 @@ footer{
   letter-spacing:.04em;
   font-weight:700;
 }
+.rosterStats{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:4px 10px;
+}
+.rosterStat{
+  font-size:12px;
+  font-weight:700;
+  color:rgba(255,255,255,.60);
+  white-space:nowrap;
+}
 .rosterNote{
   color:rgba(255,255,255,.75);
   font-size:13px;
@@ -926,6 +938,43 @@ nav a.active{
 }
 .vaultCardUpcoming:hover{
   opacity: 0.7;
+}
+
+/* Clan aggregate stats */
+.clanStatsGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+}
+.clanStatsGrid:empty{ display:none }
+.clanStat{
+  padding:16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align:center;
+}
+.clanStatValue{
+  font-family: var(--display-font);
+  font-size:26px;
+  font-weight:900;
+  color: var(--gold);
+  line-height:1.1;
+}
+.clanStatLabel{
+  margin-top:4px;
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:rgba(255,255,255,.60);
+}
+@media (max-width: 920px){
+  .clanStatsGrid{ grid-template-columns: repeat(2, 1fr) }
+}
+@media (max-width: 480px){
+  .clanStatsGrid{ grid-template-columns: repeat(2, 1fr) }
+  .clanStatValue{ font-size:22px }
 }
 
 /* Awards */

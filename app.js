@@ -61,6 +61,31 @@ function formatJoinedDate(dateJoined) {
   return raw;
 }
 
+function formatLastSeen(lastSeen) {
+  if (!lastSeen) return "";
+  const raw = String(lastSeen).trim();
+  if (!raw) return "";
+  // API format: "20260215T120000.000Z"
+  const match = raw.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/);
+  if (!match) return "";
+  const d = new Date(Date.UTC(+match[1], +match[2]-1, +match[3], +match[4], +match[5], +match[6]));
+  if (Number.isNaN(d.getTime())) return "";
+  const diffMs = Date.now() - d.getTime();
+  if (diffMs < 0) return "just now";
+  const mins = Math.floor(diffMs / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d ago`;
+}
+
+function formatNumber(n) {
+  if (n == null) return "0";
+  return Number(n).toLocaleString();
+}
+
 function renderRosterRows(grid, members) {
   grid.innerHTML = members.map((m) => {
     const name = escapeHtml(m.name || "Unnamed");
@@ -82,6 +107,16 @@ function renderRosterRows(grid, members) {
       ? `<a class="rosterLink" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">🏅 POAP</a>`
       : "";
 
+    const hasStats = m.exp_level || m.trophies || m.donations != null || m.last_seen;
+    const lastSeenText = formatLastSeen(m.last_seen);
+    const statsRow = hasStats ? `
+          <div class="rosterStats">
+            ${m.exp_level ? `<span class="rosterStat">👑 Lvl ${escapeHtml(String(m.exp_level))}</span>` : ""}
+            ${m.trophies ? `<span class="rosterStat">🏆 ${formatNumber(m.trophies)}</span>` : ""}
+            ${m.donations != null && m.donations > 0 ? `<span class="rosterStat">🎁 ${formatNumber(m.donations)}</span>` : ""}
+            ${lastSeenText ? `<span class="rosterStat">🕐 ${escapeHtml(lastSeenText)}</span>` : ""}
+          </div>` : "";
+
     return `
       <div class="rosterRow">
         <button class="tinylytics_kudos" data-path="/roster/${escapeHtml(rawTag)}"></button>
@@ -91,6 +126,7 @@ function renderRosterRows(grid, members) {
             ${role}
           </div>
           ${joinedText}
+          ${statsRow}
           ${note}
           <div class="rosterLinks">
             <a class="rosterLink" href="${url}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
@@ -150,6 +186,43 @@ async function loadRoster() {
 
     if (updatedLabel) {
       updatedLabel.textContent = toUpdatedDateLabel(data.updated);
+    }
+
+    const clanStatsEl = document.getElementById("clanStats");
+    if (clanStatsEl && allMembers.length > 0) {
+      const totalTrophies = allMembers.reduce((s, m) => s + (m.trophies || 0), 0);
+      const avgTrophies = Math.round(totalTrophies / allMembers.length);
+      const topTrophies = Math.max(...allMembers.map(m => m.trophies || 0));
+      const totalDonations = allMembers.reduce((s, m) => s + (m.donations || 0), 0);
+      const avgLevel = (allMembers.reduce((s, m) => s + (m.exp_level || 0), 0) / allMembers.length).toFixed(1);
+      const highestLevel = Math.max(...allMembers.map(m => m.exp_level || 0));
+
+      clanStatsEl.innerHTML = `
+        <div class="clanStat">
+          <div class="clanStatValue">${formatNumber(totalTrophies)}</div>
+          <div class="clanStatLabel">Total Trophies</div>
+        </div>
+        <div class="clanStat">
+          <div class="clanStatValue">${formatNumber(avgTrophies)}</div>
+          <div class="clanStatLabel">Avg Trophies</div>
+        </div>
+        <div class="clanStat">
+          <div class="clanStatValue">${formatNumber(topTrophies)}</div>
+          <div class="clanStatLabel">Top Trophies</div>
+        </div>
+        <div class="clanStat">
+          <div class="clanStatValue">${formatNumber(totalDonations)}</div>
+          <div class="clanStatLabel">Weekly Donations</div>
+        </div>
+        <div class="clanStat">
+          <div class="clanStatValue">${avgLevel}</div>
+          <div class="clanStatLabel">Avg King Level</div>
+        </div>
+        <div class="clanStat">
+          <div class="clanStatValue">${highestLevel}</div>
+          <div class="clanStatLabel">Highest Level</div>
+        </div>
+      `;
     }
 
     if (openSpotsEl) {
