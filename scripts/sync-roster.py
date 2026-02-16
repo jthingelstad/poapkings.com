@@ -106,8 +106,8 @@ def build_roster(api_members, extras):
         }
         members.append(member)
 
-    # Sort: Leader → Co-Leader → Elder → Member, then alphabetical
-    members.sort(key=lambda m: (ROLE_ORDER.get(m["role"], 3), m["name"].lower()))
+    # Sort: date joined ascending (longest-tenured first), then alphabetical
+    members.sort(key=lambda m: (m["date_joined"], m["name"].lower()))
     return members, today
 
 
