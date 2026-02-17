@@ -167,13 +167,41 @@ function toUpdatedDateLabel(updated) {
   })}`;
 }
 
+function groupByRole(members) {
+  const leaders = [];
+  const elders = [];
+  const rest = [];
+  for (const m of members) {
+    const role = String(m.role || "Member").toLowerCase();
+    if (role === "leader" || role === "co-leader") leaders.push(m);
+    else if (role === "elder") elders.push(m);
+    else rest.push(m);
+  }
+  const byDate = (a, b) => (a.date_joined || "").localeCompare(b.date_joined || "");
+  leaders.sort(byDate);
+  elders.sort(byDate);
+  rest.sort(byDate);
+  return { leaders, elders, members: rest };
+}
+
+function renderRosterSection(label, members, container) {
+  if (!members.length) return;
+  const heading = document.createElement("div");
+  heading.className = "rosterSectionHeading";
+  heading.textContent = label;
+  container.appendChild(heading);
+  const sectionGrid = document.createElement("div");
+  sectionGrid.className = "rosterGrid";
+  renderRosterRows(sectionGrid, members);
+  container.appendChild(sectionGrid);
+}
+
 async function loadRoster() {
   const status = document.getElementById("rosterStatus");
   const grid = document.getElementById("rosterGrid");
   if (!status || !grid) return;
 
   const searchInput = document.getElementById("rosterSearch");
-  const roleFilter = document.getElementById("rosterRoleFilter");
   const updatedLabel = document.getElementById("rosterUpdated");
   const openSpotsEl = document.getElementById("openSpots");
   const rosterPath = document.body?.dataset?.rosterPath || "/roster.json";
@@ -235,51 +263,31 @@ async function loadRoster() {
       }
     }
 
-    if (roleFilter) {
-      const rawRoles = [...new Set(
-        allMembers.map((m) => String(m.role || "Member").trim()).filter(Boolean)
-      )];
-      const hasLeadership = rawRoles.some((r) => r.toLowerCase() === "leader" || r.toLowerCase() === "co-leader");
-      const filterRoles = rawRoles
-        .filter((r) => r.toLowerCase() !== "leader" && r.toLowerCase() !== "co-leader")
-        .sort((a, b) => a.localeCompare(b));
-      if (hasLeadership) filterRoles.unshift("Leadership");
-      roleFilter.innerHTML = `<option value="">All roles</option>${filterRoles.map((role) => (
-        `<option value="${escapeHtml(role)}">${escapeHtml(role)}</option>`
-      )).join("")}`;
-    }
-
     const updateVisibleRows = () => {
       const search = (searchInput?.value || "").trim().toLowerCase();
-      const selectedRole = (roleFilter?.value || "").trim();
 
       const filtered = allMembers.filter((m) => {
         const role = String(m.role || "Member");
-        const roleLower = role.toLowerCase();
         const combined = `${m.name || ""} ${m.tag || ""} ${role} ${m.note || ""} ${m.profile_url || ""} ${m.address || ""} ${m.date_joined || ""}`.toLowerCase();
-        let roleMatch = !selectedRole;
-        if (selectedRole === "Leadership") {
-          roleMatch = roleLower === "leader" || roleLower === "co-leader";
-        } else if (selectedRole) {
-          roleMatch = roleLower === selectedRole.toLowerCase();
-        }
-        const searchMatch = !search || combined.includes(search);
-        return roleMatch && searchMatch;
+        return !search || combined.includes(search);
       });
 
       status.textContent = `Showing ${filtered.length} of ${allMembers.length} member${allMembers.length === 1 ? "" : "s"}`;
 
       if (!filtered.length) {
-        grid.innerHTML = "<div class=\"rosterEmpty\">No members match the current filters.</div>";
+        grid.innerHTML = "<div class=\"rosterEmpty\">No members match the current search.</div>";
         return;
       }
 
-      renderRosterRows(grid, filtered);
+      const groups = groupByRole(filtered);
+      grid.innerHTML = "";
+      renderRosterSection("Leaders", groups.leaders, grid);
+      renderRosterSection("Elders", groups.elders, grid);
+      renderRosterSection("Members", groups.members, grid);
       reinitTinylytics();
     };
 
     searchInput?.addEventListener("input", updateVisibleRows);
-    roleFilter?.addEventListener("change", updateVisibleRows);
     updateVisibleRows();
 
   } catch (e) {
