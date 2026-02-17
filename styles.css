@@ -596,6 +596,9 @@ nav a.active{
   gap:12px;
   margin-bottom:12px;
 }
+.rosterControlsSingle{
+  grid-template-columns: 1fr;
+}
 .rosterControl{
   display:flex;
   flex-direction:column;
@@ -624,6 +627,24 @@ nav a.active{
 .rosterControl select:focus{
   border-color: rgba(245,200,76,.45);
   box-shadow: 0 0 0 3px rgba(245,200,76,.14);
+}
+/* Roster sections container */
+.rosterSections{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.rosterSectionHeading{
+  font-family: var(--display-font);
+  font-size:18px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color: var(--gold);
+  padding:0 4px;
+}
+.rosterSections > .rosterSectionHeading:not(:first-child){
+  margin-top:6px;
 }
 .rosterEmpty{
   padding:16px;
