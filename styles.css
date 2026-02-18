@@ -514,11 +514,11 @@ footer{
   letter-spacing:.04em;
   font-weight:700;
 }
-.rosterStats{
+.rosterStatsLinks{
   display:flex;
   align-items:center;
   flex-wrap:wrap;
-  gap:4px 10px;
+  gap:4px 12px;
 }
 .rosterStat{
   font-size:12px;
@@ -530,12 +530,6 @@ footer{
   color:rgba(255,255,255,.75);
   font-size:13px;
   line-height:1.4;
-}
-.rosterLinks{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:6px 14px;
 }
 .rosterLink{
   color: rgba(255,255,255,.75);

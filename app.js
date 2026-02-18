@@ -52,13 +52,11 @@ function formatJoinedDate(dateJoined) {
   if (!dateJoined) return "";
   const raw = String(dateJoined).trim();
   if (!raw) return "";
-  // Full ISO 8601 datetime: "2026-02-04T04:21:00Z"
+  // Full ISO 8601 datetime: "2026-02-04T04:21:00Z" — show date only
   if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(raw)) {
     const parsed = new Date(raw);
     if (!Number.isNaN(parsed.getTime())) {
-      const datePart = parsed.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
-      const timePart = parsed.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "UTC" });
-      return `${datePart} · ${timePart} UTC`;
+      return parsed.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
     }
   }
   // Date-only fallback: "2026-02-04"
@@ -119,13 +117,6 @@ function renderRosterRows(grid, members) {
       ? `<a class="rosterLink" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">🏅 POAP</a>`
       : "";
 
-    const hasStats = m.exp_level || m.trophies;
-    const statsRow = hasStats ? `
-          <div class="rosterStats">
-            ${m.exp_level ? `<span class="rosterStat">👑 Lvl ${escapeHtml(String(m.exp_level))}</span>` : ""}
-            ${m.trophies ? `<span class="rosterStat">🏆 ${formatNumber(m.trophies)}</span>` : ""}
-          </div>` : "";
-
     return `
       <div class="rosterRow">
         <button class="tinylytics_kudos" data-path="/roster/${escapeHtml(rawTag)}"></button>
@@ -134,8 +125,9 @@ function renderRosterRows(grid, members) {
             <span class="rosterName">${name}${arena}</span>
           </div>
           ${roleJoined}
-          ${statsRow}
-          <div class="rosterLinks">
+          <div class="rosterStatsLinks">
+            ${m.exp_level ? `<span class="rosterStat">👑 Lvl ${escapeHtml(String(m.exp_level))}</span>` : ""}
+            ${m.trophies ? `<span class="rosterStat">🏆 ${formatNumber(m.trophies)}</span>` : ""}
             <a class="rosterLink" href="${url}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
             ${profileLink}
             ${poapLink}
