@@ -372,7 +372,7 @@ section{padding: 26px 0}
 
 .panelTitle,
 .kicker,
-summary{
+.faq-q{
   font-family: var(--display-font);
 }
 .sectionDesc{color: var(--text-secondary); margin: 0 0 16px; line-height:1.6}
@@ -412,16 +412,15 @@ summary{
 .callout p{margin: 8px 0 0; color: rgba(255,255,255,.86); line-height:1.6}
 
 /* FAQ */
-details{
+.faq-item{
   border: 1px solid var(--border);
   background: rgba(255,255,255,.05);
   border-radius: 16px;
   padding: 12px 14px;
 }
-details + details{margin-top:10px}
-summary{cursor:pointer;font-weight:900;list-style:none}
-summary::-webkit-details-marker{display:none}
-details p{margin: 8px 0 0; color: var(--text-secondary); line-height:1.6}
+.faq-item + .faq-item{margin-top:10px}
+.faq-q{margin:0;font-weight:900;font-size:inherit}
+.faq-item p{margin: 8px 0 0; color: var(--text-secondary); line-height:1.6}
 
 /* Footer */
 footer{
