@@ -16,7 +16,7 @@ supercellDisclaimer: true
       <div class="card card-padded">
         <h2 class="sectionTitle m-0 mb-xs">TL;DR</h2>
         <ul class="list">
-          <li>Open clan, 2,000 trophy minimum.</li>
+          <li>{{ site.clanStatus }} clan, {{ site.minTrophies | formatNumber }} trophy minimum.</li>
           <li>Be active, donate, don't be a jerk.</li>
           <li>Wars encouraged, not required.</li>
           <li>Top war earner each season gets a free Pass Royale.</li>
@@ -35,7 +35,7 @@ supercellDisclaimer: true
       </div>
       <div class="faq-item">
         <h3 class="faq-q">Why the name POAP KINGS?</h3>
-        <p>King Thing loves making POAPs and sharing them with friends — it's a wonderful way to mark events and moments that matter. We decided to bring that passion into the Clash Royale clan world. POAP (Proof of Attendance Protocol) gives members a permanent, collectible record of each season. Kings because we aim high. "Proof of Arena Push" is just our Clash-flavored spin on it.</p>
+        <p>King Thing loves making POAPs and sharing them with friends — it's a wonderful way to mark events and moments that matter. We decided to bring that passion into the Clash Royale clan world. POAP (Proof of Attendance Protocol) gives members a permanent, collectible record of each season. Kings because we aim high. "{{ site.tagline }}" is just our Clash-flavored spin on it.</p>
       </div>
     </section>
 
@@ -43,7 +43,7 @@ supercellDisclaimer: true
       <h2 class="sectionTitle">Joining</h2>
       <div class="faq-item">
         <h3 class="faq-q">How do I join?</h3>
-        <p>We're open — no invite needed. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#J2RGCRVG</strong> in Clash Royale. Minimum <strong>2,000 trophies</strong> to join.</p>
+        <p>We're {{ site.clanStatus | lower }} — no invite needed. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ site.minTrophies | formatNumber }} trophies</strong> to join.</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">What are the clan rules?</h3>

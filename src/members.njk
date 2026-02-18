@@ -128,10 +128,10 @@ We wanted to share an invitation to join a great Clash Royale clan: POAP KINGS.
 POAP KINGS is built around active, positive gameplay and something a little different—collecting POAPs as proof of participation and shared clan history. It's a place for players who enjoy progression, community, and being part of something from the beginning.
 
 POAP KINGS | A Clan With Proof
-Clan Tag: #J2RGCRVG
+Clan Tag: #{{ site.clanTag }}
 Region: United States
-League: Bronze (and climbing)
-Required Trophies: 2,000
+League: {{ site.clanLeague }} (and climbing)
+Required Trophies: {{ site.minTrophies | formatNumber }}
 Status: Brand new clan
 
 What makes POAP KINGS different
@@ -163,11 +163,11 @@ Hope to see you in the arena.
             <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
             <textarea class="promoChannelText" readonly rows="4">
 👑 POAP KINGS | A CLAN WITH PROOF
-🏷️ Clan Tag: #J2RGCRVG
+🏷️ Clan Tag: #{{ site.clanTag }}
 🇺🇸 Region: United States
 ⚔️ BRAND NEW CLAN
-↕️ League: Bronze (going up soon!)
-🏆 Required Trophies: [2000]
+↕️ League: {{ site.clanLeague }} (going up soon!)
+🏆 Required Trophies: [{{ site.minTrophies }}]
 
 🌟 Clan members collect unique POAPs
 🥇 War winner awarded with Pass Royale!
@@ -192,14 +192,14 @@ Hope to see you in the arena.
             </div>
             <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not attempt to include the clan invite link!</p>
             <label class="promoFieldLabel">Title</label>
-            <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #J2RGCRVG [2000]" />
+            <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #{{ site.clanTag }} [{{ site.minTrophies }}]" />
             <textarea class="promoChannelText" readonly rows="5">
 👑 POAP KINGS | A CLAN WITH PROOF
-🏷️ Clan Tag: #J2RGCRVG
+🏷️ Clan Tag: #{{ site.clanTag }}
 🇺🇸 Region: United States
 ⚔️ BRAND NEW CLAN
-↕️ League: Bronze (going up soon!)
-🏆 Required Trophies: [2000]
+↕️ League: {{ site.clanLeague }} (going up soon!)
+🏆 Required Trophies: [{{ site.minTrophies }}]
 
 🌟 Clan members collect unique POAPs
 🥇 War winner awarded with Pass Royale!

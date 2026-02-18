@@ -36,7 +36,7 @@ supercellDisclaimer: true
       <div class="grid3">
         <div class="tile">
           <h3>Collect Unique POAPs</h3>
-          <p>Clan members collect unique POAPs tied to milestones and participation — your Proof of Arena Push, season by season.</p>
+          <p>Clan members collect unique POAPs tied to milestones and participation — your {{ site.tagline }}, season by season.</p>
         </div>
         <div class="tile">
           <h3>Win Pass Royale</h3>
@@ -73,7 +73,7 @@ supercellDisclaimer: true
         <article class="stepCard">
           <div class="stepNumber">1</div>
           <h3 class="stepTitle">Join the clan</h3>
-          <p>We're open. Search for <strong>POAP KINGS</strong> or use clan tag <strong class="mono">#J2RGCRVG</strong>. Just need 2,000+ trophies.</p>
+          <p>We're {{ site.clanStatus | lower }}. Search for <strong>POAP KINGS</strong> or use clan tag <strong class="mono">#{{ site.clanTag }}</strong>. Just need {{ site.minTrophies | formatNumber }}+ trophies.</p>
         </article>
         <article class="stepCard">
           <div class="stepNumber">2</div>
@@ -92,7 +92,7 @@ supercellDisclaimer: true
       <div class="card card-padded">
         <h2 class="sectionTitle m-0 mb-xs">Ready to Join?</h2>
         <p class="sectionDesc m-0 mb-sm">
-          We're <strong>Open</strong>. If you've got <strong>2,000+ trophies</strong>, you can jump in right now.
+          We're <strong>{{ site.clanStatus }}</strong>. If you've got <strong>{{ site.minTrophies | formatNumber }}+ trophies</strong>, you can jump in right now.
         </p>
 
         <div class="split">
@@ -100,10 +100,10 @@ supercellDisclaimer: true
             <h3>Find Us In-Game</h3>
             <ul class="list">
               <li><strong>Clan Name:</strong> POAP KINGS</li>
-              <li><strong>Clan Tag:</strong> <a class="mono" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="home.clan-tag">#J2RGCRVG</a></li>
+              <li><strong>Clan Tag:</strong> <a class="mono" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="home.clan-tag">#{{ site.clanTag }}</a></li>
               <li><strong>Region:</strong> United States</li>
-              <li><strong>Type:</strong> Open</li>
-              <li><strong>Minimum Trophies:</strong> 2,000</li>
+              <li><strong>Type:</strong> {{ site.clanStatus }}</li>
+              <li><strong>Minimum Trophies:</strong> {{ site.minTrophies | formatNumber }}</li>
             </ul>
             <div class="ctaRow mt-sm">
               <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="home.join-card">Join Now</a>
