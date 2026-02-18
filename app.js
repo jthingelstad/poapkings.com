@@ -117,12 +117,13 @@ function renderRosterRows(grid, members) {
       ? `<a class="rosterLink" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">🏅 POAP</a>`
       : "";
 
-    const hasStats = m.exp_level || m.trophies || m.donations != null || m.last_seen;
+    const hasStats = m.exp_level || m.trophies || m.donations != null || m.last_seen || m.arena;
     const lastSeenText = formatLastSeen(m.last_seen);
     const statsRow = hasStats ? `
           <div class="rosterStats">
             ${m.exp_level ? `<span class="rosterStat">👑 Lvl ${escapeHtml(String(m.exp_level))}</span>` : ""}
             ${m.trophies ? `<span class="rosterStat">🏆 ${formatNumber(m.trophies)}</span>` : ""}
+            ${m.arena ? `<span class="rosterStat">🏟️ ${escapeHtml(m.arena)}</span>` : ""}
             ${m.donations != null && m.donations > 0 ? `<span class="rosterStat">🎁 ${formatNumber(m.donations)}</span>` : ""}
             ${lastSeenText ? `<span class="rosterStat">🕐 ${escapeHtml(lastSeenText)}</span>` : ""}
           </div>` : "";
