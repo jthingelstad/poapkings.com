@@ -52,6 +52,16 @@ function formatJoinedDate(dateJoined) {
   if (!dateJoined) return "";
   const raw = String(dateJoined).trim();
   if (!raw) return "";
+  // Full ISO 8601 datetime: "2026-02-04T04:21:00Z"
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(raw)) {
+    const parsed = new Date(raw);
+    if (!Number.isNaN(parsed.getTime())) {
+      const datePart = parsed.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+      const timePart = parsed.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "UTC" });
+      return `${datePart} · ${timePart} UTC`;
+    }
+  }
+  // Date-only fallback: "2026-02-04"
   if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
     const parsed = new Date(`${raw}T00:00:00`);
     if (!Number.isNaN(parsed.getTime())) {
@@ -94,9 +104,11 @@ function renderRosterRows(grid, members) {
     const url = royaleApiUrl(tag);
 
     const roleText = m.role ? escapeHtml(m.role) : "Member";
-    const role = `<span class="${roleClass(roleText)}">${roleText}</span>`;
+    const arena = m.arena ? `<span class="rosterArena"> @ ${escapeHtml(m.arena)}</span>` : "";
     const joined = formatJoinedDate(m.date_joined);
-    const joinedText = joined ? `<div class="rosterJoined">Joined ${escapeHtml(joined)}</div>` : "";
+    const roleJoined = joined
+      ? `<div class="rosterRoleJoined"><span class="${roleClass(roleText)}">${roleText}</span> Joined ${escapeHtml(joined)}</div>`
+      : `<div class="rosterRoleJoined"><span class="${roleClass(roleText)}">${roleText}</span></div>`;
     const note = m.note ? `<div class="rosterNote">${escapeHtml(m.note)}</div>` : "";
     const profileUrl = normalizeUrl(m.profile_url);
     const poapUrl = poapCollectionUrl(m.address);
@@ -107,14 +119,11 @@ function renderRosterRows(grid, members) {
       ? `<a class="rosterLink" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">🏅 POAP</a>`
       : "";
 
-    const hasStats = m.exp_level || m.trophies || m.donations != null || m.last_seen;
-    const lastSeenText = formatLastSeen(m.last_seen);
+    const hasStats = m.exp_level || m.trophies;
     const statsRow = hasStats ? `
           <div class="rosterStats">
             ${m.exp_level ? `<span class="rosterStat">👑 Lvl ${escapeHtml(String(m.exp_level))}</span>` : ""}
             ${m.trophies ? `<span class="rosterStat">🏆 ${formatNumber(m.trophies)}</span>` : ""}
-            ${m.donations != null && m.donations > 0 ? `<span class="rosterStat">🎁 ${formatNumber(m.donations)}</span>` : ""}
-            ${lastSeenText ? `<span class="rosterStat">🕐 ${escapeHtml(lastSeenText)}</span>` : ""}
           </div>` : "";
 
     return `
@@ -122,17 +131,16 @@ function renderRosterRows(grid, members) {
         <button class="tinylytics_kudos" data-path="/roster/${escapeHtml(rawTag)}"></button>
         <div class="rosterRowContent">
           <div class="rosterHeader">
-            <span class="rosterName">${name}</span>
-            ${role}
+            <span class="rosterName">${name}${arena}</span>
           </div>
-          ${joinedText}
+          ${roleJoined}
           ${statsRow}
-          ${note}
           <div class="rosterLinks">
             <a class="rosterLink" href="${url}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
             ${profileLink}
             ${poapLink}
           </div>
+          ${note}
         </div>
       </div>
     `;
