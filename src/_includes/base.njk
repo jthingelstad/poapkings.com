@@ -4,13 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="{{ description }}" />
-  <meta property="og:image" content="/assets/poapkings.png" />
-  <meta property="og:image:alt" content="POAP KINGS crest" />
   <title>{{ title }}</title>
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ site.url }}/assets/poapkings.png" />
+  <meta property="og:image:alt" content="POAP KINGS crest" />
+  <meta name="twitter:card" content="summary" />
 
   <link rel="webmention" href="https://tinylytics.app/webmention/{{ site.tinylyticsId }}" />
 
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="{{ '/styles.css' | bust }}" />
 </head>
 
 <body>
@@ -46,7 +53,7 @@
     </footer>
   </main>
 
-  {% if appJs %}<script src="/app.js"></script>{% endif %}
+  {% if appJs %}<script src="{{ '/app.js' | bust }}"></script>{% endif %}
   <script src="https://tinylytics.app/embed/{{ site.tinylyticsId }}.js?hits&kudos=%E2%9A%94%EF%B8%8F&countries&events&beacon" defer></script>
   {{ extraScripts | safe }}
 </body>

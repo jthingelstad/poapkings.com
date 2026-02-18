@@ -1,9 +1,12 @@
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/app.js");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
+  eleventyConfig.addPassthroughCopy("src/members-promo.js");
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
   // --- Filters for build-time rendering ---
@@ -133,10 +136,20 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("searchText", (m) => {
     const role = m.role || "Member";
-    return [m.name, m.tag, role, m.note, m.profile_url, m.address, m.date_joined]
+    return [m.name, m.tag, role, m.note, m.date_joined]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
+  });
+
+  eleventyConfig.addFilter("bust", (url) => {
+    try {
+      const content = readFileSync(`src${url}`);
+      const hash = createHash("md5").update(content).digest("hex").slice(0, 8);
+      return `${url}?v=${hash}`;
+    } catch {
+      return url;
+    }
   });
 
   return {
