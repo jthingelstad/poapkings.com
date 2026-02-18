@@ -15,7 +15,7 @@ ROLE_ORDER = {"Leader": 0, "Co-Leader": 1, "Elder": 2, "Member": 3}
 ROLE_MAP = {"leader": "Leader", "coLeader": "Co-Leader", "elder": "Elder", "member": "Member"}
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-ROSTER_PATH = PROJECT_ROOT / "src" / "roster.json"
+ROSTER_PATH = PROJECT_ROOT / "src" / "_data" / "roster.json"
 EXTRAS_PATH = PROJECT_ROOT / "roster-extra.json"
 ENV_PATH = PROJECT_ROOT / ".env"
 
