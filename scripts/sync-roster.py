@@ -77,7 +77,7 @@ def load_extras():
 
 def build_roster(api_members, extras):
     """Merge API data with custom extras into roster members list."""
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     members = []
 
     for m in api_members:
