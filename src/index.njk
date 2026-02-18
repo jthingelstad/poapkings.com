@@ -4,7 +4,6 @@ title: POAP KINGS | A Clash Royale Clan with Proof
 description: "POAP KINGS — a Clash Royale clan celebrating seasons, generosity, and Proof of Arena Push."
 navActive: home
 mainId: top
-appJs: true
 supercellDisclaimer: true
 ---
     <section class="pageIntro card">
@@ -24,7 +23,9 @@ supercellDisclaimer: true
     </section>
 
     <section>
-      <div id="clanStats" class="clanStatsGrid"></div>
+      <div class="clanStatsGrid">
+        {% include "clan-stats.njk" %}
+      </div>
     </section>
 
     <section id="why">

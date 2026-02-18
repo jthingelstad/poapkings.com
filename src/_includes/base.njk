@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 
-<body{% if bodyAttrs %} {{ bodyAttrs | safe }}{% endif %}>
+<body>
   <header class="top">
     <div class="wrap inner">
       <div class="brandGroup">
@@ -47,11 +47,7 @@
   </main>
 
   {% if appJs %}<script src="/app.js"></script>{% endif %}
-  {% if tinylyticsDeferred %}
-  <script data-tinylytics-src="https://tinylytics.app/embed/{{ site.tinylyticsId }}.js?hits&kudos=%F0%9F%91%8F&countries&events&beacon"></script>
-  {% else %}
   <script src="https://tinylytics.app/embed/{{ site.tinylyticsId }}.js?hits&kudos=%E2%9A%94%EF%B8%8F&countries&events&beacon" defer></script>
-  {% endif %}
   {{ extraScripts | safe }}
 </body>
 </html>

@@ -4,7 +4,6 @@ layout: base.njk
 title: Vault | POAP KINGS | A Clash Royale Clan with Proof
 description: "POAP KINGS vault — browse our collection of seasonal POAPs and milestone badges."
 navActive: vault
-bodyAttrs: 'data-vault-path="/vault.json"'
 appJs: true
 ---
     <section class="pageIntro card">
@@ -24,9 +23,9 @@ appJs: true
         <div class="rosterHeaderRow">
           <div>
             <h2 class="sectionTitle m-0">Collection</h2>
-            <div class="tiny mt-xs" id="vaultUpdated">Last updated: —</div>
+            <div class="tiny mt-xs">Last updated: {{ vault.updated | formatLongDate }}</div>
           </div>
-          <div id="vaultStatus" class="tiny rosterCount">Loading vault…</div>
+          <div id="vaultStatus" class="tiny rosterCount">Showing {{ vault.poaps | length }} of {{ vault.poaps | length }} POAP{{ "s" if vault.poaps | length != 1 }}</div>
         </div>
 
         <div class="rosterControls" style="grid-template-columns: 1fr">
@@ -41,6 +40,32 @@ appJs: true
           </label>
         </div>
 
-        <div id="vaultGrid" class="vaultGrid"></div>
+        <div id="vaultGrid" class="vaultGrid">
+          {% for p in vault.poaps | sortVault %}
+          {%- set eventUrl = ("https://poap.gallery/event/" + p.event_id) if p.event_id else "" -%}
+          {%- if eventUrl -%}
+          <a class="vaultCard{% if p.upcoming %} vaultCardUpcoming{% endif %}" href="{{ eventUrl | e }}" target="_blank" rel="noreferrer" data-type="{{ p.type | lower if p.type else '' }}">
+          {%- else -%}
+          <div class="vaultCard{% if p.upcoming %} vaultCardUpcoming{% endif %}" data-type="{{ p.type | lower if p.type else '' }}">
+          {%- endif %}
+            <div class="vaultCardImage">
+              {% if p.image %}
+              <img src="{{ p.image | e }}" alt="{{ (p.name or 'POAP') | e }}" loading="lazy" />
+              {% else %}
+              <div class="vaultCardPlaceholder">👑</div>
+              {% endif %}
+            </div>
+            <div class="vaultCardBody">
+              <span class="{{ p.type | typeClass }}">{{ (p.type or 'POAP') | e }}</span>
+              <div class="vaultCardName">{{ (p.name or 'Untitled POAP') | e }}</div>
+              {% if p.date %}<div class="vaultCardDate">{{ p.date | formatDate }}</div>{% endif %}
+              {% if p.description %}<div class="vaultCardDesc">{{ p.description | e }}</div>{% endif %}
+            </div>
+          {%- if eventUrl %}</a>
+          {%- else %}</div>
+          {%- endif %}
+          {% endfor %}
+          <div class="vaultEmpty" id="vaultEmpty" hidden>No POAPs match the current filter.</div>
+        </div>
       </div>
     </section>
