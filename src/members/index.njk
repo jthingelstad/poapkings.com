@@ -1,36 +1,39 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="King's Keep — onboarding and member resources for POAP KINGS." />
-  <meta property="og:image" content="/assets/poapkings.png" />
-  <meta property="og:image:alt" content="POAP KINGS crest" />
-  <title>King's Keep | POAP KINGS | A Clash Royale Clan with Proof</title>
-
-  <link rel="webmention" href="https://tinylytics.app/webmention/NnbTPjJ2AWXF8GZDuy54" />
-
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-
-<body>
-  <header class="top">
-    <div class="wrap inner">
-      <div class="brandGroup">
-        <a class="navJoin" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer" data-tinylytics-event="nav.join">JOIN</a>
-        <a class="brand" href="/"><strong>POAP KINGS</strong></a>
-      </div>
-
-      <nav aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/roster">Roster</a>
-        <a href="/vault">Vault</a>
-        <a class="active" href="/members">King's Keep</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap pageMain">
+---
+layout: base.njk
+title: "King's Keep | POAP KINGS | A Clash Royale Clan with Proof"
+description: "King's Keep — onboarding and member resources for POAP KINGS."
+navActive: members
+extraScripts: |
+  <script>
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('.promoChannelCopy');
+      if (!btn) return;
+      var textarea = btn.closest('.promoChannel').querySelector('textarea');
+      navigator.clipboard.writeText(textarea.value).then(function() {
+        btn.textContent = 'COPIED';
+        setTimeout(function() { btn.textContent = 'COPY'; }, 1500);
+      });
+    });
+    var sms = document.querySelector('.promoSms');
+    if (sms) {
+      sms.addEventListener('click', function(e) {
+        e.preventDefault();
+        var body = sms.closest('.promoChannel').querySelector('textarea').value.trim();
+        window.location.href = 'sms:?&body=' + encodeURIComponent(body);
+      });
+    }
+    var mailto = document.querySelector('.promoMailto');
+    if (mailto) {
+      mailto.addEventListener('click', function(e) {
+        e.preventDefault();
+        var channel = mailto.closest('.promoChannel');
+        var subject = channel.querySelector('.promoFieldInput').value;
+        var body = channel.querySelector('textarea').value.trim();
+        window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    }
+  </script>
+---
     <section class="pageIntro card">
       <h1 class="pageTitle">Welcome KING...</h1>
       <p class="sectionDesc">
@@ -123,26 +126,26 @@ We wanted to share an invitation to join a great Clash Royale clan: POAP KINGS.
 
 POAP KINGS is built around active, positive gameplay and something a little different—collecting POAPs as proof of participation and shared clan history. It's a place for players who enjoy progression, community, and being part of something from the beginning.
 
-POAP KINGS | A Clan With Proof  
-Clan Tag: #J2RGCRVG  
-Region: United States  
-League: Bronze (and climbing)  
-Required Trophies: 2,000  
+POAP KINGS | A Clan With Proof
+Clan Tag: #J2RGCRVG
+Region: United States
+League: Bronze (and climbing)
+Required Trophies: 2,000
 Status: Brand new clan
 
 What makes POAP KINGS different
-- Clan members collect unique POAPs tied to milestones and participation  
-- War winners are awarded Pass Royale  
-- Elders donate regularly to support the clan  
-- War participation is encouraged, but not required  
-- Active members expected; inactive accounts are removed to keep the clan healthy  
+- Clan members collect unique POAPs tied to milestones and participation
+- War winners are awarded Pass Royale
+- Elders donate regularly to support the clan
+- War participation is encouraged, but not required
+- Active members expected; inactive accounts are removed to keep the clan healthy
 
 Early active members will receive a POAP KINGS Founder token, marking them as part of the clan from the start.
 
 If this sounds like a good fit, here's how to learn more or join:
 
-🌎 Learn more: https://poapkings.com  
-🔗 Join the clan: https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg
+🌎 Learn more: https://poapkings.com
+🔗 Join the clan: {{ site.joinUrl }}
 
 Hope to see you in the arena.
             </textarea>
@@ -158,23 +161,23 @@ Hope to see you in the arena.
             </div>
             <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
             <textarea class="promoChannelText" readonly rows="4">
-👑 POAP KINGS | A CLAN WITH PROOF  
-🏷️ Clan Tag: #J2RGCRVG  
-🇺🇸 Region: United States  
-⚔️ BRAND NEW CLAN  
-↕️ League: Bronze (going up soon!)  
+👑 POAP KINGS | A CLAN WITH PROOF
+🏷️ Clan Tag: #J2RGCRVG
+🇺🇸 Region: United States
+⚔️ BRAND NEW CLAN
+↕️ League: Bronze (going up soon!)
 🏆 Required Trophies: [2000]
 
-🌟 Clan members collect unique POAPs  
-🥇 War winner awarded with Pass Royale!  
-🤝 Elders donate regularly to clan  
-🔥 War participation encouraged but not required  
+🌟 Clan members collect unique POAPs
+🥇 War winner awarded with Pass Royale!
+🤝 Elders donate regularly to clan
+🔥 War participation encouraged but not required
 ⛔️ Active members expected, idle members will be removed
 
 💡 Early active members get POAP KINGS Founder token!
 
-🌎 Learn more: https://poapkings.com  
-🔗 Clan Invite: https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg
+🌎 Learn more: https://poapkings.com
+🔗 Clan Invite: {{ site.joinUrl }}
             </textarea>
           </div>
 
@@ -190,22 +193,22 @@ Hope to see you in the arena.
             <label class="promoFieldLabel">Title</label>
             <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #J2RGCRVG [2000]" />
             <textarea class="promoChannelText" readonly rows="5">
-👑 POAP KINGS | A CLAN WITH PROOF  
-🏷️ Clan Tag: #J2RGCRVG  
-🇺🇸 Region: United States  
-⚔️ BRAND NEW CLAN  
-↕️ League: Bronze (going up soon!)  
+👑 POAP KINGS | A CLAN WITH PROOF
+🏷️ Clan Tag: #J2RGCRVG
+🇺🇸 Region: United States
+⚔️ BRAND NEW CLAN
+↕️ League: Bronze (going up soon!)
 🏆 Required Trophies: [2000]
 
-🌟 Clan members collect unique POAPs  
-🥇 War winner awarded with Pass Royale!  
-🤝 Elders donate regularly to clan  
-🔥 War participation encouraged but not required  
+🌟 Clan members collect unique POAPs
+🥇 War winner awarded with Pass Royale!
+🤝 Elders donate regularly to clan
+🔥 War participation encouraged but not required
 ⛔️ Active members expected, idle members will be removed
 
 💡 Early active members get POAP KINGS Founder token!
 
-🌎 Learn more: https://poapkings.com  
+🌎 Learn more: https://poapkings.com
             </textarea>
           </div>
         </div>
@@ -219,44 +222,3 @@ Hope to see you in the arena.
         </div>
       </div>
     </section>
-
-    <footer>
-      <div class="tag">👑 <strong>POAP KINGS</strong> <span class="tiny">— Proof of Arena Push</span></div>
-      <p class="tiny mt-sm">
-        Content on this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>.
-      </p>
-    </footer>
-  </main>
-
-  <script src="https://tinylytics.app/embed/NnbTPjJ2AWXF8GZDuy54.js?hits&kudos=%E2%9A%94%EF%B8%8F&countries&events&beacon" defer></script>
-  <script>
-    document.addEventListener('click', function(e) {
-      var btn = e.target.closest('.promoChannelCopy');
-      if (!btn) return;
-      var textarea = btn.closest('.promoChannel').querySelector('textarea');
-      navigator.clipboard.writeText(textarea.value).then(function() {
-        btn.textContent = 'COPIED';
-        setTimeout(function() { btn.textContent = 'COPY'; }, 1500);
-      });
-    });
-    var sms = document.querySelector('.promoSms');
-    if (sms) {
-      sms.addEventListener('click', function(e) {
-        e.preventDefault();
-        var body = sms.closest('.promoChannel').querySelector('textarea').value.trim();
-        window.location.href = 'sms:?&body=' + encodeURIComponent(body);
-      });
-    }
-    var mailto = document.querySelector('.promoMailto');
-    if (mailto) {
-      mailto.addEventListener('click', function(e) {
-        e.preventDefault();
-        var channel = mailto.closest('.promoChannel');
-        var subject = channel.querySelector('.promoFieldInput').value;
-        var body = channel.querySelector('textarea').value.trim();
-        window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      });
-    }
-  </script>
-</body>
-</html>

@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: Roster | POAP KINGS | A Clash Royale Clan with Proof
+description: "POAP KINGS roster — current clan members and profile links."
+navActive: roster
+bodyAttrs: 'data-roster-path="/roster.json"'
+appJs: true
+tinylyticsDeferred: true
+---
+    <section class="pageIntro card">
+      <h1 class="pageTitle">Meet the Kings</h1>
+      <p class="sectionDesc">
+        The full roster of royalty, pushing together since February 4, 2026.
+        Each member links to <a href="https://royaleapi.com" target="_blank" rel="noreferrer">RoyaleAPI</a>, and those with POAPs can show off their collection.
+      </p>
+      <div class="ctaRow mt-sm">
+        <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="roster.join">Join the clan</a>
+        <a class="btn btnGhost" href="/faq" data-tinylytics-event="roster.read-faq">Read the FAQ</a>
+      </div>
+    </section>
+
+    <section>
+      <div id="clanStats" class="clanStatsGrid"></div>
+    </section>
+
+    <section>
+      <div class="card rosterPageCard">
+        <div class="rosterHeaderRow">
+          <div>
+            <h2 class="sectionTitle m-0">Members</h2>
+            <div class="tiny mt-xs" id="rosterUpdated">Last updated: —</div>
+          </div>
+          <div id="rosterStatus" class="tiny rosterCount">Loading roster…</div>
+        </div>
+
+        <div class="rosterControls rosterControlsSingle">
+          <label class="rosterControl">
+            <span>Search</span>
+            <input id="rosterSearch" type="search" placeholder="Name, tag, role, note" />
+          </label>
+        </div>
+
+        <div id="rosterGrid" class="rosterSections"></div>
+
+        <div class="rosterJoinCta">
+          <p id="openSpots" class="openSpotsText"></p>
+          <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="roster.join">Join the clan</a>
+        </div>
+      </div>
+    </section>

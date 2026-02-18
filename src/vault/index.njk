@@ -1,0 +1,45 @@
+---
+layout: base.njk
+title: Vault | POAP KINGS | A Clash Royale Clan with Proof
+description: "POAP KINGS vault — browse our collection of seasonal POAPs and milestone badges."
+navActive: vault
+bodyAttrs: 'data-vault-path="/vault.json"'
+appJs: true
+---
+    <section class="pageIntro card">
+      <h1 class="pageTitle">POAP Vault</h1>
+      <p class="sectionDesc">
+        The clan's collection of POAPs — seasonal proof, milestones, and event badges.
+        Each POAP marks a moment in POAP KINGS history.
+      </p>
+      <div class="ctaRow mt-sm">
+        <a class="btn btnPurple" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer" data-tinylytics-event="vault.view-poap-xyz">View on POAP.xyz</a>
+        <a class="btn btnGhost" href="/faq" data-tinylytics-event="vault.read-faq">Read the FAQ</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="card rosterPageCard">
+        <div class="rosterHeaderRow">
+          <div>
+            <h2 class="sectionTitle m-0">Collection</h2>
+            <div class="tiny mt-xs" id="vaultUpdated">Last updated: —</div>
+          </div>
+          <div id="vaultStatus" class="tiny rosterCount">Loading vault…</div>
+        </div>
+
+        <div class="rosterControls" style="grid-template-columns: 1fr">
+          <label class="rosterControl">
+            <span>Type</span>
+            <select id="vaultTypeFilter">
+              <option value="">All types</option>
+              <option value="Season">Season</option>
+              <option value="Milestone">Milestone</option>
+              <option value="Event">Event</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="vaultGrid" class="vaultGrid"></div>
+      </div>
+    </section>

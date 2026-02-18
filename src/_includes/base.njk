@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ description }}" />
+  <meta property="og:image" content="/assets/poapkings.png" />
+  <meta property="og:image:alt" content="POAP KINGS crest" />
+  <title>{{ title }}</title>
+
+  <link rel="webmention" href="https://tinylytics.app/webmention/{{ site.tinylyticsId }}" />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body{% if bodyAttrs %} {{ bodyAttrs | safe }}{% endif %}>
+  <header class="top">
+    <div class="wrap inner">
+      <div class="brandGroup">
+        <a class="navJoin" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="nav.join">JOIN</a>
+        <a class="brand" href="/"><strong>POAP KINGS</strong></a>
+      </div>
+
+      <nav aria-label="Primary">
+        <a{% if navActive == "home" %} class="active"{% endif %} href="/">Home</a>
+        <a{% if navActive == "roster" %} class="active"{% endif %} href="/roster">Roster</a>
+        <a{% if navActive == "vault" %} class="active"{% endif %} href="/vault">Vault</a>
+        <a{% if navActive == "members" %} class="active"{% endif %} href="/members">King's Keep</a>
+      </nav>
+    </div>
+  </header>
+
+  <main{% if mainId %} id="{{ mainId }}"{% endif %} class="wrap pageMain">
+    {{ content | safe }}
+
+    <footer>
+      <div class="tag">👑 <strong>POAP KINGS</strong> <span class="tiny">— Proof of Arena Push</span></div>
+      {% if supercellDisclaimer %}
+      <p class="tiny mt-sm">
+        This fan community is not affiliated with <a href="https://supercell.com" target="_blank" rel="noreferrer">Supercell</a>. Clash Royale is a trademark of its respective owner.
+      </p>
+      {% endif %}
+      <p class="tiny mt-sm">
+        Content on this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>.
+      </p>
+    </footer>
+  </main>
+
+  {% if appJs %}<script src="/app.js"></script>{% endif %}
+  {% if tinylyticsDeferred %}
+  <script data-tinylytics-src="https://tinylytics.app/embed/{{ site.tinylyticsId }}.js?hits&kudos=%F0%9F%91%8F&countries&events&beacon"></script>
+  {% else %}
+  <script src="https://tinylytics.app/embed/{{ site.tinylyticsId }}.js?hits&kudos=%E2%9A%94%EF%B8%8F&countries&events&beacon" defer></script>
+  {% endif %}
+  {{ extraScripts | safe }}
+</body>
+</html>
