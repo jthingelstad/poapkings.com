@@ -80,10 +80,22 @@ def build_roster(api_members, extras):
     today = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     members = []
 
+    new_tags = []
     for m in api_members:
         tag = m.get("tag", "").lstrip("#")
         role = ROLE_MAP.get(m.get("role", "member"), "Member")
-        extra = extras.get(tag, {})
+
+        # Auto-create extras entry for new members
+        if tag not in extras:
+            extras[tag] = {
+                "note": "",
+                "profile_url": "",
+                "address": "",
+                "date_joined": today,
+            }
+            new_tags.append(tag)
+
+        extra = extras[tag]
 
         arena = m.get("arena", {})
         arena_name = arena.get("name", "") if isinstance(arena, dict) else ""
@@ -108,7 +120,7 @@ def build_roster(api_members, extras):
 
     # Sort: date joined ascending (longest-tenured first), then alphabetical
     members.sort(key=lambda m: (m["date_joined"], m["name"].lower()))
-    return members, today
+    return members, today, new_tags
 
 
 def main():
@@ -126,7 +138,7 @@ def main():
         sys.exit(1)
 
     extras = load_extras()
-    members, today = build_roster(api_members, extras)
+    members, today, new_tags = build_roster(api_members, extras)
 
     roster = {"updated": today, "members": members}
     with open(ROSTER_PATH, "w") as f:
@@ -135,11 +147,12 @@ def main():
 
     print(f"Wrote {len(members)} members to roster.json (updated: {today})")
 
-    # Report new members (not in extras)
-    new_tags = [m["tag"] for m in members if m["tag"] not in extras]
+    # Persist any new extras entries
     if new_tags:
-        print(f"New members (not in roster-extra.json): {', '.join(new_tags)}")
-        print("Add them to roster-extra.json if you want to set custom data.")
+        with open(EXTRAS_PATH, "w") as f:
+            json.dump(extras, f, indent=2)
+            f.write("\n")
+        print(f"Added {len(new_tags)} new member(s) to roster-extra.json: {', '.join(new_tags)}")
 
 
 if __name__ == "__main__":
