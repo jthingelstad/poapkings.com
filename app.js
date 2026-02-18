@@ -104,9 +104,11 @@ function renderRosterRows(grid, members) {
     const url = royaleApiUrl(tag);
 
     const roleText = m.role ? escapeHtml(m.role) : "Member";
-    const role = `<span class="${roleClass(roleText)}">${roleText}</span>`;
+    const arena = m.arena ? `<span class="rosterArena"> @ ${escapeHtml(m.arena)}</span>` : "";
     const joined = formatJoinedDate(m.date_joined);
-    const joinedText = joined ? `<div class="rosterJoined">Joined ${escapeHtml(joined)}</div>` : "";
+    const roleJoined = joined
+      ? `<div class="rosterRoleJoined"><span class="${roleClass(roleText)}">${roleText}</span> Joined ${escapeHtml(joined)}</div>`
+      : `<div class="rosterRoleJoined"><span class="${roleClass(roleText)}">${roleText}</span></div>`;
     const note = m.note ? `<div class="rosterNote">${escapeHtml(m.note)}</div>` : "";
     const profileUrl = normalizeUrl(m.profile_url);
     const poapUrl = poapCollectionUrl(m.address);
@@ -117,15 +119,11 @@ function renderRosterRows(grid, members) {
       ? `<a class="rosterLink" href="${escapeHtml(poapUrl)}" target="_blank" rel="noreferrer">🏅 POAP</a>`
       : "";
 
-    const hasStats = m.exp_level || m.trophies || m.donations != null || m.last_seen || m.arena;
-    const lastSeenText = formatLastSeen(m.last_seen);
+    const hasStats = m.exp_level || m.trophies;
     const statsRow = hasStats ? `
           <div class="rosterStats">
             ${m.exp_level ? `<span class="rosterStat">👑 Lvl ${escapeHtml(String(m.exp_level))}</span>` : ""}
             ${m.trophies ? `<span class="rosterStat">🏆 ${formatNumber(m.trophies)}</span>` : ""}
-            ${m.arena ? `<span class="rosterStat">🏟️ ${escapeHtml(m.arena)}</span>` : ""}
-            ${m.donations != null && m.donations > 0 ? `<span class="rosterStat">🎁 ${formatNumber(m.donations)}</span>` : ""}
-            ${lastSeenText ? `<span class="rosterStat">🕐 ${escapeHtml(lastSeenText)}</span>` : ""}
           </div>` : "";
 
     return `
@@ -133,17 +131,16 @@ function renderRosterRows(grid, members) {
         <button class="tinylytics_kudos" data-path="/roster/${escapeHtml(rawTag)}"></button>
         <div class="rosterRowContent">
           <div class="rosterHeader">
-            <span class="rosterName">${name}</span>
-            ${role}
+            <span class="rosterName">${name}${arena}</span>
           </div>
-          ${joinedText}
+          ${roleJoined}
           ${statsRow}
-          ${note}
           <div class="rosterLinks">
             <a class="rosterLink" href="${url}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
             ${profileLink}
             ${poapLink}
           </div>
+          ${note}
         </div>
       </div>
     `;
