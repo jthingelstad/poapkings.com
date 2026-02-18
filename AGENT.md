@@ -40,7 +40,7 @@ npm start         # Dev server with live reload
 ## Deploy
 Pushing to `main` triggers the GitHub Actions workflow which:
 1. Installs dependencies (`npm ci`)
-2. Builds the site (`npx @11ty/eleventy`)
+2. Builds the site (`npm run build`)
 3. Deploys `_site/` to GitHub Pages
 
 **Important:** In the GitHub repo settings, Pages source must be set to **GitHub Actions** (not "Deploy from a branch").
