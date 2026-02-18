@@ -206,7 +206,6 @@ function renderClanStats(members) {
   const topTrophies = Math.max(...members.map(m => m.trophies || 0));
   const totalDonations = members.reduce((s, m) => s + (m.donations || 0), 0);
   const avgLevel = (members.reduce((s, m) => s + (m.exp_level || 0), 0) / count).toFixed(1);
-  const highestLevel = Math.max(...members.map(m => m.exp_level || 0));
 
   el.innerHTML = `
     <div class="clanStat">
@@ -232,10 +231,6 @@ function renderClanStats(members) {
     <div class="clanStat">
       <div class="clanStatValue">${avgLevel}</div>
       <div class="clanStatLabel">Avg King Level</div>
-    </div>
-    <div class="clanStat">
-      <div class="clanStatValue">${highestLevel}</div>
-      <div class="clanStatLabel">Highest Level</div>
     </div>
   `;
 }
