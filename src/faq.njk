@@ -1,36 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Frequently asked questions about POAP KINGS — clan wars, POAPs, Free Pass, roles, and more." />
-  <meta property="og:image" content="/assets/poapkings.png" />
-  <meta property="og:image:alt" content="POAP KINGS crest" />
-  <title>FAQ | POAP KINGS | A Clash Royale Clan with Proof</title>
-
-  <link rel="webmention" href="https://tinylytics.app/webmention/NnbTPjJ2AWXF8GZDuy54" />
-
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-
-<body>
-  <header class="top">
-    <div class="wrap inner">
-      <div class="brandGroup">
-        <a class="navJoin" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer" data-tinylytics-event="nav.join">JOIN</a>
-        <a class="brand" href="/"><strong>POAP KINGS</strong></a>
-      </div>
-
-      <nav aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/roster">Roster</a>
-        <a href="/vault">Vault</a>
-        <a href="/members">King's Keep</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap pageMain">
+---
+permalink: /faq/
+layout: base.njk
+title: FAQ | POAP KINGS | A Clash Royale Clan with Proof
+description: "Frequently asked questions about POAP KINGS — clan wars, POAPs, Free Pass, roles, and more."
+supercellDisclaimer: true
+---
     <section class="pageIntro card">
       <h1 class="pageTitle">FAQ</h1>
       <p class="sectionDesc">
@@ -42,7 +16,7 @@
       <div class="card card-padded">
         <h2 class="sectionTitle m-0 mb-xs">TL;DR</h2>
         <ul class="list">
-          <li>Open clan, 2,000 trophy minimum.</li>
+          <li>{{ site.clanStatus }} clan, {{ site.minTrophies | formatNumber }} trophy minimum.</li>
           <li>Be active, donate, don't be a jerk.</li>
           <li>Wars encouraged, not required.</li>
           <li>Top war earner each season gets a free Pass Royale.</li>
@@ -61,7 +35,7 @@
       </div>
       <div class="faq-item">
         <h3 class="faq-q">Why the name POAP KINGS?</h3>
-        <p>King Thing loves making POAPs and sharing them with friends — it's a wonderful way to mark events and moments that matter. We decided to bring that passion into the Clash Royale clan world. POAP (Proof of Attendance Protocol) gives members a permanent, collectible record of each season. Kings because we aim high. "Proof of Arena Push" is just our Clash-flavored spin on it.</p>
+        <p>King Thing loves making POAPs and sharing them with friends — it's a wonderful way to mark events and moments that matter. We decided to bring that passion into the Clash Royale clan world. POAP (Proof of Attendance Protocol) gives members a permanent, collectible record of each season. Kings because we aim high. "{{ site.tagline }}" is just our Clash-flavored spin on it.</p>
       </div>
     </section>
 
@@ -69,7 +43,7 @@
       <h2 class="sectionTitle">Joining</h2>
       <div class="faq-item">
         <h3 class="faq-q">How do I join?</h3>
-        <p>We're open — no invite needed. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#J2RGCRVG</strong> in Clash Royale. Minimum <strong>2,000 trophies</strong> to join.</p>
+        <p>We're {{ site.clanStatus | lower }} — no invite needed. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ site.minTrophies | formatNumber }} trophies</strong> to join.</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">What are the clan rules?</h3>
@@ -187,23 +161,8 @@
           Ask in clan chat or reach out to leadership directly. No question is too basic.
         </p>
         <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://link.clashroyale.com/invite/clan/en?tag=J2RGCRVG&token=dtw94pzg" target="_blank" rel="noreferrer" data-tinylytics-event="faq.join">Join the clan</a>
+          <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="faq.join">Join the clan</a>
           <a class="btn btnGhost" href="/members" data-tinylytics-event="faq.kings-keep">King's Keep</a>
         </div>
       </div>
     </section>
-
-    <footer>
-      <div class="tag">👑 <strong>POAP KINGS</strong> <span class="tiny">— Proof of Arena Push</span></div>
-      <p class="tiny mt-sm">
-        This fan community is not affiliated with <a href="https://supercell.com" target="_blank" rel="noreferrer">Supercell</a>. Clash Royale is a trademark of its respective owner.
-      </p>
-      <p class="tiny mt-sm">
-        Content on this site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>.
-      </p>
-    </footer>
-  </main>
-
-  <script src="https://tinylytics.app/embed/NnbTPjJ2AWXF8GZDuy54.js?hits&kudos=%E2%9A%94%EF%B8%8F&countries&events&beacon" defer></script>
-</body>
-</html>

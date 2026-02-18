@@ -1,0 +1,91 @@
+---
+permalink: /roster/
+layout: base.njk
+title: Roster | POAP KINGS | A Clash Royale Clan with Proof
+description: "POAP KINGS roster — current clan members and profile links."
+navActive: roster
+appJs: true
+---
+    <section class="pageIntro card">
+      <h1 class="pageTitle">Meet the Kings</h1>
+      <p class="sectionDesc">
+        The full roster of royalty, pushing together since February 4, 2026.
+        Each member links to <a href="https://royaleapi.com" target="_blank" rel="noreferrer">RoyaleAPI</a>, and those with POAPs can show off their collection.
+      </p>
+      <div class="ctaRow mt-sm">
+        <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="roster.join">Join the clan</a>
+        <a class="btn btnGhost" href="/faq" data-tinylytics-event="roster.read-faq">Read the FAQ</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="clanStatsGrid">
+        {% include "clan-stats.njk" %}
+      </div>
+    </section>
+
+    <section>
+      <div class="card rosterPageCard">
+        <div class="rosterHeaderRow">
+          <div>
+            <h2 class="sectionTitle m-0">Members</h2>
+            <div class="tiny mt-xs">Last updated: {{ roster.updated | formatLongDate }}</div>
+          </div>
+          <div id="rosterStatus" class="tiny rosterCount">Showing {{ roster.members | length }} of {{ roster.members | length }} member{{ "s" if roster.members | length != 1 }}</div>
+        </div>
+
+        <div class="rosterControls rosterControlsSingle">
+          <label class="rosterControl">
+            <span>Search</span>
+            <input id="rosterSearch" type="search" placeholder="Name, tag, role, note" />
+          </label>
+        </div>
+
+        <div id="rosterGrid" class="rosterSections">
+          {% for group in roster.members | groupByRole %}
+          <div class="rosterSection">
+            <div class="rosterSectionHeading">{{ group.label }}</div>
+            <div class="rosterGrid">
+              {% for m in group.members %}
+              {%- set role = m.role if m.role else "Member" -%}
+              {%- set rawTag = m.tag | replace("#", "") -%}
+              <div class="rosterRow" data-search="{{ m | searchText | e }}">
+                <button class="tinylytics_kudos" data-path="/roster/{{ rawTag | e }}"></button>
+                <div class="rosterRowContent">
+                  <div class="rosterHeader">
+                    <span class="rosterName">{{ m.name | e }}{% if m.arena %}<span class="rosterArena"> @ {{ m.arena | e }}</span>{% endif %}</span>
+                  </div>
+                  <div class="rosterRoleJoined">
+                    <span class="{{ role | roleClass }}">{{ role | e }}</span>
+                    {%- if m.date_joined %} Joined {{ m.date_joined | formatDate }}{% endif %}
+                  </div>
+                  <div class="rosterStatsLinks">
+                    {% if m.exp_level %}<span class="rosterStat">👑 Lvl {{ m.exp_level }}</span>{% endif %}
+                    {% if m.trophies %}<span class="rosterStat">🏆 {{ m.trophies | formatNumber }}</span>{% endif %}
+                    <a class="rosterLink" href="{{ m.tag | royaleApiUrl | e }}" target="_blank" rel="noreferrer">⚔️ RoyaleAPI</a>
+                    {%- set profileUrl = m.profile_url | safeUrl %}
+                    {% if profileUrl %}<a class="rosterLink" href="{{ profileUrl | e }}" target="_blank" rel="noreferrer">🔗 Profile</a>{% endif %}
+                    {%- set poapUrl = m.address | poapCollectionUrl %}
+                    {% if poapUrl %}<a class="rosterLink" href="{{ poapUrl | e }}" target="_blank" rel="noreferrer">🏅 POAP</a>{% endif %}
+                  </div>
+                  {% if m.note %}<div class="rosterNote">{{ m.note | e }}</div>{% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+          <div class="rosterEmpty" id="rosterEmpty" hidden>No members match the current search.</div>
+        </div>
+
+        <div class="rosterJoinCta">
+          {% set openSpots = 50 - (roster.members | length) %}
+          {% if openSpots > 0 %}
+          <p class="openSpotsText">{{ openSpots }} spot{{ "s" if openSpots != 1 }} open</p>
+          {% else %}
+          <p class="openSpotsText">Clan is currently full</p>
+          {% endif %}
+          <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="roster.join">Join the clan</a>
+        </div>
+      </div>
+    </section>
