@@ -98,7 +98,7 @@ eleventy.config.js          Eleventy configuration and filters
 - **Templates:** Nunjucks
 - **Styling:** Plain CSS (no framework)
 - **Client-side JS:** Vanilla JavaScript
-- **Analytics:** [Tinylytics](https://tinylytics.app/) (privacy-focused)
+- **Analytics:** [Tinylytics](https://tinylytics.app/) (privacy-focused) -- [public stats](https://tinylytics.app/public/nqAdZqEbeis65byoh2_3?token=poapkings)
 - **Hosting:** GitHub Pages
 - **CI/CD:** GitHub Actions
 
