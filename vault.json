@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-07",
+  "updated": "2026-02-18",
   "poaps": [
     {
       "name": "POAP KINGS Founder",
@@ -10,6 +10,22 @@
       "description": "This Founder POAP recognizes the players who were there at the start — pushing, donating, and building the traditions that define the clan."
     },
     {
+      "name": "King Thing 10K",
+      "event_id": "226140",
+      "image": "/assets/vault/king-thing-10k.png",
+      "type": "Milestone",
+      "date": "2026-02-11",
+      "description": "This POAP marks the Ladder battle where King Thing of POAP KINGS surged from 9,986 to 10,016 trophies, officially breaking the 10K barrier. Running a disciplined 3.8 elixir control deck, he leveraged a Level 16 Witch to generate constant skeleton pressure, a Level 16 Cannon to shut down counter pushes, and a stealthy Royal Ghost to chip and threaten. Skeleton Army punished misplays, Royal Hogs split lanes to force defensive splits, and Inferno Dragon melted through resistance when the window opened, while Arrows kept swarms in check. With composure, tempo control, and precise timing, King Thing earned the +30 trophies that secured his place in five-digit territory."
+    },
+    {
+      "name": "POAP KINGS Sunday Scrimmage 1",
+      "event_id": "226139",
+      "image": "/assets/vault/pksundayscrimmage1.png",
+      "type": "Event",
+      "date": "2026-02-15",
+      "description": "Our first-ever POAP KINGS Sunday Scrimmage. Tournament Standard. Climb the leaderboard and claim the crown. Bragging rights are eternal."
+    },
+    {
       "name": "First War Win",
       "upcoming": true,
       "image": "/assets/vault/upcoming.png",
@@ -18,12 +34,36 @@
       "description": "Awarded when the clan wins its first Clan War."
     },
     {
-      "name": "Season 1 Champion",
+      "name": "Season 129",
       "upcoming": true,
       "image": "/assets/vault/upcoming.png",
       "type": "Season",
       "date": "TBD",
       "description": "Awarded to every member who completes the first full clan season."
+    },
+    {
+      "name": "20 Members",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Milestone",
+      "date": "TBD",
+      "description": "Awarded when the clan reaches 20 members."
+    },
+    {
+      "name": "30 Members",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Milestone",
+      "date": "TBD",
+      "description": "Awarded when the clan reaches 30 members."
+    },
+    {
+      "name": "40 Members",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Milestone",
+      "date": "TBD",
+      "description": "Awarded when the clan reaches 40 members."
     },
     {
       "name": "50 Members",

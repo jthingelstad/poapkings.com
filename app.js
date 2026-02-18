@@ -196,6 +196,62 @@ function renderRosterSection(label, members, container) {
   container.appendChild(sectionGrid);
 }
 
+function renderClanStats(members) {
+  const el = document.getElementById("clanStats");
+  if (!el || !members.length) return;
+
+  const count = members.length;
+  const totalTrophies = members.reduce((s, m) => s + (m.trophies || 0), 0);
+  const avgTrophies = Math.round(totalTrophies / count);
+  const topTrophies = Math.max(...members.map(m => m.trophies || 0));
+  const totalDonations = members.reduce((s, m) => s + (m.donations || 0), 0);
+  const avgLevel = (members.reduce((s, m) => s + (m.exp_level || 0), 0) / count).toFixed(1);
+  const highestLevel = Math.max(...members.map(m => m.exp_level || 0));
+
+  el.innerHTML = `
+    <div class="clanStat">
+      <div class="clanStatValue">${count}</div>
+      <div class="clanStatLabel">Members</div>
+    </div>
+    <div class="clanStat">
+      <div class="clanStatValue">${formatNumber(totalTrophies)}</div>
+      <div class="clanStatLabel">Total Trophies</div>
+    </div>
+    <div class="clanStat">
+      <div class="clanStatValue">${formatNumber(avgTrophies)}</div>
+      <div class="clanStatLabel">Avg Trophies</div>
+    </div>
+    <div class="clanStat">
+      <div class="clanStatValue">${formatNumber(topTrophies)}</div>
+      <div class="clanStatLabel">Top Trophies</div>
+    </div>
+    <div class="clanStat">
+      <div class="clanStatValue">${formatNumber(totalDonations)}</div>
+      <div class="clanStatLabel">Weekly Donations</div>
+    </div>
+    <div class="clanStat">
+      <div class="clanStatValue">${avgLevel}</div>
+      <div class="clanStatLabel">Avg King Level</div>
+    </div>
+    <div class="clanStat">
+      <div class="clanStatValue">${highestLevel}</div>
+      <div class="clanStatLabel">Highest Level</div>
+    </div>
+  `;
+}
+
+async function loadClanStats() {
+  if (!document.getElementById("clanStats")) return;
+  if (document.getElementById("rosterGrid")) return; // roster page handles its own stats
+  try {
+    const rosterPath = document.body?.dataset?.rosterPath || "/roster.json";
+    const res = await fetch(rosterPath, { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json();
+    renderClanStats(Array.isArray(data.members) ? data.members : []);
+  } catch { /* silent */ }
+}
+
 async function loadRoster() {
   const status = document.getElementById("rosterStatus");
   const grid = document.getElementById("rosterGrid");
@@ -216,42 +272,7 @@ async function loadRoster() {
       updatedLabel.textContent = toUpdatedDateLabel(data.updated);
     }
 
-    const clanStatsEl = document.getElementById("clanStats");
-    if (clanStatsEl && allMembers.length > 0) {
-      const totalTrophies = allMembers.reduce((s, m) => s + (m.trophies || 0), 0);
-      const avgTrophies = Math.round(totalTrophies / allMembers.length);
-      const topTrophies = Math.max(...allMembers.map(m => m.trophies || 0));
-      const totalDonations = allMembers.reduce((s, m) => s + (m.donations || 0), 0);
-      const avgLevel = (allMembers.reduce((s, m) => s + (m.exp_level || 0), 0) / allMembers.length).toFixed(1);
-      const highestLevel = Math.max(...allMembers.map(m => m.exp_level || 0));
-
-      clanStatsEl.innerHTML = `
-        <div class="clanStat">
-          <div class="clanStatValue">${formatNumber(totalTrophies)}</div>
-          <div class="clanStatLabel">Total Trophies</div>
-        </div>
-        <div class="clanStat">
-          <div class="clanStatValue">${formatNumber(avgTrophies)}</div>
-          <div class="clanStatLabel">Avg Trophies</div>
-        </div>
-        <div class="clanStat">
-          <div class="clanStatValue">${formatNumber(topTrophies)}</div>
-          <div class="clanStatLabel">Top Trophies</div>
-        </div>
-        <div class="clanStat">
-          <div class="clanStatValue">${formatNumber(totalDonations)}</div>
-          <div class="clanStatLabel">Weekly Donations</div>
-        </div>
-        <div class="clanStat">
-          <div class="clanStatValue">${avgLevel}</div>
-          <div class="clanStatLabel">Avg King Level</div>
-        </div>
-        <div class="clanStat">
-          <div class="clanStatValue">${highestLevel}</div>
-          <div class="clanStatLabel">Highest Level</div>
-        </div>
-      `;
-    }
+    renderClanStats(allMembers);
 
     if (openSpotsEl) {
       const maxMembers = 50;
@@ -405,5 +426,6 @@ async function loadVault() {
   }
 }
 
+loadClanStats();
 loadRoster();
 loadVault();
