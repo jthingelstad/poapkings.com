@@ -72,7 +72,7 @@ appJs: true
               {% set pct = (current / target * 100) %}
               <div class="progressWrap">
                 <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
-                <div class="progressLabel">{{ current }} of {{ target }} members</div>
+                <div class="progressLabel">{{ current }}/{{ target }}</div>
               </div>
               {% elif p.progress.type == "clan_trophies" %}
               {% set current = site.clanWarTrophies or 0 %}
@@ -80,7 +80,7 @@ appJs: true
               {% set pct = (current / target * 100) %}
               <div class="progressWrap">
                 <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
-                <div class="progressLabel">{{ current | formatNumber }} of {{ target | formatNumber }} trophies</div>
+                <div class="progressLabel">{{ current | formatNumber }}/{{ target | formatNumber }}</div>
               </div>
               {% endif %}
               {% endif %}

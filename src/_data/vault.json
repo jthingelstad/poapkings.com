@@ -34,8 +34,21 @@
       "description": "Awarded to every member who completes the first full clan season.",
       "progress": {
         "type": "date",
-        "start": "2026-02-03",
-        "end": "2026-03-03"
+        "start": "2026-02-02",
+        "end": "2026-03-01"
+      }
+    },
+    {
+      "name": "Season 130",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Season",
+      "date": "TBD",
+      "description": "Awarded to every member who completes the clan season.",
+      "progress": {
+        "type": "date",
+        "start": "2026-03-02",
+        "end": "2026-03-29"
       }
     },
     {
