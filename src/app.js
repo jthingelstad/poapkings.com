@@ -83,6 +83,49 @@ function initProgressBars() {
   });
 }
 
+function initMemberDurations() {
+  var now = new Date();
+  var ty = now.getUTCFullYear(),
+    tm = now.getUTCMonth(),
+    td = now.getUTCDate();
+  var today = Date.UTC(ty, tm, td);
+
+  function mkDate(year, month, day) {
+    var maxDay = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+    return new Date(Date.UTC(year, month, Math.min(day, maxDay)));
+  }
+
+  document.querySelectorAll("[data-joined]").forEach(function (el) {
+    var join = new Date(el.dataset.joined);
+    if (isNaN(join)) return;
+    var jy = join.getUTCFullYear(),
+      jm = join.getUTCMonth(),
+      jd = join.getUTCDate();
+    if (today < Date.UTC(jy, jm, jd)) return;
+
+    var y = ty - jy;
+    if (mkDate(jy + y, jm, jd) > new Date(today)) y--;
+
+    var m = 0;
+    while (mkDate(jy + y, jm + m + 1, jd) <= new Date(today)) m++;
+
+    var base = mkDate(jy + y, jm + m, jd);
+    var days = Math.round((today - base.getTime()) / 86400000) + 1;
+
+    var w = Math.floor(days / 7);
+    var rd = days % 7;
+
+    var parts = [];
+    if (y) parts.push(y + (y === 1 ? " year" : " years"));
+    if (m) parts.push(m + (m === 1 ? " month" : " months"));
+    if (w) parts.push(w + (w === 1 ? " week" : " weeks"));
+    if (rd) parts.push(rd + (rd === 1 ? " day" : " days"));
+
+    el.textContent = " \u00b7 " + (parts.join(" ") || "1 day");
+  });
+}
+
 initRosterSearch();
 initVaultFilter();
 initProgressBars();
+initMemberDurations();
