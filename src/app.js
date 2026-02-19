@@ -79,7 +79,7 @@ function initProgressBars() {
     const label = el.querySelector(".progressLabel");
 
     if (fill) fill.style.width = pct.toFixed(0) + "%";
-    if (label) label.textContent = `Day ${elapsedDays} of ${totalDays}`;
+    if (label) label.textContent = `${elapsedDays}/${totalDays}`;
   });
 }
 
