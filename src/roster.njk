@@ -57,7 +57,7 @@ appJs: true
                   </div>
                   <div class="rosterRoleJoined">
                     <span class="{{ role | roleClass }}">{{ role | e }}</span>
-                    {%- if m.date_joined %} Joined {{ m.date_joined | formatDate }}{% endif %}
+                    {%- if m.date_joined %} Joined {{ m.date_joined | formatDate }}<span class="rosterDuration" data-joined="{{ m.date_joined }}"></span>{% endif %}
                   </div>
                   <div class="rosterStatsLinks">
                     {% if m.exp_level %}<span class="rosterStat">👑 Lvl {{ m.exp_level }}</span>{% endif %}
