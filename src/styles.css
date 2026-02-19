@@ -760,6 +760,32 @@ footer{
   border-color: rgba(76,200,245,.35);
 }
 
+/* Progress bars (Clash-style green) */
+.progressWrap{
+  margin-top:8px;
+}
+.progressTrack{
+  height:10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.10);
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.progressFill{
+  height:100%;
+  border-radius:999px;
+  background: linear-gradient(90deg, #4cd964, #34c759);
+  box-shadow: 0 0 8px rgba(76,217,100,.35);
+  transition: width .3s ease;
+}
+.progressLabel{
+  margin-top:4px;
+  font-size:11px;
+  font-weight:700;
+  color: rgba(255,255,255,.55);
+  letter-spacing:.02em;
+}
+
 .vaultCardUpcoming{
   opacity: 0.5;
   transition: transform .14s ease, border-color .14s ease, box-shadow .14s ease, opacity .14s ease;

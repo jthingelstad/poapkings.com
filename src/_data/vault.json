@@ -31,7 +31,24 @@
       "image": "/assets/vault/upcoming.png",
       "type": "Season",
       "date": "TBD",
-      "description": "Awarded to every member who completes the first full clan season."
+      "description": "Awarded to every member who completes the first full clan season.",
+      "progress": {
+        "type": "date",
+        "start": "2026-02-03",
+        "end": "2026-03-03"
+      }
+    },
+    {
+      "name": "Silver League",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Milestone",
+      "date": "TBD",
+      "description": "Awarded when the clan reaches Silver League in Clan Wars, requiring 600 war trophies.",
+      "progress": {
+        "type": "clan_trophies",
+        "target": 600
+      }
     },
     {
       "name": "20 Members",
@@ -39,7 +56,11 @@
       "image": "/assets/vault/upcoming.png",
       "type": "Milestone",
       "date": "TBD",
-      "description": "Awarded when the clan reaches 20 members."
+      "description": "Awarded when the clan reaches 20 members.",
+      "progress": {
+        "type": "members",
+        "target": 20
+      }
     },
     {
       "name": "30 Members",
@@ -47,7 +68,11 @@
       "image": "/assets/vault/upcoming.png",
       "type": "Milestone",
       "date": "TBD",
-      "description": "Awarded when the clan reaches 30 members."
+      "description": "Awarded when the clan reaches 30 members.",
+      "progress": {
+        "type": "members",
+        "target": 30
+      }
     },
     {
       "name": "40 Members",
@@ -55,7 +80,11 @@
       "image": "/assets/vault/upcoming.png",
       "type": "Milestone",
       "date": "TBD",
-      "description": "Awarded when the clan reaches 40 members."
+      "description": "Awarded when the clan reaches 40 members.",
+      "progress": {
+        "type": "members",
+        "target": 40
+      }
     },
     {
       "name": "50 Members",
@@ -63,7 +92,11 @@
       "image": "/assets/vault/upcoming.png",
       "type": "Milestone",
       "date": "TBD",
-      "description": "Awarded when the clan reaches a full roster of 50 members."
+      "description": "Awarded when the clan reaches a full roster of 50 members.",
+      "progress": {
+        "type": "members",
+        "target": 50
+      }
     }
   ]
 }

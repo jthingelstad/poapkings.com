@@ -60,6 +60,30 @@ appJs: true
               <div class="vaultCardName">{{ (p.name or 'Untitled POAP') | e }}</div>
               {% if p.date %}<div class="vaultCardDate">{{ p.date | formatDate }}</div>{% endif %}
               {% if p.description %}<div class="vaultCardDesc">{{ p.description | e }}</div>{% endif %}
+              {% if p.progress %}
+              {% if p.progress.type == "date" %}
+              <div class="progressWrap" data-progress="date" data-start="{{ p.progress.start }}" data-end="{{ p.progress.end }}">
+                <div class="progressTrack"><div class="progressFill"></div></div>
+                <div class="progressLabel"></div>
+              </div>
+              {% elif p.progress.type == "members" %}
+              {% set current = roster.members | length %}
+              {% set target = p.progress.target %}
+              {% set pct = (current / target * 100) %}
+              <div class="progressWrap">
+                <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
+                <div class="progressLabel">{{ current }} of {{ target }} members</div>
+              </div>
+              {% elif p.progress.type == "clan_trophies" %}
+              {% set current = site.clanWarTrophies or 0 %}
+              {% set target = p.progress.target %}
+              {% set pct = (current / target * 100) %}
+              <div class="progressWrap">
+                <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
+                <div class="progressLabel">{{ current | formatNumber }} of {{ target | formatNumber }} trophies</div>
+              </div>
+              {% endif %}
+              {% endif %}
             </div>
           {%- if eventUrl %}</a>
           {%- else %}</div>
