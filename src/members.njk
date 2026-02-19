@@ -6,6 +6,7 @@ description: "King's Keep — onboarding and member resources for POAP KINGS."
 navActive: members
 extraScripts: '<script src="/members-promo.js"></script>'
 ---
+    {%- set stats = roster.members | clanStats -%}
     <section class="pageIntro card">
       <h1 class="pageTitle">Welcome KING...</h1>
       <p class="sectionDesc">
@@ -65,7 +66,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
             </div>
             <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
             <textarea class="promoChannelText" readonly rows="3">
-Hey! We're building a new Clash Royale clan called POAP KINGS — active play, good vibes, and POAPs as proof. https://poapkings.com
+Hey! Join POAP KINGS — a {{ stats.count }}-member Clash Royale clan with active play, good vibes, and POAPs as proof. https://poapkings.com
             </textarea>
           </div>
 
@@ -76,7 +77,7 @@ Hey! We're building a new Clash Royale clan called POAP KINGS — active play, g
             </div>
             <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
             <textarea class="promoChannelText" readonly rows="3">
-👑 New Clash Royale clan: POAP KINGS. Active players, good vibes, POAPs as proof. https://poapkings.com
+👑 POAP KINGS — {{ stats.count }} members, {{ stats.totalTrophies | formatNumber }}+ combined trophies. Active play, good vibes, POAPs as proof. https://poapkings.com
             </textarea>
           </div>
 
@@ -96,14 +97,17 @@ Hi there,
 
 We wanted to share an invitation to join a great Clash Royale clan: POAP KINGS.
 
-POAP KINGS is built around active, positive gameplay and something a little different—collecting POAPs as proof of participation and shared clan history. It's a place for players who enjoy progression, community, and being part of something from the beginning.
+POAP KINGS is built around active, positive gameplay and something a little different—collecting POAPs as proof of participation and shared clan history. With {{ stats.count }} members and {{ stats.totalTrophies | formatNumber }} combined trophies, it's a growing community for players who enjoy progression, competition, and being part of something.
 
 POAP KINGS | A Clan With Proof
 Clan Tag: #{{ site.clanTag }}
 Region: United States
 League: {{ site.clanLeague }} (and climbing)
+Members: {{ stats.count }}
+Combined Trophies: {{ stats.totalTrophies | formatNumber }}
+Weekly Donations: {{ stats.totalDonations | formatNumber }}
+Avg King Level: {{ stats.avgLevel }}
 Required Trophies: {{ site.minTrophies | formatNumber }}
-Status: Brand new clan
 
 What makes POAP KINGS different
 - Clan members collect unique POAPs tied to milestones and participation
@@ -136,17 +140,17 @@ Hope to see you in the arena.
 👑 POAP KINGS | A CLAN WITH PROOF
 🏷️ Clan Tag: #{{ site.clanTag }}
 🇺🇸 Region: United States
-⚔️ BRAND NEW CLAN
-↕️ League: {{ site.clanLeague }} (going up soon!)
-🏆 Required Trophies: [{{ site.minTrophies }}]
+↕️ League: {{ site.clanLeague }} (and climbing)
+👥 Members: {{ stats.count }}
+🏆 Combined Trophies: {{ stats.totalTrophies | formatNumber }}
+🤝 Weekly Donations: {{ stats.totalDonations | formatNumber }}
+⬆️ Avg King Level: {{ stats.avgLevel }}
+🔑 Required Trophies: [{{ site.minTrophies }}]
 
 🌟 Clan members collect unique POAPs
 🥇 War winner awarded with Pass Royale!
-🤝 Elders donate regularly to clan
 🔥 War participation encouraged but not required
 ⛔️ Active members expected, idle members will be removed
-
-💡 Early active members get POAP KINGS Founder token!
 
 🌎 Learn more: https://poapkings.com
 🔗 Clan Invite: {{ site.joinUrl }}
@@ -163,22 +167,22 @@ Hope to see you in the arena.
             </div>
             <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not attempt to include the clan invite link!</p>
             <label class="promoFieldLabel">Title</label>
-            <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #{{ site.clanTag }} [{{ site.minTrophies }}]" />
+            <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #{{ site.clanTag }} [{{ site.minTrophies }}] — {{ stats.count }} members" />
             <textarea class="promoChannelText" readonly rows="5">
 👑 POAP KINGS | A CLAN WITH PROOF
 🏷️ Clan Tag: #{{ site.clanTag }}
 🇺🇸 Region: United States
-⚔️ BRAND NEW CLAN
-↕️ League: {{ site.clanLeague }} (going up soon!)
-🏆 Required Trophies: [{{ site.minTrophies }}]
+↕️ League: {{ site.clanLeague }} (and climbing)
+👥 Members: {{ stats.count }}
+🏆 Combined Trophies: {{ stats.totalTrophies | formatNumber }}
+🤝 Weekly Donations: {{ stats.totalDonations | formatNumber }}
+⬆️ Avg King Level: {{ stats.avgLevel }}
+🔑 Required Trophies: [{{ site.minTrophies }}]
 
 🌟 Clan members collect unique POAPs
 🥇 War winner awarded with Pass Royale!
-🤝 Elders donate regularly to clan
 🔥 War participation encouraged but not required
 ⛔️ Active members expected, idle members will be removed
-
-💡 Early active members get POAP KINGS Founder token!
 
 🌎 Learn more: https://poapkings.com
             </textarea>
