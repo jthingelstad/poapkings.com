@@ -55,5 +55,34 @@ function initVaultFilter() {
   });
 }
 
+function initProgressBars() {
+  document.querySelectorAll('[data-progress="date"]').forEach((el) => {
+    const start = new Date(el.dataset.start + "T00:00:00Z");
+    const end = new Date(el.dataset.end + "T00:00:00Z");
+    const now = new Date();
+    const today = new Date(
+      Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()),
+    );
+
+    const totalMs = end - start;
+    const elapsedMs = today - start;
+    const totalDays = Math.round(totalMs / (1000 * 60 * 60 * 24));
+    const elapsedDays = Math.max(
+      0,
+      Math.min(totalDays, Math.round(elapsedMs / (1000 * 60 * 60 * 24))),
+    );
+
+    let pct = totalMs > 0 ? (elapsedMs / totalMs) * 100 : 0;
+    pct = Math.max(0, Math.min(100, pct));
+
+    const fill = el.querySelector(".progressFill");
+    const label = el.querySelector(".progressLabel");
+
+    if (fill) fill.style.width = pct.toFixed(0) + "%";
+    if (label) label.textContent = `Day ${elapsedDays} of ${totalDays}`;
+  });
+}
+
 initRosterSearch();
 initVaultFilter();
+initProgressBars();

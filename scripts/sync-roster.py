@@ -16,6 +16,7 @@ ROLE_MAP = {"leader": "Leader", "coLeader": "Co-Leader", "elder": "Elder", "memb
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 ROSTER_PATH = PROJECT_ROOT / "src" / "_data" / "roster.json"
+SITE_PATH = PROJECT_ROOT / "src" / "_data" / "site.json"
 EXTRAS_PATH = PROJECT_ROOT / "roster-extra.json"
 ENV_PATH = PROJECT_ROOT / ".env"
 
@@ -65,6 +66,40 @@ def fetch_members(api_key):
             print(f"ERROR: HTTP {e.code} — {reason or 'unknown'}", file=sys.stderr)
             print(f"Message: {message}", file=sys.stderr)
         sys.exit(1)
+
+
+def fetch_clan(api_key):
+    """Fetch clan details from the Clash Royale API."""
+    url = f"{API_BASE}/clans/%23{CLAN_TAG}"
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"Bearer {api_key}",
+        "Accept": "application/json",
+    })
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        print(f"WARNING: Could not fetch clan details: HTTP {e.code}", file=sys.stderr)
+        return None
+
+
+def update_site_json(clan_data):
+    """Update site.json with clan-level statistics from the API."""
+    if not clan_data:
+        return
+    with open(SITE_PATH, "r") as f:
+        site = json.load(f)
+
+    site["clanWarTrophies"] = clan_data.get("clanWarTrophies", 0)
+    site["clanScore"] = clan_data.get("clanScore", 0)
+    site["donationsPerWeek"] = clan_data.get("donationsPerWeek", 0)
+
+    with open(SITE_PATH, "w") as f:
+        json.dump(site, f, indent=2)
+        f.write("\n")
+
+    print(f"Updated site.json: warTrophies={site['clanWarTrophies']}, "
+          f"score={site['clanScore']}, donations/wk={site['donationsPerWeek']}")
 
 
 def load_extras():
@@ -129,6 +164,10 @@ def main():
         print("ERROR: No API key found.", file=sys.stderr)
         print("Set CR_API_KEY in your environment or in .env at the project root.", file=sys.stderr)
         sys.exit(1)
+
+    print(f"Fetching clan #{CLAN_TAG}...")
+    clan_data = fetch_clan(api_key)
+    update_site_json(clan_data)
 
     print(f"Fetching clan #{CLAN_TAG} members...")
     api_members = fetch_members(api_key)
