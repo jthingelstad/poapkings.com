@@ -50,7 +50,6 @@ appJs: true
               {%- set role = m.role if m.role else "Member" -%}
               {%- set rawTag = m.tag | replace("#", "") -%}
               <div class="rosterRow" data-search="{{ m | searchText | e }}">
-                <button class="tinylytics_kudos" data-path="/roster/{{ rawTag | e }}"></button>
                 <div class="rosterRowContent">
                   <div class="rosterHeader">
                     <span class="rosterName">{{ m.name | e }}{% if m.arena %}<span class="rosterArena"> @ {{ m.arena | e }}</span>{% endif %}</span>
@@ -70,6 +69,7 @@ appJs: true
                   </div>
                   {% if m.note %}<div class="rosterNote">{{ m.note | e }}</div>{% endif %}
                 </div>
+                <button class="tinylytics_kudos" data-path="/roster/{{ rawTag | e }}"></button>
               </div>
               {% endfor %}
             </div>

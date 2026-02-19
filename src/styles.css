@@ -840,13 +840,10 @@ footer{
   .clanStatValue{ font-size:22px }
 }
 
-/* Awards */
-.awardsGrid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:14px }
-@media(max-width:920px){ .awardsGrid{ grid-template-columns:1fr } }
-.awardCard{ padding:16px; border-radius: var(--radius); background: var(--surface); border:1px solid var(--border) }
-.awardCard h3{ margin:0 0 8px; font-size:18px; font-family: var(--display-font) }
-.awardCard p{ margin:0; font-size:14px; color: var(--muted) }
-.awardWinner{ margin-top:10px; font-size:13px; font-weight:700; color: var(--gold) }
+/* Pass Winners */
+.passWinnersList{ list-style:none; margin:0; padding:0 }
+.passWinnersList li{ padding:10px 0; font-size:15px; border-bottom:1px solid var(--border) }
+.passWinnersList li:last-child{ border-bottom:none }
 
 @media (max-width: 600px){
   .vaultGrid{
