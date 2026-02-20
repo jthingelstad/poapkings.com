@@ -13,7 +13,7 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with [Elevent
   - `src/roster.njk`: Roster page (`/roster/`).
   - `src/vault.njk`: Vault page (`/vault/`).
   - `src/faq.njk`: FAQ page (`/faq/`).
-  - `src/members.njk`: King's Keep page (`/members/`).
+  - `src/members.njk`: Members page (`/members/`).
   - `src/setup.njk`: Clan Setup page (`/members/setup/`).
   - `src/404.njk`: Custom 404 page (standalone layout).
   - `src/styles.css`: All styling.
