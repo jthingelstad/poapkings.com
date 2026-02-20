@@ -13,7 +13,7 @@ Visit the live site at [poapkings.com](https://poapkings.com).
 - **Roster** -- Live clan roster synced from the Clash Royale API with player stats, roles, and links to RoyaleAPI profiles
 - **POAP Vault** -- Browse the clan's POAP (Proof of Attendance Protocol) collection marking milestones and seasons
 - **Client-side search and filtering** -- Instantly search roster members or filter vault POAPs by type
-- **King's Keep** -- Member hub with clan setup guide, awards, and promotion tools
+- **Members** -- Member hub with clan setup guide, awards, and promotion tools
 - **FAQ** -- Answers to common questions about the clan and POAPs
 
 ## Getting Started
@@ -81,7 +81,7 @@ src/                        Site source (Eleventy input)
   roster.njk                Roster page
   vault.njk                 Vault page
   faq.njk                   FAQ page
-  members.njk               King's Keep page
+  members.njk               Members page
   setup.njk                 Clan setup guide
   404.njk                   Custom 404 page
   styles.css                All styling
