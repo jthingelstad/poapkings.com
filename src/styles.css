@@ -104,13 +104,13 @@ a{color:inherit}
   text-transform: uppercase;
 }
 nav{
-  display:flex; gap:10px; flex-wrap:nowrap; justify-content:flex-end;
-  font-weight:600; font-size:14px; color:var(--muted);
+  display:flex; gap:12px; flex-wrap:nowrap; justify-content:flex-end;
+  font-weight:600; font-size:15px; color:var(--muted);
   white-space:nowrap;
 }
 nav a{
   text-decoration:none;
-  padding:8px 10px;
+  padding:8px 12px;
   border-radius:999px;
   border:1px solid transparent;
   transition: all .18s ease;
@@ -127,19 +127,19 @@ nav a.active{
 }
 
 @media (max-width: 920px){
-  nav{gap:6px}
-  nav a{padding:7px 8px;font-size:13px}
+  nav{gap:8px}
+  nav a{padding:8px 10px;font-size:14px}
   .brandGroup{gap:10px}
 }
 @media (max-width: 600px){
   .brand strong{display:none}
   .brandGroup{gap:8px}
-  nav{gap:4px}
-  nav a{padding:6px 7px;font-size:12px}
+  nav{gap:6px}
+  nav a{padding:7px 9px;font-size:13px}
 }
 @media (max-width: 420px){
-  nav a{padding:5px 5px;font-size:11px}
-  nav{gap:2px}
+  nav a{padding:6px 7px;font-size:12px}
+  nav{gap:4px}
 }
 
 .card{

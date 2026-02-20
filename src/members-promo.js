@@ -2,7 +2,7 @@ document.addEventListener("click", function (e) {
   var btn = e.target.closest(".promoChannelCopy");
   if (!btn) return;
   var textarea = btn.closest(".promoChannel").querySelector("textarea");
-  navigator.clipboard.writeText(textarea.value).then(function () {
+  navigator.clipboard.writeText(textarea.value.trim()).then(function () {
     btn.textContent = "COPIED";
     setTimeout(function () {
       btn.textContent = "COPY";
