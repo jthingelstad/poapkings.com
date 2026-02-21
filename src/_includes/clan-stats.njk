@@ -1,27 +1,24 @@
-{%- set stats = roster.members | clanStats -%}
-{%- if stats -%}
 <div class="clanStat">
-  <div class="clanStatValue">{{ stats.count }}</div>
+  <div class="clanStatValue">{{ site.memberCount }}</div>
   <div class="clanStatLabel">Members</div>
 </div>
 <div class="clanStat">
-  <div class="clanStatValue">{{ stats.totalTrophies | formatNumber }}</div>
+  <div class="clanStatValue">{{ site.clanWarTrophies | formatNumber }}</div>
+  <div class="clanStatLabel">War Trophies</div>
+</div>
+<div class="clanStat">
+  <div class="clanStatValue">{{ site.clanScore | formatNumber }}</div>
+  <div class="clanStatLabel">Clan Score</div>
+</div>
+<div class="clanStat">
+  <div class="clanStatValue">{{ site.donationsPerWeek | formatNumber }}</div>
+  <div class="clanStatLabel">Donations / Week</div>
+</div>
+<div class="clanStat">
+  <div class="clanStatValue">{{ site.totalTrophies | formatNumber }}</div>
   <div class="clanStatLabel">Total Trophies</div>
 </div>
 <div class="clanStat">
-  <div class="clanStatValue">{{ stats.avgTrophies | formatNumber }}</div>
-  <div class="clanStatLabel">Avg Trophies</div>
+  <div class="clanStatValue">{{ site.avgLevel }}</div>
+  <div class="clanStatLabel">Avg Member Level</div>
 </div>
-<div class="clanStat">
-  <div class="clanStatValue">{{ stats.topTrophies | formatNumber }}</div>
-  <div class="clanStatLabel">Top Trophies</div>
-</div>
-<div class="clanStat">
-  <div class="clanStatValue">{{ stats.totalDonations | formatNumber }}</div>
-  <div class="clanStatLabel">Weekly Donations</div>
-</div>
-<div class="clanStat">
-  <div class="clanStatValue">{{ stats.avgLevel }}</div>
-  <div class="clanStatLabel">Avg King Level</div>
-</div>
-{%- endif -%}

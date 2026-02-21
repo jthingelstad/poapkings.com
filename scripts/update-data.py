@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync roster.json from Clash Royale API + roster-extra.json custom data."""
+"""Update roster.json and site.json from the Clash Royale API + roster-extra.json custom data."""
 
 import json
 import os
@@ -37,17 +37,16 @@ def load_api_key():
     return ""
 
 
-def fetch_members(api_key):
-    """Fetch clan members from the Clash Royale API."""
-    url = f"{API_BASE}/clans/%23{CLAN_TAG}/members"
+def fetch_clan_data(api_key):
+    """Fetch clan data (including memberList) from the Clash Royale API."""
+    url = f"{API_BASE}/clans/%23{CLAN_TAG}"
     req = urllib.request.Request(url, headers={
         "Authorization": f"Bearer {api_key}",
         "Accept": "application/json",
     })
     try:
         with urllib.request.urlopen(req) as resp:
-            data = json.loads(resp.read().decode())
-            return data.get("items", [])
+            return json.loads(resp.read().decode())
     except urllib.error.HTTPError as e:
         body = e.read().decode()
         try:
@@ -68,38 +67,34 @@ def fetch_members(api_key):
         sys.exit(1)
 
 
-def fetch_clan(api_key):
-    """Fetch clan details from the Clash Royale API."""
-    url = f"{API_BASE}/clans/%23{CLAN_TAG}"
-    req = urllib.request.Request(url, headers={
-        "Authorization": f"Bearer {api_key}",
-        "Accept": "application/json",
-    })
-    try:
-        with urllib.request.urlopen(req) as resp:
-            return json.loads(resp.read().decode())
-    except urllib.error.HTTPError as e:
-        print(f"WARNING: Could not fetch clan details: HTTP {e.code}", file=sys.stderr)
-        return None
-
-
-def update_site_json(clan_data):
-    """Update site.json with clan-level statistics from the API."""
-    if not clan_data:
-        return
+def update_site_json(clan_data, member_list):
+    """Update site.json with clan-level statistics from the API and calculated stats."""
     with open(SITE_PATH, "r") as f:
         site = json.load(f)
 
-    site["clanWarTrophies"] = clan_data.get("clanWarTrophies", 0)
+    # Direct from API
+    site["memberCount"] = clan_data.get("members", 0)
     site["clanScore"] = clan_data.get("clanScore", 0)
+    site["clanWarTrophies"] = clan_data.get("clanWarTrophies", 0)
     site["donationsPerWeek"] = clan_data.get("donationsPerWeek", 0)
+    site["minTrophies"] = clan_data.get("requiredTrophies", 0)
+
+    # Calculated from memberList
+    site["totalTrophies"] = sum(m.get("trophies", 0) for m in member_list)
+    count = len(member_list)
+    if count > 0:
+        site["avgLevel"] = round(sum(m.get("expLevel", 0) for m in member_list) / count, 1)
+    else:
+        site["avgLevel"] = 0
 
     with open(SITE_PATH, "w") as f:
         json.dump(site, f, indent=2)
         f.write("\n")
 
-    print(f"Updated site.json: warTrophies={site['clanWarTrophies']}, "
-          f"score={site['clanScore']}, donations/wk={site['donationsPerWeek']}")
+    print(f"Updated site.json: members={site['memberCount']}, "
+          f"score={site['clanScore']}, warTrophies={site['clanWarTrophies']}, "
+          f"donations/wk={site['donationsPerWeek']}, "
+          f"totalTrophies={site['totalTrophies']}, avgLevel={site['avgLevel']}")
 
 
 def load_extras():
@@ -166,18 +161,17 @@ def main():
         sys.exit(1)
 
     print(f"Fetching clan #{CLAN_TAG}...")
-    clan_data = fetch_clan(api_key)
-    update_site_json(clan_data)
+    clan_data = fetch_clan_data(api_key)
 
-    print(f"Fetching clan #{CLAN_TAG} members...")
-    api_members = fetch_members(api_key)
-
-    if not api_members:
+    member_list = clan_data.get("memberList", [])
+    if not member_list:
         print("ERROR: API returned 0 members. Aborting to prevent accidental wipe.", file=sys.stderr)
         sys.exit(1)
 
+    update_site_json(clan_data, member_list)
+
     extras = load_extras()
-    members, today, new_tags = build_roster(api_members, extras)
+    members, today, new_tags = build_roster(member_list, extras)
 
     roster = {"updated": today, "members": members}
     with open(ROSTER_PATH, "w") as f:

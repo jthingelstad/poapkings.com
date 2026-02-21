@@ -6,7 +6,6 @@ description: "Members — onboarding and member resources for POAP KINGS."
 navActive: members
 extraScripts: '<script src="/members-promo.js"></script>'
 ---
-    {%- set stats = roster.members | clanStats -%}
     <section class="pageIntro card">
       <h1 class="pageTitle">Welcome KING...</h1>
       <p class="sectionDesc">
@@ -48,7 +47,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
             </div>
             <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
             <textarea class="promoChannelText" readonly rows="3">
-Hey! Join POAP KINGS — a {{ stats.count }}-member Clash Royale clan with active play, good vibes, and POAPs as proof. https://poapkings.com
+Hey! Join POAP KINGS — a {{ site.memberCount }}-member Clash Royale clan with active play, good vibes, and POAPs as proof. https://poapkings.com
             </textarea>
           </div>
 
@@ -59,7 +58,7 @@ Hey! Join POAP KINGS — a {{ stats.count }}-member Clash Royale clan with activ
             </div>
             <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
             <textarea class="promoChannelText" readonly rows="3">
-👑 POAP KINGS — {{ stats.count }} members, {{ stats.totalTrophies | formatNumber }}+ combined trophies. Active play, good vibes, POAPs as proof. https://poapkings.com
+👑 POAP KINGS — {{ site.memberCount }} members, {{ site.totalTrophies | formatNumber }}+ combined trophies. Active play, good vibes, POAPs as proof. https://poapkings.com
             </textarea>
           </div>
 
@@ -79,16 +78,16 @@ Hi there,
 
 We wanted to share an invitation to join a great Clash Royale clan: POAP KINGS.
 
-POAP KINGS is built around active, positive gameplay and something a little different—collecting POAPs as proof of participation and shared clan history. With {{ stats.count }} members and {{ stats.totalTrophies | formatNumber }} combined trophies, it's a growing community for players who enjoy progression, competition, and being part of something.
+POAP KINGS is built around active, positive gameplay and something a little different—collecting POAPs as proof of participation and shared clan history. With {{ site.memberCount }} members and {{ site.totalTrophies | formatNumber }} combined trophies, it's a growing community for players who enjoy progression, competition, and being part of something.
 
 POAP KINGS | A Clan With Proof
 Clan Tag: #{{ site.clanTag }}
 Region: United States
 League: {{ site.clanLeague }} (and climbing)
-Members: {{ stats.count }}
-Combined Trophies: {{ stats.totalTrophies | formatNumber }}
-Weekly Donations: {{ stats.totalDonations | formatNumber }}
-Avg King Level: {{ stats.avgLevel }}
+Members: {{ site.memberCount }}
+Combined Trophies: {{ site.totalTrophies | formatNumber }}
+Weekly Donations: {{ site.donationsPerWeek | formatNumber }}
+Avg Member Level: {{ site.avgLevel }}
 Required Trophies: {{ site.minTrophies | formatNumber }}
 
 What makes POAP KINGS different
@@ -123,10 +122,10 @@ Hope to see you in the arena.
 🏷️ Clan Tag: #{{ site.clanTag }}
 🇺🇸 Region: United States
 ↕️ League: {{ site.clanLeague }} (and climbing)
-👥 Members: {{ stats.count }}
-🏆 Combined Trophies: {{ stats.totalTrophies | formatNumber }}
-🤝 Weekly Donations: {{ stats.totalDonations | formatNumber }}
-⬆️ Avg King Level: {{ stats.avgLevel }}
+👥 Members: {{ site.memberCount }}
+🏆 Combined Trophies: {{ site.totalTrophies | formatNumber }}
+🤝 Weekly Donations: {{ site.donationsPerWeek | formatNumber }}
+⬆️ Avg Member Level: {{ site.avgLevel }}
 🔑 Required Trophies: [{{ site.minTrophies }}]
 
 🌟 Clan members collect unique POAPs
@@ -149,16 +148,16 @@ Hope to see you in the arena.
             </div>
             <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not attempt to include the clan invite link!</p>
             <label class="promoFieldLabel">Title</label>
-            <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #{{ site.clanTag }} [{{ site.minTrophies }}] — {{ stats.count }} members" />
+            <input class="promoFieldInput" type="text" readonly value="POAP KINGS: A CLAN WITH PROOF #{{ site.clanTag }} [{{ site.minTrophies }}] — {{ site.memberCount }} members" />
             <textarea class="promoChannelText" readonly rows="5">
 👑 POAP KINGS | A CLAN WITH PROOF
 🏷️ Clan Tag: #{{ site.clanTag }}
 🇺🇸 Region: United States
 ↕️ League: {{ site.clanLeague }} (and climbing)
-👥 Members: {{ stats.count }}
-🏆 Combined Trophies: {{ stats.totalTrophies | formatNumber }}
-🤝 Weekly Donations: {{ stats.totalDonations | formatNumber }}
-⬆️ Avg King Level: {{ stats.avgLevel }}
+👥 Members: {{ site.memberCount }}
+🏆 Combined Trophies: {{ site.totalTrophies | formatNumber }}
+🤝 Weekly Donations: {{ site.donationsPerWeek | formatNumber }}
+⬆️ Avg Member Level: {{ site.avgLevel }}
 🔑 Required Trophies: [{{ site.minTrophies }}]
 
 🌟 Clan members collect unique POAPs

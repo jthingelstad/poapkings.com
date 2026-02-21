@@ -118,22 +118,6 @@ export default function (eleventyConfig) {
     );
   });
 
-  eleventyConfig.addFilter("clanStats", (members) => {
-    if (!members || !members.length) return null;
-    const count = members.length;
-    const totalTrophies = members.reduce((s, m) => s + (m.trophies || 0), 0);
-    return {
-      count,
-      totalTrophies,
-      avgTrophies: Math.round(totalTrophies / count),
-      topTrophies: Math.max(...members.map((m) => m.trophies || 0)),
-      totalDonations: members.reduce((s, m) => s + (m.donations || 0), 0),
-      avgLevel: (
-        members.reduce((s, m) => s + (m.exp_level || 0), 0) / count
-      ).toFixed(1),
-    };
-  });
-
   eleventyConfig.addFilter("searchText", (m) => {
     const role = m.role || "Member";
     return [m.name, m.tag, role, m.note, m.date_joined]
