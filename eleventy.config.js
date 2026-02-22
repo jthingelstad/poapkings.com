@@ -103,6 +103,7 @@ export default function (eleventyConfig) {
     const t = type.toLowerCase();
     if (t === "season") return "typePill typeSeason";
     if (t === "milestone") return "typePill typeMilestone";
+    if (t === "member") return "typePill typeMember";
     if (t === "event") return "typePill typeEvent";
     return "typePill";
   });

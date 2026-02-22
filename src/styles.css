@@ -760,6 +760,10 @@ footer{
   background: var(--gold-tint-bg);
   border-color: var(--gold-tint-border);
 }
+.typeMember{
+  background: rgba(76,245,160,.18);
+  border-color: rgba(76,245,160,.35);
+}
 .typeEvent{
   background: rgba(76,200,245,.18);
   border-color: rgba(76,200,245,.35);
