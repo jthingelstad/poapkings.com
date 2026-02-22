@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""Update roster.json and site.json from the Clash Royale API + roster-extra.json custom data."""
+"""Update roster.json and site.json from the Clash Royale API + roster-extra.csv custom data."""
 
+import csv
+import io
 import json
 import os
 import sys
@@ -17,7 +19,8 @@ ROLE_MAP = {"leader": "Leader", "coLeader": "Co-Leader", "elder": "Elder", "memb
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 ROSTER_PATH = PROJECT_ROOT / "src" / "_data" / "roster.json"
 SITE_PATH = PROJECT_ROOT / "src" / "_data" / "site.json"
-EXTRAS_PATH = PROJECT_ROOT / "roster-extra.json"
+EXTRAS_PATH = PROJECT_ROOT / "roster-extra.csv"
+EXTRAS_FIELDS = ["tag", "name", "note", "profile_url", "address", "date_joined"]
 ENV_PATH = PROJECT_ROOT / ".env"
 
 
@@ -98,11 +101,46 @@ def update_site_json(clan_data, member_list):
 
 
 def load_extras():
-    """Load roster-extra.json custom data."""
+    """Load roster-extra.csv custom data. Returns dict keyed by tag."""
     if not EXTRAS_PATH.exists():
         return {}
-    with open(EXTRAS_PATH, "r") as f:
-        return json.load(f)
+    extras = {}
+    with open(EXTRAS_PATH, "r", newline="") as f:
+        for row in csv.DictReader(f):
+            tag = row["tag"]
+            extras[tag] = {
+                "note": row.get("note", ""),
+                "profile_url": row.get("profile_url", ""),
+                "address": row.get("address", ""),
+                "date_joined": row.get("date_joined", ""),
+            }
+    return extras
+
+
+def save_extras(extras, api_members):
+    """Write roster-extra.csv with current names from the API.
+
+    Only includes members currently in the clan. Rows are sorted by
+    date_joined ascending for consistency with the roster.
+    """
+    name_by_tag = {m["tag"].lstrip("#"): m.get("name", "") for m in api_members}
+    rows = []
+    for tag, data in extras.items():
+        if tag not in name_by_tag:
+            continue
+        rows.append({
+            "tag": tag,
+            "name": name_by_tag[tag],
+            "note": data.get("note", ""),
+            "profile_url": data.get("profile_url", ""),
+            "address": data.get("address", ""),
+            "date_joined": data.get("date_joined", ""),
+        })
+    rows.sort(key=lambda r: r["date_joined"])
+    with open(EXTRAS_PATH, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=EXTRAS_FIELDS)
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def build_roster(api_members, extras):
@@ -180,12 +218,10 @@ def main():
 
     print(f"Wrote {len(members)} members to roster.json (updated: {today})")
 
-    # Persist any new extras entries
+    save_extras(extras, member_list)
+    print(f"Wrote {len(members)} members to roster-extra.csv")
     if new_tags:
-        with open(EXTRAS_PATH, "w") as f:
-            json.dump(extras, f, indent=2)
-            f.write("\n")
-        print(f"Added {len(new_tags)} new member(s) to roster-extra.json: {', '.join(new_tags)}")
+        print(f"  New member(s): {', '.join(new_tags)}")
 
 
 if __name__ == "__main__":
