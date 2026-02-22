@@ -41,6 +41,22 @@ export default function (eleventyConfig) {
     return raw;
   });
 
+  eleventyConfig.addFilter("dateToRfc2822", (dateStr) => {
+    if (!dateStr) return "";
+    const d = new Date(String(dateStr).trim());
+    if (isNaN(d.getTime())) return "";
+    return d.toUTCString();
+  });
+
+  eleventyConfig.addFilter("newestDate", (items, key) => {
+    let max = "";
+    for (const item of items || []) {
+      const val = item[key] || "";
+      if (val > max) max = val;
+    }
+    return max;
+  });
+
   eleventyConfig.addFilter("formatNumber", (n) => {
     if (n == null) return "0";
     return Number(n).toLocaleString("en-US");

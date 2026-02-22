@@ -1,0 +1,30 @@
+---
+permalink: /feeds/roster.xml
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>POAP KINGS Roster</title>
+    <link>{{ site.url }}/roster/</link>
+    <description>Current members of the POAP KINGS Clash Royale clan.</description>
+    <language>en-us</language>
+    <lastBuildDate>{{ roster.members | newestDate("date_joined") | dateToRfc2822 }}</lastBuildDate>
+    <atom:link href="{{ site.url }}/feeds/roster.xml" rel="self" type="application/rss+xml" />
+    {%- for m in roster.members | sort(true, false, "date_joined") %}
+    {%- set rawTag = m.tag | replace("#", "") %}
+    <item>
+      <title>{{ m.name | e }} joined POAP KINGS</title>
+      <link>{{ site.url }}/roster/</link>
+      <guid isPermaLink="false">{{ rawTag }}</guid>
+      <pubDate>{{ m.date_joined | dateToRfc2822 }}</pubDate>
+      <description><![CDATA[<p><strong>{{ m.name | e }}</strong> ({{ m.role | e }}) joined the clan.</p><ul><li><a href="{{ m.tag | royaleApiUrl }}">RoyaleAPI profile</a></li>
+        {%- set profileUrl = m.profile_url | safeUrl %}
+        {%- if profileUrl %}<li><a href="{{ profileUrl }}">Profile</a></li>{% endif %}
+        {%- set poapUrl = m.address | poapCollectionUrl %}
+        {%- if poapUrl %}<li><a href="{{ poapUrl }}">POAP collection</a></li>{% endif %}</ul>]]></description>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
