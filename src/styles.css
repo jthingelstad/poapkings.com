@@ -667,6 +667,9 @@ footer{
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap:16px;
 }
+.vaultCard[hidden]{
+  display:none;
+}
 .vaultCard{
   display:flex;
   flex-direction:column;
