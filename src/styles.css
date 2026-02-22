@@ -734,6 +734,15 @@ footer{
   border-radius:14px;
   grid-column: 1 / -1;
 }
+#vaultFilterClear{
+  margin-left:6px;
+  color: var(--gold);
+  text-decoration:none;
+  font-weight:700;
+}
+#vaultFilterClear:hover{
+  text-decoration:underline;
+}
 
 /* Type pills */
 .typePill{

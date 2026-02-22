@@ -24,6 +24,10 @@ appJs: true
           <div>
             <h2 class="sectionTitle m-0">Collection</h2>
             <div class="tiny mt-xs">Last updated: {{ vault.updated | formatLongDate }}</div>
+            <div id="vaultFilterInfo" class="tiny mt-xs" hidden>
+              <span id="vaultFilterDesc"></span>
+              <a href="/vault/" id="vaultFilterClear">Show all</a>
+            </div>
           </div>
           <div id="vaultStatus" class="tiny rosterCount">Showing {{ vault.poaps | length }} of {{ vault.poaps | length }} POAP{{ "s" if vault.poaps | length != 1 }}</div>
         </div>

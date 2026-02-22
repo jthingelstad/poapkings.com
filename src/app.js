@@ -40,6 +40,16 @@ function initVaultFilter() {
   const emptyMsg = document.getElementById("vaultEmpty");
   const total = allCards.length;
 
+  const filterInfo = document.getElementById("vaultFilterInfo");
+  const filterDesc = document.getElementById("vaultFilterDesc");
+
+  const typeDescs = {
+    season: "Season POAPs are awarded to members who complete a full clan season.",
+    milestone: "Milestone POAPs mark major achievements for the clan.",
+    member: "Member POAPs recognize individual player accomplishments.",
+    event: "Event POAPs are earned by participating in clan events.",
+  };
+
   filter.addEventListener("change", () => {
     const type = filter.value.trim().toLowerCase();
     let visible = 0;
@@ -52,7 +62,36 @@ function initVaultFilter() {
 
     status.textContent = `Showing ${visible} of ${total} POAP${total === 1 ? "" : "s"}`;
     if (emptyMsg) emptyMsg.hidden = visible > 0;
+
+    const url = new URL(window.location);
+    if (type) {
+      url.searchParams.set("type", type);
+    } else {
+      url.searchParams.delete("type");
+    }
+    history.replaceState(null, "", url);
+
+    if (filterInfo) {
+      if (type && typeDescs[type]) {
+        filterDesc.textContent = typeDescs[type];
+        filterInfo.hidden = false;
+      } else {
+        filterInfo.hidden = true;
+      }
+    }
   });
+
+  const params = new URLSearchParams(window.location.search);
+  const initial = params.get("type");
+  if (initial) {
+    const match = Array.from(filter.options).find(
+      (o) => o.value.toLowerCase() === initial.toLowerCase(),
+    );
+    if (match) {
+      filter.value = match.value;
+      filter.dispatchEvent(new Event("change"));
+    }
+  }
 }
 
 function initProgressBars() {
