@@ -21,3 +21,16 @@ Updated site.json: members=19, score=55428, warTrophies=40, donations/wk=1776, t
 Wrote 19 members to roster.json (updated: 2026-03-01T12:01:11Z)
 Wrote 19 members to roster-extra.csv
   New member(s): 202L9CL2V0
+[main b6e1fa5] Auto-update clan data [2026-03-01]
+ 4 files changed, 83 insertions(+), 50 deletions(-)
+failed to store: -61
+To https://github.com/jthingelstad/poapkings.com.git
+   8b9a01c..b6e1fa5  main -> main
+Pushed.
+=== Mon Mar  2 06:01:39 CST 2026 ===
+failed to store: -61
+Already up to date.
+Fetching clan #J2RGCRVG...
+Updated site.json: members=18, score=54064, warTrophies=140, donations/wk=30, totalTrophies=124736, avgLevel=40.1
+Wrote 18 members to roster.json (updated: 2026-03-02T12:01:40Z)
+Wrote 18 members to roster-extra.csv
