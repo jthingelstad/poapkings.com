@@ -3,8 +3,11 @@ permalink: /vault/
 layout: base.njk
 title: Vault | POAP KINGS | A Clash Royale Clan with Proof
 description: "POAP KINGS vault — browse our collection of seasonal POAPs and milestone badges."
+ogImageAlt: "Latest POAP KINGS badge"
 navActive: vault
 appJs: true
+eleventyComputed:
+  ogImage: "{{ vault.poaps | newestPoapImage }}"
 ---
     <section class="pageIntro card">
       <h1 class="pageTitle">POAP Vault</h1>
@@ -72,7 +75,7 @@ appJs: true
                 <div class="progressLabel"></div>
               </div>
               {% elif p.progress.type == "members" %}
-              {% set current = roster.members | length %}
+              {% set current = elixirRoster.members | length %}
               {% set target = p.progress.target %}
               {% set pct = (current / target * 100) %}
               <div class="progressWrap">
@@ -80,7 +83,7 @@ appJs: true
                 <div class="progressLabel">{{ current }}/{{ target }}</div>
               </div>
               {% elif p.progress.type == "clan_trophies" %}
-              {% set current = site.clanWarTrophies or 0 %}
+              {% set current = elixirClan.clanWarTrophies or 0 %}
               {% set target = p.progress.target %}
               {% set pct = (current / target * 100) %}
               <div class="progressWrap">

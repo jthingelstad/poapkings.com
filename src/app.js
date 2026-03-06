@@ -1,69 +1,96 @@
-function initRosterSearch() {
-  const search = document.getElementById("rosterSearch");
-  const status = document.getElementById("rosterStatus");
-  const grid = document.getElementById("rosterGrid");
+function initRosterControls() {
+  var search = document.getElementById("rosterSearch");
+  var sortSel = document.getElementById("rosterSort");
+  var roleSel = document.getElementById("rosterRole");
+  var status = document.getElementById("rosterStatus");
+  var grid = document.getElementById("rosterGrid");
   if (!search || !status || !grid) return;
 
-  const sections = grid.querySelectorAll(".rosterSection");
-  const allRows = grid.querySelectorAll(".rosterRow");
-  const emptyMsg = document.getElementById("rosterEmpty");
-  const total = allRows.length;
+  var cards = Array.from(grid.querySelectorAll(".memberCard"));
+  var emptyMsg = document.getElementById("rosterEmpty");
+  var total = cards.length;
 
-  search.addEventListener("input", () => {
-    const q = search.value.trim().toLowerCase();
-    let visible = 0;
+  function applyFilters() {
+    var q = search.value.trim().toLowerCase();
+    var role = roleSel ? roleSel.value : "";
+    var visible = 0;
 
-    allRows.forEach((row) => {
-      const match = !q || row.dataset.search.includes(q);
-      row.hidden = !match;
-      if (match) visible++;
+    cards.forEach(function (card) {
+      var matchSearch = !q || card.dataset.search.includes(q);
+      var matchRole = !role || card.dataset.role === role;
+      var show = matchSearch && matchRole;
+      card.hidden = !show;
+      if (show) visible++;
     });
 
-    sections.forEach((section) => {
-      const rows = section.querySelectorAll(".rosterRow");
-      const anyVisible = Array.from(rows).some((r) => !r.hidden);
-      section.hidden = !anyVisible;
-    });
-
-    status.textContent = `Showing ${visible} of ${total} member${total === 1 ? "" : "s"}`;
+    status.textContent = "Showing " + visible + " of " + total + " member" + (total === 1 ? "" : "s");
     if (emptyMsg) emptyMsg.hidden = visible > 0;
+  }
+
+  function applySort() {
+    var key = sortSel ? sortSel.value : "rank";
+    var asc = key === "rank" || key === "joined";
+
+    cards.sort(function (a, b) {
+      var av, bv;
+      if (key === "joined") {
+        av = a.dataset.joined || "";
+        bv = b.dataset.joined || "";
+        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+      }
+      av = parseFloat(a.dataset[key]) || 0;
+      bv = parseFloat(b.dataset[key]) || 0;
+      return asc ? av - bv : bv - av;
+    });
+
+    cards.forEach(function (card) {
+      grid.appendChild(card);
+    });
+  }
+
+  search.addEventListener("input", applyFilters);
+  if (roleSel) roleSel.addEventListener("change", applyFilters);
+  if (sortSel) sortSel.addEventListener("change", function () {
+    applySort();
+    applyFilters();
   });
+
 }
 
 function initVaultFilter() {
-  const filter = document.getElementById("vaultTypeFilter");
-  const status = document.getElementById("vaultStatus");
-  const grid = document.getElementById("vaultGrid");
+  var filter = document.getElementById("vaultTypeFilter");
+  var status = document.getElementById("vaultStatus");
+  var grid = document.getElementById("vaultGrid");
   if (!filter || !status || !grid) return;
 
-  const allCards = grid.querySelectorAll(".vaultCard");
-  const emptyMsg = document.getElementById("vaultEmpty");
-  const total = allCards.length;
+  var allCards = grid.querySelectorAll(".vaultCard");
+  var emptyMsg = document.getElementById("vaultEmpty");
+  var total = allCards.length;
 
-  const filterInfo = document.getElementById("vaultFilterInfo");
-  const filterDesc = document.getElementById("vaultFilterDesc");
+  var filterInfo = document.getElementById("vaultFilterInfo");
+  var filterDesc = document.getElementById("vaultFilterDesc");
 
-  const typeDescs = {
+  var typeDescs = {
     season: "Season POAPs are awarded to members who complete a full clan season.",
     milestone: "Milestone POAPs mark major achievements for the clan.",
     member: "Member POAPs recognize individual player accomplishments.",
     event: "Event POAPs are earned by participating in clan events.",
   };
 
-  filter.addEventListener("change", () => {
-    const type = filter.value.trim().toLowerCase();
-    let visible = 0;
+  filter.addEventListener("change", function () {
+    var type = filter.value.trim().toLowerCase();
+    var visible = 0;
 
-    allCards.forEach((card) => {
-      const match = !type || (card.dataset.type || "") === type;
+    allCards.forEach(function (card) {
+      var match = !type || (card.dataset.type || "") === type;
       card.hidden = !match;
       if (match) visible++;
     });
 
-    status.textContent = `Showing ${visible} of ${total} POAP${total === 1 ? "" : "s"}`;
+    status.textContent = "Showing " + visible + " of " + total + " POAP" + (total === 1 ? "" : "s");
     if (emptyMsg) emptyMsg.hidden = visible > 0;
 
-    const url = new URL(window.location);
+    var url = new URL(window.location);
     if (type) {
       url.searchParams.set("type", type);
     } else {
@@ -81,12 +108,12 @@ function initVaultFilter() {
     }
   });
 
-  const params = new URLSearchParams(window.location.search);
-  const initial = params.get("type");
+  var params = new URLSearchParams(window.location.search);
+  var initial = params.get("type");
   if (initial) {
-    const match = Array.from(filter.options).find(
-      (o) => o.value.toLowerCase() === initial.toLowerCase(),
-    );
+    var match = Array.from(filter.options).find(function (o) {
+      return o.value.toLowerCase() === initial.toLowerCase();
+    });
     if (match) {
       filter.value = match.value;
       filter.dispatchEvent(new Event("change"));
@@ -95,30 +122,30 @@ function initVaultFilter() {
 }
 
 function initProgressBars() {
-  document.querySelectorAll('[data-progress="date"]').forEach((el) => {
-    const start = new Date(el.dataset.start + "T00:00:00Z");
-    const end = new Date(el.dataset.end + "T00:00:00Z");
-    const now = new Date();
-    const today = new Date(
+  document.querySelectorAll('[data-progress="date"]').forEach(function (el) {
+    var start = new Date(el.dataset.start + "T00:00:00Z");
+    var end = new Date(el.dataset.end + "T00:00:00Z");
+    var now = new Date();
+    var today = new Date(
       Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()),
     );
 
-    const totalMs = end - start;
-    const elapsedMs = today - start;
-    const totalDays = Math.round(totalMs / (1000 * 60 * 60 * 24));
-    const elapsedDays = Math.max(
+    var totalMs = end - start;
+    var elapsedMs = today - start;
+    var totalDays = Math.round(totalMs / (1000 * 60 * 60 * 24));
+    var elapsedDays = Math.max(
       0,
       Math.min(totalDays, Math.round(elapsedMs / (1000 * 60 * 60 * 24))),
     );
 
-    let pct = totalMs > 0 ? (elapsedMs / totalMs) * 100 : 0;
+    var pct = totalMs > 0 ? (elapsedMs / totalMs) * 100 : 0;
     pct = Math.max(0, Math.min(100, pct));
 
-    const fill = el.querySelector(".progressFill");
-    const label = el.querySelector(".progressLabel");
+    var fill = el.querySelector(".progressFill");
+    var label = el.querySelector(".progressLabel");
 
     if (fill) fill.style.width = pct.toFixed(0) + "%";
-    if (label) label.textContent = `${elapsedDays}/${totalDays}`;
+    if (label) label.textContent = elapsedDays + "/" + totalDays;
   });
 }
 
@@ -134,7 +161,7 @@ function initMemberDurations() {
     return new Date(Date.UTC(year, month, Math.min(day, maxDay)));
   }
 
-  document.querySelectorAll("[data-joined]").forEach(function (el) {
+  document.querySelectorAll(".rosterDuration[data-joined]").forEach(function (el) {
     var join = new Date(el.dataset.joined);
     if (isNaN(join)) return;
     var jy = join.getUTCFullYear(),
@@ -164,7 +191,7 @@ function initMemberDurations() {
   });
 }
 
-initRosterSearch();
+initRosterControls();
 initVaultFilter();
 initProgressBars();
 initMemberDurations();

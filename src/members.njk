@@ -13,10 +13,44 @@ extraScripts: '<script src="/members-promo.js"></script>'
       </p>
       <p class="sectionDesc"><strong>New to the clan?</strong> Get connected with leaders, set up your wallet, and register for the roster.</p>
       <div class="ctaRow mt-sm">
+        <a class="btn btnPurple" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="members.join-discord">Join Discord</a>
         <a class="btn btnPrimary" href="/members/setup/" data-tinylytics-event="members.clan-setup">Clan Setup</a>
         <a class="btn btnGhost" href="/faq" data-tinylytics-event="members.read-faq">Read the FAQ</a>
       </div>
     </section>
+
+    {% if elixirMembers.message %}
+    <section>
+      <div class="card card-padded">
+        <h2 class="sectionTitle m-0 mb-xs">What's Happening</h2>
+        <div class="elixirByline">
+          <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
+          <p class="sectionDesc m-0 elixirByline__body">{{ elixirMembers.message | md | safe }}</p>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if elixirRoster.card_stats and elixirRoster.card_stats.length %}
+    <section>
+      <div class="card card-padded">
+        <h2 class="sectionTitle m-0 mb-xs">Clan Card Meta</h2>
+        <p class="sectionDesc m-0 mb-md">The most popular cards across POAP KINGS right now, based on recent battle data.</p>
+        <div class="cardStatsGrid">
+          {% for card in elixirRoster.card_stats | take(12) %}
+          <div class="cardStat {{ 'cardStat--top' if loop.index0 < 3 }}">
+            <div class="cardStat__rank">#{{ loop.index }}</div>
+            <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="cardStat__icon" width="48" height="56" loading="lazy" />
+            <div class="cardStat__info">
+              <div class="cardStat__name">{{ card.name }}</div>
+              <div class="cardStat__meta">{{ card.member_count }} member{{ "s" if card.member_count != 1 }} &middot; {{ card.avg_pct }}% avg use</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
 
     <section>
       <div class="card card-padded">
@@ -47,7 +81,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
             </div>
             <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
             <textarea class="promoChannelText" readonly rows="3">
-{{ promote.message.body | safe }}
+{{ elixirPromote.message.body | safe }}
             </textarea>
           </div>
 
@@ -58,7 +92,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
             </div>
             <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
             <textarea class="promoChannelText" readonly rows="3">
-{{ promote.social.body | safe }}
+{{ elixirPromote.social.body | safe }}
             </textarea>
           </div>
 
@@ -72,9 +106,9 @@ extraScripts: '<script src="/members-promo.js"></script>'
             </div>
             <p class="promoChannelHint">Email-friendly pitch for friends or group chats.</p>
             <label class="promoFieldLabel">Subject</label>
-            <input class="promoFieldInput" type="text" readonly value="{{ promote.email.subject | safe }}" />
+            <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.email.subject | safe }}" />
             <textarea class="promoChannelText" readonly rows="5">
-{{ promote.email.body | safe }}
+{{ elixirPromote.email.body | safe }}
             </textarea>
           </div>
 
@@ -88,7 +122,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
             </div>
             <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
             <textarea class="promoChannelText" readonly rows="4">
-{{ promote.discord.body | safe }}
+{{ elixirPromote.discord.body | safe }}
             </textarea>
           </div>
 
@@ -102,9 +136,9 @@ extraScripts: '<script src="/members-promo.js"></script>'
             </div>
             <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not attempt to include the clan invite link!</p>
             <label class="promoFieldLabel">Title</label>
-            <input class="promoFieldInput" type="text" readonly value="{{ promote.reddit.title | safe }}" />
+            <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.reddit.title | safe }}" />
             <textarea class="promoChannelText" readonly rows="5">
-{{ promote.reddit.body | safe }}
+{{ elixirPromote.reddit.body | safe }}
             </textarea>
           </div>
         </div>

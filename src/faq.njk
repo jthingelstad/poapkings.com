@@ -17,7 +17,7 @@ supercellDisclaimer: true
       <div class="card card-padded">
         <h2 class="sectionTitle m-0 mb-xs">TL;DR</h2>
         <ul class="list">
-          <li>{{ site.clanStatus }} clan, {{ site.minTrophies | formatNumber }} trophy minimum.</li>
+          <li>{{ elixirClan.clanStatus }} clan, {{ elixirClan.minTrophies | formatNumber }} trophy minimum.</li>
           <li>Be active, donate, don't be a jerk.</li>
           <li>Wars encouraged, not required.</li>
           <li>Top war earner each season gets a free Pass Royale.</li>
@@ -44,7 +44,7 @@ supercellDisclaimer: true
       <h2 class="sectionTitle">Joining</h2>
       <div class="faq-item">
         <h3 class="faq-q">How do I join?</h3>
-        <p>We're {{ site.clanStatus | lower }} — no invite needed. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ site.minTrophies | formatNumber }} trophies</strong> to join.</p>
+        <p>We're {{ elixirClan.clanStatus | lower }} — no invite needed. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ elixirClan.minTrophies | formatNumber }} trophies</strong> to join.</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">What are the clan rules?</h3>
@@ -92,7 +92,7 @@ supercellDisclaimer: true
       </div>
       <div class="faq-item">
         <h3 class="faq-q">How will I receive the pass?</h3>
-        <p>Sent in-game. No PayPal, Venmo, or cash transfers — in-game only.</p>
+        <p>Sent in-game to the account playing in the clan. No PayPal, Venmo, or cash transfers — in-game only. The pass cannot be sent to a different account.</p>
         <p><em>Exception: If you are under 16 and clan leadership knows you in real life, leadership will work something out.</em></p>
       </div>
       <div class="faq-item">
@@ -106,6 +106,34 @@ supercellDisclaimer: true
           <li>You cannot re-donate a Pass that was received as a donation.</li>
           <li>If you are not in the United States, Supercell may limit Pass transfers.</li>
         </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sectionTitle" style="display:flex;align-items:center;gap:12px">Elixir <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg" loading="lazy" /></a></h2>
+      <div class="faq-item">
+        <h3 class="faq-q">What is Elixir?</h3>
+        <p>Elixir is the AI-powered agent that runs inside the <strong>POAP KINGS</strong> Discord server. It monitors the clan around the clock — tracking wars, donations, trophies, and member activity — and posts updates when something interesting happens. It also answers leadership questions, welcomes new members, and generates all the dynamic content on this website. Learn more on the <a href="/elixir">Elixir page</a>.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How does Elixir decide what to post?</h3>
+        <p>Every hour, Elixir pulls fresh data from the Clash Royale API and compares it to what it already knows. If it detects a real signal — a member joining, a trophy milestone, a war day starting — it sends that context to an LLM which decides whether it's worth sharing. Routine stat bumps get filtered out. No spam, just signal.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Can I talk to Elixir?</h3>
+        <p>Elixir doesn't use slash commands. In the <strong>#elixir</strong> channel it broadcasts observations and won't respond to mentions. In <strong>#leader-lounge</strong>, leadership can @mention Elixir with freeform questions — "Should I promote this member?", "Who's been our best war player?" — and get context-aware answers grounded in real clan data. In <strong>#reception</strong>, new Discord members can ask Elixir for help getting verified.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">What kind of things does Elixir celebrate?</h3>
+        <p>Trophy milestones (every 1,000 trophies), war day kickoffs and results, donation highlights, member join anniversaries (cake days), and birthdays. If something meaningful changes in the clan, Elixir will notice and say something about it.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Does Elixir power this website?</h3>
+        <p>Yes. Elixir is the single source of truth for all dynamic content on poapkings.com. Twice a day it refreshes roster data, generates member bios, writes the home page message, and creates promotional copy — then commits it all automatically. Every page that shows live clan stats, member cards, or "What's Happening" messages is driven by Elixir.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Is Elixir open source?</h3>
+        <p>Yes. The full source is on <a href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">GitHub</a>. It's built with Python, discord.py, OpenAI GPT-4o, SQLite, and the Clash Royale API. Personality and clan config live in markdown prompt files, so another clan could fork it and make it their own.</p>
       </div>
     </section>
 

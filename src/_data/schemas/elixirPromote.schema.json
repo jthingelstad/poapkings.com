@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["message", "social", "email", "discord", "reddit"],
+  "properties": {
+    "message": { "type": "object", "properties": { "body": { "type": "string" } } },
+    "social": { "type": "object", "properties": { "body": { "type": "string" } } },
+    "email": { "type": "object", "properties": { "subject": { "type": "string" }, "body": { "type": "string" } } },
+    "discord": { "type": "object", "properties": { "body": { "type": "string" } } },
+    "reddit": { "type": "object", "properties": { "title": { "type": "string" }, "body": { "type": "string" } } }
+  }
+}

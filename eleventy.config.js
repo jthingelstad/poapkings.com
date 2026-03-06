@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
+import markdownIt from "markdown-it";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
@@ -108,25 +109,13 @@ export default function (eleventyConfig) {
     return "typePill";
   });
 
-  eleventyConfig.addFilter("groupByRole", (members) => {
-    const leaders = [];
-    const elders = [];
-    const rest = [];
-    for (const m of members || []) {
-      const role = String(m.role || "Member").toLowerCase();
-      if (role === "leader" || role === "co-leader") leaders.push(m);
-      else if (role === "elder") elders.push(m);
-      else rest.push(m);
+  eleventyConfig.addFilter("newestPoapImage", (poaps) => {
+    let best = null;
+    for (const p of poaps || []) {
+      if (p.upcoming || !p.date || !p.image) continue;
+      if (!best || p.date > best.date) best = p;
     }
-    const byDate = (a, b) => (a.date_joined || "").localeCompare(b.date_joined || "");
-    leaders.sort(byDate);
-    elders.sort(byDate);
-    rest.sort(byDate);
-    return [
-      { label: "Leaders", members: leaders },
-      { label: "Elders", members: elders },
-      { label: "Members", members: rest },
-    ].filter((g) => g.members.length > 0);
+    return best ? best.image : "/assets/poapkings.png";
   });
 
   eleventyConfig.addFilter("sortVault", (poaps) => {
@@ -137,10 +126,31 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("searchText", (m) => {
     const role = m.role || "Member";
-    return [m.name, m.tag, role, m.note, m.date_joined]
+    return [m.name, m.tag, role, m.note, m.date_joined, m.arena]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
+  });
+
+  eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));
+
+  const md = markdownIt({ html: true, linkify: true });
+  eleventyConfig.addFilter("md", (str) => {
+    if (!str) return "";
+    return md.renderInline(String(str));
+  });
+
+  eleventyConfig.addFilter("cardClass", (role) => {
+    if (!role) return "memberCard--member";
+    const r = role.toLowerCase();
+    if (r === "co-leader") return "memberCard--coleader";
+    if (r === "leader") return "memberCard--leader";
+    if (r === "elder") return "memberCard--elder";
+    return "memberCard--member";
+  });
+
+  eleventyConfig.addFilter("sortByRank", (members) => {
+    return [...(members || [])].sort((a, b) => (a.clan_rank || 999) - (b.clan_rank || 999));
   });
 
   eleventyConfig.addFilter("bust", (url) => {

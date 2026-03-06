@@ -10,9 +10,9 @@ excludeFromSitemap: true
     <link>{{ site.url }}/roster/</link>
     <description>Current members of the POAP KINGS Clash Royale clan.</description>
     <language>en-us</language>
-    <lastBuildDate>{{ roster.members | newestDate("date_joined") | dateToRfc2822 }}</lastBuildDate>
+    <lastBuildDate>{{ elixirRoster.members | newestDate("date_joined") | dateToRfc2822 }}</lastBuildDate>
     <atom:link href="{{ site.url }}/feeds/roster.xml" rel="self" type="application/rss+xml" />
-    {%- for m in roster.members | sort(true, false, "date_joined") %}
+    {%- for m in elixirRoster.members | sort(true, false, "date_joined") %}
     {%- set rawTag = m.tag | replace("#", "") %}
     <item>
       <title>{{ m.name | e }} joined POAP KINGS</title>
@@ -22,7 +22,7 @@ excludeFromSitemap: true
       <description><![CDATA[<p><strong>{{ m.name | e }}</strong> ({{ m.role | e }}) joined the clan.</p><ul><li><a href="{{ m.tag | royaleApiUrl }}">RoyaleAPI profile</a></li>
         {%- set profileUrl = m.profile_url | safeUrl %}
         {%- if profileUrl %}<li><a href="{{ profileUrl }}">Profile</a></li>{% endif %}
-        {%- set poapUrl = m.address | poapCollectionUrl %}
+        {%- set poapUrl = m.poap_address | poapCollectionUrl %}
         {%- if poapUrl %}<li><a href="{{ poapUrl }}">POAP collection</a></li>{% endif %}</ul>]]></description>
     </item>
     {%- endfor %}
