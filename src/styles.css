@@ -872,3 +872,13 @@ footer{
     gap:12px;
   }
 }
+
+/* Elixir page */
+.elixirHeroImg {
+  float: right;
+  width: 180px;
+  margin: -10px -10px 8px 16px;
+  -webkit-mask-image: radial-gradient(circle at center, #000 40%, transparent 72%);
+  mask-image: radial-gradient(circle at center, #000 40%, transparent 72%);
+}
+.elixirHeroImg img { width: 100%; height: auto; display: block; }

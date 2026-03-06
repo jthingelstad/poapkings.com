@@ -1,0 +1,97 @@
+---
+layout: base.njk
+title: Elixir — AI Bot for POAP KINGS
+description: "Elixir is the AI-powered chronicler and advisor for POAP KINGS, monitoring the clan, tracking wars, and celebrating milestones from Discord."
+mainId: top
+supercellDisclaimer: true
+---
+    <section class="pageIntro card">
+      <div class="elixirHeroImg">
+        <img src="/assets/elixir.png" alt="Elixir bot avatar" />
+      </div>
+      <h1 class="pageTitle"><strong>Elixir</strong></h1>
+      <p class="sectionDesc">
+        The AI-powered chronicler and advisor for <strong>POAP KINGS</strong>. Elixir monitors the clan, tracks wars, answers leader questions, and celebrates milestones — all from Discord.
+      </p>
+      <div class="ctaRow mt-sm">
+        <a class="btn btnPurple" href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">View on GitHub</a>
+        <a class="btn btnGhost" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Join Discord</a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sectionTitle">What Elixir Does</h2>
+      <p class="sectionDesc">
+        Elixir runs 24/7 inside the POAP KINGS Discord, quietly handling the work that keeps the clan informed and connected.
+      </p>
+      <div class="grid3">
+        <div class="tile">
+          <h3>Hourly Heartbeat</h3>
+          <p>Every hour, Elixir checks clan stats, war status, and member activity — then decides if anything is worth reporting.</p>
+        </div>
+        <div class="tile">
+          <h3>Leader Q&A</h3>
+          <p>Leaders can ask Elixir questions in Discord and get context-aware answers grounded in real clan data.</p>
+        </div>
+        <div class="tile">
+          <h3>War Tracking</h3>
+          <p>Tracks Clan War participation, calls out standout performances, and keeps a running history of results.</p>
+        </div>
+      </div>
+      <div class="grid3 mt-sm">
+        <div class="tile">
+          <h3>Member History</h3>
+          <p>Remembers when members joined, left, or were promoted — building a living record of the clan over time.</p>
+        </div>
+        <div class="tile">
+          <h3>Cake Days</h3>
+          <p>Celebrates member anniversaries automatically, recognizing loyalty and long-term participation.</p>
+        </div>
+        <div class="tile">
+          <h3>Smart Routing</h3>
+          <p>Uses an LLM to decide what's worth sharing and what isn't — no spam, just signal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sectionTitle">How It Works</h2>
+      <p class="sectionDesc">
+        Elixir follows a simple loop: observe the clan, decide what matters, speak with personality, and remember everything.
+      </p>
+      <div class="stepsGrid">
+        <article class="stepCard">
+          <div class="stepNumber">1</div>
+          <h3 class="stepTitle">Observe</h3>
+          <p>Every hour, Elixir pulls fresh data from the Clash Royale API — member lists, war status, donations, trophies — and compares it to what it already knows.</p>
+        </article>
+        <article class="stepCard">
+          <div class="stepNumber">2</div>
+          <h3 class="stepTitle">Decide</h3>
+          <p>An LLM evaluates the signals and filters noise. Routine stat bumps are ignored; meaningful events like promotions, war results, or milestones pass through.</p>
+        </article>
+        <article class="stepCard">
+          <div class="stepNumber">3</div>
+          <h3 class="stepTitle">Speak</h3>
+          <p>When something is worth sharing, Elixir writes a message in its own voice — informed by a personality prompt that keeps the tone consistent and on-brand.</p>
+        </article>
+        <article class="stepCard">
+          <div class="stepNumber">4</div>
+          <h3 class="stepTitle">Remember</h3>
+          <p>Every observation and message is logged to a local database and journal, giving Elixir long-term memory and providing data for the website.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="card card-padded">
+        <h2 class="sectionTitle m-0 mb-xs">Built With</h2>
+        <p class="sectionDesc m-0 mb-sm">
+          Elixir is open source and built with <strong>Python</strong>, <strong>discord.py</strong>, <strong>GPT-4o</strong>, <strong>SQLite</strong>, <strong>APScheduler</strong>, and the <strong>Clash Royale API</strong>. Its personality and behavior are configured through markdown prompt files, making it portable to other clans.
+        </p>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">View on GitHub</a>
+          <a class="btn btnGhost" href="/faq">Read the FAQ</a>
+        </div>
+      </div>
+    </section>
