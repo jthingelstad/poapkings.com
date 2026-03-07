@@ -1,131 +1,61 @@
 {
-  "updated": "2026-03-06T18:43:27Z",
+  "updated": "2026-03-07T02:00:00Z",
   "members": [
-    {
-      "name": "King Levy",
-      "tag": "U8RYG9Y2U",
-      "role": "Co-Leader",
-      "exp_level": 66,
-      "trophies": 11433,
-      "arena": "Musketeer Street",
-      "clan_rank": 3,
-      "donations": 146,
-      "donations_received": 80,
-      "last_seen": "20260306T163740.000Z",
-      "note": "Founder",
-      "profile_url": "",
-      "poap_address": "0x7881958b392cd412bde979ad9d33d2c9282d4f3d",
-      "date_joined": "2026-02-04T04:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Valkyrie",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
-          "usage_pct": 86
-        },
-        {
-          "name": "Skeleton Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
-          "usage_pct": 86
-        },
-        {
-          "name": "Dart Goblin",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-          "usage_pct": 86
-        },
-        {
-          "name": "Cannon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-          "usage_pct": 86
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Arrows",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Guards",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/1ArKfLJxYo6_NU_S9cAeIrfbXqWH0oULVJXedxBXQlU.png",
-          "usage_pct": 79
-        }
-      ],
-      "current_deck": [
-        "Valkyrie",
-        "Skeleton Barrel",
-        "Witch",
-        "Mini P.E.K.K.A",
-        "Dart Goblin",
-        "Arrows",
-        "Cannon",
-        "Guards"
-      ],
-      "bio": "King Levy, a leader at Musketeer Street, brings 11,433 trophies worth of experience to our clan. His expertise with Valkyrie and Skeleton Barrel makes him a force on the battlefield. King Levy's leadership is as robust as his strategic gameplay.",
-      "highlight": "war"
-    },
     {
       "name": "King Thing",
       "tag": "20JJJ2CCRU",
       "role": "Leader",
       "exp_level": 58,
-      "trophies": 10225,
+      "trophies": 10256,
       "arena": "Lumberlove Cabin",
       "clan_rank": 7,
-      "donations": 74,
-      "donations_received": 480,
-      "last_seen": "20260306T111049.000Z",
-      "note": "Founder",
-      "profile_url": "https://www.thingelstad.com/",
-      "poap_address": "poap.thingelstad.eth",
-      "date_joined": "2026-02-04T04:00:00Z",
+      "donations": 82,
+      "donations_received": 520,
+      "last_seen": "20260307T015131.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-02-04",
       "favorite_cards": [
         {
           "name": "Royal Ghost",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
-          "usage_pct": 80
+          "usage_pct": 79
         },
         {
           "name": "Witch",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 80
+          "usage_pct": 79
         },
         {
           "name": "Mini P.E.K.K.A",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 80
+          "usage_pct": 79
         },
         {
           "name": "Skeleton Army",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 80
+          "usage_pct": 79
         },
         {
           "name": "Arrows",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 80
+          "usage_pct": 79
         },
         {
           "name": "Royal Hogs",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-          "usage_pct": 80
+          "usage_pct": 79
         },
         {
           "name": "Cannon",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-          "usage_pct": 80
+          "usage_pct": 79
         },
         {
           "name": "Inferno Dragon",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 80
+          "usage_pct": 79
         }
       ],
       "current_deck": [
@@ -142,1126 +72,6 @@
       "highlight": "tenure"
     },
     {
-      "name": "raquaza",
-      "tag": "UL2V9QRG0",
-      "role": "Co-Leader",
-      "exp_level": 66,
-      "trophies": 12256,
-      "arena": "Magic Academy",
-      "clan_rank": 1,
-      "donations": 166,
-      "donations_received": 0,
-      "last_seen": "20260306T172056.000Z",
-      "note": "Founder",
-      "profile_url": "https://tyler.thingelstad.com/",
-      "poap_address": "tyler.thingelstad.eth",
-      "date_joined": "2026-02-04T04:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Furnace",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Boss Bandit",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Miner",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Goblin Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
-          "usage_pct": 93
-        }
-      ],
-      "current_deck": [
-        "Witch",
-        "Furnace",
-        "Boss Bandit",
-        "Mini P.E.K.K.A",
-        "The Log",
-        "Miner",
-        "Inferno Dragon",
-        "Goblin Barrel"
-      ],
-      "bio": "Raquaza, a leader in the clan, boasts an impressive 12,256 trophies. Known for his strategic prowess with the Witch and Furnace, he is a cornerstone of our war efforts. Raquaza's leadership is marked by dedication and a commitment to pushing limits.",
-      "highlight": "war"
-    },
-    {
-      "name": "JaxikoLane",
-      "tag": "VPY0Y2209",
-      "role": "Elder",
-      "exp_level": 41,
-      "trophies": 8708,
-      "arena": "PANCAKES!",
-      "clan_rank": 8,
-      "donations": 194,
-      "donations_received": 0,
-      "last_seen": "20260306T173550.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-05T16:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Goblin Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
-          "usage_pct": 83
-        },
-        {
-          "name": "Dart Goblin",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-          "usage_pct": 83
-        },
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 83
-        },
-        {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 69
-        },
-        {
-          "name": "Skeleton Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
-          "usage_pct": 69
-        },
-        {
-          "name": "Boss Bandit",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png",
-          "usage_pct": 69
-        },
-        {
-          "name": "Suspicious Bush",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vqTzGAjseQv9F5rf4tsFWeocvg0dyPw1j_nB1cmDZfI.png",
-          "usage_pct": 69
-        },
-        {
-          "name": "Wall Breakers",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
-          "usage_pct": 69
-        }
-      ],
-      "current_deck": [
-        "Skeleton Army",
-        "Skeleton Barrel",
-        "Boss Bandit",
-        "Dart Goblin",
-        "Goblin Barrel",
-        "Suspicious Bush",
-        "The Log",
-        "Wall Breakers"
-      ],
-      "bio": "Elder JaxikoLane, with 8,708 trophies, is known for his deadly Goblin Barrel attacks. His consistent donations reflect his commitment to the clan's growth. JaxikoLane's strategy and generosity make him an invaluable elder.",
-      "highlight": "donations"
-    },
-    {
-      "name": "Jonah the beast",
-      "tag": "P82C298G9",
-      "role": "Member",
-      "exp_level": 64,
-      "trophies": 10568,
-      "arena": "Royal Road",
-      "clan_rank": 6,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260226T173115.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-05T20:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Wall Breakers",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Inferno Tower",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/GSHY_wrooMMLET6bG_WJB8redtwx66c4i80ipi4gYOM.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Goblin Gang",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/NHflxzVAQT4oAz7eDfdueqpictb5vrWezn1nuqFhE4w.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Miner",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Poison",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/98HDkG2189yOULcVG9jz2QbJKtfuhH21DIrIjkOjxI8.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 100
-        }
-      ],
-      "current_deck": [
-        "Knight",
-        "Wall Breakers",
-        "Mini P.E.K.K.A",
-        "Inferno Tower",
-        "Goblin Gang",
-        "Miner",
-        "Poison",
-        "The Log"
-      ],
-      "bio": "Jonah the Beast, with 10,568 trophies, is a relentless force in Royal Road. His skill with the Knight and Wall Breakers is unparalleled. Though donations aren't his forte, his gameplay speaks volumes.",
-      "highlight": "trophies"
-    },
-    {
-      "name": "Chanco",
-      "tag": "20R8QRLYLP",
-      "role": "Elder",
-      "exp_level": 54,
-      "trophies": 10574,
-      "arena": "Royal Road",
-      "clan_rank": 5,
-      "donations": 192,
-      "donations_received": 0,
-      "last_seen": "20260306T141759.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-07T10:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Baby Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Arrows",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Royal Hogs",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Skeleton King",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/dCd69_wN9f8DxwuqOGtR4QgWhHIPIaTNxZ1e23RzAAc.png",
-          "usage_pct": 87
-        },
-        {
-          "name": "Magic Archer",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png",
-          "usage_pct": 50
-        }
-      ],
-      "current_deck": [
-        "Inferno Dragon",
-        "Witch",
-        "Skeleton King",
-        "Baby Dragon",
-        "Mini P.E.K.K.A",
-        "Arrows",
-        "Magic Archer",
-        "Royal Hogs"
-      ],
-      "bio": "Elder Chanco, with 10,574 trophies, is a stalwart of Royal Road. His prowess with Inferno Dragon and Witch makes him a formidable opponent. Chanco's generous donations further cement his status as a valued clan member.",
-      "highlight": "donations"
-    },
-    {
-      "name": "pokemon",
-      "tag": "V0CRYP2GG",
-      "role": "Member",
-      "exp_level": 31,
-      "trophies": 4297,
-      "arena": "Rascal's Hideout",
-      "clan_rank": 17,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260221T230504.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-09T10:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Fireball",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 55
-        },
-        {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 55
-        },
-        {
-          "name": "Furnace",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
-          "usage_pct": 50
-        },
-        {
-          "name": "Hog Rider",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ubu0oUl8tZkusnkZf8Xv9Vno5IO29Y-jbZ4fhoNJ5oc.png",
-          "usage_pct": 50
-        },
-        {
-          "name": "Goblin Cage",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
-          "usage_pct": 45
-        },
-        {
-          "name": "Battle Ram",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/dyc50V2cplKi4H7pq1B3I36pl_sEH5DQrNHboS_dbbM.png",
-          "usage_pct": 45
-        },
-        {
-          "name": "Mega Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
-          "usage_pct": 45
-        }
-      ],
-      "current_deck": [
-        "Furnace",
-        "Goblin Cage",
-        "Mini P.E.K.K.A",
-        "Hog Rider",
-        "Dart Goblin",
-        "Fireball",
-        "Arrows",
-        "Skeleton Barrel"
-      ],
-      "bio": "Pokemon, with 4,297 trophies, showcases a dynamic approach in Rascal's Hideout. His Fireball and Mini P.E.K.K.A strategies are noteworthy. His less frequent donations are balanced by his strong battle presence.",
-      "highlight": "general"
-    },
-    {
-      "name": "neanderthal",
-      "tag": "VPQ0QRPYG",
-      "role": "Member",
-      "exp_level": 33,
-      "trophies": 5235,
-      "arena": "Miner's Mine",
-      "clan_rank": 15,
-      "donations": 66,
-      "donations_received": 80,
-      "last_seen": "20260306T114851.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-12T14:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 86
-        },
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 86
-        },
-        {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 83
-        },
-        {
-          "name": "Skeleton Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
-          "usage_pct": 83
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 83
-        },
-        {
-          "name": "Mega Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Princess",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
-          "usage_pct": 79
-        }
-      ],
-      "current_deck": [
-        "Skeleton Army",
-        "Skeleton Barrel",
-        "Mini P.E.K.K.A",
-        "The Log",
-        "Witch",
-        "Mega Knight",
-        "Bats",
-        "Princess"
-      ],
-      "bio": "Neanderthal\u2019s strategy revolves around The Log and Mini P.E.K.K.A in Miner's Mine. With 5,235 trophies and consistent donations, he supports the clan\u2019s growth both on and off the battlefield.",
-      "highlight": "donations"
-    },
-    {
-      "name": "Fan",
-      "tag": "20299Y8PQQ",
-      "role": "Member",
-      "exp_level": 15,
-      "trophies": 2030,
-      "arena": "Royal Arena",
-      "clan_rank": 21,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260301T032241.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-13T00:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Giant",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Axr4ox5_b7edmLsoHxBX3vmgijAIibuF6RImTbqLlXE.png",
-          "usage_pct": 74
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 74
-        },
-        {
-          "name": "Skeletons",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/oO7iKMU5m0cdxhYPZA3nWQiAUh2yoGgdThLWB1rVSec.png",
-          "usage_pct": 74
-        },
-        {
-          "name": "Hog Rider",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ubu0oUl8tZkusnkZf8Xv9Vno5IO29Y-jbZ4fhoNJ5oc.png",
-          "usage_pct": 74
-        },
-        {
-          "name": "Bomber",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/12n1CesxKIcqVYntjxcF36EFA-ONw7Z-DoL0_rQrbdo.png",
-          "usage_pct": 74
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 63
-        },
-        {
-          "name": "Cannon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-          "usage_pct": 58
-        },
-        {
-          "name": "Baby Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
-          "usage_pct": 58
-        }
-      ],
-      "current_deck": [
-        "Giant",
-        "Mini P.E.K.K.A",
-        "Baby Dragon",
-        "Skeletons",
-        "Hog Rider",
-        "Cannon",
-        "Bomber",
-        "Witch"
-      ],
-      "bio": "Fan, standing at 2,030 trophies in Royal Arena, uses Giant and Mini P.E.K.K.A to great effect. Though new, Fan's tactical approach promises future growth and contributions.",
-      "highlight": "general"
-    },
-    {
-      "name": "CHEBO",
-      "tag": "VGGV0P8YY",
-      "role": "Member",
-      "exp_level": 27,
-      "trophies": 5539,
-      "arena": "Executioner's Kitchen",
-      "clan_rank": 14,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260304T225534.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-14T06:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Skeletons",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/oO7iKMU5m0cdxhYPZA3nWQiAUh2yoGgdThLWB1rVSec.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Fireball",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Archers",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/W4Hmp8MTSdXANN8KdblbtHwtsbt0o749BbxNqmJYfA8.png",
-          "usage_pct": 97
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 97
-        },
-        {
-          "name": "Electro Spirit",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/WKd4-IAFsgPpMo7dDi9sujmYjRhOMEWiE07OUJpvD9g.png",
-          "usage_pct": 97
-        },
-        {
-          "name": "Tesla",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/OiwnGrxFMNiHetYEerE-UZt0L_uYNzFY7qV_CA_OxR4.png",
-          "usage_pct": 97
-        },
-        {
-          "name": "X-Bow",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/zVQ9Hme1hlj9Dc6e1ORl9xWwglcSrP7ejow5mAhLUJc.png",
-          "usage_pct": 97
-        }
-      ],
-      "current_deck": [
-        "Skeletons",
-        "Archers",
-        "Knight",
-        "Electro Spirit",
-        "Tesla",
-        "X-Bow",
-        "The Log",
-        "Fireball"
-      ],
-      "bio": "CHEBO, with 5,539 trophies, excels in Executioner's Kitchen. His command over Skeletons and The Log makes him a formidable opponent. Though less active in donations, his battle strategies shine brightly.",
-      "highlight": "general"
-    },
-    {
-      "name": "sk2lsesgsos",
-      "tag": "20LQGJQ9QJ",
-      "role": "Member",
-      "exp_level": 29,
-      "trophies": 4290,
-      "arena": "Rascal's Hideout",
-      "clan_rank": 18,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260301T163513.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-14T16:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Furnace",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 76
-        },
-        {
-          "name": "Inferno Tower",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/GSHY_wrooMMLET6bG_WJB8redtwx66c4i80ipi4gYOM.png",
-          "usage_pct": 68
-        },
-        {
-          "name": "Fireball",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
-          "usage_pct": 64
-        },
-        {
-          "name": "Royal Giant",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/mnlRaNtmfpQx2e6mp70sLd0ND-pKPF70Cf87_agEKg4.png",
-          "usage_pct": 44
-        },
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 44
-        }
-      ],
-      "current_deck": [
-        "Furnace",
-        "Skeleton Army",
-        "Mini P.E.K.K.A",
-        "Knight",
-        "The Log",
-        "Musketeer",
-        "Bomb Tower",
-        "Fireball"
-      ],
-      "bio": "Sk2lsesgsos, with 4,290 trophies, is a tactical force in Rascal's Hideout, renowned for his Furnace and Mini P.E.K.K.A strategy. Though not a donor, his battlefield prowess is evident.",
-      "highlight": "general"
-    },
-    {
-      "name": "Finn",
-      "tag": "UURJP208Q",
-      "role": "Member",
-      "exp_level": 32,
-      "trophies": 4510,
-      "arena": "Rascal's Hideout",
-      "clan_rank": 16,
-      "donations": 10,
-      "donations_received": 0,
-      "last_seen": "20260303T222855.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-14T22:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Goblin Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Zap",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
-          "usage_pct": 68
-        },
-        {
-          "name": "Goblin Cage",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
-          "usage_pct": 68
-        },
-        {
-          "name": "Archers",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/W4Hmp8MTSdXANN8KdblbtHwtsbt0o749BbxNqmJYfA8.png",
-          "usage_pct": 63
-        },
-        {
-          "name": "Mega Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
-          "usage_pct": 58
-        },
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 58
-        },
-        {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 58
-        },
-        {
-          "name": "Cannon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-          "usage_pct": 37
-        }
-      ],
-      "current_deck": [
-        "Archers",
-        "Lumberjack",
-        "Cannon",
-        "Mega Knight",
-        "Bats",
-        "Goblin Barrel",
-        "Inferno Dragon",
-        "Zap"
-      ],
-      "bio": "Finn, holding 4,510 trophies in Rascal's Hideout, is a versatile player with an affinity for Goblin Barrel tactics. Although his donations are modest, his potential in battles is undeniable.",
-      "highlight": "general"
-    },
-    {
-      "name": "Lucky Red Panda",
-      "tag": "200UL8LYUJ",
-      "role": "Member",
-      "exp_level": 43,
-      "trophies": 8536,
-      "arena": "PANCAKES!",
-      "clan_rank": 9,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260218T191209.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-15T02:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Archers",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/W4Hmp8MTSdXANN8KdblbtHwtsbt0o749BbxNqmJYfA8.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Goblin Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 67
-        },
-        {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 53
-        },
-        {
-          "name": "Wall Breakers",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
-          "usage_pct": 53
-        },
-        {
-          "name": "Prince",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
-          "usage_pct": 53
-        }
-      ],
-      "current_deck": [
-        "Witch",
-        "Archers",
-        "Boss Bandit",
-        "Valkyrie",
-        "Goblin Barrel",
-        "Mini P.E.K.K.A",
-        "Bats",
-        "The Log"
-      ],
-      "bio": "Lucky Red Panda, at 8,536 trophies, adds a touch of unpredictability to the Pancakes arena. His Archers and Goblin Barrel tactics keep opponents guessing. Though not a donor, his presence is impactful.",
-      "highlight": "general"
-    },
-    {
-      "name": "ITZ_WARRIOR_",
-      "tag": "R202JLGVY",
-      "role": "Member",
-      "exp_level": 34,
-      "trophies": 6759,
-      "arena": "Silent Sanctuary",
-      "clan_rank": 11,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260228T015008.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-15T10:00:00Z",
-      "favorite_cards": [
-        {
-          "name": "Ice Spirit",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lv1budiafU9XmSdrDkk0NYyqASAFYyZ06CPysXKZXlA.png",
-          "usage_pct": 74
-        },
-        {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 67
-        },
-        {
-          "name": "Cannon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-          "usage_pct": 52
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 48
-        },
-        {
-          "name": "Skeletons",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/oO7iKMU5m0cdxhYPZA3nWQiAUh2yoGgdThLWB1rVSec.png",
-          "usage_pct": 44
-        },
-        {
-          "name": "Goblin Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
-          "usage_pct": 41
-        },
-        {
-          "name": "Princess",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
-          "usage_pct": 41
-        },
-        {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 37
-        }
-      ],
-      "current_deck": [
-        "Ice Golem",
-        "Cannon",
-        "Wizard",
-        "Hog Rider",
-        "Skeletons",
-        "The Log",
-        "Ice Spirit",
-        "Fireball"
-      ],
-      "bio": "ITZ_WARRIOR_, stationed in Silent Sanctuary with 6,759 trophies, is known for his precision with Ice Spirit and The Log. A combatant at heart, his battles are intense and calculated.",
-      "highlight": "general"
-    },
-    {
-      "name": "Nugget",
-      "tag": "VY9VQVUGU",
-      "role": "Member",
-      "exp_level": 26,
-      "trophies": 3462,
-      "arena": "Electro Valley",
-      "clan_rank": 20,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260222T191156.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-20T02:33:19Z",
-      "favorite_cards": [
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 89
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 89
-        },
-        {
-          "name": "Valkyrie",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
-          "usage_pct": 89
-        },
-        {
-          "name": "Giant Snowball",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
-          "usage_pct": 89
-        },
-        {
-          "name": "Dart Goblin",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-          "usage_pct": 89
-        },
-        {
-          "name": "Electro Spirit",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/WKd4-IAFsgPpMo7dDi9sujmYjRhOMEWiE07OUJpvD9g.png",
-          "usage_pct": 89
-        }
-      ],
-      "current_deck": [
-        "Witch",
-        "Knight",
-        "Valkyrie",
-        "Giant Snowball",
-        "Dart Goblin",
-        "Bats",
-        "Electro Spirit",
-        "Mini P.E.K.K.A"
-      ],
-      "bio": "Nugget, with 3,462 trophies, battles in Electro Valley with a keen sense for Bats and Mini P.E.K.K.A deployments. Though a quieter presence in the clan, his battle tactics are sharp.",
-      "highlight": "general"
-    },
-    {
-      "name": "thn",
-      "tag": "R9P8RVLG9",
-      "role": "Member",
-      "exp_level": 32,
-      "trophies": 6250,
-      "arena": "Royal Crypt",
-      "clan_rank": 13,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260306T160552.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-23T13:40:36Z",
-      "favorite_cards": [
-        {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Goblin Cage",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Arrows",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Bomber",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/12n1CesxKIcqVYntjxcF36EFA-ONw7Z-DoL0_rQrbdo.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Royal Hogs",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Wizard",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Valkyrie",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
-          "usage_pct": 100
-        }
-      ],
-      "current_deck": [
-        "Skeleton Army",
-        "Goblin Cage",
-        "Witch",
-        "Arrows",
-        "Bomber",
-        "Royal Hogs",
-        "Wizard",
-        "Valkyrie"
-      ],
-      "bio": "Thn is a powerhouse in Royal Crypt with 6,250 trophies. His Skeleton Army and Goblin Cage tactics define his gameplay. A quiet member but a strong contender on the battlefield.",
-      "highlight": "general"
-    },
-    {
-      "name": "Ram",
-      "tag": "RCCY80VG2",
-      "role": "Member",
-      "exp_level": 37,
-      "trophies": 6636,
-      "arena": "Silent Sanctuary",
-      "clan_rank": 12,
-      "donations": 20,
-      "donations_received": 0,
-      "last_seen": "20260305T065316.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-02-26T12:35:18Z",
-      "favorite_cards": [
-        {
-          "name": "Princess",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
-          "usage_pct": 97
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Mega Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Skeleton King",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/dCd69_wN9f8DxwuqOGtR4QgWhHIPIaTNxZ1e23RzAAc.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Prince",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Arrows",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 93
-        },
-        {
-          "name": "Firecracker",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/c1rL3LO1U2D9-TkeFfAC18gP3AO8ztSwrcHMZplwL2Q.png",
-          "usage_pct": 60
-        }
-      ],
-      "current_deck": [
-        "Knight",
-        "Mega Knight",
-        "Skeleton King",
-        "Witch",
-        "Princess",
-        "Poison",
-        "Prince",
-        "Arrows"
-      ],
-      "bio": "Ram, with 6,636 trophies, brings his A-game to Silent Sanctuary. His Princess and Mega Knight maneuvers are legendary. Though modest in donations, his strategic insights are invaluable.",
-      "highlight": "general"
-    },
-    {
-      "name": "Vijay",
-      "tag": "C920YGLC2",
-      "role": "Member",
-      "exp_level": 77,
-      "trophies": 12062,
-      "arena": "Magic Academy",
-      "clan_rank": 2,
-      "donations": 122,
-      "donations_received": 350,
-      "last_seen": "20260306T180246.000Z",
-      "note": "",
-      "profile_url": "",
-      "poap_address": "",
-      "date_joined": "2026-03-03T12:01:33Z",
-      "favorite_cards": [
-        {
-          "name": "Mega Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
-          "usage_pct": 50
-        },
-        {
-          "name": "Ice Spirit",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lv1budiafU9XmSdrDkk0NYyqASAFYyZ06CPysXKZXlA.png",
-          "usage_pct": 46
-        },
-        {
-          "name": "Skeleton Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
-          "usage_pct": 38
-        },
-        {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 38
-        },
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 38
-        },
-        {
-          "name": "Zap",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
-          "usage_pct": 38
-        },
-        {
-          "name": "Spear Goblins",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/FSDFotjaXidI4ku_WFpVCTWS1hKGnFh1sxX0lxM43_E.png",
-          "usage_pct": 38
-        },
-        {
-          "name": "Goblin Gang",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/NHflxzVAQT4oAz7eDfdueqpictb5vrWezn1nuqFhE4w.png",
-          "usage_pct": 38
-        }
-      ],
-      "current_deck": [
-        "Skeleton Barrel",
-        "Inferno Dragon",
-        "Bats",
-        "Zap",
-        "Mega Knight",
-        "Spear Goblins",
-        "Goblin Gang",
-        "Miner"
-      ],
-      "bio": "Vijay is a formidable contender in the Magic Academy arena, with 12,062 trophies to his name. He\u2019s a master of the Mega Knight and Ice Spirit, bringing versatility to every battle. Despite being a member, his presence is felt across the clan.",
-      "highlight": "trophies"
-    },
-    {
       "name": "66",
       "tag": "YGV0C9R20",
       "role": "Member",
@@ -1269,13 +79,13 @@
       "trophies": 10674,
       "arena": "Royal Road",
       "clan_rank": 4,
-      "donations": 0,
-      "donations_received": 0,
-      "last_seen": "20260306T180625.000Z",
+      "donations": 10,
+      "donations_received": 24,
+      "last_seen": "20260307T013939.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
-      "date_joined": "2026-03-06T14:03:21Z",
+      "date_joined": "2026-03-07T02:00:00Z",
       "favorite_cards": [
         {
           "name": "Zap",
@@ -1345,7 +155,7 @@
       "note": "",
       "profile_url": "",
       "poap_address": "",
-      "date_joined": "2026-03-06T14:03:21Z",
+      "date_joined": "2026-03-07T02:00:00Z",
       "favorite_cards": [
         {
           "name": "Musketeer",
@@ -1402,20 +212,230 @@
       "highlight": "general"
     },
     {
+      "name": "Chanco",
+      "tag": "20R8QRLYLP",
+      "role": "Elder",
+      "exp_level": 54,
+      "trophies": 10574,
+      "arena": "Royal Road",
+      "clan_rank": 5,
+      "donations": 202,
+      "donations_received": 0,
+      "last_seen": "20260306T214609.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Baby Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
+          "usage_pct": 80
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 80
+        },
+        {
+          "name": "Skeleton King",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/dCd69_wN9f8DxwuqOGtR4QgWhHIPIaTNxZ1e23RzAAc.png",
+          "usage_pct": 80
+        },
+        {
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "usage_pct": 80
+        },
+        {
+          "name": "Arrows",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
+          "usage_pct": 80
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 80
+        },
+        {
+          "name": "Royal Hogs",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
+          "usage_pct": 80
+        },
+        {
+          "name": "Magic Archer",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png",
+          "usage_pct": 50
+        }
+      ],
+      "current_deck": [
+        "Inferno Dragon",
+        "Witch",
+        "Skeleton King",
+        "Baby Dragon",
+        "Mini P.E.K.K.A",
+        "Arrows",
+        "Magic Archer",
+        "Royal Hogs"
+      ],
+      "bio": "Elder Chanco, with 10,574 trophies, is a stalwart of Royal Road. His prowess with Inferno Dragon and Witch makes him a formidable opponent. Chanco's generous donations further cement his status as a valued clan member.",
+      "highlight": "donations"
+    },
+    {
+      "name": "CHEBO",
+      "tag": "VGGV0P8YY",
+      "role": "Member",
+      "exp_level": 27,
+      "trophies": 5539,
+      "arena": "Executioner's Kitchen",
+      "clan_rank": 14,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260304T225534.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Skeletons",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/oO7iKMU5m0cdxhYPZA3nWQiAUh2yoGgdThLWB1rVSec.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Fireball",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Archers",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/W4Hmp8MTSdXANN8KdblbtHwtsbt0o749BbxNqmJYfA8.png",
+          "usage_pct": 97
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 97
+        },
+        {
+          "name": "Electro Spirit",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/WKd4-IAFsgPpMo7dDi9sujmYjRhOMEWiE07OUJpvD9g.png",
+          "usage_pct": 97
+        },
+        {
+          "name": "Tesla",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/OiwnGrxFMNiHetYEerE-UZt0L_uYNzFY7qV_CA_OxR4.png",
+          "usage_pct": 97
+        },
+        {
+          "name": "X-Bow",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/zVQ9Hme1hlj9Dc6e1ORl9xWwglcSrP7ejow5mAhLUJc.png",
+          "usage_pct": 97
+        }
+      ],
+      "current_deck": [
+        "Skeletons",
+        "Archers",
+        "Knight",
+        "Electro Spirit",
+        "Tesla",
+        "X-Bow",
+        "The Log",
+        "Fireball"
+      ],
+      "bio": "CHEBO, with 5,539 trophies, excels in Executioner's Kitchen. His command over Skeletons and The Log makes him a formidable opponent. Though less active in donations, his battle strategies shine brightly.",
+      "highlight": "general"
+    },
+    {
+      "name": "Fan",
+      "tag": "20299Y8PQQ",
+      "role": "Member",
+      "exp_level": 15,
+      "trophies": 2030,
+      "arena": "Royal Arena",
+      "clan_rank": 21,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260301T032241.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Giant",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Axr4ox5_b7edmLsoHxBX3vmgijAIibuF6RImTbqLlXE.png",
+          "usage_pct": 74
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 74
+        },
+        {
+          "name": "Skeletons",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/oO7iKMU5m0cdxhYPZA3nWQiAUh2yoGgdThLWB1rVSec.png",
+          "usage_pct": 74
+        },
+        {
+          "name": "Hog Rider",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ubu0oUl8tZkusnkZf8Xv9Vno5IO29Y-jbZ4fhoNJ5oc.png",
+          "usage_pct": 74
+        },
+        {
+          "name": "Bomber",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/12n1CesxKIcqVYntjxcF36EFA-ONw7Z-DoL0_rQrbdo.png",
+          "usage_pct": 74
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 63
+        },
+        {
+          "name": "Cannon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
+          "usage_pct": 58
+        },
+        {
+          "name": "Baby Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
+          "usage_pct": 58
+        }
+      ],
+      "current_deck": [
+        "Giant",
+        "Mini P.E.K.K.A",
+        "Baby Dragon",
+        "Skeletons",
+        "Hog Rider",
+        "Cannon",
+        "Bomber",
+        "Witch"
+      ],
+      "bio": "Fan, standing at 2,030 trophies in Royal Arena, uses Giant and Mini P.E.K.K.A to great effect. Though new, Fan's tactical approach promises future growth and contributions.",
+      "highlight": "general"
+    },
+    {
       "name": "feen",
       "tag": "UY98QVVQP",
       "role": "Member",
       "exp_level": 28,
-      "trophies": 4208,
+      "trophies": 4200,
       "arena": "Rascal's Hideout",
       "clan_rank": 19,
       "donations": 0,
       "donations_received": 0,
-      "last_seen": "20260306T142306.000Z",
+      "last_seen": "20260306T195028.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
-      "date_joined": "2026-03-06T14:03:21Z",
+      "date_joined": "2026-03-07T02:00:00Z",
       "favorite_cards": [
         {
           "name": "Mega Knight",
@@ -1425,27 +445,12 @@
         {
           "name": "Prince",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
-          "usage_pct": 96
+          "usage_pct": 92
         },
         {
           "name": "Arrows",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 88
-        },
-        {
-          "name": "Witch",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 50
-        },
-        {
-          "name": "Hunter",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png",
-          "usage_pct": 50
-        },
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 46
+          "usage_pct": 85
         },
         {
           "name": "The Log",
@@ -1453,23 +458,1018 @@
           "usage_pct": 46
         },
         {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 46
+        },
+        {
+          "name": "Hunter",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png",
+          "usage_pct": 46
+        },
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 46
+        },
+        {
+          "name": "Zap",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
           "usage_pct": 42
         }
       ],
       "current_deck": [
-        "Witch",
+        "Dart Goblin",
+        "Valkyrie",
         "Mega Knight",
-        "Prince",
-        "Inferno Dragon",
-        "Hunter",
-        "Goblins",
-        "Bats",
-        "Giant Snowball"
+        "Ice Spirit",
+        "Zap",
+        "Fireball",
+        "The Log",
+        "Royal Ghost"
       ],
       "bio": "Feen, residing in Rascal's Hideout with 4,208 trophies, dominates with Mega Knight and Prince. His focus is more on gameplay than donations, but his impact in battles is significant.",
       "highlight": "general"
+    },
+    {
+      "name": "Finn",
+      "tag": "UURJP208Q",
+      "role": "Member",
+      "exp_level": 32,
+      "trophies": 4510,
+      "arena": "Rascal's Hideout",
+      "clan_rank": 16,
+      "donations": 10,
+      "donations_received": 0,
+      "last_seen": "20260303T222855.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Goblin Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
+          "usage_pct": 79
+        },
+        {
+          "name": "Zap",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
+          "usage_pct": 68
+        },
+        {
+          "name": "Goblin Cage",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
+          "usage_pct": 68
+        },
+        {
+          "name": "Archers",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/W4Hmp8MTSdXANN8KdblbtHwtsbt0o749BbxNqmJYfA8.png",
+          "usage_pct": 63
+        },
+        {
+          "name": "Mega Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
+          "usage_pct": 58
+        },
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 58
+        },
+        {
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "usage_pct": 58
+        },
+        {
+          "name": "Cannon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
+          "usage_pct": 37
+        }
+      ],
+      "current_deck": [
+        "Archers",
+        "Lumberjack",
+        "Cannon",
+        "Mega Knight",
+        "Bats",
+        "Goblin Barrel",
+        "Inferno Dragon",
+        "Zap"
+      ],
+      "bio": "Finn, holding 4,510 trophies in Rascal's Hideout, is a versatile player with an affinity for Goblin Barrel tactics. Although his donations are modest, his potential in battles is undeniable.",
+      "highlight": "general"
+    },
+    {
+      "name": "ITZ_WARRIOR_",
+      "tag": "R202JLGVY",
+      "role": "Member",
+      "exp_level": 34,
+      "trophies": 6759,
+      "arena": "Silent Sanctuary",
+      "clan_rank": 11,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260228T015008.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Ice Spirit",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lv1budiafU9XmSdrDkk0NYyqASAFYyZ06CPysXKZXlA.png",
+          "usage_pct": 74
+        },
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 67
+        },
+        {
+          "name": "Cannon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
+          "usage_pct": 52
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 48
+        },
+        {
+          "name": "Skeletons",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/oO7iKMU5m0cdxhYPZA3nWQiAUh2yoGgdThLWB1rVSec.png",
+          "usage_pct": 44
+        },
+        {
+          "name": "Goblin Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
+          "usage_pct": 41
+        },
+        {
+          "name": "Princess",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
+          "usage_pct": 41
+        },
+        {
+          "name": "Skeleton Army",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+          "usage_pct": 37
+        }
+      ],
+      "current_deck": [
+        "Ice Golem",
+        "Cannon",
+        "Wizard",
+        "Hog Rider",
+        "Skeletons",
+        "The Log",
+        "Ice Spirit",
+        "Fireball"
+      ],
+      "bio": "ITZ_WARRIOR_, stationed in Silent Sanctuary with 6,759 trophies, is known for his precision with Ice Spirit and The Log. A combatant at heart, his battles are intense and calculated.",
+      "highlight": "general"
+    },
+    {
+      "name": "JaxikoLane",
+      "tag": "VPY0Y2209",
+      "role": "Elder",
+      "exp_level": 41,
+      "trophies": 8708,
+      "arena": "PANCAKES!",
+      "clan_rank": 8,
+      "donations": 212,
+      "donations_received": 0,
+      "last_seen": "20260307T005214.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 88
+        },
+        {
+          "name": "Dart Goblin",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
+          "usage_pct": 88
+        },
+        {
+          "name": "Goblin Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
+          "usage_pct": 64
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 44
+        },
+        {
+          "name": "Skeleton Army",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+          "usage_pct": 44
+        },
+        {
+          "name": "Skeleton Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
+          "usage_pct": 44
+        },
+        {
+          "name": "Boss Bandit",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png",
+          "usage_pct": 44
+        },
+        {
+          "name": "Suspicious Bush",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vqTzGAjseQv9F5rf4tsFWeocvg0dyPw1j_nB1cmDZfI.png",
+          "usage_pct": 44
+        }
+      ],
+      "current_deck": [
+        "Skeleton Army",
+        "Skeleton Barrel",
+        "Boss Bandit",
+        "Dart Goblin",
+        "Goblin Barrel",
+        "Suspicious Bush",
+        "The Log",
+        "Wall Breakers"
+      ],
+      "bio": "Elder JaxikoLane, with 8,708 trophies, is known for his deadly Goblin Barrel attacks. His consistent donations reflect his commitment to the clan's growth. JaxikoLane's strategy and generosity make him an invaluable elder.",
+      "highlight": "donations"
+    },
+    {
+      "name": "Jonah the beast",
+      "tag": "P82C298G9",
+      "role": "Member",
+      "exp_level": 64,
+      "trophies": 10568,
+      "arena": "Royal Road",
+      "clan_rank": 6,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260226T173115.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Wall Breakers",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Inferno Tower",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/GSHY_wrooMMLET6bG_WJB8redtwx66c4i80ipi4gYOM.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Goblin Gang",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/NHflxzVAQT4oAz7eDfdueqpictb5vrWezn1nuqFhE4w.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Miner",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Poison",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/98HDkG2189yOULcVG9jz2QbJKtfuhH21DIrIjkOjxI8.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 100
+        }
+      ],
+      "current_deck": [
+        "Knight",
+        "Wall Breakers",
+        "Mini P.E.K.K.A",
+        "Inferno Tower",
+        "Goblin Gang",
+        "Miner",
+        "Poison",
+        "The Log"
+      ],
+      "bio": "Jonah the Beast, with 10,568 trophies, is a relentless force in Royal Road. His skill with the Knight and Wall Breakers is unparalleled. Though donations aren't his forte, his gameplay speaks volumes.",
+      "highlight": "trophies"
+    },
+    {
+      "name": "King Levy",
+      "tag": "U8RYG9Y2U",
+      "role": "Co-Leader",
+      "exp_level": 66,
+      "trophies": 11429,
+      "arena": "Musketeer Street",
+      "clan_rank": 3,
+      "donations": 146,
+      "donations_received": 80,
+      "last_seen": "20260306T184435.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Skeleton Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
+          "usage_pct": 90
+        },
+        {
+          "name": "Dart Goblin",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
+          "usage_pct": 90
+        },
+        {
+          "name": "Cannon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
+          "usage_pct": 90
+        },
+        {
+          "name": "Valkyrie",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
+          "usage_pct": 86
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 83
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 83
+        },
+        {
+          "name": "Arrows",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
+          "usage_pct": 83
+        },
+        {
+          "name": "Guards",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/1ArKfLJxYo6_NU_S9cAeIrfbXqWH0oULVJXedxBXQlU.png",
+          "usage_pct": 83
+        }
+      ],
+      "current_deck": [
+        "Valkyrie",
+        "Skeleton Barrel",
+        "Witch",
+        "Mini P.E.K.K.A",
+        "Dart Goblin",
+        "Arrows",
+        "Cannon",
+        "Guards"
+      ],
+      "bio": "King Levy, a leader at Musketeer Street, brings 11,433 trophies worth of experience to our clan. His expertise with Valkyrie and Skeleton Barrel makes him a force on the battlefield. King Levy's leadership is as robust as his strategic gameplay.",
+      "highlight": "war"
+    },
+    {
+      "name": "Lucky Red Panda",
+      "tag": "200UL8LYUJ",
+      "role": "Member",
+      "exp_level": 43,
+      "trophies": 8536,
+      "arena": "PANCAKES!",
+      "clan_rank": 9,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260218T191209.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Archers",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/W4Hmp8MTSdXANN8KdblbtHwtsbt0o749BbxNqmJYfA8.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Goblin Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Skeleton Army",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+          "usage_pct": 67
+        },
+        {
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "usage_pct": 53
+        },
+        {
+          "name": "Wall Breakers",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
+          "usage_pct": 53
+        },
+        {
+          "name": "Prince",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
+          "usage_pct": 53
+        }
+      ],
+      "current_deck": [
+        "Witch",
+        "Archers",
+        "Boss Bandit",
+        "Valkyrie",
+        "Goblin Barrel",
+        "Mini P.E.K.K.A",
+        "Bats",
+        "The Log"
+      ],
+      "bio": "Lucky Red Panda, at 8,536 trophies, adds a touch of unpredictability to the Pancakes arena. His Archers and Goblin Barrel tactics keep opponents guessing. Though not a donor, his presence is impactful.",
+      "highlight": "general"
+    },
+    {
+      "name": "neanderthal",
+      "tag": "VPQ0QRPYG",
+      "role": "Member",
+      "exp_level": 33,
+      "trophies": 5235,
+      "arena": "Miner's Mine",
+      "clan_rank": 15,
+      "donations": 66,
+      "donations_received": 80,
+      "last_seen": "20260306T114851.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 90
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 86
+        },
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 86
+        },
+        {
+          "name": "Skeleton Army",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+          "usage_pct": 83
+        },
+        {
+          "name": "Skeleton Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
+          "usage_pct": 83
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 83
+        },
+        {
+          "name": "Mega Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
+          "usage_pct": 79
+        },
+        {
+          "name": "Princess",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
+          "usage_pct": 79
+        }
+      ],
+      "current_deck": [
+        "Skeleton Army",
+        "Skeleton Barrel",
+        "Mini P.E.K.K.A",
+        "The Log",
+        "Witch",
+        "Mega Knight",
+        "Bats",
+        "Princess"
+      ],
+      "bio": "Neanderthal\u2019s strategy revolves around The Log and Mini P.E.K.K.A in Miner's Mine. With 5,235 trophies and consistent donations, he supports the clan\u2019s growth both on and off the battlefield.",
+      "highlight": "donations"
+    },
+    {
+      "name": "Nugget",
+      "tag": "VY9VQVUGU",
+      "role": "Member",
+      "exp_level": 26,
+      "trophies": 3462,
+      "arena": "Electro Valley",
+      "clan_rank": 20,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260222T191156.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 89
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 89
+        },
+        {
+          "name": "Valkyrie",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
+          "usage_pct": 89
+        },
+        {
+          "name": "Giant Snowball",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
+          "usage_pct": 89
+        },
+        {
+          "name": "Dart Goblin",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
+          "usage_pct": 89
+        },
+        {
+          "name": "Electro Spirit",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/WKd4-IAFsgPpMo7dDi9sujmYjRhOMEWiE07OUJpvD9g.png",
+          "usage_pct": 89
+        }
+      ],
+      "current_deck": [
+        "Witch",
+        "Knight",
+        "Valkyrie",
+        "Giant Snowball",
+        "Dart Goblin",
+        "Bats",
+        "Electro Spirit",
+        "Mini P.E.K.K.A"
+      ],
+      "bio": "Nugget, with 3,462 trophies, battles in Electro Valley with a keen sense for Bats and Mini P.E.K.K.A deployments. Though a quieter presence in the clan, his battle tactics are sharp.",
+      "highlight": "general"
+    },
+    {
+      "name": "pokemon",
+      "tag": "V0CRYP2GG",
+      "role": "Member",
+      "exp_level": 31,
+      "trophies": 4297,
+      "arena": "Rascal's Hideout",
+      "clan_rank": 17,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260221T230504.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Fireball",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
+          "usage_pct": 90
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 55
+        },
+        {
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "usage_pct": 55
+        },
+        {
+          "name": "Furnace",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
+          "usage_pct": 50
+        },
+        {
+          "name": "Hog Rider",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ubu0oUl8tZkusnkZf8Xv9Vno5IO29Y-jbZ4fhoNJ5oc.png",
+          "usage_pct": 50
+        },
+        {
+          "name": "Goblin Cage",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
+          "usage_pct": 45
+        },
+        {
+          "name": "Battle Ram",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/dyc50V2cplKi4H7pq1B3I36pl_sEH5DQrNHboS_dbbM.png",
+          "usage_pct": 45
+        },
+        {
+          "name": "Mega Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
+          "usage_pct": 45
+        }
+      ],
+      "current_deck": [
+        "Furnace",
+        "Goblin Cage",
+        "Mini P.E.K.K.A",
+        "Hog Rider",
+        "Dart Goblin",
+        "Fireball",
+        "Arrows",
+        "Skeleton Barrel"
+      ],
+      "bio": "Pokemon, with 4,297 trophies, showcases a dynamic approach in Rascal's Hideout. His Fireball and Mini P.E.K.K.A strategies are noteworthy. His less frequent donations are balanced by his strong battle presence.",
+      "highlight": "general"
+    },
+    {
+      "name": "Ram",
+      "tag": "RCCY80VG2",
+      "role": "Member",
+      "exp_level": 37,
+      "trophies": 6636,
+      "arena": "Silent Sanctuary",
+      "clan_rank": 12,
+      "donations": 20,
+      "donations_received": 0,
+      "last_seen": "20260305T065316.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Princess",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
+          "usage_pct": 97
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 93
+        },
+        {
+          "name": "Mega Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
+          "usage_pct": 93
+        },
+        {
+          "name": "Skeleton King",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/dCd69_wN9f8DxwuqOGtR4QgWhHIPIaTNxZ1e23RzAAc.png",
+          "usage_pct": 93
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 93
+        },
+        {
+          "name": "Prince",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
+          "usage_pct": 93
+        },
+        {
+          "name": "Arrows",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
+          "usage_pct": 93
+        },
+        {
+          "name": "Firecracker",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/c1rL3LO1U2D9-TkeFfAC18gP3AO8ztSwrcHMZplwL2Q.png",
+          "usage_pct": 60
+        }
+      ],
+      "current_deck": [
+        "Knight",
+        "Mega Knight",
+        "Skeleton King",
+        "Witch",
+        "Princess",
+        "Poison",
+        "Prince",
+        "Arrows"
+      ],
+      "bio": "Ram, with 6,636 trophies, brings his A-game to Silent Sanctuary. His Princess and Mega Knight maneuvers are legendary. Though modest in donations, his strategic insights are invaluable.",
+      "highlight": "general"
+    },
+    {
+      "name": "raquaza",
+      "tag": "UL2V9QRG0",
+      "role": "Co-Leader",
+      "exp_level": 66,
+      "trophies": 12225,
+      "arena": "Magic Academy",
+      "clan_rank": 1,
+      "donations": 184,
+      "donations_received": 0,
+      "last_seen": "20260307T010518.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 91
+        },
+        {
+          "name": "Goblin Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
+          "usage_pct": 86
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 82
+        },
+        {
+          "name": "Furnace",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
+          "usage_pct": 77
+        },
+        {
+          "name": "Boss Bandit",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png",
+          "usage_pct": 77
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 77
+        },
+        {
+          "name": "Miner",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
+          "usage_pct": 77
+        },
+        {
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "usage_pct": 77
+        }
+      ],
+      "current_deck": [
+        "Witch",
+        "Furnace",
+        "Boss Bandit",
+        "Mini P.E.K.K.A",
+        "The Log",
+        "Miner",
+        "Inferno Dragon",
+        "Goblin Barrel"
+      ],
+      "bio": "Raquaza, a leader in the clan, boasts an impressive 12,256 trophies. Known for his strategic prowess with the Witch and Furnace, he is a cornerstone of our war efforts. Raquaza's leadership is marked by dedication and a commitment to pushing limits.",
+      "highlight": "war"
+    },
+    {
+      "name": "sk2lsesgsos",
+      "tag": "20LQGJQ9QJ",
+      "role": "Member",
+      "exp_level": 29,
+      "trophies": 4290,
+      "arena": "Rascal's Hideout",
+      "clan_rank": 18,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260301T163513.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Furnace",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 100
+        },
+        {
+          "name": "Skeleton Army",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+          "usage_pct": 76
+        },
+        {
+          "name": "Inferno Tower",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/GSHY_wrooMMLET6bG_WJB8redtwx66c4i80ipi4gYOM.png",
+          "usage_pct": 68
+        },
+        {
+          "name": "Fireball",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
+          "usage_pct": 64
+        },
+        {
+          "name": "Royal Giant",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/mnlRaNtmfpQx2e6mp70sLd0ND-pKPF70Cf87_agEKg4.png",
+          "usage_pct": 44
+        },
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 44
+        }
+      ],
+      "current_deck": [
+        "Furnace",
+        "Skeleton Army",
+        "Mini P.E.K.K.A",
+        "Knight",
+        "The Log",
+        "Musketeer",
+        "Bomb Tower",
+        "Fireball"
+      ],
+      "bio": "Sk2lsesgsos, with 4,290 trophies, is a tactical force in Rascal's Hideout, renowned for his Furnace and Mini P.E.K.K.A strategy. Though not a donor, his battlefield prowess is evident.",
+      "highlight": "general"
+    },
+    {
+      "name": "thn",
+      "tag": "R9P8RVLG9",
+      "role": "Member",
+      "exp_level": 32,
+      "trophies": 6219,
+      "arena": "Royal Crypt",
+      "clan_rank": 13,
+      "donations": 0,
+      "donations_received": 0,
+      "last_seen": "20260306T185237.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Skeleton Army",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
+          "usage_pct": 73
+        },
+        {
+          "name": "Goblin Cage",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
+          "usage_pct": 73
+        },
+        {
+          "name": "Witch",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+          "usage_pct": 73
+        },
+        {
+          "name": "Arrows",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
+          "usage_pct": 73
+        },
+        {
+          "name": "Bomber",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/12n1CesxKIcqVYntjxcF36EFA-ONw7Z-DoL0_rQrbdo.png",
+          "usage_pct": 73
+        },
+        {
+          "name": "Royal Hogs",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
+          "usage_pct": 73
+        },
+        {
+          "name": "Wizard",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
+          "usage_pct": 73
+        },
+        {
+          "name": "Valkyrie",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
+          "usage_pct": 73
+        }
+      ],
+      "current_deck": [
+        "Skeleton Army",
+        "Goblin Cage",
+        "Witch",
+        "Arrows",
+        "Bomber",
+        "Royal Hogs",
+        "Wizard",
+        "Valkyrie"
+      ],
+      "bio": "Thn is a powerhouse in Royal Crypt with 6,250 trophies. His Skeleton Army and Goblin Cage tactics define his gameplay. A quiet member but a strong contender on the battlefield.",
+      "highlight": "general"
+    },
+    {
+      "name": "Vijay",
+      "tag": "C920YGLC2",
+      "role": "Member",
+      "exp_level": 77,
+      "trophies": 12062,
+      "arena": "Magic Academy",
+      "clan_rank": 2,
+      "donations": 122,
+      "donations_received": 350,
+      "last_seen": "20260306T191536.000Z",
+      "note": "",
+      "profile_url": "",
+      "poap_address": "",
+      "date_joined": "2026-03-07T02:00:00Z",
+      "favorite_cards": [
+        {
+          "name": "Mega Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
+          "usage_pct": 48
+        },
+        {
+          "name": "Ice Spirit",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lv1budiafU9XmSdrDkk0NYyqASAFYyZ06CPysXKZXlA.png",
+          "usage_pct": 44
+        },
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 36
+        },
+        {
+          "name": "Skeleton Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
+          "usage_pct": 36
+        },
+        {
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "usage_pct": 36
+        },
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 36
+        },
+        {
+          "name": "Zap",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
+          "usage_pct": 36
+        },
+        {
+          "name": "Spear Goblins",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/FSDFotjaXidI4ku_WFpVCTWS1hKGnFh1sxX0lxM43_E.png",
+          "usage_pct": 36
+        }
+      ],
+      "current_deck": [
+        "Skeleton Barrel",
+        "Inferno Dragon",
+        "Bats",
+        "Zap",
+        "Mega Knight",
+        "Spear Goblins",
+        "Goblin Gang",
+        "Miner"
+      ],
+      "bio": "Vijay is a formidable contender in the Magic Academy arena, with 12,062 trophies to his name. He\u2019s a master of the Mega Knight and Ice Spirit, bringing versatility to every battle. Despite being a member, his presence is felt across the clan.",
+      "highlight": "trophies"
     }
   ],
   "intro": "Welcome to POAP KINGS, where every member is celebrated, and victories are shared. Our vibrant clan thrives on strategy, camaraderie, and the thrill of the clash.",
@@ -1478,97 +1478,85 @@
       "name": "Mini P.E.K.K.A",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
       "member_count": 12,
-      "avg_pct": 82
+      "avg_pct": 80
+    },
+    {
+      "name": "The Log",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+      "member_count": 10,
+      "avg_pct": 81
     },
     {
       "name": "Witch",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
       "member_count": 10,
-      "avg_pct": 82
-    },
-    {
-      "name": "The Log",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-      "member_count": 9,
-      "avg_pct": 86
+      "avg_pct": 77
     },
     {
       "name": "Skeleton Army",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-      "member_count": 9,
-      "avg_pct": 68
+      "member_count": 8,
+      "avg_pct": 65
     },
     {
       "name": "Inferno Dragon",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
       "member_count": 8,
-      "avg_pct": 62
+      "avg_pct": 59
     },
     {
       "name": "Arrows",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
       "member_count": 6,
-      "avg_pct": 88
+      "avg_pct": 82
+    },
+    {
+      "name": "Knight",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+      "member_count": 6,
+      "avg_pct": 78
     },
     {
       "name": "Goblin Barrel",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
       "member_count": 6,
-      "avg_pct": 77
+      "avg_pct": 73
     },
     {
       "name": "Mega Knight",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
       "member_count": 6,
-      "avg_pct": 70
+      "avg_pct": 69
     },
     {
       "name": "Bats",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
       "member_count": 6,
-      "avg_pct": 62
-    },
-    {
-      "name": "Knight",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-      "member_count": 5,
-      "avg_pct": 85
+      "avg_pct": 61
     },
     {
       "name": "Cannon",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
       "member_count": 5,
-      "avg_pct": 62
+      "avg_pct": 63
+    },
+    {
+      "name": "Zap",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
+      "member_count": 5,
+      "avg_pct": 50
     },
     {
       "name": "Skeleton Barrel",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
       "member_count": 4,
-      "avg_pct": 69
-    },
-    {
-      "name": "Zap",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
-      "member_count": 4,
-      "avg_pct": 53
-    },
-    {
-      "name": "Valkyrie",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
-      "member_count": 3,
-      "avg_pct": 91
-    },
-    {
-      "name": "Royal Hogs",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-      "member_count": 3,
-      "avg_pct": 90
+      "avg_pct": 63
     },
     {
       "name": "Dart Goblin",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
       "member_count": 3,
-      "avg_pct": 86
+      "avg_pct": 89
     },
     {
       "name": "Archers",
@@ -1583,28 +1571,28 @@
       "avg_pct": 84
     },
     {
-      "name": "Furnace",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
+      "name": "Valkyrie",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
       "member_count": 3,
-      "avg_pct": 81
+      "avg_pct": 82
     },
     {
       "name": "Prince",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
       "member_count": 3,
-      "avg_pct": 80
+      "avg_pct": 79
     },
     {
-      "name": "Wall Breakers",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
+      "name": "Royal Hogs",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
       "member_count": 3,
-      "avg_pct": 74
+      "avg_pct": 77
     },
     {
-      "name": "Princess",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
+      "name": "Furnace",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
       "member_count": 3,
-      "avg_pct": 72
+      "avg_pct": 75
     },
     {
       "name": "Skeletons",
@@ -1613,22 +1601,22 @@
       "avg_pct": 72
     },
     {
-      "name": "Goblin Cage",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
+      "name": "Princess",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
       "member_count": 3,
-      "avg_pct": 71
+      "avg_pct": 72
     },
     {
       "name": "Ice Spirit",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/lv1budiafU9XmSdrDkk0NYyqASAFYyZ06CPysXKZXlA.png",
       "member_count": 3,
-      "avg_pct": 63
+      "avg_pct": 62
     },
     {
-      "name": "Miner",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
-      "member_count": 2,
-      "avg_pct": 96
+      "name": "Goblin Cage",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/vD24bBgK4rSq7wx5QEbuqChtPMRFviL_ep76GwQw1yA.png",
+      "member_count": 3,
+      "avg_pct": 62
     },
     {
       "name": "Electro Spirit",
@@ -1637,16 +1625,16 @@
       "avg_pct": 93
     },
     {
+      "name": "Miner",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
+      "member_count": 2,
+      "avg_pct": 88
+    },
+    {
       "name": "Skeleton King",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/dCd69_wN9f8DxwuqOGtR4QgWhHIPIaTNxZ1e23RzAAc.png",
       "member_count": 2,
-      "avg_pct": 90
-    },
-    {
-      "name": "Bomber",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/12n1CesxKIcqVYntjxcF36EFA-ONw7Z-DoL0_rQrbdo.png",
-      "member_count": 2,
-      "avg_pct": 87
+      "avg_pct": 86
     },
     {
       "name": "Tesla",
@@ -1661,26 +1649,20 @@
       "avg_pct": 84
     },
     {
-      "name": "Boss Bandit",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png",
+      "name": "Wall Breakers",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
       "member_count": 2,
-      "avg_pct": 81
+      "avg_pct": 76
     },
     {
-      "name": "Wizard",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
+      "name": "Bomber",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/12n1CesxKIcqVYntjxcF36EFA-ONw7Z-DoL0_rQrbdo.png",
       "member_count": 2,
-      "avg_pct": 75
+      "avg_pct": 73
     },
     {
       "name": "Baby Dragon",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
-      "member_count": 2,
-      "avg_pct": 74
-    },
-    {
-      "name": "Goblin Gang",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/NHflxzVAQT4oAz7eDfdueqpictb5vrWezn1nuqFhE4w.png",
       "member_count": 2,
       "avg_pct": 69
     },
@@ -1689,6 +1671,24 @@
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Ubu0oUl8tZkusnkZf8Xv9Vno5IO29Y-jbZ4fhoNJ5oc.png",
       "member_count": 2,
       "avg_pct": 62
+    },
+    {
+      "name": "Wizard",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
+      "member_count": 2,
+      "avg_pct": 61
+    },
+    {
+      "name": "Boss Bandit",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png",
+      "member_count": 2,
+      "avg_pct": 60
+    },
+    {
+      "name": "Goblin Gang",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/NHflxzVAQT4oAz7eDfdueqpictb5vrWezn1nuqFhE4w.png",
+      "member_count": 1,
+      "avg_pct": 100
     },
     {
       "name": "Poison",
@@ -1709,14 +1709,14 @@
       "avg_pct": 89
     },
     {
-      "name": "Royal Ghost",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
-      "member_count": 1,
-      "avg_pct": 80
-    },
-    {
       "name": "Guards",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/1ArKfLJxYo6_NU_S9cAeIrfbXqWH0oULVJXedxBXQlU.png",
+      "member_count": 1,
+      "avg_pct": 83
+    },
+    {
+      "name": "Royal Ghost",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
       "member_count": 1,
       "avg_pct": 79
     },
@@ -1739,12 +1739,6 @@
       "avg_pct": 73
     },
     {
-      "name": "Suspicious Bush",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/vqTzGAjseQv9F5rf4tsFWeocvg0dyPw1j_nB1cmDZfI.png",
-      "member_count": 1,
-      "avg_pct": 69
-    },
-    {
       "name": "Firecracker",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/c1rL3LO1U2D9-TkeFfAC18gP3AO8ztSwrcHMZplwL2Q.png",
       "member_count": 1,
@@ -1760,13 +1754,19 @@
       "name": "Hunter",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png",
       "member_count": 1,
-      "avg_pct": 50
+      "avg_pct": 46
     },
     {
       "name": "Battle Ram",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/dyc50V2cplKi4H7pq1B3I36pl_sEH5DQrNHboS_dbbM.png",
       "member_count": 1,
       "avg_pct": 45
+    },
+    {
+      "name": "Suspicious Bush",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/vqTzGAjseQv9F5rf4tsFWeocvg0dyPw1j_nB1cmDZfI.png",
+      "member_count": 1,
+      "avg_pct": 44
     },
     {
       "name": "Royal Giant",
@@ -1778,7 +1778,7 @@
       "name": "Spear Goblins",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/FSDFotjaXidI4ku_WFpVCTWS1hKGnFh1sxX0lxM43_E.png",
       "member_count": 1,
-      "avg_pct": 38
+      "avg_pct": 36
     },
     {
       "name": "Elite Barbarians",
