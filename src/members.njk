@@ -19,6 +19,17 @@ extraScripts: '<script src="/members-promo.js"></script>'
       </div>
     </section>
 
+    {% if elixirRoster.intro %}
+    <section>
+      <div class="card card-padded">
+        <div class="elixirByline">
+          <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
+          <p class="sectionDesc m-0 elixirByline__body">{{ elixirRoster.intro }}</p>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
     {% if elixirMembers.message %}
     <section>
       <div class="card card-padded">
@@ -35,7 +46,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
     <section>
       <div class="card card-padded">
         <h2 class="sectionTitle m-0 mb-xs">Clan Card Meta</h2>
-        <p class="sectionDesc m-0 mb-md">The most popular cards across POAP KINGS right now, based on recent battle data.</p>
+        <p class="sectionDesc m-0 mb-md">The most popular cards across POAP KINGS right now, based on members' current decks.</p>
         <div class="cardStatsGrid">
           {% for card in elixirRoster.card_stats | take(12) %}
           <div class="cardStat {{ 'cardStat--top' if loop.index0 < 3 }}">
@@ -43,7 +54,10 @@ extraScripts: '<script src="/members-promo.js"></script>'
             <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="cardStat__icon" width="48" height="56" loading="lazy" />
             <div class="cardStat__info">
               <div class="cardStat__name">{{ card.name }}</div>
-              <div class="cardStat__meta">{{ card.member_count }} member{{ "s" if card.member_count != 1 }} &middot; {{ card.avg_pct }}% avg use</div>
+              <div class="cardStat__meta">{{ card.member_count }} member{{ "s" if card.member_count != 1 }}</div>
+              {% if card.members and card.members.length %}
+              <div class="cardStat__meta">Used by {{ card.members | join(", ") }}{% if card.member_count > card.members.length %} and {{ card.member_count - card.members.length }} more{% endif %}</div>
+              {% endif %}
             </div>
           </div>
           {% endfor %}

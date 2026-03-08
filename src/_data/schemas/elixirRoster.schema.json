@@ -13,7 +13,11 @@
           "name": { "type": "string" },
           "icon_url": { "type": "string" },
           "member_count": { "type": "integer" },
-          "avg_pct": { "type": "integer" }
+          "avg_pct": { "type": "integer" },
+          "members": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
         }
       }
     },
