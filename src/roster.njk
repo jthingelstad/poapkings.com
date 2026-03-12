@@ -35,7 +35,7 @@ appJs: true
         </div>
 
         {% if elixirRoster.intro %}
-        <p class="sectionDesc m-0 mt-sm mb-sm">{{ elixirRoster.intro | safe }}</p>
+        <p class="sectionDesc m-0 mt-sm mb-sm">{{ elixirRoster.intro | md | safe }}</p>
         {% endif %}
 
         <div class="rosterControls">
@@ -107,7 +107,6 @@ appJs: true
               <div class="elixirByline__body">
                 <div class="memberCard__bio">{{ m.bio | e }}</div>
               </div>
-              <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar" loading="lazy" /></a>
             </div>
             {% endif %}
             {% if m.note %}<div class="memberCard__note">{{ m.note | e }}</div>{% endif %}

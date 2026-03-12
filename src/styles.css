@@ -1041,3 +1041,18 @@ footer{
   min-width:0;
   flex:1;
 }
+.elixirByline--wrap{
+  display:block;
+}
+.elixirByline--wrap::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.elixirByline--wrap > a{
+  float:left;
+  margin: 0 14px 8px 0;
+}
+.elixirByline--wrap .elixirByline__body{
+  display:block;
+}

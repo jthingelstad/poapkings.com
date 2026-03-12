@@ -19,22 +19,11 @@ extraScripts: '<script src="/members-promo.js"></script>'
       </div>
     </section>
 
-    {% if elixirRoster.intro %}
-    <section>
-      <div class="card card-padded">
-        <div class="elixirByline">
-          <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
-          <p class="sectionDesc m-0 elixirByline__body">{{ elixirRoster.intro }}</p>
-        </div>
-      </div>
-    </section>
-    {% endif %}
-
     {% if elixirMembers.message %}
     <section>
       <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">What's Happening</h2>
-        <div class="elixirByline">
+        <h2 class="sectionTitle m-0 mb-xs">{{ elixirMembers.title or "What's Happening" }}</h2>
+        <div class="elixirByline elixirByline--wrap">
           <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
           <p class="sectionDesc m-0 elixirByline__body">{{ elixirMembers.message | md | safe }}</p>
         </div>
