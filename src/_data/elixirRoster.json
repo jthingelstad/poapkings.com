@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-12T11:50:15Z",
+  "updated": "2026-03-12T23:00:00Z",
   "members": [
     {
       "name": "King Levy",
@@ -9,9 +9,9 @@
       "trophies": 11532,
       "arena": "Summit of Heroes",
       "clan_rank": 3,
-      "donations": 80,
+      "donations": 104,
       "donations_received": 40,
-      "last_seen": "20260311T223452.000Z",
+      "last_seen": "20260312T202647.000Z",
       "note": "Founder",
       "profile_url": "",
       "poap_address": "0x7881958B392CD412Bde979AD9d33D2C9282d4F3D",
@@ -22,42 +22,42 @@
         {
           "name": "Witch",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 93
+          "usage_pct": 89
         },
         {
           "name": "The Log",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 55
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 52
+          "usage_pct": 71
         },
         {
           "name": "X-Bow",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/zVQ9Hme1hlj9Dc6e1ORl9xWwglcSrP7ejow5mAhLUJc.png",
-          "usage_pct": 48
-        },
-        {
-          "name": "Dart Goblin",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-          "usage_pct": 48
-        },
-        {
-          "name": "Princess",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
-          "usage_pct": 45
+          "usage_pct": 64
         },
         {
           "name": "Giant Snowball",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
-          "usage_pct": 45
+          "usage_pct": 61
         },
         {
-          "name": "Skeleton Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/vCB4DWCcrGbTkarjcOiVz4aNDx6GWLm0yUepg9E1MGo.png",
-          "usage_pct": 41
+          "name": "Princess",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
+          "usage_pct": 57
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 57
+        },
+        {
+          "name": "Wizard",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
+          "usage_pct": 36
+        },
+        {
+          "name": "Ram Rider",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/QaJyerT7f7oMyZ3Fv1glKymtLSvx7YUXisAulxl7zRI.png",
+          "usage_pct": 36
         }
       ],
       "current_deck": [
@@ -79,9 +79,9 @@
       "trophies": 10316,
       "arena": "Lumberlove Cabin",
       "clan_rank": 8,
-      "donations": 104,
-      "donations_received": 400,
-      "last_seen": "20260312T104649.000Z",
+      "donations": 115,
+      "donations_received": 450,
+      "last_seen": "20260312T214328.000Z",
       "note": "Founder",
       "profile_url": "https://www.thingelstad.com/",
       "poap_address": "poap.thingelstad.eth",
@@ -131,14 +131,14 @@
         }
       ],
       "current_deck": [
-        "Royal Ghost",
-        "Witch",
-        "Mini P.E.K.K.A",
-        "Skeleton Army",
-        "Arrows",
-        "Royal Hogs",
-        "Cannon",
-        "Inferno Dragon"
+        "Electro Dragon",
+        "Mortar",
+        "Golden Knight",
+        "The Log",
+        "Bandit",
+        "Giant Snowball",
+        "Spear Goblins",
+        "Dart Goblin"
       ]
     },
     {
@@ -149,9 +149,9 @@
       "trophies": 12276,
       "arena": "Magic Academy",
       "clan_rank": 1,
-      "donations": 38,
+      "donations": 100,
       "donations_received": 0,
-      "last_seen": "20260312T002400.000Z",
+      "last_seen": "20260312T214222.000Z",
       "note": "Founder",
       "profile_url": "https://tyler.thingelstad.com/",
       "poap_address": "tyler.thingelstad.eth",
@@ -162,42 +162,42 @@
         {
           "name": "The Log",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 87
-        },
-        {
-          "name": "Dart Goblin",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-          "usage_pct": 70
-        },
-        {
-          "name": "Wizard",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
-          "usage_pct": 60
-        },
-        {
-          "name": "Goblin Hut",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/l8ZdzzNLcwB4u7ihGgxNFQOjCT_njFuAhZr7D6PRF7E.png",
-          "usage_pct": 60
-        },
-        {
-          "name": "Mortar",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
-          "usage_pct": 60
-        },
-        {
-          "name": "Rocket",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ie07nQNK9CjhKOa4-arFAewi4EroqaA-86Xo7r5tx94.png",
-          "usage_pct": 60
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 60
+          "usage_pct": 86
         },
         {
           "name": "Royal Delivery",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/LPg7AGjGI3_xmi7gLLgGC50yKM1jJ2teWkZfoHJcIZo.png",
-          "usage_pct": 60
+          "usage_pct": 83
+        },
+        {
+          "name": "Rocket",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ie07nQNK9CjhKOa4-arFAewi4EroqaA-86Xo7r5tx94.png",
+          "usage_pct": 79
+        },
+        {
+          "name": "Wizard",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
+          "usage_pct": 76
+        },
+        {
+          "name": "Goblin Hut",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/l8ZdzzNLcwB4u7ihGgxNFQOjCT_njFuAhZr7D6PRF7E.png",
+          "usage_pct": 76
+        },
+        {
+          "name": "Mortar",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
+          "usage_pct": 76
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 76
+        },
+        {
+          "name": "Dart Goblin",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
+          "usage_pct": 76
         }
       ],
       "current_deck": [
@@ -216,12 +216,12 @@
       "tag": "VPY0Y2209",
       "role": "Elder",
       "exp_level": 51,
-      "trophies": 9089,
+      "trophies": 9066,
       "arena": "Valkalla",
       "clan_rank": 10,
-      "donations": 106,
+      "donations": 152,
       "donations_received": 0,
-      "last_seen": "20260312T000336.000Z",
+      "last_seen": "20260312T222007.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -230,44 +230,44 @@
       "highlight": "donations",
       "favorite_cards": [
         {
+          "name": "Dart Goblin",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
+          "usage_pct": 86
+        },
+        {
           "name": "The Log",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 100
+          "usage_pct": 86
         },
         {
-          "name": "Wizard",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Goblin Hut",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/l8ZdzzNLcwB4u7ihGgxNFQOjCT_njFuAhZr7D6PRF7E.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Mortar",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
-          "usage_pct": 79
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 62
         },
         {
           "name": "Rocket",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Ie07nQNK9CjhKOa4-arFAewi4EroqaA-86Xo7r5tx94.png",
-          "usage_pct": 79
+          "usage_pct": 52
         },
         {
-          "name": "Poison",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/98HDkG2189yOULcVG9jz2QbJKtfuhH21DIrIjkOjxI8.png",
-          "usage_pct": 55
+          "name": "Wizard",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
+          "usage_pct": 48
         },
         {
-          "name": "Vines",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/V5sJlPuo2WBRtirJ1lGEPJA4NvQ0KPwFeMrpxLX5z_8.png",
-          "usage_pct": 55
+          "name": "Goblin Hut",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/l8ZdzzNLcwB4u7ihGgxNFQOjCT_njFuAhZr7D6PRF7E.png",
+          "usage_pct": 48
         },
         {
-          "name": "Rage",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/bGP21OOmcpHMJ5ZA79bHVV2D-NzPtDkvBskCNJb7pg0.png",
-          "usage_pct": 55
+          "name": "Mortar",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
+          "usage_pct": 48
+        },
+        {
+          "name": "Royal Delivery",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/LPg7AGjGI3_xmi7gLLgGC50yKM1jJ2teWkZfoHJcIZo.png",
+          "usage_pct": 48
         }
       ],
       "current_deck": [
@@ -291,7 +291,7 @@
       "clan_rank": 6,
       "donations": 0,
       "donations_received": 0,
-      "last_seen": "20260226T173115.000Z",
+      "last_seen": "20260312T163149.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -300,55 +300,55 @@
       "highlight": "trophies",
       "favorite_cards": [
         {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 100
-        },
-        {
           "name": "Wall Breakers",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/_xPphEfC8eEwFNrfU3cMQG9-f5JaLQ31ARCA7l3XtW4.png",
           "usage_pct": 100
         },
         {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 83
+        },
+        {
           "name": "Mini P.E.K.K.A",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 100
+          "usage_pct": 83
         },
         {
           "name": "Inferno Tower",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/GSHY_wrooMMLET6bG_WJB8redtwx66c4i80ipi4gYOM.png",
-          "usage_pct": 100
+          "usage_pct": 83
         },
         {
           "name": "Goblin Gang",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/NHflxzVAQT4oAz7eDfdueqpictb5vrWezn1nuqFhE4w.png",
-          "usage_pct": 100
+          "usage_pct": 83
         },
         {
           "name": "Miner",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
-          "usage_pct": 100
+          "usage_pct": 83
         },
         {
           "name": "Poison",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/98HDkG2189yOULcVG9jz2QbJKtfuhH21DIrIjkOjxI8.png",
-          "usage_pct": 100
+          "usage_pct": 83
         },
         {
           "name": "The Log",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 100
+          "usage_pct": 83
         }
       ],
       "current_deck": [
-        "Knight",
         "Wall Breakers",
-        "Mini P.E.K.K.A",
-        "Inferno Tower",
-        "Goblin Gang",
-        "Miner",
-        "Poison",
-        "The Log"
+        "Electro Dragon",
+        "Mirror",
+        "Rage",
+        "Freeze",
+        "Elixir Golem",
+        "Battle Healer",
+        "Goblin Barrel"
       ]
     },
     {
@@ -361,7 +361,7 @@
       "clan_rank": 4,
       "donations": 134,
       "donations_received": 0,
-      "last_seen": "20260312T085834.000Z",
+      "last_seen": "20260312T144931.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "0x5c53a2dF41Fd9895A16bAA9420Bd6c0A2f125B85",
@@ -370,44 +370,44 @@
       "highlight": "donations",
       "favorite_cards": [
         {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 90
+          "name": "Baby Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
+          "usage_pct": 87
         },
         {
           "name": "Witch",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 90
+          "usage_pct": 87
         },
         {
           "name": "Skeleton King",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/dCd69_wN9f8DxwuqOGtR4QgWhHIPIaTNxZ1e23RzAAc.png",
-          "usage_pct": 90
+          "usage_pct": 87
         },
         {
-          "name": "Baby Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 90
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "usage_pct": 87
         },
         {
           "name": "Arrows",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 90
+          "usage_pct": 87
         },
         {
-          "name": "Prince",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
-          "usage_pct": 90
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 87
         },
         {
           "name": "Royal Hogs",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-          "usage_pct": 90
+          "usage_pct": 87
+        },
+        {
+          "name": "Prince",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
+          "usage_pct": 87
         }
       ],
       "current_deck": [
@@ -916,12 +916,12 @@
       "tag": "200UL8LYUJ",
       "role": "Member",
       "exp_level": 43,
-      "trophies": 8562,
+      "trophies": 8659,
       "arena": "PANCAKES!",
       "clan_rank": 11,
-      "donations": 10,
-      "donations_received": 0,
-      "last_seen": "20260311T195042.000Z",
+      "donations": 26,
+      "donations_received": 40,
+      "last_seen": "20260312T202404.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -952,22 +952,22 @@
         {
           "name": "Witch",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 55
-        },
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 55
-        },
-        {
-          "name": "Skeleton Army",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 55
+          "usage_pct": 88
         },
         {
           "name": "Boss Bandit",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/nuceG9o7rAyvyc7D3sp2QSiRYtSOEgraq0NJkDf729s.png",
-          "usage_pct": 45
+          "usage_pct": 88
+        },
+        {
+          "name": "Valkyrie",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
+          "usage_pct": 88
+        },
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 88
         }
       ],
       "current_deck": [
@@ -989,9 +989,9 @@
       "trophies": 12000,
       "arena": "Magic Academy",
       "clan_rank": 2,
-      "donations": 112,
-      "donations_received": 300,
-      "last_seen": "20260312T110113.000Z",
+      "donations": 120,
+      "donations_received": 360,
+      "last_seen": "20260312T192434.000Z",
       "note": "",
       "profile_url": "https://www.instagram.com/alok_vijay.03",
       "poap_address": "",
@@ -1002,42 +1002,42 @@
         {
           "name": "Zap",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
-          "usage_pct": 62
-        },
-        {
-          "name": "Bats",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-          "usage_pct": 59
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 55
+          "usage_pct": 54
         },
         {
           "name": "Giant",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Axr4ox5_b7edmLsoHxBX3vmgijAIibuF6RImTbqLlXE.png",
-          "usage_pct": 55
+          "usage_pct": 54
+        },
+        {
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "usage_pct": 54
         },
         {
           "name": "Sparky",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/2GKMkBrArZXgQxf2ygFjDs4VvGYPbx8F6Lj_68iVhIM.png",
-          "usage_pct": 55
+          "usage_pct": 54
+        },
+        {
+          "name": "Bats",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+          "usage_pct": 50
         },
         {
           "name": "Minion Horde",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Wyjq5l0IXHTkX9Rmpap6HaH08MvjbxFp1xBO9a47YSI.png",
-          "usage_pct": 52
+          "usage_pct": 50
         },
         {
           "name": "Arrows",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 52
+          "usage_pct": 50
         },
         {
           "name": "Skeleton Army",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 52
+          "usage_pct": 50
         }
       ],
       "current_deck": [
@@ -1131,7 +1131,7 @@
       "clan_rank": 15,
       "donations": 0,
       "donations_received": 0,
-      "last_seen": "20260311T230337.000Z",
+      "last_seen": "20260312T215456.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -1336,12 +1336,12 @@
       "tag": "VGJJLC9PR",
       "role": "Member",
       "exp_level": 42,
-      "trophies": 8559,
+      "trophies": 8589,
       "arena": "PANCAKES!",
       "clan_rank": 12,
-      "donations": 96,
-      "donations_received": 0,
-      "last_seen": "20260312T104730.000Z",
+      "donations": 106,
+      "donations_received": 30,
+      "last_seen": "20260312T223309.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -1352,42 +1352,42 @@
         {
           "name": "Barbarians",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/TvJsuu2S4yhyk1jVYUAQwdKOnW4U77KuWWOTPOWnwfI.png",
-          "usage_pct": 100
+          "usage_pct": 93
         },
         {
           "name": "Cannon",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Barbarian Barrel",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Gb0G1yNy0i5cIGUHin8uoFWxqntNtRPhY_jeMXg7HnA.png",
-          "usage_pct": 100
+          "usage_pct": 93
         },
         {
           "name": "Skeleton Dragons",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/qPOtg9uONh47_NLxGhhFc_ww9PlZ6z3Ry507q1NZUXs.png",
-          "usage_pct": 100
+          "usage_pct": 93
         },
         {
           "name": "Skeleton Army",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 100
+          "usage_pct": 93
         },
         {
           "name": "Inferno Dragon",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 100
-        },
-        {
-          "name": "Magic Archer",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png",
-          "usage_pct": 100
+          "usage_pct": 93
         },
         {
           "name": "Hog Rider",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Ubu0oUl8tZkusnkZf8Xv9Vno5IO29Y-jbZ4fhoNJ5oc.png",
-          "usage_pct": 100
+          "usage_pct": 93
+        },
+        {
+          "name": "Barbarian Barrel",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Gb0G1yNy0i5cIGUHin8uoFWxqntNtRPhY_jeMXg7HnA.png",
+          "usage_pct": 90
+        },
+        {
+          "name": "Magic Archer",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png",
+          "usage_pct": 90
         }
       ],
       "current_deck": [
@@ -1406,12 +1406,12 @@
       "tag": "2Y9C9LQL8",
       "role": "Member",
       "exp_level": 54,
-      "trophies": 10032,
+      "trophies": 10062,
       "arena": "Lumberlove Cabin",
       "clan_rank": 9,
       "donations": 0,
       "donations_received": 0,
-      "last_seen": "20260312T022330.000Z",
+      "last_seen": "20260312T165609.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -1457,7 +1457,7 @@
         {
           "name": "Firecracker",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/c1rL3LO1U2D9-TkeFfAC18gP3AO8ztSwrcHMZplwL2Q.png",
-          "usage_pct": 50
+          "usage_pct": 53
         }
       ],
       "current_deck": [
@@ -1476,12 +1476,12 @@
       "tag": "2209PJPVGG",
       "role": "Member",
       "exp_level": 23,
-      "trophies": 2756,
+      "trophies": 2786,
       "arena": "Jungle Arena",
       "clan_rank": 23,
-      "donations": 30,
+      "donations": 41,
       "donations_received": 0,
-      "last_seen": "20260312T044135.000Z",
+      "last_seen": "20260312T214757.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -1527,7 +1527,7 @@
         {
           "name": "Goblin Barrel",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
-          "usage_pct": 90
+          "usage_pct": 87
         }
       ],
       "current_deck": [
@@ -1549,9 +1549,9 @@
       "trophies": 10528,
       "arena": "Royal Road",
       "clan_rank": 7,
-      "donations": 20,
-      "donations_received": 0,
-      "last_seen": "20260312T062135.000Z",
+      "donations": 28,
+      "donations_received": 40,
+      "last_seen": "20260312T202136.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -1562,42 +1562,42 @@
         {
           "name": "Hunter",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/VNabB1WKnYtYRSG7X_FZfnZjQDHTBs9A96OGMFmecrA.png",
-          "usage_pct": 96
-        },
-        {
-          "name": "Valkyrie",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
-          "usage_pct": 85
-        },
-        {
-          "name": "Cannon Cart",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/aqwxRz8HXzqlMCO4WMXNA1txynjXTsLinknqsgZLbok.png",
-          "usage_pct": 85
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 85
-        },
-        {
-          "name": "Arrows",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 85
+          "usage_pct": 88
         },
         {
           "name": "Rage",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/bGP21OOmcpHMJ5ZA79bHVV2D-NzPtDkvBskCNJb7pg0.png",
-          "usage_pct": 85
+          "usage_pct": 81
         },
         {
           "name": "Electro Wizard",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/RsFaHgB3w6vXsTjXdPr3x8l_GbV9TbOUCvIx07prbrQ.png",
-          "usage_pct": 85
+          "usage_pct": 81
+        },
+        {
+          "name": "Valkyrie",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
+          "usage_pct": 77
+        },
+        {
+          "name": "Cannon Cart",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/aqwxRz8HXzqlMCO4WMXNA1txynjXTsLinknqsgZLbok.png",
+          "usage_pct": 77
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 77
+        },
+        {
+          "name": "Arrows",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
+          "usage_pct": 77
         },
         {
           "name": "Royal Giant",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/mnlRaNtmfpQx2e6mp70sLd0ND-pKPF70Cf87_agEKg4.png",
-          "usage_pct": 85
+          "usage_pct": 77
         }
       ],
       "current_deck": [
@@ -1619,9 +1619,9 @@
       "trophies": 10674,
       "arena": "Royal Road",
       "clan_rank": 5,
-      "donations": 0,
+      "donations": 24,
       "donations_received": 40,
-      "last_seen": "20260312T025323.000Z",
+      "last_seen": "20260312T194959.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
@@ -1632,42 +1632,42 @@
         {
           "name": "Zap",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",
-          "usage_pct": 35
+          "usage_pct": 36
         },
         {
           "name": "Elite Barbarians",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/C88C5JH_F3lLZj6K-tLcMo5DPjrFmvzIb1R2M6xCfTE.png",
-          "usage_pct": 35
+          "usage_pct": 36
         },
         {
           "name": "Freeze",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/I1M20_Zs_p_BS1NaNIVQjuMJkYI_1-ePtwYZahn0JXQ.png",
-          "usage_pct": 35
+          "usage_pct": 36
         },
         {
           "name": "Mini P.E.K.K.A",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 35
+          "usage_pct": 36
         },
         {
           "name": "Inferno Dragon",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 35
+          "usage_pct": 36
         },
         {
           "name": "Battle Healer",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/KdwXcoigS2Kg-cgA7BJJIANbUJG6SNgjetRQ-MegZ08.png",
-          "usage_pct": 35
+          "usage_pct": 36
         },
         {
           "name": "Elixir Golem",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/puhMsZjCIqy21HW3hYxjrk_xt8NIPyFqjRy-BeLKZwo.png",
-          "usage_pct": 35
+          "usage_pct": 36
         },
         {
           "name": "Executioner",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/9XL5BP2mqzV8kza6KF8rOxrpCZTyuGLp2l413DTjEoM.png",
-          "usage_pct": 35
+          "usage_pct": 36
         }
       ],
       "current_deck": [
@@ -1692,86 +1692,112 @@
         "raquaza",
         "Vijay",
         "66",
-        "Jonah the beast",
+        "King Thing",
         "stewart"
-      ]
-    },
-    {
-      "name": "Mini P.E.K.K.A",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-      "member_count": 11,
-      "avg_pct": 46,
-      "members": [
-        "raquaza",
-        "King Levy",
-        "Chanco",
-        "Jonah the beast",
-        "King Thing"
       ]
     },
     {
       "name": "Witch",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-      "member_count": 11,
-      "avg_pct": 46,
+      "member_count": 10,
+      "avg_pct": 42,
       "members": [
         "raquaza",
         "King Levy",
         "Chanco",
-        "King Thing",
-        "Lucky Red Panda"
+        "Lucky Red Panda",
+        "Ram"
+      ]
+    },
+    {
+      "name": "Mini P.E.K.K.A",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+      "member_count": 9,
+      "avg_pct": 38,
+      "members": [
+        "raquaza",
+        "King Levy",
+        "Chanco",
+        "Lucky Red Panda",
+        "neanderthal"
       ]
     },
     {
       "name": "Arrows",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-      "member_count": 8,
-      "avg_pct": 33,
+      "member_count": 7,
+      "avg_pct": 29,
       "members": [
         "King Levy",
         "Chanco",
         "ﾑ尺ﾑ乃ﾑｲん",
-        "King Thing",
-        "stewart"
+        "stewart",
+        "Ram"
       ]
     },
     {
       "name": "Skeleton Army",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-      "member_count": 8,
-      "avg_pct": 33,
+      "member_count": 7,
+      "avg_pct": 29,
       "members": [
-        "King Thing",
         "stewart",
         "JaxikoLane",
         "Ditaka",
-        "thn"
+        "thn",
+        "neanderthal"
       ]
     },
     {
       "name": "Cannon",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-      "member_count": 7,
-      "avg_pct": 29,
+      "member_count": 6,
+      "avg_pct": 25,
       "members": [
         "King Levy",
         "66",
-        "King Thing",
         "Ditaka",
-        "ITZ_WARRIOR_"
+        "ITZ_WARRIOR_",
+        "Finn"
+      ]
+    },
+    {
+      "name": "Dart Goblin",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
+      "member_count": 6,
+      "avg_pct": 25,
+      "members": [
+        "King Levy",
+        "King Thing",
+        "JaxikoLane",
+        "pokemon",
+        "feen"
+      ]
+    },
+    {
+      "name": "Goblin Barrel",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
+      "member_count": 6,
+      "avg_pct": 25,
+      "members": [
+        "raquaza",
+        "Jonah the beast",
+        "stewart",
+        "JaxikoLane",
+        "Lucky Red Panda"
       ]
     },
     {
       "name": "Knight",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-      "member_count": 7,
-      "avg_pct": 29,
+      "member_count": 6,
+      "avg_pct": 25,
       "members": [
         "Vijay",
-        "Jonah the beast",
         "ﾑ尺ﾑ乃ﾑｲん",
         "Ram",
-        "CHEBO"
+        "CHEBO",
+        "sk2lsesgsos"
       ]
     },
     {
@@ -1788,19 +1814,6 @@
       ]
     },
     {
-      "name": "Dart Goblin",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-      "member_count": 5,
-      "avg_pct": 21,
-      "members": [
-        "King Levy",
-        "JaxikoLane",
-        "pokemon",
-        "feen",
-        "Nugget"
-      ]
-    },
-    {
       "name": "Fireball",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
       "member_count": 5,
@@ -1811,32 +1824,6 @@
         "pokemon",
         "sk2lsesgsos",
         "feen"
-      ]
-    },
-    {
-      "name": "Goblin Barrel",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
-      "member_count": 5,
-      "avg_pct": 21,
-      "members": [
-        "raquaza",
-        "stewart",
-        "JaxikoLane",
-        "Lucky Red Panda",
-        "Finn"
-      ]
-    },
-    {
-      "name": "Inferno Dragon",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-      "member_count": 5,
-      "avg_pct": 21,
-      "members": [
-        "raquaza",
-        "Chanco",
-        "King Thing",
-        "Ditaka",
-        "Finn"
       ]
     },
     {
@@ -1890,6 +1877,18 @@
       ]
     },
     {
+      "name": "Inferno Dragon",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+      "member_count": 4,
+      "avg_pct": 17,
+      "members": [
+        "raquaza",
+        "Chanco",
+        "Ditaka",
+        "Finn"
+      ]
+    },
+    {
       "name": "Mega Knight",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
       "member_count": 4,
@@ -1899,18 +1898,6 @@
         "neanderthal",
         "Finn",
         "feen"
-      ]
-    },
-    {
-      "name": "Royal Hogs",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-      "member_count": 4,
-      "avg_pct": 17,
-      "members": [
-        "Chanco",
-        "66",
-        "King Thing",
-        "thn"
       ]
     },
     {
@@ -1944,6 +1931,17 @@
         "raquaza",
         "pokemon",
         "sk2lsesgsos"
+      ]
+    },
+    {
+      "name": "Royal Hogs",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
+      "member_count": 3,
+      "avg_pct": 12,
+      "members": [
+        "Chanco",
+        "66",
+        "thn"
       ]
     },
     {
@@ -1998,12 +1996,32 @@
       ]
     },
     {
+      "name": "Electro Dragon",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/tN9h6lnMNPCNsx0LMFmvpHgznbDZ1fBRkx-C7UfNmfY.png",
+      "member_count": 2,
+      "avg_pct": 8,
+      "members": [
+        "Jonah the beast",
+        "King Thing"
+      ]
+    },
+    {
       "name": "Electro Spirit",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/WKd4-IAFsgPpMo7dDi9sujmYjRhOMEWiE07OUJpvD9g.png",
       "member_count": 2,
       "avg_pct": 8,
       "members": [
         "CHEBO",
+        "Nugget"
+      ]
+    },
+    {
+      "name": "Giant Snowball",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
+      "member_count": 2,
+      "avg_pct": 8,
+      "members": [
+        "King Thing",
         "Nugget"
       ]
     },
@@ -2038,16 +2056,6 @@
       ]
     },
     {
-      "name": "Miner",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
-      "member_count": 2,
-      "avg_pct": 8,
-      "members": [
-        "raquaza",
-        "Jonah the beast"
-      ]
-    },
-    {
       "name": "Prince",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
       "member_count": 2,
@@ -2068,13 +2076,13 @@
       ]
     },
     {
-      "name": "Royal Ghost",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
+      "name": "Rage",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/bGP21OOmcpHMJ5ZA79bHVV2D-NzPtDkvBskCNJb7pg0.png",
       "member_count": 2,
       "avg_pct": 8,
       "members": [
-        "King Thing",
-        "feen"
+        "Jonah the beast",
+        "ﾑ尺ﾑ乃ﾑｲん"
       ]
     },
     {
@@ -2137,6 +2145,24 @@
       ]
     },
     {
+      "name": "Bandit",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/QWDdXMKJNpv0go-HYaWQWP6p8uIOHjqn-zX7G0p3DyM.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "King Thing"
+      ]
+    },
+    {
+      "name": "Battle Healer",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/KdwXcoigS2Kg-cgA7BJJIANbUJG6SNgjetRQ-MegZ08.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "Jonah the beast"
+      ]
+    },
+    {
       "name": "Bomb Tower",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/rirYRyHPc97emRjoH-c1O8uZCBzPVnToaGuNGusF3TQ.png",
       "member_count": 1,
@@ -2173,12 +2199,30 @@
       ]
     },
     {
+      "name": "Elixir Golem",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/puhMsZjCIqy21HW3hYxjrk_xt8NIPyFqjRy-BeLKZwo.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "Jonah the beast"
+      ]
+    },
+    {
       "name": "Firecracker",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/c1rL3LO1U2D9-TkeFfAC18gP3AO8ztSwrcHMZplwL2Q.png",
       "member_count": 1,
       "avg_pct": 4,
       "members": [
         "stewart"
+      ]
+    },
+    {
+      "name": "Freeze",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/I1M20_Zs_p_BS1NaNIVQjuMJkYI_1-ePtwYZahn0JXQ.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "Jonah the beast"
       ]
     },
     {
@@ -2191,30 +2235,21 @@
       ]
     },
     {
-      "name": "Giant Snowball",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "Nugget"
-      ]
-    },
-    {
-      "name": "Goblin Gang",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/NHflxzVAQT4oAz7eDfdueqpictb5vrWezn1nuqFhE4w.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "Jonah the beast"
-      ]
-    },
-    {
       "name": "Goblins",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/X_DQUye_OaS3QN6VC9CPw05Fit7wvSm3XegXIXKP--0.png",
       "member_count": 1,
       "avg_pct": 4,
       "members": [
         "shimmeringhost"
+      ]
+    },
+    {
+      "name": "Golden Knight",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/WJd207D0O1sN-l1FTb8P9KhYL2oF5jY26vRUfTUW3FQ.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "King Thing"
       ]
     },
     {
@@ -2254,15 +2289,6 @@
       ]
     },
     {
-      "name": "Inferno Tower",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/GSHY_wrooMMLET6bG_WJB8redtwx66c4i80ipi4gYOM.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "Jonah the beast"
-      ]
-    },
-    {
       "name": "Lumberjack",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/E6RWrnCuk13xMX5OE1EQtLEKTZQV6B78d00y8PlXt6Q.png",
       "member_count": 1,
@@ -2281,12 +2307,39 @@
       ]
     },
     {
+      "name": "Miner",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/Y4yWvdwBCg2FpAZgs8T09Gy34WOwpLZW-ttL52Ae8NE.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "raquaza"
+      ]
+    },
+    {
       "name": "Minions",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/yHGpoEnmUWPGV_hBbhn-Kk-Bs838OjGzWzJJlQpQKQA.png",
       "member_count": 1,
       "avg_pct": 4,
       "members": [
         "stewart"
+      ]
+    },
+    {
+      "name": "Mirror",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/wC6Cm9rKLEOk72zTsukVwxewKIoO4ZcMJun54zCPWvA.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "Jonah the beast"
+      ]
+    },
+    {
+      "name": "Mortar",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "King Thing"
       ]
     },
     {
@@ -2308,24 +2361,6 @@
       ]
     },
     {
-      "name": "Poison",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/98HDkG2189yOULcVG9jz2QbJKtfuhH21DIrIjkOjxI8.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "Jonah the beast"
-      ]
-    },
-    {
-      "name": "Rage",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/bGP21OOmcpHMJ5ZA79bHVV2D-NzPtDkvBskCNJb7pg0.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "ﾑ尺ﾑ乃ﾑｲん"
-      ]
-    },
-    {
       "name": "Rocket",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Ie07nQNK9CjhKOa4-arFAewi4EroqaA-86Xo7r5tx94.png",
       "member_count": 1,
@@ -2344,6 +2379,15 @@
       ]
     },
     {
+      "name": "Royal Ghost",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "feen"
+      ]
+    },
+    {
       "name": "Royal Giant",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/mnlRaNtmfpQx2e6mp70sLd0ND-pKPF70Cf87_agEKg4.png",
       "member_count": 1,
@@ -2359,6 +2403,15 @@
       "avg_pct": 4,
       "members": [
         "Chanco"
+      ]
+    },
+    {
+      "name": "Spear Goblins",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/FSDFotjaXidI4ku_WFpVCTWS1hKGnFh1sxX0lxM43_E.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "King Thing"
       ]
     },
     {
