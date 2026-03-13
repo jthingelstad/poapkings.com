@@ -1465,3 +1465,15 @@ footer{
 .elixirByline--wrap .elixirByline__body{
   display:block;
 }
+
+/* Generated-by-Elixir timestamp */
+.generatedTs{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:11px;
+  font-weight:700;
+  color: rgba(255,255,255,.45);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}

@@ -27,6 +27,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
           <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
           <p class="sectionDesc m-0 elixirByline__body">{{ elixirMembers.message | md | safe }}</p>
         </div>
+        {% if elixirMembers.generated %}<div class="generatedTs">Updated {{ elixirMembers.generated | formatDate }}</div>{% endif %}
       </div>
     </section>
     {% endif %}
@@ -43,7 +44,7 @@ extraScripts: '<script src="/members-promo.js"></script>'
             <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="cardStat__icon" width="48" height="56" loading="lazy" />
             <div class="cardStat__info">
               <div class="cardStat__name">{{ card.name }}</div>
-              <div class="cardStat__meta">{{ card.member_count }} member{{ "s" if card.member_count != 1 }}</div>
+              <div class="cardStat__meta">{{ card.member_count }} member{{ "s" if card.member_count != 1 }}{% if card.avg_pct %} · {{ card.avg_pct }}% avg usage{% endif %}</div>
               {% if card.members and card.members.length %}
               <div class="cardStat__meta">Used by {{ card.members | join(", ") }}{% if card.member_count > card.members.length %} and {{ card.member_count - card.members.length }} more{% endif %}</div>
               {% endif %}
