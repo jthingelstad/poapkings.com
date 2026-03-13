@@ -32,6 +32,7 @@ eleventyComputed:
     <div class="memberHero__pills">
       <span class="{{ role | roleClass }}">{{ role | e }}</span>
       <span class="tag mono">#{{ member.tag | memberSlug | upper }}</span>
+      {% if member.highlight %}<span class="highlightPill highlightPill--{{ member.highlight | e }}">{{ member.highlight | e }}</span>{% endif %}
       {% if member.note %}<span class="tag">{{ member.note | e }}</span>{% endif %}
     </div>
   </div>
@@ -121,14 +122,31 @@ eleventyComputed:
 
     {% if member.current_deck_cards and member.current_deck_cards.length %}
     <div class="card card-padded">
-      <h2 class="sectionTitle section-title-sm m-0 mb-xs">Current Deck</h2>
-      <p class="sectionDesc m-0 mb-md">Cards currently showing on the roster feed.</p>
+      <div class="deckHeader">
+        <div>
+          <h2 class="sectionTitle section-title-sm m-0 mb-xs">Current Deck</h2>
+          <p class="sectionDesc m-0">Cards currently showing on the roster feed.</p>
+        </div>
+        {%- set totalElixir = 0 -%}
+        {%- for card in member.current_deck_cards -%}
+          {%- set totalElixir = totalElixir + (card.elixir_cost or 0) -%}
+        {%- endfor -%}
+        {%- set avgElixir = (totalElixir / member.current_deck_cards.length) -%}
+        <div class="deckElixir">
+          <span class="deckElixir__drop"></span>
+          <span class="deckElixir__value">{{ avgElixir | formatDecimal(1) }}</span>
+          <span class="deckElixir__label">Avg Elixir</span>
+        </div>
+      </div>
       <div class="deckGrid">
         {% for card in member.current_deck_cards %}
-        <div class="deckCard deckCard--{{ card.rarity | e }}">
-          <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="deckCard__icon" width="80" height="93" loading="lazy" />
+        {%- set cardImg = card.icon_urls.evolutionMedium if (card.evolution_level and card.icon_urls.evolutionMedium) else card.icon_url -%}
+        <div class="deckCard deckCard--{{ card.rarity | e }}{% if card.evolution_level %} deckCard--evo{% endif %}">
+          <img src="{{ cardImg }}" alt="{{ card.name }}" class="deckCard__icon" width="80" height="93" loading="lazy" />
           <div class="deckCard__name">{{ card.name | e }}</div>
-          <div class="deckCard__meta">Lvl {{ card.level }}{% if card.evolution_level %} Evo{% endif %}</div>
+          <div class="deckCard__meta">
+            Lvl {{ card.level }}{% if card.star_level %} <span class="deckCard__stars">{% for i in range(0, card.star_level) %}★{% endfor %}</span>{% endif %}
+          </div>
         </div>
         {% endfor %}
       </div>
@@ -257,7 +275,15 @@ eleventyComputed:
         </div>
         <div class="profileDetailCard__meta">{{ achievement.info | e }}</div>
         <div class="profileDetailCard__body">
+          {%- set aPct = ((achievement.value / achievement.target) * 100) | round -%}
+          {%- set aPctClamped = aPct if aPct <= 100 else 100 -%}
           {{ achievement.value | formatNumber }} / {{ achievement.target | formatNumber }}
+          <div class="progressWrap">
+            <div class="progressTrack">
+              <div class="progressFill{{ ' progressFill--complete' if achievement.completed }}" style="width:{{ aPctClamped }}%"></div>
+              <div class="progressLabel">{{ aPctClamped }}%</div>
+            </div>
+          </div>
         </div>
       </article>
       {% endfor %}
