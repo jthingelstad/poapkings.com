@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-12T23:00:00Z",
+  "updated": "2026-03-13T01:25:09Z",
   "members": [
     {
       "name": "King Levy",
@@ -16,6 +16,254 @@
       "profile_url": "",
       "poap_address": "0x7881958B392CD412Bde979AD9d33D2C9282d4F3D",
       "date_joined": "2026-02-04",
+      "cr_account_age_days": 1473,
+      "cr_account_age_years": 4,
+      "cr_account_age_updated_at": "2026-03-13T01:25:11",
+      "cr_games_per_day": 2.93,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:11",
+      "badge_count": 91,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 4,
+          "max_level": 11,
+          "progress": 1473,
+          "target": 1825,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 5,
+          "max_level": 8,
+          "progress": 1824,
+          "target": 2500,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 230,
+          "target": 250,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1371,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 9748,
+          "target": 10000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 108,
+          "target": 150,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 127,
+          "target": 150,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryBabyDragon",
+          "label": "Baby Dragon Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Baby Dragon"
+        },
+        {
+          "name": "MasteryMegaKnight",
+          "label": "Mega Knight Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Mega Knight"
+        },
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryBlowdartGoblin",
+          "label": "Blowdart Goblin Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Blowdart Goblin"
+        }
+      ],
+      "achievement_star_count": 25,
+      "achievement_completed_count": 7,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 5,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 11967,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 28,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 2,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 2,
+          "value": 10,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 90,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 36,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 2,
+          "value": 11967,
+          "target": 25000,
+          "info": "Donate 25000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "King Levy, a leader at Musketeer Street, brings 11,433 trophies worth of experience to our clan. His expertise with Valkyrie and Skeleton Barrel makes him a force on the battlefield. King Levy's leadership is as robust as his strategic gameplay.",
       "highlight": "war",
       "favorite_cards": [
@@ -76,69 +324,307 @@
       "tag": "20JJJ2CCRU",
       "role": "Leader",
       "exp_level": 61,
-      "trophies": 10316,
+      "trophies": 10317,
       "arena": "Lumberlove Cabin",
       "clan_rank": 8,
       "donations": 115,
-      "donations_received": 450,
-      "last_seen": "20260312T214328.000Z",
+      "donations_received": 460,
+      "last_seen": "20260313T012359.000Z",
       "note": "Founder",
       "profile_url": "https://www.thingelstad.com/",
       "poap_address": "poap.thingelstad.eth",
       "date_joined": "2026-02-04",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:16",
+      "cr_games_per_day": 2.71,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:15",
+      "badge_count": 55,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 714,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 67,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1330,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 1729,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 68,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 97,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryCannon",
+          "label": "Cannon Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Cannon"
+        },
+        {
+          "name": "MasteryWitch",
+          "label": "Witch Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Witch"
+        },
+        {
+          "name": "MasteryRoyalHogs",
+          "label": "Royal Hogs Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Royal Hogs"
+        }
+      ],
+      "achievement_star_count": 18,
+      "achievement_completed_count": 5,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 4,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 1729,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 25,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 1,
+          "value": 1,
+          "target": 10,
+          "info": "Create and finish 10 tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 18,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 1729,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Leader King Thing, residing in Lumberlove Cabin with 10,225 trophies, is a versatile player known for the Royal Ghost and Witch. His leadership style is as dynamic as his strategic maneuvers, guiding the clan with experience and insight.",
       "highlight": "tenure",
       "favorite_cards": [
         {
           "name": "Cannon",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-          "usage_pct": 75
+          "usage_pct": 70
         },
         {
           "name": "Royal Ghost",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
-          "usage_pct": 71
+          "usage_pct": 70
         },
         {
           "name": "Witch",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
-          "usage_pct": 71
+          "usage_pct": 70
         },
         {
           "name": "Mini P.E.K.K.A",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-          "usage_pct": 71
+          "usage_pct": 70
         },
         {
           "name": "Skeleton Army",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-          "usage_pct": 71
+          "usage_pct": 70
         },
         {
           "name": "Arrows",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          "usage_pct": 71
+          "usage_pct": 70
         },
         {
           "name": "Royal Hogs",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-          "usage_pct": 71
+          "usage_pct": 70
         },
         {
           "name": "Inferno Dragon",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-          "usage_pct": 71
+          "usage_pct": 70
         }
       ],
       "current_deck": [
-        "Electro Dragon",
-        "Mortar",
-        "Golden Knight",
-        "The Log",
-        "Bandit",
-        "Giant Snowball",
-        "Spear Goblins",
-        "Dart Goblin"
+        "Royal Ghost",
+        "Witch",
+        "Mini P.E.K.K.A",
+        "Skeleton Army",
+        "Arrows",
+        "Royal Hogs",
+        "Cannon",
+        "Inferno Dragon"
       ]
     },
     {
@@ -151,53 +637,301 @@
       "clan_rank": 1,
       "donations": 100,
       "donations_received": 0,
-      "last_seen": "20260312T214222.000Z",
+      "last_seen": "20260313T003753.000Z",
       "note": "Founder",
       "profile_url": "https://tyler.thingelstad.com/",
       "poap_address": "tyler.thingelstad.eth",
       "date_joined": "2026-02-04",
+      "cr_account_age_days": 1460,
+      "cr_account_age_years": 4,
+      "cr_account_age_updated_at": "2026-03-13T01:25:10",
+      "cr_games_per_day": 5.36,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:09",
+      "badge_count": 111,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 4,
+          "max_level": 11,
+          "progress": 1460,
+          "target": 1825,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 5,
+          "max_level": 8,
+          "progress": 2079,
+          "target": 2500,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 142,
+          "target": 250,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1200,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 6551,
+          "target": 10000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 92,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 5,
+          "max_level": 8,
+          "progress": 172,
+          "target": 200,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryLog",
+          "label": "Log Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Log"
+        },
+        {
+          "name": "MasteryBossBandit",
+          "label": "Boss Bandit Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Boss Bandit"
+        },
+        {
+          "name": "MasteryFirespiritHut",
+          "label": "Firespirit Hut Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Firespirit Hut"
+        },
+        {
+          "name": "MasteryGoblinBarrel",
+          "label": "Goblin Barrel Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Goblin Barrel"
+        }
+      ],
+      "achievement_star_count": 27,
+      "achievement_completed_count": 8,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 38,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 6637,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 29,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 2,
+          "value": 10,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 424,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 20,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 1,
+          "value": 6637,
+          "target": 10000,
+          "info": "Donate 10000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Raquaza, a leader in the clan, boasts an impressive 12,256 trophies. Known for his strategic prowess with the Witch and Furnace, he is a cornerstone of our war efforts. Raquaza's leadership is marked by dedication and a commitment to pushing limits.",
       "highlight": "war",
       "favorite_cards": [
         {
-          "name": "The Log",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          "usage_pct": 86
-        },
-        {
           "name": "Royal Delivery",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/LPg7AGjGI3_xmi7gLLgGC50yKM1jJ2teWkZfoHJcIZo.png",
-          "usage_pct": 83
-        },
-        {
-          "name": "Rocket",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ie07nQNK9CjhKOa4-arFAewi4EroqaA-86Xo7r5tx94.png",
-          "usage_pct": 79
-        },
-        {
-          "name": "Wizard",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
-          "usage_pct": 76
-        },
-        {
-          "name": "Goblin Hut",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/l8ZdzzNLcwB4u7ihGgxNFQOjCT_njFuAhZr7D6PRF7E.png",
-          "usage_pct": 76
-        },
-        {
-          "name": "Mortar",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
-          "usage_pct": 76
-        },
-        {
-          "name": "Knight",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
-          "usage_pct": 76
+          "usage_pct": 86
         },
         {
           "name": "Dart Goblin",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-          "usage_pct": 76
+          "usage_pct": 82
+        },
+        {
+          "name": "Rocket",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Ie07nQNK9CjhKOa4-arFAewi4EroqaA-86Xo7r5tx94.png",
+          "usage_pct": 82
+        },
+        {
+          "name": "The Log",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
+          "usage_pct": 82
+        },
+        {
+          "name": "Wizard",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
+          "usage_pct": 79
+        },
+        {
+          "name": "Goblin Hut",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/l8ZdzzNLcwB4u7ihGgxNFQOjCT_njFuAhZr7D6PRF7E.png",
+          "usage_pct": 79
+        },
+        {
+          "name": "Mortar",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
+          "usage_pct": 79
+        },
+        {
+          "name": "Knight",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
+          "usage_pct": 79
         }
       ],
       "current_deck": [
@@ -226,6 +960,244 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-05",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:17",
+      "cr_games_per_day": 11.36,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:17",
+      "badge_count": 109,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 5,
+          "max_level": 8,
+          "progress": 1070,
+          "target": 2500,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 92,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1352,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 2615,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 38,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 95,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryBlowdartGoblin",
+          "label": "Blowdart Goblin Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Blowdart Goblin"
+        },
+        {
+          "name": "MasteryBarbLog",
+          "label": "Barb Log Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Barb Log"
+        },
+        {
+          "name": "MasteryLog",
+          "label": "Log Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Log"
+        },
+        {
+          "name": "MasterySkeletonArmy",
+          "label": "Skeleton Army Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Skeleton Army"
+        },
+        {
+          "name": "MasteryBossBandit",
+          "label": "Boss Bandit Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Boss Bandit"
+        }
+      ],
+      "achievement_star_count": 15,
+      "achievement_completed_count": 5,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 2,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 2615,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 23,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 57,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 2615,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Elder JaxikoLane, with 8,708 trophies, is known for his deadly Goblin Barrel attacks. His consistent donations reflect his commitment to the clan's growth. JaxikoLane's strategy and generosity make him an invaluable elder.",
       "highlight": "donations",
       "favorite_cards": [
@@ -296,6 +1268,264 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-05",
+      "cr_account_age_days": 2665,
+      "cr_account_age_years": 7,
+      "cr_account_age_updated_at": "2026-03-13T01:25:14",
+      "cr_games_per_day": 0.36,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:14",
+      "badge_count": 128,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 7,
+          "max_level": 11,
+          "progress": 2665,
+          "target": 2920,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 6,
+          "max_level": 8,
+          "progress": 2537,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 78,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 8,
+          "max_level": 8,
+          "progress": 1455,
+          "target": null,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 5472,
+          "target": 10000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 74,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 5,
+          "max_level": 8,
+          "progress": 189,
+          "target": 200,
+          "is_one_time": false
+        },
+        {
+          "name": "2v2",
+          "label": "2v2",
+          "category": "mode",
+          "level": 3,
+          "max_level": 7,
+          "progress": 95,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryWallbreakers",
+          "label": "Wallbreakers Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Wallbreakers"
+        },
+        {
+          "name": "MasteryLog",
+          "label": "Log Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Log"
+        },
+        {
+          "name": "MasteryBats",
+          "label": "Bats Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Bats"
+        },
+        {
+          "name": "MasteryBattleHealer",
+          "label": "Battle Healer Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Battle Healer"
+        }
+      ],
+      "achievement_star_count": 26,
+      "achievement_completed_count": 8,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 34,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 12015,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 26,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 3,
+          "value": 12,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 349,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 170,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 2,
+          "value": 12015,
+          "target": 25000,
+          "info": "Donate 25000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Jonah the Beast, with 10,568 trophies, is a relentless force in Royal Road. His skill with the Knight and Wall Breakers is unparalleled. Though donations aren't his forte, his gameplay speaks volumes.",
       "highlight": "trophies",
       "favorite_cards": [
@@ -366,6 +1596,244 @@
       "profile_url": "",
       "poap_address": "0x5c53a2dF41Fd9895A16bAA9420Bd6c0A2f125B85",
       "date_joined": "2026-02-07",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:12",
+      "cr_games_per_day": 4.36,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:12",
+      "badge_count": 45,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 5,
+          "max_level": 8,
+          "progress": 1357,
+          "target": 2500,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 1,
+          "max_level": 8,
+          "progress": 15,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1375,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 2403,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 33,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 92,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryBabyDragon",
+          "label": "Baby Dragon Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Baby Dragon"
+        },
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryInfernoDragon",
+          "label": "Inferno Dragon Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Inferno Dragon"
+        },
+        {
+          "name": "MasteryPrince",
+          "label": "Prince Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Prince"
+        }
+      ],
+      "achievement_star_count": 12,
+      "achievement_completed_count": 3,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 2,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 2403,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 26,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 1,
+          "value": 2,
+          "target": 5,
+          "info": "Win 5 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 2403,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Elder Chanco, with 10,574 trophies, is a stalwart of Royal Road. His prowess with Inferno Dragon and Witch makes him a formidable opponent. Chanco's generous donations further cement his status as a valued clan member.",
       "highlight": "donations",
       "favorite_cards": [
@@ -436,6 +1904,234 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-09",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:25",
+      "cr_games_per_day": 0.0,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:25",
+      "badge_count": 47,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 353,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 5,
+          "max_level": 8,
+          "progress": 860,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 872,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 19,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 34,
+          "target": 50,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryAxeMan",
+          "label": "Axe Man Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Axe Man"
+        },
+        {
+          "name": "MasteryWitch",
+          "label": "Witch Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Witch"
+        },
+        {
+          "name": "MasteryBattleRam",
+          "label": "Battle Ram Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Battle Ram"
+        },
+        {
+          "name": "MasteryFireball",
+          "label": "Fireball Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Fireball"
+        },
+        {
+          "name": "MasteryInfernoDragon",
+          "label": "Inferno Dragon Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Inferno Dragon"
+        }
+      ],
+      "achievement_star_count": 12,
+      "achievement_completed_count": 3,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 4,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 872,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 13,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 93,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 1,
+          "value": 1,
+          "target": 5,
+          "info": "Win 5 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 872,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Pokemon, with 4,297 trophies, showcases a dynamic approach in Rascal's Hideout. His Fireball and Mini P.E.K.K.A strategies are noteworthy. His less frequent donations are balanced by his strong battle presence.",
       "highlight": "general",
       "favorite_cards": [
@@ -506,6 +2202,234 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-12",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:23",
+      "cr_games_per_day": 0.36,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:23",
+      "badge_count": 52,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 342,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 6,
+          "max_level": 8,
+          "progress": 1033,
+          "target": 1200,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 1820,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 29,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 57,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryBarbarians",
+          "label": "Barbarians Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Barbarians"
+        },
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasterySkeletonArmy",
+          "label": "Skeleton Army Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Skeleton Army"
+        },
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryBats",
+          "label": "Bats Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Bats"
+        }
+      ],
+      "achievement_star_count": 14,
+      "achievement_completed_count": 4,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 5,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 1820,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 15,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 110,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 12,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 1820,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Neanderthal’s strategy revolves around The Log and Mini P.E.K.K.A in Miner's Mine. With 5,235 trophies and consistent donations, he supports the clan’s growth both on and off the battlefield.",
       "highlight": "donations",
       "favorite_cards": [
@@ -576,6 +2500,204 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-13",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:29",
+      "cr_games_per_day": 0.29,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:29",
+      "badge_count": 11,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 1,
+          "max_level": 8,
+          "progress": 82,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 240,
+          "target": 400,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryBabyDragon",
+          "label": "Baby Dragon Mastery",
+          "category": "mastery",
+          "level": 1,
+          "max_level": 10,
+          "progress": 1,
+          "target": 2,
+          "is_one_time": false,
+          "card_name": "Baby Dragon"
+        },
+        {
+          "name": "MasteryBomber",
+          "label": "Bomber Mastery",
+          "category": "mastery",
+          "level": 1,
+          "max_level": 10,
+          "progress": 1,
+          "target": 2,
+          "is_one_time": false,
+          "card_name": "Bomber"
+        },
+        {
+          "name": "MasteryCannon",
+          "label": "Cannon Mastery",
+          "category": "mastery",
+          "level": 1,
+          "max_level": 10,
+          "progress": 1,
+          "target": 2,
+          "is_one_time": false,
+          "card_name": "Cannon"
+        },
+        {
+          "name": "MasteryGiant",
+          "label": "Giant Mastery",
+          "category": "mastery",
+          "level": 1,
+          "max_level": 10,
+          "progress": 1,
+          "target": 2,
+          "is_one_time": false,
+          "card_name": "Giant"
+        },
+        {
+          "name": "MasteryHogRider",
+          "label": "Hog Rider Mastery",
+          "category": "mastery",
+          "level": 1,
+          "max_level": 10,
+          "progress": 1,
+          "target": 2,
+          "is_one_time": false,
+          "card_name": "Hog Rider"
+        }
+      ],
+      "achievement_star_count": 9,
+      "achievement_completed_count": 3,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 4,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 0,
+          "value": 3,
+          "target": 25,
+          "info": "Donate 25 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 7,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 42,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Win 1 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 3,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Fan, standing at 2,030 trophies in Royal Arena, uses Giant and Mini P.E.K.K.A to great effect. Though new, Fan's tactical approach promises future growth and contributions.",
       "highlight": "general",
       "favorite_cards": [
@@ -646,6 +2768,244 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-14",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:22",
+      "cr_games_per_day": 2.14,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:22",
+      "badge_count": 35,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 633,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 723,
+          "target": 800,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 468,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 13,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 34,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "2v2",
+          "label": "2v2",
+          "category": "mode",
+          "level": 4,
+          "max_level": 7,
+          "progress": 106,
+          "target": 200,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryArcher",
+          "label": "Archer Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Archer"
+        },
+        {
+          "name": "MasteryIceSpirits",
+          "label": "Ice Spirits Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Ice Spirits"
+        },
+        {
+          "name": "MasteryXbow",
+          "label": "Xbow Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Xbow"
+        },
+        {
+          "name": "MasteryCannon",
+          "label": "Cannon Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Cannon"
+        },
+        {
+          "name": "MasteryElectroSpirit",
+          "label": "Electro Spirit Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Electro Spirit"
+        }
+      ],
+      "achievement_star_count": 13,
+      "achievement_completed_count": 3,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 468,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 16,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 99,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 2,
+          "value": 8,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 468,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "CHEBO, with 5,539 trophies, excels in Executioner's Kitchen. His command over Skeletons and The Log makes him a formidable opponent. Though less active in donations, his battle strategies shine brightly.",
       "highlight": "general",
       "favorite_cards": [
@@ -716,6 +3076,254 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-14",
+      "cr_account_age_days": 840,
+      "cr_account_age_years": 2,
+      "cr_account_age_updated_at": "2026-03-13T01:25:24",
+      "cr_games_per_day": 1.07,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:24",
+      "badge_count": 76,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 2,
+          "max_level": 11,
+          "progress": 840,
+          "target": 1095,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 379,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 1,
+          "max_level": 8,
+          "progress": 11,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 5,
+          "max_level": 8,
+          "progress": 812,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 824,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 22,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 72,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryGoblinBarrel",
+          "label": "Goblin Barrel Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Goblin Barrel"
+        },
+        {
+          "name": "MasteryGoblinGang",
+          "label": "Goblin Gang Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Goblin Gang"
+        },
+        {
+          "name": "MasteryZap",
+          "label": "Zap Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Zap"
+        },
+        {
+          "name": "MasteryPrince",
+          "label": "Prince Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Prince"
+        },
+        {
+          "name": "MasteryArcher",
+          "label": "Archer Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Archer"
+        }
+      ],
+      "achievement_star_count": 17,
+      "achievement_completed_count": 4,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 19,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 824,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 13,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 96,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 2,
+          "value": 8,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 1,
+          "value": 1,
+          "target": 3,
+          "info": "Participate in 3 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 824,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Finn, holding 4,510 trophies in Rascal's Hideout, is a versatile player with an affinity for Goblin Barrel tactics. Although his donations are modest, his potential in battles is undeniable.",
       "highlight": "general",
       "favorite_cards": [
@@ -786,6 +3394,234 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-14",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:26",
+      "cr_games_per_day": 0.5,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:25",
+      "badge_count": 46,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 379,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 5,
+          "max_level": 8,
+          "progress": 816,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 827,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 15,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 45,
+          "target": 50,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryFirespiritHut",
+          "label": "Firespirit Hut Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Firespirit Hut"
+        },
+        {
+          "name": "MasteryValkyrie",
+          "label": "Valkyrie Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Valkyrie"
+        },
+        {
+          "name": "MasteryWitch",
+          "label": "Witch Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Witch"
+        },
+        {
+          "name": "MasteryArcher",
+          "label": "Archer Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Archer"
+        }
+      ],
+      "achievement_star_count": 15,
+      "achievement_completed_count": 4,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 9,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 827,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 13,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 92,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 1,
+          "value": 1,
+          "target": 10,
+          "info": "Create and finish 10 tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Win 1 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 827,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Sk2lsesgsos, with 4,290 trophies, is a tactical force in Rascal's Hideout, renowned for his Furnace and Mini P.E.K.K.A strategy. Though not a donor, his battlefield prowess is evident.",
       "highlight": "general",
       "favorite_cards": [
@@ -856,6 +3692,254 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-15",
+      "cr_account_age_days": 1913,
+      "cr_account_age_years": 5,
+      "cr_account_age_updated_at": "2026-03-13T01:25:21",
+      "cr_games_per_day": 0.07,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:20",
+      "badge_count": 61,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 5,
+          "max_level": 11,
+          "progress": 1913,
+          "target": 2190,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 554,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 6,
+          "max_level": 8,
+          "progress": 1034,
+          "target": 1200,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 602,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 21,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 35,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "2v2",
+          "label": "2v2",
+          "category": "mode",
+          "level": 1,
+          "max_level": 7,
+          "progress": 17,
+          "target": 25,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryBomber",
+          "label": "Bomber Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Bomber"
+        },
+        {
+          "name": "MasteryPekka",
+          "label": "Pekka Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Pekka"
+        },
+        {
+          "name": "MasteryGoblinBarrel",
+          "label": "Goblin Barrel Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Goblin Barrel"
+        },
+        {
+          "name": "MasteryGoblinGang",
+          "label": "Goblin Gang Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Goblin Gang"
+        },
+        {
+          "name": "MasteryWitch",
+          "label": "Witch Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Witch"
+        }
+      ],
+      "achievement_star_count": 21,
+      "achievement_completed_count": 5,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 24,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 632,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 18,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 113,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 2,
+          "value": 8,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 2,
+          "value": 7,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 15,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 632,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "ITZ_WARRIOR_, stationed in Silent Sanctuary with 6,759 trophies, is known for his precision with Ice Spirit and The Log. A combatant at heart, his battles are intense and calculated.",
       "highlight": "general",
       "favorite_cards": [
@@ -916,16 +4000,264 @@
       "tag": "200UL8LYUJ",
       "role": "Member",
       "exp_level": 43,
-      "trophies": 8659,
+      "trophies": 8629,
       "arena": "PANCAKES!",
       "clan_rank": 11,
-      "donations": 26,
+      "donations": 44,
       "donations_received": 40,
-      "last_seen": "20260312T202404.000Z",
+      "last_seen": "20260313T003413.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-15",
+      "cr_account_age_days": 393,
+      "cr_account_age_years": 1,
+      "cr_account_age_updated_at": "2026-03-13T01:25:18",
+      "cr_games_per_day": 1.86,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:18",
+      "badge_count": 46,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 1,
+          "max_level": 11,
+          "progress": 393,
+          "target": 730,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 5,
+          "max_level": 8,
+          "progress": 1052,
+          "target": 2500,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 1,
+          "max_level": 8,
+          "progress": 10,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1340,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 2589,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 28,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 96,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryArcher",
+          "label": "Archer Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Archer"
+        },
+        {
+          "name": "MasterySkeletonArmy",
+          "label": "Skeleton Army Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Skeleton Army"
+        },
+        {
+          "name": "MasteryBats",
+          "label": "Bats Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Bats"
+        },
+        {
+          "name": "MasteryLog",
+          "label": "Log Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Log"
+        }
+      ],
+      "achievement_star_count": 15,
+      "achievement_completed_count": 5,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 5,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 2589,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 22,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 120,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 76,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 2589,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Lucky Red Panda, at 8,536 trophies, adds a touch of unpredictability to the Pancakes arena. His Archers and Goblin Barrel tactics keep opponents guessing. Though not a donor, his presence is impactful.",
       "highlight": "general",
       "favorite_cards": [
@@ -996,6 +4328,264 @@
       "profile_url": "https://www.instagram.com/alok_vijay.03",
       "poap_address": "",
       "date_joined": "2026-02-15",
+      "cr_account_age_days": 1436,
+      "cr_account_age_years": 3,
+      "cr_account_age_updated_at": "2026-03-13T01:25:11",
+      "cr_games_per_day": 3.71,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:10",
+      "badge_count": 147,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 3,
+          "max_level": 11,
+          "progress": 1436,
+          "target": 1460,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 8,
+          "max_level": 8,
+          "progress": 10025,
+          "target": null,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 6,
+          "max_level": 8,
+          "progress": 930,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 8,
+          "max_level": 8,
+          "progress": 1776,
+          "target": null,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 8,
+          "max_level": 8,
+          "progress": 123829,
+          "target": null,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 5,
+          "max_level": 8,
+          "progress": 192,
+          "target": 200,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 319,
+          "target": 400,
+          "is_one_time": false
+        },
+        {
+          "name": "2v2",
+          "label": "2v2",
+          "category": "mode",
+          "level": 4,
+          "max_level": 7,
+          "progress": 184,
+          "target": 200,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryMegaKnight",
+          "label": "Mega Knight Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Mega Knight"
+        },
+        {
+          "name": "MasteryPekka",
+          "label": "Pekka Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Pekka"
+        },
+        {
+          "name": "MasteryBlowdartGoblin",
+          "label": "Blowdart Goblin Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Blowdart Goblin"
+        },
+        {
+          "name": "MasteryFirecracker",
+          "label": "Firecracker Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Firecracker"
+        }
+      ],
+      "achievement_star_count": 31,
+      "achievement_completed_count": 10,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 104,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 124332,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 29,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 1,
+          "value": 5,
+          "target": 10,
+          "info": "Create and finish 10 tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 29,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 3,
+          "value": 18,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 742,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 195,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 3,
+          "value": 124332,
+          "target": 25000,
+          "info": "Donate 25000 cards",
+          "completion_info": null,
+          "completed": true
+        }
+      ],
       "bio": "Vijay is a formidable contender in the Magic Academy arena, with 12,062 trophies to his name. He’s a master of the Mega Knight and Ice Spirit, bringing versatility to every battle. Despite being a member, his presence is felt across the clan.",
       "highlight": "trophies",
       "favorite_cards": [
@@ -1066,6 +4656,234 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-20",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:27",
+      "cr_games_per_day": 0.0,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:27",
+      "badge_count": 42,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 280,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 619,
+          "target": 800,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 232,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 14,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 39,
+          "target": 50,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasterySkeletonArmy",
+          "label": "Skeleton Army Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Skeleton Army"
+        },
+        {
+          "name": "MasteryElectroSpirit",
+          "label": "Electro Spirit Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Electro Spirit"
+        },
+        {
+          "name": "MasteryFireSpirits",
+          "label": "Fire Spirits Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Fire Spirits"
+        },
+        {
+          "name": "MasteryZap",
+          "label": "Zap Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Zap"
+        }
+      ],
+      "achievement_star_count": 13,
+      "achievement_completed_count": 4,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 7,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 1,
+          "value": 232,
+          "target": 250,
+          "info": "Donate 250 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 11,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 74,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 40,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 232,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Nugget, with 3,462 trophies, battles in Electro Valley with a keen sense for Bats and Mini P.E.K.K.A deployments. Though a quieter presence in the clan, his battle tactics are sharp.",
       "highlight": "general",
       "favorite_cards": [
@@ -1126,7 +4944,7 @@
       "tag": "R9P8RVLG9",
       "role": "Member",
       "exp_level": 33,
-      "trophies": 6271,
+      "trophies": 6304,
       "arena": "Royal Crypt",
       "clan_rank": 15,
       "donations": 0,
@@ -1136,6 +4954,254 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-23",
+      "cr_account_age_days": 1869,
+      "cr_account_age_years": 5,
+      "cr_account_age_updated_at": "2026-03-13T01:25:21",
+      "cr_games_per_day": 2.43,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:21",
+      "badge_count": 38,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 5,
+          "max_level": 11,
+          "progress": 1869,
+          "target": 2190,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 646,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 6,
+          "max_level": 8,
+          "progress": 1101,
+          "target": 1200,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 468,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 15,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 47,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "2v2",
+          "label": "2v2",
+          "category": "mode",
+          "level": 4,
+          "max_level": 7,
+          "progress": 104,
+          "target": 200,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryBomber",
+          "label": "Bomber Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Bomber"
+        },
+        {
+          "name": "MasteryWitch",
+          "label": "Witch Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Witch"
+        },
+        {
+          "name": "MasteryWizard",
+          "label": "Wizard Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Wizard"
+        },
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasterySkeletonArmy",
+          "label": "Skeleton Army Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Skeleton Army"
+        }
+      ],
+      "achievement_star_count": 18,
+      "achievement_completed_count": 4,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 4,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 468,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 17,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 116,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 2,
+          "value": 8,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 10,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 2,
+          "value": 3,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 468,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Thn is a powerhouse in Royal Crypt with 6,250 trophies. His Skeleton Army and Goblin Cage tactics define his gameplay. A quiet member but a strong contender on the battlefield.",
       "highlight": "general",
       "favorite_cards": [
@@ -1206,6 +5272,254 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-02-24",
+      "cr_account_age_days": 1748,
+      "cr_account_age_years": 4,
+      "cr_account_age_updated_at": "2026-03-13T01:25:20",
+      "cr_games_per_day": 2.57,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:20",
+      "badge_count": 76,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 4,
+          "max_level": 11,
+          "progress": 1748,
+          "target": 1825,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 663,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 1,
+          "max_level": 8,
+          "progress": 22,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1232,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 535,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 29,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 60,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryKnight",
+          "label": "Knight Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Knight"
+        },
+        {
+          "name": "MasteryHogRider",
+          "label": "Hog Rider Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Hog Rider"
+        },
+        {
+          "name": "MasteryPrince",
+          "label": "Prince Mastery",
+          "category": "mastery",
+          "level": 6,
+          "max_level": 10,
+          "progress": 6,
+          "target": 7,
+          "is_one_time": false,
+          "card_name": "Prince"
+        },
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasterySkeletonArmy",
+          "label": "Skeleton Army Mastery",
+          "category": "mastery",
+          "level": 5,
+          "max_level": 10,
+          "progress": 5,
+          "target": 6,
+          "is_one_time": false,
+          "card_name": "Skeleton Army"
+        }
+      ],
+      "achievement_star_count": 22,
+      "achievement_completed_count": 5,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 19,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 545,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 18,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 118,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 1,
+          "value": 1,
+          "target": 10,
+          "info": "Create and finish 10 tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 4,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 2,
+          "value": 8,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 2,
+          "value": 9,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 16,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 545,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Ram, with 6,636 trophies, brings his A-game to Silent Sanctuary. His Princess and Mega Knight maneuvers are legendary. Though modest in donations, his strategic insights are invaluable.",
       "highlight": "general",
       "favorite_cards": [
@@ -1276,6 +5590,234 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-04",
+      "cr_account_age_days": 1406,
+      "cr_account_age_years": 3,
+      "cr_account_age_updated_at": "2026-03-13T01:25:26",
+      "cr_games_per_day": 2.14,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:26",
+      "badge_count": 47,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 3,
+          "max_level": 11,
+          "progress": 1406,
+          "target": 1460,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 318,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 722,
+          "target": 800,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 16,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 40,
+          "target": 50,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryPrince",
+          "label": "Prince Mastery",
+          "category": "mastery",
+          "level": 4,
+          "max_level": 10,
+          "progress": 4,
+          "target": 5,
+          "is_one_time": false,
+          "card_name": "Prince"
+        },
+        {
+          "name": "MasteryBarbarians",
+          "label": "Barbarians Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Barbarians"
+        },
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryCannon",
+          "label": "Cannon Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Cannon"
+        },
+        {
+          "name": "MasteryFireball",
+          "label": "Fireball Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Fireball"
+        }
+      ],
+      "achievement_star_count": 12,
+      "achievement_completed_count": 3,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 5,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 1,
+          "value": 51,
+          "target": 250,
+          "info": "Donate 250 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 13,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 84,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 1,
+          "value": 1,
+          "target": 5,
+          "info": "Win 5 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 1,
+          "value": 1,
+          "target": 3,
+          "info": "Participate in 3 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 51,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Feen, residing in Rascal's Hideout with 4,208 trophies, dominates with Mega Knight and Prince. His focus is more on gameplay than donations, but his impact in battles is significant.",
       "highlight": "general",
       "favorite_cards": [
@@ -1340,12 +5882,240 @@
       "arena": "PANCAKES!",
       "clan_rank": 12,
       "donations": 106,
-      "donations_received": 30,
+      "donations_received": 38,
       "last_seen": "20260312T223309.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-07",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:19",
+      "cr_games_per_day": 4.57,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:19",
+      "badge_count": 32,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 733,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1203,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 1,
+          "max_level": 8,
+          "progress": 166,
+          "target": 500,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 26,
+          "target": 50,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 56,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryHogRider",
+          "label": "Hog Rider Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Hog Rider"
+        },
+        {
+          "name": "MasteryBarbarians",
+          "label": "Barbarians Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Barbarians"
+        },
+        {
+          "name": "MasteryCannon",
+          "label": "Cannon Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Cannon"
+        },
+        {
+          "name": "MasterySkeletonArmy",
+          "label": "Skeleton Army Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Skeleton Army"
+        },
+        {
+          "name": "MasterySkeletonDragons",
+          "label": "Skeleton Dragons Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Skeleton Dragons"
+        }
+      ],
+      "achievement_star_count": 11,
+      "achievement_completed_count": 3,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 1,
+          "value": 166,
+          "target": 250,
+          "info": "Donate 250 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 22,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 1,
+          "value": 2,
+          "target": 5,
+          "info": "Win 5 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 166,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "",
       "highlight": "",
       "favorite_cards": [
@@ -1416,6 +6186,254 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-09",
+      "cr_account_age_days": 3401,
+      "cr_account_age_years": 9,
+      "cr_account_age_updated_at": "2026-03-13T01:25:16",
+      "cr_games_per_day": 2.57,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:16",
+      "badge_count": 111,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 9,
+          "max_level": 11,
+          "progress": 3401,
+          "target": 3650,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 5,
+          "max_level": 8,
+          "progress": 1941,
+          "target": 2500,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 1,
+          "max_level": 8,
+          "progress": 23,
+          "target": 25,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 7,
+          "max_level": 8,
+          "progress": 1216,
+          "target": 1400,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 663,
+          "target": 1000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 82,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 134,
+          "target": 150,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryPekka",
+          "label": "Pekka Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Pekka"
+        },
+        {
+          "name": "MasteryWizard",
+          "label": "Wizard Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Wizard"
+        },
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryMinions",
+          "label": "Minions Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Minions"
+        },
+        {
+          "name": "MasteryMirror",
+          "label": "Mirror Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Mirror"
+        }
+      ],
+      "achievement_star_count": 23,
+      "achievement_completed_count": 7,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 49,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 2,
+          "value": 2016,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 25,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 3,
+          "value": 18,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 55,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 95,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 2016,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "",
       "highlight": "",
       "favorite_cards": [
@@ -1486,6 +6504,204 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-11",
+      "cr_account_age_days": null,
+      "cr_account_age_years": null,
+      "cr_account_age_updated_at": "2026-03-13T01:25:28",
+      "cr_games_per_day": 5.07,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:28",
+      "badge_count": 19,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 2,
+          "max_level": 8,
+          "progress": 124,
+          "target": 250,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 2,
+          "max_level": 8,
+          "progress": 356,
+          "target": 400,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryBarbLog",
+          "label": "Barb Log Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Barb Log"
+        },
+        {
+          "name": "MasteryBarbarians",
+          "label": "Barbarians Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Barbarians"
+        },
+        {
+          "name": "MasteryGoblins",
+          "label": "Goblins Mastery",
+          "category": "mastery",
+          "level": 3,
+          "max_level": 10,
+          "progress": 3,
+          "target": 4,
+          "is_one_time": false,
+          "card_name": "Goblins"
+        },
+        {
+          "name": "MasteryEliteArcher",
+          "label": "Elite Archer Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Elite Archer"
+        },
+        {
+          "name": "MasterySkeletonDragons",
+          "label": "Skeleton Dragons Mastery",
+          "category": "mastery",
+          "level": 2,
+          "max_level": 10,
+          "progress": 2,
+          "target": 3,
+          "is_one_time": false,
+          "card_name": "Skeleton Dragons"
+        }
+      ],
+      "achievement_star_count": 10,
+      "achievement_completed_count": 3,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 1,
+          "value": 41,
+          "target": 250,
+          "info": "Donate 250 cards",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 9,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 54,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 0,
+          "value": 0,
+          "target": 4,
+          "info": "Get 4 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Win 1 Friendly Battles",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Participate in 1 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 0,
+          "value": 41,
+          "target": 5000,
+          "info": "Donate 5000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "",
       "highlight": "",
       "favorite_cards": [
@@ -1556,6 +6772,264 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-11",
+      "cr_account_age_days": 2414,
+      "cr_account_age_years": 6,
+      "cr_account_age_updated_at": "2026-03-13T01:25:15",
+      "cr_games_per_day": 0.21,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:15",
+      "badge_count": 119,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 6,
+          "max_level": 11,
+          "progress": 2414,
+          "target": 2555,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 6,
+          "max_level": 8,
+          "progress": 2850,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarsVeteran",
+          "label": "Clan Wars Veteran",
+          "category": "career",
+          "level": 2,
+          "max_level": 3,
+          "progress": 21,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 4,
+          "max_level": 8,
+          "progress": 202,
+          "target": 250,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 8,
+          "max_level": 8,
+          "progress": 1436,
+          "target": null,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 3088,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 58,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 110,
+          "target": 150,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryArrows",
+          "label": "Arrows Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Arrows"
+        },
+        {
+          "name": "MasteryMusketeer",
+          "label": "Musketeer Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Musketeer"
+        },
+        {
+          "name": "MasteryValkyrie",
+          "label": "Valkyrie Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Valkyrie"
+        },
+        {
+          "name": "MasteryElectroWizard",
+          "label": "Electro Wizard Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Electro Wizard"
+        },
+        {
+          "name": "MasteryWizard",
+          "label": "Wizard Mastery",
+          "category": "mastery",
+          "level": 8,
+          "max_level": 10,
+          "progress": 8,
+          "target": 9,
+          "is_one_time": false,
+          "card_name": "Wizard"
+        }
+      ],
+      "achievement_star_count": 29,
+      "achievement_completed_count": 9,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 44,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 15908,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 26,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 3,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 3,
+          "value": 12,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 191,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 192,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 2,
+          "value": 15908,
+          "target": 25000,
+          "info": "Donate 25000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "",
       "highlight": "",
       "favorite_cards": [
@@ -1626,6 +7100,264 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": null,
+      "cr_account_age_days": 2216,
+      "cr_account_age_years": 6,
+      "cr_account_age_updated_at": "2026-03-13T01:25:13",
+      "cr_games_per_day": 2.36,
+      "cr_games_per_day_window_days": 14,
+      "cr_games_per_day_updated_at": "2026-03-13T01:25:13",
+      "badge_count": 70,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "level": 6,
+          "max_level": 11,
+          "progress": 2216,
+          "target": 2555,
+          "is_one_time": false
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "level": 6,
+          "max_level": 8,
+          "progress": 2829,
+          "target": 5000,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarsVeteran",
+          "label": "Clan Wars Veteran",
+          "category": "career",
+          "level": 1,
+          "max_level": 3,
+          "progress": 2,
+          "target": 10,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "level": 3,
+          "max_level": 8,
+          "progress": 62,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "level": 8,
+          "max_level": 8,
+          "progress": 1428,
+          "target": null,
+          "is_one_time": false
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "level": 4,
+          "max_level": 8,
+          "progress": 8803,
+          "target": 10000,
+          "is_one_time": false
+        },
+        {
+          "name": "EmoteCollection",
+          "label": "Emote Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 78,
+          "target": 100,
+          "is_one_time": false
+        },
+        {
+          "name": "BannerCollection",
+          "label": "Banner Collection",
+          "category": "collection",
+          "level": 3,
+          "max_level": 8,
+          "progress": 99,
+          "target": 100,
+          "is_one_time": false
+        }
+      ],
+      "mastery_highlights": [
+        {
+          "name": "MasteryBalloon",
+          "label": "Balloon Mastery",
+          "category": "mastery",
+          "level": 10,
+          "max_level": 10,
+          "progress": 10,
+          "target": null,
+          "is_one_time": false,
+          "card_name": "Balloon"
+        },
+        {
+          "name": "MasteryBabyDragon",
+          "label": "Baby Dragon Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Baby Dragon"
+        },
+        {
+          "name": "MasteryBowler",
+          "label": "Bowler Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Bowler"
+        },
+        {
+          "name": "MasteryMiniPekka",
+          "label": "Mini Pekka Mastery",
+          "category": "mastery",
+          "level": 9,
+          "max_level": 10,
+          "progress": 9,
+          "target": 10,
+          "is_one_time": false,
+          "card_name": "Mini Pekka"
+        },
+        {
+          "name": "MasteryFreeze",
+          "label": "Freeze Mastery",
+          "category": "mastery",
+          "level": 7,
+          "max_level": 10,
+          "progress": 7,
+          "target": 8,
+          "is_one_time": false,
+          "card_name": "Freeze"
+        }
+      ],
+      "achievement_star_count": 28,
+      "achievement_completed_count": 8,
+      "achievement_progress": [
+        {
+          "name": "Team Player",
+          "stars": 3,
+          "value": 116,
+          "target": 1,
+          "info": "Join a Clan",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need",
+          "stars": 3,
+          "value": 21243,
+          "target": 2500,
+          "info": "Donate 2500 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Road to Glory",
+          "stars": 3,
+          "value": 26,
+          "target": 6,
+          "info": "Reach Arena 6",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Gatherer",
+          "stars": 3,
+          "value": 121,
+          "target": 40,
+          "info": "Collect 40 cards",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "TV Royale",
+          "stars": 3,
+          "value": 1,
+          "target": 1,
+          "info": "Watch a TV Royale Replay",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Tournament Rewards",
+          "stars": 0,
+          "value": 0,
+          "target": 1000,
+          "info": "Win 1000 cards from tournaments",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Host",
+          "stars": 0,
+          "value": 0,
+          "target": 1,
+          "info": "Create and finish one tournament",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Tournament Player",
+          "stars": 3,
+          "value": 61,
+          "target": 1,
+          "info": "Join a tournament",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Challenge Streak",
+          "stars": 2,
+          "value": 10,
+          "target": 12,
+          "info": "Get 12 wins in a single Challenge",
+          "completion_info": null,
+          "completed": false
+        },
+        {
+          "name": "Practice with Friends",
+          "stars": 3,
+          "value": 264,
+          "target": 10,
+          "info": "Win 10 Friendly Battles",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Special Challenge",
+          "stars": 3,
+          "value": 95,
+          "target": 5,
+          "info": "Participate in 5 unique Special Event Challenges",
+          "completion_info": null,
+          "completed": true
+        },
+        {
+          "name": "Friend in Need II",
+          "stars": 2,
+          "value": 21243,
+          "target": 25000,
+          "info": "Donate 25000 cards",
+          "completion_info": null,
+          "completed": false
+        }
+      ],
       "bio": "Member 66 sports 10,674 trophies and is a key player in Royal Road. Known for his tactical use of Freeze and Elite Barbarians, he keeps opponents on their toes. His commitment to the clan is evident through his impressive trophy count.",
       "highlight": "trophies",
       "favorite_cards": [
@@ -1686,92 +7418,79 @@
     {
       "name": "The Log",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-      "member_count": 12,
-      "avg_pct": 50,
+      "member_count": 11,
+      "avg_pct": 46,
       "members": [
         "raquaza",
         "Vijay",
         "66",
-        "King Thing",
-        "stewart"
+        "stewart",
+        "JaxikoLane"
       ]
     },
     {
       "name": "Witch",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
+      "member_count": 11,
+      "avg_pct": 46,
+      "members": [
+        "raquaza",
+        "King Levy",
+        "Chanco",
+        "King Thing",
+        "Lucky Red Panda"
+      ]
+    },
+    {
+      "name": "Mini P.E.K.K.A",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
       "member_count": 10,
       "avg_pct": 42,
       "members": [
         "raquaza",
         "King Levy",
         "Chanco",
-        "Lucky Red Panda",
-        "Ram"
-      ]
-    },
-    {
-      "name": "Mini P.E.K.K.A",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-      "member_count": 9,
-      "avg_pct": 38,
-      "members": [
-        "raquaza",
-        "King Levy",
-        "Chanco",
-        "Lucky Red Panda",
-        "neanderthal"
+        "King Thing",
+        "Lucky Red Panda"
       ]
     },
     {
       "name": "Arrows",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-      "member_count": 7,
-      "avg_pct": 29,
+      "member_count": 8,
+      "avg_pct": 33,
       "members": [
         "King Levy",
         "Chanco",
         "ﾑ尺ﾑ乃ﾑｲん",
-        "stewart",
-        "Ram"
+        "King Thing",
+        "stewart"
       ]
     },
     {
       "name": "Skeleton Army",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png",
-      "member_count": 7,
-      "avg_pct": 29,
+      "member_count": 8,
+      "avg_pct": 33,
       "members": [
+        "King Thing",
         "stewart",
         "JaxikoLane",
         "Ditaka",
-        "thn",
-        "neanderthal"
+        "thn"
       ]
     },
     {
       "name": "Cannon",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
-      "member_count": 6,
-      "avg_pct": 25,
+      "member_count": 7,
+      "avg_pct": 29,
       "members": [
         "King Levy",
         "66",
-        "Ditaka",
-        "ITZ_WARRIOR_",
-        "Finn"
-      ]
-    },
-    {
-      "name": "Dart Goblin",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
-      "member_count": 6,
-      "avg_pct": 25,
-      "members": [
-        "King Levy",
         "King Thing",
-        "JaxikoLane",
-        "pokemon",
-        "feen"
+        "Ditaka",
+        "ITZ_WARRIOR_"
       ]
     },
     {
@@ -1814,6 +7533,19 @@
       ]
     },
     {
+      "name": "Dart Goblin",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/BmpK3bqEAviflqHCdxxnfm-_l3pRPJw3qxHkwS55nCY.png",
+      "member_count": 5,
+      "avg_pct": 21,
+      "members": [
+        "King Levy",
+        "JaxikoLane",
+        "pokemon",
+        "feen",
+        "Nugget"
+      ]
+    },
+    {
       "name": "Fireball",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
       "member_count": 5,
@@ -1824,6 +7556,19 @@
         "pokemon",
         "sk2lsesgsos",
         "feen"
+      ]
+    },
+    {
+      "name": "Inferno Dragon",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+      "member_count": 5,
+      "avg_pct": 21,
+      "members": [
+        "raquaza",
+        "Chanco",
+        "King Thing",
+        "Ditaka",
+        "Finn"
       ]
     },
     {
@@ -1877,18 +7622,6 @@
       ]
     },
     {
-      "name": "Inferno Dragon",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-      "member_count": 4,
-      "avg_pct": 17,
-      "members": [
-        "raquaza",
-        "Chanco",
-        "Ditaka",
-        "Finn"
-      ]
-    },
-    {
       "name": "Mega Knight",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
       "member_count": 4,
@@ -1898,6 +7631,18 @@
         "neanderthal",
         "Finn",
         "feen"
+      ]
+    },
+    {
+      "name": "Royal Hogs",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
+      "member_count": 4,
+      "avg_pct": 17,
+      "members": [
+        "Chanco",
+        "66",
+        "King Thing",
+        "thn"
       ]
     },
     {
@@ -1931,17 +7676,6 @@
         "raquaza",
         "pokemon",
         "sk2lsesgsos"
-      ]
-    },
-    {
-      "name": "Royal Hogs",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
-      "member_count": 3,
-      "avg_pct": 12,
-      "members": [
-        "Chanco",
-        "66",
-        "thn"
       ]
     },
     {
@@ -1996,32 +7730,12 @@
       ]
     },
     {
-      "name": "Electro Dragon",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/tN9h6lnMNPCNsx0LMFmvpHgznbDZ1fBRkx-C7UfNmfY.png",
-      "member_count": 2,
-      "avg_pct": 8,
-      "members": [
-        "Jonah the beast",
-        "King Thing"
-      ]
-    },
-    {
       "name": "Electro Spirit",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/WKd4-IAFsgPpMo7dDi9sujmYjRhOMEWiE07OUJpvD9g.png",
       "member_count": 2,
       "avg_pct": 8,
       "members": [
         "CHEBO",
-        "Nugget"
-      ]
-    },
-    {
-      "name": "Giant Snowball",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
-      "member_count": 2,
-      "avg_pct": 8,
-      "members": [
-        "King Thing",
         "Nugget"
       ]
     },
@@ -2086,6 +7800,16 @@
       ]
     },
     {
+      "name": "Royal Ghost",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
+      "member_count": 2,
+      "avg_pct": 8,
+      "members": [
+        "King Thing",
+        "feen"
+      ]
+    },
+    {
       "name": "Skeleton Dragons",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/qPOtg9uONh47_NLxGhhFc_ww9PlZ6z3Ry507q1NZUXs.png",
       "member_count": 2,
@@ -2145,15 +7869,6 @@
       ]
     },
     {
-      "name": "Bandit",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/QWDdXMKJNpv0go-HYaWQWP6p8uIOHjqn-zX7G0p3DyM.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "King Thing"
-      ]
-    },
-    {
       "name": "Battle Healer",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/KdwXcoigS2Kg-cgA7BJJIANbUJG6SNgjetRQ-MegZ08.png",
       "member_count": 1,
@@ -2187,6 +7902,15 @@
       "avg_pct": 4,
       "members": [
         "66"
+      ]
+    },
+    {
+      "name": "Electro Dragon",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/tN9h6lnMNPCNsx0LMFmvpHgznbDZ1fBRkx-C7UfNmfY.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "Jonah the beast"
       ]
     },
     {
@@ -2235,21 +7959,21 @@
       ]
     },
     {
+      "name": "Giant Snowball",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
+      "member_count": 1,
+      "avg_pct": 4,
+      "members": [
+        "Nugget"
+      ]
+    },
+    {
       "name": "Goblins",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/X_DQUye_OaS3QN6VC9CPw05Fit7wvSm3XegXIXKP--0.png",
       "member_count": 1,
       "avg_pct": 4,
       "members": [
         "shimmeringhost"
-      ]
-    },
-    {
-      "name": "Golden Knight",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/WJd207D0O1sN-l1FTb8P9KhYL2oF5jY26vRUfTUW3FQ.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "King Thing"
       ]
     },
     {
@@ -2334,15 +8058,6 @@
       ]
     },
     {
-      "name": "Mortar",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/lPOSw6H7YOHq2miSCrf7ZDL3ANjhJdPPDYOTujdNrVE.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "King Thing"
-      ]
-    },
-    {
       "name": "Musketeer",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png",
       "member_count": 1,
@@ -2379,15 +8094,6 @@
       ]
     },
     {
-      "name": "Royal Ghost",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/3En2cz0ISQAaMTHY3hj3rTveFN2kJYq-H4VxvdJNvCM.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "feen"
-      ]
-    },
-    {
       "name": "Royal Giant",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/mnlRaNtmfpQx2e6mp70sLd0ND-pKPF70Cf87_agEKg4.png",
       "member_count": 1,
@@ -2403,15 +8109,6 @@
       "avg_pct": 4,
       "members": [
         "Chanco"
-      ]
-    },
-    {
-      "name": "Spear Goblins",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/FSDFotjaXidI4ku_WFpVCTWS1hKGnFh1sxX0lxM43_E.png",
-      "member_count": 1,
-      "avg_pct": 4,
-      "members": [
-        "King Thing"
       ]
     },
     {
