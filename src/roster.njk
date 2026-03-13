@@ -114,7 +114,7 @@ appJs: true
               <a class="memberCard__cta" href="{{ memberUrl | e }}">View full profile</a>
               <div class="memberCard__subtle">Tag #{{ rawTag | e }}</div>
             </div>
-            <button class="tinylytics_kudos" data-path="{{ memberUrl | e }}"></button>
+            <button class="tinylytics_kudos" data-path="/roster/{{ rawTag | e }}"></button>
           </div>
           {% endfor %}
           <div class="rosterEmpty" id="rosterEmpty" hidden>No members match the current filters.</div>
