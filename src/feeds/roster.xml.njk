@@ -14,10 +14,11 @@ excludeFromSitemap: true
     <atom:link href="{{ site.url }}/feeds/roster.xml" rel="self" type="application/rss+xml" />
     {%- for m in elixirRoster.members | sort(true, false, "date_joined") %}
     {%- set rawTag = m.tag | replace("#", "") %}
+    {%- set memberUrl = site.url + (m.tag | memberProfileUrl) %}
     <item>
       <title>{{ m.name | e }} joined POAP KINGS</title>
-      <link>{{ site.url }}/roster/</link>
-      <guid isPermaLink="false">{{ rawTag }}</guid>
+      <link>{{ memberUrl }}</link>
+      <guid isPermaLink="true">{{ memberUrl }}</guid>
       <pubDate>{{ m.date_joined | dateToRfc2822 }}</pubDate>
       <description><![CDATA[<p><strong>{{ m.name | e }}</strong> ({{ m.role | e }}) joined the clan.</p><ul><li><a href="{{ m.tag | royaleApiUrl }}">RoyaleAPI profile</a></li>
         {%- set profileUrl = m.profile_url | safeUrl %}

@@ -3,6 +3,11 @@ import { readFileSync } from "node:fs";
 import markdownIt from "markdown-it";
 
 export default function (eleventyConfig) {
+  const normalizeMemberTag = (tag) => {
+    if (!tag) return "";
+    return String(tag).trim().replace(/^#/, "").toLowerCase();
+  };
+
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/app.js");
@@ -61,6 +66,72 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("formatNumber", (n) => {
     if (n == null) return "0";
     return Number(n).toLocaleString("en-US");
+  });
+
+  eleventyConfig.addFilter("formatAccountAge", (days) => {
+    if (days == null || days === "") return "";
+    const totalDays = Number(days);
+    if (!Number.isFinite(totalDays) || totalDays < 0) return "";
+    if (totalDays < 30) {
+      return `${Math.max(1, Math.round(totalDays))} day${Math.round(totalDays) === 1 ? "" : "s"}`;
+    }
+
+    const years = Math.floor(totalDays / 365);
+    const remainingDays = totalDays % 365;
+    const months = Math.floor(remainingDays / 30);
+    const parts = [];
+
+    if (years) parts.push(`${years} year${years === 1 ? "" : "s"}`);
+    if (months) parts.push(`${months} month${months === 1 ? "" : "s"}`);
+
+    return parts.join(" ") || `${Math.round(totalDays)} days`;
+  });
+
+  eleventyConfig.addFilter("formatDecimal", (n, digits = 1) => {
+    if (n == null || n === "") return "";
+    const value = Number(n);
+    if (!Number.isFinite(value)) return "";
+    return value.toFixed(Number(digits) || 1);
+  });
+
+  eleventyConfig.addFilter("formatLastSeen", (dateStr) => {
+    if (!dateStr) return "";
+    const raw = String(dateStr).trim();
+    const match = raw.match(
+      /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/,
+    );
+    if (!match) return raw;
+    const [, year, month, day, hour, minute, second] = match;
+    const d = new Date(
+      Date.UTC(
+        Number(year),
+        Number(month) - 1,
+        Number(day),
+        Number(hour),
+        Number(minute),
+        Number(second),
+      ),
+    );
+    if (Number.isNaN(d.getTime())) return raw;
+    return d.toLocaleString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: "UTC",
+      timeZoneName: "short",
+    });
+  });
+
+  eleventyConfig.addFilter("memberSlug", (tag) => {
+    return normalizeMemberTag(tag);
+  });
+
+  eleventyConfig.addFilter("memberProfileUrl", (tag) => {
+    const slug = normalizeMemberTag(tag);
+    if (!slug) return "/roster/";
+    return `/roster/${slug}/`;
   });
 
   eleventyConfig.addFilter("royaleApiUrl", (tag) => {

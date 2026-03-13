@@ -50,6 +50,7 @@ appJs: true
               <option value="trophies">Trophies</option>
               <option value="donations">Donations</option>
               <option value="level">Level</option>
+              <option value="accountAge">Account Age</option>
               <option value="joined">Date Joined</option>
             </select>
           </label>
@@ -69,16 +70,20 @@ appJs: true
           {%- set rawRole = m.role if m.role else "Member" -%}
           {%- set role = "Leader" if rawRole == "Co-Leader" else rawRole -%}
           {%- set rawTag = m.tag | replace("#", "") -%}
+          {%- set memberUrl = m.tag | memberProfileUrl -%}
           <div class="memberCard {{ role | cardClass }}"
                data-search="{{ m | searchText | e }}"
                data-trophies="{{ m.trophies }}"
                data-donations="{{ m.donations }}"
                data-level="{{ m.exp_level }}"
+               data-account-age="{{ m.cr_account_age_days or 0 }}"
                data-joined="{{ m.date_joined }}"
                data-rank="{{ m.clan_rank }}"
                data-role="{{ role | lower }}">
             <div class="memberCard__header">
-              <span class="memberCard__name">{{ m.name | e }}</span>
+              <a class="memberCard__nameLink" href="{{ memberUrl | e }}">
+                <span class="memberCard__name">{{ m.name | e }}</span>
+              </a>
               <span class="{{ role | roleClass }}">{{ role | e }}</span>
             </div>
             <div class="memberCard__stats">
@@ -91,33 +96,16 @@ appJs: true
               {%- if m.date_joined %}
               <span class="memberCard__joined">Joined {{ m.date_joined | formatDate }}<span class="rosterDuration" data-joined="{{ m.date_joined }}"></span></span>
               {%- endif %}
+              {%- if m.cr_account_age_days %}
+              <span class="memberCard__joined">Account age {{ m.cr_account_age_days | formatAccountAge }}</span>
+              {%- endif %}
             </div>
-            {% if m.favorite_cards and m.favorite_cards.length %}
-            <div class="memberCard__cards">
-              {% for card in m.favorite_cards | take(5) %}
-              <span class="memberCard__card" title="{{ card.name }}">
-                <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="memberCard__cardIcon" width="24" height="28" loading="lazy" />
-                <span class="memberCard__cardName">{{ card.name }}</span>
-              </span>
-              {% endfor %}
-            </div>
-            {% endif %}
-            {% if m.bio %}
-            <div class="elixirByline">
-              <div class="elixirByline__body">
-                <div class="memberCard__bio">{{ m.bio | e }}</div>
-              </div>
-            </div>
-            {% endif %}
             {% if m.note %}<div class="memberCard__note">{{ m.note | e }}</div>{% endif %}
-            <div class="memberCard__links">
-              <a class="memberCard__link" href="{{ m.tag | royaleApiUrl | e }}" target="_blank" rel="noreferrer">RoyaleAPI</a>
-              {%- set profileUrl = m.profile_url | safeUrl %}
-              {% if profileUrl %}<a class="memberCard__link" href="{{ profileUrl | e }}" target="_blank" rel="noreferrer">Profile</a>{% endif %}
-              {%- set poapUrl = m.poap_address | poapCollectionUrl %}
-              {% if poapUrl %}<a class="memberCard__link" href="{{ poapUrl | e }}" target="_blank" rel="noreferrer">POAP</a>{% endif %}
+            <div class="memberCard__footer">
+              <a class="memberCard__cta" href="{{ memberUrl | e }}">View full profile</a>
+              <div class="memberCard__subtle">Tag #{{ rawTag | e }}</div>
             </div>
-            <button class="tinylytics_kudos" data-path="/roster/{{ rawTag | e }}"></button>
+            <button class="tinylytics_kudos" data-path="{{ memberUrl | e }}"></button>
           </div>
           {% endfor %}
           <div class="rosterEmpty" id="rosterEmpty" hidden>No members match the current filters.</div>

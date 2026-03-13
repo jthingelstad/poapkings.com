@@ -1,0 +1,212 @@
+---
+layout: base.njk
+pagination:
+  data: elixirRoster.members
+  size: 1
+  alias: member
+navActive: roster
+eleventyComputed:
+  permalink: "/roster/{{ member.tag | memberSlug }}/"
+  title: "{{ member.name }} | POAP KINGS Roster"
+  description: "{{ member.name }} is a {{ member.role or 'Member' }} in POAP KINGS with {{ member.trophies | formatNumber }} trophies in {{ member.arena }}."
+---
+{%- set role = member.role if member.role else "Member" -%}
+{%- set profileUrl = member.profile_url | safeUrl -%}
+{%- set poapUrl = member.poap_address | poapCollectionUrl -%}
+{%- set joinedLabel = member.date_joined | formatDate -%}
+
+<section class="pageIntro card memberHero">
+  <a class="memberBackLink" href="/roster/">← Back to roster</a>
+  <div class="memberHero__top">
+    <div class="memberHero__copy">
+      <div class="memberHero__eyebrow">Player Profile</div>
+      <h1 class="pageTitle memberHero__title">{{ member.name | e }}</h1>
+      <p class="sectionDesc m-0">
+        {% if member.bio %}
+        {{ member.bio | e }}
+        {% else %}
+        {{ member.name | e }} is currently ranked #{{ member.clan_rank }} in POAP KINGS, battling in {{ member.arena | e }} with {{ member.trophies | formatNumber }} trophies.
+        {% endif %}
+      </p>
+    </div>
+    <div class="memberHero__pills">
+      <span class="{{ role | roleClass }}">{{ role | e }}</span>
+      <span class="tag mono">#{{ member.tag | memberSlug | upper }}</span>
+      {% if member.note %}<span class="tag">{{ member.note | e }}</span>{% endif %}
+    </div>
+  </div>
+
+  <div class="memberHero__meta">
+    <span>Arena: {{ member.arena | e }}</span>
+    <span>Clan rank: #{{ member.clan_rank }}</span>
+    {% if member.date_joined %}<span>Joined {{ joinedLabel }}</span>{% endif %}
+    {% if member.cr_account_age_days %}<span>Account age {{ member.cr_account_age_days | formatAccountAge }}</span>{% endif %}
+    {% if member.last_seen %}<span>Last seen {{ member.last_seen | formatLastSeen }}</span>{% endif %}
+  </div>
+
+  <div class="ctaRow">
+    <a class="btn btnPrimary" href="{{ member.tag | royaleApiUrl | e }}" target="_blank" rel="noreferrer">RoyaleAPI</a>
+    {% if profileUrl %}<a class="btn btnGhost" href="{{ profileUrl | e }}" target="_blank" rel="noreferrer">Profile</a>{% endif %}
+    {% if poapUrl %}<a class="btn btnGhost" href="{{ poapUrl | e }}" target="_blank" rel="noreferrer">POAP</a>{% endif %}
+    <button class="tinylytics_kudos" data-path="{{ page.url | e }}"></button>
+  </div>
+</section>
+
+<section>
+  <div class="memberSummaryGrid">
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">Trophies</div>
+      <div class="profileStatCard__value">{{ member.trophies | formatNumber }}</div>
+    </div>
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">King Level</div>
+      <div class="profileStatCard__value">{{ member.exp_level }}</div>
+    </div>
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">Donations</div>
+      <div class="profileStatCard__value">{{ member.donations | formatNumber }}</div>
+    </div>
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">Received</div>
+      <div class="profileStatCard__value">{{ member.donations_received | formatNumber }}</div>
+    </div>
+    {% if member.cr_games_per_day %}
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">Games / Day</div>
+      <div class="profileStatCard__value">{{ member.cr_games_per_day | formatDecimal(1) }}</div>
+      <div class="profileStatCard__meta">Last {{ member.cr_games_per_day_window_days or 14 }} days</div>
+    </div>
+    {% endif %}
+    {% if member.badge_count != null %}
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">Badges</div>
+      <div class="profileStatCard__value">{{ member.badge_count | formatNumber }}</div>
+    </div>
+    {% endif %}
+    {% if member.achievement_star_count != null %}
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">Achievement Stars</div>
+      <div class="profileStatCard__value">{{ member.achievement_star_count | formatNumber }}</div>
+    </div>
+    {% endif %}
+    {% if member.achievement_completed_count != null %}
+    <div class="profileStatCard">
+      <div class="profileStatCard__label">Achievements Done</div>
+      <div class="profileStatCard__value">{{ member.achievement_completed_count | formatNumber }}</div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if (member.favorite_cards and member.favorite_cards.length) or (member.current_deck and member.current_deck.length) %}
+<section>
+  <div class="split memberFeatureSplit">
+    {% if member.favorite_cards and member.favorite_cards.length %}
+    <div class="card card-padded">
+      <h2 class="sectionTitle section-title-sm m-0 mb-xs">Favorite Cards</h2>
+      <p class="sectionDesc m-0 mb-md">Most-used cards across recent battle data.</p>
+      <div class="memberCardList">
+        {% for card in member.favorite_cards %}
+        <div class="memberCardList__item">
+          <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="memberCardList__icon" width="48" height="56" loading="lazy" />
+          <div class="memberCardList__body">
+            <div class="memberCardList__name">{{ card.name | e }}</div>
+            <div class="memberCardList__meta">Used in {{ card.usage_pct }}% of tracked decks</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if member.current_deck and member.current_deck.length %}
+    <div class="card card-padded">
+      <h2 class="sectionTitle section-title-sm m-0 mb-xs">Current Deck</h2>
+      <p class="sectionDesc m-0 mb-md">Cards currently showing on the roster feed.</p>
+      <div class="profileChipGrid">
+        {% for card in member.current_deck %}
+        <span class="profileChip">{{ card | e }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if member.badge_highlights and member.badge_highlights.length %}
+<section>
+  <div class="card card-padded">
+    <h2 class="sectionTitle section-title-sm m-0 mb-xs">Badge Highlights</h2>
+    <p class="sectionDesc m-0 mb-md">Career and collection milestones worth calling out.</p>
+    <div class="profileDetailGrid">
+      {% for badge in member.badge_highlights %}
+      <article class="profileDetailCard">
+        <div class="profileDetailCard__top">
+          <div class="profileDetailCard__title">{{ badge.label | e }}</div>
+          <div class="profileDetailCard__pill">Lvl {{ badge.level }} / {{ badge.max_level }}</div>
+        </div>
+        <div class="profileDetailCard__meta">{{ badge.category | e }}</div>
+        <div class="profileDetailCard__body">
+          {% if badge.target %}
+          {{ badge.progress | formatNumber }} / {{ badge.target | formatNumber }}
+          {% else %}
+          Progress {{ badge.progress | formatNumber }}
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if member.mastery_highlights and member.mastery_highlights.length %}
+<section>
+  <div class="card card-padded">
+    <h2 class="sectionTitle section-title-sm m-0 mb-xs">Mastery Highlights</h2>
+    <p class="sectionDesc m-0 mb-md">Cards this member has pushed furthest in mastery.</p>
+    <div class="profileDetailGrid">
+      {% for mastery in member.mastery_highlights %}
+      <article class="profileDetailCard">
+        <div class="profileDetailCard__top">
+          <div class="profileDetailCard__title">{{ mastery.card_name | e }}</div>
+          <div class="profileDetailCard__pill">Lvl {{ mastery.level }} / {{ mastery.max_level }}</div>
+        </div>
+        <div class="profileDetailCard__meta">{{ mastery.label | e }}</div>
+        <div class="profileDetailCard__body">
+          {% if mastery.target %}
+          {{ mastery.progress | formatNumber }} / {{ mastery.target | formatNumber }}
+          {% else %}
+          Maxed
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if member.achievement_progress and member.achievement_progress.length %}
+<section>
+  <div class="card card-padded">
+    <h2 class="sectionTitle section-title-sm m-0 mb-xs">Achievements</h2>
+    <p class="sectionDesc m-0 mb-md">Full Clash Royale achievement progress captured by Elixir.</p>
+    <div class="profileDetailGrid">
+      {% for achievement in member.achievement_progress %}
+      <article class="profileDetailCard {{ 'profileDetailCard--complete' if achievement.completed }}">
+        <div class="profileDetailCard__top">
+          <div class="profileDetailCard__title">{{ achievement.name | e }}</div>
+          <div class="profileDetailCard__pill">{{ achievement.stars }} star{{ "s" if achievement.stars != 1 }}</div>
+        </div>
+        <div class="profileDetailCard__meta">{{ achievement.info | e }}</div>
+        <div class="profileDetailCard__body">
+          {{ achievement.value | formatNumber }} / {{ achievement.target | formatNumber }}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
