@@ -100,6 +100,15 @@ appJs: true
               <span class="memberCard__joined">Account age {{ m.cr_account_age_days | formatAccountAge }}</span>
               {%- endif %}
             </div>
+            {% if m.current_deck_cards and m.current_deck_cards.length %}
+            <div class="memberCard__cards">
+              {% for card in m.current_deck_cards %}
+              {%- set thumbImg = card.icon_urls.evolutionMedium if (card.evolution_level and card.icon_urls.evolutionMedium) else card.icon_url -%}
+              <span class="memberCard__card"><img src="{{ thumbImg }}" alt="{{ card.name }}" class="memberCard__cardIcon" width="24" height="28" loading="lazy" /><span class="memberCard__cardName">{{ card.name | e }}</span></span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% if m.highlight %}<span class="highlightPill highlightPill--{{ m.highlight | e }}">{{ m.highlight | e }}</span>{% endif %}
             {% if m.note %}<div class="memberCard__note">{{ m.note | e }}</div>{% endif %}
             <div class="memberCard__footer">
               <a class="memberCard__cta" href="{{ memberUrl | e }}">View full profile</a>

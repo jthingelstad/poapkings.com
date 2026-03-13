@@ -9,11 +9,28 @@ eleventyComputed:
   permalink: "/roster/{{ member.tag | memberSlug }}/"
   title: "{{ member.name }} | POAP KINGS Roster"
   description: "{{ member.name }} is a {{ member.role or 'Member' }} in POAP KINGS with {{ member.trophies | formatNumber }} trophies in {{ member.arena }}."
+  ogImage: "{{ member.favorite_cards[0].icon_url if (member.favorite_cards and member.favorite_cards.length) else '/assets/poapkings.png' }}"
+  ogImageAlt: "{{ member.name }}'s top card: {{ member.favorite_cards[0].name if (member.favorite_cards and member.favorite_cards.length) else 'POAP KINGS' }}"
 ---
 {%- set role = member.role if member.role else "Member" -%}
 {%- set profileUrl = member.profile_url | safeUrl -%}
 {%- set poapUrl = member.poap_address | poapCollectionUrl -%}
 {%- set joinedLabel = member.date_joined | formatDate -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ member.name | e }}",
+  "url": "{{ site.url }}/roster/{{ member.tag | memberSlug }}/",
+  "memberOf": {
+    "@type": "Organization",
+    "name": "POAP KINGS",
+    "url": "{{ site.url }}"
+  }{% if member.favorite_cards and member.favorite_cards.length %},
+  "image": "{{ member.favorite_cards[0].icon_url }}"{% endif %}
+}
+</script>
 
 <section class="pageIntro card memberHero">
   <a class="memberBackLink" href="/roster/">← Back to roster</a>
