@@ -35,6 +35,7 @@ supercellDisclaimer: true
           <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
           <p class="sectionDesc m-0 elixirByline__body">{{ elixirHome.message | md | safe }}</p>
         </div>
+        {% if elixirHome.generated %}<div class="generatedTs">Updated {{ elixirHome.generated | formatDate }}</div>{% endif %}
       </div>
     </section>
     {% endif %}

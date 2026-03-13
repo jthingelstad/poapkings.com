@@ -9,11 +9,28 @@ eleventyComputed:
   permalink: "/roster/{{ member.tag | memberSlug }}/"
   title: "{{ member.name }} | POAP KINGS Roster"
   description: "{{ member.name }} is a {{ member.role or 'Member' }} in POAP KINGS with {{ member.trophies | formatNumber }} trophies in {{ member.arena }}."
+  ogImage: "{{ member.favorite_cards[0].icon_url if (member.favorite_cards and member.favorite_cards.length) else '/assets/poapkings.png' }}"
+  ogImageAlt: "{{ member.name }}'s top card: {{ member.favorite_cards[0].name if (member.favorite_cards and member.favorite_cards.length) else 'POAP KINGS' }}"
 ---
 {%- set role = member.role if member.role else "Member" -%}
 {%- set profileUrl = member.profile_url | safeUrl -%}
 {%- set poapUrl = member.poap_address | poapCollectionUrl -%}
 {%- set joinedLabel = member.date_joined | formatDate -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ member.name | e }}",
+  "url": "{{ site.url }}/roster/{{ member.tag | memberSlug }}/",
+  "memberOf": {
+    "@type": "Organization",
+    "name": "POAP KINGS",
+    "url": "{{ site.url }}"
+  }{% if member.favorite_cards and member.favorite_cards.length %},
+  "image": "{{ member.favorite_cards[0].icon_url }}"{% endif %}
+}
+</script>
 
 <section class="pageIntro card memberHero">
   <a class="memberBackLink" href="/roster/">← Back to roster</a>
@@ -32,6 +49,7 @@ eleventyComputed:
     <div class="memberHero__pills">
       <span class="{{ role | roleClass }}">{{ role | e }}</span>
       <span class="tag mono">#{{ member.tag | memberSlug | upper }}</span>
+      {% if member.highlight %}<span class="highlightPill highlightPill--{{ member.highlight | e }}">{{ member.highlight | e }}</span>{% endif %}
       {% if member.note %}<span class="tag">{{ member.note | e }}</span>{% endif %}
     </div>
   </div>
@@ -119,7 +137,49 @@ eleventyComputed:
     </div>
     {% endif %}
 
-    {% if member.current_deck and member.current_deck.length %}
+    {% if member.current_deck_cards and member.current_deck_cards.length %}
+    <div class="card card-padded">
+      <div class="deckHeader">
+        <div>
+          <h2 class="sectionTitle section-title-sm m-0 mb-xs">Current Deck</h2>
+          <p class="sectionDesc m-0">Cards currently showing on the roster feed.</p>
+        </div>
+        {%- set totalElixir = 0 -%}
+        {%- for card in member.current_deck_cards -%}
+          {%- set totalElixir = totalElixir + (card.elixir_cost or 0) -%}
+        {%- endfor -%}
+        {%- set avgElixir = (totalElixir / member.current_deck_cards.length) -%}
+        <div class="deckElixir">
+          <span class="deckElixir__drop"></span>
+          <span class="deckElixir__value">{{ avgElixir | formatDecimal(1) }}</span>
+          <span class="deckElixir__label">Avg Elixir</span>
+        </div>
+      </div>
+      <div class="deckGrid">
+        {% for card in member.current_deck_cards %}
+        {%- set cardImg = card.icon_urls.evolutionMedium if (card.evolution_level and card.icon_urls.evolutionMedium) else card.icon_url -%}
+        <div class="deckCard deckCard--{{ card.rarity | e }}{% if card.evolution_level %} deckCard--evo{% endif %}">
+          <img src="{{ cardImg }}" alt="{{ card.name }}" class="deckCard__icon" width="80" height="93" loading="lazy" />
+          <div class="deckCard__name">{{ card.name | e }}</div>
+          <div class="deckCard__meta">
+            Lvl {{ card.level }}{% if card.star_level %} <span class="deckCard__stars">{% for i in range(0, card.star_level) %}★{% endfor %}</span>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if member.current_deck_support_cards and member.current_deck_support_cards.length %}
+      <div class="deckSupportRow">
+        {% for card in member.current_deck_support_cards %}
+        <div class="deckSupportCard">
+          <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="deckSupportCard__icon" width="40" height="47" loading="lazy" />
+          <span class="deckSupportCard__name">{{ card.name | e }}</span>
+          <span class="deckSupportCard__level">Lvl {{ card.level }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% elif member.current_deck and member.current_deck.length %}
     <div class="card card-padded">
       <h2 class="sectionTitle section-title-sm m-0 mb-xs">Current Deck</h2>
       <p class="sectionDesc m-0 mb-md">Cards currently showing on the roster feed.</p>
@@ -142,14 +202,29 @@ eleventyComputed:
     <div class="profileDetailGrid">
       {% for badge in member.badge_highlights %}
       <article class="profileDetailCard">
-        <div class="profileDetailCard__top">
-          <div class="profileDetailCard__title">{{ badge.label | e }}</div>
-          <div class="profileDetailCard__pill">Lvl {{ badge.level }} / {{ badge.max_level }}</div>
+        <div class="profileDetailCard__header">
+          {% if badge.icon_url %}
+          <img src="{{ badge.icon_url }}" alt="{{ badge.label }}" class="profileDetailCard__icon" width="48" height="48" loading="lazy" />
+          {% endif %}
+          <div class="profileDetailCard__headerBody">
+            <div class="profileDetailCard__top">
+              <div class="profileDetailCard__title">{{ badge.label | e }}</div>
+              <div class="profileDetailCard__pill">Lvl {{ badge.level }} / {{ badge.max_level }}</div>
+            </div>
+            <div class="profileDetailCard__meta">{{ badge.category | e }}</div>
+          </div>
         </div>
-        <div class="profileDetailCard__meta">{{ badge.category | e }}</div>
         <div class="profileDetailCard__body">
           {% if badge.target %}
+          {%- set pct = ((badge.progress / badge.target) * 100) | round -%}
+          {%- set pctClamped = pct if pct <= 100 else 100 -%}
           {{ badge.progress | formatNumber }} / {{ badge.target | formatNumber }}
+          <div class="progressWrap">
+            <div class="progressTrack">
+              <div class="progressFill" style="width:{{ pctClamped }}%"></div>
+              <div class="progressLabel">{{ pct }}%</div>
+            </div>
+          </div>
           {% else %}
           Progress {{ badge.progress | formatNumber }}
           {% endif %}
@@ -168,15 +243,30 @@ eleventyComputed:
     <p class="sectionDesc m-0 mb-md">Cards this member has pushed furthest in mastery.</p>
     <div class="profileDetailGrid">
       {% for mastery in member.mastery_highlights %}
-      <article class="profileDetailCard">
-        <div class="profileDetailCard__top">
-          <div class="profileDetailCard__title">{{ mastery.card_name | e }}</div>
-          <div class="profileDetailCard__pill">Lvl {{ mastery.level }} / {{ mastery.max_level }}</div>
+      <article class="profileDetailCard {{ 'profileDetailCard--complete' if not mastery.target }}">
+        <div class="profileDetailCard__header">
+          {% if mastery.icon_url %}
+          <img src="{{ mastery.icon_url }}" alt="{{ mastery.card_name }}" class="profileDetailCard__icon" width="48" height="48" loading="lazy" />
+          {% endif %}
+          <div class="profileDetailCard__headerBody">
+            <div class="profileDetailCard__top">
+              <div class="profileDetailCard__title">{{ mastery.card_name | e }}</div>
+              <div class="profileDetailCard__pill">Lvl {{ mastery.level }} / {{ mastery.max_level }}</div>
+            </div>
+            <div class="profileDetailCard__meta">{{ mastery.label | e }}</div>
+          </div>
         </div>
-        <div class="profileDetailCard__meta">{{ mastery.label | e }}</div>
         <div class="profileDetailCard__body">
           {% if mastery.target %}
+          {%- set pct = ((mastery.progress / mastery.target) * 100) | round -%}
+          {%- set pctClamped = pct if pct <= 100 else 100 -%}
           {{ mastery.progress | formatNumber }} / {{ mastery.target | formatNumber }}
+          <div class="progressWrap">
+            <div class="progressTrack">
+              <div class="progressFill" style="width:{{ pctClamped }}%"></div>
+              <div class="progressLabel">{{ pct }}%</div>
+            </div>
+          </div>
           {% else %}
           Maxed
           {% endif %}
@@ -202,7 +292,15 @@ eleventyComputed:
         </div>
         <div class="profileDetailCard__meta">{{ achievement.info | e }}</div>
         <div class="profileDetailCard__body">
+          {%- set aPct = ((achievement.value / achievement.target) * 100) | round -%}
+          {%- set aPctClamped = aPct if aPct <= 100 else 100 -%}
           {{ achievement.value | formatNumber }} / {{ achievement.target | formatNumber }}
+          <div class="progressWrap">
+            <div class="progressTrack">
+              <div class="progressFill{{ ' progressFill--complete' if achievement.completed }}" style="width:{{ aPctClamped }}%"></div>
+              <div class="progressLabel">{{ aPctClamped }}%</div>
+            </div>
+          </div>
         </div>
       </article>
       {% endfor %}
