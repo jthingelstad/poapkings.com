@@ -66,7 +66,8 @@ eleventyComputed:
     <a class="btn btnPrimary" href="{{ member.tag | royaleApiUrl | e }}" target="_blank" rel="noreferrer">RoyaleAPI</a>
     {% if profileUrl %}<a class="btn btnGhost" href="{{ profileUrl | e }}" target="_blank" rel="noreferrer">Profile</a>{% endif %}
     {% if poapUrl %}<a class="btn btnGhost" href="{{ poapUrl | e }}" target="_blank" rel="noreferrer">POAP</a>{% endif %}
-    <button class="tinylytics_kudos" data-path="{{ page.url | e }}"></button>
+    {%- set rawTag = member.tag | replace("#", "") -%}
+    <button class="tinylytics_kudos" data-path="/roster/{{ rawTag | e }}"></button>
   </div>
 </section>
 
