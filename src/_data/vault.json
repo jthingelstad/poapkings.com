@@ -42,19 +42,6 @@
       "description": "Our first-ever POAP KINGS Sunday Scrimmage. Tournament Standard. Climb the leaderboard and claim the crown. Bragging rights are eternal."
     },
     {
-      "name": "Season 129",
-      "upcoming": true,
-      "image": "/assets/vault/upcoming.png",
-      "type": "Season",
-      "date": "TBD",
-      "description": "Awarded to every member who completes the first full clan season.",
-      "progress": {
-        "type": "date",
-        "start": "2026-02-02",
-        "end": "2026-03-01"
-      }
-    },
-    {
       "name": "Season 130",
       "upcoming": true,
       "image": "/assets/vault/upcoming.png",
@@ -64,7 +51,20 @@
       "progress": {
         "type": "date",
         "start": "2026-03-02",
-        "end": "2026-03-29"
+        "end": "2026-04-06"
+      }
+    },
+    {
+      "name": "Season 131",
+      "upcoming": true,
+      "image": "/assets/vault/upcoming.png",
+      "type": "Season",
+      "date": "TBD",
+      "description": "Awarded to every member who completes the clan season.",
+      "progress": {
+        "type": "date",
+        "start": "2026-04-06",
+        "end": "2026-05-04"
       }
     },
     {
@@ -77,42 +77,6 @@
       "progress": {
         "type": "clan_trophies",
         "target": 600
-      }
-    },
-    {
-      "name": "20 Members",
-      "upcoming": true,
-      "image": "/assets/vault/upcoming.png",
-      "type": "Milestone",
-      "date": "TBD",
-      "description": "Awarded when the clan reaches 20 members.",
-      "progress": {
-        "type": "members",
-        "target": 20
-      }
-    },
-    {
-      "name": "30 Members",
-      "upcoming": true,
-      "image": "/assets/vault/upcoming.png",
-      "type": "Milestone",
-      "date": "TBD",
-      "description": "Awarded when the clan reaches 30 members.",
-      "progress": {
-        "type": "members",
-        "target": 30
-      }
-    },
-    {
-      "name": "40 Members",
-      "upcoming": true,
-      "image": "/assets/vault/upcoming.png",
-      "type": "Milestone",
-      "date": "TBD",
-      "description": "Awarded when the clan reaches 40 members.",
-      "progress": {
-        "type": "members",
-        "target": 40
       }
     },
     {

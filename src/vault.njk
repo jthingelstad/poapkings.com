@@ -80,7 +80,7 @@ eleventyComputed:
               {% set pct = (current / target * 100) %}
               <div class="progressWrap">
                 <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
-                <div class="progressLabel">{{ current }}/{{ target }}</div>
+                <div class="progressLabel">{% if current >= target %}Unlocked{% else %}{{ current }}/{{ target }}{% endif %}</div>
               </div>
               {% elif p.progress.type == "clan_trophies" %}
               {% set current = elixirClan.clanWarTrophies or 0 %}
@@ -88,7 +88,7 @@ eleventyComputed:
               {% set pct = (current / target * 100) %}
               <div class="progressWrap">
                 <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
-                <div class="progressLabel">{{ current | formatNumber }}/{{ target | formatNumber }}</div>
+                <div class="progressLabel">{% if current >= target %}Unlocked{% else %}{{ current | formatNumber }}/{{ target | formatNumber }}{% endif %}</div>
               </div>
               {% endif %}
               {% endif %}

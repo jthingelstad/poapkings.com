@@ -145,7 +145,7 @@ function initProgressBars() {
     var label = el.querySelector(".progressLabel");
 
     if (fill) fill.style.width = pct.toFixed(0) + "%";
-    if (label) label.textContent = elapsedDays + "/" + totalDays;
+    if (label) label.textContent = pct >= 100 ? "Unlocked" : elapsedDays + "/" + totalDays;
   });
 }
 
