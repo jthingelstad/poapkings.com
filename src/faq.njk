@@ -44,7 +44,7 @@ supercellDisclaimer: true
       <h2 class="sectionTitle">Joining</h2>
       <div class="faq-item">
         <h3 class="faq-q">How do I join?</h3>
-        <p>We're {{ elixirClan.clanStatus | lower }} — no invite needed. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ elixirClan.minTrophies | formatNumber }} trophies</strong> to join.</p>
+        <p>We're currently {{ elixirClan.clanStatus | lower }}. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ elixirClan.minTrophies | formatNumber }} trophies</strong> to join.{% if elixirClan.clanStatus != "Open" %} Just apply in-game and leadership will review it.{% endif %}</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">What are the clan rules?</h3>

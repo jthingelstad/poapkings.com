@@ -104,7 +104,7 @@ supercellDisclaimer: true
       <div class="card card-padded">
         <h2 class="sectionTitle m-0 mb-xs">Ready to Join?</h2>
         <p class="sectionDesc m-0 mb-sm">
-          We're <strong>{{ elixirClan.clanStatus }}</strong>. If you've got <strong>{{ elixirClan.minTrophies | formatNumber }}+ trophies</strong>, you can jump in right now.
+          We're <strong>{{ elixirClan.clanStatus }}</strong>. {% if elixirClan.clanStatus == "Open" %}If you've got <strong>{{ elixirClan.minTrophies | formatNumber }}+ trophies</strong>, you can jump in right now.{% else %}If you've got <strong>{{ elixirClan.minTrophies | formatNumber }}+ trophies</strong>, apply in-game and leadership will review it.{% endif %}
         </p>
 
         <div class="split">
