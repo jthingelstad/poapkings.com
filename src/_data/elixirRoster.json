@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-16T23:00:00Z",
+  "updated": "2026-04-17T01:40:24Z",
   "members": [
     {
       "name": "King Levy",
@@ -18,10 +18,10 @@
       "date_joined": "2026-02-04",
       "cr_account_age_days": 1508,
       "cr_account_age_years": 4,
-      "cr_account_age_updated_at": "2026-04-16T23:00:07",
+      "cr_account_age_updated_at": "2026-04-17T01:40:33",
       "cr_games_per_day": 3.29,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:07",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:32",
       "badge_count": 97,
       "badge_highlights": [
         {
@@ -314,6 +314,32 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 67,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#U8RYG9Y2U",
+          "rank": 1,
+          "metric_value": 450.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 17,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#U8RYG9Y2U",
+          "rank": 1,
+          "metric_value": 4900.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Mini P.E.K.K.A",
@@ -874,18 +900,18 @@
       "arena": "Royal Road",
       "clan_rank": 16,
       "donations": 265,
-      "donations_received": 410,
-      "last_seen": "20260416T224551.000Z",
+      "donations_received": 440,
+      "last_seen": "20260417T010727.000Z",
       "note": "Founder",
       "profile_url": "https://www.thingelstad.com/",
       "poap_address": "poap.thingelstad.eth",
       "date_joined": "2026-02-04",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:12",
+      "cr_account_age_updated_at": "2026-04-17T01:40:38",
       "cr_games_per_day": 5.57,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:12",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:38",
       "badge_count": 55,
       "badge_highlights": [
         {
@@ -1164,6 +1190,104 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 55,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 1,
+          "metric_value": 2500.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 48,
+          "award_type": "donation_champ",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 2,
+          "metric_value": 1901.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 32,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 1,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 1,
+          "metric_value": 28.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W12",
+            "week_ending": "2026-03-22"
+          }
+        },
+        {
+          "award_id": 41,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 4,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 1,
+          "metric_value": 36.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W15",
+            "week_ending": "2026-04-12"
+          }
+        },
+        {
+          "award_id": 40,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 3,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 3,
+          "metric_value": 20.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W14",
+            "week_ending": "2026-04-05"
+          }
+        },
+        {
+          "award_id": 45,
+          "award_type": "war_champ",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 2,
+          "metric_value": 10300.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "races_participated": 5,
+            "avg_fame": 2060.0
+          }
+        },
+        {
+          "award_id": 4,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 1,
+          "metric_value": 10300.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Cannon",
@@ -1722,12 +1846,12 @@
       "profile_url": "https://tyler.thingelstad.com/",
       "poap_address": "tyler.thingelstad.eth",
       "date_joined": "2026-02-04",
-      "cr_account_age_days": 1494,
+      "cr_account_age_days": 1495,
       "cr_account_age_years": 4,
-      "cr_account_age_updated_at": "2026-04-16T23:00:04",
+      "cr_account_age_updated_at": "2026-04-17T01:40:29",
       "cr_games_per_day": 5.71,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:04",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:29",
       "badge_count": 113,
       "badge_highlights": [
         {
@@ -1736,7 +1860,7 @@
           "category": "career",
           "level": 4,
           "max_level": 11,
-          "progress": 1494,
+          "progress": 1495,
           "target": 1825,
           "is_one_time": false,
           "icon_urls": {
@@ -2020,6 +2144,76 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 68,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#UL2V9QRG0",
+          "rank": 1,
+          "metric_value": 650.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 39,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 3,
+          "player_tag": "#UL2V9QRG0",
+          "rank": 2,
+          "metric_value": 20.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W14",
+            "week_ending": "2026-04-05"
+          }
+        },
+        {
+          "award_id": 24,
+          "award_type": "perfect_week",
+          "season_id": 130,
+          "section_index": 1,
+          "player_tag": "#UL2V9QRG0",
+          "rank": 1,
+          "metric_value": 3.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 3
+          }
+        },
+        {
+          "award_id": 44,
+          "award_type": "war_champ",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#UL2V9QRG0",
+          "rank": 1,
+          "metric_value": 12850.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "races_participated": 5,
+            "avg_fame": 2570.0
+          }
+        },
+        {
+          "award_id": 19,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#UL2V9QRG0",
+          "rank": 1,
+          "metric_value": 12850.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Witch",
@@ -2569,10 +2763,10 @@
       "date_joined": "2026-02-05",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:14",
+      "cr_account_age_updated_at": "2026-04-17T01:40:40",
       "cr_games_per_day": 13.86,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:14",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:40",
       "badge_count": 115,
       "badge_highlights": [
         {
@@ -2851,6 +3045,61 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 71,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#VPY0Y2209",
+          "rank": 1,
+          "metric_value": 2250.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 29,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 0,
+          "player_tag": "#VPY0Y2209",
+          "rank": 1,
+          "metric_value": 20.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W11",
+            "week_ending": "2026-03-15"
+          }
+        },
+        {
+          "award_id": 25,
+          "award_type": "perfect_week",
+          "season_id": 130,
+          "section_index": 1,
+          "player_tag": "#VPY0Y2209",
+          "rank": 1,
+          "metric_value": 3.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 3
+          }
+        },
+        {
+          "award_id": 22,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#VPY0Y2209",
+          "rank": 1,
+          "metric_value": 9300.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Skeleton Barrel",
@@ -3370,22 +3619,22 @@
       "tag": "20R8QRLYLP",
       "role": "Elder",
       "exp_level": 60,
-      "trophies": 11500,
+      "trophies": 11561,
       "arena": "Summit of Heroes",
       "clan_rank": 11,
-      "donations": 356,
+      "donations": 392,
       "donations_received": 120,
-      "last_seen": "20260416T132957.000Z",
+      "last_seen": "20260417T013658.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "0x5c53a2dF41Fd9895A16bAA9420Bd6c0A2f125B85",
       "date_joined": "2026-02-07",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:08",
-      "cr_games_per_day": 17.36,
+      "cr_account_age_updated_at": "2026-04-17T01:40:33",
+      "cr_games_per_day": 17.71,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:08",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:33",
       "badge_count": 56,
       "badge_highlights": [
         {
@@ -3394,7 +3643,7 @@
           "category": "career",
           "level": 5,
           "max_level": 8,
-          "progress": 1644,
+          "progress": 1647,
           "target": 2500,
           "is_one_time": false,
           "icon_urls": {
@@ -3436,7 +3685,7 @@
           "category": "collection",
           "level": 3,
           "max_level": 8,
-          "progress": 4942,
+          "progress": 4978,
           "target": 5000,
           "is_one_time": false,
           "icon_urls": {
@@ -3565,7 +3814,7 @@
         {
           "name": "Friend in Need",
           "stars": 3,
-          "value": 4942,
+          "value": 4978,
           "target": 2500,
           "info": "Donate 2500 cards",
           "completion_info": null,
@@ -3655,7 +3904,7 @@
         {
           "name": "Friend in Need II",
           "stars": 0,
-          "value": 4942,
+          "value": 4978,
           "target": 5000,
           "info": "Donate 5000 cards",
           "completion_info": null,
@@ -3664,10 +3913,62 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 75,
+          "award_type": "perfect_week",
+          "season_id": 131,
+          "section_index": 0,
+          "player_tag": "#20R8QRLYLP",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 57,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#20R8QRLYLP",
+          "rank": 1,
+          "metric_value": 1275.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 47,
+          "award_type": "donation_champ",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#20R8QRLYLP",
+          "rank": 1,
+          "metric_value": 1967.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 6,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#20R8QRLYLP",
+          "rank": 1,
+          "metric_value": 7100.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
-          "name": "Inferno Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+          "name": "Baby Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
           "usage_pct": 90
         },
         {
@@ -3681,13 +3982,8 @@
           "usage_pct": 90
         },
         {
-          "name": "Baby Dragon",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
-          "usage_pct": 90
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
+          "name": "Inferno Dragon",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
           "usage_pct": 90
         },
         {
@@ -3696,13 +3992,18 @@
           "usage_pct": 90
         },
         {
-          "name": "Prince",
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
+          "name": "Mini P.E.K.K.A",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
           "usage_pct": 90
         },
         {
           "name": "Royal Hogs",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
+          "usage_pct": 90
+        },
+        {
+          "name": "Prince",
+          "icon_url": "https://api-assets.clashroyale.com/cards/300/3JntJV62aY0G1Qh6LIs-ek-0ayeYFY3VItpG7cb9I60.png",
           "usage_pct": 90
         }
       ],
@@ -4208,10 +4509,10 @@
       "date_joined": "2026-02-09",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:30",
+      "cr_account_age_updated_at": "2026-04-17T01:41:00",
       "cr_games_per_day": 0.0,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:30",
+      "cr_games_per_day_updated_at": "2026-04-17T01:41:00",
       "badge_count": 47,
       "badge_highlights": [
         {
@@ -4476,6 +4777,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Mini P.E.K.K.A",
@@ -5003,10 +5305,10 @@
       "date_joined": "2026-02-14",
       "cr_account_age_days": 875,
       "cr_account_age_years": 2,
-      "cr_account_age_updated_at": "2026-04-16T23:00:30",
+      "cr_account_age_updated_at": "2026-04-17T01:40:59",
       "cr_games_per_day": 0.07,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:30",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:59",
       "badge_count": 79,
       "badge_highlights": [
         {
@@ -5299,6 +5601,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Goblin Barrel",
@@ -5823,10 +6126,10 @@
       "date_joined": "2026-02-15",
       "cr_account_age_days": 428,
       "cr_account_age_years": 1,
-      "cr_account_age_updated_at": "2026-04-16T23:00:19",
+      "cr_account_age_updated_at": "2026-04-17T01:40:46",
       "cr_games_per_day": 1.79,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:19",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:45",
       "badge_count": 54,
       "badge_highlights": [
         {
@@ -6119,6 +6422,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 1,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#200UL8LYUJ",
+          "rank": 1,
+          "metric_value": 4300.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Archers",
@@ -6640,7 +6957,7 @@
       "arena": "Spirit Square",
       "clan_rank": 1,
       "donations": 178,
-      "donations_received": 310,
+      "donations_received": 320,
       "last_seen": "20260416T195039.000Z",
       "note": "",
       "profile_url": "https://www.instagram.com/alok_vijay.03",
@@ -6648,10 +6965,10 @@
       "date_joined": "2026-02-15",
       "cr_account_age_days": 1471,
       "cr_account_age_years": 4,
-      "cr_account_age_updated_at": "2026-04-16T23:00:00",
+      "cr_account_age_updated_at": "2026-04-17T01:40:25",
       "cr_games_per_day": 29.64,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:00",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:24",
       "badge_count": 149,
       "badge_highlights": [
         {
@@ -6958,6 +7275,89 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 62,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#C920YGLC2",
+          "rank": 1,
+          "metric_value": 900.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 49,
+          "award_type": "donation_champ",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#C920YGLC2",
+          "rank": 3,
+          "metric_value": 1546.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 33,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 1,
+          "player_tag": "#C920YGLC2",
+          "rank": 2,
+          "metric_value": 20.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W12",
+            "week_ending": "2026-03-22"
+          }
+        },
+        {
+          "award_id": 36,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 2,
+          "player_tag": "#C920YGLC2",
+          "rank": 2,
+          "metric_value": 43.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W13",
+            "week_ending": "2026-03-29"
+          }
+        },
+        {
+          "award_id": 31,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 0,
+          "player_tag": "#C920YGLC2",
+          "rank": 3,
+          "metric_value": 10.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W11",
+            "week_ending": "2026-03-15"
+          }
+        },
+        {
+          "award_id": 12,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#C920YGLC2",
+          "rank": 1,
+          "metric_value": 7450.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Zap",
@@ -7531,10 +7931,10 @@
       "date_joined": "2026-02-23",
       "cr_account_age_days": 1904,
       "cr_account_age_years": 5,
-      "cr_account_age_updated_at": "2026-04-16T23:00:24",
+      "cr_account_age_updated_at": "2026-04-17T01:40:52",
       "cr_games_per_day": 0.57,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:24",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:52",
       "badge_count": 39,
       "badge_highlights": [
         {
@@ -7827,6 +8227,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Royal Hogs",
@@ -8335,7 +8736,7 @@
       "exp_level": 38,
       "trophies": 7073,
       "arena": "Dragon Spa",
-      "clan_rank": 28,
+      "clan_rank": 29,
       "donations": 0,
       "donations_received": 0,
       "last_seen": "20260407T062630.000Z",
@@ -8345,10 +8746,10 @@
       "date_joined": "2026-02-24",
       "cr_account_age_days": 1783,
       "cr_account_age_years": 4,
-      "cr_account_age_updated_at": "2026-04-16T23:00:21",
+      "cr_account_age_updated_at": "2026-04-17T01:40:49",
       "cr_games_per_day": 0.21,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:21",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:49",
       "badge_count": 76,
       "badge_highlights": [
         {
@@ -8641,6 +9042,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Mega Knight",
@@ -9139,22 +9541,22 @@
       "tag": "UY98QVVQP",
       "role": "Member",
       "exp_level": 34,
-      "trophies": 6503,
+      "trophies": 6500,
       "arena": "Silent Sanctuary",
       "clan_rank": 32,
       "donations": 0,
       "donations_received": 0,
-      "last_seen": "20260416T122037.000Z",
+      "last_seen": "20260417T010624.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-04",
       "cr_account_age_days": 1441,
       "cr_account_age_years": 3,
-      "cr_account_age_updated_at": "2026-04-16T23:00:24",
-      "cr_games_per_day": 10.36,
+      "cr_account_age_updated_at": "2026-04-17T01:40:52",
+      "cr_games_per_day": 10.43,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:24",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:51",
       "badge_count": 51,
       "badge_highlights": [
         {
@@ -9433,6 +9835,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Mega Knight",
@@ -9953,10 +10356,10 @@
       "date_joined": "2026-03-07",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:15",
+      "cr_account_age_updated_at": "2026-04-17T01:40:41",
       "cr_games_per_day": 11.79,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:15",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:41",
       "badge_count": 37,
       "badge_highlights": [
         {
@@ -10221,6 +10624,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 21,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#VGJJLC9PR",
+          "rank": 1,
+          "metric_value": 800.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Skeleton Army",
@@ -10766,10 +11183,10 @@
       "date_joined": "2026-03-09",
       "cr_account_age_days": 3436,
       "cr_account_age_years": 9,
-      "cr_account_age_updated_at": "2026-04-16T23:00:16",
+      "cr_account_age_updated_at": "2026-04-17T01:40:42",
       "cr_games_per_day": 0.64,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:16",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:42",
       "badge_count": 115,
       "badge_highlights": [
         {
@@ -11062,6 +11479,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 10,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#2Y9C9LQL8",
+          "rank": 1,
+          "metric_value": 500.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "The Log",
@@ -11592,22 +12023,22 @@
       "tag": "2209PJPVGG",
       "role": "Elder",
       "exp_level": 33,
-      "trophies": 6617,
+      "trophies": 6588,
       "arena": "Silent Sanctuary",
       "clan_rank": 31,
-      "donations": 100,
+      "donations": 108,
       "donations_received": 40,
-      "last_seen": "20260416T035406.000Z",
+      "last_seen": "20260417T011633.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-11",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:23",
-      "cr_games_per_day": 11.0,
+      "cr_account_age_updated_at": "2026-04-17T01:40:51",
+      "cr_games_per_day": 11.07,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:23",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:51",
       "badge_count": 33,
       "badge_highlights": [
         {
@@ -11658,7 +12089,7 @@
           "category": "collection",
           "level": 3,
           "max_level": 8,
-          "progress": 1140,
+          "progress": 1148,
           "target": 5000,
           "is_one_time": false,
           "icon_urls": {
@@ -11787,7 +12218,7 @@
         {
           "name": "Friend in Need",
           "stars": 2,
-          "value": 1140,
+          "value": 1148,
           "target": 2500,
           "info": "Donate 2500 cards",
           "completion_info": null,
@@ -11877,7 +12308,7 @@
         {
           "name": "Friend in Need II",
           "stars": 0,
-          "value": 1140,
+          "value": 1148,
           "target": 5000,
           "info": "Donate 5000 cards",
           "completion_info": null,
@@ -11886,6 +12317,77 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 58,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#2209PJPVGG",
+          "rank": 1,
+          "metric_value": 1600.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 30,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 0,
+          "player_tag": "#2209PJPVGG",
+          "rank": 2,
+          "metric_value": 18.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W11",
+            "week_ending": "2026-03-15"
+          }
+        },
+        {
+          "award_id": 34,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 1,
+          "player_tag": "#2209PJPVGG",
+          "rank": 3,
+          "metric_value": 18.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W12",
+            "week_ending": "2026-03-22"
+          }
+        },
+        {
+          "award_id": 43,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 4,
+          "player_tag": "#2209PJPVGG",
+          "rank": 3,
+          "metric_value": 28.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W15",
+            "week_ending": "2026-04-12"
+          }
+        },
+        {
+          "award_id": 7,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#2209PJPVGG",
+          "rank": 1,
+          "metric_value": 2600.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Witch",
@@ -12419,10 +12921,10 @@
       "date_joined": "2026-03-11",
       "cr_account_age_days": 2449,
       "cr_account_age_years": 6,
-      "cr_account_age_updated_at": "2026-04-16T23:00:14",
+      "cr_account_age_updated_at": "2026-04-17T01:40:40",
       "cr_games_per_day": 1.57,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:14",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:39",
       "badge_count": 120,
       "badge_highlights": [
         {
@@ -12729,6 +13231,103 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 78,
+          "award_type": "perfect_week",
+          "season_id": 131,
+          "section_index": 0,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 72,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 1,
+          "metric_value": 2000.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 26,
+          "award_type": "perfect_week",
+          "season_id": 130,
+          "section_index": 1,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 1,
+          "metric_value": 3.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 3
+          }
+        },
+        {
+          "award_id": 28,
+          "award_type": "perfect_week",
+          "season_id": 130,
+          "section_index": 2,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 50,
+          "award_type": "rookie_mvp",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 1,
+          "metric_value": 9450.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "races_participated": 4
+          }
+        },
+        {
+          "award_id": 46,
+          "award_type": "war_champ",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 3,
+          "metric_value": 9450.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "races_participated": 4,
+            "avg_fame": 2363.0
+          }
+        },
+        {
+          "award_id": 23,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 1,
+          "metric_value": 9450.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Archers",
@@ -13253,10 +13852,10 @@
       "date_joined": "2026-03-12",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:33",
+      "cr_account_age_updated_at": "2026-04-17T01:41:02",
       "cr_games_per_day": 2.64,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:32",
+      "cr_games_per_day_updated_at": "2026-04-17T01:41:02",
       "badge_count": 22,
       "badge_highlights": [
         {
@@ -13521,6 +14120,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Magic Archer",
@@ -14036,10 +14636,10 @@
       "date_joined": "2026-03-13",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:25",
+      "cr_account_age_updated_at": "2026-04-17T01:40:53",
       "cr_games_per_day": 10.5,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:25",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:53",
       "badge_count": 44,
       "badge_highlights": [
         {
@@ -14318,6 +14918,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 2,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#202JL2UV9C",
+          "rank": 1,
+          "metric_value": 600.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Skeleton Army",
@@ -14833,17 +15447,17 @@
       "clan_rank": 36,
       "donations": 10,
       "donations_received": 0,
-      "last_seen": "20260416T130048.000Z",
+      "last_seen": "20260416T230925.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-13",
       "cr_account_age_days": 693,
       "cr_account_age_years": 1,
-      "cr_account_age_updated_at": "2026-04-16T23:00:27",
+      "cr_account_age_updated_at": "2026-04-17T01:40:55",
       "cr_games_per_day": 6.07,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:26",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:55",
       "badge_count": 57,
       "badge_highlights": [
         {
@@ -14880,7 +15494,7 @@
           "category": "collection",
           "level": 5,
           "max_level": 8,
-          "progress": 930,
+          "progress": 944,
           "target": 1000,
           "is_one_time": false,
           "icon_urls": {
@@ -15041,7 +15655,7 @@
         {
           "name": "Gatherer",
           "stars": 3,
-          "value": 102,
+          "value": 104,
           "target": 40,
           "info": "Collect 40 cards",
           "completion_info": null,
@@ -15122,6 +15736,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 18,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#UGQPVQ9U9",
+          "rank": 1,
+          "metric_value": 200.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Witch",
@@ -15350,23 +15978,24 @@
         }
       ],
       "card_collection_summary": {
-        "cards_tracked": 102,
+        "cards_tracked": 104,
         "support_cards_tracked": 4,
-        "combined_cards_tracked": 106,
+        "combined_cards_tracked": 108,
         "highest_level": 11,
         "maxed_cards_count": 0,
         "level_counts": {
           "11": 8,
           "10": 32,
-          "9": 37,
+          "9": 38,
           "8": 23,
-          "7": 6
+          "7": 6,
+          "5": 1
         },
         "rarity_counts": {
-          "legendary": 13,
+          "legendary": 14,
           "epic": 34,
           "common": 30,
-          "rare": 29
+          "rare": 30
         },
         "strongest_cards": [
           {
@@ -15638,10 +16267,10 @@
       "date_joined": "2026-03-17",
       "cr_account_age_days": 3691,
       "cr_account_age_years": 10,
-      "cr_account_age_updated_at": "2026-04-16T23:00:11",
+      "cr_account_age_updated_at": "2026-04-17T01:40:37",
       "cr_games_per_day": 0.0,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:11",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:37",
       "badge_count": 66,
       "badge_highlights": [
         {
@@ -15948,6 +16577,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "P.E.K.K.A",
@@ -16493,10 +17123,10 @@
       "date_joined": "2026-03-17",
       "cr_account_age_days": 3460,
       "cr_account_age_years": 9,
-      "cr_account_age_updated_at": "2026-04-16T23:00:02",
+      "cr_account_age_updated_at": "2026-04-17T01:40:26",
       "cr_games_per_day": 15.36,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:02",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:26",
       "badge_count": 146,
       "badge_highlights": [
         {
@@ -16803,6 +17433,89 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 76,
+          "award_type": "perfect_week",
+          "season_id": 131,
+          "section_index": 0,
+          "player_tag": "#2P9GRU2Q0",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 60,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#2P9GRU2Q0",
+          "rank": 1,
+          "metric_value": 2400.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 35,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 2,
+          "player_tag": "#2P9GRU2Q0",
+          "rank": 1,
+          "metric_value": 46.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W13",
+            "week_ending": "2026-03-29"
+          }
+        },
+        {
+          "award_id": 27,
+          "award_type": "perfect_week",
+          "season_id": 130,
+          "section_index": 2,
+          "player_tag": "#2P9GRU2Q0",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 51,
+          "award_type": "rookie_mvp",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#2P9GRU2Q0",
+          "rank": 2,
+          "metric_value": 7000.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "races_participated": 3
+          }
+        },
+        {
+          "award_id": 9,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#2P9GRU2Q0",
+          "rank": 1,
+          "metric_value": 7000.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Mega Knight",
@@ -17378,10 +18091,10 @@
       "date_joined": "2026-03-18",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:31",
+      "cr_account_age_updated_at": "2026-04-17T01:41:01",
       "cr_games_per_day": 4.71,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:31",
+      "cr_games_per_day_updated_at": "2026-04-17T01:41:01",
       "badge_count": 43,
       "badge_highlights": [
         {
@@ -17646,6 +18359,60 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 74,
+          "award_type": "perfect_week",
+          "season_id": 131,
+          "section_index": 0,
+          "player_tag": "#20QY09U0JL",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 56,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#20QY09U0JL",
+          "rank": 1,
+          "metric_value": 1950.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 52,
+          "award_type": "rookie_mvp",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#20QY09U0JL",
+          "rank": 3,
+          "metric_value": 4550.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "races_participated": 3
+          }
+        },
+        {
+          "award_id": 5,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#20QY09U0JL",
+          "rank": 1,
+          "metric_value": 4550.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Prince",
@@ -18178,10 +18945,10 @@
       "date_joined": "2026-03-18",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:28",
+      "cr_account_age_updated_at": "2026-04-17T01:40:57",
       "cr_games_per_day": 7.14,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:28",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:56",
       "badge_count": 47,
       "badge_highlights": [
         {
@@ -18446,6 +19213,32 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 54,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#209PJGPVRR",
+          "rank": 1,
+          "metric_value": 300.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 3,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#209PJGPVRR",
+          "rank": 1,
+          "metric_value": 200.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Goblin Barrel",
@@ -18955,10 +19748,10 @@
       "date_joined": "2026-03-19",
       "cr_account_age_days": 1787,
       "cr_account_age_years": 4,
-      "cr_account_age_updated_at": "2026-04-16T23:00:20",
+      "cr_account_age_updated_at": "2026-04-17T01:40:47",
       "cr_games_per_day": 4.79,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:20",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:46",
       "badge_count": 104,
       "badge_highlights": [
         {
@@ -19265,6 +20058,47 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 64,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#J8GL8C9JJ",
+          "rank": 1,
+          "metric_value": 400.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 37,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 2,
+          "player_tag": "#J8GL8C9JJ",
+          "rank": 3,
+          "metric_value": 36.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W13",
+            "week_ending": "2026-03-29"
+          }
+        },
+        {
+          "award_id": 14,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#J8GL8C9JJ",
+          "rank": 1,
+          "metric_value": 1400.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Goblin Barrel",
@@ -19770,22 +20604,22 @@
       "tag": "VR0QRP2PG",
       "role": "Member",
       "exp_level": 34,
-      "trophies": 7058,
+      "trophies": 7113,
       "arena": "Dragon Spa",
-      "clan_rank": 29,
+      "clan_rank": 28,
       "donations": 2,
       "donations_received": 80,
-      "last_seen": "20260416T164707.000Z",
+      "last_seen": "20260417T012612.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-20",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:22",
-      "cr_games_per_day": 6.0,
+      "cr_account_age_updated_at": "2026-04-17T01:40:48",
+      "cr_games_per_day": 6.29,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:22",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:48",
       "badge_count": 40,
       "badge_highlights": [
         {
@@ -19794,7 +20628,7 @@
           "category": "career",
           "level": 4,
           "max_level": 8,
-          "progress": 715,
+          "progress": 718,
           "target": 1000,
           "is_one_time": false,
           "icon_urls": {
@@ -20050,6 +20884,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Skeleton Army",
@@ -20554,19 +21389,19 @@
       "trophies": 5000,
       "arena": "Miner's Mine",
       "clan_rank": 37,
-      "donations": 313,
+      "donations": 331,
       "donations_received": 0,
-      "last_seen": "20260416T195640.000Z",
+      "last_seen": "20260417T002631.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-21",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:27",
+      "cr_account_age_updated_at": "2026-04-17T01:40:56",
       "cr_games_per_day": 36.71,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:27",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:56",
       "badge_count": 41,
       "badge_highlights": [
         {
@@ -20603,7 +21438,7 @@
           "category": "collection",
           "level": 3,
           "max_level": 8,
-          "progress": 1528,
+          "progress": 1546,
           "target": 5000,
           "is_one_time": false,
           "icon_urls": {
@@ -20732,7 +21567,7 @@
         {
           "name": "Friend in Need",
           "stars": 2,
-          "value": 1528,
+          "value": 1546,
           "target": 2500,
           "info": "Donate 2500 cards",
           "completion_info": null,
@@ -20822,7 +21657,7 @@
         {
           "name": "Friend in Need II",
           "stars": 0,
-          "value": 1528,
+          "value": 1546,
           "target": 5000,
           "info": "Donate 5000 cards",
           "completion_info": null,
@@ -20831,6 +21666,23 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 42,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 4,
+          "player_tag": "#2288GRCRYV",
+          "rank": 2,
+          "metric_value": 36.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W15",
+            "week_ending": "2026-04-12"
+          }
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Skeleton Army",
@@ -20871,190 +21723,6 @@
           "name": "Firecracker",
           "icon_url": "https://api-assets.clashroyale.com/cards/300/c1rL3LO1U2D9-TkeFfAC18gP3AO8ztSwrcHMZplwL2Q.png",
           "usage_pct": 57
-        }
-      ],
-      "current_deck": [
-        "Balloon",
-        "Baby Dragon",
-        "Musketeer",
-        "Valkyrie",
-        "Bats",
-        "Mini P.E.K.K.A",
-        "Inferno Dragon",
-        "Magic Archer"
-      ],
-      "current_deck_cards": [
-        {
-          "name": "Balloon",
-          "id": 26000006,
-          "level": 9,
-          "api_level": 4,
-          "max_level": 16,
-          "max_evolution_level": 2,
-          "rarity": "epic",
-          "elixir_cost": 5,
-          "supports_evo": false,
-          "supports_hero": true,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/qBipxLo-3hhCnPrApp2Nn3b2NgrSrvwzWytvREev0CY.png",
-            "heroMedium": "https://api-assets.clashroyale.com/cardheroes/300/qBipxLo-3hhCnPrApp2Nn3b2NgrSrvwzWytvREev0CY.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/qBipxLo-3hhCnPrApp2Nn3b2NgrSrvwzWytvREev0CY.png"
-        },
-        {
-          "name": "Baby Dragon",
-          "id": 26000015,
-          "level": 8,
-          "api_level": 3,
-          "max_level": 16,
-          "max_evolution_level": 1,
-          "rarity": "epic",
-          "elixir_cost": 4,
-          "supports_evo": true,
-          "supports_hero": false,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
-            "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png"
-        },
-        {
-          "name": "Musketeer",
-          "id": 26000014,
-          "level": 7,
-          "api_level": 5,
-          "max_level": 16,
-          "max_evolution_level": 3,
-          "rarity": "rare",
-          "elixir_cost": 4,
-          "supports_evo": true,
-          "supports_hero": true,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png",
-            "heroMedium": "https://api-assets.clashroyale.com/cardheroes/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png",
-            "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png"
-        },
-        {
-          "name": "Valkyrie",
-          "id": 26000011,
-          "level": 9,
-          "api_level": 7,
-          "max_level": 16,
-          "max_evolution_level": 1,
-          "rarity": "rare",
-          "elixir_cost": 4,
-          "supports_evo": true,
-          "supports_hero": false,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
-            "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png"
-        },
-        {
-          "name": "Bats",
-          "id": 26000049,
-          "level": 8,
-          "api_level": 8,
-          "max_level": 16,
-          "max_evolution_level": 1,
-          "rarity": "common",
-          "elixir_cost": 2,
-          "supports_evo": true,
-          "supports_hero": false,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
-            "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png"
-        },
-        {
-          "name": "Mini P.E.K.K.A",
-          "id": 26000018,
-          "level": 9,
-          "api_level": 7,
-          "max_level": 16,
-          "max_evolution_level": 2,
-          "rarity": "rare",
-          "elixir_cost": 4,
-          "supports_evo": false,
-          "supports_hero": true,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-            "heroMedium": "https://api-assets.clashroyale.com/cardheroes/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png"
-        },
-        {
-          "name": "Inferno Dragon",
-          "id": 26000037,
-          "level": 10,
-          "api_level": 2,
-          "max_level": 16,
-          "max_evolution_level": 1,
-          "rarity": "legendary",
-          "elixir_cost": 4,
-          "supports_evo": true,
-          "supports_hero": false,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-            "evolutionMedium": "https://api-assets.clashroyale.com/cardevolutions/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png"
-        },
-        {
-          "name": "Magic Archer",
-          "id": 26000062,
-          "level": 11,
-          "api_level": 3,
-          "max_level": 16,
-          "max_evolution_level": 2,
-          "rarity": "legendary",
-          "elixir_cost": 4,
-          "supports_evo": false,
-          "supports_hero": true,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png",
-            "heroMedium": "https://api-assets.clashroyale.com/cardheroes/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png"
-        }
-      ],
-      "current_deck_mode_note": "Activation depends on deck slot; these labels show what the card supports or has unlocked.",
-      "current_deck_support_cards": [
-        {
-          "name": "Tower Princess",
-          "id": 159000000,
-          "level": 9,
-          "api_level": 9,
-          "max_level": 16,
-          "rarity": "common",
-          "supports_evo": false,
-          "supports_hero": false,
-          "evo_unlocked": false,
-          "hero_unlocked": false,
-          "icon_urls": {
-            "medium": "https://api-assets.clashroyale.com/cards/300/Nzo5Gjbh7NG6O3Hyu7ev54Pu5zK7vDMR2fbpGdVsS64.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/cards/300/Nzo5Gjbh7NG6O3Hyu7ev54Pu5zK7vDMR2fbpGdVsS64.png"
         }
       ],
       "card_collection_summary": {
@@ -21329,10 +21997,10 @@
       "date_joined": "2026-03-22",
       "cr_account_age_days": 2365,
       "cr_account_age_years": 6,
-      "cr_account_age_updated_at": "2026-04-16T23:00:29",
+      "cr_account_age_updated_at": "2026-04-17T01:40:57",
       "cr_games_per_day": 0.79,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:28",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:57",
       "badge_count": 37,
       "badge_highlights": [
         {
@@ -21625,6 +22293,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Witch",
@@ -22134,12 +22803,12 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-22",
-      "cr_account_age_days": 3635,
+      "cr_account_age_days": 3636,
       "cr_account_age_years": 9,
-      "cr_account_age_updated_at": "2026-04-16T23:00:17",
+      "cr_account_age_updated_at": "2026-04-17T01:40:43",
       "cr_games_per_day": 0.43,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:17",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:43",
       "badge_count": 78,
       "badge_highlights": [
         {
@@ -22148,7 +22817,7 @@
           "category": "career",
           "level": 9,
           "max_level": 11,
-          "progress": 3635,
+          "progress": 3636,
           "target": 3650,
           "is_one_time": false,
           "icon_urls": {
@@ -22446,6 +23115,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Wizard",
@@ -22973,10 +23643,10 @@
       "date_joined": "2026-03-22",
       "cr_account_age_days": 3153,
       "cr_account_age_years": 8,
-      "cr_account_age_updated_at": "2026-04-16T23:00:20",
+      "cr_account_age_updated_at": "2026-04-17T01:40:47",
       "cr_games_per_day": 0.86,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:20",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:47",
       "badge_count": 71,
       "badge_highlights": [
         {
@@ -23269,6 +23939,32 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 61,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#8209U92QL",
+          "rank": 1,
+          "metric_value": 400.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 11,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#8209U92QL",
+          "rank": 1,
+          "metric_value": 2300.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "P.E.K.K.A",
@@ -23777,10 +24473,10 @@
       "date_joined": "2026-03-23",
       "cr_account_age_days": 1335,
       "cr_account_age_years": 3,
-      "cr_account_age_updated_at": "2026-04-16T23:00:22",
+      "cr_account_age_updated_at": "2026-04-17T01:40:50",
       "cr_games_per_day": 0.07,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:22",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:50",
       "badge_count": 39,
       "badge_highlights": [
         {
@@ -24045,6 +24741,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 13,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#CJ8CU89QC",
+          "rank": 1,
+          "metric_value": 1200.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Barbarian Barrel",
@@ -24546,7 +25256,7 @@
       "arena": "Little Prince's Tavern",
       "clan_rank": 2,
       "donations": 200,
-      "donations_received": 248,
+      "donations_received": 280,
       "last_seen": "20260416T224536.000Z",
       "note": "",
       "profile_url": "",
@@ -24554,10 +25264,10 @@
       "date_joined": "2026-03-24",
       "cr_account_age_days": 1654,
       "cr_account_age_years": 4,
-      "cr_account_age_updated_at": "2026-04-16T23:00:01",
+      "cr_account_age_updated_at": "2026-04-17T01:40:25",
       "cr_games_per_day": 12.36,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:01",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:25",
       "badge_count": 146,
       "badge_highlights": [
         {
@@ -24864,6 +25574,35 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 38,
+          "award_type": "donation_champ_weekly",
+          "season_id": 130,
+          "section_index": 3,
+          "player_tag": "#RJ9RRQPVU",
+          "rank": 1,
+          "metric_value": 30.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "week_key": "2026W14",
+            "week_ending": "2026-04-05"
+          }
+        },
+        {
+          "award_id": 16,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#RJ9RRQPVU",
+          "rank": 1,
+          "metric_value": 1400.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Tesla",
@@ -25415,10 +26154,10 @@
       "date_joined": "2026-03-27",
       "cr_account_age_days": 2043,
       "cr_account_age_years": 5,
-      "cr_account_age_updated_at": "2026-04-16T23:00:17",
+      "cr_account_age_updated_at": "2026-04-17T01:40:44",
       "cr_games_per_day": 22.5,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:17",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:44",
       "badge_count": 73,
       "badge_highlights": [
         {
@@ -25697,6 +26436,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 63,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#GL90289CY",
+          "rank": 1,
+          "metric_value": 500.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Firecracker",
@@ -26239,10 +26992,10 @@
       "date_joined": "2026-03-31",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:32",
+      "cr_account_age_updated_at": "2026-04-17T01:41:02",
       "cr_games_per_day": 3.43,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:32",
+      "cr_games_per_day_updated_at": "2026-04-17T01:41:01",
       "badge_count": 38,
       "badge_highlights": [
         {
@@ -26507,6 +27260,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Arrows",
@@ -27014,10 +27768,10 @@
       "date_joined": "2026-03-31",
       "cr_account_age_days": 3320,
       "cr_account_age_years": 9,
-      "cr_account_age_updated_at": "2026-04-16T23:00:03",
+      "cr_account_age_updated_at": "2026-04-17T01:40:27",
       "cr_games_per_day": 21.86,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:03",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:27",
       "badge_count": 128,
       "badge_highlights": [
         {
@@ -27324,6 +28078,32 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 59,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#2CY2RJL9G",
+          "rank": 1,
+          "metric_value": 800.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 8,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#2CY2RJL9G",
+          "rank": 1,
+          "metric_value": 800.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Witch",
@@ -27857,19 +28637,19 @@
       "trophies": 4527,
       "arena": "Rascal's Hideout",
       "clan_rank": 40,
-      "donations": 158,
+      "donations": 176,
       "donations_received": 40,
-      "last_seen": "20260416T225627.000Z",
+      "last_seen": "20260416T234258.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-31",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:29",
+      "cr_account_age_updated_at": "2026-04-17T01:40:58",
       "cr_games_per_day": 10.79,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:29",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:58",
       "badge_count": 40,
       "badge_highlights": [
         {
@@ -27906,7 +28686,7 @@
           "category": "collection",
           "level": 3,
           "max_level": 8,
-          "progress": 1032,
+          "progress": 1050,
           "target": 5000,
           "is_one_time": false,
           "icon_urls": {
@@ -28035,7 +28815,7 @@
         {
           "name": "Friend in Need",
           "stars": 2,
-          "value": 1032,
+          "value": 1050,
           "target": 2500,
           "info": "Donate 2500 cards",
           "completion_info": null,
@@ -28125,7 +28905,7 @@
         {
           "name": "Friend in Need II",
           "stars": 0,
-          "value": 1032,
+          "value": 1050,
           "target": 5000,
           "info": "Donate 5000 cards",
           "completion_info": null,
@@ -28134,6 +28914,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "P.E.K.K.A",
@@ -28666,12 +29447,12 @@
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-03-31",
-      "cr_account_age_days": 2502,
+      "cr_account_age_days": 2503,
       "cr_account_age_years": 6,
-      "cr_account_age_updated_at": "2026-04-16T23:00:09",
+      "cr_account_age_updated_at": "2026-04-17T01:40:34",
       "cr_games_per_day": 1.36,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:09",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:34",
       "badge_count": 110,
       "badge_highlights": [
         {
@@ -28680,7 +29461,7 @@
           "category": "career",
           "level": 6,
           "max_level": 11,
-          "progress": 2502,
+          "progress": 2503,
           "target": 2555,
           "is_one_time": false,
           "icon_urls": {
@@ -28978,6 +29759,32 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 66,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#PR8YLQ2CV",
+          "rank": 1,
+          "metric_value": 300.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 15,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#PR8YLQ2CV",
+          "rank": 1,
+          "metric_value": 100.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Mega Knight",
@@ -29527,10 +30334,10 @@
       "date_joined": "2026-04-04",
       "cr_account_age_days": 3360,
       "cr_account_age_years": 9,
-      "cr_account_age_updated_at": "2026-04-16T23:00:13",
+      "cr_account_age_updated_at": "2026-04-17T01:40:39",
       "cr_games_per_day": 6.14,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:13",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:38",
       "badge_count": 129,
       "badge_highlights": [
         {
@@ -29837,6 +30644,32 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 70,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#VGC22YGP",
+          "rank": 1,
+          "metric_value": 600.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        },
+        {
+          "award_id": 20,
+          "award_type": "war_participant",
+          "season_id": 130,
+          "section_index": null,
+          "player_tag": "#VGC22YGP",
+          "rank": 1,
+          "metric_value": 100.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "The Log",
@@ -30362,18 +31195,18 @@
       "arena": "Musketeer Street",
       "clan_rank": 13,
       "donations": 0,
-      "donations_received": 80,
-      "last_seen": "20260415T070048.000Z",
+      "donations_received": 88,
+      "last_seen": "20260417T012144.000Z",
       "note": "",
       "profile_url": "",
       "poap_address": "",
       "date_joined": "2026-04-07",
       "cr_account_age_days": 2529,
       "cr_account_age_years": 6,
-      "cr_account_age_updated_at": "2026-04-16T23:00:10",
+      "cr_account_age_updated_at": "2026-04-17T01:40:35",
       "cr_games_per_day": 2.64,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:10",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:35",
       "badge_count": 123,
       "badge_highlights": [
         {
@@ -30680,6 +31513,20 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 65,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#PQ8Y2UY8J",
+          "rank": 1,
+          "metric_value": 2400.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Bomber",
@@ -31231,10 +32078,10 @@
       "date_joined": "2026-04-07",
       "cr_account_age_days": 560,
       "cr_account_age_years": 1,
-      "cr_account_age_updated_at": "2026-04-16T23:00:06",
+      "cr_account_age_updated_at": "2026-04-17T01:40:31",
       "cr_games_per_day": 10.29,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:06",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:31",
       "badge_count": 115,
       "badge_highlights": [
         {
@@ -31541,6 +32388,34 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 77,
+          "award_type": "perfect_week",
+          "season_id": 131,
+          "section_index": 0,
+          "player_tag": "#UR8LGRQGJ",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 69,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#UR8LGRQGJ",
+          "rank": 1,
+          "metric_value": 1200.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Royal Ghost",
@@ -32073,10 +32948,10 @@
       "date_joined": "2026-04-09",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:26",
+      "cr_account_age_updated_at": "2026-04-17T01:40:54",
       "cr_games_per_day": 7.36,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:26",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:54",
       "badge_count": 75,
       "badge_highlights": [
         {
@@ -32383,6 +33258,34 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [
+        {
+          "award_id": 73,
+          "award_type": "perfect_week",
+          "season_id": 131,
+          "section_index": 0,
+          "player_tag": "#200V8UYCLL",
+          "rank": 1,
+          "metric_value": 4.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {
+            "total_battle_days": 4
+          }
+        },
+        {
+          "award_id": 53,
+          "award_type": "war_participant",
+          "season_id": 131,
+          "section_index": null,
+          "player_tag": "#200V8UYCLL",
+          "rank": 1,
+          "metric_value": 2450.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:39:28",
+          "metadata": {}
+        }
+      ],
       "favorite_cards": [
         {
           "name": "Musketeer",
@@ -32902,10 +33805,10 @@
       "date_joined": "2026-04-12",
       "cr_account_age_days": 3695,
       "cr_account_age_years": 10,
-      "cr_account_age_updated_at": "2026-04-16T23:00:07",
+      "cr_account_age_updated_at": "2026-04-17T01:40:32",
       "cr_games_per_day": 2.36,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:07",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:31",
       "badge_count": 146,
       "badge_highlights": [
         {
@@ -33212,6 +34115,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Flying Machine",
@@ -33764,10 +34668,10 @@
       "date_joined": "2026-04-13",
       "cr_account_age_days": 1421,
       "cr_account_age_years": 3,
-      "cr_account_age_updated_at": "2026-04-16T23:00:11",
+      "cr_account_age_updated_at": "2026-04-17T01:40:36",
       "cr_games_per_day": 6.86,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:11",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:36",
       "badge_count": 126,
       "badge_highlights": [
         {
@@ -34074,6 +34978,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Mega Knight",
@@ -34602,10 +35507,10 @@
       "date_joined": "2026-04-13",
       "cr_account_age_days": 3693,
       "cr_account_age_years": 10,
-      "cr_account_age_updated_at": "2026-04-16T23:00:04",
+      "cr_account_age_updated_at": "2026-04-17T01:40:28",
       "cr_games_per_day": 5.07,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:04",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:28",
       "badge_count": 67,
       "badge_highlights": [
         {
@@ -34912,6 +35817,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Mega Knight",
@@ -35486,10 +36392,10 @@
       "date_joined": "2026-04-14",
       "cr_account_age_days": 2066,
       "cr_account_age_years": 5,
-      "cr_account_age_updated_at": "2026-04-16T23:00:05",
+      "cr_account_age_updated_at": "2026-04-17T01:40:30",
       "cr_games_per_day": 2.64,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:05",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:30",
       "badge_count": 137,
       "badge_highlights": [
         {
@@ -35796,6 +36702,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Firecracker",
@@ -36334,10 +37241,10 @@
       "date_joined": "2026-04-14",
       "cr_account_age_days": null,
       "cr_account_age_years": null,
-      "cr_account_age_updated_at": "2026-04-16T23:00:18",
+      "cr_account_age_updated_at": "2026-04-17T01:40:45",
       "cr_games_per_day": 3.07,
       "cr_games_per_day_window_days": 14,
-      "cr_games_per_day_updated_at": "2026-04-16T23:00:18",
+      "cr_games_per_day_updated_at": "2026-04-17T01:40:45",
       "badge_count": 107,
       "badge_highlights": [
         {
@@ -36630,6 +37537,7 @@
       ],
       "bio": "",
       "highlight": "",
+      "trophy_case": [],
       "favorite_cards": [
         {
           "name": "Inferno Dragon",
@@ -37163,8 +38071,8 @@
     {
       "name": "Mini P.E.K.K.A",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Fmltc4j3Ve9vO_xhHHPEO3PRP3SmU2oKp2zkZQHRZT4.png",
-      "member_count": 18,
-      "avg_pct": 40,
+      "member_count": 17,
+      "avg_pct": 39,
       "members": [
         "\uff33\uff48\uff41\uff46\uff49\uff54\uff48 \uff2e\uff49\uff48\uff41\uff4c\u2665\ufe0f",
         "TDuck",
@@ -37177,7 +38085,7 @@
       "name": "Mega Knight",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
       "member_count": 15,
-      "avg_pct": 33,
+      "avg_pct": 34,
       "members": [
         "Vijay",
         "\uff33\uff48\uff41\uff46\uff49\uff54\uff48 \uff2e\uff49\uff48\uff41\uff4c\u2665\ufe0f",
@@ -37190,7 +38098,7 @@
       "name": "Arrows",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
       "member_count": 14,
-      "avg_pct": 31,
+      "avg_pct": 32,
       "members": [
         "TDuck",
         "kiruba\u269c\ufe0f",
@@ -37203,7 +38111,7 @@
       "name": "The Log",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
       "member_count": 14,
-      "avg_pct": 31,
+      "avg_pct": 32,
       "members": [
         "OllieTurtle",
         "L-Drxgo\u26a1",
@@ -37216,7 +38124,7 @@
       "name": "Witch",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/cfwk1vzehVyHC-uloEIH6NOI0hOdofCutR5PyhIgO6w.png",
       "member_count": 14,
-      "avg_pct": 31,
+      "avg_pct": 32,
       "members": [
         "King Levy",
         "Chanco",
@@ -37229,7 +38137,7 @@
       "name": "Goblin Barrel",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",
       "member_count": 11,
-      "avg_pct": 24,
+      "avg_pct": 25,
       "members": [
         "L-Drxgo\u26a1",
         "The Joesma",
@@ -37239,23 +38147,10 @@
       ]
     },
     {
-      "name": "Magic Archer",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png",
-      "member_count": 10,
-      "avg_pct": 22,
-      "members": [
-        "raquaza",
-        "LeavithanDragon",
-        "PaidtoUtility",
-        "shimmeringhost",
-        "gooba"
-      ]
-    },
-    {
       "name": "Wizard",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Mej7vnv4H_3p_8qPs_N6_GKahy6HDr7pU7i9eTHS84U.png",
       "member_count": 10,
-      "avg_pct": 22,
+      "avg_pct": 23,
       "members": [
         "TDuck",
         "Sandeep",
@@ -37265,16 +38160,16 @@
       ]
     },
     {
-      "name": "Balloon",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/qBipxLo-3hhCnPrApp2Nn3b2NgrSrvwzWytvREev0CY.png",
+      "name": "Magic Archer",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/Avli3W7BxU9HQ2SoLiXnBgGx25FoNXUSFm7OcAk68ek.png",
       "member_count": 9,
       "avg_pct": 20,
       "members": [
-        "\uff33\uff48\uff41\uff46\uff49\uff54\uff48 \uff2e\uff49\uff48\uff41\uff4c\u2665\ufe0f",
-        "Yursa",
-        "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
-        "naren",
-        "gooba"
+        "raquaza",
+        "LeavithanDragon",
+        "PaidtoUtility",
+        "shimmeringhost",
+        "xXAngelXx"
       ]
     },
     {
@@ -37291,16 +38186,16 @@
       ]
     },
     {
-      "name": "Bats",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
+      "name": "Balloon",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/qBipxLo-3hhCnPrApp2Nn3b2NgrSrvwzWytvREev0CY.png",
       "member_count": 8,
       "avg_pct": 18,
       "members": [
-        "Vijay",
+        "\uff33\uff48\uff41\uff46\uff49\uff54\uff48 \uff2e\uff49\uff48\uff41\uff4c\u2665\ufe0f",
+        "Yursa",
+        "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
         "naren",
-        "Lucky Red Panda",
-        "Ram",
-        "round hamster"
+        "xXAngelXx"
       ]
     },
     {
@@ -37317,19 +38212,6 @@
       ]
     },
     {
-      "name": "Inferno Dragon",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
-      "member_count": 8,
-      "avg_pct": 18,
-      "members": [
-        "Vijay",
-        "Chanco",
-        "King Thing",
-        "Ditaka",
-        "ryguy67"
-      ]
-    },
-    {
       "name": "Royal Hogs",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/ASSQJG_MoVq9e81HZzo4bynMnyLNpNJMfSLb3hqydOw.png",
       "member_count": 8,
@@ -37343,29 +38225,16 @@
       ]
     },
     {
-      "name": "Valkyrie",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
-      "member_count": 8,
-      "avg_pct": 18,
-      "members": [
-        "kiruba\u269c\ufe0f",
-        "Sandeep",
-        "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
-        "naren",
-        "Lucky Red Panda"
-      ]
-    },
-    {
-      "name": "Baby Dragon",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
+      "name": "Bats",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/EnIcvO21hxiNpoI-zO6MDjLmzwPbq8Z4JPo2OKoVUjU.png",
       "member_count": 7,
       "avg_pct": 16,
       "members": [
-        "Chanco",
-        "trainer X",
-        "ryguy67",
-        "LeavithanDragon",
-        "round hamster"
+        "Vijay",
+        "naren",
+        "Lucky Red Panda",
+        "round hamster",
+        "Ram"
       ]
     },
     {
@@ -37382,6 +38251,19 @@
       ]
     },
     {
+      "name": "Inferno Dragon",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/y5HDbKtTbWG6En6TGWU0xoVIGs1-iQpIP4HC-VM7u8A.png",
+      "member_count": 7,
+      "avg_pct": 16,
+      "members": [
+        "Vijay",
+        "Chanco",
+        "King Thing",
+        "Ditaka",
+        "ryguy67"
+      ]
+    },
+    {
       "name": "Knight",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/jAj1Q5rclXxU9kVImGqSJxa4wEMfEhvwNQ_4jiGUuqg.png",
       "member_count": 7,
@@ -37392,6 +38274,19 @@
         "Xeraden",
         "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
         "jj"
+      ]
+    },
+    {
+      "name": "Valkyrie",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/0lIoYf3Y_plFTzo95zZL93JVxpfb3MMgFDDhgSDGU9A.png",
+      "member_count": 7,
+      "avg_pct": 16,
+      "members": [
+        "kiruba\u269c\ufe0f",
+        "Sandeep",
+        "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
+        "naren",
+        "Lucky Red Panda"
       ]
     },
     {
@@ -37408,10 +38303,23 @@
       ]
     },
     {
+      "name": "Baby Dragon",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/cjC9n4AvEZJ3urkVh-rwBkJ-aRSsydIMqSAV48hAih0.png",
+      "member_count": 6,
+      "avg_pct": 14,
+      "members": [
+        "Chanco",
+        "trainer X",
+        "ryguy67",
+        "LeavithanDragon",
+        "round hamster"
+      ]
+    },
+    {
       "name": "Barbarian Barrel",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Gb0G1yNy0i5cIGUHin8uoFWxqntNtRPhY_jeMXg7HnA.png",
       "member_count": 6,
-      "avg_pct": 13,
+      "avg_pct": 14,
       "members": [
         "The Joesma",
         "LeavithanDragon",
@@ -37424,7 +38332,7 @@
       "name": "Cannon",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
       "member_count": 6,
-      "avg_pct": 13,
+      "avg_pct": 14,
       "members": [
         "King Levy",
         "King Thing",
@@ -37437,7 +38345,7 @@
       "name": "Fireball",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
       "member_count": 6,
-      "avg_pct": 13,
+      "avg_pct": 14,
       "members": [
         "TDuck",
         "The Joesma",
@@ -37743,7 +38651,7 @@
       "name": "Archer Queen",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/p7OQmOAFTery7zCzlpDdm-LOD1kINTm42AwIHchZfWk.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "Fullboat",
         "PaidtoUtility"
@@ -37753,7 +38661,7 @@
       "name": "Bomb Tower",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/rirYRyHPc97emRjoH-c1O8uZCBzPVnToaGuNGusF3TQ.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "\u00b2\u2078",
         "ce126"
@@ -37763,7 +38671,7 @@
       "name": "Cannon Cart",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/aqwxRz8HXzqlMCO4WMXNA1txynjXTsLinknqsgZLbok.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "MONICA",
         "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093"
@@ -37773,7 +38681,7 @@
       "name": "Elite Barbarians",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/C88C5JH_F3lLZj6K-tLcMo5DPjrFmvzIb1R2M6xCfTE.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "pigsareus",
         "1spaceO2"
@@ -37783,7 +38691,7 @@
       "name": "Flying Machine",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/hzKNE3QwFcrSrDDRuVW3QY_OnrDPijSiIp-PsWgFevE.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "Fullboat",
         "MONICA"
@@ -37793,7 +38701,7 @@
       "name": "Furnace",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/iqbDiG7yYRIzvCPXdt9zPb3IvMt7F7Gi4wIPnh2x4aI.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "MONICA",
         "JaxikoLane"
@@ -37803,7 +38711,7 @@
       "name": "Giant",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Axr4ox5_b7edmLsoHxBX3vmgijAIibuF6RImTbqLlXE.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "JaxikoLane",
         "TR"
@@ -37813,7 +38721,7 @@
       "name": "Guards",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/1ArKfLJxYo6_NU_S9cAeIrfbXqWH0oULVJXedxBXQlU.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "kiruba\u269c\ufe0f",
         "King Levy"
@@ -37823,7 +38731,7 @@
       "name": "Minion Horde",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/Wyjq5l0IXHTkX9Rmpap6HaH08MvjbxFp1xBO9a47YSI.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "PaidtoUtility",
         "Lord of Latency"
@@ -37833,27 +38741,17 @@
       "name": "Mother Witch",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/fO-Xah8XZkYKaSK9SCp3wnzwxtvIhun9NVY-zzte1Ng.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "MONICA",
         "BadaBing"
       ]
     },
     {
-      "name": "Musketeer",
-      "icon_url": "https://api-assets.clashroyale.com/cards/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png",
-      "member_count": 2,
-      "avg_pct": 4,
-      "members": [
-        "jj",
-        "gooba"
-      ]
-    },
-    {
       "name": "Princess",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/bAwMcqp9EKVIKH3ZLm_m0MqZFSG72zG-vKxpx8aKoVs.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "L-Drxgo\u26a1",
         "Ram"
@@ -37863,7 +38761,7 @@
       "name": "Rage",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/bGP21OOmcpHMJ5ZA79bHVV2D-NzPtDkvBskCNJb7pg0.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "LeavithanDragon",
         "Ram"
@@ -37873,7 +38771,7 @@
       "name": "Skeleton King",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/dCd69_wN9f8DxwuqOGtR4QgWhHIPIaTNxZ1e23RzAAc.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "Chanco",
         "Ram"
@@ -37883,7 +38781,7 @@
       "name": "Zappies",
       "icon_url": "https://api-assets.clashroyale.com/cards/300/QZfHRpLRmutZbCr5fpLnTpIp89vLI6NrAwzGZ8tHEc4.png",
       "member_count": 2,
-      "avg_pct": 4,
+      "avg_pct": 5,
       "members": [
         "wondertwins311",
         "1spaceO2"
@@ -38049,6 +38947,15 @@
       "avg_pct": 2,
       "members": [
         "wondertwins311"
+      ]
+    },
+    {
+      "name": "Musketeer",
+      "icon_url": "https://api-assets.clashroyale.com/cards/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png",
+      "member_count": 1,
+      "avg_pct": 2,
+      "members": [
+        "jj"
       ]
     },
     {
