@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T01:41:03Z",
+  "generated_at": "2026-04-17T02:22:10Z",
   "seasons": [
     {
       "season_id": 131,
@@ -1186,6 +1186,154 @@
           "awarded_at": "2026-04-17T01:39:28",
           "player_name": "Lucky Red Panda",
           "metadata": {}
+        }
+      ]
+    },
+    {
+      "season_id": 129,
+      "season_start": "2026-02-16",
+      "season_end": "2026-03-09",
+      "awards": [
+        {
+          "award_id": 82,
+          "award_type": "donation_champ",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 5,
+          "player_tag": "#20R8QRLYLP",
+          "rank": 1,
+          "metric_value": 344.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "Chanco",
+          "metadata": {}
+        },
+        {
+          "award_id": 83,
+          "award_type": "donation_champ",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 8,
+          "player_tag": "#VPY0Y2209",
+          "rank": 2,
+          "metric_value": 316.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "JaxikoLane",
+          "metadata": {}
+        },
+        {
+          "award_id": 84,
+          "award_type": "donation_champ",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 1,
+          "player_tag": "#UL2V9QRG0",
+          "rank": 3,
+          "metric_value": 312.0,
+          "metric_unit": "donations",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "raquaza",
+          "metadata": {}
+        },
+        {
+          "award_id": 85,
+          "award_type": "rookie_mvp",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 3,
+          "player_tag": "#U8RYG9Y2U",
+          "rank": 1,
+          "metric_value": 7700.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "King Levy",
+          "metadata": {
+            "races_participated": 3
+          }
+        },
+        {
+          "award_id": 86,
+          "award_type": "rookie_mvp",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 8,
+          "player_tag": "#VPY0Y2209",
+          "rank": 2,
+          "metric_value": 7000.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "JaxikoLane",
+          "metadata": {
+            "races_participated": 3
+          }
+        },
+        {
+          "award_id": 87,
+          "award_type": "rookie_mvp",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 7,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 3,
+          "metric_value": 6700.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "King Thing",
+          "metadata": {
+            "races_participated": 3
+          }
+        },
+        {
+          "award_id": 79,
+          "award_type": "war_champ",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 3,
+          "player_tag": "#U8RYG9Y2U",
+          "rank": 1,
+          "metric_value": 7700.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "King Levy",
+          "metadata": {
+            "races_participated": 3,
+            "avg_fame": 2567.0
+          }
+        },
+        {
+          "award_id": 80,
+          "award_type": "war_champ",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 8,
+          "player_tag": "#VPY0Y2209",
+          "rank": 2,
+          "metric_value": 7000.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "JaxikoLane",
+          "metadata": {
+            "races_participated": 3,
+            "avg_fame": 2333.0
+          }
+        },
+        {
+          "award_id": 81,
+          "award_type": "war_champ",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 7,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 3,
+          "metric_value": 6700.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T01:44:00",
+          "player_name": "King Thing",
+          "metadata": {
+            "races_participated": 3,
+            "avg_fame": 2233.0
+          }
         }
       ]
     }
