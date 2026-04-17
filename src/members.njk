@@ -56,17 +56,30 @@ extraScripts: '<script src="/members-promo.js"></script>'
     </section>
     {% endif %}
 
+    {% if awards.featuredSeason %}
+    {%- set season = awards.featuredSeason -%}
     <section>
       <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">Pass Winners</h2>
-        <p class="sectionDesc m-0 mb-md">These members won the war and earned a Royal Pass from the clan. Congrats to all the winners!</p>
-        <ul class="passWinnersList">
-          {%- for entry in winners %}
-          <li><strong>Season {{ entry.season }}</strong> — {{ entry.winner }}</li>
-          {%- endfor %}
-        </ul>
+        <h2 class="sectionTitle m-0 mb-xs">Season {{ season.season_id }} Awards</h2>
+        <p class="sectionDesc m-0 mb-md">Highlights from {{ season.season_start | formatDate }} – {{ season.season_end | formatDate }}. These members won the war and earned a Royal Pass from the clan.</p>
+
+        <h3 class="awardsSubhead">War Champs</h3>
+        <ol class="awardsPodium">
+          {% for a in season.byType.war_champ %}
+          <li class="awardsPodium__item awardsPodium__item--rank{{ a.rank }}">
+            <span class="awardsPodium__rank">#{{ a.rank }}</span>
+            <a class="awardsPodium__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+            <span class="awardsPodium__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+          </li>
+          {% endfor %}
+        </ol>
+
+        <div class="ctaRow mt-md">
+          <a class="btn btnPrimary" href="/members/awards/" data-tinylytics-event="members.see-all-awards">See all awards</a>
+        </div>
       </div>
     </section>
+    {% endif %}
 
     <section>
       <div class="card card-padded">

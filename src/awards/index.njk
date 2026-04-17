@@ -1,0 +1,41 @@
+---
+permalink: /members/awards/
+layout: base.njk
+title: "Awards | POAP KINGS | A Clash Royale Clan with Proof"
+description: "Season-by-season awards for POAP KINGS — war champs, donation champs, rookie MVPs, and weekly honors."
+navActive: members
+---
+<section class="pageIntro card">
+  <a class="memberBackLink" href="/members/">← Members</a>
+  <h1 class="pageTitle">Clan Awards</h1>
+  <p class="sectionDesc">
+    Every season POAP KINGS honors members for their war contributions, donations, and consistency. Browse winners season by season.
+  </p>
+</section>
+
+<section>
+  <div class="card card-padded">
+    <h2 class="sectionTitle m-0 mb-md">Seasons</h2>
+    <ul class="awardsSeasonList">
+      {% for season in awards.seasons %}
+      {%- set inProgress = not season.byType.war_champ or season.byType.war_champ.length == 0 -%}
+      <li class="awardsSeasonList__item">
+        <a class="awardsSeasonList__link" href="/members/awards/s{{ season.season_id }}/">
+          <div class="awardsSeasonList__heading">
+            <span class="awardsSeasonList__id">Season {{ season.season_id }}</span>
+            {% if inProgress %}<span class="awardsSeasonList__pill awardsSeasonList__pill--live">In progress</span>{% endif %}
+          </div>
+          <div class="awardsSeasonList__meta">
+            {{ season.season_start | formatDate }} – {{ season.season_end | formatDate }} · {{ season.awardCount }} award{{ "s" if season.awardCount != 1 }}
+          </div>
+          {% if season.byType.war_champ and season.byType.war_champ.length %}
+          <div class="awardsSeasonList__champs">
+            War Champs: {% for a in season.byType.war_champ %}{{ a.player_name | e }}{% if not loop.last %}, {% endif %}{% endfor %}
+          </div>
+          {% endif %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

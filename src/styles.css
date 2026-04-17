@@ -1400,10 +1400,240 @@ footer{
   .clanStatValue{ font-size:22px }
 }
 
-/* Pass Winners */
-.passWinnersList{ list-style:none; margin:0; padding:0 }
-.passWinnersList li{ padding:10px 0; font-size:15px; border-bottom:1px solid var(--border) }
-.passWinnersList li:last-child{ border-bottom:none }
+/* Awards */
+.awardsSubhead{
+  font-family: var(--display-font);
+  font-size: 15px;
+  letter-spacing: .04em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin: 18px 0 10px;
+}
+
+.awardsPodium{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:12px;
+}
+.awardsPodium__item{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:14px 16px;
+  border-radius:16px;
+  background: var(--surface);
+  border:1px solid var(--border-light);
+  position:relative;
+  overflow:hidden;
+}
+.awardsPodium__item--rank1{
+  background: linear-gradient(135deg, rgba(245,200,76,.22), rgba(245,200,76,.06));
+  border-color: var(--gold-tint-border);
+}
+.awardsPodium__item--rank2{
+  background: linear-gradient(135deg, rgba(215,200,255,.18), rgba(215,200,255,.04));
+  border-color: rgba(215,200,255,.30);
+}
+.awardsPodium__item--rank3{
+  background: linear-gradient(135deg, rgba(201,140,16,.22), rgba(201,140,16,.05));
+  border-color: rgba(201,140,16,.35);
+}
+.awardsPodium__rank{
+  font-family: var(--display-font);
+  font-size: 13px;
+  letter-spacing:.06em;
+  color: var(--gold);
+}
+.awardsPodium__item--rank2 .awardsPodium__rank{ color: var(--lavender) }
+.awardsPodium__item--rank3 .awardsPodium__rank{ color: var(--gold2) }
+.awardsPodium__name{
+  font-weight:700;
+  font-size:17px;
+  color: var(--ink);
+  text-decoration:none;
+}
+.awardsPodium__name:hover{ text-decoration: underline }
+.awardsPodium__metric{
+  font-size:13px;
+  color: var(--muted);
+}
+.awardsPodium__note{
+  font-size:12px;
+  color: var(--text-tertiary);
+}
+
+.awardsWeekGrid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:12px;
+}
+.awardsWeek{
+  padding:12px 14px;
+  border-radius:14px;
+  background: var(--surface);
+  border:1px solid var(--border);
+}
+.awardsWeek__label{
+  font-family: var(--display-font);
+  font-size:13px;
+  letter-spacing:.05em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom:8px;
+}
+.awardsWeek__date{
+  font-family: Inter, system-ui, sans-serif;
+  font-size:11px;
+  font-weight:500;
+  color: var(--text-tertiary);
+  letter-spacing: normal;
+  text-transform: none;
+  margin-left:4px;
+}
+.awardsWeek__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.awardsWeek__list li{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  font-size:14px;
+  padding:4px 0;
+  border-bottom:1px solid var(--border);
+}
+.awardsWeek__list li:last-child{ border-bottom:none }
+.awardsWeek__list a{
+  text-decoration:none;
+  color: var(--ink);
+  font-weight:600;
+}
+.awardsWeek__list a:hover{ text-decoration: underline }
+.awardsWeek__rank{
+  font-size:12px;
+  color: var(--gold);
+  font-weight:700;
+  min-width:22px;
+}
+.awardsWeek__meta{
+  margin-left:auto;
+  font-size:12px;
+  color: var(--muted);
+}
+
+.awardsList{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap:6px 16px;
+}
+.awardsList__item{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  padding:6px 0;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+}
+.awardsList__name{
+  text-decoration:none;
+  color: var(--ink);
+  font-weight:600;
+}
+.awardsList__name:hover{ text-decoration: underline }
+.awardsList__metric{
+  margin-left:auto;
+  font-size:12px;
+  color: var(--muted);
+}
+
+.awardsHero{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-top:8px;
+}
+.awardsHero__eyebrow{
+  font-family: var(--display-font);
+  font-size: 13px;
+  letter-spacing: .08em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.awardsSeasonList{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.awardsSeasonList__link{
+  display:block;
+  padding:14px 16px;
+  border-radius:14px;
+  background: var(--surface);
+  border:1px solid var(--border-light);
+  text-decoration:none;
+  color: var(--ink);
+  transition: transform .12s ease, border-color .12s ease;
+}
+.awardsSeasonList__link:hover{
+  transform: translateY(-1px);
+  border-color: var(--purple-tint-border);
+}
+.awardsSeasonList__heading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:4px;
+}
+.awardsSeasonList__id{
+  font-family: var(--display-font);
+  font-size:16px;
+  letter-spacing:.04em;
+  color: var(--ink);
+}
+.awardsSeasonList__pill{
+  font-size:11px;
+  font-weight:700;
+  padding:3px 8px;
+  border-radius:999px;
+  letter-spacing:.05em;
+  text-transform: uppercase;
+}
+.awardsSeasonList__pill--live{
+  background: var(--purple-tint-bg);
+  color: var(--lavender);
+  border:1px solid var(--purple-tint-border);
+}
+.awardsSeasonList__meta{
+  font-size:13px;
+  color: var(--muted);
+  margin-bottom:4px;
+}
+.awardsSeasonList__champs{
+  font-size:13px;
+  color: var(--text-secondary);
+}
+
+.awardsSeasonNav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
 @media (max-width: 600px){
   .vaultGrid{

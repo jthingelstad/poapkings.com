@@ -1,0 +1,106 @@
+---
+layout: base.njk
+pagination:
+  data: awards.seasons
+  size: 1
+  alias: season
+navActive: members
+eleventyComputed:
+  permalink: "/members/awards/s{{ season.season_id }}/"
+  title: "Season {{ season.season_id }} Awards | POAP KINGS"
+  description: "POAP KINGS Season {{ season.season_id }} award winners — war champs, donation champs, rookie MVPs, perfect week, and more."
+---
+<section class="pageIntro card">
+  <a class="memberBackLink" href="/members/awards/">← All seasons</a>
+  <div class="awardsHero">
+    <div class="awardsHero__eyebrow">Season Awards</div>
+    <h1 class="pageTitle awardsHero__title">Season {{ season.season_id }}</h1>
+    <p class="sectionDesc m-0">
+      {{ season.season_start | formatLongDate }} – {{ season.season_end | formatLongDate }} · {{ season.awardCount }} award{{ "s" if season.awardCount != 1 }} handed out
+      {%- if not season.byType.war_champ or season.byType.war_champ.length == 0 %} · <em>season in progress</em>{% endif %}
+    </p>
+  </div>
+</section>
+
+{% for category in season.categories %}
+<section>
+  <div class="card card-padded">
+    <h2 class="sectionTitle m-0 mb-xs">{{ category.label }}</h2>
+    <p class="sectionDesc m-0 mb-md">{{ category.description }}</p>
+
+    {% if category.style == "podium" %}
+    <ol class="awardsPodium awardsPodium--full">
+      {% for a in category.awards %}
+      <li class="awardsPodium__item awardsPodium__item--rank{{ a.rank }}">
+        <span class="awardsPodium__rank">#{{ a.rank }}</span>
+        <a class="awardsPodium__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        <span class="awardsPodium__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+        {% if a.metadata.races_participated %}<span class="awardsPodium__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+
+    {% elif category.type == "perfect_week" %}
+    <div class="awardsWeekGrid">
+      {% for week in season.perfectWeekBySection %}
+      <div class="awardsWeek">
+        <div class="awardsWeek__label">{{ week.week_label }}</div>
+        <ul class="awardsWeek__list">
+          {% for a in week.awards %}
+          <li>
+            <a href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+            {% if a.metadata.total_battle_days %}<span class="awardsWeek__meta">{{ a.metadata.total_battle_days }} days</span>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% elif category.type == "donation_champ_weekly" %}
+    <div class="awardsWeekGrid">
+      {% for week in season.donationChampWeeklyBySection %}
+      <div class="awardsWeek">
+        <div class="awardsWeek__label">{{ week.week_label }}{% if week.week_ending %} <span class="awardsWeek__date">(ends {{ week.week_ending | formatDate }})</span>{% endif %}</div>
+        <ul class="awardsWeek__list">
+          {% for a in week.awards %}
+          <li>
+            <span class="awardsWeek__rank">#{{ a.rank }}</span>
+            <a href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+            <span class="awardsWeek__meta">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <ul class="awardsList">
+      {% for a in category.awards %}
+      <li class="awardsList__item">
+        <a class="awardsList__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        <span class="awardsList__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+
+<section>
+  <div class="card card-padded awardsSeasonNav">
+    {% if season.olderSeasonId %}
+    <a class="btn btnGhost" href="/members/awards/s{{ season.olderSeasonId }}/">← Season {{ season.olderSeasonId }}</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+    <a class="btn btnGhost" href="/members/awards/">All seasons</a>
+    {% if season.newerSeasonId %}
+    <a class="btn btnGhost" href="/members/awards/s{{ season.newerSeasonId }}/">Season {{ season.newerSeasonId }} →</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+  </div>
+</section>
