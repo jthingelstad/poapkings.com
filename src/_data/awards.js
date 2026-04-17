@@ -14,11 +14,19 @@ const AWARD_TYPE_META = {
     style: "podium",
     metricLabel: "fame",
   },
+  iron_king: {
+    label: "Iron Kings",
+    singular: "Iron King",
+    description: "Members who played every war battle they could. Every Iron King is revered.",
+    order: 2,
+    style: "honorRoll",
+    metricLabel: "battle days",
+  },
   donation_champ: {
     label: "Donation Champs",
     singular: "Donation Champion",
     description: "Season leaders in cards donated to the clan.",
-    order: 2,
+    order: 3,
     style: "podium",
     metricLabel: "donations",
   },
@@ -26,7 +34,7 @@ const AWARD_TYPE_META = {
     label: "Rookie MVPs",
     singular: "Rookie MVP",
     description: "First-season members with the strongest war contributions.",
-    order: 3,
+    order: 4,
     style: "podium",
     metricLabel: "fame",
   },
@@ -34,7 +42,7 @@ const AWARD_TYPE_META = {
     label: "Perfect Week",
     singular: "Perfect Week",
     description: "Members who used every available war battle slot in a week.",
-    order: 4,
+    order: 5,
     style: "weekly",
     metricLabel: "battle days",
   },
@@ -42,7 +50,7 @@ const AWARD_TYPE_META = {
     label: "Donation Champ (Weekly)",
     singular: "Weekly Donation Champ",
     description: "Top donator for each week of the season.",
-    order: 5,
+    order: 6,
     style: "weekly",
     metricLabel: "donations",
   },
@@ -50,7 +58,7 @@ const AWARD_TYPE_META = {
     label: "War Participants",
     singular: "War Participant",
     description: "Every member who logged fame in a war race.",
-    order: 6,
+    order: 7,
     style: "list",
     metricLabel: "fame",
   },
@@ -83,14 +91,27 @@ function sortByMetricDesc(awards) {
   return [...awards].sort((a, b) => (b.metric_value ?? 0) - (a.metric_value ?? 0));
 }
 
+function sortByPlayerName(awards) {
+  return [...awards].sort((a, b) =>
+    String(a.player_name || "").localeCompare(String(b.player_name || ""), "en", {
+      sensitivity: "base",
+    }),
+  );
+}
+
 const seasons = [...(raw.seasons || [])]
   .sort((a, b) => b.season_id - a.season_id)
   .map((season) => {
     const byTypeMap = groupBy(season.awards || [], (a) => a.award_type);
     const byType = {};
     for (const [type, awards] of byTypeMap.entries()) {
-      byType[type] =
-        type === "war_participant" ? sortByMetricDesc(awards) : sortByRankThenMetric(awards);
+      if (type === "war_participant") {
+        byType[type] = sortByMetricDesc(awards);
+      } else if (type === "iron_king") {
+        byType[type] = sortByPlayerName(awards);
+      } else {
+        byType[type] = sortByRankThenMetric(awards);
+      }
     }
 
     const perfectWeekBySection = [...groupBy(byType.perfect_week || [], (a) => a.section_index ?? 0)]

@@ -4,14 +4,14 @@ pagination:
   data: awards.seasons
   size: 1
   alias: season
-navActive: members
+navActive: awards
 eleventyComputed:
-  permalink: "/members/awards/s{{ season.season_id }}/"
+  permalink: "/awards/s{{ season.season_id }}/"
   title: "Season {{ season.season_id }} Awards | POAP KINGS"
-  description: "POAP KINGS Season {{ season.season_id }} award winners — war champs, donation champs, rookie MVPs, perfect week, and more."
+  description: "POAP KINGS Season {{ season.season_id }} award winners — war champs, donation champs, rookie MVPs, Iron Kings, and more."
 ---
 <section class="pageIntro card">
-  <a class="memberBackLink" href="/members/awards/">← All seasons</a>
+  <a class="memberBackLink" href="/awards/">← All awards</a>
   <div class="awardsHero">
     <div class="awardsHero__eyebrow">Season Awards</div>
     <h1 class="pageTitle awardsHero__title">Season {{ season.season_id }}</h1>
@@ -39,6 +39,19 @@ eleventyComputed:
       </li>
       {% endfor %}
     </ol>
+
+    {% elif category.style == "honorRoll" %}
+    <ul class="awardsHonorRoll">
+      {% for a in category.awards %}
+      <li>
+        <a class="awardsHonorRoll__item" href="/roster/{{ a.player_tag | memberSlug }}/">
+          <span class="awardsHonorRoll__eyebrow"><span aria-hidden="true">👑</span> {{ category.singular | upper }}</span>
+          <span class="awardsHonorRoll__name">{{ a.player_name | e }}</span>
+          {% if a.metadata.total_battle_days %}<span class="awardsHonorRoll__metric">{{ a.metadata.total_battle_days }} battle days</span>{% endif %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
 
     {% elif category.type == "perfect_week" %}
     <div class="awardsWeekGrid">
@@ -92,13 +105,13 @@ eleventyComputed:
 <section>
   <div class="card card-padded awardsSeasonNav">
     {% if season.olderSeasonId %}
-    <a class="btn btnGhost" href="/members/awards/s{{ season.olderSeasonId }}/">← Season {{ season.olderSeasonId }}</a>
+    <a class="btn btnGhost" href="/awards/s{{ season.olderSeasonId }}/">← Season {{ season.olderSeasonId }}</a>
     {% else %}
     <span></span>
     {% endif %}
-    <a class="btn btnGhost" href="/members/awards/">All seasons</a>
+    <a class="btn btnGhost" href="/awards/">All awards</a>
     {% if season.newerSeasonId %}
-    <a class="btn btnGhost" href="/members/awards/s{{ season.newerSeasonId }}/">Season {{ season.newerSeasonId }} →</a>
+    <a class="btn btnGhost" href="/awards/s{{ season.newerSeasonId }}/">Season {{ season.newerSeasonId }} →</a>
     {% else %}
     <span></span>
     {% endif %}

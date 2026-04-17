@@ -1556,6 +1556,53 @@ footer{
   color: var(--muted);
 }
 
+.awardsHonorRoll{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:12px;
+}
+.awardsHonorRoll__item{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:14px 16px;
+  border-radius:16px;
+  background: linear-gradient(135deg, rgba(245,200,76,.22), rgba(245,200,76,.06));
+  border:1px solid var(--gold-tint-border);
+  text-decoration:none;
+  color: var(--ink);
+  position:relative;
+  overflow:hidden;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.awardsHonorRoll__item:hover{
+  transform: translateY(-1px);
+  border-color: var(--gold);
+  text-decoration:none;
+}
+.awardsHonorRoll__eyebrow{
+  font-family: var(--display-font);
+  font-size: 13px;
+  letter-spacing:.06em;
+  color: var(--gold);
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.awardsHonorRoll__name{
+  font-weight:700;
+  font-size:17px;
+  color: var(--ink);
+}
+.awardsHonorRoll__item:hover .awardsHonorRoll__name{ text-decoration: underline }
+.awardsHonorRoll__metric{
+  font-size:13px;
+  color: var(--muted);
+}
+
 .awardsHero{
   display:flex;
   flex-direction:column;

@@ -1,0 +1,233 @@
+---
+permalink: /awards/
+layout: base.njk
+title: Awards | POAP KINGS | A Clash Royale Clan with Proof
+description: "POAP KINGS awards — season honors for war champs, donation champs, rookie MVPs, and Iron Kings, plus the clan's POAP collection."
+ogImageAlt: "Latest POAP KINGS badge"
+navActive: awards
+appJs: true
+eleventyComputed:
+  ogImage: "{{ vault.poaps | newestPoapImage }}"
+---
+<section class="pageIntro card">
+  <h1 class="pageTitle">Awards</h1>
+  <p class="sectionDesc">
+    <strong>POAP KINGS</strong> honors members in two parallel ways: <strong>season awards</strong> earned through war and donation play each season, and <strong>POAPs</strong> — on-chain badges marking seasons, milestones, scrimmages, and other clan moments. Not every POAP has a matching season award, and not every award has a POAP. Both are part of the record.
+  </p>
+</section>
+
+{%- set inlineSeason = awards.featuredSeason or awards.seasons[0] -%}
+{% if inlineSeason %}
+<section>
+  <div class="card card-padded">
+    <div class="awardsHero">
+      <div class="awardsHero__eyebrow">Season Awards · Season {{ inlineSeason.season_id }}</div>
+      <h2 class="sectionTitle m-0 awardsHero__title">Most recent season honors</h2>
+      <p class="sectionDesc m-0">
+        {{ inlineSeason.season_start | formatLongDate }} – {{ inlineSeason.season_end | formatLongDate }} · {{ inlineSeason.awardCount }} award{{ "s" if inlineSeason.awardCount != 1 }} handed out
+        {%- if not inlineSeason.byType.war_champ or inlineSeason.byType.war_champ.length == 0 %} · <em>season in progress</em>{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+{% for category in inlineSeason.categories %}
+<section>
+  <div class="card card-padded">
+    <h3 class="sectionTitle m-0 mb-xs">{{ category.label }}</h3>
+    <p class="sectionDesc m-0 mb-md">{{ category.description }}</p>
+
+    {% if category.style == "podium" %}
+    <ol class="awardsPodium awardsPodium--full">
+      {% for a in category.awards %}
+      <li class="awardsPodium__item awardsPodium__item--rank{{ a.rank }}">
+        <span class="awardsPodium__rank">#{{ a.rank }}</span>
+        <a class="awardsPodium__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        <span class="awardsPodium__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+        {% if a.metadata.races_participated %}<span class="awardsPodium__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+
+    {% elif category.style == "honorRoll" %}
+    <ul class="awardsHonorRoll">
+      {% for a in category.awards %}
+      <li>
+        <a class="awardsHonorRoll__item" href="/roster/{{ a.player_tag | memberSlug }}/">
+          <span class="awardsHonorRoll__eyebrow"><span aria-hidden="true">👑</span> {{ category.singular | upper }}</span>
+          <span class="awardsHonorRoll__name">{{ a.player_name | e }}</span>
+          {% if a.metadata.total_battle_days %}<span class="awardsHonorRoll__metric">{{ a.metadata.total_battle_days }} battle days</span>{% endif %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% elif category.type == "perfect_week" %}
+    <div class="awardsWeekGrid">
+      {% for week in inlineSeason.perfectWeekBySection %}
+      <div class="awardsWeek">
+        <div class="awardsWeek__label">{{ week.week_label }}</div>
+        <ul class="awardsWeek__list">
+          {% for a in week.awards %}
+          <li>
+            <a href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+            {% if a.metadata.total_battle_days %}<span class="awardsWeek__meta">{{ a.metadata.total_battle_days }} days</span>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% elif category.type == "donation_champ_weekly" %}
+    <div class="awardsWeekGrid">
+      {% for week in inlineSeason.donationChampWeeklyBySection %}
+      <div class="awardsWeek">
+        <div class="awardsWeek__label">{{ week.week_label }}{% if week.week_ending %} <span class="awardsWeek__date">(ends {{ week.week_ending | formatDate }})</span>{% endif %}</div>
+        <ul class="awardsWeek__list">
+          {% for a in week.awards %}
+          <li>
+            <span class="awardsWeek__rank">#{{ a.rank }}</span>
+            <a href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+            <span class="awardsWeek__meta">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <ul class="awardsList">
+      {% for a in category.awards %}
+      <li class="awardsList__item">
+        <a class="awardsList__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        <span class="awardsList__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+{% endif %}
+
+{% if awards.seasons.length > 1 %}
+<section>
+  <div class="card card-padded">
+    <h2 class="sectionTitle m-0 mb-xs">Other seasons</h2>
+    <p class="sectionDesc m-0 mb-md">Browse awards from other seasons.</p>
+    <ul class="awardsSeasonList">
+      {% for season in awards.seasons %}
+      {% if season.season_id != inlineSeason.season_id %}
+      <li class="awardsSeasonList__item">
+        <a class="awardsSeasonList__link" href="/awards/s{{ season.season_id }}/">
+          <div class="awardsSeasonList__heading">
+            <span class="awardsSeasonList__id">Season {{ season.season_id }}</span>
+            {%- set inProgress = not season.byType.war_champ or season.byType.war_champ.length == 0 -%}
+            {% if inProgress %}<span class="awardsSeasonList__pill awardsSeasonList__pill--live">In progress</span>{% endif %}
+          </div>
+          <div class="awardsSeasonList__meta">
+            {{ season.season_start | formatDate }} – {{ season.season_end | formatDate }} · {{ season.awardCount }} award{{ "s" if season.awardCount != 1 }}
+          </div>
+          {% if season.byType.war_champ and season.byType.war_champ.length %}
+          <div class="awardsSeasonList__champs">
+            War Champs: {% for a in season.byType.war_champ %}{{ a.player_name | e }}{% if not loop.last %}, {% endif %}{% endfor %}
+          </div>
+          {% endif %}
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<section>
+  <div class="card rosterPageCard">
+    <div class="rosterHeaderRow">
+      <div>
+        <h2 class="sectionTitle m-0">POAPs</h2>
+        <p class="sectionDesc m-0 mt-xs">
+          On-chain badges commemorating seasons, milestones, scrimmages, and events. Separate from season awards — some have a matching award, many stand on their own.
+        </p>
+        <div class="tiny mt-xs">Last updated: {{ vault.updated | formatLongDate }}</div>
+        <div id="vaultFilterInfo" class="tiny mt-xs" hidden>
+          <span id="vaultFilterDesc"></span>
+          <a href="/awards/" id="vaultFilterClear">Show all</a>
+        </div>
+      </div>
+      <div id="vaultStatus" class="tiny rosterCount">Showing {{ vault.poaps | length }} of {{ vault.poaps | length }} POAP{{ "s" if vault.poaps | length != 1 }}</div>
+    </div>
+
+    <div class="rosterControls" style="grid-template-columns: 1fr">
+      <label class="rosterControl">
+        <span>Type</span>
+        <select id="vaultTypeFilter">
+          <option value="">All types</option>
+          <option value="Season">Season</option>
+          <option value="Milestone">Milestone</option>
+          <option value="Member">Member</option>
+          <option value="Event">Event</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="ctaRow mt-sm">
+      <a class="btn btnPurple" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer" data-tinylytics-event="awards.view-poap-xyz">View on POAP.xyz</a>
+    </div>
+
+    <div id="vaultGrid" class="vaultGrid">
+      {% for p in vault.poaps | sortVault %}
+      {%- set eventUrl = ("https://poap.gallery/event/" + p.event_id) if p.event_id else "" -%}
+      {%- if eventUrl -%}
+      <a class="vaultCard{% if p.upcoming %} vaultCardUpcoming{% endif %}" href="{{ eventUrl | e }}" target="_blank" rel="noreferrer" data-type="{{ p.type | lower if p.type else '' }}">
+      {%- else -%}
+      <div class="vaultCard{% if p.upcoming %} vaultCardUpcoming{% endif %}" data-type="{{ p.type | lower if p.type else '' }}">
+      {%- endif %}
+        <div class="vaultCardImage">
+          {% if p.image %}
+          <img src="{{ p.image | e }}" alt="{{ (p.name or 'POAP') | e }}" loading="lazy" />
+          {% else %}
+          <div class="vaultCardPlaceholder">👑</div>
+          {% endif %}
+        </div>
+        <div class="vaultCardBody">
+          <span class="{{ p.type | typeClass }}">{{ (p.type or 'POAP') | e }}</span>
+          <div class="vaultCardName">{{ (p.name or 'Untitled POAP') | e }}</div>
+          {% if p.date %}<div class="vaultCardDate">{{ p.date | formatDate }}</div>{% endif %}
+          {% if p.description %}<div class="vaultCardDesc">{{ p.description | e }}</div>{% endif %}
+          {% if p.progress %}
+          {% if p.progress.type == "date" %}
+          <div class="progressWrap" data-progress="date" data-start="{{ p.progress.start }}" data-end="{{ p.progress.end }}">
+            <div class="progressTrack"><div class="progressFill"></div></div>
+            <div class="progressLabel"></div>
+          </div>
+          {% elif p.progress.type == "members" %}
+          {% set current = elixirRoster.members | length %}
+          {% set target = p.progress.target %}
+          {% set pct = (current / target * 100) %}
+          <div class="progressWrap">
+            <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
+            <div class="progressLabel">{% if current >= target %}Unlocked{% else %}{{ current }}/{{ target }}{% endif %}</div>
+          </div>
+          {% elif p.progress.type == "clan_trophies" %}
+          {% set current = elixirClan.clanWarTrophies or 0 %}
+          {% set target = p.progress.target %}
+          {% set pct = (current / target * 100) %}
+          <div class="progressWrap">
+            <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
+            <div class="progressLabel">{% if current >= target %}Unlocked{% else %}{{ current | formatNumber }}/{{ target | formatNumber }}{% endif %}</div>
+          </div>
+          {% endif %}
+          {% endif %}
+        </div>
+      {%- if eventUrl %}</a>
+      {%- else %}</div>
+      {%- endif %}
+      {% endfor %}
+      <div class="vaultEmpty" id="vaultEmpty" hidden>No POAPs match the current filter.</div>
+    </div>
+  </div>
+</section>
