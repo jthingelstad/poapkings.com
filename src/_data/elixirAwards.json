@@ -1,107 +1,11 @@
 {
-  "generated_at": "2026-04-17T02:22:10Z",
+  "generated_at": "2026-04-17T11:28:34Z",
   "seasons": [
     {
       "season_id": 131,
       "season_start": "2026-04-13",
       "season_end": "2026-04-20",
       "awards": [
-        {
-          "award_id": 78,
-          "award_type": "perfect_week",
-          "season_id": 131,
-          "section_index": 0,
-          "member_id": 44,
-          "player_tag": "#YQVVYQVVG",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
-          "metadata": {
-            "total_battle_days": 4
-          }
-        },
-        {
-          "award_id": 77,
-          "award_type": "perfect_week",
-          "season_id": 131,
-          "section_index": 0,
-          "member_id": 81,
-          "player_tag": "#UR8LGRQGJ",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "Yursa",
-          "metadata": {
-            "total_battle_days": 4
-          }
-        },
-        {
-          "award_id": 76,
-          "award_type": "perfect_week",
-          "season_id": 131,
-          "section_index": 0,
-          "member_id": 53,
-          "player_tag": "#2P9GRU2Q0",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "\uff33\uff48\uff41\uff46\uff49\uff54\uff48 \uff2e\uff49\uff48\uff41\uff4c\u2665\ufe0f",
-          "metadata": {
-            "total_battle_days": 4
-          }
-        },
-        {
-          "award_id": 75,
-          "award_type": "perfect_week",
-          "season_id": 131,
-          "section_index": 0,
-          "member_id": 5,
-          "player_tag": "#20R8QRLYLP",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "Chanco",
-          "metadata": {
-            "total_battle_days": 4
-          }
-        },
-        {
-          "award_id": 74,
-          "award_type": "perfect_week",
-          "season_id": 131,
-          "section_index": 0,
-          "member_id": 58,
-          "player_tag": "#20QY09U0JL",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "TR",
-          "metadata": {
-            "total_battle_days": 4
-          }
-        },
-        {
-          "award_id": 73,
-          "award_type": "perfect_week",
-          "season_id": 131,
-          "section_index": 0,
-          "member_id": 83,
-          "player_tag": "#200V8UYCLL",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "\u00b2\u2078",
-          "metadata": {
-            "total_battle_days": 4
-          }
-        },
         {
           "award_id": 72,
           "award_type": "war_participant",
@@ -432,338 +336,37 @@
           "metadata": {}
         },
         {
-          "award_id": 29,
-          "award_type": "donation_champ_weekly",
+          "award_id": 327,
+          "award_type": "iron_king",
           "season_id": 130,
-          "section_index": 0,
-          "member_id": 8,
-          "player_tag": "#VPY0Y2209",
-          "rank": 1,
-          "metric_value": 20.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "JaxikoLane",
-          "metadata": {
-            "week_key": "2026W11",
-            "week_ending": "2026-03-15"
-          }
-        },
-        {
-          "award_id": 32,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 1,
+          "section_index": null,
           "member_id": 7,
           "player_tag": "#20JJJ2CCRU",
           "rank": 1,
-          "metric_value": 28.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "King Thing",
-          "metadata": {
-            "week_key": "2026W12",
-            "week_ending": "2026-03-22"
-          }
-        },
-        {
-          "award_id": 35,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 2,
-          "member_id": 53,
-          "player_tag": "#2P9GRU2Q0",
-          "rank": 1,
-          "metric_value": 46.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "\uff33\uff48\uff41\uff46\uff49\uff54\uff48 \uff2e\uff49\uff48\uff41\uff4c\u2665\ufe0f",
-          "metadata": {
-            "week_key": "2026W13",
-            "week_ending": "2026-03-29"
-          }
-        },
-        {
-          "award_id": 38,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 3,
-          "member_id": 71,
-          "player_tag": "#RJ9RRQPVU",
-          "rank": 1,
-          "metric_value": 30.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "OllieTurtle",
-          "metadata": {
-            "week_key": "2026W14",
-            "week_ending": "2026-04-05"
-          }
-        },
-        {
-          "award_id": 41,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 4,
-          "member_id": 7,
-          "player_tag": "#20JJJ2CCRU",
-          "rank": 1,
-          "metric_value": 36.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "King Thing",
-          "metadata": {
-            "week_key": "2026W15",
-            "week_ending": "2026-04-12"
-          }
-        },
-        {
-          "award_id": 30,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 0,
-          "member_id": 43,
-          "player_tag": "#2209PJPVGG",
-          "rank": 2,
-          "metric_value": 18.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "shimmeringhost",
-          "metadata": {
-            "week_key": "2026W11",
-            "week_ending": "2026-03-15"
-          }
-        },
-        {
-          "award_id": 33,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 1,
-          "member_id": 2,
-          "player_tag": "#C920YGLC2",
-          "rank": 2,
-          "metric_value": 20.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "Vijay",
-          "metadata": {
-            "week_key": "2026W12",
-            "week_ending": "2026-03-22"
-          }
-        },
-        {
-          "award_id": 36,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 2,
-          "member_id": 2,
-          "player_tag": "#C920YGLC2",
-          "rank": 2,
-          "metric_value": 43.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "Vijay",
-          "metadata": {
-            "week_key": "2026W13",
-            "week_ending": "2026-03-29"
-          }
-        },
-        {
-          "award_id": 39,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 3,
-          "member_id": 1,
-          "player_tag": "#UL2V9QRG0",
-          "rank": 2,
-          "metric_value": 20.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "raquaza",
-          "metadata": {
-            "week_key": "2026W14",
-            "week_ending": "2026-04-05"
-          }
-        },
-        {
-          "award_id": 42,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 4,
-          "member_id": 65,
-          "player_tag": "#2288GRCRYV",
-          "rank": 2,
-          "metric_value": 36.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "gooba",
-          "metadata": {
-            "week_key": "2026W15",
-            "week_ending": "2026-04-12"
-          }
-        },
-        {
-          "award_id": 31,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 0,
-          "member_id": 2,
-          "player_tag": "#C920YGLC2",
-          "rank": 3,
-          "metric_value": 10.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "Vijay",
-          "metadata": {
-            "week_key": "2026W11",
-            "week_ending": "2026-03-15"
-          }
-        },
-        {
-          "award_id": 34,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 1,
-          "member_id": 43,
-          "player_tag": "#2209PJPVGG",
-          "rank": 3,
-          "metric_value": 18.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "shimmeringhost",
-          "metadata": {
-            "week_key": "2026W12",
-            "week_ending": "2026-03-22"
-          }
-        },
-        {
-          "award_id": 37,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 2,
-          "member_id": 59,
-          "player_tag": "#J8GL8C9JJ",
-          "rank": 3,
-          "metric_value": 36.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "LeavithanDragon",
-          "metadata": {
-            "week_key": "2026W13",
-            "week_ending": "2026-03-29"
-          }
-        },
-        {
-          "award_id": 40,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 3,
-          "member_id": 7,
-          "player_tag": "#20JJJ2CCRU",
-          "rank": 3,
-          "metric_value": 20.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "King Thing",
-          "metadata": {
-            "week_key": "2026W14",
-            "week_ending": "2026-04-05"
-          }
-        },
-        {
-          "award_id": 43,
-          "award_type": "donation_champ_weekly",
-          "season_id": 130,
-          "section_index": 4,
-          "member_id": 43,
-          "player_tag": "#2209PJPVGG",
-          "rank": 3,
-          "metric_value": 28.0,
-          "metric_unit": "donations",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "shimmeringhost",
-          "metadata": {
-            "week_key": "2026W15",
-            "week_ending": "2026-04-12"
-          }
-        },
-        {
-          "award_id": 26,
-          "award_type": "perfect_week",
-          "season_id": 130,
-          "section_index": 1,
-          "member_id": 44,
-          "player_tag": "#YQVVYQVVG",
-          "rank": 1,
-          "metric_value": 3.0,
+          "metric_value": 14.0,
           "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "King Thing",
           "metadata": {
-            "total_battle_days": 3
+            "perfect_days": null,
+            "total_battle_days": 14
           }
         },
         {
-          "award_id": 25,
-          "award_type": "perfect_week",
+          "award_id": 326,
+          "award_type": "iron_king",
           "season_id": 130,
-          "section_index": 1,
-          "member_id": 8,
-          "player_tag": "#VPY0Y2209",
-          "rank": 1,
-          "metric_value": 3.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "JaxikoLane",
-          "metadata": {
-            "total_battle_days": 3
-          }
-        },
-        {
-          "award_id": 24,
-          "award_type": "perfect_week",
-          "season_id": 130,
-          "section_index": 1,
+          "section_index": null,
           "member_id": 1,
           "player_tag": "#UL2V9QRG0",
           "rank": 1,
-          "metric_value": 3.0,
+          "metric_value": 14.0,
           "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
+          "awarded_at": "2026-04-17T11:26:04",
           "player_name": "raquaza",
           "metadata": {
-            "total_battle_days": 3
-          }
-        },
-        {
-          "award_id": 28,
-          "award_type": "perfect_week",
-          "season_id": 130,
-          "section_index": 2,
-          "member_id": 44,
-          "player_tag": "#YQVVYQVVG",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
-          "metadata": {
-            "total_battle_days": 4
-          }
-        },
-        {
-          "award_id": 27,
-          "award_type": "perfect_week",
-          "season_id": 130,
-          "section_index": 2,
-          "member_id": 53,
-          "player_tag": "#2P9GRU2Q0",
-          "rank": 1,
-          "metric_value": 4.0,
-          "metric_unit": "battle_days",
-          "awarded_at": "2026-04-17T01:39:28",
-          "player_name": "\uff33\uff48\uff41\uff46\uff49\uff54\uff48 \uff2e\uff49\uff48\uff41\uff4c\u2665\ufe0f",
-          "metadata": {
-            "total_battle_days": 4
+            "perfect_days": null,
+            "total_battle_days": 14
           }
         },
         {
@@ -1237,6 +840,40 @@
           "metadata": {}
         },
         {
+          "award_id": 293,
+          "award_type": "iron_king",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 8,
+          "player_tag": "#VPY0Y2209",
+          "rank": 1,
+          "metric_value": 12.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "JaxikoLane",
+          "metadata": {
+            "perfect_days": null,
+            "total_battle_days": 12
+          }
+        },
+        {
+          "award_id": 292,
+          "award_type": "iron_king",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 7,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 1,
+          "metric_value": 12.0,
+          "metric_unit": "battle_days",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "King Thing",
+          "metadata": {
+            "perfect_days": null,
+            "total_battle_days": 12
+          }
+        },
+        {
           "award_id": 85,
           "award_type": "rookie_mvp",
           "season_id": 129,
@@ -1334,6 +971,132 @@
             "races_participated": 3,
             "avg_fame": 2233.0
           }
+        },
+        {
+          "award_id": 288,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 8,
+          "player_tag": "#VPY0Y2209",
+          "rank": 1,
+          "metric_value": 7000.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "JaxikoLane",
+          "metadata": {}
+        },
+        {
+          "award_id": 287,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 17,
+          "player_tag": "#V0CRYP2GG",
+          "rank": 1,
+          "metric_value": 200.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "pokemon",
+          "metadata": {}
+        },
+        {
+          "award_id": 286,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 16,
+          "player_tag": "#UURJP208Q",
+          "rank": 1,
+          "metric_value": 75.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "Finn",
+          "metadata": {}
+        },
+        {
+          "award_id": 285,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 1,
+          "player_tag": "#UL2V9QRG0",
+          "rank": 1,
+          "metric_value": 6550.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "raquaza",
+          "metadata": {}
+        },
+        {
+          "award_id": 284,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 3,
+          "player_tag": "#U8RYG9Y2U",
+          "rank": 1,
+          "metric_value": 7700.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "King Levy",
+          "metadata": {}
+        },
+        {
+          "award_id": 283,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 2,
+          "player_tag": "#C920YGLC2",
+          "rank": 1,
+          "metric_value": 3050.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "Vijay",
+          "metadata": {}
+        },
+        {
+          "award_id": 282,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 30,
+          "player_tag": "#2CY2RJL9G",
+          "rank": 1,
+          "metric_value": 800.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "L-Drxgo\u26a1",
+          "metadata": {}
+        },
+        {
+          "award_id": 281,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 5,
+          "player_tag": "#20R8QRLYLP",
+          "rank": 1,
+          "metric_value": 3200.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "Chanco",
+          "metadata": {}
+        },
+        {
+          "award_id": 280,
+          "award_type": "war_participant",
+          "season_id": 129,
+          "section_index": null,
+          "member_id": 7,
+          "player_tag": "#20JJJ2CCRU",
+          "rank": 1,
+          "metric_value": 6700.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-04-17T11:26:04",
+          "player_name": "King Thing",
+          "metadata": {}
         }
       ]
     }
