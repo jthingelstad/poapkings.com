@@ -1,0 +1,60 @@
+---
+layout: base.njk
+pagination:
+  data: collections.posts
+  size: 10
+  reverse: true
+  alias: posts
+title: Blog | POAP KINGS
+description: "Updates, recaps, and announcements from the POAP KINGS clan."
+navActive: blog
+eleventyComputed:
+  permalink: "{% if pagination.pageNumber == 0 %}/blog/{% else %}/blog/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+<section class="pageIntro card">
+  <div class="awardsHero">
+    <div class="awardsHero__eyebrow">Blog</div>
+    <h1 class="pageTitle awardsHero__title">Latest Posts</h1>
+    <p class="sectionDesc m-0">
+      Updates, recaps, and announcements from the clan.
+    </p>
+  </div>
+</section>
+
+{% if posts.length == 0 %}
+<section>
+  <div class="card card-padded">
+    <p class="sectionDesc m-0">No posts yet — check back soon.</p>
+  </div>
+</section>
+{% else %}
+{% for post in posts %}
+<section>
+  <article class="postList__item card card-padded">
+    <div class="postList__meta">{{ post.data.date | formatLongDate }}{% if post.data.author %} · {{ post.data.author }}{% endif %}</div>
+    <h2 class="postList__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <div class="postBody">
+      {{ post.templateContent | safe }}
+    </div>
+  </article>
+</section>
+{% endfor %}
+
+{% if pagination.pages.length > 1 %}
+<section>
+  <div class="card card-padded awardsSeasonNav">
+    {% if pagination.href.previous %}
+    <a class="btn btnGhost" href="{{ pagination.href.previous }}">← Newer posts</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+    <span class="postsPageInfo">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+    {% if pagination.href.next %}
+    <a class="btn btnGhost" href="{{ pagination.href.next }}">Older posts →</a>
+    {% else %}
+    <span></span>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+{% endif %}

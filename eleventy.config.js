@@ -35,9 +35,13 @@ export default function (eleventyConfig) {
     return raw;
   });
 
-  eleventyConfig.addFilter("formatLongDate", (dateStr) => {
-    if (!dateStr) return "";
-    const raw = String(dateStr).trim();
+  eleventyConfig.addFilter("formatLongDate", (input) => {
+    if (!input) return "";
+    if (input instanceof Date) {
+      if (isNaN(input.getTime())) return "";
+      return input.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+    }
+    const raw = String(input).trim();
     if (/^\d{4}-\d{2}-\d{2}/.test(raw)) {
       const d = new Date(`${raw.slice(0, 10)}T00:00:00Z`);
       if (!isNaN(d.getTime())) {

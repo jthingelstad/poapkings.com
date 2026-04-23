@@ -1,0 +1,31 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>POAP KINGS</title>
+    <link>{{ site.url }}/blog/</link>
+    <description>Posts from the POAP KINGS Clash Royale clan — recaps, new members, milestones, and announcements.</description>
+    <language>en-us</language>
+    {%- set posts = collections.posts | reverse %}
+    {%- if posts.length %}<lastBuildDate>{{ posts[0].data.date | dateToRfc2822 }}</lastBuildDate>{% endif %}
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    {%- for p in posts %}
+    {%- set postUrl = site.url + p.url %}
+    <item>
+      <title>{{ p.data.title | e }}</title>
+      <link>{{ postUrl }}</link>
+      <guid isPermaLink="true">{{ postUrl }}</guid>
+      <pubDate>{{ p.data.date | dateToRfc2822 }}</pubDate>
+      {%- if p.data.author %}<author>noreply@poapkings.com ({{ p.data.author | e }})</author>{% endif %}
+      {%- for tag in p.data.tags %}{% if tag != "posts" %}
+      <category>{{ tag | e }}</category>
+      {%- endif %}{% endfor %}
+      <description><![CDATA[{{ p.templateContent | safe }}]]></description>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>

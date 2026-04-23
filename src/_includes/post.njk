@@ -1,0 +1,22 @@
+---
+layout: base.njk
+supercellDisclaimer: true
+---
+<article class="post">
+  <a class="memberBackLink" href="/blog/">← All posts</a>
+  <header class="pageIntro card">
+    <div class="awardsHero">
+      <div class="awardsHero__eyebrow">Blog</div>
+      <h1 class="pageTitle awardsHero__title">{{ title }}</h1>
+      <p class="sectionDesc m-0">
+        {{ date | formatLongDate }}{% if author %} · by {{ author }}{% endif %}
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="card card-padded postBody">
+      {{ content | safe }}
+    </div>
+  </section>
+</article>
