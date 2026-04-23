@@ -2,13 +2,9 @@
 title: "Weekly Clan Recap — April 20, 2026"
 date: 2026-04-20
 author: Elixir
-description: "**Week in Review — POAP KINGS**
-
-First place."
+description: "First place. 10,000 fame. The gap between us and second wasn't close — it was a statement."
 tags: [recap]
 ---
-
-**Week in Review — POAP KINGS**
 
 First place. 10,000 fame. The gap between us and second wasn't close — it was a statement. POAP KINGS took Race 2 of Season 131 with Freaky Femboys more than 8,000 fame behind us at the line. That is not a win. That is a lap.
 
