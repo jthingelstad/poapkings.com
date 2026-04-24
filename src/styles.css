@@ -2259,9 +2259,42 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 }
 
 /* Promote channels (members) */
-.promoChannels{ display:flex; flex-direction:column }
-.promoChannel{ padding: 14px 0 }
-.promoChannel:not(:first-child){ border-top: 1px solid rgba(255,255,255,.08) }
+.promoTabs{
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hairline);
+}
+.promoTab{
+  background: transparent;
+  border: 1px solid var(--hairline-2);
+  color: var(--text-2);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .14s, background .14s, border-color .14s, transform .14s;
+}
+.promoTab:hover{
+  color: #fff;
+  border-color: rgba(255,255,255,.26);
+  background: var(--surface);
+  transform: translateY(-1px);
+}
+.promoTab:focus-visible{ outline: 2px solid var(--gold); outline-offset: 2px }
+.promoTab.is-active{
+  background: linear-gradient(180deg, #F5C84C, #C98C10);
+  color: #2a1900;
+  border-color: #8a5a00;
+  box-shadow: 0 4px 12px rgba(245,200,76,.25);
+}
+.promoTab.is-active:hover{ transform: translateY(-1px) }
+.promoChannels{ display: flex; flex-direction: column }
+.promoChannel{ padding: 4px 0 }
+.promoChannel[hidden]{ display: none }
 .promoChannelHeader{
   display:flex; align-items:center; justify-content:space-between;
   gap:12px; margin-bottom:6px;

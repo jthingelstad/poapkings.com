@@ -106,8 +106,16 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
     </div>
   </div>
 
+  <div class="promoTabs" role="tablist" aria-label="Promote channel">
+    <button type="button" class="promoTab is-active" role="tab" aria-selected="true" aria-controls="promo-text" data-promo-tab="text">Text</button>
+    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-social" data-promo-tab="social">Social</button>
+    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-mail" data-promo-tab="mail">Mail</button>
+    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-discord" data-promo-tab="discord">Discord</button>
+    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-reddit" data-promo-tab="reddit">Reddit</button>
+  </div>
+
   <div class="promoChannels">
-    <div class="promoChannel">
+    <div class="promoChannel" id="promo-text" role="tabpanel" data-promo-panel="text">
       <div class="promoChannelHeader">
         <h3 class="promoChannelLabel">Text</h3>
         <div class="promoChannelButtons">
@@ -119,7 +127,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       <textarea class="promoChannelText" readonly rows="3">{{ elixirPromote.message.body | safe }}</textarea>
     </div>
 
-    <div class="promoChannel">
+    <div class="promoChannel" id="promo-social" role="tabpanel" data-promo-panel="social" hidden>
       <div class="promoChannelHeader">
         <h3 class="promoChannelLabel">Social</h3>
         <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-social">COPY</button>
@@ -128,7 +136,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       <textarea class="promoChannelText" readonly rows="3">{{ elixirPromote.social.body | safe }}</textarea>
     </div>
 
-    <div class="promoChannel">
+    <div class="promoChannel" id="promo-mail" role="tabpanel" data-promo-panel="mail" hidden>
       <div class="promoChannelHeader">
         <h3 class="promoChannelLabel">Mail</h3>
         <div class="promoChannelButtons">
@@ -142,7 +150,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       <textarea class="promoChannelText" readonly rows="5">{{ elixirPromote.email.body | safe }}</textarea>
     </div>
 
-    <div class="promoChannel">
+    <div class="promoChannel" id="promo-discord" role="tabpanel" data-promo-panel="discord" hidden>
       <div class="promoChannelHeader">
         <h3 class="promoChannelLabel">Discord</h3>
         <div class="promoChannelButtons">
@@ -154,7 +162,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       <textarea class="promoChannelText" readonly rows="4">{{ elixirPromote.discord.body | safe }}</textarea>
     </div>
 
-    <div class="promoChannel">
+    <div class="promoChannel" id="promo-reddit" role="tabpanel" data-promo-panel="reddit" hidden>
       <div class="promoChannelHeader">
         <h3 class="promoChannelLabel">Reddit</h3>
         <div class="promoChannelButtons">
@@ -168,6 +176,36 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       <textarea class="promoChannelText" readonly rows="5">{{ elixirPromote.reddit.body | safe }}</textarea>
     </div>
   </div>
+
+  <script>
+    (function(){
+      var tablist = document.querySelector('.promoTabs[role="tablist"]');
+      if (!tablist) return;
+      var tabs = tablist.querySelectorAll('.promoTab');
+      var panels = document.querySelectorAll('[data-promo-panel]');
+      function select(key){
+        tabs.forEach(function(t){
+          var on = t.dataset.promoTab === key;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', String(on));
+          t.tabIndex = on ? 0 : -1;
+        });
+        panels.forEach(function(p){ p.hidden = p.dataset.promoPanel !== key; });
+      }
+      tablist.addEventListener('click', function(e){
+        var btn = e.target.closest('.promoTab');
+        if (btn) select(btn.dataset.promoTab);
+      });
+      tablist.addEventListener('keydown', function(e){
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        var list = Array.prototype.slice.call(tabs);
+        var cur = list.findIndex(function(t){ return t.classList.contains('is-active'); });
+        var next = e.key === 'ArrowRight' ? (cur + 1) % list.length : (cur - 1 + list.length) % list.length;
+        select(list[next].dataset.promoTab);
+        list[next].focus();
+      });
+    })();
+  </script>
 
   <div class="ctaRow mt-5">
     <a class="btn btn--purple btn--sm" href="https://tinylytics.app/public/{{ site.tinylyticsId }}?token=poapkings" target="_blank" rel="noreferrer" data-tinylytics-event="members.view-traffic">View site traffic →</a>
