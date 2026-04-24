@@ -1,6 +1,5 @@
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
-import markdownIt from "markdown-it";
 
 export default function (eleventyConfig) {
   const normalizeMemberTag = (tag) => {
@@ -99,25 +98,6 @@ export default function (eleventyConfig) {
     return "Unranked";
   });
 
-  eleventyConfig.addFilter("formatAccountAge", (days) => {
-    if (days == null || days === "") return "";
-    const totalDays = Number(days);
-    if (!Number.isFinite(totalDays) || totalDays < 0) return "";
-    if (totalDays < 30) {
-      return `${Math.max(1, Math.round(totalDays))} day${Math.round(totalDays) === 1 ? "" : "s"}`;
-    }
-
-    const years = Math.floor(totalDays / 365);
-    const remainingDays = totalDays % 365;
-    const months = Math.floor(remainingDays / 30);
-    const parts = [];
-
-    if (years) parts.push(`${years} year${years === 1 ? "" : "s"}`);
-    if (months) parts.push(`${months} month${months === 1 ? "" : "s"}`);
-
-    return parts.join(" ") || `${Math.round(totalDays)} days`;
-  });
-
   eleventyConfig.addFilter("formatDecimal", (n, digits = 1) => {
     if (n == null || n === "") return "";
     const value = Number(n);
@@ -192,15 +172,6 @@ export default function (eleventyConfig) {
     return `https://app.poap.xyz/scan/${encodeURIComponent(value)}`;
   });
 
-  eleventyConfig.addFilter("roleClass", (role) => {
-    if (!role) return "rolePill";
-    const r = role.toLowerCase();
-    if (r.includes("co-leader")) return "rolePill roleCoLeader";
-    if (r.includes("leader")) return "rolePill roleLeader";
-    if (r.includes("elder")) return "rolePill roleElder";
-    return "rolePill";
-  });
-
   eleventyConfig.addFilter("typeClass", (type) => {
     if (!type) return "typePill";
     const t = type.toLowerCase();
@@ -247,21 +218,6 @@ export default function (eleventyConfig) {
       out.push(m[0]);
     }
     return out.join("\n");
-  });
-
-  const md = markdownIt({ html: true, linkify: true });
-  eleventyConfig.addFilter("md", (str) => {
-    if (!str) return "";
-    return md.renderInline(String(str));
-  });
-
-  eleventyConfig.addFilter("cardClass", (role) => {
-    if (!role) return "memberCard--member";
-    const r = role.toLowerCase();
-    if (r === "co-leader") return "memberCard--coleader";
-    if (r === "leader") return "memberCard--leader";
-    if (r === "elder") return "memberCard--elder";
-    return "memberCard--member";
   });
 
   eleventyConfig.addFilter("sortByRank", (members) => {

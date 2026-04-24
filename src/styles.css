@@ -102,7 +102,6 @@ img{ max-width:100%; display:block }
 
 /* Containers */
 .wrap{ max-width: var(--col); margin:0 auto; padding: 0 clamp(16px, 3vw, 28px) }
-.wrap-narrow{ max-width: var(--col-narrow); margin:0 auto; padding: 0 clamp(16px, 3vw, 28px) }
 
 /* ─── Top nav ─────────────────────────────────────────── */
 .top{
@@ -696,7 +695,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 }
 .btnGhost:hover,
 .btn--ghost:hover{ background: var(--surface-2); border-color: var(--hairline-2) }
-.btnPurple,
 .btn--purple{
   background: linear-gradient(180deg, rgba(109,40,217,.95), rgba(59,29,122,.95));
   color:#fff;
@@ -749,42 +747,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   background: currentColor;
   box-shadow: 0 0 8px currentColor;
 }
-
-/* Role pills */
-.rolePill,
-.role{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:4px 9px; border-radius:999px;
-  font-family: var(--display);
-  font-size: 10.5px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  border: 1px solid var(--hairline-2);
-  background: var(--surface);
-  color: var(--text-2);
-  white-space: nowrap;
-}
-.roleLeader,
-.role--leader{ color: var(--gold); background: var(--gold-tint); border-color: var(--gold-edge) }
-.roleCoLeader,
-.roleElder,
-.role--coleader, .role--elder{ color: var(--lavender); background: var(--purple-tint); border-color: var(--purple-edge) }
-
-/* Highlight pills (legacy) */
-.highlightPill{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:5px 9px; border-radius:999px;
-  font-size:11px; font-weight:800; letter-spacing:.04em;
-  text-transform:uppercase; white-space:nowrap;
-  border:1px solid var(--border-light);
-  background: var(--surface);
-  color: rgba(255,255,255,.90);
-}
-.highlightPill--war{ background: rgba(220,60,60,.18); border-color: rgba(220,60,60,.35); color: #ff9e9e }
-.highlightPill--trophies{ background: var(--gold-tint-bg); border-color: var(--gold-tint-border); color: var(--gold) }
-.highlightPill--donations{ background: rgba(76,200,245,.15); border-color: rgba(76,200,245,.30); color: #7dd3fc }
-.highlightPill--tenure{ background: rgba(76,245,160,.15); border-color: rgba(76,245,160,.30); color: #86efac }
-.highlightPill--general{ background: var(--surface); border-color: var(--border-light) }
 
 /* Type pills (vault) */
 .typePill{
@@ -2402,9 +2364,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 .pageIntro{
   padding: clamp(28px, 4vw, 48px) 0 clamp(20px, 3vw, 32px);
 }
-.pageIntro__inner{
-  display: grid; gap: var(--s5); max-width: 80ch;
-}
 .pageTitle{
   margin: 0;
   font-family: var(--display);
@@ -2658,20 +2617,15 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 }
 
 /* ─── Helpers ─── */
-.mt-2{ margin-top: 8px } .mt-3{ margin-top: 12px }
+.mt-3{ margin-top: 12px }
 .mt-4{ margin-top: 16px } .mt-5{ margin-top: 24px }
-.mt-6{ margin-top: 32px } .mt-7{ margin-top: 48px }
-.mt-xs{ margin-top: var(--space-xs) }
+.mt-6{ margin-top: 32px }
 .mt-sm{ margin-top: var(--space-sm) }
-.mt-md{ margin-top: var(--space-md) }
-.mb-0{ margin-bottom:0 }
 .mb-xs{ margin-bottom: var(--space-xs) }
 .mb-sm{ margin-bottom: var(--space-sm) }
-.mb-md{ margin-bottom: var(--space-md) }
 .m-0{ margin:0 }
 .text-2{ color: var(--text-2) }
 .text-3{ color: var(--text-3) }
-.tiny{ font-size: 12px; color: rgba(255,255,255,.62) }
 
 /* ═════════════════════════════════════════════════════════
    LEGACY CLASSES (FAQ, setup, blog index/post use these)
@@ -2709,7 +2663,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   font-weight: 400;
   line-height: 1.08;
 }
-.section-title-sm{ font-size: clamp(20px, 2.2vw, 26px) !important }
 .sectionDesc{
   color: var(--text-2);
   line-height: 1.6;
