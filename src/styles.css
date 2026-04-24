@@ -340,6 +340,7 @@ nav a.active,
 .nav-join:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px }
 
 /* ─── JOIN / WAIT modal ─── */
+.modal[hidden]{ display: none }
 .modal{
   position: fixed; inset: 0; z-index: 100;
   display: grid; place-items: center;
