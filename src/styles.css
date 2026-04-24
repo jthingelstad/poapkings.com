@@ -191,6 +191,9 @@ nav a,
   transition: color .15s, background .15s, border-color .15s;
   letter-spacing:.02em;
 }
+/* Home, FAQ, Elixir, Discord only appear in the mobile drawer —
+   keep the desktop nav focused on the 4 primary pages. */
+.navbar__mobile-only{ display: none }
 nav a:hover,
 .navbar a:hover{ color:#fff; background: var(--surface) }
 nav a.active,
@@ -198,6 +201,39 @@ nav a.active,
   color:#fff;
   background: var(--surface-2);
 }
+
+.top__right{
+  display: flex; align-items: center; gap: 10px;
+}
+
+/* Hamburger toggle — hidden on desktop, revealed on mobile */
+.nav-toggle{
+  display: none;
+  position: relative;
+  width: 38px; height: 38px;
+  padding: 0;
+  border: 1px solid var(--hairline-2);
+  border-radius: 10px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: background .14s, border-color .14s;
+}
+.nav-toggle:hover{ background: var(--surface-2); border-color: rgba(255,255,255,.22) }
+.nav-toggle:focus-visible{ outline: 2px solid var(--gold); outline-offset: 2px }
+.nav-toggle span{
+  position: absolute;
+  left: 9px; right: 9px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .22s cubic-bezier(.2,.9,.3,1.3), opacity .18s, top .22s;
+}
+.nav-toggle span:nth-child(1){ top: 12px }
+.nav-toggle span:nth-child(2){ top: 18px }
+.nav-toggle span:nth-child(3){ top: 24px }
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ top: 18px; transform: rotate(45deg) }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity: 0 }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ top: 18px; transform: rotate(-45deg) }
 
 /* Star counter — clan Star Level, driven by Tinylytics site hits */
 .starcount{
@@ -483,42 +519,72 @@ body.modal-open{ overflow: hidden }
   nav, .navbar{ gap: 2px }
   nav a, .navbar a{ padding: 7px 9px; font-size: 12.5px }
 }
+
+/* ─── Mobile / narrow tablet: collapse nav into a hamburger dropdown ─── */
 @media (max-width: 720px){
-  /* Keep the brand wordmark visible on mobile so there's a clear way home. */
   .brand strong, .brand__mark{ font-size: 12px; letter-spacing: .08em }
   .starcount__n, .starcount .tinylytics_hits{ font-size: 12px }
+  .nav-toggle{ display: block }
+  /* In the drawer, show all items including the mobile-only ones */
+  .navbar__mobile-only{ display: block }
+
+  /* Hide inline nav; it becomes a drawer panel when opened */
+  .navbar{
+    position: absolute;
+    top: calc(100% + 6px);
+    right: clamp(12px, 3vw, 24px);
+    left: clamp(12px, 3vw, 24px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px;
+    border-radius: 14px;
+    background:
+      radial-gradient(70% 100% at 50% 0%, rgba(127,61,245,.22), transparent 55%),
+      linear-gradient(180deg, #140a3a 0%, #0a0522 100%);
+    border: 1px solid var(--hairline-2);
+    box-shadow: 0 24px 48px -12px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.4);
+    opacity: 0;
+    transform: translateY(-6px) scale(.98);
+    pointer-events: none;
+    transition: opacity .18s ease, transform .22s cubic-bezier(.2,.9,.3,1.3);
+    z-index: 60;
+  }
+  .navbar.is-open{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .navbar a{
+    display: block;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    letter-spacing: .02em;
+    color: var(--ink);
+  }
+  .navbar a + a{ margin-top: 2px }
+  .navbar a.is-active{
+    background: linear-gradient(180deg, rgba(245,200,76,.18), rgba(245,200,76,.06));
+    color: #fff;
+    border: 1px solid rgba(245,200,76,.35);
+  }
+  .top__right{ gap: 8px }
 }
 @media (max-width: 540px){
-  .top .inner, .top__inner{ gap: 6px; padding: 10px 0 }
-  .top__left{ gap: 6px }
+  .top .inner, .top__inner{ gap: 8px; padding: 10px 0 }
+  .top__left{ gap: 8px }
   .brand__mark, .brand strong{ font-size: 11px; letter-spacing: .06em }
-  nav a, .navbar a{ padding: 6px 5px; font-size: 11.5px }
   .starcount{ padding: 5px 9px 5px 8px; gap: 5px; font-size: 12px }
-  .starcount__icon{ width: 16px; height: 16px; flex-basis: 16px }
-  .nav-join, .navJoin{ padding: 7px 10px; font-size: 11px }
-}
-@media (max-width: 480px){
-  /* Under ~480px we run out of room — hide Blog (it's in the footer)
-     so the brand wordmark can stay as the home link. */
-  .navbar a[href="/blog"]{ display: none }
-}
-@media (max-width: 420px){
-  .brand__mark, .brand strong{ font-size: 10px }
-  nav a, .navbar a{ padding: 5px 4px; font-size: 11px }
-}
-@media (max-width: 380px){
-  /* Final fallback: shrink the wordmark to initials so the home link
-     stays tappable even on iPhone 5/SE1-era widths. */
-  .brand__mark, .brand strong{
-    font-size: 11px;
-    letter-spacing: .04em;
-    font-size: 0;
-  }
-  .brand__mark::before, .brand strong::before{
-    content: "PK";
-    font-size: 13px;
-    letter-spacing: .06em;
-  }
+  .starcount__icon{ width: 18px; height: 18px; flex-basis: 18px }
+  .nav-join, .navJoin{ padding: 7px 12px; font-size: 11px }
+  .nav-toggle{ width: 36px; height: 36px }
+  .nav-toggle span{ left: 8px; right: 8px }
+  .nav-toggle span:nth-child(1){ top: 11px }
+  .nav-toggle span:nth-child(2){ top: 17px }
+  .nav-toggle span:nth-child(3){ top: 23px }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1),
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){ top: 17px }
 }
 
 /* ─── Headings & type ─────────────────────────────────── */
