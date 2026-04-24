@@ -20,23 +20,6 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
   </div>
 </section>
 
-{% if elixirMembers.message %}
-<hr class="rule" />
-<section class="section">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow eyebrow--purple">{{ elixirMembers.title or "What's happening" }}</span>
-      <h2 class="h-display h2 mt-3">From Elixir</h2>
-    </div>
-    {% if elixirMembers.generated %}<div class="kicker" style="color:var(--text-3)">Updated {{ elixirMembers.generated | formatDate }}</div>{% endif %}
-  </div>
-  <div class="elixirByline elixirByline--wrap">
-    <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
-    <div class="lede elixirByline__body">{{ elixirMembers.message | md | safe }}</div>
-  </div>
-</section>
-{% endif %}
-
 {% if elixirRoster.card_stats and elixirRoster.card_stats.length %}
 <hr class="rule" />
 <section class="section">
@@ -209,10 +192,5 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
 
   <div class="ctaRow mt-5">
     <a class="btn btn--purple btn--sm" href="https://tinylytics.app/public/{{ site.tinylyticsId }}?token=poapkings" target="_blank" rel="noreferrer" data-tinylytics-event="members.view-traffic">View site traffic →</a>
-    <div class="hitCounter">
-      <span class="hitEmoji" aria-hidden="true">★</span>
-      <span class="tinylytics_hits"></span>
-      <span class="hitLabel">hits</span>
-    </div>
   </div>
 </section>
