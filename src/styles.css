@@ -656,7 +656,10 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 }
 
 /* Page-level spacing for non-section main */
-.pageMain{ padding-top: 10px }
+.pageMain{
+  padding-top: 10px;
+  padding-bottom: clamp(48px, 6vw, 80px);
+}
 
 /* ─── Buttons ─────────────────────────────────────────── */
 .btn{
@@ -1359,7 +1362,11 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 22px;
-  padding: 30px 0 60px;
+  padding: 30px 0 clamp(80px, 10vw, 120px);
+  /* Explicit margin-bottom belt-and-suspenders for Safari, which can
+     under-compute the grid's last-row height when children use
+     aspect-ratio, causing the trailing cards to crash into the footer. */
+  margin-bottom: clamp(40px, 5vw, 72px);
 }
 @media (min-width: 1440px){ .cardgrid{ grid-template-columns: repeat(4, 1fr) } }
 
@@ -1600,7 +1607,7 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 
 /* Mobile: two cards side-by-side, drop non-essential info */
 @media (max-width: 720px){
-  .cardgrid{ grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 20px 0 40px }
+  .cardgrid{ grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 20px 0 clamp(64px, 10vw, 100px); margin-bottom: clamp(32px, 6vw, 56px) }
   .pcard{ padding: 5px; border-radius: 14px }
   .pcard::before{ inset: 2.5px; border-radius: 10px }
   .pcard__body{ border-radius: 10px }
