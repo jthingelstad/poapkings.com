@@ -99,31 +99,24 @@
       const n = parseInt(raw, 10);
       if (Number.isFinite(n) && n > 0){
         clearInterval(poll);
-        // Show n-1 first; then after a beat, squash + flash + tick to n.
-        hitsEl.textContent = fmt(n - 1);
+        if (reduce) return;
+        // Number has landed — fire the pop once as a celebration of the visit.
+        badge.classList.add('is-anticipating');
         setTimeout(function(){
-          if (!reduce){
-            badge.classList.add('is-anticipating');
-            setTimeout(function(){
-              badge.classList.remove('is-anticipating');
-              badge.classList.add('is-popping');
-              hitsEl.classList.add('is-ticking');
-              hitsEl.textContent = fmt(n);
-              spawnSparks(badge);
-              const plus = document.createElement('span');
-              plus.className = 'starcount__plus';
-              plus.textContent = '+1';
-              badge.appendChild(plus);
-              setTimeout(function(){
-                badge.classList.remove('is-popping');
-                hitsEl.classList.remove('is-ticking');
-                if (plus.parentNode) plus.parentNode.removeChild(plus);
-              }, 1000);
-            }, 180);
-          } else {
-            hitsEl.textContent = fmt(n);
-          }
-        }, 500);
+          badge.classList.remove('is-anticipating');
+          badge.classList.add('is-popping');
+          hitsEl.classList.add('is-ticking');
+          spawnSparks(badge);
+          const plus = document.createElement('span');
+          plus.className = 'starcount__plus';
+          plus.textContent = '+1';
+          badge.appendChild(plus);
+          setTimeout(function(){
+            badge.classList.remove('is-popping');
+            hitsEl.classList.remove('is-ticking');
+            if (plus.parentNode) plus.parentNode.removeChild(plus);
+          }, 1000);
+        }, 180);
       } else if (tries > 40){
         clearInterval(poll); // give up after ~8s if Tinylytics never fills in
       }
