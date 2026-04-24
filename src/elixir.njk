@@ -1,99 +1,127 @@
 ---
 layout: base.njk
 title: Elixir — AI Bot for POAP KINGS
-description: "Elixir is the AI-powered chronicler and advisor for POAP KINGS, monitoring the clan, tracking wars, and celebrating milestones from Discord."
+description: "Elixir is the AI-powered chronicler and advisor for POAP KINGS — channel-native subagents, an awareness loop, deck review, tournament tracking, and a Trophy Hall, all from Discord."
 ogImage: /assets/elixir.png
 ogImageAlt: Elixir bot avatar
 mainId: top
 supercellDisclaimer: true
 ---
-    <section class="pageIntro card">
-      <div class="elixirHeroImg">
-        <img src="/assets/elixir.png" alt="Elixir bot avatar" />
-      </div>
-      <h1 class="pageTitle"><strong>Elixir</strong></h1>
-      <p class="sectionDesc">
-        The AI-powered chronicler and advisor for <strong>POAP KINGS</strong>. Elixir monitors the clan, tracks wars, answers leader questions, and celebrates milestones — all from Discord.
+<section class="section" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(28px, 4vw, 48px);">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow eyebrow--purple">Sub-project · Microsite</span>
+      <h1 class="h-display h1 mt-4">Elixir</h1>
+      <p class="lede mt-5">
+        The AI-powered chronicler and advisor for <strong style="color:#fff">POAP KINGS</strong>. Elixir runs 24/7 inside the clan's Discord, watching the Clash Royale API on a heartbeat, deciding what's worth saying, and remembering everything.
       </p>
-      <div class="ctaRow mt-sm">
-        <a class="btn btnPurple" href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">View on GitHub</a>
-        <a class="btn btnGhost" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Join Discord</a>
+      <div class="ctaRow mt-6">
+        <a class="btn btn--purple" href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">View on GitHub</a>
+        <a class="btn btn--ghost" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Join Discord</a>
       </div>
-    </section>
+      <div class="ctaRow mt-5" style="gap:8px">
+        <span class="pill">Claude Sonnet</span>
+        <span class="pill">Claude Haiku</span>
+        <span class="pill">Anthropic tool use</span>
+        <span class="pill">SQLite + FTS</span>
+        <span class="pill">discord.py</span>
+        <span class="pill">CR API</span>
+        <span class="pill">Pillow</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-art__ring"></div>
+      <img src="/assets/elixir.png" alt="" />
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2 class="sectionTitle">What Elixir Does</h2>
-      <p class="sectionDesc">
-        Elixir runs 24/7 inside the POAP KINGS Discord, quietly handling the work that keeps the clan informed and connected.
-      </p>
-      <div class="grid3">
-        <div class="tile">
-          <h3>Hourly Heartbeat</h3>
-          <p>Every hour, Elixir checks clan stats, war status, and member activity — then decides if anything is worth reporting.</p>
-        </div>
-        <div class="tile">
-          <h3>Leader Q&A</h3>
-          <p>Leaders can ask Elixir questions in Discord and get context-aware answers grounded in real clan data.</p>
-        </div>
-        <div class="tile">
-          <h3>War Tracking</h3>
-          <p>Tracks Clan War participation, calls out standout performances, and keeps a running history of results.</p>
-        </div>
-      </div>
-      <div class="grid3 mt-sm">
-        <div class="tile">
-          <h3>Member History</h3>
-          <p>Remembers when members joined, left, or were promoted — building a living record of the clan over time.</p>
-        </div>
-        <div class="tile">
-          <h3>Cake Days</h3>
-          <p>Celebrates member anniversaries automatically, recognizing loyalty and long-term participation.</p>
-        </div>
-        <div class="tile">
-          <h3>Smart Routing</h3>
-          <p>Uses an LLM to decide what's worth sharing and what isn't — no spam, just signal.</p>
-        </div>
-      </div>
-    </section>
+<hr class="rule" />
 
-    <section>
-      <h2 class="sectionTitle">How It Works</h2>
-      <p class="sectionDesc">
-        Elixir follows a simple loop: observe the clan, decide what matters, speak with personality, and remember everything.
-      </p>
-      <div class="stepsGrid">
-        <article class="stepCard">
-          <div class="stepNumber">1</div>
-          <h3 class="stepTitle">Observe</h3>
-          <p>Every hour, Elixir pulls fresh data from the Clash Royale API — member lists, war status, donations, trophies — and compares it to what it already knows.</p>
-        </article>
-        <article class="stepCard">
-          <div class="stepNumber">2</div>
-          <h3 class="stepTitle">Decide</h3>
-          <p>An LLM evaluates the signals and filters noise. Routine stat bumps are ignored; meaningful events like promotions, war results, or milestones pass through.</p>
-        </article>
-        <article class="stepCard">
-          <div class="stepNumber">3</div>
-          <h3 class="stepTitle">Speak</h3>
-          <p>When something is worth sharing, Elixir writes a message in its own voice — informed by a personality prompt that keeps the tone consistent and on-brand.</p>
-        </article>
-        <article class="stepCard">
-          <div class="stepNumber">4</div>
-          <h3 class="stepTitle">Remember</h3>
-          <p>Every observation and message is logged to a local database and journal, giving Elixir long-term memory and providing data for the website.</p>
-        </article>
-      </div>
-    </section>
+<section class="section">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow eyebrow--purple">What Elixir does</span>
+      <h2 class="h-display h2 mt-3">Eight things,<br/>not one thing.</h2>
+      <p class="lede mt-3">Elixir isn't a single bot — it's a constellation of channel-native subagents, each with its own context, memory, and purpose.</p>
+    </div>
+  </div>
 
-    <section>
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">Built With</h2>
-        <p class="sectionDesc m-0 mb-sm">
-          Elixir is open source and built with <strong>Python</strong>, <strong>discord.py</strong>, <strong>GPT-4o</strong>, <strong>SQLite</strong>, <strong>APScheduler</strong>, and the <strong>Clash Royale API</strong>. Its personality and behavior are configured through markdown prompt files, making it portable to other clans.
-        </p>
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">View on GitHub</a>
-          <a class="btn btnGhost" href="/faq">Read the FAQ</a>
-        </div>
-      </div>
-    </section>
+  <ol class="reasons">
+    <li class="reason">
+      <div class="reason__num">01</div>
+      <h3 class="h-display h3">Channel-native subagents</h3>
+      <p>Dedicated agents run in <code>#river-race</code>, <code>#player-progress</code>, <code>#clan-events</code>, <code>#ask-elixir</code>, <code>#poapkings-com</code>, and <code>#leader-lounge</code> — each with its own scope and tone.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">02</div>
+      <h3 class="h-display h3">Awareness loop</h3>
+      <p>One agent turn per tick sees the full situation — signals, time, standings, memory — then chooses what to post or to stay silent. No noise, just signal.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">03</div>
+      <h3 class="h-display h3">Deck review</h3>
+      <p>Grounded in your actual losses. Validates suggestions against your collection so the advice is buildable, not hypothetical. Build-from-scratch supported for war.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">04</div>
+      <h3 class="h-display h3">Tournament tracking</h3>
+      <p><code>/elixir tournament watch</code> follows brackets and posts LLM-written recaps with card-draft analysis. Highlights moments without spamming.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">05</div>
+      <h3 class="h-display h3">Trophy Hall</h3>
+      <p>Seven award types — War Champ, Iron King, Donation Champ, Perfect Week, Rookie MVP — accrue into a durable trophy case the whole clan can browse.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">06</div>
+      <h3 class="h-display h3">Card quiz</h3>
+      <p>Teaches tactical literacy: trade math, cycle cost, matchup intuition. Daily-ish, opt-in, and tracked per player so you can see who's leveling up.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">07</div>
+      <h3 class="h-display h3">Omnipresent scouting</h3>
+      <p>A unified <code>cr_api</code> tool lets Elixir scout any clan or player by tag — useful for war prep, recruiting, and answering "who is this opponent?"</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">08</div>
+      <h3 class="h-display h3">Scoped memory</h3>
+      <p>Public, leadership-only, and notification memories — with weekly synthesis that retires stale entries and forms longer-arc memories.</p>
+    </li>
+  </ol>
+</section>
+
+<hr class="rule" />
+
+<section class="section">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow eyebrow--purple">How it works</span>
+      <h2 class="h-display h2 mt-3">Observe.<br/>Situate. Reason.<br/>Remember.</h2>
+      <p class="lede mt-3">A single agent turn per tick — but with the full situation in context, so the bot can choose silence when there's nothing worth saying.</p>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step__n">1</div>
+      <h3 class="h-display h3">Observe</h3>
+      <p>Hourly heartbeat pulls fresh data from the Clash Royale API and diffs against known state — member lists, war status, donations, trophies.</p>
+    </div>
+    <div class="step">
+      <div class="step__n">2</div>
+      <h3 class="h-display h3">Situate</h3>
+      <p>Builds one Situation payload: signals, time/phase, standings, scoped memory. The whole picture, not a slice.</p>
+    </div>
+    <div class="step">
+      <div class="step__n">3</div>
+      <h3 class="h-display h3">Reason</h3>
+      <p>One agent turn with tool access decides what (if anything) to post, where, and in what voice. Often, it stays silent.</p>
+    </div>
+    <div class="step">
+      <div class="step__n">4</div>
+      <h3 class="h-display h3">Remember</h3>
+      <p>Writes scoped memories — public, leadership, or notification-only — and can self-schedule revisits for future ticks.</p>
+    </div>
+  </div>
+</section>

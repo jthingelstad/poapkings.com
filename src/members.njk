@@ -4,168 +4,177 @@ layout: base.njk
 title: "Members | POAP KINGS | A Clash Royale Clan with Proof"
 description: "Members — onboarding and member resources for POAP KINGS."
 navActive: members
-extraScripts: '<script src="/members-promo.js"></script>'
+extraScripts: '<script src="/members-promo.js" defer></script>'
 ---
-    <section class="pageIntro card">
-      <h1 class="pageTitle">Welcome KING...</h1>
-      <p class="sectionDesc">
-        Members is your resource hub for clan news, awards, promotion tools, and site updates. Everything you need as a <strong>POAP KINGS</strong> member is right here.
-      </p>
-      <p class="sectionDesc"><strong>New to the clan?</strong> Get connected with leaders, set up your wallet, and register for the roster.</p>
-      <div class="ctaRow mt-sm">
-        <a class="btn btnPurple" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="members.join-discord">Join Discord</a>
-        <a class="btn btnPrimary" href="/members/setup/" data-tinylytics-event="members.clan-setup">Clan Setup</a>
-        <a class="btn btnGhost" href="/faq" data-tinylytics-event="members.read-faq">Read the FAQ</a>
+<section class="section" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(28px, 4vw, 48px);">
+  <span class="eyebrow">Members hub</span>
+  <h1 class="h-display h1 mt-4" style="font-size: clamp(40px, 6vw, 68px)">Welcome KING…</h1>
+  <p class="lede mt-4">
+    Your resource hub for clan news, awards, promotion tools, and site updates. Everything you need as a <strong style="color:#fff">POAP KINGS</strong> member is right here.
+  </p>
+  <p class="lede mt-4"><strong style="color:#fff">New to the clan?</strong> Get connected with leaders, set up your wallet, and register for the roster.</p>
+  <div class="ctaRow mt-5">
+    <a class="btn btn--purple" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="members.join-discord">Join Discord</a>
+    <a class="btn btn--gold" href="/members/setup/" data-tinylytics-event="members.clan-setup">Clan Setup</a>
+    <a class="btn btn--ghost" href="/faq" data-tinylytics-event="members.read-faq">Read the FAQ</a>
+  </div>
+</section>
+
+{% if elixirMembers.message %}
+<hr class="rule" />
+<section class="section">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow eyebrow--purple">{{ elixirMembers.title or "What's happening" }}</span>
+      <h2 class="h-display h2 mt-3">From Elixir</h2>
+    </div>
+    {% if elixirMembers.generated %}<div class="kicker" style="color:var(--text-3)">Updated {{ elixirMembers.generated | formatDate }}</div>{% endif %}
+  </div>
+  <div class="elixirByline elixirByline--wrap">
+    <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
+    <div class="lede elixirByline__body">{{ elixirMembers.message | md | safe }}</div>
+  </div>
+</section>
+{% endif %}
+
+{% if elixirRoster.card_stats and elixirRoster.card_stats.length %}
+<hr class="rule" />
+<section class="section">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">Clan card meta</span>
+      <h2 class="h-display h2 mt-3">What we're all playing</h2>
+      <p class="lede mt-3">Most popular cards across POAP KINGS right now, based on members' current decks.</p>
+    </div>
+  </div>
+  <div class="cmeta">
+    {% for card in elixirRoster.card_stats | take(18) %}
+    <div class="cmeta__cell{% if loop.index == 1 %} cmeta__cell--rank1{% elif loop.index == 2 %} cmeta__cell--rank2{% elif loop.index == 3 %} cmeta__cell--rank3{% endif %}" title="{{ card.name }} — used by {{ card.member_count }} member{{ 's' if card.member_count != 1 }}{% if card.avg_pct %} · {{ card.avg_pct }}% avg usage{% endif %}">
+      <div class="cmeta__rank">#{{ loop.index }}</div>
+      <div class="cmeta__art">
+        <img src="{{ card.icon_url }}" alt="{{ card.name }}" loading="lazy" />
+        {% if card.avg_pct %}<div class="cmeta__pct">{{ card.avg_pct }}%</div>{% endif %}
       </div>
-    </section>
+      <div class="cmeta__name">{{ card.name }}</div>
+      <div class="cmeta__bar"><div class="cmeta__bar__fill" style="width:{{ card.avg_pct or 0 }}%"></div></div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
-    {% if elixirMembers.message %}
-    <section>
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">{{ elixirMembers.title or "What's Happening" }}</h2>
-        <div class="elixirByline elixirByline--wrap">
-          <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
-          <p class="sectionDesc m-0 elixirByline__body">{{ elixirMembers.message | md | safe }}</p>
-        </div>
-        {% if elixirMembers.generated %}<div class="generatedTs">Updated {{ elixirMembers.generated | formatDate }}</div>{% endif %}
+{% if awards.featuredSeason and awards.featuredSeason.byType.war_champ and awards.featuredSeason.byType.war_champ.length %}
+{%- set season = awards.featuredSeason -%}
+<hr class="rule" />
+<section class="section">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">Season {{ season.season_id }} · Award standings</span>
+      <h2 class="h-display h2 mt-3">War Champs</h2>
+      <p class="lede mt-3">Top three war contributors by total fame earned across the season's races. These members earn a Royal Pass from the clan.</p>
+    </div>
+    <a class="btn--link" href="/awards" data-tinylytics-event="members.see-all-awards">All awards →</a>
+  </div>
+
+  <ol class="rankbar">
+    {% for a in season.byType.war_champ %}
+    <li class="rankbar__row rankbar__row--rank{{ a.rank }}">
+      <div class="rankbar__numeral">{% if a.rank < 10 %}0{% endif %}{{ a.rank }}</div>
+      <div class="rankbar__body">
+        {%- set tierLabel = "Gold" if a.rank == 1 else ("Silver" if a.rank == 2 else "Bronze") -%}
+        <span class="rankbar__tier">{{ tierLabel }} · War Champ</span>
+        <a class="rankbar__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        {% if a.metadata.races_participated %}<div class="rankbar__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</div>{% endif %}
       </div>
-    </section>
-    {% endif %}
-
-    {% if elixirRoster.card_stats and elixirRoster.card_stats.length %}
-    <section>
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">Clan Card Meta</h2>
-        <p class="sectionDesc m-0 mb-md">The most popular cards across POAP KINGS right now, based on members' current decks.</p>
-        <div class="cardStatsGrid">
-          {% for card in elixirRoster.card_stats | take(12) %}
-          <div class="cardStat {{ 'cardStat--top' if loop.index0 < 3 }}">
-            <div class="cardStat__rank">#{{ loop.index }}</div>
-            <img src="{{ card.icon_url }}" alt="{{ card.name }}" class="cardStat__icon" width="48" height="56" loading="lazy" />
-            <div class="cardStat__info">
-              <div class="cardStat__name">{{ card.name }}</div>
-              <div class="cardStat__meta">{{ card.member_count }} member{{ "s" if card.member_count != 1 }}{% if card.avg_pct %} · {{ card.avg_pct }}% avg usage{% endif %}</div>
-              {% if card.members and card.members.length %}
-              <div class="cardStat__meta">Used by {{ card.members | join(", ") }}{% if card.member_count > card.members.length %} and {{ card.member_count - card.members.length }} more{% endif %}</div>
-              {% endif %}
-            </div>
-          </div>
-          {% endfor %}
-        </div>
+      <div class="rankbar__metric">
+        <span class="rankbar__big">{{ a.metric_value | formatNumber }}</span>
+        <span class="rankbar__unit">{{ a.metric_unit }}</span>
       </div>
-    </section>
-    {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
 
-    {% if awards.featuredSeason %}
-    {%- set season = awards.featuredSeason -%}
-    <section>
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">Season {{ season.season_id }} Awards</h2>
-        <p class="sectionDesc m-0 mb-md">Highlights from {{ season.season_start | formatDate }} – {{ season.season_end | formatDate }}. These members won the war and earned a Royal Pass from the clan.</p>
+<hr class="rule" />
+<section class="section">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">Promote the clan</span>
+      <h2 class="h-display h2 mt-3">Plug-and-play pitches</h2>
+      <p class="lede mt-3">Use these messages to recruit new players and grow <strong style="color:#fff">POAP KINGS</strong>.</p>
+    </div>
+  </div>
 
-        <h3 class="awardsSubhead">War Champs</h3>
-        <ol class="awardsPodium">
-          {% for a in season.byType.war_champ %}
-          <li class="awardsPodium__item awardsPodium__item--rank{{ a.rank }}">
-            <span class="awardsPodium__rank">#{{ a.rank }}</span>
-            <a class="awardsPodium__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
-            <span class="awardsPodium__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
-          </li>
-          {% endfor %}
-        </ol>
-
-        <div class="ctaRow mt-md">
-          <a class="btn btnPrimary" href="/awards/" data-tinylytics-event="members.see-all-awards">See all awards</a>
-        </div>
-      </div>
-    </section>
-    {% endif %}
-
-    <section>
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">Promote the Clan</h2>
-        <p class="sectionDesc m-0 mb-md">
-          Use these plug-and-play messages to recruit new players and grow <strong>POAP KINGS</strong>.
-        </p>
-        <div class="promoChannels">
-          <div class="promoChannel">
-            <div class="promoChannelHeader">
-              <h3 class="promoChannelLabel">Text</h3>
-              <div class="promoChannelButtons">
-                <a class="btn btnGhost btnSm promoSms" href="#" data-tinylytics-event="members.send-text">Send Message</a>
-                <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-text">COPY</button>
-              </div>
-            </div>
-            <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
-            <textarea class="promoChannelText" readonly rows="3">
-{{ elixirPromote.message.body | safe }}
-            </textarea>
-          </div>
-
-          <div class="promoChannel">
-            <div class="promoChannelHeader">
-              <h3 class="promoChannelLabel">Social</h3>
-              <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-social">COPY</button>
-            </div>
-            <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
-            <textarea class="promoChannelText" readonly rows="3">
-{{ elixirPromote.social.body | safe }}
-            </textarea>
-          </div>
-
-          <div class="promoChannel">
-            <div class="promoChannelHeader">
-              <h3 class="promoChannelLabel">Mail</h3>
-              <div class="promoChannelButtons">
-                <a class="btn btnGhost btnSm promoMailto" href="#" data-tinylytics-event="members.send-email">Send Email</a>
-                <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-email">COPY</button>
-              </div>
-            </div>
-            <p class="promoChannelHint">Email-friendly pitch for friends or group chats.</p>
-            <label class="promoFieldLabel">Subject</label>
-            <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.email.subject | safe }}" />
-            <textarea class="promoChannelText" readonly rows="5">
-{{ elixirPromote.email.body | safe }}
-            </textarea>
-          </div>
-
-          <div class="promoChannel">
-            <div class="promoChannelHeader">
-              <h3 class="promoChannelLabel">Discord</h3>
-              <div class="promoChannelButtons">
-                <a class="btn btnGhost btnSm" href="https://discord.com/channels/332526643182567425/354394732451069953" target="_blank" rel="noreferrer" data-tinylytics-event="members.open-discord">Open Discord</a>
-                <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-discord">COPY</button>
-              </div>
-            </div>
-            <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
-            <textarea class="promoChannelText" readonly rows="4">
-{{ elixirPromote.discord.body | safe }}
-            </textarea>
-          </div>
-
-          <div class="promoChannel">
-            <div class="promoChannelHeader">
-              <h3 class="promoChannelLabel">Reddit</h3>
-              <div class="promoChannelButtons">
-                <a class="btn btnGhost btnSm" href="https://www.reddit.com/r/RoyaleRecruit/" target="_blank" rel="noreferrer" data-tinylytics-event="members.open-subreddit">Open Subreddit</a>
-                <button class="btn btnPrimary promoChannelCopy" type="button" data-tinylytics-event="members.copy-reddit">COPY</button>
-              </div>
-            </div>
-            <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not attempt to include the clan invite link!</p>
-            <label class="promoFieldLabel">Title</label>
-            <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.reddit.title | safe }}" />
-            <textarea class="promoChannelText" readonly rows="5">
-{{ elixirPromote.reddit.body | safe }}
-            </textarea>
-          </div>
-        </div>
-        <div class="ctaRow mt-sm">
-          <a class="btn btnPrimary" href="https://tinylytics.app/public/nqAdZqEbeis65byoh2_3?token=poapkings" target="_blank" rel="noreferrer" data-tinylytics-event="members.view-traffic">📊 View Site Traffic</a>
-          <div class="hitCounter">
-            <span class="hitEmoji" aria-hidden="true">👑</span>
-            <span class="tinylytics_hits"></span>
-            <span class="hitLabel">hits</span>
-          </div>
+  <div class="promoChannels">
+    <div class="promoChannel">
+      <div class="promoChannelHeader">
+        <h3 class="promoChannelLabel">Text</h3>
+        <div class="promoChannelButtons">
+          <a class="btn btn--ghost btn--sm promoSms" href="#" data-tinylytics-event="members.send-text">Send Message</a>
+          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-text">COPY</button>
         </div>
       </div>
-    </section>
+      <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
+      <textarea class="promoChannelText" readonly rows="3">{{ elixirPromote.message.body | safe }}</textarea>
+    </div>
+
+    <div class="promoChannel">
+      <div class="promoChannelHeader">
+        <h3 class="promoChannelLabel">Social</h3>
+        <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-social">COPY</button>
+      </div>
+      <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
+      <textarea class="promoChannelText" readonly rows="3">{{ elixirPromote.social.body | safe }}</textarea>
+    </div>
+
+    <div class="promoChannel">
+      <div class="promoChannelHeader">
+        <h3 class="promoChannelLabel">Mail</h3>
+        <div class="promoChannelButtons">
+          <a class="btn btn--ghost btn--sm promoMailto" href="#" data-tinylytics-event="members.send-email">Send Email</a>
+          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-email">COPY</button>
+        </div>
+      </div>
+      <p class="promoChannelHint">Email-friendly pitch for friends or group chats.</p>
+      <label class="promoFieldLabel">Subject</label>
+      <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.email.subject | safe }}" />
+      <textarea class="promoChannelText" readonly rows="5">{{ elixirPromote.email.body | safe }}</textarea>
+    </div>
+
+    <div class="promoChannel">
+      <div class="promoChannelHeader">
+        <h3 class="promoChannelLabel">Discord</h3>
+        <div class="promoChannelButtons">
+          <a class="btn btn--ghost btn--sm" href="https://discord.com/channels/332526643182567425/354394732451069953" target="_blank" rel="noreferrer" data-tinylytics-event="members.open-discord">Open Discord</a>
+          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-discord">COPY</button>
+        </div>
+      </div>
+      <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
+      <textarea class="promoChannelText" readonly rows="4">{{ elixirPromote.discord.body | safe }}</textarea>
+    </div>
+
+    <div class="promoChannel">
+      <div class="promoChannelHeader">
+        <h3 class="promoChannelLabel">Reddit</h3>
+        <div class="promoChannelButtons">
+          <a class="btn btn--ghost btn--sm" href="https://www.reddit.com/r/RoyaleRecruit/" target="_blank" rel="noreferrer" data-tinylytics-event="members.open-subreddit">Open Subreddit</a>
+          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-reddit">COPY</button>
+        </div>
+      </div>
+      <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not include the clan invite link!</p>
+      <label class="promoFieldLabel">Title</label>
+      <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.reddit.title | safe }}" />
+      <textarea class="promoChannelText" readonly rows="5">{{ elixirPromote.reddit.body | safe }}</textarea>
+    </div>
+  </div>
+
+  <div class="ctaRow mt-5">
+    <a class="btn btn--purple btn--sm" href="https://tinylytics.app/public/{{ site.tinylyticsId }}?token=poapkings" target="_blank" rel="noreferrer" data-tinylytics-event="members.view-traffic">View site traffic →</a>
+    <div class="hitCounter">
+      <span class="hitEmoji" aria-hidden="true">★</span>
+      <span class="tinylytics_hits"></span>
+      <span class="hitLabel">hits</span>
+    </div>
+  </div>
+</section>

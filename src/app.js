@@ -63,7 +63,7 @@ function initVaultFilter() {
   var grid = document.getElementById("vaultGrid");
   if (!filter || !status || !grid) return;
 
-  var allCards = grid.querySelectorAll(".vaultCard");
+  var allCards = grid.querySelectorAll(".vault");
   var emptyMsg = document.getElementById("vaultEmpty");
   var total = allCards.length;
 

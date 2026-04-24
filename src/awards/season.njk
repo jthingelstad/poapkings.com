@@ -10,108 +10,116 @@ eleventyComputed:
   title: "Season {{ season.season_id }} Awards | POAP KINGS"
   description: "POAP KINGS Season {{ season.season_id }} award winners — war champs, donation champs, rookie MVPs, Iron Kings, and more."
 ---
-<section class="pageIntro card">
-  <a class="memberBackLink" href="/awards/">← All awards</a>
-  <div class="awardsHero">
-    <div class="awardsHero__eyebrow">Season Awards</div>
-    <h1 class="pageTitle awardsHero__title">Season {{ season.season_id }}</h1>
-    <p class="sectionDesc m-0">
-      {{ season.season_start | formatLongDate }} – {{ season.season_end | formatLongDate }} · {{ season.awardCount }} award{{ "s" if season.awardCount != 1 }} handed out
-      {%- if not season.byType.war_champ or season.byType.war_champ.length == 0 %} · <em>season in progress</em>{% endif %}
-    </p>
-  </div>
+<section class="section" style="padding-top: clamp(36px, 5vw, 64px); padding-bottom: clamp(20px, 3vw, 40px);">
+  <a class="back-link" href="/awards/">← All awards</a>
+  <span class="eyebrow mt-3" style="display:inline-flex">Season Awards</span>
+  <h1 class="h-display h1 mt-4">Season {{ season.season_id }}</h1>
+  <p class="lede mt-4">
+    {{ season.season_start | formatLongDate }} – {{ season.season_end | formatLongDate }} · {{ season.awardCount }} award{{ "s" if season.awardCount != 1 }} handed out
+    {%- if not season.byType.war_champ or season.byType.war_champ.length == 0 %} · <span class="pill pill--live pill--dot" style="margin-left:6px;vertical-align:middle">Season in progress</span>{% endif %}
+  </p>
 </section>
 
+<hr class="rule" />
+
 {% for category in season.categories %}
-<section>
-  <div class="card card-padded">
-    <h2 class="sectionTitle m-0 mb-xs">{{ category.label }}</h2>
-    <p class="sectionDesc m-0 mb-md">{{ category.description }}</p>
-
-    {% if category.style == "podium" %}
-    <ol class="awardsPodium awardsPodium--full">
-      {% for a in category.awards %}
-      <li class="awardsPodium__item awardsPodium__item--rank{{ a.rank }}">
-        <span class="awardsPodium__rank">#{{ a.rank }}</span>
-        <a class="awardsPodium__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
-        <span class="awardsPodium__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
-        {% if a.metadata.races_participated %}<span class="awardsPodium__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</span>{% endif %}
-      </li>
-      {% endfor %}
-    </ol>
-
-    {% elif category.style == "honorRoll" %}
-    <ul class="awardsHonorRoll">
-      {% for a in category.awards %}
-      <li>
-        <a class="awardsHonorRoll__item" href="/roster/{{ a.player_tag | memberSlug }}/">
-          <span class="awardsHonorRoll__eyebrow"><span aria-hidden="true">👑</span> {{ category.singular | upper }}</span>
-          <span class="awardsHonorRoll__name">{{ a.player_name | e }}</span>
-          {% if a.metadata.total_battle_days %}<span class="awardsHonorRoll__metric">{{ a.metadata.total_battle_days }} battle days</span>{% endif %}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-
-    {% elif category.type == "perfect_week" %}
-    <div class="awardsWeekGrid">
-      {% for week in season.perfectWeekBySection %}
-      <div class="awardsWeek">
-        <div class="awardsWeek__label">{{ week.week_label }}</div>
-        <ul class="awardsWeek__list">
-          {% for a in week.awards %}
-          <li>
-            <a href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
-            {% if a.metadata.total_battle_days %}<span class="awardsWeek__meta">{{ a.metadata.total_battle_days }} days</span>{% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
+<section class="section--tight">
+  <div class="cat-head">
+    <div>
+      <h3 class="h-display">{{ category.label }}</h3>
+      <p class="cat-head__desc">{{ category.description }}</p>
     </div>
-
-    {% elif category.type == "donation_champ_weekly" %}
-    <div class="awardsWeekGrid">
-      {% for week in season.donationChampWeeklyBySection %}
-      <div class="awardsWeek">
-        <div class="awardsWeek__label">{{ week.week_label }}{% if week.week_ending %} <span class="awardsWeek__date">(ends {{ week.week_ending | formatDate }})</span>{% endif %}</div>
-        <ul class="awardsWeek__list">
-          {% for a in week.awards %}
-          <li>
-            <span class="awardsWeek__rank">#{{ a.rank }}</span>
-            <a href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
-            <span class="awardsWeek__meta">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-    </div>
-
-    {% else %}
-    <ul class="awardsList">
-      {% for a in category.awards %}
-      <li class="awardsList__item">
-        <a class="awardsList__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
-        <span class="awardsList__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+    <span class="pill {% if category.style == 'podium' %}pill--gold{% else %}pill--purple{% endif %}">Season honor</span>
   </div>
+
+  {% if category.style == "podium" %}
+  <ol class="rankbar">
+    {% for a in category.awards %}
+    <li class="rankbar__row rankbar__row--rank{{ a.rank }}">
+      <div class="rankbar__numeral">{% if a.rank < 10 %}0{% endif %}{{ a.rank }}</div>
+      <div class="rankbar__body">
+        {%- set tierLabel = "Gold" if a.rank == 1 else ("Silver" if a.rank == 2 else ("Bronze" if a.rank == 3 else "Honor")) -%}
+        <span class="rankbar__tier">{{ tierLabel }} · {{ category.singular }}</span>
+        <a class="rankbar__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        {% if a.metadata.races_participated %}<div class="rankbar__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</div>{% endif %}
+      </div>
+      <div class="rankbar__metric">
+        <span class="rankbar__big">{{ a.metric_value | formatNumber }}</span>
+        <span class="rankbar__unit">{{ a.metric_unit }}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
+  {% elif category.style == "honorRoll" %}
+  <ul class="honor-roll">
+    {% for a in category.awards %}
+    <li>
+      <a href="/roster/{{ a.player_tag | memberSlug }}/">
+        <span class="honor-roll__eyebrow">{{ category.singular | upper }}</span>
+        <span class="honor-roll__name">{{ a.player_name | e }}</span>
+        {% if a.metadata.total_battle_days %}<span class="honor-roll__metric">{{ a.metadata.total_battle_days }} battle days</span>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% elif category.type == "perfect_week" %}
+  <ul class="honor-roll" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))">
+    {% for week in season.perfectWeekBySection %}
+    <li>
+      <a href="#" style="pointer-events:none">
+        <span class="honor-roll__eyebrow">{{ week.week_label | upper }}</span>
+        <span class="honor-roll__name" style="font-size:14px">
+          {% for a in week.awards %}{{ a.player_name | e }}{% if not loop.last %}, {% endif %}{% endfor %}
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% elif category.type == "donation_champ_weekly" %}
+  <ul class="honor-roll" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))">
+    {% for week in season.donationChampWeeklyBySection %}
+    <li>
+      <a href="#" style="pointer-events:none">
+        <span class="honor-roll__eyebrow">{{ week.week_label | upper }}{% if week.week_ending %} · ENDS {{ week.week_ending | formatDate | upper }}{% endif %}</span>
+        <span class="honor-roll__name" style="font-size:14px">
+          {% for a in week.awards %}#{{ a.rank }} {{ a.player_name | e }}{% if not loop.last %}, {% endif %}{% endfor %}
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% else %}
+  <ul class="honor-roll" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))">
+    {% for a in category.awards %}
+    <li>
+      <a href="/roster/{{ a.player_tag | memberSlug }}/">
+        <span class="honor-roll__eyebrow">{{ category.singular | upper }}</span>
+        <span class="honor-roll__name">{{ a.player_name | e }}</span>
+        <span class="honor-roll__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </section>
 {% endfor %}
 
-<section>
-  <div class="card card-padded awardsSeasonNav">
+<hr class="rule" />
+
+<section class="section--tight">
+  <div class="ctaRow" style="justify-content:space-between">
     {% if season.olderSeasonId %}
-    <a class="btn btnGhost" href="/awards/s{{ season.olderSeasonId }}/">← Season {{ season.olderSeasonId }}</a>
+    <a class="btn btn--ghost" href="/awards/s{{ season.olderSeasonId }}/">← Season {{ season.olderSeasonId }}</a>
     {% else %}
     <span></span>
     {% endif %}
-    <a class="btn btnGhost" href="/awards/">All awards</a>
+    <a class="btn btn--ghost" href="/awards/">All awards</a>
     {% if season.newerSeasonId %}
-    <a class="btn btnGhost" href="/awards/s{{ season.newerSeasonId }}/">Season {{ season.newerSeasonId }} →</a>
+    <a class="btn btn--ghost" href="/awards/s{{ season.newerSeasonId }}/">Season {{ season.newerSeasonId }} →</a>
     {% else %}
     <span></span>
     {% endif %}

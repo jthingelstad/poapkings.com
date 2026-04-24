@@ -2,132 +2,195 @@
 permalink: /roster/
 layout: base.njk
 title: Roster | POAP KINGS | A Clash Royale Clan with Proof
-description: "POAP KINGS roster — current clan members and profile links."
+description: "POAP KINGS roster — current clan members, signature cards, trophies, and full player profiles."
 navActive: roster
-appJs: true
 ---
-    <section class="pageIntro card">
-      <h1 class="pageTitle">Meet the Members</h1>
-      <p class="sectionDesc">
-        The full roster of royalty, pushing together since February 4, 2026.
-        Each member links to <a href="https://royaleapi.com" target="_blank" rel="noreferrer">RoyaleAPI</a>, and those with POAPs can show off their collection.
-      </p>
-      <div class="ctaRow mt-sm">
-        <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="roster.join">Join the clan</a>
-        <a class="btn btnGhost" href="/faq" data-tinylytics-event="roster.read-faq">Read the FAQ</a>
+{%- set sortedMembers = elixirRoster.members | sortByRank -%}
+{%- set memberCount = elixirRoster.members | length -%}
+{%- set openSlots = 50 - memberCount -%}
+{%- set isFull = memberCount >= 50 -%}
+
+<header class="roster-head">
+  <div class="roster-head__copy">
+    <span class="eyebrow">The Kings · {{ elixirRoster.updated | formatDate }}</span>
+    <h1 class="h-display h1">Meet the members</h1>
+    {% if isFull %}
+    <p class="lede"><strong style="color:var(--gold)">Clan is full — all 50 seats taken.</strong> Each card is a player — tap one to see their full profile, deck, badges, and mastery. Want in? <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Join the waitlist in Discord</a>.</p>
+    {% else %}
+    <p class="lede">{{ memberCount }} active{% if openSlots > 0 %}, {{ openSlots }} open{% endif %}. Each card is a player — tap one to see their full profile, deck, badges, and mastery.</p>
+    {% endif %}
+  </div>
+  <div class="roster-head__meta">
+    <div class="m"><div class="m__n">{{ memberCount }}</div><div class="m__l">Members</div></div>
+    {% if isFull %}
+    <div class="m m--full"><div class="m__n m__n--full"><span class="roster-full-dot"></span>FULL</div><div class="m__l">Waitlist open</div></div>
+    {% else %}
+    <div class="m"><div class="m__n">{{ openSlots }}</div><div class="m__l">Open slots</div></div>
+    {% endif %}
+    <div class="m"><div class="m__n">{{ elixirClan.clanScore | formatNumber }}</div><div class="m__l">Clan trophies</div></div>
+  </div>
+</header>
+
+<div class="cardtools">
+  <div class="cardtools__search">
+    <input id="rosterSearch" type="search" placeholder="Search name or tag…" aria-label="Search roster" />
+  </div>
+  <div class="cardtools__chips" id="roleChips">
+    <button class="chip is-active" data-role="all" type="button">All</button>
+    <button class="chip" data-role="leadership" type="button">Leadership</button>
+    <button class="chip" data-role="elder" type="button">Elders</button>
+    <button class="chip" data-role="member" type="button">Members</button>
+  </div>
+  <div class="cardtools__sort">
+    <label for="rosterSort">Sort</label>
+    <select id="rosterSort">
+      <option value="rank" selected>Clan rank</option>
+      <option value="trophies">Trophies</option>
+      <option value="level">King Level</option>
+      <option value="donations">Donations</option>
+      <option value="joined">Join date</option>
+      <option value="alpha">Alphabetical</option>
+    </select>
+  </div>
+  <div class="cardtools__count"><span id="rosterStatus">{{ memberCount }}</span> showing</div>
+</div>
+
+<div class="cardgrid" id="rosterGrid" role="list">
+  {% for m in sortedMembers %}
+  {%- set rawRole = m.role if m.role else "Member" -%}
+  {%- set roleSlug = rawRole | lower | replace("-", "") -%}
+  {%- set rawTag = m.tag | replace("#", "") -%}
+  {%- set memberUrl = m.tag | memberProfileUrl -%}
+  <a class="pcard" href="{{ memberUrl | e }}" role="listitem"
+     data-search="{{ m | searchText | e }}"
+     data-trophies="{{ m.trophies }}"
+     data-donations="{{ m.donations }}"
+     data-level="{{ m.exp_level }}"
+     data-joined="{{ m.date_joined }}"
+     data-rank="{{ m.clan_rank }}"
+     data-name="{{ m.name | e }}"
+     data-role="{{ roleSlug }}"
+     aria-label="{{ m.name | e }}, {{ rawRole }}, rank {{ m.clan_rank }}">
+    <span class="pcard__role pcard__role--{{ roleSlug }}">{{ rawRole | e }}</span>
+    <div class="pcard__body">
+      <div class="pcard__top">
+        <span class="pcard__rank">#{{ m.clan_rank or '—' }}</span>
+        <span class="pcard__name">{{ m.name | e }}</span>
+        <span class="pcard__level"><small>LVL</small><strong>{{ m.exp_level or '—' }}</strong></span>
       </div>
-    </section>
-
-    <section>
-      <div class="clanStatsGrid">
-        {% include "clan-stats.njk" %}
-      </div>
-    </section>
-
-    <section>
-      <div class="card rosterPageCard">
-        <div class="rosterHeaderRow">
-          <div>
-            <h2 class="sectionTitle m-0">Members</h2>
-            <div class="tiny mt-xs">Last updated: {{ elixirRoster.updated | formatLongDate }}</div>
-          </div>
-          <div id="rosterStatus" class="tiny rosterCount">Showing {{ elixirRoster.members | length }} of {{ elixirRoster.members | length }} member{{ "s" if elixirRoster.members | length != 1 }}</div>
-        </div>
-
-        {% if elixirRoster.intro %}
-        <p class="sectionDesc m-0 mt-sm mb-sm">{{ elixirRoster.intro | md | safe }}</p>
-        {% endif %}
-
-        <div class="rosterControls">
-          <label class="rosterControl">
-            <span>Search</span>
-            <input id="rosterSearch" type="search" placeholder="Name, tag, role, arena" />
-          </label>
-          <label class="rosterControl">
-            <span>Sort by</span>
-            <select id="rosterSort">
-              <option value="rank">Clan Rank</option>
-              <option value="trophies">Trophies</option>
-              <option value="donations">Donations</option>
-              <option value="level">Level</option>
-              <option value="accountAge">Account Age</option>
-              <option value="joined">Date Joined</option>
-            </select>
-          </label>
-          <label class="rosterControl">
-            <span>Role</span>
-            <select id="rosterRole">
-              <option value="">All Roles</option>
-              <option value="leader">Leader</option>
-              <option value="elder">Elder</option>
-              <option value="member">Member</option>
-            </select>
-          </label>
-        </div>
-
-        <div id="rosterGrid" class="rosterCardGrid">
-          {% for m in elixirRoster.members | sortByRank %}
-          {%- set rawRole = m.role if m.role else "Member" -%}
-          {%- set role = "Leader" if rawRole == "Co-Leader" else rawRole -%}
-          {%- set rawTag = m.tag | replace("#", "") -%}
-          {%- set memberUrl = m.tag | memberProfileUrl -%}
-          <div class="memberCard {{ role | cardClass }}"
-               data-search="{{ m | searchText | e }}"
-               data-trophies="{{ m.trophies }}"
-               data-donations="{{ m.donations }}"
-               data-level="{{ m.exp_level }}"
-               data-account-age="{{ m.cr_account_age_days or 0 }}"
-               data-joined="{{ m.date_joined }}"
-               data-rank="{{ m.clan_rank }}"
-               data-role="{{ role | lower }}">
-            <div class="memberCard__header">
-              <a class="memberCard__nameLink" href="{{ memberUrl | e }}">
-                <span class="memberCard__name">{{ m.name | e }}</span>
-              </a>
-              <span class="{{ role | roleClass }}">{{ role | e }}</span>
+      <div class="pcard__arena">{{ m.arena or 'Unranked' }}</div>
+      <div class="pcard__cards">
+        <div class="pcard__cards__label">Top 6 Cards</div>
+        <div class="pcard__cards__grid">
+          {%- set favs = m.favorite_cards or [] -%}
+          {% for i in range(0, 6) %}
+            {%- set c = favs[i] -%}
+            {% if c %}
+            <div class="pcard__cards__cell" title="{{ c.name | e }}">
+              <img src="{{ c.icon_url | e }}" alt="{{ c.name | e }}" loading="lazy" />
             </div>
-            <div class="memberCard__stats">
-              <span class="memberCard__stat">Lvl {{ m.exp_level }}</span>
-              <span class="memberCard__stat memberCard__stat--highlight">&#x1F3C6; {{ m.trophies | formatNumber }}</span>
-              <span class="memberCard__stat">&#x1F381; {{ m.donations | formatNumber }}</span>
-            </div>
-            <div class="memberCard__meta">
-              <span class="memberCard__arena">{{ m.arena | e }}</span>
-              {%- if m.date_joined %}
-              <span class="memberCard__joined">Joined {{ m.date_joined | formatDate }}<span class="rosterDuration" data-joined="{{ m.date_joined }}"></span></span>
-              {%- endif %}
-              {%- if m.cr_account_age_days %}
-              <span class="memberCard__joined">Account age {{ m.cr_account_age_days | formatAccountAge }}</span>
-              {%- endif %}
-            </div>
-            {% if m.current_deck_cards and m.current_deck_cards.length %}
-            <div class="memberCard__cards">
-              {% for card in m.current_deck_cards %}
-              {%- set thumbImg = card.icon_urls.evolutionMedium if (card.evolution_level and card.icon_urls.evolutionMedium) else card.icon_url -%}
-              <span class="memberCard__card"><img src="{{ thumbImg }}" alt="{{ card.name }}" class="memberCard__cardIcon" width="24" height="28" loading="lazy" /><span class="memberCard__cardName">{{ card.name | e }}</span></span>
-              {% endfor %}
-            </div>
+            {% else %}
+            <div class="pcard__cards__cell pcard__cards__cell--empty"></div>
             {% endif %}
-            {% if m.highlight %}<span class="highlightPill highlightPill--{{ m.highlight | e }}">{{ m.highlight | e }}</span>{% endif %}
-            {% if m.note %}<div class="memberCard__note">{{ m.note | e }}</div>{% endif %}
-            <div class="memberCard__footer">
-              <a class="memberCard__cta" href="{{ memberUrl | e }}">View full profile</a>
-              <div class="memberCard__subtle">Tag #{{ rawTag | e }}</div>
-            </div>
-            <button class="tinylytics_kudos" data-path="/roster/{{ rawTag | e }}"></button>
-          </div>
           {% endfor %}
-          <div class="rosterEmpty" id="rosterEmpty" hidden>No members match the current filters.</div>
-        </div>
-
-        <div class="rosterJoinCta">
-          {% set openSpots = 50 - (elixirRoster.members | length) %}
-          {% if openSpots > 0 %}
-          <p class="openSpotsText">{{ openSpots }} spot{{ "s" if openSpots != 1 }} open</p>
-          {% else %}
-          <p class="openSpotsText">Clan is currently full</p>
-          {% endif %}
-          <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="roster.join">Join the clan</a>
         </div>
       </div>
-    </section>
+      <div class="pcard__stats">
+        <div class="pcard__stat"><div class="pcard__stat__v pcard__stat__v--gold">{{ m.trophies | formatNumber }}</div><div class="pcard__stat__l">Trophies</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v">{{ m.donations | formatNumber }}</div><div class="pcard__stat__l">Donations</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_games_per_day != null %}{{ m.cr_games_per_day | formatDecimal(1) }}{% else %}—{% endif %}</div><div class="pcard__stat__l">Games / day</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_account_age_years != null %}{{ m.cr_account_age_years }}y{% else %}—{% endif %}</div><div class="pcard__stat__l">Account</div></div>
+      </div>
+      <div class="pcard__foot">
+        <span class="pcard__tag">#{{ rawTag | upper | e }}</span>
+        <span class="pcard__joined">{% if m.date_joined %}Joined {{ m.date_joined | formatDate }}{% else %}—{% endif %}</span>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+
+  {% if openSlots > 0 %}
+  {% for i in range(0, [openSlots, 3] | min) %}
+  <a class="pcard pcard--open" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" role="listitem" aria-label="Open slot — join the clan" data-role="open" data-tinylytics-event="roster.open-slot">
+    <div class="pcard__body">
+      <div style="font-family: var(--display); font-size: 48px; color: var(--gold); line-height: 1">＋</div>
+      <h3>Open slot</h3>
+      <p>Looking for active players. {{ elixirClan.minTrophies | formatNumber }}+ trophies, daily logins, good vibes.</p>
+      <span class="chip is-active" style="pointer-events: none">Join the clan</span>
+    </div>
+  </a>
+  {% endfor %}
+  {% endif %}
+</div>
+
+<div class="empty-state" id="rosterEmpty" hidden>
+  <h3>No one matches that search.</h3>
+  <p>Try a different filter or clear the search.</p>
+</div>
+
+<script>
+(function(){
+  var grid = document.getElementById('rosterGrid');
+  var statusEl = document.getElementById('rosterStatus');
+  var emptyEl = document.getElementById('rosterEmpty');
+  var searchEl = document.getElementById('rosterSearch');
+  var sortEl = document.getElementById('rosterSort');
+  var chipWrap = document.getElementById('roleChips');
+  if (!grid) return;
+
+  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.pcard'));
+  var memberCards = allCards.filter(function(c){ return c.dataset.role !== 'open'; });
+  var openCards = allCards.filter(function(c){ return c.dataset.role === 'open'; });
+
+  var state = { role: 'all', q: '', sort: 'rank' };
+
+  function num(el, k){ var v = el.dataset[k]; return v == null || v === '' ? 0 : Number(v); }
+  function str(el, k){ return el.dataset[k] || ''; }
+
+  function visibleByFilter(card){
+    var role = card.dataset.role;
+    if (state.role === 'leadership' && !/leader/.test(role)) return false;
+    if (state.role === 'elder' && role !== 'elder') return false;
+    if (state.role === 'member' && (role === 'elder' || /leader/.test(role))) return false;
+    if (state.q){
+      var hay = (card.dataset.search || '') + ' ' + (card.dataset.name || '').toLowerCase();
+      if (hay.indexOf(state.q) === -1) return false;
+    }
+    return true;
+  }
+
+  function compare(a, b){
+    switch (state.sort){
+      case 'trophies':  return num(b,'trophies') - num(a,'trophies');
+      case 'donations': return num(b,'donations') - num(a,'donations');
+      case 'level':     return num(b,'level') - num(a,'level');
+      case 'joined':    return str(b,'joined').localeCompare(str(a,'joined'));
+      case 'alpha':     return str(a,'name').localeCompare(str(b,'name'));
+      default:          return num(a,'rank') - num(b,'rank');
+    }
+  }
+
+  function render(){
+    var visible = memberCards.filter(visibleByFilter);
+    visible.sort(compare);
+    statusEl.textContent = visible.length;
+    memberCards.forEach(function(c){ c.hidden = true; });
+    visible.forEach(function(c){ c.hidden = false; grid.appendChild(c); });
+    var showOpen = state.role === 'all' && !state.q;
+    openCards.forEach(function(c){ c.hidden = !showOpen; if (showOpen) grid.appendChild(c); });
+    emptyEl.hidden = visible.length > 0;
+  }
+
+  if (searchEl) searchEl.addEventListener('input', function(e){ state.q = e.target.value.trim().toLowerCase(); render(); });
+  if (sortEl) sortEl.addEventListener('change', function(e){ state.sort = e.target.value; render(); });
+  if (chipWrap) chipWrap.addEventListener('click', function(e){
+    var btn = e.target.closest('.chip'); if (!btn) return;
+    chipWrap.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+    state.role = btn.dataset.role;
+    render();
+  });
+
+  render();
+})();
+</script>

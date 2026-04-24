@@ -6,157 +6,320 @@ navActive: home
 mainId: top
 supercellDisclaimer: true
 ---
-    <section class="pageIntro card">
-      <h1 class="pageTitle"><strong>POAP KINGS</strong></h1>
-      <p class="sectionDesc">
-        A <strong><a href="https://clashroyale.com" target="_blank" rel="noreferrer">Clash Royale</a></strong> clan built around active, positive gameplay and something a little different — collecting
-        <strong>POAPs</strong> as proof of participation and shared clan history. Good vibes, real rewards, zero drama.
+{%- set posts = collections.posts | reverse -%}
+{%- set latestPost = posts[0] -%}
+{%- set isFull = elixirClan.memberCount >= 50 -%}
+
+<section class="section" data-section="hero" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(36px, 5vw, 60px);">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">CLAN TAG&nbsp;&nbsp;<span class="mono" style="color:var(--text-2);letter-spacing:.04em">#{{ site.clanTag }}</span></span>
+      <h1 class="h-display h1 mt-4">POAP<br/>KINGS</h1>
+      <p class="lede mt-5">
+        A <a href="https://clashroyale.com" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Clash Royale</a> clan built around active, positive gameplay — and something a little different.
+        We collect <strong style="color:#fff">POAPs</strong> as proof of participation and shared clan history.
+        Good vibes, real rewards, zero drama.
       </p>
-      <div class="ctaRow mt-sm">
-        <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="home.join">Join the clan</a>
-        <a class="btn btnGhost" href="/faq" data-tinylytics-event="home.read-faq">Read the FAQ</a>
+      <div class="ctaRow mt-6">
+        {% if isFull %}
+        <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" class="btn btn--purple" data-tinylytics-event="home.waitlist">Join the waitlist</a>
+        <a href="/roster" class="btn btn--ghost" data-tinylytics-event="home.see-roster">See the roster</a>
+        {% else %}
+        <a href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" class="btn btn--gold" data-tinylytics-event="home.join">Join the clan</a>
+        <a href="/roster" class="btn btn--ghost" data-tinylytics-event="home.see-roster">See the roster</a>
+        {% endif %}
       </div>
-      <div class="mt-sm" style="font-size:13px;color:rgba(255,255,255,.65)">
-        <span style="color:rgba(255,255,255,.82);font-family:var(--display-font)">Different Flags. Same Grind. Worldwide Push.</span><br>
-        <span class="tinylytics_countries" style="font-size:22px;letter-spacing:4px"></span>
+      <div class="mt-5" style="color:var(--text-3);font-size:13px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span class="kicker" style="color:var(--text-2)">Different flags. Same grind.</span>
+        <span class="tinylytics_countries" style="font-size:20px;letter-spacing:3px"></span>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="clanStatsGrid">
-        {% include "clan-stats.njk" %}
-      </div>
-    </section>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-art__ring"></div>
+      <img src="/assets/poapkings.png" alt="" />
+    </div>
+  </div>
+</section>
 
-    {% if elixirHome.message %}
-    <section>
-      <div class="card card-padded">
-        <div class="elixirByline elixirByline--wrap">
-          <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg elixirAvatar--mirror" loading="lazy" /></a>
-          <p class="sectionDesc m-0 elixirByline__body">{{ elixirHome.message | md | safe }}</p>
+<section class="section--tight" data-section="trophy-strip" style="padding-top: 0;">
+  <div class="trophystrip">
+    <div class="trophystrip__cell">
+      <div class="trophystrip__n" data-count-up="{{ elixirClan.clanScore }}" data-count-up-ms="1600">0</div>
+      <div class="trophystrip__label">Clan Trophies</div>
+    </div>
+    <div class="trophystrip__cell{% if isFull %} trophystrip__cell--full{% endif %}">
+      <div class="trophystrip__n"><span data-count-up="{{ elixirClan.memberCount }}">0</span> / 50</div>
+      <div class="trophystrip__label">{% if isFull %}Clan full · waitlist{% else %}Members{% endif %}</div>
+    </div>
+    <div class="trophystrip__cell">
+      <div class="trophystrip__n">{{ elixirClan.clanWarTrophies | cwlTier }}</div>
+      <div class="trophystrip__label">War League · {{ elixirClan.clanWarTrophies | formatNumber }} trophies</div>
+    </div>
+    <div class="trophystrip__cell">
+      <div class="trophystrip__n"><span data-count-up="{{ elixirClan.minTrophies }}">0</span>+</div>
+      <div class="trophystrip__label">Min Trophies</div>
+    </div>
+  </div>
+</section>
+
+{% if awards.featuredSeason and awards.featuredSeason.byType.war_champ and awards.featuredSeason.byType.war_champ.length %}
+{%- set season = awards.featuredSeason -%}
+<section class="section" data-section="trophy-hall">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">Trophy Hall · Season {{ season.season_id }}</span>
+      <h2 class="h-display h2 mt-3">Current champions</h2>
+      <p class="lede mt-3">The standings, live. Top war fame, top donors, and members keeping a perfect battle week.</p>
+    </div>
+    <a href="/awards" class="btn--link">Full trophy case →</a>
+  </div>
+
+  <div class="hall">
+    {% for a in season.byType.war_champ | take(3) %}
+    {%- set medalClass = "" -%}
+    {%- set medalLabel = "Gold" -%}
+    {%- if a.rank == 2 -%}{%- set medalClass = " medal--silver" -%}{%- set medalLabel = "Silver" -%}{%- endif -%}
+    {%- if a.rank == 3 -%}{%- set medalClass = " medal--bronze" -%}{%- set medalLabel = "Bronze" -%}{%- endif -%}
+    <div class="hall__cell">
+      <div class="medal{{ medalClass }}" title="War Champ — {{ medalLabel }}">
+        <div class="medal__ring"></div>
+        <div class="medal__face">
+          <span class="medal__n" data-count-up="{{ a.metric_value }}">0</span>
+          <span class="medal__label">{{ medalLabel }}</span>
         </div>
-        {% if elixirHome.generated %}<div class="generatedTs">Updated {{ elixirHome.generated | formatDate }}</div>{% endif %}
       </div>
-    </section>
+      <div class="hall__meta">
+        <div class="hall__title">{{ a.player_name | e }}</div>
+        <div class="hall__sub">Fame · #{{ a.rank }}</div>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% if season.byType.iron_king and season.byType.iron_king.length %}
+    <div class="hall__cell">
+      <div class="medal" title="Iron Kings — perfect battle week">
+        <div class="medal__ring"></div>
+        <div class="medal__face">
+          <span class="medal__n">{{ season.byType.iron_king.length }}</span>
+          <span class="medal__label">Iron King</span>
+        </div>
+      </div>
+      <div class="hall__meta">
+        <div class="hall__title">{{ season.byType.iron_king.length }} member{{ "s" if season.byType.iron_king.length != 1 }}</div>
+        <div class="hall__sub">Perfect battle week</div>
+      </div>
+    </div>
     {% endif %}
 
-    <section id="why">
-      <h2 class="sectionTitle">Why Join <strong>POAP KINGS</strong>?</h2>
-      <p class="sectionDesc">
-        This isn't just another clan. It's a place for players who enjoy progression, community, and being part of something from the beginning.
+    {% if season.byType.donation_champ and season.byType.donation_champ.length %}
+    {%- set topDonor = season.byType.donation_champ[0] -%}
+    <div class="hall__cell">
+      <div class="medal" title="Donation Champ">
+        <div class="medal__ring"></div>
+        <div class="medal__face">
+          <span class="medal__n" data-count-up="{{ topDonor.metric_value }}">0</span>
+          <span class="medal__label">Donate</span>
+        </div>
+      </div>
+      <div class="hall__meta">
+        <div class="hall__title">{{ topDonor.player_name | e }}</div>
+        <div class="hall__sub">Cards donated</div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if season.byType.rookie_mvp and season.byType.rookie_mvp.length %}
+    {%- set rookie = season.byType.rookie_mvp[0] -%}
+    <div class="hall__cell">
+      <div class="medal medal--teal" title="Rookie MVP">
+        <div class="medal__ring"></div>
+        <div class="medal__face">
+          <span class="medal__n" data-count-up="{{ rookie.metric_value }}">0</span>
+          <span class="medal__label">Rookie</span>
+        </div>
+      </div>
+      <div class="hall__meta">
+        <div class="hall__title">{{ rookie.player_name | e }}</div>
+        <div class="hall__sub">Top first-season fame</div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if latestPost %}
+<section class="section" data-section="weekly">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">This week in the clan</span>
+      <h2 class="h-display h2 mt-3">{{ latestPost.data.title }}</h2>
+      <p class="lede mt-3">The weekly recap — updated by Elixir, our resident AI chronicler.</p>
+    </div>
+    <a href="/blog" class="btn--link">Read the blog →</a>
+  </div>
+
+  <div class="weekly">
+    <div class="weekly__body">
+      {{ latestPost.templateContent | firstParagraphs(2) | safe }}
+      <p class="text-2 mt-5">
+        <a href="{{ latestPost.url }}" class="btn--link">Read the full recap →</a>
       </p>
-      <div class="grid3">
-        <div class="tile">
-          <h3>Collect Unique POAPs</h3>
-          <p>Clan members collect unique POAPs tied to milestones and participation — your {{ site.tagline }}, season by season.</p>
-        </div>
-        <div class="tile">
-          <h3>Win Pass Royale</h3>
-          <p>The top Clan Wars contributor each season is crowned War Champ and receives a free Pass Royale.</p>
-        </div>
-        <div class="tile">
-          <h3>Good Vibes Only</h3>
-          <p>War participation is encouraged but not required. No pressure, no spreadsheets — real life comes first.</p>
-        </div>
+    </div>
+
+    <aside class="weekly__meta">
+      <dl class="weekly__dl">
+        <div><dt>Posted</dt><dd>{{ latestPost.date | formatLongDate }}</dd></div>
+        <div><dt>By</dt><dd>{{ latestPost.data.author or "Elixir" }}</dd></div>
+        <div><dt>Members</dt><dd>{{ elixirClan.memberCount }} of 50</dd></div>
+        <div><dt>Donations / week</dt><dd>{{ elixirClan.donationsPerWeek | formatNumber }} cards</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" data-section="why">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">Why join</span>
+      <h2 class="h-display h2 mt-3">Not just another clan</h2>
+      <p class="lede mt-3">A place for players who enjoy progression, community, and being part of something from the beginning.</p>
+    </div>
+  </div>
+
+  <ol class="reasons">
+    <li class="reason">
+      <div class="reason__num">01</div>
+      <h3 class="h-display h3">Collect unique POAPs</h3>
+      <p>Members collect on-chain badges tied to seasons, milestones and events. Your proof of Arena Push, season by season.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">02</div>
+      <h3 class="h-display h3">Win Pass Royale</h3>
+      <p>The top Clan Wars contributor each season is crowned War Champ and receives a free Pass Royale from the clan.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">03</div>
+      <h3 class="h-display h3">Good vibes only</h3>
+      <p>War participation is encouraged but not required. No pressure, no spreadsheets — real life comes first.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">04</div>
+      <h3 class="h-display h3">Generosity is the flex</h3>
+      <p>Elders donate regularly. Help your clanmates, earn your title, and watch the donation totals climb.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">05</div>
+      <h3 class="h-display h3">Active community</h3>
+      <p>Active members expected. Idle accounts are removed to keep the clan healthy and donations flowing.</p>
+    </li>
+    <li class="reason">
+      <div class="reason__num">06</div>
+      <h3 class="h-display h3">Discord community</h3>
+      <p>Deck advice, matchup banter, Sunday Scrimmages, and the occasional meme. The clan lives beyond the game.</p>
+    </li>
+  </ol>
+</section>
+
+<hr class="rule" />
+
+<section class="section" data-section="how">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow eyebrow--purple">How it works</span>
+      <h2 class="h-display h2 mt-3">Simple cadence.<br/>Clear incentives.</h2>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step__n">1</div>
+      {% if isFull %}
+      <h3 class="h-display h3">Join the waitlist</h3>
+      <p>We're <strong>full right now</strong> — all 50 seats taken. Drop into our <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:var(--gold)">Discord</a> so we know you when a spot opens up. Minimum {{ elixirClan.minTrophies | formatNumber }}+ trophies.</p>
+      {% else %}
+      <h3 class="h-display h3">Join the clan</h3>
+      <p>Search for <strong>POAP KINGS</strong> in-game, or use clan tag <span class="mono" style="color:var(--gold)">#{{ site.clanTag }}</span>. We're {{ elixirClan.clanStatus | lower }} to anyone with {{ elixirClan.minTrophies | formatNumber }}+ trophies.</p>
+      {% endif %}
+    </div>
+    <div class="step">
+      <div class="step__n">2</div>
+      <h3 class="h-display h3">Play &amp; donate</h3>
+      <p>Push ladder, join Clan Wars when you can, and donate to your clanmates. That's how you earn Elder.</p>
+    </div>
+    <div class="step">
+      <div class="step__n">3</div>
+      <h3 class="h-display h3">Collect the proof</h3>
+      <p>Each season, active members receive a POAP — a collectible badge that marks the moment.</p>
+    </div>
+  </div>
+</section>
+
+{% set recentVault = vault.poaps | sortVault | take(5) %}
+{% if recentVault and recentVault.length %}
+<section class="section" data-section="vault">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">The Vault</span>
+      <h2 class="h-display h2 mt-3">Recent drops</h2>
+      <p class="lede mt-3">On-chain badges commemorating seasons, milestones, scrimmages and events.</p>
+    </div>
+    <a href="/awards#vault" class="btn--link">Browse all POAPs →</a>
+  </div>
+
+  <div class="vault-grid">
+    {% for p in recentVault %}
+    {%- set eventUrl = ("https://poap.gallery/event/" + p.event_id) if p.event_id else "" -%}
+    {%- if eventUrl -%}
+    <a class="vault" href="{{ eventUrl | e }}" target="_blank" rel="noreferrer">
+    {%- else -%}
+    <div class="vault">
+    {%- endif %}
+      <div class="vault__img">
+        {% if p.image %}<img src="{{ p.image | e }}" alt="{{ (p.name or 'POAP') | e }}" />{% else %}<div style="font-size:36px;opacity:.5">★</div>{% endif %}
       </div>
-      <div class="grid3 mt-sm">
-        <div class="tile">
-          <h3>Generosity is the Flex</h3>
-          <p>Elders donate regularly to support the clan. Help your clanmates and earn your title.</p>
-        </div>
-        <div class="tile">
-          <h3>Active Community</h3>
-          <p>Active members expected. Idle accounts are removed to keep the clan healthy and the donations flowing.</p>
-        </div>
-        <div class="tile">
-          <h3>Founder POAP</h3>
-          <p>Early active members receive a one-of-a-kind Founder token, marking them as part of the clan from the start.</p>
-        </div>
+      <div class="vault__body">
+        <span class="{{ p.type | typeClass }}">{{ (p.type or 'POAP') | e }}</span>
+        <div class="vault__name">{{ (p.name or 'Untitled POAP') | e }}</div>
+        {% if p.date %}<div class="vault__date">{{ p.date | formatDate }}</div>{% endif %}
       </div>
-    </section>
+    {%- if eventUrl %}</a>{%- else %}</div>{%- endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
-    <section id="how">
-      <h2 class="sectionTitle">How It Works</h2>
-      <p class="sectionDesc">
-        Simple cadence, clear incentives, and a vibe that stays fun.
-      </p>
-
-      <div class="stepsGrid">
-        <article class="stepCard">
-          <div class="stepNumber">1</div>
-          <h3 class="stepTitle">Join the clan</h3>
-          <p>We're {{ elixirClan.clanStatus | lower }}. Search for <strong>POAP KINGS</strong> or use clan tag <strong class="mono">#{{ site.clanTag }}</strong>. Just need {{ elixirClan.minTrophies | formatNumber }}+ trophies.</p>
-        </article>
-        <article class="stepCard">
-          <div class="stepNumber">2</div>
-          <h3 class="stepTitle">Play &amp; donate</h3>
-          <p>Push ladder, join Clan Wars when you can, and donate to your clanmates. That's how you earn Elder.</p>
-        </article>
-        <article class="stepCard">
-          <div class="stepNumber">3</div>
-          <h3 class="stepTitle">Collect the proof</h3>
-          <p>Each season, active members receive a POAP — a collectible badge that marks the moment. Your proof of Arena Push.</p>
-        </article>
+<section class="section" data-section="join">
+  <div class="final-join">
+    {%- set spotsLeft = 50 - elixirClan.memberCount -%}
+    <div>
+      <span class="eyebrow">Ready?</span>
+      {% if spotsLeft > 0 %}
+      <h2 class="h-display h2 mt-3">We're {{ elixirClan.clanStatus | lower }}.<br/>{{ spotsLeft }} spot{{ "s" if spotsLeft != 1 }} left.</h2>
+      <p class="lede mt-4">If you've got {{ elixirClan.minTrophies | formatNumber }}+ trophies, you can jump in right now. See you in Discord.</p>
+      {% else %}
+      <h2 class="h-display h2 mt-3">The clan<br/>is full.</h2>
+      <p class="lede mt-4">All 50 seats are taken for now — but roster turns over every season. Drop into Discord so we know you when a spot opens up.</p>
+      {% endif %}
+    </div>
+    <div class="final-join__side">
+      <dl class="final-join__dl">
+        <div><dt>Clan Name</dt><dd>POAP KINGS</dd></div>
+        <div><dt>Clan Tag</dt><dd class="mono">#{{ site.clanTag }}</dd></div>
+        <div><dt>Region</dt><dd>{{ elixirClan.clanRegion }}</dd></div>
+        <div><dt>Type</dt><dd>{{ elixirClan.clanStatus }}</dd></div>
+      </dl>
+      <div class="ctaRow mt-5">
+        {% if isFull %}
+        <button type="button" class="btn btn--purple" data-modal-open="join" data-tinylytics-event="home.final-waitlist">Join the waitlist</button>
+        <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" class="btn btn--ghost" data-tinylytics-event="home.final-discord">Open Discord</a>
+        {% else %}
+        <button type="button" class="btn btn--gold" data-modal-open="join" data-tinylytics-event="home.final-join">Join now</button>
+        <a href="/members/setup/" class="btn btn--ghost" data-tinylytics-event="home.clan-setup">Clan setup</a>
+        {% endif %}
       </div>
-    </section>
-
-    <section id="join">
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">Ready to Join?</h2>
-        <p class="sectionDesc m-0 mb-sm">
-          We're <strong>{{ elixirClan.clanStatus }}</strong>. {% if elixirClan.clanStatus == "Open" %}If you've got <strong>{{ elixirClan.minTrophies | formatNumber }}+ trophies</strong>, you can jump in right now.{% else %}If you've got <strong>{{ elixirClan.minTrophies | formatNumber }}+ trophies</strong>, apply in-game and leadership will review it.{% endif %}
-        </p>
-
-        <div class="split">
-          <div class="tile bg-surface-dark">
-            <h3>Find Us In-Game</h3>
-            <ul class="list">
-              <li><strong>Clan Name:</strong> <strong>POAP KINGS</strong></li>
-              <li><strong>Clan Tag:</strong> <a class="mono" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="home.clan-tag">#{{ site.clanTag }}</a></li>
-              <li><strong>Region:</strong> {{ elixirClan.clanRegion }}</li>
-              <li><strong>Type:</strong> {{ elixirClan.clanStatus }}</li>
-              <li><strong>Minimum Trophies:</strong> {{ elixirClan.minTrophies | formatNumber }}</li>
-            </ul>
-            <div class="ctaRow mt-sm">
-              <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="home.join-card">Join Now</a>
-            </div>
-          </div>
-
-          <div class="tile bg-surface-dark">
-            <h3>After You Join</h3>
-            <p>
-              Get connected with clan leaders, set up your wallet for POAPs, and register for the roster.
-              Everything you need is in the Members section.
-            </p>
-            <div class="ctaRow mt-sm">
-              <a class="btn btnPurple" href="/members/setup/" data-tinylytics-event="home.clan-setup">Clan Setup</a>
-              <a class="btn btnGhost" href="/members" data-tinylytics-event="home.members">Members</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="split">
-        <div class="card card-padded">
-          <h2 class="sectionTitle m-0 mb-xs section-title-sm">Meet the Members</h2>
-          <p class="sectionDesc m-0 mb-sm">
-            See who's already pushing, their stats, and how long they've been part of the clan.
-          </p>
-          <div class="ctaRow">
-            <a class="btn btnGhost" href="/roster" data-tinylytics-event="home.meet-the-members">View Roster</a>
-          </div>
-        </div>
-
-        <div class="card card-padded">
-          <h2 class="sectionTitle m-0 mb-xs section-title-sm">Awards & POAPs</h2>
-          <p class="sectionDesc m-0 mb-sm">
-            Season award winners and the clan's collection of POAPs — seasonal badges, milestones, scrimmages, and events.
-          </p>
-          <div class="ctaRow">
-            <a class="btn btnPurple" href="/awards" data-tinylytics-event="home.browse-awards">Browse Awards</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>

@@ -13,6 +13,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/app.js");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/members-promo.js");
+  eleventyConfig.addPassthroughCopy("src/gamify.js");
+  eleventyConfig.addPassthroughCopy("src/partials-trophy.js");
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
   // --- Filters for build-time rendering ---
@@ -70,6 +72,31 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("formatNumber", (n) => {
     if (n == null) return "0";
     return Number(n).toLocaleString("en-US");
+  });
+
+  // Clan War League tier name derived from clan war trophies.
+  // CR's current CWL bracket (approximate, 200-trophy bands):
+  //   0–199 Bronze III · 200–399 Bronze II · 400–599 Bronze I
+  //   600–799 Silver III · 800–999 Silver II · 1000–1199 Silver I
+  //   1200–1399 Gold III · 1400–1599 Gold II · 1600–1799 Gold I
+  //   1800+ Legendary
+  eleventyConfig.addFilter("cwlTier", (trophies) => {
+    const n = Number(trophies);
+    if (!Number.isFinite(n) || n < 0) return "Unranked";
+    const bands = [
+      [1800, "Legendary"],
+      [1600, "Gold I"],
+      [1400, "Gold II"],
+      [1200, "Gold III"],
+      [1000, "Silver I"],
+      [800, "Silver II"],
+      [600, "Silver III"],
+      [400, "Bronze I"],
+      [200, "Bronze II"],
+      [0, "Bronze III"],
+    ];
+    for (const [min, name] of bands) if (n >= min) return name;
+    return "Unranked";
   });
 
   eleventyConfig.addFilter("formatAccountAge", (days) => {
@@ -208,6 +235,19 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));
+
+  // Return the first `n` top-level <p> paragraphs from an HTML string.
+  // Used to surface a richer excerpt of the latest blog post on the home page.
+  eleventyConfig.addFilter("firstParagraphs", (html, n = 2) => {
+    if (!html) return "";
+    const out = [];
+    const re = /<p\b[^>]*>([\s\S]*?)<\/p>/gi;
+    let m;
+    while ((m = re.exec(html)) && out.length < n) {
+      out.push(m[0]);
+    }
+    return out.join("\n");
+  });
 
   const md = markdownIt({ html: true, linkify: true });
   eleventyConfig.addFilter("md", (str) => {

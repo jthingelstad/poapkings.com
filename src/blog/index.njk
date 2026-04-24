@@ -34,8 +34,9 @@ eleventyComputed:
     <div class="postList__meta">{{ post.data.date | formatLongDate }}{% if post.data.author %} · {{ post.data.author }}{% endif %}</div>
     <h2 class="postList__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
     <div class="postBody">
-      {{ post.templateContent | safe }}
+      {{ post.templateContent | firstParagraphs(1) | safe }}
     </div>
+    <p class="mt-3"><a href="{{ post.url }}" class="btn--link">Read more →</a></p>
   </article>
 </section>
 {% endfor %}
