@@ -73,6 +73,8 @@ export default function (eleventyConfig) {
     return Number(n).toLocaleString("en-US");
   });
 
+  eleventyConfig.addFilter("min", (arr) => Math.min(...arr));
+
   // Clan War League tier name derived from clan war trophies.
   // CR's current CWL bracket (approximate, 200-trophy bands):
   //   0–199 Bronze III · 200–399 Bronze II · 400–599 Bronze I

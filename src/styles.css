@@ -1532,7 +1532,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   gap: 10px;
   padding: 12px 14px 10px;
   background: linear-gradient(180deg, rgba(245,200,76,.18), rgba(245,200,76,0));
-  border-bottom: 1px solid rgba(245,200,76,.22);
 }
 .pcard__rank{
   width: 40px; height: 40px; border-radius: 50%;
