@@ -111,14 +111,14 @@ navActive: roster
 
   {% if openSlots > 0 %}
   {% for i in range(0, [openSlots, 3] | min) %}
-  <a class="pcard pcard--open" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" role="listitem" aria-label="Open slot — join the clan" data-role="open" data-tinylytics-event="roster.open-slot">
+  <button type="button" class="pcard pcard--open" role="listitem" aria-label="Open slot — join the clan" data-role="open" data-modal-open="join" data-tinylytics-event="roster.open-slot">
     <div class="pcard__body">
       <div style="font-family: var(--display); font-size: 48px; color: var(--gold); line-height: 1">＋</div>
       <h3>Open slot</h3>
-      <p>Looking for active players. {{ elixirClan.minTrophies | formatNumber }}+ trophies, daily logins, good vibes.</p>
-      <span class="chip is-active" style="pointer-events: none">Join the clan</span>
+      <p>Looking for active players. {{ elixirClan.minTrophies | formatNumber }}+ trophies, daily battles, good vibes.</p>
+      <span class="chip is-active" style="pointer-events: none">JOIN</span>
     </div>
-  </a>
+  </button>
   {% endfor %}
   {% endif %}
 </div>

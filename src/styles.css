@@ -1498,6 +1498,7 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
     0 10px 20px -12px rgba(91,47,224,.4);
   cursor: pointer;
   text-decoration: none; color: inherit;
+  border: 0; font: inherit; text-align: left; appearance: none;
   transition: transform .2s cubic-bezier(.2,.7,.3,1.2), box-shadow .2s;
   display: block;
   isolation: isolate;

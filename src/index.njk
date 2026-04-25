@@ -26,10 +26,10 @@ ogImageHeight: 1200
       </p>
       <div class="ctaRow mt-6">
         {% if isFull %}
-        <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" class="btn btn--purple" data-tinylytics-event="home.waitlist">Join the waitlist</a>
+        <button type="button" class="btn btn--purple" data-modal-open="join" data-tinylytics-event="home.waitlist">WAIT</button>
         <a href="/roster" class="btn btn--ghost" data-tinylytics-event="home.see-roster">See the roster</a>
         {% else %}
-        <a href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" class="btn btn--gold" data-tinylytics-event="home.join">Join the clan</a>
+        <button type="button" class="btn btn--gold" data-modal-open="join" data-tinylytics-event="home.join">JOIN</button>
         <a href="/roster" class="btn btn--ghost" data-tinylytics-event="home.see-roster">See the roster</a>
         {% endif %}
       </div>
@@ -317,10 +317,10 @@ ogImageHeight: 1200
       </dl>
       <div class="ctaRow mt-5">
         {% if isFull %}
-        <button type="button" class="btn btn--purple" data-modal-open="join" data-tinylytics-event="home.final-waitlist">Join the waitlist</button>
+        <button type="button" class="btn btn--purple" data-modal-open="join" data-tinylytics-event="home.final-waitlist">WAIT</button>
         <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" class="btn btn--ghost" data-tinylytics-event="home.final-discord">Open Discord</a>
         {% else %}
-        <button type="button" class="btn btn--gold" data-modal-open="join" data-tinylytics-event="home.final-join">Join now</button>
+        <button type="button" class="btn btn--gold" data-modal-open="join" data-tinylytics-event="home.final-join">JOIN</button>
         <a href="/members/setup/" class="btn btn--ghost" data-tinylytics-event="home.clan-setup">Clan setup</a>
         {% endif %}
       </div>

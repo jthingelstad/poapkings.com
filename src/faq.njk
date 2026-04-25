@@ -228,7 +228,7 @@ supercellDisclaimer: true
           Ask in clan chat or reach out to leadership directly. No question is too basic.
         </p>
         <div class="ctaRow">
-          <a class="btn btnPrimary" href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="faq.join">Join the clan</a>
+          <button type="button" class="btn btnPrimary" data-modal-open="join" data-tinylytics-event="faq.join">{% if elixirClan.memberCount >= 50 %}WAIT{% else %}JOIN{% endif %}</button>
           <a class="btn btnGhost" href="/members" data-tinylytics-event="faq.members">Members</a>
         </div>
       </div>
