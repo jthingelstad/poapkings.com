@@ -76,10 +76,10 @@
         <button type="button" class="nav-toggle" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" data-nav-toggle>
           <span></span><span></span><span></span>
         </button>
-        <a class="starcount" href="https://tinylytics.app/public/{{ site.tinylyticsId }}" target="_blank" rel="noreferrer" aria-label="Clan Star Level — site hits" title="Clan Star Level — every visit adds a star">
+        <button type="button" class="starcount" data-modal-open="star" data-tinylytics-event="nav.stars" aria-haspopup="dialog" aria-controls="starModal" aria-label="Clan Star Level — open details" title="Clan Star Level — every visit adds a star">
           <img class="starcount__icon" src="/assets/icons/star-level.png" alt="" aria-hidden="true" />
           <span class="starcount__n tinylytics_hits">★</span>
-        </a>
+        </button>
       </div>
     </div>
   </header>
@@ -157,32 +157,72 @@
     </div>
   </div>
 
+  {%- set firstRank = starRanks.ranks[0] -%}
+  <div id="starModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="starModalTitle" hidden>
+    <button type="button" class="modal__scrim" aria-label="Close dialog" data-modal-close></button>
+    <div class="modal__panel modal__panel--star">
+      <button type="button" class="modal__close" aria-label="Close" data-modal-close>×</button>
+      <span class="eyebrow">Clan Stars</span>
+      <h2 class="h-display h2 modal__title" id="starModalTitle">Every visit<br/>adds a star.</h2>
+      <p class="modal__body">Our clan's website is grinding the ladder! Your visit counts.</p>
+
+      <div class="rank-card" data-rank-card>
+        <div class="rank-card__art" data-rank-art>
+          <div class="rank-card__placeholder" data-rank-placeholder><span data-rank-num>1</span></div>
+        </div>
+        <div class="rank-card__meta">
+          <div class="rank-card__eyebrow">Current rank</div>
+          <div class="rank-card__name" data-rank-name>{{ firstRank.name }}</div>
+          <div class="rank-card__count"><span class="tinylytics_hits" data-rank-count>—</span> stars</div>
+          <div class="rank-progress" data-rank-progress>
+            <div class="rank-progress__fill" data-rank-fill style="width:0%"></div>
+          </div>
+          <div class="rank-progress__label" data-rank-label>Loading…</div>
+        </div>
+      </div>
+
+      <p class="modal__hint">Hits powered by <a href="https://tinylytics.app/public/{{ site.tinylyticsId }}" target="_blank" rel="noreferrer">Tinylytics</a>. Arena artwork © Supercell — used under <a href="https://www.supercell.com/fan-content-policy" target="_blank" rel="noreferrer">Supercell's Fan Content Policy</a>.</p>
+    </div>
+  </div>
+
+  <script id="starRanksData" type="application/json">{{ starRanks.ranks | dump | safe }}</script>
+
   <script>
     (function(){
-      var modal = document.getElementById('joinModal');
-      if (!modal) return;
+      var modals = {
+        join: document.getElementById('joinModal'),
+        star: document.getElementById('starModal')
+      };
+      var current = null;
       var lastFocus = null;
-      function open(){
+      function open(name){
+        var modal = modals[name];
+        if (!modal) return;
+        current = modal;
         lastFocus = document.activeElement;
         modal.hidden = false;
         document.body.classList.add('modal-open');
         requestAnimationFrame(function(){ modal.classList.add('is-open'); });
-        var primary = modal.querySelector('.btn--gold, .btn--purple');
+        modal.dispatchEvent(new CustomEvent('modal:open'));
+        var primary = modal.querySelector('.btn--gold, .btn--purple, .modal__close');
         if (primary) primary.focus();
       }
       function close(){
+        if (!current) return;
+        var modal = current;
         modal.classList.remove('is-open');
         document.body.classList.remove('modal-open');
         setTimeout(function(){ modal.hidden = true; }, 200);
         if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        current = null;
       }
       document.addEventListener('click', function(e){
-        var opener = e.target.closest('[data-modal-open="join"]');
-        if (opener){ e.preventDefault(); open(); return; }
+        var opener = e.target.closest('[data-modal-open]');
+        if (opener){ e.preventDefault(); open(opener.getAttribute('data-modal-open')); return; }
         if (e.target.closest('[data-modal-close]')) close();
       });
       document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape' && !modal.hidden) close();
+        if (e.key === 'Escape' && current) close();
       });
     })();
 

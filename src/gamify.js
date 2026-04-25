@@ -123,7 +123,116 @@
     }, 200);
   }
 
-  function boot(){ initCountUps(); initStarCounter(); }
+  /* ── Star rank modal: compute current arena from hits + thresholds ── */
+  // Zones (stateless, derived from count alone):
+  //   close       — count is within 10% of next.threshold (anticipation on next arena art)
+  //   just-passed — count < current.threshold + 10% of bracket (celebration on current arena art)
+  //   bracket = next.threshold − current.threshold; falls out of zone naturally as count moves.
+  function readRanks(){
+    var node = document.getElementById('starRanksData');
+    if (!node) return null;
+    try { return JSON.parse(node.textContent); } catch (e) { return null; }
+  }
+  function rankFor(ranks, count){
+    var cur = ranks[0], next = null;
+    for (var i = 0; i < ranks.length; i++){
+      if (count >= ranks[i].threshold){ cur = ranks[i]; next = ranks[i + 1] || null; }
+      else break;
+    }
+    return { current: cur, next: next };
+  }
+  function zoneFor(count, current, next){
+    if (next){
+      var bracket = next.threshold - current.threshold;
+      if (count >= next.threshold - bracket * 0.1) return 'close';
+      if (count < current.threshold + bracket * 0.1 && current.threshold > 0) return 'just-passed';
+    } else if (current.threshold > 0){
+      // Top rank: linger on the celebration since there's no next bracket.
+      return 'just-passed';
+    }
+    return 'default';
+  }
+  function placeArt(container, rank, zone){
+    container.innerHTML = '';
+    container.dataset.zone = zone;
+    if (rank.image){
+      var img = document.createElement('img');
+      img.className = 'rank-card__img';
+      img.src = rank.image;
+      img.alt = rank.name + ' arena';
+      img.loading = 'lazy';
+      container.appendChild(img);
+    } else {
+      var ph = document.createElement('div');
+      ph.className = 'rank-card__placeholder';
+      ph.innerHTML = '<span>' + rank.n + '</span>';
+      container.appendChild(ph);
+    }
+    container.classList.toggle('is-close', zone === 'close');
+    container.classList.toggle('is-just-passed', zone === 'just-passed');
+  }
+  function renderStarModal(count){
+    var modal = document.getElementById('starModal');
+    var ranks = readRanks();
+    if (!modal || !ranks || !ranks.length) return;
+    var info = rankFor(ranks, count);
+    var current = info.current, next = info.next;
+    var zone = zoneFor(count, current, next);
+
+    var nameEl = modal.querySelector('[data-rank-name]');
+    var countEl = modal.querySelector('[data-rank-count]');
+    var fillEl = modal.querySelector('[data-rank-fill]');
+    var labelEl = modal.querySelector('[data-rank-label]');
+    var artEl = modal.querySelector('[data-rank-art]');
+
+    if (nameEl) nameEl.textContent = current.name;
+    if (countEl) countEl.textContent = fmt(count);
+
+    if (fillEl && labelEl){
+      if (next){
+        var span = next.threshold - current.threshold;
+        var into = Math.max(0, count - current.threshold);
+        var pct = Math.min(100, Math.round((into / span) * 100));
+        fillEl.style.width = pct + '%';
+        var togo = Math.max(0, next.threshold - count);
+        labelEl.textContent = fmt(togo) + ' to ' + next.name;
+      } else {
+        fillEl.style.width = '100%';
+        labelEl.textContent = 'Top rank reached.';
+      }
+    }
+    if (artEl) placeArt(artEl, current, zone);
+  }
+  function initStarModal(){
+    var modal = document.getElementById('starModal');
+    var hitsEl = document.querySelector('.starcount .tinylytics_hits');
+    if (!modal || !hitsEl) return;
+    var lastCount = 0;
+    function tryRender(){
+      var raw = (hitsEl.textContent || '').trim().replace(/[^0-9]/g, '');
+      var n = parseInt(raw, 10);
+      if (Number.isFinite(n) && n > 0){
+        lastCount = n;
+        renderStarModal(n);
+        return true;
+      }
+      return false;
+    }
+    // Initial paint with whatever we have (might be the placeholder ★ → 0).
+    renderStarModal(0);
+    // Poll for the Tinylytics value, same cadence as the star counter.
+    var tries = 0;
+    var poll = setInterval(function(){
+      tries++;
+      if (tryRender() || tries > 40) clearInterval(poll);
+    }, 200);
+    // Re-render on every modal open in case hits arrived after first paint.
+    modal.addEventListener('modal:open', function(){
+      if (!tryRender() && lastCount) renderStarModal(lastCount);
+    });
+  }
+
+  function boot(){ initCountUps(); initStarCounter(); initStarModal(); }
   if (document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', boot);
   } else {
