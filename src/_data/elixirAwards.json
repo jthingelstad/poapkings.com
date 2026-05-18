@@ -1,11 +1,67 @@
 {
-  "generated_at": "2026-05-17T23:00:41Z",
+  "generated_at": "2026-05-18T23:00:42Z",
   "seasons": [
     {
       "season_id": 132,
       "season_start": "2026-05-11",
-      "season_end": "2026-05-18",
+      "season_end": "2026-05-25",
       "awards": [
+        {
+          "award_id": 1170,
+          "award_type": "war_participant",
+          "season_id": 132,
+          "section_index": null,
+          "member_id": 44,
+          "player_tag": "#YQVVYQVVG",
+          "rank": 1,
+          "metric_value": 100.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-05-18T15:10:00",
+          "player_name": "\uff91\u5c3a\uff91\u4e43\uff91\uff72\u3093",
+          "metadata": {}
+        },
+        {
+          "award_id": 1166,
+          "award_type": "war_participant",
+          "season_id": 132,
+          "section_index": null,
+          "member_id": 24,
+          "player_tag": "#VGJJLC9PR",
+          "rank": 1,
+          "metric_value": 600.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-05-18T15:10:00",
+          "player_name": "Ditaka",
+          "metadata": {}
+        },
+        {
+          "award_id": 1153,
+          "award_type": "war_participant",
+          "season_id": 132,
+          "section_index": null,
+          "member_id": 70,
+          "player_tag": "#CJ8CU89QC",
+          "rank": 1,
+          "metric_value": 600.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-05-18T15:10:00",
+          "player_name": "BadaBing",
+          "metadata": {}
+        },
+        {
+          "award_id": 1141,
+          "award_type": "war_participant",
+          "season_id": 132,
+          "section_index": null,
+          "member_id": 116,
+          "player_tag": "#209JP00GRL",
+          "rank": 1,
+          "metric_value": 100.0,
+          "metric_unit": "fame",
+          "awarded_at": "2026-05-18T15:10:00",
+          "player_name": "Sebasti\u00e1n",
+          "metadata": {}
+        },
         {
           "award_id": 970,
           "award_type": "war_participant",
