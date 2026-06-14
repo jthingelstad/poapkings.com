@@ -22,7 +22,7 @@ supercellDisclaimer: true
           <li>Wars encouraged, not required.</li>
           <li>Top war earner each season gets a free Pass Royale.</li>
           <li>Active members get a collectible POAP every season.</li>
-          <li>Elder is earned by donating. It can be taken away.</li>
+          <li>Elder is earned by donating relative to the clan, playing actively, and joining wars. It can be taken away.</li>
           <li>No crypto knowledge needed to claim POAPs.</li>
         </ul>
       </div>
@@ -65,7 +65,7 @@ supercellDisclaimer: true
       </div>
       <div class="faq-item">
         <h3 class="faq-q">How is War Champ chosen?</h3>
-        <p>Top Clan Wars point earner for the season, pulled directly from RoyaleAPI stats — no manual adjustments. Joining mid-season doesn't earn a handicap. Leadership breaks ties transparently.</p>
+        <p>Top Clan Wars point earner for the season, pulled directly from the Clash Royale API — no manual adjustments. Joining mid-season doesn't earn a handicap. Leadership breaks ties transparently.</p>
       </div>
     </section>
 
@@ -80,7 +80,7 @@ supercellDisclaimer: true
         <ul class="list">
           <li>Highest war points among eligible players for the season.</li>
           <li>No back-to-back winners — can't have won last month.</li>
-          <li>Points straight from RoyaleAPI, no adjustments.</li>
+          <li>Points straight from the Clash Royale API, no adjustments.</li>
         </ul>
       </div>
       <div class="faq-item">
@@ -121,7 +121,11 @@ supercellDisclaimer: true
       </div>
       <div class="faq-item">
         <h3 class="faq-q">Can I talk to Elixir?</h3>
-        <p>Elixir doesn't use slash commands. In the <strong>#elixir</strong> channel it broadcasts observations and won't respond to mentions. In <strong>#leader-lounge</strong>, leadership can @mention Elixir with freeform questions — "Should I promote this member?", "Who's been our best war player?" — and get context-aware answers grounded in real clan data. In <strong>#reception</strong>, new Discord members can ask Elixir for help getting verified.</p>
+        <p>Yes — head to <strong>#ask-elixir</strong> in the Discord server. Ask anything: deck advice, war questions, clan data, or just chat. You can even upload Clash Royale screenshots and Elixir will read them. No @mention needed — just post in the channel. In <strong>#reception</strong>, new Discord members can ask Elixir for help getting verified.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Why do some clan chat messages end with "- E"?</h3>
+        <p>That's Elixir. Because Elixir lives in Discord and can't post to Clash Royale in-game chat directly, it writes the message and a leader copies it in. The <strong>- E</strong> signature at the end marks it as Elixir-authored so members know it came from the bot, not the leader personally.</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">What kind of things does Elixir celebrate?</h3>
@@ -133,7 +137,7 @@ supercellDisclaimer: true
       </div>
       <div class="faq-item">
         <h3 class="faq-q">Is Elixir open source?</h3>
-        <p>Yes. The full source is on <a href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">GitHub</a>. It's built with Python, discord.py, OpenAI GPT-4o, SQLite, and the Clash Royale API. Personality and clan config live in markdown prompt files, so another clan could fork it and make it their own.</p>
+        <p>Yes. The full source is on <a href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">GitHub</a>. It's built with Python, discord.py, Claude (Anthropic), SQLite, and the Clash Royale API. Personality and clan config live in markdown prompt files, so another clan could fork it and make it their own.</p>
       </div>
     </section>
 
@@ -175,7 +179,7 @@ supercellDisclaimer: true
       <h2 class="sectionTitle">Discord</h2>
       <div class="faq-item">
         <h3 class="faq-q">Does <strong>POAP KINGS</strong> have a Discord server?</h3>
-        <p>Yes! <strong>POAP KINGS</strong> has a <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord server</a> where clan members can connect more easily outside of in-game chat. It's especially useful for POAP drop communication and sharing clan promotion. We're a new clan and the Discord is new as well — it will evolve with use.</p>
+        <p>Yes! <strong>POAP KINGS</strong> has a <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord server</a> where clan members can connect more easily outside of in-game chat. It's especially useful for POAP drop communication, chatting with Elixir, and sharing clan promotion.</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">Do I need to join the Discord to be in the clan?</h3>
@@ -203,13 +207,13 @@ supercellDisclaimer: true
         <h3 class="faq-q">What are the roles?</h3>
         <ul class="list">
           <li><strong>Member</strong> — standard participant</li>
-          <li><strong>Elder</strong> — earned through consistent donations and helping clanmates</li>
+          <li><strong>Elder</strong> — earned through consistent donations (relative to the clan), active battle play, and war participation</li>
           <li><strong>Leadership</strong> — trusted veterans who run the clan</li>
         </ul>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">How do I earn Elder?</h3>
-        <p>Donate consistently and be helpful. Elder can also be removed if donations dry up long-term — it's an active recognition, not a permanent title.</p>
+        <p>Donate consistently relative to your clanmates, play actively (logging in without battling doesn't count), and participate in wars. There's no fixed donation number — the bar moves with the clan. Demotion follows the same standard: a meaningful, sustained drop in relative standing or falling behind on battle and war activity. One off week won't cost you the role.</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">How are promotions handled?</h3>
