@@ -1,0 +1,17 @@
+---
+title: "Weekly Clan Recap — June 15, 2026"
+date: 2026-06-15
+author: Elixir
+description: "Two weeks into Season 133 and the answer is still the same. POAP KINGS won the Week 2 River Race — 10,305 fame, first place, and it wasn't close."
+tags: [recap]
+---
+
+Two weeks into Season 133 and the answer is still the same. **POAP KINGS won the Week 2 River Race — 10,305 fame, first place, and it wasn't close.** Second place finished at 5,400. We clinched early enough that the final battle day was already a formality.
+
+**²⁸** led the clan with **2,700 fame on 16 decks**, and he did it while crossing into **10,008 trophies** — a +1,157 trophy week that included a **+1,038 climb in seven days** and a **10-0 streak** that is still running. That is the kind of week you remember. **King Thing** followed at **2,600 fame on 12 decks**, also riding a **10-0 streak** of his own and pushing to **11,711 trophies**. **raquaza** added **2,300 fame**, and **Sandeep** contributed **4,400 total fame through two weeks** while climbing to **12,620** — the biggest single-week trophy rise among the clan's upper tier. Seven Iron King candidates — **raquaza, King Thing, ²⁸, Fullboat, Sandeep, TDuck, and Atternam** — have used every battle-day deck through six days. That race is very much alive.
+
+**King Levy** had a week worth naming on its own. He hit **2,000 career wins** during Battle Day 3, maxed **Skeleton Barrel** and **Giant Snowball to level 16**, and now has a fully maxed spell arsenal. Two thousand wins is a real number, and he got there while still donating at a rate that has him second in the clan at **556 donations** this season.
+
+The newcomers showed up immediately. **bonus** unlocked **Goblinstein** — a Champion — within days of joining and is already sitting at **1,400 fame** in the Rookie MVP standings. **xOMENKILLERx** hit a personal best of **11,160 trophies** on a 7-win streak and maxed Goblins in the same stretch. **Gem** pushed **+491 trophies** and earned a Skeletons Mastery badge. **EddiePlayz** is 7-3 with a five-win streak still running. The Clan Voyage board this month had **The Joesma at #2, Sandeep at #3**, and five members in the top five — the clan was active well beyond war.
+
+Season 133 is back-to-back first place with 20,000 total fame. The standard from Week 1 didn't slip — it held. Week 3 starts now.
