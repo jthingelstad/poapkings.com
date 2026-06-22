@@ -20,32 +20,6 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
   </div>
 </section>
 
-{% if elixirRoster.card_stats and elixirRoster.card_stats.length %}
-<hr class="rule" />
-<section class="section">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">Clan card meta</span>
-      <h2 class="h-display h2 mt-3">What we're all playing</h2>
-      <p class="lede mt-3">Most popular cards across POAP KINGS right now, based on members' current decks.</p>
-    </div>
-  </div>
-  <div class="cmeta">
-    {% for card in elixirRoster.card_stats | take(18) %}
-    <div class="cmeta__cell{% if loop.index == 1 %} cmeta__cell--rank1{% elif loop.index == 2 %} cmeta__cell--rank2{% elif loop.index == 3 %} cmeta__cell--rank3{% endif %}" title="{{ card.name }} — used by {{ card.member_count }} member{{ 's' if card.member_count != 1 }}{% if card.avg_pct %} · {{ card.avg_pct }}% avg usage{% endif %}">
-      <div class="cmeta__rank">#{{ loop.index }}</div>
-      <div class="cmeta__art">
-        <img src="{{ card.icon_url }}" alt="{{ card.name }}" loading="lazy" />
-        {% if card.avg_pct %}<div class="cmeta__pct">{{ card.avg_pct }}%</div>{% endif %}
-      </div>
-      <div class="cmeta__name">{{ card.name }}</div>
-      <div class="cmeta__bar"><div class="cmeta__bar__fill" style="width:{{ card.avg_pct or 0 }}%"></div></div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
 {% if awards.featuredSeason and awards.featuredSeason.byType.war_champ and awards.featuredSeason.byType.war_champ.length %}
 {%- set season = awards.featuredSeason -%}
 <hr class="rule" />
@@ -66,7 +40,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       <div class="rankbar__body">
         {%- set tierLabel = "Gold" if a.rank == 1 else ("Silver" if a.rank == 2 else "Bronze") -%}
         <span class="rankbar__tier">{{ tierLabel }} · War Champ</span>
-        <a class="rankbar__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        <a class="rankbar__name" href="/roster/#member-{{ a.player_tag | memberSlug }}">{{ a.player_name | e }}</a>
         {% if a.metadata.races_participated %}<div class="rankbar__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</div>{% endif %}
       </div>
       <div class="rankbar__metric">

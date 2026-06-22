@@ -53,7 +53,7 @@ eleventyComputed:
       <div class="rankbar__body">
         {%- set tierLabel = "Gold" if a.rank == 1 else ("Silver" if a.rank == 2 else ("Bronze" if a.rank == 3 else "Honor")) -%}
         <span class="rankbar__tier">{{ tierLabel }} · {{ category.singular }}</span>
-        <a class="rankbar__name" href="/roster/{{ a.player_tag | memberSlug }}/">{{ a.player_name | e }}</a>
+        <a class="rankbar__name" href="/roster/#member-{{ a.player_tag | memberSlug }}">{{ a.player_name | e }}</a>
         {% if a.metadata.races_participated %}<div class="rankbar__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</div>{% endif %}
       </div>
       <div class="rankbar__metric">
@@ -68,7 +68,7 @@ eleventyComputed:
   <ul class="honor-roll">
     {% for a in category.awards %}
     <li>
-      <a href="/roster/{{ a.player_tag | memberSlug }}/">
+      <a href="/roster/#member-{{ a.player_tag | memberSlug }}">
         <span class="honor-roll__eyebrow">{{ category.singular | upper }}</span>
         <span class="honor-roll__name">{{ a.player_name | e }}</span>
         {% if a.metadata.total_battle_days %}<span class="honor-roll__metric">{{ a.metadata.total_battle_days }} battle days</span>{% endif %}
@@ -81,7 +81,7 @@ eleventyComputed:
   <ul class="honor-roll" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))">
     {% for a in category.awards %}
     <li>
-      <a href="/roster/{{ a.player_tag | memberSlug }}/">
+      <a href="/roster/#member-{{ a.player_tag | memberSlug }}">
         <span class="honor-roll__eyebrow">{{ category.singular | upper }}</span>
         <span class="honor-roll__name">{{ a.player_name | e }}</span>
         <span class="honor-roll__metric">{{ a.metric_value | formatNumber }} {{ a.metric_unit }}</span>

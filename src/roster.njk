@@ -2,7 +2,7 @@
 permalink: /roster/
 layout: base.njk
 title: Roster | POAP KINGS | A Clash Royale Clan with Proof
-description: "POAP KINGS roster — current clan members, signature cards, trophies, and full player profiles."
+description: "POAP KINGS roster — current clan members, roles, trophies, career wins, years played, collection level, and clan rank."
 navActive: roster
 ---
 {%- set sortedMembers = elixirRoster.members | sortByRank -%}
@@ -15,9 +15,9 @@ navActive: roster
     <span class="eyebrow">The Kings · {{ elixirRoster.updated | formatDate }}</span>
     <h1 class="h-display h1">Meet the members</h1>
     {% if isFull %}
-    <p class="lede"><strong style="color:var(--gold)">Clan is full — all 50 seats taken.</strong> Each card is a player — tap one to see their full profile, deck, badges, and mastery. Want in? <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Join the waitlist in Discord</a>.</p>
+    <p class="lede"><strong style="color:var(--gold)">Clan is full — all 50 seats taken.</strong> Each card shows a current roster member with rank, role, trophies, career wins, years played, collection level, and donations. Want in? <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Join the waitlist in Discord</a>.</p>
     {% else %}
-    <p class="lede">{{ memberCount }} active{% if openSlots > 0 %}, {{ openSlots }} open{% endif %}. Each card is a player — tap one to see their full profile, deck, badges, and mastery.</p>
+    <p class="lede">{{ memberCount }} active{% if openSlots > 0 %}, {{ openSlots }} open{% endif %}. Each card shows a current roster member with rank, role, trophies, career wins, years played, collection level, and donations.</p>
     {% endif %}
   </div>
   <div class="roster-head__meta">
@@ -46,9 +46,10 @@ navActive: roster
     <select id="rosterSort">
       <option value="rank" selected>Clan rank</option>
       <option value="trophies">Trophies</option>
-      <option value="level">King Level</option>
+      <option value="wins">Career wins</option>
+      <option value="collection">Collection level</option>
+      <option value="years">Years played</option>
       <option value="donations">Donations</option>
-      <option value="joined">Join date</option>
       <option value="alpha">Alphabetical</option>
     </select>
   </div>
@@ -60,53 +61,48 @@ navActive: roster
   {%- set rawRole = m.role if m.role else "Member" -%}
   {%- set roleSlug = rawRole | lower | replace("-", "") -%}
   {%- set rawTag = m.tag | replace("#", "") -%}
-  {%- set memberUrl = m.tag | memberProfileUrl -%}
-  <a class="pcard" href="{{ memberUrl | e }}" role="listitem"
+  {%- set proofBadges = m.badge_highlights | take(3) -%}
+  <article class="pcard" id="member-{{ rawTag | lower | e }}" role="listitem"
      data-search="{{ m | searchText | e }}"
      data-trophies="{{ m.trophies }}"
      data-donations="{{ m.donations }}"
-     data-level="{{ m.exp_level }}"
-     data-joined="{{ m.date_joined }}"
+     data-wins="{{ m.cr_battle_wins or 0 }}"
+     data-collection="{{ m.cr_collection_level or 0 }}"
+     data-years="{{ m.cr_account_age_days or 0 }}"
      data-rank="{{ m.clan_rank }}"
      data-name="{{ m.name | e }}"
      data-role="{{ roleSlug }}"
-     aria-label="{{ m.name | e }}, {{ rawRole }}, rank {{ m.clan_rank }}">
+     aria-label="{{ m.name | e }}, {{ rawRole }}, rank {{ m.clan_rank }}, {{ m.cr_battle_wins or 0 }} career wins">
     <span class="pcard__role pcard__role--{{ roleSlug }}">{{ rawRole | e }}</span>
     <div class="pcard__body">
       <div class="pcard__top">
         <span class="pcard__rank">#{{ m.clan_rank or '—' }}</span>
         <span class="pcard__name">{{ m.name | e }}</span>
-        <span class="pcard__level"><small>LVL</small><strong>{{ m.exp_level or '—' }}</strong></span>
       </div>
       <div class="pcard__arena">{{ m.arena or 'Unranked' }}</div>
-      <div class="pcard__cards">
-        <div class="pcard__cards__label">Top 6 Cards</div>
-        <div class="pcard__cards__grid">
-          {%- set favs = m.favorite_cards or [] -%}
-          {% for i in range(0, 6) %}
-            {%- set c = favs[i] -%}
-            {% if c %}
-            <div class="pcard__cards__cell" title="{{ c.name | e }}">
-              <img src="{{ c.icon_url | e }}" alt="{{ c.name | e }}" loading="lazy" />
-            </div>
-            {% else %}
-            <div class="pcard__cards__cell pcard__cards__cell--empty"></div>
-            {% endif %}
-          {% endfor %}
-        </div>
+      {% if proofBadges | length %}
+      <div class="pcard__badges" aria-label="Experience badge highlights">
+        {% for badge in proofBadges %}
+        <span class="pcard__badge" title="{{ badge | formatBadgeTitle | e }}" aria-label="{{ badge | formatBadgeTitle | e }}">
+          {% if badge.icon_url %}<img src="{{ badge.icon_url }}" alt="" loading="lazy" decoding="async" />{% endif %}
+        </span>
+        {% endfor %}
       </div>
-      <div class="pcard__stats">
+      {% endif %}
+      <div class="pcard__stats pcard__stats--depth">
         <div class="pcard__stat"><div class="pcard__stat__v pcard__stat__v--gold">{{ m.trophies | formatNumber }}</div><div class="pcard__stat__l">Trophies</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v">{{ m.donations | formatNumber }}</div><div class="pcard__stat__l">Donations</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_games_per_day != null %}{{ m.cr_games_per_day | formatDecimal(1) }}{% else %}—{% endif %}</div><div class="pcard__stat__l">Games / day</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_account_age_years != null %}{{ m.cr_account_age_years }}y{% else %}—{% endif %}</div><div class="pcard__stat__l">Account</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_battle_wins %}{{ m.cr_battle_wins | formatNumber }}{% else %}—{% endif %}</div><div class="pcard__stat__l">Wins</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_collection_level %}{{ m.cr_collection_level | formatNumber }}{% else %}—{% endif %}</div><div class="pcard__stat__l">Collection</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v" title="{% if m.cr_account_age_days %}{{ m.cr_account_age_days | formatNumber }} days played{% endif %}">{{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) }}</div><div class="pcard__stat__l">Years</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v">{{ m.donations | formatNumber }}</div><div class="pcard__stat__l">Donated</div></div>
+        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_clan_war_wins or m.cr_clan_war_wins == 0 %}{{ m.cr_clan_war_wins | formatNumber }}{% else %}—{% endif %}</div><div class="pcard__stat__l">War wins</div></div>
       </div>
       <div class="pcard__foot">
         <span class="pcard__tag">#{{ rawTag | upper | e }}</span>
-        <span class="pcard__joined">{% if m.date_joined %}Joined {{ m.date_joined | formatDate }}{% else %}—{% endif %}</span>
+        <span class="pcard__joined">{% if m.last_seen %}Seen {{ m.last_seen | formatLastSeen }}{% else %}—{% endif %}</span>
       </div>
     </div>
-  </a>
+  </article>
   {% endfor %}
 
   {% if openSlots > 0 %}
@@ -144,6 +140,15 @@ navActive: roster
 
   var state = { role: 'all', q: '', sort: 'rank' };
 
+  grid.querySelectorAll('.pcard__badge img').forEach(function(img){
+    function hideBrokenBadge(){
+      var badge = img.closest('.pcard__badge');
+      if (badge) badge.hidden = true;
+    }
+    img.addEventListener('error', hideBrokenBadge);
+    if (img.complete && img.naturalWidth === 0) hideBrokenBadge();
+  });
+
   function num(el, k){ var v = el.dataset[k]; return v == null || v === '' ? 0 : Number(v); }
   function str(el, k){ return el.dataset[k] || ''; }
 
@@ -163,8 +168,9 @@ navActive: roster
     switch (state.sort){
       case 'trophies':  return num(b,'trophies') - num(a,'trophies');
       case 'donations': return num(b,'donations') - num(a,'donations');
-      case 'level':     return num(b,'level') - num(a,'level');
-      case 'joined':    return str(b,'joined').localeCompare(str(a,'joined'));
+      case 'wins':      return num(b,'wins') - num(a,'wins');
+      case 'collection': return num(b,'collection') - num(a,'collection');
+      case 'years':     return num(b,'years') - num(a,'years');
       case 'alpha':     return str(a,'name').localeCompare(str(b,'name'));
       default:          return num(a,'rank') - num(b,'rank');
     }

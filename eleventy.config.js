@@ -73,6 +73,30 @@ export default function (eleventyConfig) {
     return Number(n).toLocaleString("en-US");
   });
 
+  eleventyConfig.addFilter("formatYearsPlayed", (years, days) => {
+    const yearCount = Number(years);
+    const dayCount = Number(days);
+    if (Number.isFinite(yearCount) && yearCount > 0) return `${yearCount}y`;
+    if (Number.isFinite(dayCount) && dayCount > 0) return `${dayCount.toLocaleString("en-US")}d`;
+    return "—";
+  });
+
+  eleventyConfig.addFilter("formatBadgeTitle", (badge) => {
+    if (!badge) return "";
+    const label = badge.label || badge.name || "Badge";
+    const progress = Number(badge.progress);
+    const target = Number(badge.target);
+    if (Number.isFinite(progress) && Number.isFinite(target) && target > 0) {
+      return `${label}: ${progress.toLocaleString("en-US")} / ${target.toLocaleString("en-US")}`;
+    }
+    if (Number.isFinite(progress)) {
+      return `${label}: ${progress.toLocaleString("en-US")}`;
+    }
+    const level = Number(badge.level);
+    if (Number.isFinite(level)) return `${label}: tier ${level}`;
+    return label;
+  });
+
   eleventyConfig.addFilter("min", (arr) => Math.min(...arr));
 
   // Clan War League tier name derived from clan war trophies.
@@ -141,39 +165,6 @@ export default function (eleventyConfig) {
     return normalizeMemberTag(tag);
   });
 
-  eleventyConfig.addFilter("memberProfileUrl", (tag) => {
-    const slug = normalizeMemberTag(tag);
-    if (!slug) return "/roster/";
-    return `/roster/${slug}/`;
-  });
-
-  eleventyConfig.addFilter("royaleApiUrl", (tag) => {
-    if (!tag) return "";
-    const t = String(tag).trim().replace(/\s+/g, "");
-    const normalized = t.startsWith("#") ? t : "#" + t;
-    return `https://royaleapi.com/player/${encodeURIComponent(normalized)}`;
-  });
-
-  eleventyConfig.addFilter("safeUrl", (url) => {
-    if (!url) return "";
-    const value = String(url).trim();
-    if (!value) return "";
-    try {
-      const parsed = new URL(value);
-      if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
-      return parsed.href;
-    } catch {
-      return "";
-    }
-  });
-
-  eleventyConfig.addFilter("poapCollectionUrl", (address) => {
-    if (!address) return "";
-    const value = String(address).trim();
-    if (!value) return "";
-    return `https://app.poap.xyz/scan/${encodeURIComponent(value)}`;
-  });
-
   eleventyConfig.addFilter("typeClass", (type) => {
     if (!type) return "typePill";
     const t = type.toLowerCase();
@@ -201,7 +192,15 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("searchText", (m) => {
     const role = m.role || "Member";
-    return [m.name, m.tag, role, m.note, m.date_joined, m.arena]
+    return [
+      m.name,
+      m.tag,
+      role,
+      m.arena,
+      m.cr_account_age_years ? `${m.cr_account_age_years} years played` : "",
+      m.cr_battle_wins ? `${m.cr_battle_wins} wins` : "",
+      m.cr_collection_level ? `${m.cr_collection_level} collection level` : "",
+    ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();

@@ -214,7 +214,7 @@ nav a.active,
   border: 1px solid var(--hairline-2);
   border-radius: 10px;
   background: var(--surface);
-  cursor: pointer;
+  cursor: default;
   transition: background .14s, border-color .14s;
 }
 .nav-toggle:hover{ background: var(--surface-2); border-color: rgba(255,255,255,.22) }
@@ -247,7 +247,7 @@ nav a.active,
   letter-spacing: .06em;
   font-size: 13px;
   text-decoration: none;
-  cursor: pointer;
+  cursor: default;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 6px 18px rgba(201,140,16,.12);
   transition: transform .12s, box-shadow .2s;
 }
@@ -1529,7 +1529,7 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 }
 .pcard__top{
   position: relative;
-  display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+  display: grid; grid-template-columns: auto 1fr; align-items: center;
   gap: 10px;
   padding: 12px 14px 10px;
   background: linear-gradient(180deg, rgba(245,200,76,.18), rgba(245,200,76,0));
@@ -1553,18 +1553,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   min-width: 0; line-height: 1;
 }
-.pcard__level{
-  display: inline-flex; flex-direction: column; align-items: center;
-  background: linear-gradient(180deg, #FFE9B3, #F5C84C 50%, #C98C10);
-  color: #2a1900;
-  font-family: var(--display);
-  padding: 4px 10px 5px;
-  border-radius: 8px;
-  box-shadow: inset 0 -2px 3px rgba(0,0,0,.28), 0 0 0 2px #1a0a00, 0 2px 4px rgba(0,0,0,.4);
-  line-height: 1;
-}
-.pcard__level small{ font-size: 8.5px; letter-spacing: .14em; opacity: .75 }
-.pcard__level strong{ font-size: 15px; letter-spacing: .02em; font-weight: 400 }
 .pcard__role{
   position: absolute; top: -1px; right: -1px;
   font-family: var(--display); font-size: 9.5px; letter-spacing: .18em;
@@ -1648,6 +1636,34 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   background: var(--gold);
   box-shadow: 0 0 6px rgba(245,200,76,.8);
 }
+.pcard__badges{
+  margin: 0 14px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.pcard__badge{
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background:
+    radial-gradient(80% 80% at 50% 20%, rgba(255,246,219,.16), transparent 70%),
+    rgba(0,0,0,.35);
+  border: 1px solid rgba(245,200,76,.26);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.08) inset,
+    0 8px 16px -12px rgba(0,0,0,.9);
+  overflow: hidden;
+}
+.pcard__badge img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.55));
+}
 .pcard__stats{
   margin: 0 14px;
   display: grid; grid-template-columns: 1fr 1fr;
@@ -1730,9 +1746,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
     font-size: clamp(12px, 5.5cqw, 19px);
     letter-spacing: .01em;
   }
-  .pcard__level{ padding: clamp(3px, 1.2cqw, 5px) clamp(7px, 3cqw, 11px) clamp(4px, 1.4cqw, 6px) }
-  .pcard__level small{ font-size: clamp(7px, 2.7cqw, 9.5px) }
-  .pcard__level strong{ font-size: clamp(10px, 4.8cqw, 17px) }
   .pcard__role{
     font-size: clamp(7.5px, 2.9cqw, 10.5px);
     padding: clamp(3px, 1.6cqw, 6px) clamp(7px, 3.2cqw, 11px) clamp(4px, 1.8cqw, 7px);
@@ -1752,6 +1765,19 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
     margin-bottom: clamp(5px, 2.2cqw, 9px);
   }
   .pcard__cards__grid{ gap: clamp(3px, 1.4cqw, 6px) }
+  .pcard__badges{
+    margin: 0 clamp(8px, 4cqw, 16px) clamp(6px, 2.8cqw, 10px);
+    gap: clamp(5px, 2.4cqw, 8px);
+  }
+  .pcard__badge{
+    width: clamp(26px, 11cqw, 36px);
+    height: clamp(26px, 11cqw, 36px);
+    border-radius: clamp(7px, 3cqw, 10px);
+  }
+  .pcard__badge img{
+    width: clamp(22px, 9.4cqw, 31px);
+    height: clamp(22px, 9.4cqw, 31px);
+  }
   .pcard__stats{ margin: 0 clamp(8px, 4cqw, 16px) }
   .pcard__stat{ padding: clamp(5px, 2.2cqw, 8px) clamp(7px, 3cqw, 11px) }
   .pcard__stat__v{ font-size: clamp(12px, 4.6cqw, 16px) }
@@ -1767,12 +1793,8 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
    a narrow card anywhere gets the compact treatment. */
 @container pcard (max-width: 215px){
   .pcard__arena{ display: none }
+  .pcard__badges{ display: none }
   .pcard__foot{ display: none }
-  .pcard__stat:nth-child(3),
-  .pcard__stat:nth-child(4){ display: none }
-  .pcard__stat:nth-child(2){ border-right: 0 }
-  .pcard__stat:nth-child(1),
-  .pcard__stat:nth-child(2){ border-bottom: 0 }
   .pcard__stats{ grid-template-columns: 1fr 1fr; margin-bottom: clamp(6px, 2.5cqw, 10px) }
   .pcard__cards__grid{ gap: 3px }
 }

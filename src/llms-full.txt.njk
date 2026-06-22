@@ -19,7 +19,7 @@ Vault last updated: {{ vault.updated | safe }}
 
 ## About POAP KINGS
 
-POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season and notable milestone is commemorated by an on-chain POAP ("Proof of Attendance Protocol") badge. The clan is managed in part by Elixir, an AI chronicler that keeps the roster, awards, and promotional copy current.
+POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season and notable milestone is commemorated by an on-chain POAP ("Proof of Attendance Protocol") badge. The current roster is refreshed locally from the Clash Royale API and pushed when it changes.
 
 - **Clan tag:** #{{ site.clanTag | safe }}
 - **League:** {{ elixirClan.clanLeague | safe }}
@@ -31,13 +31,12 @@ POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season
 - **Clan score:** {{ elixirClan.clanScore | formatNumber | safe }}
 - **Clan war trophies:** {{ elixirClan.clanWarTrophies | formatNumber | safe }}
 - **Donations / week:** {{ elixirClan.donationsPerWeek | formatNumber | safe }}
-- **Average King level:** {{ elixirClan.avgLevel }}
 
-### Latest message from Elixir
+### Latest clan note
 
 {{ elixirHome.message | safe }}
 
-_Generated: {{ elixirHome.generated | safe }}_
+_Last generated: {{ elixirHome.generated | safe }}_
 
 ---
 
@@ -46,28 +45,14 @@ _Generated: {{ elixirHome.generated | safe }}_
 {% for m in elixirRoster.members | sortByRank -%}
 ### {{ m.name | safe }}
 
-- **Profile:** {{ site.url | safe }}/roster/{{ m.tag | memberSlug | safe }}/
+- **Roster:** {{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}
 - **Tag:** #{{ m.tag | safe }}
 - **Role:** {{ (m.role or "Member") | safe }}
 - **Clan rank:** #{{ m.clan_rank }}
 - **Trophies:** {{ m.trophies | formatNumber | safe }}
 - **Arena:** {{ m.arena | safe }}
-- **King level:** {{ m.exp_level }}
 - **Donations (this week):** {{ m.donations | formatNumber | safe }} given · {{ m.donations_received | formatNumber | safe }} received
-{% if m.date_joined %}- **Joined:** {{ m.date_joined | safe }}
-{% endif -%}
-{% if m.cr_account_age_years %}- **Account age:** {{ m.cr_account_age_years }} years ({{ m.cr_account_age_days }} days)
-{% endif -%}
-{% if m.cr_games_per_day %}- **Games / day (last {{ m.cr_games_per_day_window_days or 14 }}d):** {{ m.cr_games_per_day }}
-{% endif -%}
-{% if m.badge_count != null %}- **Badges:** {{ m.badge_count | formatNumber | safe }}
-{% endif -%}
-{% if m.note %}- **Note:** {{ m.note | safe }}
-{% endif -%}
-{% if m.poap_address %}- **POAP wallet:** {{ m.poap_address | safe }}
-{% endif -%}
-{% if m.bio %}
-{{ m.bio | safe }}
+{% if m.last_seen %}- **Last seen:** {{ m.last_seen | safe }}
 {% endif %}
 {% endfor -%}
 
