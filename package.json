@@ -5,6 +5,7 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
+    "backfill-data": "node scripts/backfill-cr-history.js",
     "update-roster": "node scripts/update-roster.js"
   },
   "devDependencies": {

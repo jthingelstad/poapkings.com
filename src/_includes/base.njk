@@ -50,7 +50,7 @@
 <body{% if navActive %} data-nav="{{ navActive }}"{% endif %}>
   <header class="top">
     <div class="wrap top__inner">
-      {%- set isFull = elixirClan.memberCount >= 50 -%}
+      {%- set isFull = clan.memberCount >= 50 -%}
       <div class="top__left">
         {% if isFull %}
         <button type="button" class="nav-join nav-join--full" data-modal-open="join" data-tinylytics-event="nav.waitlist" aria-haspopup="dialog" aria-controls="joinModal" title="Clan is full — join the waitlist">WAIT<span class="nav-join__dot" aria-hidden="true"></span></button>
@@ -64,10 +64,10 @@
       <nav class="navbar" id="navMenu" aria-label="Primary">
         <a href="/"{% if navActive == "home" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>Home</a>
         <a href="/roster"{% if navActive == "roster" %} class="is-active"{% endif %} data-nav-link>Roster</a>
+        <a href="/wars"{% if navActive == "wars" %} class="is-active"{% endif %} data-nav-link>Wars</a>
         <a href="/vault"{% if navActive == "vault" %} class="is-active"{% endif %} data-nav-link>Vault</a>
         <a href="/members"{% if navActive == "members" %} class="is-active"{% endif %} data-nav-link>Members</a>
         <a href="/faq"{% if navActive == "faq" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>FAQ</a>
-        <a href="/elixir"{% if navActive == "elixir" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>Elixir</a>
         <a class="navbar__mobile-only" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" data-nav-link>Discord</a>
       </nav>
       <div class="top__right">
@@ -97,6 +97,7 @@
           <h4>The Clan</h4>
           <a href="/">Home</a>
           <a href="/roster">Roster</a>
+          <a href="/wars">Clan Wars</a>
           <a href="/vault">Vault</a>
           <a href="/members">Members</a>
         </div>
@@ -109,7 +110,6 @@
         </div>
         <div class="foot__col">
           <h4>Projects</h4>
-          <a href="/elixir">Elixir — the AI agent</a>
           <a href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">POAP.xyz</a>
           <a href="https://github.com/jthingelstad/poapkings.com" target="_blank" rel="noreferrer">GitHub</a>
         </div>
@@ -131,7 +131,7 @@
       <span class="eyebrow eyebrow--purple">Waitlist</span>
       <h2 class="h-display h2 modal__title" id="joinModalTitle">The clan<br/>is full.</h2>
       <p class="modal__body">All 50 seats are taken right now. Drop into our Discord as a guest and hang out in <code>#courtyard</code> — leadership will tag you when a spot opens up. The roster turns over every season.</p>
-      <p class="modal__hint">Minimum {{ elixirClan.minTrophies | formatNumber }}+ trophies when a spot does open.</p>
+      <p class="modal__hint">Minimum {{ clan.minTrophies | formatNumber }}+ trophies when a spot does open.</p>
       <div class="modal__actions">
         <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" class="btn btn--purple" data-tinylytics-event="modal.discord" data-modal-close>Open Discord →</a>
         <button type="button" class="btn btn--ghost" data-modal-close>Not right now</button>
@@ -143,8 +143,8 @@
       <dl class="modal__dl">
         <div><dt>Clan Name</dt><dd>POAP KINGS</dd></div>
         <div><dt>Clan Tag</dt><dd class="mono">#{{ site.clanTag }}</dd></div>
-        <div><dt>Min Trophies</dt><dd>{{ elixirClan.minTrophies | formatNumber }}</dd></div>
-        <div><dt>Status</dt><dd>{{ elixirClan.clanStatus }}</dd></div>
+        <div><dt>Min Trophies</dt><dd>{{ clan.minTrophies | formatNumber }}</dd></div>
+        <div><dt>Status</dt><dd>{{ clan.clanStatus }}</dd></div>
       </dl>
       <div class="modal__actions">
         <a href="{{ site.joinUrl }}" target="_blank" rel="noreferrer" class="btn btn--gold" data-tinylytics-event="modal.launch-cr" data-modal-close>Launch Clash Royale →</a>

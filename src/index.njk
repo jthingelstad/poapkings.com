@@ -10,7 +10,9 @@ ogImageAlt: POAP KINGS crest
 ogImageWidth: 1200
 ogImageHeight: 1200
 ---
-{%- set isFull = elixirClan.memberCount >= 50 -%}
+{%- set isFull = clan.memberCount >= 50 -%}
+{%- set insightStats = clanInsights.headlineStats or [] -%}
+{%- set trophyLeaders = clanInsights.leaders.trophies or [] -%}
 
 <section class="section" data-section="hero" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(36px, 5vw, 60px);">
   <div class="hero-grid">
@@ -37,9 +39,32 @@ ogImageHeight: 1200
       </div>
     </div>
 
-    <div class="hero-art" aria-hidden="true">
-      <div class="hero-art__ring"></div>
-      <img src="/assets/poapkings.png" alt="" />
+    <div class="hero-proof">
+      <div class="hero-proof__head">
+        <img src="/assets/poapkings.png" alt="" />
+        <div>
+          <span class="kicker">Roster snapshot</span>
+          <strong>{{ roster.updated | formatDate }}</strong>
+        </div>
+      </div>
+      <div class="hero-proof__stats">
+        {% for stat in insightStats %}
+        <div>
+          <span>{{ stat.label }}</span>
+          <strong>{{ stat.value | formatNumber }}</strong>
+          <small>{{ stat.detail }}</small>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="hero-proof__bars" aria-label="Trophy distribution">
+        {% for bucket in clanInsights.trophyDistribution %}
+        <div class="hero-proof__bar">
+          <span>{{ bucket.label }}</span>
+          <div><i style="width: {{ (bucket.count / clan.memberCount * 100) if clan.memberCount else 0 }}%"></i></div>
+          <strong>{{ bucket.count }}</strong>
+        </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -47,23 +72,124 @@ ogImageHeight: 1200
 <section class="section--tight" data-section="trophy-strip" style="padding-top: 0;">
   <div class="trophystrip">
     <div class="trophystrip__cell">
-      <div class="trophystrip__n" data-count-up="{{ elixirClan.clanScore }}" data-count-up-ms="1600">0</div>
+      <div class="trophystrip__n" data-count-up="{{ clan.clanScore }}" data-count-up-ms="1600">0</div>
       <div class="trophystrip__label">Clan Trophies</div>
     </div>
     <div class="trophystrip__cell{% if isFull %} trophystrip__cell--full{% endif %}">
-      <div class="trophystrip__n"><span data-count-up="{{ elixirClan.memberCount }}">0</span> / 50</div>
+      <div class="trophystrip__n"><span data-count-up="{{ clan.memberCount }}">0</span> / 50</div>
       <div class="trophystrip__label">{% if isFull %}Clan full · waitlist{% else %}Members{% endif %}</div>
     </div>
     <div class="trophystrip__cell">
-      <div class="trophystrip__n">{{ elixirClan.clanWarTrophies | cwlTier }}</div>
-      <div class="trophystrip__label">War League · {{ elixirClan.clanWarTrophies | formatNumber }} trophies</div>
+      <div class="trophystrip__n">{{ clan.clanWarTrophies | cwlTier }}</div>
+      <div class="trophystrip__label">War League · {{ clan.clanWarTrophies | formatNumber }} trophies</div>
     </div>
     <div class="trophystrip__cell">
-      <div class="trophystrip__n"><span data-count-up="{{ elixirClan.minTrophies }}">0</span>+</div>
+      <div class="trophystrip__n"><span data-count-up="{{ clan.minTrophies }}">0</span>+</div>
       <div class="trophystrip__label">Min Trophies</div>
     </div>
   </div>
 </section>
+
+<section class="section" data-section="proof">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">Proof by numbers</span>
+      <h2 class="h-display h2 mt-3">A veteran roster, visible at a glance.</h2>
+      <p class="lede mt-3">The website now publishes the same kind of Clash Royale API data players care about: trophy depth, career wins, collection score, account tenure, and Clan Wars history.</p>
+    </div>
+    <a href="/wars/" class="btn--link">Clan Wars history →</a>
+  </div>
+
+  <div class="data-grid data-grid--home">
+    <article class="data-panel data-panel--wide">
+      <div class="data-panel__head">
+        <div>
+          <span class="kicker">Historical roster strength</span>
+          <h3 class="h-display h3">Daily clan trend</h3>
+        </div>
+        <span>{{ clanTrends.firstDate | formatDate }} – {{ clanTrends.latestDate | formatDate }}</span>
+      </div>
+      <svg class="line-chart" id="homeTrendChart" viewBox="0 0 720 260" role="img" aria-label="Clan score and top-player trend over time"></svg>
+      <div class="chart-legend">
+        <span><i class="legend-dot legend-dot--gold"></i> Clan score</span>
+        <span><i class="legend-dot legend-dot--cyan"></i> 12k+ members</span>
+      </div>
+    </article>
+
+    <article class="data-panel">
+      <div class="data-panel__head">
+        <div>
+          <span class="kicker">Current roster</span>
+          <h3 class="h-display h3">Trophy depth</h3>
+        </div>
+      </div>
+      <div class="distribution">
+        {% for bucket in clanInsights.trophyDistribution %}
+        <div class="distribution__row">
+          <span>{{ bucket.label }}</span>
+          <div><i style="width: {{ (bucket.count / clan.memberCount * 100) if clan.memberCount else 0 }}%"></i></div>
+          <strong>{{ bucket.count }}</strong>
+        </div>
+        {% endfor %}
+      </div>
+    </article>
+
+    <article class="data-panel">
+      <div class="data-panel__head">
+        <div>
+          <span class="kicker">Top ladder players</span>
+          <h3 class="h-display h3">Current leaders</h3>
+        </div>
+      </div>
+      <ol class="leader-list">
+        {% for leader in trophyLeaders | take(6) %}
+        <li>
+          <span>{{ leader.name }}</span>
+          <strong>{{ leader.value | formatNumber }}</strong>
+        </li>
+        {% endfor %}
+      </ol>
+    </article>
+  </div>
+</section>
+
+<script id="homeTrendData" type="application/json">{{ clanTrends.series | dump | safe }}</script>
+<script>
+(function(){
+  var el = document.getElementById('homeTrendChart');
+  var dataEl = document.getElementById('homeTrendData');
+  if (!el || !dataEl) return;
+  var rows = JSON.parse(dataEl.textContent || '[]').filter(function(row){
+    return row.clanScore != null && row.count12000Plus != null;
+  });
+  if (rows.length < 2) return;
+
+  function extent(key){
+    var values = rows.map(function(row){ return Number(row[key]); }).filter(Number.isFinite);
+    return [Math.min.apply(Math, values), Math.max.apply(Math, values)];
+  }
+  function points(key, min, max){
+    var span = max - min || 1;
+    return rows.map(function(row, index){
+      var x = 44 + (index / Math.max(1, rows.length - 1)) * 632;
+      var y = 218 - ((Number(row[key]) - min) / span) * 170;
+      return x.toFixed(1) + ',' + y.toFixed(1);
+    }).join(' ');
+  }
+  function node(name, attrs){
+    var item = document.createElementNS('http://www.w3.org/2000/svg', name);
+    Object.keys(attrs).forEach(function(key){ item.setAttribute(key, attrs[key]); });
+    return item;
+  }
+
+  var score = extent('clanScore');
+  var elite = extent('count12000Plus');
+  el.appendChild(node('line', { x1: 44, y1: 218, x2: 676, y2: 218, class: 'chart-axis' }));
+  el.appendChild(node('line', { x1: 44, y1: 48, x2: 44, y2: 218, class: 'chart-axis' }));
+  el.appendChild(node('polyline', { points: points('clanScore', score[0], score[1]), class: 'chart-line chart-line--gold' }));
+  el.appendChild(node('polyline', { points: points('count12000Plus', elite[0], elite[1]), class: 'chart-line chart-line--cyan' }));
+})();
+</script>
 
 <section class="section" data-section="why">
   <div class="section-head">
@@ -123,10 +249,10 @@ ogImageHeight: 1200
       <div class="step__n">1</div>
       {% if isFull %}
       <h3 class="h-display h3">Join the waitlist</h3>
-      <p>We're <strong>full right now</strong> — all 50 seats taken. Drop into our <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:var(--gold)">Discord</a> so we know you when a spot opens up. Minimum {{ elixirClan.minTrophies | formatNumber }}+ trophies.</p>
+      <p>We're <strong>full right now</strong> — all 50 seats taken. Drop into our <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:var(--gold)">Discord</a> so we know you when a spot opens up. Minimum {{ clan.minTrophies | formatNumber }}+ trophies.</p>
       {% else %}
       <h3 class="h-display h3">Join the clan</h3>
-      <p>Search for <strong>POAP KINGS</strong> in-game, or use clan tag <span class="mono" style="color:var(--gold)">#{{ site.clanTag }}</span>. We're {{ elixirClan.clanStatus | lower }} to anyone with {{ elixirClan.minTrophies | formatNumber }}+ trophies.</p>
+      <p>Search for <strong>POAP KINGS</strong> in-game, or use clan tag <span class="mono" style="color:var(--gold)">#{{ site.clanTag }}</span>. We're {{ clan.clanStatus | lower }} to anyone with {{ clan.minTrophies | formatNumber }}+ trophies.</p>
       {% endif %}
     </div>
     <div class="step">
@@ -178,12 +304,12 @@ ogImageHeight: 1200
 
 <section class="section" data-section="join">
   <div class="final-join">
-    {%- set spotsLeft = 50 - elixirClan.memberCount -%}
+    {%- set spotsLeft = 50 - clan.memberCount -%}
     <div>
       <span class="eyebrow">Ready?</span>
       {% if spotsLeft > 0 %}
-      <h2 class="h-display h2 mt-3">We're {{ elixirClan.clanStatus | lower }}.<br/>{{ spotsLeft }} spot{{ "s" if spotsLeft != 1 }} left.</h2>
-      <p class="lede mt-4">If you've got {{ elixirClan.minTrophies | formatNumber }}+ trophies, you can jump in right now. See you in Discord.</p>
+      <h2 class="h-display h2 mt-3">We're {{ clan.clanStatus | lower }}.<br/>{{ spotsLeft }} spot{{ "s" if spotsLeft != 1 }} left.</h2>
+      <p class="lede mt-4">If you've got {{ clan.minTrophies | formatNumber }}+ trophies, you can jump in right now. See you in Discord.</p>
       {% else %}
       <h2 class="h-display h2 mt-3">The clan<br/>is full.</h2>
       <p class="lede mt-4">All 50 seats are taken for now — but roster turns over every season. Drop into Discord so we know you when a spot opens up.</p>
@@ -193,8 +319,8 @@ ogImageHeight: 1200
       <dl class="final-join__dl">
         <div><dt>Clan Name</dt><dd>POAP KINGS</dd></div>
         <div><dt>Clan Tag</dt><dd class="mono">#{{ site.clanTag }}</dd></div>
-        <div><dt>Region</dt><dd>{{ elixirClan.clanRegion }}</dd></div>
-        <div><dt>Type</dt><dd>{{ elixirClan.clanStatus }}</dd></div>
+        <div><dt>Region</dt><dd>{{ clan.clanRegion }}</dd></div>
+        <div><dt>Type</dt><dd>{{ clan.clanStatus }}</dd></div>
       </dl>
       <div class="ctaRow mt-5">
         {% if isFull %}

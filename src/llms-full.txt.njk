@@ -12,7 +12,7 @@ Clan tag: #{{ site.clanTag | safe }}
 Tagline: {{ site.tagline | safe }}
 Join link: {{ site.joinUrl | safe }}
 Discord: {{ site.discordUrl | safe }}
-Roster last updated: {{ elixirRoster.updated | safe }}
+Roster last updated: {{ roster.updated | safe }}
 Vault last updated: {{ vault.updated | safe }}
 
 ---
@@ -22,27 +22,25 @@ Vault last updated: {{ vault.updated | safe }}
 POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season and notable milestone is commemorated by an on-chain POAP ("Proof of Attendance Protocol") badge. The current roster is refreshed locally from the Clash Royale API and pushed when it changes.
 
 - **Clan tag:** #{{ site.clanTag | safe }}
-- **League:** {{ elixirClan.clanLeague | safe }}
-- **Region:** {{ elixirClan.clanRegion | safe }}
-- **Status:** {{ elixirClan.clanStatus | safe }}
-- **Members:** {{ elixirClan.memberCount }}
-- **Minimum trophies:** {{ elixirClan.minTrophies | formatNumber | safe }}
-- **Total trophies:** {{ elixirClan.totalTrophies | formatNumber | safe }}
-- **Clan score:** {{ elixirClan.clanScore | formatNumber | safe }}
-- **Clan war trophies:** {{ elixirClan.clanWarTrophies | formatNumber | safe }}
-- **Donations / week:** {{ elixirClan.donationsPerWeek | formatNumber | safe }}
-
-### Latest clan note
-
-{{ elixirHome.message | safe }}
-
-_Last generated: {{ elixirHome.generated | safe }}_
+- **League:** {{ clan.clanLeague | safe }}
+- **Region:** {{ clan.clanRegion | safe }}
+- **Status:** {{ clan.clanStatus | safe }}
+- **Members:** {{ clan.memberCount }}
+- **Minimum trophies:** {{ clan.minTrophies | formatNumber | safe }}
+- **Total trophies:** {{ clan.totalTrophies | formatNumber | safe }}
+- **Clan score:** {{ clan.clanScore | formatNumber | safe }}
+- **Clan war trophies:** {{ clan.clanWarTrophies | formatNumber | safe }}
+- **Donations / week:** {{ clan.donationsPerWeek | formatNumber | safe }}
+- **12k+ trophy players:** {{ clanInsights.headlineStats[0].value | formatNumber | safe }}
+- **Average career wins:** {{ clanInsights.metrics.averageWins | formatNumber | safe }}
+- **Average years played:** {{ clanInsights.metrics.averageYearsPlayed | formatDecimal(1) | safe }}
+- **Average collection score:** {{ clanInsights.metrics.averageCollectionLevel | formatNumber | safe }}
 
 ---
 
 ## Roster
 
-{% for m in elixirRoster.members | sortByRank -%}
+{% for m in roster.members | sortByRank -%}
 ### {{ m.name | safe }}
 
 - **Roster:** {{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}
@@ -53,12 +51,30 @@ _Last generated: {{ elixirHome.generated | safe }}_
 - **Arena:** {{ m.arena | safe }}
 - **Donations (this week):** {{ m.donations | formatNumber | safe }} given · {{ m.donations_received | formatNumber | safe }} received
 - **Career wins:** {{ m.cr_battle_wins | formatNumber | safe }}
-- **Collection level:** {{ m.cr_collection_level | formatNumber | safe }}
+- **Collection score:** {{ m.cr_collection_level | formatNumber | safe }}
 - **Years played:** {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }}{% if m.cr_account_age_days %} ({{ m.cr_account_age_days | formatNumber | safe }} days){% endif %}
 - **Clan war wins:** {{ m.cr_clan_war_wins | formatNumber | safe }}
 - **Badge count:** {{ m.badge_count or 0 }}
 {% if m.last_seen %}- **Last seen:** {{ m.last_seen | safe }}
 {% endif %}
+{% endfor -%}
+
+---
+
+## Clan Wars
+
+{{ warHistory.summary.totalWeeks }} river race week{{ "s" if warHistory.summary.totalWeeks != 1 }} tracked. Average recorded rank: #{{ warHistory.summary.averageRank | formatDecimal(1) }}. Total war trophy change: {{ warHistory.summary.trophyChange | formatNumber | safe }}.
+
+{% for week in warHistory.weeks | reverse -%}
+### {{ week.weekLabel | safe }}
+
+- **Season:** {{ week.seasonId }}
+- **Section:** {{ week.sectionIndex }}
+- **Rank:** #{{ week.rank }}
+- **Fame:** {{ week.fame | formatNumber | safe }}
+- **War trophy change:** {% if week.trophyChange > 0 %}+{% endif %}{{ week.trophyChange | formatNumber | safe }}
+- **Clan score:** {{ week.clanScore | formatNumber | safe }}
+- **Created:** {{ week.createdDate | safe }}
 {% endfor -%}
 
 ---

@@ -48,7 +48,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
         </div>
       </div>
       <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
-      <textarea class="promoChannelText" readonly rows="3">{{ elixirPromote.message.body | safe }}</textarea>
+      <textarea class="promoChannelText" readonly rows="3">{{ promotionCopy.message.body | safe }}</textarea>
     </div>
 
     <div class="promoChannel" id="promo-social" role="tabpanel" data-promo-panel="social" hidden>
@@ -57,7 +57,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
         <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-social">COPY</button>
       </div>
       <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
-      <textarea class="promoChannelText" readonly rows="3">{{ elixirPromote.social.body | safe }}</textarea>
+      <textarea class="promoChannelText" readonly rows="3">{{ promotionCopy.social.body | safe }}</textarea>
     </div>
 
     <div class="promoChannel" id="promo-mail" role="tabpanel" data-promo-panel="mail" hidden>
@@ -70,8 +70,8 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       </div>
       <p class="promoChannelHint">Email-friendly pitch for friends or group chats.</p>
       <label class="promoFieldLabel">Subject</label>
-      <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.email.subject | safe }}" />
-      <textarea class="promoChannelText" readonly rows="5">{{ elixirPromote.email.body | safe }}</textarea>
+      <input class="promoFieldInput" type="text" readonly value="{{ promotionCopy.email.subject | safe }}" />
+      <textarea class="promoChannelText" readonly rows="5">{{ promotionCopy.email.body | safe }}</textarea>
     </div>
 
     <div class="promoChannel" id="promo-discord" role="tabpanel" data-promo-panel="discord" hidden>
@@ -83,7 +83,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
         </div>
       </div>
       <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
-      <textarea class="promoChannelText" readonly rows="4">{{ elixirPromote.discord.body | safe }}</textarea>
+      <textarea class="promoChannelText" readonly rows="4">{{ promotionCopy.discord.body | safe }}</textarea>
     </div>
 
     <div class="promoChannel" id="promo-reddit" role="tabpanel" data-promo-panel="reddit" hidden>
@@ -96,8 +96,8 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       </div>
       <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not include the clan invite link!</p>
       <label class="promoFieldLabel">Title</label>
-      <input class="promoFieldInput" type="text" readonly value="{{ elixirPromote.reddit.title | safe }}" />
-      <textarea class="promoChannelText" readonly rows="5">{{ elixirPromote.reddit.body | safe }}</textarea>
+      <input class="promoFieldInput" type="text" readonly value="{{ promotionCopy.reddit.title | safe }}" />
+      <textarea class="promoChannelText" readonly rows="5">{{ promotionCopy.reddit.body | safe }}</textarea>
     </div>
   </div>
 

@@ -1,8 +1,17 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  dataDbPath,
+  generateDataExports,
+  openDataDb,
+  upsertCurrentSnapshot,
+  upsertRiverRaceLog,
+  writeDataExports,
+} from "./clash-data-store.js";
 
 const API_BASE = "https://api.clashroyale.com/v1";
 const PROFILE_FETCH_CONCURRENCY = 5;
@@ -41,9 +50,9 @@ const PROFILE_FIELD_NAMES = [
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = join(repoRoot, "src", "_data");
 const sitePath = join(dataDir, "site.json");
-const clanPath = join(dataDir, "elixirClan.json");
-const rosterPath = join(dataDir, "elixirRoster.json");
-const defaultElixirEnvPath = resolve(repoRoot, "..", "elixir-bot", ".env");
+const clanPath = join(dataDir, "clan.json");
+const rosterPath = join(dataDir, "roster.json");
+const defaultCrApiEnvPath = resolve(repoRoot, "..", "elixir-bot", ".env");
 
 const args = process.argv.slice(2);
 
@@ -64,12 +73,13 @@ Options:
   --clan-tag TAG     Clan tag to fetch. Defaults to src/_data/site.json.
   --env-file PATH    Env file containing CR_API_KEY. Defaults to ../elixir-bot/.env.
   --skip-profiles    Fetch only the clan roster and preserve existing profile fields.
+  --skip-wars        Skip the clan war log fetch.
   --dry-run          Fetch and compare without writing files.
   --exit-code        Exit 2 when data changed or would change.
   --help             Show this help.
 
 The script uses CR_API_KEY from the current environment first, then falls back
-to the Elixir bot env file so the key is not copied into this repo.`);
+to the local CR API env file so the key is not copied into this repo.`);
 }
 
 function readJson(path, fallback = null) {
@@ -343,15 +353,55 @@ function writeIfChanged(path, nextData, dryRun) {
   return true;
 }
 
+function relativePath(path) {
+  return path.replace(`${repoRoot}/`, "");
+}
+
 async function fetchClan(clanTag, apiKey) {
   const url = `${API_BASE}/clans/${encodeURIComponent(`#${clanTag}`)}`;
   return fetchApi(url, apiKey, `clan #${clanTag}`);
+}
+
+async function fetchRiverRaceLog(clanTag, apiKey) {
+  const url = `${API_BASE}/clans/${encodeURIComponent(`#${clanTag}`)}/riverracelog?limit=20`;
+  return fetchApi(url, apiKey, `river race log #${clanTag}`);
 }
 
 async function fetchPlayer(playerTag, apiKey) {
   const tag = normalizeTag(playerTag);
   const url = `${API_BASE}/players/${encodeURIComponent(`#${tag}`)}`;
   return fetchApi(url, apiKey, `player #${tag}`);
+}
+
+function createScratchDb() {
+  const tempDir = mkdtempSync(join(tmpdir(), "poapkings-roster-"));
+  const tempDbPath = join(tempDir, "clash-royale.sqlite");
+  if (existsSync(dataDbPath)) {
+    copyFileSync(dataDbPath, tempDbPath);
+  }
+  const db = openDataDb({ path: tempDbPath });
+  return {
+    db,
+    cleanup() {
+      db.close();
+      rmSync(tempDir, { recursive: true, force: true });
+    },
+  };
+}
+
+function updateDataStore(db, { shouldRecordCurrentSnapshot, clanTag, now, clanData, nextClan, nextRoster, riverRaceLog }) {
+  if (shouldRecordCurrentSnapshot) {
+    upsertCurrentSnapshot(db, {
+      snapshotDate: null,
+      observedAt: now,
+      clanTag,
+      clanData,
+      clanPayload: nextClan,
+      rosterPayload: nextRoster,
+    });
+  }
+  upsertRiverRaceLog(db, { clanTag, items: riverRaceLog?.items ?? [] });
+  return generateDataExports(db, { clan: nextClan, roster: nextRoster });
 }
 
 async function fetchApi(url, apiKey, description) {
@@ -405,10 +455,11 @@ async function main() {
 
   const dryRun = hasArg("--dry-run");
   const skipProfiles = hasArg("--skip-profiles");
+  const skipWars = hasArg("--skip-wars");
   const exitCodeSignal = hasArg("--exit-code");
   const site = readJson(sitePath, {});
   const clanTag = normalizeTag(argValue("--clan-tag") || site.clanTag);
-  const envPath = resolve(argValue("--env-file") || process.env.ELIXIR_BOT_ENV || defaultElixirEnvPath);
+  const envPath = resolve(argValue("--env-file") || process.env.CR_API_ENV || process.env.ELIXIR_BOT_ENV || defaultCrApiEnvPath);
   const apiKey = requireApiKey(envPath);
 
   const previousClan = readJson(clanPath, {});
@@ -419,16 +470,56 @@ async function main() {
   const now = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
   const nextClan = buildClanPayload(clanData);
   const nextRoster = buildRosterPayload(clanData, now, profileByTag, previousRoster);
+  const riverRaceLog = skipWars ? { items: [] } : await fetchRiverRaceLog(clanTag, apiKey);
 
   const clanChanged = stableJson(previousClan) !== stableJson(nextClan);
   const rosterChanged = stableJson(withoutUpdated(previousRoster)) !== stableJson(withoutUpdated(nextRoster));
+  const shouldRecordCurrentSnapshot = clanChanged || rosterChanged || !existsSync(dataDbPath);
+  const scratch = createScratchDb();
+  let exportChangedFiles = [];
+  try {
+    const scratchExports = updateDataStore(scratch.db, {
+      shouldRecordCurrentSnapshot,
+      clanTag,
+      now,
+      clanData,
+      nextClan,
+      nextRoster,
+      riverRaceLog,
+    });
+    exportChangedFiles = writeDataExports(scratchExports, { dryRun: true }).map(relativePath);
+  } finally {
+    scratch.cleanup();
+  }
 
   const changedFiles = [];
-  if (clanChanged && writeIfChanged(clanPath, nextClan, dryRun)) changedFiles.push("src/_data/elixirClan.json");
-  if (rosterChanged && writeIfChanged(rosterPath, nextRoster, dryRun)) changedFiles.push("src/_data/elixirRoster.json");
+  if (clanChanged) changedFiles.push("src/_data/clan.json");
+  if (rosterChanged) changedFiles.push("src/_data/roster.json");
+  if (shouldRecordCurrentSnapshot || exportChangedFiles.length) changedFiles.push("data/clash-royale.sqlite");
+  changedFiles.push(...exportChangedFiles);
+
+  const changed = changedFiles.length > 0;
+  if (!dryRun && changed) {
+    if (clanChanged) writeIfChanged(clanPath, nextClan, dryRun);
+    if (rosterChanged) writeIfChanged(rosterPath, nextRoster, dryRun);
+    const db = openDataDb();
+    try {
+      const exports = updateDataStore(db, {
+        shouldRecordCurrentSnapshot,
+        clanTag,
+        now,
+        clanData,
+        nextClan,
+        nextRoster,
+        riverRaceLog,
+      });
+      writeDataExports(exports, { dryRun });
+    } finally {
+      db.close();
+    }
+  }
 
   const mode = dryRun ? "Dry run" : "Updated";
-  const changed = changedFiles.length > 0;
   console.log(`changed=${changed ? "true" : "false"}`);
   console.log(`changed_files=${changedFiles.join(",")}`);
   if (changedFiles.length) {
@@ -443,6 +534,11 @@ async function main() {
     console.log("Skipped player profile fetch; preserved existing profile fields where available.");
   } else {
     console.log(`Fetched player profiles: ${profileByTag.size}/${clanMembers.length}.`);
+  }
+  if (skipWars) {
+    console.log("Skipped clan war log fetch.");
+  } else {
+    console.log(`Fetched river race log weeks: ${riverRaceLog.items?.length ?? 0}.`);
   }
   if (exitCodeSignal && changed) {
     process.exitCode = 2;

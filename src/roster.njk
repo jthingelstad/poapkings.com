@@ -2,17 +2,17 @@
 permalink: /roster/
 layout: base.njk
 title: Roster | POAP KINGS | A Clash Royale Clan with Proof
-description: "POAP KINGS roster — current clan members, roles, trophies, career wins, years played, collection level, badge count, and clan rank."
+description: "POAP KINGS roster — current clan members, roles, trophies, career wins, years played, collection score, badge count, and clan rank."
 navActive: roster
 ---
-{%- set sortedMembers = elixirRoster.members | sortByRank -%}
-{%- set memberCount = elixirRoster.members | length -%}
+{%- set sortedMembers = roster.members | sortByRank -%}
+{%- set memberCount = roster.members | length -%}
 {%- set openSlots = 50 - memberCount -%}
 {%- set isFull = memberCount >= 50 -%}
 
 <header class="roster-head">
   <div class="roster-head__copy">
-    <span class="eyebrow">The Kings · {{ elixirRoster.updated | formatDate }}</span>
+    <span class="eyebrow">The Kings · {{ roster.updated | formatDate }}</span>
     <h1 class="h-display h1">Roster table</h1>
     {% if isFull %}
     <p class="lede"><strong style="color:var(--gold)">Clan is full — all 50 seats taken.</strong> Search and sort the current roster by rank, role, trophies, career wins, account depth, and donations. Want in? <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Join the waitlist in Discord</a>.</p>
@@ -27,9 +27,41 @@ navActive: roster
     {% else %}
     <div class="m"><div class="m__n">{{ openSlots }}</div><div class="m__l">Open slots</div></div>
     {% endif %}
-    <div class="m"><div class="m__n">{{ elixirClan.clanScore | formatNumber }}</div><div class="m__l">Clan trophies</div></div>
+    <div class="m"><div class="m__n">{{ clan.clanScore | formatNumber }}</div><div class="m__l">Clan trophies</div></div>
   </div>
 </header>
+
+<section class="roster-explorer" aria-labelledby="rosterExplorerTitle">
+  <div class="roster-explorer__top">
+    <div>
+      <span class="eyebrow">Roster explorer</span>
+      <h2 class="h-display h2 mt-3" id="rosterExplorerTitle">See the clan shape.</h2>
+      <p class="lede mt-3">Plot current members by the stats Clash Royale players understand: trophies, career wins, account age, collection score, badges, war wins, and donations.</p>
+    </div>
+    <div class="axis-controls" aria-label="Scatterplot axes">
+      <label>
+        X axis
+        <select id="scatterX">
+          {% for dimension in rosterExplorer.dimensions %}
+          <option value="{{ dimension.key }}"{% if dimension.key == "years" %} selected{% endif %}>{{ dimension.label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>
+        Y axis
+        <select id="scatterY">
+          {% for dimension in rosterExplorer.dimensions %}
+          <option value="{{ dimension.key }}"{% if dimension.key == "trophies" %} selected{% endif %}>{{ dimension.label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+  </div>
+  <div class="scatter-wrap">
+    <svg class="scatterplot" id="rosterScatter" viewBox="0 0 760 430" role="img" aria-label="Interactive roster scatterplot"></svg>
+    <div class="scatter-tip" id="scatterTip" hidden></div>
+  </div>
+</section>
 
 <div class="cardtools roster-table-tools">
   <div class="cardtools__search">
@@ -47,7 +79,7 @@ navActive: roster
       <option value="rank" selected>Clan rank</option>
       <option value="trophies">Trophies</option>
       <option value="wins">Career wins</option>
-      <option value="collection">Collection level</option>
+      <option value="collection">Collection score</option>
       <option value="years">Years played</option>
       <option value="badges">Badges</option>
       <option value="donations">Donations</option>
@@ -114,7 +146,7 @@ navActive: roster
 {% if openSlots > 0 %}
 <button type="button" class="roster-open-note" data-modal-open="join" data-tinylytics-event="roster.open-slot">
   <strong>{{ openSlots }} open slot{{ "s" if openSlots != 1 }}</strong>
-  <span>{{ elixirClan.minTrophies | formatNumber }}+ trophies, daily play, good vibes.</span>
+  <span>{{ clan.minTrophies | formatNumber }}+ trophies, daily play, good vibes.</span>
 </button>
 {% endif %}
 
@@ -122,6 +154,111 @@ navActive: roster
   <h3>No members match that filter.</h3>
   <p>Try another role, search term, or sort.</p>
 </div>
+
+<script id="rosterExplorerData" type="application/json">{{ rosterExplorer | dump | safe }}</script>
+<script>
+(function(){
+  var svg = document.getElementById('rosterScatter');
+  var dataEl = document.getElementById('rosterExplorerData');
+  var xEl = document.getElementById('scatterX');
+  var yEl = document.getElementById('scatterY');
+  var tip = document.getElementById('scatterTip');
+  if (!svg || !dataEl || !xEl || !yEl) return;
+  var data = JSON.parse(dataEl.textContent || '{}');
+  var members = (data.members || []).filter(function(member){ return member.trophies != null; });
+  var dimensions = {};
+  (data.dimensions || []).forEach(function(dimension){ dimensions[dimension.key] = dimension; });
+  var bounds = { left: 64, right: 724, top: 36, bottom: 374 };
+
+  function number(value){ return Number.isFinite(Number(value)) ? Number(value) : null; }
+  function format(value, key){
+    if (value == null) return '—';
+    if (dimensions[key] && dimensions[key].format === 'decimal') return Number(value).toFixed(1);
+    return Math.round(Number(value)).toLocaleString('en-US');
+  }
+  function escapeHtml(value){
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch){
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch];
+    });
+  }
+  function extent(key){
+    var values = members.map(function(member){ return number(member[key]); }).filter(function(value){ return value != null; });
+    var min = Math.min.apply(Math, values);
+    var max = Math.max.apply(Math, values);
+    if (!Number.isFinite(min) || !Number.isFinite(max)) return [0, 1];
+    if (min === max) return [min - 1, max + 1];
+    var pad = (max - min) * 0.08;
+    return [Math.max(0, min - pad), max + pad];
+  }
+  function svgNode(name, attrs){
+    var node = document.createElementNS('http://www.w3.org/2000/svg', name);
+    Object.keys(attrs).forEach(function(key){ node.setAttribute(key, attrs[key]); });
+    return node;
+  }
+  function clear(){
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+  }
+  function showTip(member, x, y, xKey, yKey){
+    if (!tip) return;
+    tip.hidden = false;
+    tip.innerHTML = '<strong>' + escapeHtml(member.name) + '</strong><span>' + escapeHtml(dimensions[xKey].label) + ': ' + escapeHtml(format(member[xKey], xKey)) + '</span><span>' + escapeHtml(dimensions[yKey].label) + ': ' + escapeHtml(format(member[yKey], yKey)) + '</span>';
+    tip.style.left = Math.min(Math.max(x + 14, 10), svg.clientWidth - 180) + 'px';
+    tip.style.top = Math.max(y - 12, 10) + 'px';
+  }
+  function render(){
+    clear();
+    var xKey = xEl.value;
+    var yKey = yEl.value;
+    var xExtent = extent(xKey);
+    var yExtent = extent(yKey);
+    var xSpan = xExtent[1] - xExtent[0] || 1;
+    var ySpan = yExtent[1] - yExtent[0] || 1;
+
+    svg.appendChild(svgNode('line', { x1: bounds.left, y1: bounds.bottom, x2: bounds.right, y2: bounds.bottom, class: 'chart-axis' }));
+    svg.appendChild(svgNode('line', { x1: bounds.left, y1: bounds.top, x2: bounds.left, y2: bounds.bottom, class: 'chart-axis' }));
+    for (var i = 0; i <= 4; i += 1) {
+      var gx = bounds.left + (i / 4) * (bounds.right - bounds.left);
+      var gy = bounds.bottom - (i / 4) * (bounds.bottom - bounds.top);
+      svg.appendChild(svgNode('line', { x1: gx, y1: bounds.top, x2: gx, y2: bounds.bottom, class: 'chart-gridline' }));
+      svg.appendChild(svgNode('line', { x1: bounds.left, y1: gy, x2: bounds.right, y2: gy, class: 'chart-gridline' }));
+    }
+
+    members.forEach(function(member){
+      var xv = number(member[xKey]);
+      var yv = number(member[yKey]);
+      if (xv == null || yv == null) return;
+      var cx = bounds.left + ((xv - xExtent[0]) / xSpan) * (bounds.right - bounds.left);
+      var cy = bounds.bottom - ((yv - yExtent[0]) / ySpan) * (bounds.bottom - bounds.top);
+      var point = svgNode('circle', {
+        cx: cx.toFixed(1),
+        cy: cy.toFixed(1),
+        r: member.trophies >= 14000 ? 8 : member.trophies >= 12000 ? 6.5 : 5,
+        class: 'scatter-point' + (member.trophies >= 14000 ? ' scatter-point--elite' : ''),
+        tabindex: 0,
+        'aria-label': member.name + ', ' + dimensions[xKey].label + ' ' + format(member[xKey], xKey) + ', ' + dimensions[yKey].label + ' ' + format(member[yKey], yKey)
+      });
+      point.addEventListener('mousemove', function(event){
+        var rect = svg.getBoundingClientRect();
+        showTip(member, event.clientX - rect.left, event.clientY - rect.top, xKey, yKey);
+      });
+      point.addEventListener('mouseleave', function(){ if (tip) tip.hidden = true; });
+      point.addEventListener('focus', function(){
+        showTip(member, cx / 760 * svg.clientWidth, cy / 430 * svg.clientHeight, xKey, yKey);
+      });
+      point.addEventListener('blur', function(){ if (tip) tip.hidden = true; });
+      svg.appendChild(point);
+    });
+
+    svg.appendChild(svgNode('text', { x: bounds.right, y: 414, class: 'chart-label', 'text-anchor': 'end' }));
+    svg.lastChild.textContent = dimensions[xKey].label;
+    svg.appendChild(svgNode('text', { x: bounds.left, y: 24, class: 'chart-label', 'text-anchor': 'start' }));
+    svg.lastChild.textContent = dimensions[yKey].label;
+  }
+  xEl.addEventListener('change', render);
+  yEl.addEventListener('change', render);
+  render();
+})();
+</script>
 
 <script>
 (function(){

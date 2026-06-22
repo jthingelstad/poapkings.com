@@ -7,33 +7,36 @@ excludeFromSitemap: true
 
 > POAP KINGS (#{{ site.clanTag | safe }}) is a Clash Royale clan that mints on-chain POAPs to commemorate seasons, milestones, and member achievements. Tagline: "{{ site.tagline | safe }}".
 
-POAP KINGS is a {{ elixirClan.clanLeague | safe }} Clash Royale clan with {{ elixirClan.memberCount }} members, {{ elixirClan.totalTrophies | formatNumber | safe }} total trophies, and a {{ elixirClan.minTrophies | formatNumber | safe }}-trophy minimum. Status: {{ elixirClan.clanStatus | safe }}. Clan tag: #{{ site.clanTag | safe }}. Clan and roster data is refreshed locally from the Clash Royale API and pushed when it changes.
+POAP KINGS is a {{ clan.clanLeague | safe }} Clash Royale clan with {{ clan.memberCount }} members, {{ clan.totalTrophies | formatNumber | safe }} total trophies, and a {{ clan.minTrophies | formatNumber | safe }}-trophy minimum. Status: {{ clan.clanStatus | safe }}. Clan tag: #{{ site.clanTag | safe }}. Clan and roster data is refreshed locally from the Clash Royale API and pushed when it changes.
 
 Canonical data lives in build-time JSON at `/data/*.json` and a full-content markdown bundle at `/llms-full.txt`. Fetch those to answer questions without scraping HTML.
 
 ## Core pages
 - [Home]({{ site.url | safe }}/): clan overview, current stats, and recent POAP drops
-- [Roster]({{ site.url | safe }}/roster/): live member table with clan rank, roles, trophies, donations, career wins, years played, collection level, and badges
+- [Roster]({{ site.url | safe }}/roster/): live member table with clan rank, roles, trophies, donations, career wins, years played, collection score, and badges
+- [Clan Wars]({{ site.url | safe }}/wars/): recorded river race seasons, weekly ranks, fame, and war trophy changes
 - [POAP vault]({{ site.url | safe }}/vault/): full POAP collection with types and dates
 - [Members hub]({{ site.url | safe }}/members/): setup guide and promotion tools for current members
 - [Setup guide]({{ site.url | safe }}/members/setup/): how to link a Clash Royale account and claim POAPs
-- [Elixir]({{ site.url | safe }}/elixir/): about the clan's AI chronicler
-- [FAQ]({{ site.url | safe }}/faq/): clan, Elixir, and POAP questions
+- [FAQ]({{ site.url | safe }}/faq/): clan, Clan Wars, POAP, Discord, and role questions
 
 ## Machine-readable data
 - [Full content bundle (markdown)]({{ site.url | safe }}/llms-full.txt): everything an LLM needs in one fetch
 - [Clan stats JSON]({{ site.url | safe }}/data/clan.json): member count, clan score, war trophies, donations/week
 - [Roster JSON]({{ site.url | safe }}/data/roster.json): current clan roster records from the Clash Royale clan endpoint
+- [Clan insights JSON]({{ site.url | safe }}/data/insights.json): aggregate roster strength, distributions, and current leaders
+- [Roster explorer JSON]({{ site.url | safe }}/data/roster-explorer.json): current roster rows shaped for visualization
+- [Clan trends JSON]({{ site.url | safe }}/data/trends.json): daily clan and roster aggregates
+- [Clan Wars JSON]({{ site.url | safe }}/data/wars.json): river race season/week history
 - [Vault JSON]({{ site.url | safe }}/data/vault.json): POAP definitions (name, event_id, type, date, description)
 - [Site metadata JSON]({{ site.url | safe }}/data/site.json): canonical URL, clan tag, Discord, join link
 - [Sitemap]({{ site.url | safe }}/sitemap.xml)
 
 ## Members
-{% for m in elixirRoster.members | sortByRank %}- [{{ m.name | safe }}]({{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}): {{ (m.role or "Member") | safe }} · #{{ m.tag | safe }} · {{ m.trophies | formatNumber | safe }} trophies · {{ m.cr_battle_wins | formatNumber | safe }} wins · {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }} played · {{ m.arena | safe }}
+{% for m in roster.members | sortByRank %}- [{{ m.name | safe }}]({{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}): {{ (m.role or "Member") | safe }} · #{{ m.tag | safe }} · {{ m.trophies | formatNumber | safe }} trophies · {{ m.cr_battle_wins | formatNumber | safe }} wins · {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }} played · {{ m.arena | safe }}
 {% endfor %}
 ## Optional
 - [AGENT.md (repo)](https://github.com/jthingelstad/poapkings.com/blob/main/AGENT.md): developer docs for this site
-- [Elixir bot (repo)](https://github.com/jthingelstad/elixir-bot): the clan's Discord AI agent
 - [POAP collection on poap.xyz](https://collections.poap.xyz/organizations/poap-kings): canonical POAP organization page
 - [Clan on RoyaleAPI](https://royaleapi.com/clan/{{ site.clanTag | safe }}): third-party stats dashboard
 - [Discord]({{ site.discordUrl | safe }}): clan Discord server

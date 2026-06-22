@@ -17,7 +17,7 @@ supercellDisclaimer: true
       <div class="card card-padded">
         <h2 class="sectionTitle m-0 mb-xs">TL;DR</h2>
         <ul class="list">
-          <li>{{ elixirClan.clanStatus }} clan, {{ elixirClan.minTrophies | formatNumber }} trophy minimum.</li>
+          <li>{{ clan.clanStatus }} clan, {{ clan.minTrophies | formatNumber }} trophy minimum.</li>
           <li>Be active, donate, don't be a jerk.</li>
           <li>Wars encouraged, not required.</li>
           <li>Top war earner each season gets a free Pass Royale.</li>
@@ -44,7 +44,7 @@ supercellDisclaimer: true
       <h2 class="sectionTitle">Joining</h2>
       <div class="faq-item">
         <h3 class="faq-q">How do I join?</h3>
-        <p>We're currently {{ elixirClan.clanStatus | lower }}. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ elixirClan.minTrophies | formatNumber }} trophies</strong> to join.{% if elixirClan.clanStatus != "Open" %} Just apply in-game and leadership will review it.{% endif %}</p>
+        <p>We're currently {{ clan.clanStatus | lower }}. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ clan.minTrophies | formatNumber }} trophies</strong> to join.{% if clan.clanStatus != "Open" %} Just apply in-game and leadership will review it.{% endif %}</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">What are the clan rules?</h3>
@@ -110,38 +110,6 @@ supercellDisclaimer: true
     </section>
 
     <section>
-      <h2 class="sectionTitle" style="display:flex;align-items:center;gap:12px">Elixir <a href="/elixir"><img src="/assets/elixir.png" alt="Elixir" class="elixirAvatar elixirAvatar--lg" loading="lazy" /></a></h2>
-      <div class="faq-item">
-        <h3 class="faq-q">What is Elixir?</h3>
-        <p>Elixir is the AI-powered agent that runs inside the <strong>POAP KINGS</strong> Discord server. It monitors the clan around the clock — tracking wars, donations, trophies, and member activity — and posts updates when something interesting happens. It also answers leadership questions and welcomes new members. Learn more on the <a href="/elixir">Elixir page</a>.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How does Elixir decide what to post?</h3>
-        <p>Every hour, Elixir pulls fresh data from the Clash Royale API and compares it to what it already knows. If it detects a real signal — a member joining, a trophy milestone, a war day starting — it sends that context to an LLM which decides whether it's worth sharing. Routine stat bumps get filtered out. No spam, just signal.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Can I talk to Elixir?</h3>
-        <p>Yes — head to <strong>#ask-elixir</strong> in the Discord server. Ask anything: deck advice, war questions, clan data, or just chat. You can even upload Clash Royale screenshots and Elixir will read them. No @mention needed — just post in the channel. In <strong>#reception</strong>, new Discord members can ask Elixir for help getting verified.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Why do some clan chat messages end with "- E"?</h3>
-        <p>That's Elixir. Because Elixir lives in Discord and can't post to Clash Royale in-game chat directly, it writes the message and a leader copies it in. The <strong>- E</strong> signature at the end marks it as Elixir-authored so members know it came from the bot, not the leader personally.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What kind of things does Elixir celebrate?</h3>
-        <p>Trophy milestones (every 1,000 trophies), war day kickoffs and results, donation highlights, member join anniversaries (cake days), and birthdays. If something meaningful changes in the clan, Elixir will notice and say something about it.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Does Elixir power this website?</h3>
-        <p>Not directly anymore. The website roster now refreshes from a local script that calls the Clash Royale API and updates the site data before a human pushes changes. Elixir still lives in Discord and may author clan updates, but it is no longer expected to commit website data automatically.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Is Elixir open source?</h3>
-        <p>Yes. The full source is on <a href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">GitHub</a>. It's built with Python, discord.py, Claude (Anthropic), SQLite, and the Clash Royale API. Personality and clan config live in markdown prompt files, so another clan could fork it and make it their own.</p>
-      </div>
-    </section>
-
-    <section>
       <h2 class="sectionTitle">POAPs</h2>
       <div class="faq-item">
         <h3 class="faq-q">What is a POAP?</h3>
@@ -179,7 +147,7 @@ supercellDisclaimer: true
       <h2 class="sectionTitle">Discord</h2>
       <div class="faq-item">
         <h3 class="faq-q">Does <strong>POAP KINGS</strong> have a Discord server?</h3>
-        <p>Yes! <strong>POAP KINGS</strong> has a <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord server</a> where clan members can connect more easily outside of in-game chat. It's especially useful for POAP drop communication, chatting with Elixir, and sharing clan promotion.</p>
+        <p>Yes! <strong>POAP KINGS</strong> has a <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord server</a> where clan members can connect more easily outside of in-game chat. It's especially useful for POAP drop communication, announcements, and sharing clan promotion.</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q">Do I need to join the Discord to be in the clan?</h3>
@@ -232,7 +200,7 @@ supercellDisclaimer: true
           Ask in clan chat or reach out to leadership directly. No question is too basic.
         </p>
         <div class="ctaRow">
-          <button type="button" class="btn btnPrimary" data-modal-open="join" data-tinylytics-event="faq.join">{% if elixirClan.memberCount >= 50 %}WAIT{% else %}JOIN{% endif %}</button>
+          <button type="button" class="btn btnPrimary" data-modal-open="join" data-tinylytics-event="faq.join">{% if clan.memberCount >= 50 %}WAIT{% else %}JOIN{% endif %}</button>
           <a class="btn btnGhost" href="/members" data-tinylytics-event="faq.members">Members</a>
         </div>
       </div>
