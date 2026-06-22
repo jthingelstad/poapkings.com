@@ -52,22 +52,6 @@ export default function (eleventyConfig) {
     return raw;
   });
 
-  eleventyConfig.addFilter("dateToRfc2822", (dateStr) => {
-    if (!dateStr) return "";
-    const d = new Date(String(dateStr).trim());
-    if (isNaN(d.getTime())) return "";
-    return d.toUTCString();
-  });
-
-  eleventyConfig.addFilter("newestDate", (items, key) => {
-    let max = "";
-    for (const item of items || []) {
-      const val = item[key] || "";
-      if (val > max) max = val;
-    }
-    return max;
-  });
-
   eleventyConfig.addFilter("formatNumber", (n) => {
     if (n == null) return "0";
     return Number(n).toLocaleString("en-US");
@@ -207,19 +191,6 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));
-
-  // Return the first `n` top-level <p> paragraphs from an HTML string.
-  // Used to surface a richer excerpt of the latest blog post on the home page.
-  eleventyConfig.addFilter("firstParagraphs", (html, n = 2) => {
-    if (!html) return "";
-    const out = [];
-    const re = /<p\b[^>]*>([\s\S]*?)<\/p>/gi;
-    let m;
-    while ((m = re.exec(html)) && out.length < n) {
-      out.push(m[0]);
-    }
-    return out.join("\n");
-  });
 
   eleventyConfig.addFilter("sortByRank", (members) => {
     return [...(members || [])].sort((a, b) => (a.clan_rank || 999) - (b.clan_rank || 999));

@@ -1,5 +1,97 @@
 ---
 permalink: /vault/
-layout: redirect.njk
-redirectTo: /awards/
+layout: base.njk
+title: Vault | POAP KINGS | A Clash Royale Clan with Proof
+description: "POAP KINGS POAP vault — on-chain badges commemorating seasons, milestones, scrimmages, and clan moments."
+ogImageAlt: "Latest POAP KINGS badge"
+navActive: vault
+appJs: true
+eleventyComputed:
+  ogImage: "{{ vault.poaps | newestPoapImage }}"
 ---
+
+<section class="section" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(28px, 4vw, 48px);">
+  <span class="eyebrow">The Vault</span>
+  <h1 class="h-display h1 mt-4" style="font-size: clamp(40px, 6vw, 68px)">POAPs</h1>
+  <p class="lede mt-4">
+    On-chain badges commemorating POAP KINGS seasons, milestones, scrimmages, and clan moments. This page is the public POAP record for the clan.
+  </p>
+  <div class="kicker mt-3" style="color:var(--text-3)">Last updated {{ vault.updated | formatLongDate }}</div>
+</section>
+
+<hr class="rule" />
+
+<section class="section" id="vault">
+  <div class="section-head">
+    <div class="section-head__copy">
+      <span class="eyebrow">Browse</span>
+      <h2 class="h-display h2 mt-3">Collection</h2>
+      <p class="lede mt-3">Filter by badge type or open the canonical organization page on POAP.xyz.</p>
+      <div id="vaultFilterInfo" class="kicker mt-3" hidden style="color:var(--text-3)">
+        <span id="vaultFilterDesc"></span>
+        <a href="/vault/" id="vaultFilterClear">Show all</a>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap">
+      <label class="rosterControl" style="min-width:160px;">
+        <span>Type</span>
+        <select id="vaultTypeFilter">
+          <option value="">All types</option>
+          <option value="Season">Season</option>
+          <option value="Milestone">Milestone</option>
+          <option value="Member">Member</option>
+          <option value="Event">Event</option>
+        </select>
+      </label>
+      <a class="btn btn--purple btn--sm" href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer" data-tinylytics-event="vault.view-poap-xyz">View on POAP.xyz -></a>
+    </div>
+  </div>
+
+  <div id="vaultStatus" class="kicker mb-sm" style="color:var(--text-3)">Showing {{ vault.poaps | length }} of {{ vault.poaps | length }} POAP{{ "s" if vault.poaps | length != 1 }}</div>
+
+  <div id="vaultGrid" class="vault-grid">
+    {% for p in vault.poaps | sortVault %}
+    {%- set eventUrl = ("https://poap.gallery/event/" + p.event_id) if p.event_id else "" -%}
+    {%- if eventUrl -%}
+    <a class="vault{% if p.upcoming %} vault--upcoming{% endif %}" href="{{ eventUrl | e }}" target="_blank" rel="noreferrer" data-type="{{ p.type | lower if p.type else '' }}">
+    {%- else -%}
+    <div class="vault{% if p.upcoming %} vault--upcoming{% endif %}" data-type="{{ p.type | lower if p.type else '' }}">
+    {%- endif %}
+      <div class="vault__img">
+        {% if p.image %}<img src="{{ p.image | e }}" alt="{{ (p.name or 'POAP') | e }}" loading="lazy" />{% else %}<div style="font-size:48px;opacity:.5">★</div>{% endif %}
+      </div>
+      <div class="vault__body">
+        <span class="{{ p.type | typeClass }}">{{ (p.type or 'POAP') | e }}</span>
+        <div class="vault__name">{{ (p.name or 'Untitled POAP') | e }}</div>
+        {% if p.date %}<div class="vault__date">{{ p.date | formatDate }}</div>{% endif %}
+        {% if p.description %}<p class="vault__desc">{{ p.description | e }}</p>{% endif %}
+        {% if p.progress %}
+        {% if p.progress.type == "date" %}
+        <div class="progressWrap" data-progress="date" data-start="{{ p.progress.start }}" data-end="{{ p.progress.end }}">
+          <div class="progressTrack"><div class="progressFill"></div></div>
+          <div class="progressLabel"></div>
+        </div>
+        {% elif p.progress.type == "members" %}
+        {% set current = elixirRoster.members | length %}
+        {% set target = p.progress.target %}
+        {% set pct = (current / target * 100) %}
+        <div class="progressWrap">
+          <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
+          <div class="progressLabel">{% if current >= target %}Unlocked{% else %}{{ current }}/{{ target }}{% endif %}</div>
+        </div>
+        {% elif p.progress.type == "clan_trophies" %}
+        {% set current = elixirClan.clanWarTrophies or 0 %}
+        {% set target = p.progress.target %}
+        {% set pct = (current / target * 100) %}
+        <div class="progressWrap">
+          <div class="progressTrack"><div class="progressFill" style="width:{{ (pct | round) if pct <= 100 else 100 }}%"></div></div>
+          <div class="progressLabel">{% if current >= target %}Unlocked{% else %}{{ current | formatNumber }}/{{ target | formatNumber }}{% endif %}</div>
+        </div>
+        {% endif %}
+        {% endif %}
+      </div>
+    {%- if eventUrl %}</a>{%- else %}</div>{%- endif %}
+    {% endfor %}
+  </div>
+  <div class="vaultEmpty mt-sm" id="vaultEmpty" hidden>No POAPs match the current filter.</div>
+</section>

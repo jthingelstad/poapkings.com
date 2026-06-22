@@ -71,7 +71,7 @@ function initVaultFilter() {
   var filterDesc = document.getElementById("vaultFilterDesc");
 
   var typeDescs = {
-    season: "Season POAPs are awarded to members who complete a full clan season.",
+    season: "Season POAPs are issued to members who complete a full clan season.",
     milestone: "Milestone POAPs mark major achievements for the clan.",
     member: "Member POAPs recognize individual player accomplishments.",
     event: "Event POAPs are earned by participating in clan events.",

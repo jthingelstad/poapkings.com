@@ -10,7 +10,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
   <span class="eyebrow">Members hub</span>
   <h1 class="h-display h1 mt-4" style="font-size: clamp(40px, 6vw, 68px)">Welcome KING…</h1>
   <p class="lede mt-4">
-    Your resource hub for clan news, awards, promotion tools, and site updates. Everything you need as a <strong style="color:#fff">POAP KINGS</strong> member is right here.
+    Your resource hub for clan setup, Discord, promotion tools, and site updates. Everything you need as a <strong style="color:#fff">POAP KINGS</strong> member is right here.
   </p>
   <p class="lede mt-4"><strong style="color:#fff">New to the clan?</strong> Get connected with leaders, set up your wallet, and register for the roster.</p>
   <div class="ctaRow mt-5">
@@ -19,39 +19,6 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
     <a class="btn btn--ghost" href="/faq" data-tinylytics-event="members.read-faq">Read the FAQ</a>
   </div>
 </section>
-
-{% if awards.featuredSeason and awards.featuredSeason.byType.war_champ and awards.featuredSeason.byType.war_champ.length %}
-{%- set season = awards.featuredSeason -%}
-<hr class="rule" />
-<section class="section">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">Season {{ season.season_id }} · Award standings</span>
-      <h2 class="h-display h2 mt-3">War Champs</h2>
-      <p class="lede mt-3">Top three war contributors by total fame earned across the season's races. These members earn a Royal Pass from the clan.</p>
-    </div>
-    <a class="btn--link" href="/awards" data-tinylytics-event="members.see-all-awards">All awards →</a>
-  </div>
-
-  <ol class="rankbar">
-    {% for a in season.byType.war_champ %}
-    <li class="rankbar__row rankbar__row--rank{{ a.rank }}">
-      <div class="rankbar__numeral">{% if a.rank < 10 %}0{% endif %}{{ a.rank }}</div>
-      <div class="rankbar__body">
-        {%- set tierLabel = "Gold" if a.rank == 1 else ("Silver" if a.rank == 2 else "Bronze") -%}
-        <span class="rankbar__tier">{{ tierLabel }} · War Champ</span>
-        <a class="rankbar__name" href="/roster/#member-{{ a.player_tag | memberSlug }}">{{ a.player_name | e }}</a>
-        {% if a.metadata.races_participated %}<div class="rankbar__note">{{ a.metadata.races_participated }} race{{ "s" if a.metadata.races_participated != 1 }}{% if a.metadata.avg_fame %} · avg {{ a.metadata.avg_fame | formatNumber }} fame{% endif %}</div>{% endif %}
-      </div>
-      <div class="rankbar__metric">
-        <span class="rankbar__big">{{ a.metric_value | formatNumber }}</span>
-        <span class="rankbar__unit">{{ a.metric_unit }}</span>
-      </div>
-    </li>
-    {% endfor %}
-  </ol>
-</section>
-{% endif %}
 
 <hr class="rule" />
 <section class="section">

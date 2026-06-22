@@ -52,51 +52,14 @@ _Last generated: {{ elixirHome.generated | safe }}_
 - **Trophies:** {{ m.trophies | formatNumber | safe }}
 - **Arena:** {{ m.arena | safe }}
 - **Donations (this week):** {{ m.donations | formatNumber | safe }} given · {{ m.donations_received | formatNumber | safe }} received
+- **Career wins:** {{ m.cr_battle_wins | formatNumber | safe }}
+- **Collection level:** {{ m.cr_collection_level | formatNumber | safe }}
+- **Years played:** {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }}{% if m.cr_account_age_days %} ({{ m.cr_account_age_days | formatNumber | safe }} days){% endif %}
+- **Clan war wins:** {{ m.cr_clan_war_wins | formatNumber | safe }}
+- **Badge count:** {{ m.badge_count or 0 }}
 {% if m.last_seen %}- **Last seen:** {{ m.last_seen | safe }}
 {% endif %}
 {% endfor -%}
-
----
-
-## Current season awards
-
-{% set current = awards.featuredSeason or awards.seasons[0] -%}
-{% if current %}
-**Season {{ current.season_id }}** — {{ current.season_start | safe }} to {{ current.season_end | safe }} · {{ current.awardCount }} award{{ "s" if current.awardCount != 1 }}
-URL: {{ site.url | safe }}/awards/s{{ current.season_id }}/
-
-{% for category in current.categories -%}
-### {{ category.label | safe }}
-
-{{ category.description | safe }}
-
-{% if category.type == "perfect_week" -%}
-{% for week in current.perfectWeekBySection -%}
-**{{ week.week_label | safe }}:** {% for a in week.awards %}{{ a.player_name | safe }}{% if a.metadata.total_battle_days %} ({{ a.metadata.total_battle_days }} days){% endif %}{% if not loop.last %}, {% endif %}{% endfor %}
-
-{% endfor -%}
-{% elif category.type == "donation_champ_weekly" -%}
-{% for week in current.donationChampWeeklyBySection -%}
-**{{ week.week_label | safe }}{% if week.week_ending %} (ends {{ week.week_ending | safe }}){% endif %}:** {% for a in week.awards %}#{{ a.rank }} {{ a.player_name | safe }} ({{ a.metric_value | formatNumber | safe }} {{ a.metric_unit | safe }}){% if not loop.last %}, {% endif %}{% endfor %}
-
-{% endfor -%}
-{% else -%}
-{% for a in category.awards -%}
-- {% if a.rank %}#{{ a.rank }} {% endif %}{{ a.player_name | safe }}{% if a.metric_value %} — {{ a.metric_value | formatNumber | safe }} {{ a.metric_unit | safe }}{% endif %}{% if a.metadata.total_battle_days %} · {{ a.metadata.total_battle_days }} battle days{% endif %}{% if a.metadata.races_participated %} · {{ a.metadata.races_participated }} races{% if a.metadata.avg_fame %}, avg {{ a.metadata.avg_fame | formatNumber | safe }} fame{% endif %}{% endif %}
-{% endfor %}
-{% endif %}
-{% endfor -%}
-{% endif -%}
-
----
-
-## Other seasons
-
-{% for s in awards.seasons -%}
-{% if not current or s.season_id != current.season_id -%}
-- **Season {{ s.season_id }}** ({{ s.season_start | safe }} – {{ s.season_end | safe }}) · {{ s.awardCount }} award{{ "s" if s.awardCount != 1 }} · {{ site.url | safe }}/awards/s{{ s.season_id }}/{% if s.byType.war_champ and s.byType.war_champ.length %} · War Champs: {% for a in s.byType.war_champ %}{{ a.player_name | safe }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
-{% endif -%}
-{% endfor %}
 
 ---
 

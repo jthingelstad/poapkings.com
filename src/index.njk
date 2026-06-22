@@ -10,8 +10,6 @@ ogImageAlt: POAP KINGS crest
 ogImageWidth: 1200
 ogImageHeight: 1200
 ---
-{%- set posts = collections.posts | reverse -%}
-{%- set latestPost = posts[0] -%}
 {%- set isFull = elixirClan.memberCount >= 50 -%}
 
 <section class="section" data-section="hero" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(36px, 5vw, 60px);">
@@ -67,123 +65,6 @@ ogImageHeight: 1200
   </div>
 </section>
 
-{% if awards.featuredSeason and awards.featuredSeason.byType.war_champ and awards.featuredSeason.byType.war_champ.length %}
-{%- set season = awards.featuredSeason -%}
-<section class="section" data-section="trophy-hall">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">Trophy Hall · Season {{ season.season_id }}</span>
-      <h2 class="h-display h2 mt-3">Current champions</h2>
-      <p class="lede mt-3">The standings, live. Top war fame, top donors, and members keeping a perfect battle week.</p>
-    </div>
-    <a href="/awards" class="btn--link">Full trophy case →</a>
-  </div>
-
-  <div class="hall">
-    {% for a in season.byType.war_champ | take(3) %}
-    {%- set medalClass = "" -%}
-    {%- set medalLabel = "Gold" -%}
-    {%- if a.rank == 2 -%}{%- set medalClass = " medal--silver" -%}{%- set medalLabel = "Silver" -%}{%- endif -%}
-    {%- if a.rank == 3 -%}{%- set medalClass = " medal--bronze" -%}{%- set medalLabel = "Bronze" -%}{%- endif -%}
-    <div class="hall__cell">
-      <div class="medal{{ medalClass }}" title="War Champ — {{ medalLabel }}">
-        <div class="medal__ring"></div>
-        <div class="medal__face">
-          <span class="medal__n" data-count-up="{{ a.metric_value }}">0</span>
-          <span class="medal__label">{{ medalLabel }}</span>
-        </div>
-      </div>
-      <div class="hall__meta">
-        <div class="hall__title">{{ a.player_name | e }}</div>
-        <div class="hall__sub">Fame · #{{ a.rank }}</div>
-      </div>
-    </div>
-    {% endfor %}
-
-    {% if season.byType.iron_king and season.byType.iron_king.length %}
-    <div class="hall__cell">
-      <div class="medal" title="Iron Kings — perfect battle week">
-        <div class="medal__ring"></div>
-        <div class="medal__face">
-          <span class="medal__n">{{ season.byType.iron_king.length }}</span>
-          <span class="medal__label">Iron King</span>
-        </div>
-      </div>
-      <div class="hall__meta">
-        <div class="hall__title">{{ season.byType.iron_king.length }} member{{ "s" if season.byType.iron_king.length != 1 }}</div>
-        <div class="hall__sub">Perfect battle week</div>
-      </div>
-    </div>
-    {% endif %}
-
-    {% if season.byType.donation_champ and season.byType.donation_champ.length %}
-    {%- set topDonor = season.byType.donation_champ[0] -%}
-    <div class="hall__cell">
-      <div class="medal" title="Donation Champ">
-        <div class="medal__ring"></div>
-        <div class="medal__face">
-          <span class="medal__n" data-count-up="{{ topDonor.metric_value }}">0</span>
-          <span class="medal__label">Donate</span>
-        </div>
-      </div>
-      <div class="hall__meta">
-        <div class="hall__title">{{ topDonor.player_name | e }}</div>
-        <div class="hall__sub">Cards donated</div>
-      </div>
-    </div>
-    {% endif %}
-
-    {% if season.byType.rookie_mvp and season.byType.rookie_mvp.length %}
-    {%- set rookie = season.byType.rookie_mvp[0] -%}
-    <div class="hall__cell">
-      <div class="medal medal--teal" title="Rookie MVP">
-        <div class="medal__ring"></div>
-        <div class="medal__face">
-          <span class="medal__n" data-count-up="{{ rookie.metric_value }}">0</span>
-          <span class="medal__label">Rookie</span>
-        </div>
-      </div>
-      <div class="hall__meta">
-        <div class="hall__title">{{ rookie.player_name | e }}</div>
-        <div class="hall__sub">Top first-season fame</div>
-      </div>
-    </div>
-    {% endif %}
-  </div>
-</section>
-{% endif %}
-
-{% if latestPost %}
-<section class="section" data-section="weekly">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">This week in the clan</span>
-      <h2 class="h-display h2 mt-3">{{ latestPost.data.title }}</h2>
-      <p class="lede mt-3">The latest clan recap from the POAP KINGS archive.</p>
-    </div>
-    <a href="/blog" class="btn--link">Read the blog →</a>
-  </div>
-
-  <div class="weekly">
-    <div class="weekly__body">
-      {{ latestPost.templateContent | firstParagraphs(2) | safe }}
-      <p class="text-2 mt-5">
-        <a href="{{ latestPost.url }}" class="btn--link">Read the full recap →</a>
-      </p>
-    </div>
-
-    <aside class="weekly__meta">
-      <dl class="weekly__dl">
-        <div><dt>Posted</dt><dd>{{ latestPost.date | formatLongDate }}</dd></div>
-        <div><dt>By</dt><dd>{{ latestPost.data.author or "Elixir" }}</dd></div>
-        <div><dt>Members</dt><dd>{{ elixirClan.memberCount }} of 50</dd></div>
-        <div><dt>Donations / week</dt><dd>{{ elixirClan.donationsPerWeek | formatNumber }} cards</dd></div>
-      </dl>
-    </aside>
-  </div>
-</section>
-{% endif %}
-
 <section class="section" data-section="why">
   <div class="section-head">
     <div class="section-head__copy">
@@ -201,8 +82,8 @@ ogImageHeight: 1200
     </li>
     <li class="reason">
       <div class="reason__num">02</div>
-      <h3 class="h-display h3">Win Pass Royale</h3>
-      <p>The top Clan Wars contributor each season is crowned War Champ and receives a free Pass Royale from the clan.</p>
+      <h3 class="h-display h3">Compete for real rewards</h3>
+      <p>Strong Clan Wars contribution keeps eligible members in the running for clan-funded Pass Royale rewards.</p>
     </li>
     <li class="reason">
       <div class="reason__num">03</div>
@@ -270,7 +151,7 @@ ogImageHeight: 1200
       <h2 class="h-display h2 mt-3">Recent drops</h2>
       <p class="lede mt-3">On-chain badges commemorating seasons, milestones, scrimmages and events.</p>
     </div>
-    <a href="/awards#vault" class="btn--link">Browse all POAPs →</a>
+    <a href="/vault/" class="btn--link">Browse all POAPs →</a>
   </div>
 
   <div class="vault-grid">

@@ -2,7 +2,7 @@
 permalink: /roster/
 layout: base.njk
 title: Roster | POAP KINGS | A Clash Royale Clan with Proof
-description: "POAP KINGS roster — current clan members, roles, trophies, career wins, years played, collection level, and clan rank."
+description: "POAP KINGS roster — current clan members, roles, trophies, career wins, years played, collection level, badge count, and clan rank."
 navActive: roster
 ---
 {%- set sortedMembers = elixirRoster.members | sortByRank -%}
@@ -13,11 +13,11 @@ navActive: roster
 <header class="roster-head">
   <div class="roster-head__copy">
     <span class="eyebrow">The Kings · {{ elixirRoster.updated | formatDate }}</span>
-    <h1 class="h-display h1">Meet the members</h1>
+    <h1 class="h-display h1">Roster table</h1>
     {% if isFull %}
-    <p class="lede"><strong style="color:var(--gold)">Clan is full — all 50 seats taken.</strong> Each card shows a current roster member with rank, role, trophies, career wins, years played, collection level, and donations. Want in? <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Join the waitlist in Discord</a>.</p>
+    <p class="lede"><strong style="color:var(--gold)">Clan is full — all 50 seats taken.</strong> Search and sort the current roster by rank, role, trophies, career wins, account depth, and donations. Want in? <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Join the waitlist in Discord</a>.</p>
     {% else %}
-    <p class="lede">{{ memberCount }} active{% if openSlots > 0 %}, {{ openSlots }} open{% endif %}. Each card shows a current roster member with rank, role, trophies, career wins, years played, collection level, and donations.</p>
+    <p class="lede">{{ memberCount }} active{% if openSlots > 0 %}, {{ openSlots }} open{% endif %}. Search and sort the current roster by rank, role, trophies, career wins, account depth, and donations.</p>
     {% endif %}
   </div>
   <div class="roster-head__meta">
@@ -31,9 +31,9 @@ navActive: roster
   </div>
 </header>
 
-<div class="cardtools">
+<div class="cardtools roster-table-tools">
   <div class="cardtools__search">
-    <input id="rosterSearch" type="search" placeholder="Search name or tag…" aria-label="Search roster" />
+    <input id="rosterSearch" type="search" placeholder="Search name, tag, arena, stat..." aria-label="Search roster" />
   </div>
   <div class="cardtools__chips" id="roleChips">
     <button class="chip is-active" data-role="all" type="button">All</button>
@@ -49,116 +49,109 @@ navActive: roster
       <option value="wins">Career wins</option>
       <option value="collection">Collection level</option>
       <option value="years">Years played</option>
+      <option value="badges">Badges</option>
       <option value="donations">Donations</option>
       <option value="alpha">Alphabetical</option>
     </select>
   </div>
-  <div class="cardtools__count"><span id="rosterStatus">{{ memberCount }}</span> showing</div>
+  <div class="cardtools__count" aria-live="polite"><span id="rosterStatus">{{ memberCount }}</span> showing</div>
 </div>
 
-<div class="cardgrid" id="rosterGrid" role="list">
-  {% for m in sortedMembers %}
-  {%- set rawRole = m.role if m.role else "Member" -%}
-  {%- set roleSlug = rawRole | lower | replace("-", "") -%}
-  {%- set rawTag = m.tag | replace("#", "") -%}
-  {%- set proofBadges = m.badge_highlights | take(3) -%}
-  <article class="pcard" id="member-{{ rawTag | lower | e }}" role="listitem"
-     data-search="{{ m | searchText | e }}"
-     data-trophies="{{ m.trophies }}"
-     data-donations="{{ m.donations }}"
-     data-wins="{{ m.cr_battle_wins or 0 }}"
-     data-collection="{{ m.cr_collection_level or 0 }}"
-     data-years="{{ m.cr_account_age_days or 0 }}"
-     data-rank="{{ m.clan_rank }}"
-     data-name="{{ m.name | e }}"
-     data-role="{{ roleSlug }}"
-     aria-label="{{ m.name | e }}, {{ rawRole }}, rank {{ m.clan_rank }}, {{ m.cr_battle_wins or 0 }} career wins">
-    <span class="pcard__role pcard__role--{{ roleSlug }}">{{ rawRole | e }}</span>
-    <div class="pcard__body">
-      <div class="pcard__top">
-        <span class="pcard__rank">#{{ m.clan_rank or '—' }}</span>
-        <span class="pcard__name">{{ m.name | e }}</span>
-      </div>
-      <div class="pcard__arena">{{ m.arena or 'Unranked' }}</div>
-      {% if proofBadges | length %}
-      <div class="pcard__badges" aria-label="Experience badge highlights">
-        {% for badge in proofBadges %}
-        <span class="pcard__badge" title="{{ badge | formatBadgeTitle | e }}" aria-label="{{ badge | formatBadgeTitle | e }}">
-          {% if badge.icon_url %}<img src="{{ badge.icon_url }}" alt="" loading="lazy" decoding="async" />{% endif %}
-        </span>
-        {% endfor %}
-      </div>
-      {% endif %}
-      <div class="pcard__stats pcard__stats--depth">
-        <div class="pcard__stat"><div class="pcard__stat__v pcard__stat__v--gold">{{ m.trophies | formatNumber }}</div><div class="pcard__stat__l">Trophies</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_battle_wins %}{{ m.cr_battle_wins | formatNumber }}{% else %}—{% endif %}</div><div class="pcard__stat__l">Wins</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_collection_level %}{{ m.cr_collection_level | formatNumber }}{% else %}—{% endif %}</div><div class="pcard__stat__l">Collection</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v" title="{% if m.cr_account_age_days %}{{ m.cr_account_age_days | formatNumber }} days played{% endif %}">{{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) }}</div><div class="pcard__stat__l">Years</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v">{{ m.donations | formatNumber }}</div><div class="pcard__stat__l">Donated</div></div>
-        <div class="pcard__stat"><div class="pcard__stat__v">{% if m.cr_clan_war_wins or m.cr_clan_war_wins == 0 %}{{ m.cr_clan_war_wins | formatNumber }}{% else %}—{% endif %}</div><div class="pcard__stat__l">War wins</div></div>
-      </div>
-      <div class="pcard__foot">
-        <span class="pcard__tag">#{{ rawTag | upper | e }}</span>
-        <span class="pcard__joined">{% if m.last_seen %}Seen {{ m.last_seen | formatLastSeen }}{% else %}—{% endif %}</span>
-      </div>
-    </div>
-  </article>
-  {% endfor %}
-
-  {% if openSlots > 0 %}
-  {% for i in range(0, [openSlots, 3] | min) %}
-  <button type="button" class="pcard pcard--open" role="listitem" aria-label="Open slot — join the clan" data-role="open" data-modal-open="join" data-tinylytics-event="roster.open-slot">
-    <div class="pcard__body">
-      <div style="font-family: var(--display); font-size: 48px; color: var(--gold); line-height: 1">＋</div>
-      <h3>Open slot</h3>
-      <p>Looking for active players. {{ elixirClan.minTrophies | formatNumber }}+ trophies, daily battles, good vibes.</p>
-      <span class="chip is-active" style="pointer-events: none">JOIN</span>
-    </div>
-  </button>
-  {% endfor %}
-  {% endif %}
+<div class="roster-table-wrap">
+  <table class="roster-table" id="rosterTable">
+    <caption class="sr-only">Current POAP KINGS clan roster</caption>
+    <thead>
+      <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Member</th>
+        <th scope="col">Role</th>
+        <th scope="col" class="num">Trophies</th>
+        <th scope="col" class="num">Wins</th>
+        <th scope="col" class="num">Collection</th>
+        <th scope="col" class="num">Years</th>
+        <th scope="col" class="num">Badges</th>
+        <th scope="col" class="num">Donated</th>
+        <th scope="col" class="num">War wins</th>
+        <th scope="col">Last seen</th>
+      </tr>
+    </thead>
+    <tbody id="rosterRows">
+      {% for m in sortedMembers %}
+      {%- set rawRole = m.role if m.role else "Member" -%}
+      {%- set roleSlug = rawRole | lower | replace("-", "") -%}
+      {%- set rawTag = m.tag | replace("#", "") -%}
+      <tr id="member-{{ rawTag | lower | e }}"
+        data-search="{{ m | searchText | e }}"
+        data-trophies="{{ m.trophies or 0 }}"
+        data-donations="{{ m.donations or 0 }}"
+        data-wins="{{ m.cr_battle_wins or 0 }}"
+        data-collection="{{ m.cr_collection_level or 0 }}"
+        data-years="{{ m.cr_account_age_days or 0 }}"
+        data-badges="{{ m.badge_count or 0 }}"
+        data-rank="{{ m.clan_rank or 999 }}"
+        data-name="{{ m.name | e }}"
+        data-role="{{ roleSlug }}">
+        <td class="roster-table__rank" data-label="Rank">#{{ m.clan_rank or "—" }}</td>
+        <td class="roster-table__member" data-label="Member">
+          <span class="roster-table__name">{{ m.name | e }}</span>
+          <span class="roster-table__sub">#{{ rawTag | upper | e }} · {{ m.arena or "Unranked" }}</span>
+        </td>
+        <td data-label="Role"><span class="roster-role roster-role--{{ roleSlug }}">{{ rawRole | e }}</span></td>
+        <td class="num" data-label="Trophies">{{ m.trophies | formatNumber }}</td>
+        <td class="num" data-label="Wins">{% if m.cr_battle_wins %}{{ m.cr_battle_wins | formatNumber }}{% else %}—{% endif %}</td>
+        <td class="num" data-label="Collection">{% if m.cr_collection_level %}{{ m.cr_collection_level | formatNumber }}{% else %}—{% endif %}</td>
+        <td class="num" data-label="Years" title="{% if m.cr_account_age_days %}{{ m.cr_account_age_days | formatNumber }} days played{% endif %}">{{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) }}</td>
+        <td class="num" data-label="Badges">{{ m.badge_count or 0 }}</td>
+        <td class="num" data-label="Donated">{{ m.donations | formatNumber }}</td>
+        <td class="num" data-label="War wins">{% if m.cr_clan_war_wins or m.cr_clan_war_wins == 0 %}{{ m.cr_clan_war_wins | formatNumber }}{% else %}—{% endif %}</td>
+        <td data-label="Last seen">{% if m.last_seen %}{{ m.last_seen | formatLastSeen }}{% else %}—{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
+
+{% if openSlots > 0 %}
+<button type="button" class="roster-open-note" data-modal-open="join" data-tinylytics-event="roster.open-slot">
+  <strong>{{ openSlots }} open slot{{ "s" if openSlots != 1 }}</strong>
+  <span>{{ elixirClan.minTrophies | formatNumber }}+ trophies, daily play, good vibes.</span>
+</button>
+{% endif %}
 
 <div class="empty-state" id="rosterEmpty" hidden>
-  <h3>No one matches that search.</h3>
-  <p>Try a different filter or clear the search.</p>
+  <h3>No members match that filter.</h3>
+  <p>Try another role, search term, or sort.</p>
 </div>
 
 <script>
 (function(){
-  var grid = document.getElementById('rosterGrid');
+  var body = document.getElementById('rosterRows');
   var statusEl = document.getElementById('rosterStatus');
   var emptyEl = document.getElementById('rosterEmpty');
   var searchEl = document.getElementById('rosterSearch');
   var sortEl = document.getElementById('rosterSort');
   var chipWrap = document.getElementById('roleChips');
-  if (!grid) return;
+  if (!body) return;
 
-  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.pcard'));
-  var memberCards = allCards.filter(function(c){ return c.dataset.role !== 'open'; });
-  var openCards = allCards.filter(function(c){ return c.dataset.role === 'open'; });
-
+  var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
   var state = { role: 'all', q: '', sort: 'rank' };
 
-  grid.querySelectorAll('.pcard__badge img').forEach(function(img){
-    function hideBrokenBadge(){
-      var badge = img.closest('.pcard__badge');
-      if (badge) badge.hidden = true;
-    }
-    img.addEventListener('error', hideBrokenBadge);
-    if (img.complete && img.naturalWidth === 0) hideBrokenBadge();
-  });
+  function num(el, k){
+    var v = el.dataset[k];
+    return v == null || v === '' ? 0 : Number(v);
+  }
 
-  function num(el, k){ var v = el.dataset[k]; return v == null || v === '' ? 0 : Number(v); }
-  function str(el, k){ return el.dataset[k] || ''; }
+  function str(el, k){
+    return el.dataset[k] || '';
+  }
 
-  function visibleByFilter(card){
-    var role = card.dataset.role;
+  function visibleByFilter(row){
+    var role = row.dataset.role || 'member';
     if (state.role === 'leadership' && !/leader/.test(role)) return false;
     if (state.role === 'elder' && role !== 'elder') return false;
     if (state.role === 'member' && (role === 'elder' || /leader/.test(role))) return false;
     if (state.q){
-      var hay = (card.dataset.search || '') + ' ' + (card.dataset.name || '').toLowerCase();
+      var hay = (row.dataset.search || '') + ' ' + (row.dataset.name || '').toLowerCase();
       if (hay.indexOf(state.q) === -1) return false;
     }
     return true;
@@ -166,34 +159,44 @@ navActive: roster
 
   function compare(a, b){
     switch (state.sort){
-      case 'trophies':  return num(b,'trophies') - num(a,'trophies');
-      case 'donations': return num(b,'donations') - num(a,'donations');
-      case 'wins':      return num(b,'wins') - num(a,'wins');
-      case 'collection': return num(b,'collection') - num(a,'collection');
-      case 'years':     return num(b,'years') - num(a,'years');
-      case 'alpha':     return str(a,'name').localeCompare(str(b,'name'));
-      default:          return num(a,'rank') - num(b,'rank');
+      case 'trophies':   return num(b, 'trophies') - num(a, 'trophies');
+      case 'donations':  return num(b, 'donations') - num(a, 'donations');
+      case 'wins':       return num(b, 'wins') - num(a, 'wins');
+      case 'collection': return num(b, 'collection') - num(a, 'collection');
+      case 'years':      return num(b, 'years') - num(a, 'years');
+      case 'badges':     return num(b, 'badges') - num(a, 'badges');
+      case 'alpha':      return str(a, 'name').localeCompare(str(b, 'name'));
+      default:           return num(a, 'rank') - num(b, 'rank');
     }
   }
 
   function render(){
-    var visible = memberCards.filter(visibleByFilter);
-    visible.sort(compare);
-    statusEl.textContent = visible.length;
-    memberCards.forEach(function(c){ c.hidden = true; });
-    visible.forEach(function(c){ c.hidden = false; grid.appendChild(c); });
-    var showOpen = state.role === 'all' && !state.q;
-    openCards.forEach(function(c){ c.hidden = !showOpen; if (showOpen) grid.appendChild(c); });
-    emptyEl.hidden = visible.length > 0;
+    var visible = rows.filter(visibleByFilter).sort(compare);
+    rows.forEach(function(row){ row.hidden = true; });
+    visible.forEach(function(row){
+      row.hidden = false;
+      body.appendChild(row);
+    });
+    if (statusEl) statusEl.textContent = visible.length;
+    if (emptyEl) emptyEl.hidden = visible.length > 0;
   }
 
-  if (searchEl) searchEl.addEventListener('input', function(e){ state.q = e.target.value.trim().toLowerCase(); render(); });
-  if (sortEl) sortEl.addEventListener('change', function(e){ state.sort = e.target.value; render(); });
+  if (searchEl) searchEl.addEventListener('input', function(e){
+    state.q = e.target.value.trim().toLowerCase();
+    render();
+  });
+
+  if (sortEl) sortEl.addEventListener('change', function(e){
+    state.sort = e.target.value;
+    render();
+  });
+
   if (chipWrap) chipWrap.addEventListener('click', function(e){
-    var btn = e.target.closest('.chip'); if (!btn) return;
+    var btn = e.target.closest('.chip');
+    if (!btn) return;
     chipWrap.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('is-active'); });
     btn.classList.add('is-active');
-    state.role = btn.dataset.role;
+    state.role = btn.dataset.role || 'all';
     render();
   });
 

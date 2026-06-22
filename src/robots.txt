@@ -3,6 +3,6 @@ Allow: /
 
 # LLM-facing index: /llms.txt (see https://llmstxt.org/)
 # Full content bundle: /llms-full.txt
-# Structured data: /data/clan.json, /data/roster.json, /data/awards.json, /data/vault.json, /data/site.json
+# Structured data: /data/clan.json, /data/roster.json, /data/vault.json, /data/site.json
 
 Sitemap: https://poapkings.com/sitemap.xml

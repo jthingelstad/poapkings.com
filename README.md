@@ -12,8 +12,8 @@ Visit the live site at [poapkings.com](https://poapkings.com).
 
 - **Roster** -- Clan roster refreshed from the Clash Royale API, with member ranks, roles, trophies, donations, arenas, and career-depth badges
 - **POAP Vault** -- Browse the clan's POAP (Proof of Attendance Protocol) collection marking milestones and seasons
-- **Client-side search and filtering** -- Instantly search roster members or filter Awards-page POAPs by type
-- **Members** -- Member hub with clan setup guide, awards, and promotion tools
+- **Client-side search and filtering** -- Search, role-filter, and sort the roster table; filter Vault POAPs by type
+- **Members** -- Member hub with clan setup guide and promotion tools
 - **Elixir** -- Public-facing page for the Elixir AI agent
 - **FAQ** -- Answers to common questions about the clan, Elixir, and POAPs
 
@@ -95,7 +95,7 @@ src/                        Site source (Eleventy input)
   assets/                   Static files (images, fonts)
   index.njk                 Home page
   roster.njk                Roster page
-  vault.njk                 Redirect to the Awards-page POAP vault
+  vault.njk                 POAP vault page
   faq.njk                   FAQ page
   members.njk               Members page
   elixir.njk                Elixir page

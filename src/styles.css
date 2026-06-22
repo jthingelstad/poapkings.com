@@ -1464,7 +1464,150 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   font-family: var(--display); font-size: 11px; letter-spacing: .12em;
   text-transform: uppercase; color: var(--gold);
 }
-.cardtools__count #rosCount{ color: #fff; margin-right: 4px }
+.cardtools__count #rosterStatus{ color: #fff; margin-right: 4px }
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.roster-table-wrap{
+  margin: 24px 0 18px;
+  overflow-x: auto;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
+    rgba(9,4,24,.76);
+  box-shadow: 0 28px 70px -54px rgba(0,0,0,.95);
+}
+.roster-table{
+  width: 100%;
+  min-width: 980px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+.roster-table th,
+.roster-table td{
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  vertical-align: middle;
+}
+.roster-table th{
+  color: var(--text-3);
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 900;
+  background: rgba(0,0,0,.24);
+}
+.roster-table tbody tr{
+  transition: background .14s ease;
+}
+.roster-table tbody tr:hover{
+  background: rgba(245,200,76,.045);
+}
+.roster-table tbody tr:last-child td{ border-bottom: 0 }
+.roster-table .num{
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.roster-table__rank{
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 16px;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.roster-table__member{
+  min-width: 180px;
+}
+.roster-table__name{
+  display: block;
+  color: #fff;
+  font-family: var(--display);
+  font-size: 15px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.roster-table__sub{
+  display: block;
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 11px;
+  line-height: 1.3;
+}
+.roster-role{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.1);
+  font-family: var(--display);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.roster-role--leader{
+  background: linear-gradient(180deg, #FFE9B3, #C98C10);
+  color: #2a1900;
+  border-color: rgba(245,200,76,.4);
+}
+.roster-role--coleader{
+  background: linear-gradient(180deg, #C7B5FF, #5B2FE0);
+  border-color: rgba(199,181,255,.35);
+}
+.roster-role--elder{
+  background: linear-gradient(180deg, #99C7FF, #2A6DD9);
+  border-color: rgba(153,199,255,.32);
+}
+.roster-open-note{
+  width: 100%;
+  margin: 0 0 clamp(42px, 7vw, 96px);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 12px;
+  border: 1px dashed rgba(245,200,76,.34);
+  background: rgba(245,200,76,.07);
+  color: var(--text-2);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.roster-open-note strong{
+  color: var(--gold);
+  font-family: var(--display);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.roster-open-note:hover{
+  border-color: rgba(245,200,76,.58);
+  background: rgba(245,200,76,.1);
+}
+.roster-open-note:focus-visible{
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
 
 .cardgrid{
   display: grid;
@@ -1845,6 +1988,22 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
     justify-content: center;
     justify-self: start;
     white-space: nowrap;
+  }
+  .roster-table-wrap{
+    margin-top: 16px;
+    border-radius: 10px;
+  }
+  .roster-table{
+    min-width: 900px;
+    font-size: 12.5px;
+  }
+  .roster-table th,
+  .roster-table td{
+    padding: 10px 12px;
+  }
+  .roster-open-note{
+    align-items: flex-start;
+    flex-direction: column;
   }
   .cardgrid{
     grid-template-columns: repeat(2, 1fr);
@@ -2791,39 +2950,6 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 @media (max-width: 920px){ .rosterControls{ grid-template-columns: 1fr 1fr } }
 @media (max-width: 640px){ .rosterControls{ grid-template-columns: 1fr } }
 
-/* Blog */
-.postList{
-  list-style:none;
-  padding:0; margin:0;
-  display:grid; gap:14px;
-}
-.postList__item{ margin:0 }
-.postList__meta{
-  font-size:12px; font-weight:700;
-  letter-spacing:.06em; text-transform:uppercase;
-  color:rgba(255,255,255,.55);
-  margin-bottom:6px;
-}
-.postList__title{ margin:0 0 6px; font-size:22px; font-family: var(--display); letter-spacing: .04em; font-weight: 400 }
-.postList__title a{ color:inherit; text-decoration:none }
-.postList__title a:hover{ text-decoration:underline }
-.postBody h2, .postBody h3{ font-family: var(--display); font-weight: 400; letter-spacing: .04em }
-.postBody h2{ margin-top:1.4em }
-.postBody h3{ margin-top:1.2em }
-.postBody p, .postBody ul, .postBody ol, .postBody blockquote{ margin:0 0 1em; line-height:1.6 }
-.postBody blockquote{
-  margin-left:0;
-  padding:8px 14px;
-  border-left:3px solid rgba(255,255,255,.18);
-  color:rgba(255,255,255,.78);
-}
-.postsPageInfo{
-  font-size:12px; font-weight:700;
-  letter-spacing:.06em; text-transform:uppercase;
-  color:rgba(255,255,255,.55);
-  align-self:center;
-}
-
 /* ─── Helpers ─── */
 .mt-3{ margin-top: 12px }
 .mt-4{ margin-top: 16px } .mt-5{ margin-top: 24px }
@@ -2836,7 +2962,7 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 .text-3{ color: var(--text-3) }
 
 /* ═════════════════════════════════════════════════════════
-   LEGACY CLASSES (FAQ, setup, blog index/post use these)
+   LEGACY CLASSES (FAQ and setup use these)
    Bridge the older template vocabulary to the new design system.
    ═════════════════════════════════════════════════════════ */
 

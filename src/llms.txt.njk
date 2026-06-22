@@ -12,10 +12,9 @@ POAP KINGS is a {{ elixirClan.clanLeague | safe }} Clash Royale clan with {{ eli
 Canonical data lives in build-time JSON at `/data/*.json` and a full-content markdown bundle at `/llms-full.txt`. Fetch those to answer questions without scraping HTML.
 
 ## Core pages
-- [Home]({{ site.url | safe }}/): clan overview and latest clan update
-- [Roster]({{ site.url | safe }}/roster/): live member list with clan rank, trophies, arenas, roles, and donations
-- [POAP vault]({{ site.url | safe }}/awards/#vault): full POAP collection with types and dates
-- [Awards]({{ site.url | safe }}/awards/): season-by-season honors (War Champs, Iron Kings, Donation Champs, Rookie MVPs, Perfect Week)
+- [Home]({{ site.url | safe }}/): clan overview, current stats, and recent POAP drops
+- [Roster]({{ site.url | safe }}/roster/): live member table with clan rank, roles, trophies, donations, career wins, years played, collection level, and badges
+- [POAP vault]({{ site.url | safe }}/vault/): full POAP collection with types and dates
 - [Members hub]({{ site.url | safe }}/members/): setup guide and promotion tools for current members
 - [Setup guide]({{ site.url | safe }}/members/setup/): how to link a Clash Royale account and claim POAPs
 - [Elixir]({{ site.url | safe }}/elixir/): about the clan's AI chronicler
@@ -25,17 +24,12 @@ Canonical data lives in build-time JSON at `/data/*.json` and a full-content mar
 - [Full content bundle (markdown)]({{ site.url | safe }}/llms-full.txt): everything an LLM needs in one fetch
 - [Clan stats JSON]({{ site.url | safe }}/data/clan.json): member count, clan score, war trophies, donations/week
 - [Roster JSON]({{ site.url | safe }}/data/roster.json): current clan roster records from the Clash Royale clan endpoint
-- [Awards JSON]({{ site.url | safe }}/data/awards.json): raw season-by-season award data
 - [Vault JSON]({{ site.url | safe }}/data/vault.json): POAP definitions (name, event_id, type, date, description)
 - [Site metadata JSON]({{ site.url | safe }}/data/site.json): canonical URL, clan tag, Discord, join link
-- [Clan RSS]({{ site.url | safe }}/feed.xml): blog posts feed (recaps, new members, milestones, announcements) ordered by date
 - [Sitemap]({{ site.url | safe }}/sitemap.xml)
 
 ## Members
-{% for m in elixirRoster.members | sortByRank %}- [{{ m.name | safe }}]({{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}): {{ (m.role or "Member") | safe }} · #{{ m.tag | safe }} · {{ m.trophies | formatNumber | safe }} trophies · {{ m.arena | safe }}
-{% endfor %}
-## Seasons
-{% for s in awards.seasons %}- [Season {{ s.season_id }}]({{ site.url | safe }}/awards/s{{ s.season_id }}/): {{ s.season_start | safe }} – {{ s.season_end | safe }} · {{ s.awardCount }} award{{ "s" if s.awardCount != 1 }}{% if s.byType.war_champ and s.byType.war_champ.length %} · War Champs: {% for a in s.byType.war_champ %}{{ a.player_name | safe }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+{% for m in elixirRoster.members | sortByRank %}- [{{ m.name | safe }}]({{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}): {{ (m.role or "Member") | safe }} · #{{ m.tag | safe }} · {{ m.trophies | formatNumber | safe }} trophies · {{ m.cr_battle_wins | formatNumber | safe }} wins · {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }} played · {{ m.arena | safe }}
 {% endfor %}
 ## Optional
 - [AGENT.md (repo)](https://github.com/jthingelstad/poapkings.com/blob/main/AGENT.md): developer docs for this site

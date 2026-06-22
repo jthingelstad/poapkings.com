@@ -12,7 +12,6 @@
   <link rel="apple-touch-icon" sizes="192x192" href="/assets/favicon/favicon-192.png" />
 
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-  <link rel="alternate" type="application/rss+xml" title="POAP KINGS" href="/feed.xml" />
   <link rel="alternate" type="text/markdown" title="POAP KINGS for LLMs" href="/llms.txt" />
   <meta property="og:title" content="{{ title }}" />
   <meta property="og:description" content="{{ description }}" />
@@ -65,8 +64,7 @@
       <nav class="navbar" id="navMenu" aria-label="Primary">
         <a href="/"{% if navActive == "home" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>Home</a>
         <a href="/roster"{% if navActive == "roster" %} class="is-active"{% endif %} data-nav-link>Roster</a>
-        <a href="/awards"{% if navActive == "awards" %} class="is-active"{% endif %} data-nav-link>Awards</a>
-        <a href="/blog"{% if navActive == "blog" %} class="is-active"{% endif %} data-nav-link>Blog</a>
+        <a href="/vault"{% if navActive == "vault" %} class="is-active"{% endif %} data-nav-link>Vault</a>
         <a href="/members"{% if navActive == "members" %} class="is-active"{% endif %} data-nav-link>Members</a>
         <a href="/faq"{% if navActive == "faq" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>FAQ</a>
         <a href="/elixir"{% if navActive == "elixir" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>Elixir</a>
@@ -99,8 +97,8 @@
           <h4>The Clan</h4>
           <a href="/">Home</a>
           <a href="/roster">Roster</a>
-          <a href="/awards">Awards</a>
-          <a href="/blog">Blog</a>
+          <a href="/vault">Vault</a>
+          <a href="/members">Members</a>
         </div>
         <div class="foot__col">
           <h4>Members</h4>
@@ -112,7 +110,6 @@
         <div class="foot__col">
           <h4>Projects</h4>
           <a href="/elixir">Elixir — the AI agent</a>
-          <a href="/feed.xml">RSS Feed</a>
           <a href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">POAP.xyz</a>
           <a href="https://github.com/jthingelstad/poapkings.com" target="_blank" rel="noreferrer">GitHub</a>
         </div>
