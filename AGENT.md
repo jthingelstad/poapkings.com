@@ -17,7 +17,7 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with [Elevent
   - `src/_data/vault.json`: POAP vault data. Rendered at build time.
   - `src/index.njk`: Home page (`/`).
   - `src/roster.njk`: Roster page (`/roster/`).
-  - `src/vault.njk`: Vault page (`/vault/`).
+  - `src/vault.njk`: Redirect from `/vault/` to the Awards-page POAP vault.
   - `src/faq.njk`: FAQ page (`/faq/`).
   - `src/members.njk`: Members page (`/members/`).
   - `src/elixir.njk`: Elixir page (`/elixir/`).
@@ -57,10 +57,10 @@ Pushing to `main` triggers the GitHub Actions workflow which:
 
 ## Key behaviors
 - Roster and vault content are rendered at build time from `_data/` JSON files — no client-side fetch.
-- `app.js` provides client-side search filtering (roster) and type filtering (vault) on pre-rendered HTML.
+- `app.js` provides client-side search filtering (roster) and POAP type filtering on the Awards page.
 - Clan stats are rendered at build time from `elixirClan` data via the `clan-stats.njk` include.
 - Each roster row includes a `data-search` attribute for instant search filtering.
-- Each vault card includes a `data-type` attribute for type filtering.
+- Each Awards-page POAP card includes a `data-type` attribute for type filtering.
 - Player tags can be with or without `#`; the templates normalize them.
 - Pages share a base layout (`base.njk`) with configurable nav, footer, and script includes.
 - `base.njk` includes OG/Twitter/canonical meta tags using `site.url` for absolute URLs.

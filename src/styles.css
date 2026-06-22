@@ -1425,6 +1425,7 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   position: sticky; top: 56px; z-index: 10;
   background: rgba(15,6,39,.88); backdrop-filter: blur(10px);
 }
+.cardtools > *{ min-width: 0 }
 .cardtools__search{ flex: 1 1 260px; max-width: 360px; position: relative }
 .cardtools__search input{
   width: 100%; background: rgba(255,255,255,.04); border: 1px solid var(--hairline);
@@ -1802,6 +1803,49 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
 /* Mobile: force two cards side-by-side. Everything else is fluid via
    container queries above, so nothing feels static when resizing. */
 @media (max-width: 720px){
+  .cardtools{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    position: static;
+    top: auto;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .cardtools__search{
+    flex: 1 1 100%;
+    max-width: none;
+    width: 100%;
+  }
+  .cardtools__chips{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .chip{
+    width: 100%;
+    padding: 8px 9px;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: .09em;
+  }
+  .cardtools__sort{
+    margin-left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .cardtools__sort select{
+    width: 100%;
+    min-width: 0;
+  }
+  .cardtools__count{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    white-space: nowrap;
+  }
   .cardgrid{
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
