@@ -22,13 +22,13 @@ Visit the live site at [poapkings.com](https://poapkings.com).
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) v22+ with built-in `node:sqlite`
+- [Node.js](https://nodejs.org/) 24 LTS with built-in `node:sqlite`
 - npm
 
 ### Install
 
 ```bash
-npm install
+npm ci
 ```
 
 ### Development

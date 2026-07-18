@@ -37,7 +37,7 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with [Elevent
 
 ## Build
 ```bash
-npm install       # Install dependencies (first time)
+npm ci            # Reproduce the locked dependency tree
 npm run build     # Build site to _site/
 npm start         # Dev server with live reload
 ```
