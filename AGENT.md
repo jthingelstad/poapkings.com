@@ -33,6 +33,7 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with [Elevent
   - `src/robots.txt`: SEO file.
 - `eleventy.config.js`: 11ty configuration (passthrough copies, template filters, input/output dirs).
 - `package.json`: Node.js project with 11ty dependency.
+- `OPERATOR.md`: Contract for the host-local agent that refreshes and publishes Clash Royale data.
 - `.github/workflows/deploy.yml`: GitHub Actions workflow to build and deploy to GitHub Pages.
 
 ## Build
@@ -81,6 +82,8 @@ Custom filters defined in `eleventy.config.js`:
 
 ## Data
 Roster and generated site data are updated locally with `npm run update-roster`. The Clash Royale API key is IP restricted, so this job should not run in GitHub Actions. The script reads `CR_API_KEY` from the current shell or from `../elixir-bot/.env`, fetches the Clash Royale clan endpoint, current-member player profiles, and river race log, then updates `src/_data/clan.json`, `src/_data/roster.json`, `data/clash-royale.sqlite`, and generated exports only when CR API facts change. The player profile slice is intentionally narrow: career wins, account age, collection score, clan war wins, lifetime donation badge progress, badge count, and compact badge highlights. Its output includes `changed=true|false` and `changed_files=...`; `--dry-run --exit-code` exits `2` when data would change.
+
+The autonomous host-local refresh is governed by `OPERATOR.md`. That role owns only updater-generated data and must follow its preflight, validation, deployment, and failure-handling boundaries.
 
 Historical Clash Royale API data can be imported with `npm run backfill-data`. That command reads the old local SQLite source directly and folds clan daily metrics, member daily metrics, profile snapshots, and river race weeks into `data/clash-royale.sqlite`.
 

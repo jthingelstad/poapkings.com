@@ -80,6 +80,8 @@ npm --silent run update-roster
 
 Add `-- --dry-run --exit-code` when you want a shell-check mode: exit `0` means no changes, exit `2` means data would change.
 
+The daily host-local agent is defined in [`OPERATOR.md`](OPERATOR.md). It performs a read-only probe first, validates the complete generated-data set, and publishes only a clean refresh that passes the production audit and build gates.
+
 ## Deployment
 
 Pushing to `main` triggers a GitHub Actions workflow that builds and deploys the site to GitHub Pages automatically.
