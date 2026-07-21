@@ -15,7 +15,7 @@ You may:
 - Fetch the repository and inspect its current state.
 - Run the existing roster updater and inspect its output.
 - Validate updater-generated JSON and SQLite data.
-- Run the repository's existing audit and build gates.
+- Run the repository's existing install and build gates, plus its advisory dependency audit.
 - Commit an internally consistent generated-data refresh directly to `main`.
 - Push that commit, monitor the exact GitHub Pages deployment, and verify the live site.
 - Create or update one GitHub issue for an actionable operator failure.
@@ -82,7 +82,7 @@ Validate all of these conditions:
 
 An API response can be syntactically valid and still be unsafe to publish. If the data is incomplete, implausible, or internally inconsistent, do not commit it.
 
-### 4. Run production gates
+### 4. Run production gates and advisory audit
 
 For a valid changed refresh, run the same dependency and build checks used by deployment:
 
@@ -92,7 +92,7 @@ npm audit --audit-level=high
 npm run build
 ```
 
-All three must pass. The build output is not committed.
+`npm ci` and `npm run build` must pass. The dependency audit is advisory: record its result in the run report, but do not block an otherwise valid refresh when it reports vulnerabilities. Dependency remediation belongs to the weekly Agentic Sys Admin review, not this daily data-operator run. The build output is not committed.
 
 ### 5. Publish exactly the refresh
 
@@ -112,6 +112,7 @@ Do not patch code when deployment or live verification fails. Capture the exact 
 
 - If the operator is the only writer and a refresh fails before commit, restore only the allowed generated files written by this run so the checkout returns to its verified clean baseline. If any unexpected path or concurrent change exists, touch nothing further.
 - Search open GitHub issues before reporting an actionable failure. Update the matching issue when one exists; otherwise open one focused issue with the date, phase, exact non-secret error, and evidence needed to reproduce it.
+- Do not create or update an operator failure issue solely for dependency-audit findings; leave those findings to the weekly Agentic Sys Admin review.
 - Do not create issues for healthy no-op runs or a one-off condition that leaves no actionable work.
 - Make at most one issue/comment action per run. Do not assign product fixes to yourself.
 
@@ -120,7 +121,7 @@ Do not patch code when deployment or live verification fails. Capture the exact 
 End every run with one compact outcome:
 
 - `No change`: dry-run result and current member/profile/war counts.
-- `Published`: commit SHA, changed files, validation gates, deployment result, and live verification.
+- `Published`: commit SHA, changed files, validation gates, advisory audit result, deployment result, and live verification.
 - `Blocked`: the exact safety boundary that stopped the run; no mutation performed.
 - `Failed`: the phase, concise error, cleanup state, and linked GitHub issue when actionable.
 
