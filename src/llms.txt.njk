@@ -12,10 +12,10 @@ POAP KINGS is a {{ clan.clanLeague | safe }} Clash Royale clan with {{ clan.memb
 Canonical data lives in build-time JSON at `/data/*.json` and a full-content markdown bundle at `/llms-full.txt`. Fetch those to answer questions without scraping HTML.
 
 ## Core pages
-- [Home]({{ site.url | safe }}/): clan overview, current stats, and recent POAP drops
-- [Roster]({{ site.url | safe }}/roster/): live member table with clan rank, roles, trophies, donations, career wins, years played, collection score, and badges
-- [Clan Wars]({{ site.url | safe }}/wars/): recorded river race seasons, weekly ranks, fame, and war trophy changes
-- [POAP vault]({{ site.url | safe }}/vault/): full POAP collection with types and dates
+- [Home]({{ site.url | safe }}/): clan overview, current stats, and roster snapshot
+- [Roster]({{ site.url | safe }}/roster/): live member table with roles, trophies, career wins, years played, and collection score, sortable by any column
+- [Data]({{ site.url | safe }}/data/): interactive roster explorer (plot the roster on any two metrics) and a clan timeline over the whole tracked history
+- [Elixir]({{ site.url | safe }}/elixir/): the POAP KINGS clan agent that publishes the data, runs the weekly Elder Standing, and coaches members
 - [Members hub]({{ site.url | safe }}/members/): setup guide and promotion tools for current members
 - [Setup guide]({{ site.url | safe }}/members/setup/): how to link a Clash Royale account and claim POAPs
 - [FAQ]({{ site.url | safe }}/faq/): clan, Clan Wars, POAP, Discord, and role questions
@@ -27,8 +27,6 @@ Canonical data lives in build-time JSON at `/data/*.json` and a full-content mar
 - [Clan insights JSON]({{ site.url | safe }}/data/insights.json): aggregate roster strength, distributions, and current leaders
 - [Roster explorer JSON]({{ site.url | safe }}/data/roster-explorer.json): current roster rows shaped for visualization
 - [Clan trends JSON]({{ site.url | safe }}/data/trends.json): daily clan and roster aggregates
-- [Clan Wars JSON]({{ site.url | safe }}/data/wars.json): river race season/week history
-- [Vault JSON]({{ site.url | safe }}/data/vault.json): POAP definitions (name, event_id, type, date, description)
 - [Site metadata JSON]({{ site.url | safe }}/data/site.json): canonical URL, clan tag, Discord, join link
 - [Sitemap]({{ site.url | safe }}/sitemap.xml)
 

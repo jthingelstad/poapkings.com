@@ -11,6 +11,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="192x192" href="/assets/favicon/favicon-192.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   <link rel="alternate" type="text/markdown" title="POAP KINGS for LLMs" href="/llms.txt" />
   <meta property="og:title" content="{{ title }}" />
@@ -48,78 +52,65 @@
 </head>
 
 <body{% if navActive %} data-nav="{{ navActive }}"{% endif %}>
-  <header class="top">
-    <div class="wrap top__inner">
-      {%- set isFull = clan.memberCount >= 50 -%}
-      <div class="top__left">
-        {% if isFull %}
-        <button type="button" class="nav-join nav-join--full" data-modal-open="join" data-tinylytics-event="nav.waitlist" aria-haspopup="dialog" aria-controls="joinModal" title="Clan is full — join the waitlist">WAIT<span class="nav-join__dot" aria-hidden="true"></span></button>
-        {% else %}
-        <button type="button" class="nav-join" data-modal-open="join" data-tinylytics-event="nav.join" aria-haspopup="dialog" aria-controls="joinModal">JOIN</button>
-        {% endif %}
-        <a class="brand" href="/" aria-label="POAP KINGS home">
-          <span class="brand__mark">POAP&nbsp;KINGS</span>
-        </a>
+  {%- set isFull = clan.memberCount >= 50 -%}
+  {%- set navLinks = [
+    { url: "/", key: "home", label: "Home" },
+    { url: "/roster/", key: "roster", label: "Roster" },
+    { url: "/data/", key: "data", label: "Data" },
+    { url: "/faq/", key: "faq", label: "FAQ" }
+  ] -%}
+  <header class="site-head">
+    <nav class="site-head__nav" aria-label="Primary">
+      <a class="site-head__brand" href="/" aria-label="POAP KINGS home">
+        <img class="site-head__crest" src="/assets/poapkings.png" alt="" />
+        <span class="site-head__wordmark">POAP KINGS</span>
+      </a>
+      <div class="site-head__links pk-nav-links">
+        {%- for item in navLinks %}
+        <a href="{{ item.url }}" class="site-head__link{% if navActive == item.key %} is-active{% endif %}" data-nav-link>{{ item.label }}</a>
+        {%- endfor %}
       </div>
-      <nav class="navbar" id="navMenu" aria-label="Primary">
-        <a href="/"{% if navActive == "home" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>Home</a>
-        <a href="/roster"{% if navActive == "roster" %} class="is-active"{% endif %} data-nav-link>Roster</a>
-        <a href="/wars"{% if navActive == "wars" %} class="is-active"{% endif %} data-nav-link>Wars</a>
-        <a href="/vault"{% if navActive == "vault" %} class="is-active"{% endif %} data-nav-link>Vault</a>
-        <a href="/members"{% if navActive == "members" %} class="is-active"{% endif %} data-nav-link>Members</a>
-        <a href="/faq"{% if navActive == "faq" %} class="navbar__mobile-only is-active"{% else %} class="navbar__mobile-only"{% endif %} data-nav-link>FAQ</a>
-        <a class="navbar__mobile-only" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" data-nav-link>Discord</a>
-      </nav>
-      <div class="top__right">
-        <button type="button" class="nav-toggle" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false" data-nav-toggle>
-          <span></span><span></span><span></span>
-        </button>
+      <div class="site-head__right">
+        <a href="/members/" class="site-head__members pk-hide-mobile{% if navActive == 'members' %} is-active{% endif %}" data-nav-link>Members <span aria-hidden="true">›</span></a>
+        {% if isFull %}
+        <button type="button" class="site-head__join site-head__join--full" data-modal-open="join" data-tinylytics-event="nav.waitlist" aria-haspopup="dialog" aria-controls="joinModal" title="Clan is full — join the waitlist">WAIT</button>
+        {% else %}
+        <button type="button" class="site-head__join" data-modal-open="join" data-tinylytics-event="nav.join" aria-haspopup="dialog" aria-controls="joinModal">JOIN</button>
+        {% endif %}
         <button type="button" class="starcount" data-modal-open="star" data-tinylytics-event="nav.stars" aria-haspopup="dialog" aria-controls="starModal" aria-label="Clan Star Level — open details" title="Clan Star Level — every visit adds a star">
           <img class="starcount__icon" src="/assets/icons/star-level.png" alt="" aria-hidden="true" />
           <span class="starcount__n tinylytics_hits">★</span>
         </button>
+        <button type="button" class="pk-hamburger" data-nav-toggle aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">☰</button>
       </div>
+    </nav>
+    <div class="site-head__drawer" id="navMenu">
+      {%- for item in navLinks %}
+      <a href="{{ item.url }}" class="site-head__drawer-link{% if navActive == item.key %} is-active{% endif %}" data-nav-link>{{ item.label }}</a>
+      {%- endfor %}
+      <a href="/members/" class="site-head__drawer-link site-head__drawer-link--members{% if navActive == 'members' %} is-active{% endif %}" data-nav-link>Members ›</a>
     </div>
   </header>
 
-  <main{% if mainId %} id="{{ mainId }}"{% endif %} class="wrap pageMain">
+  <main{% if mainId %} id="{{ mainId }}"{% endif %} class="pageMain">
     {{ content | safe }}
   </main>
 
   <footer class="site-foot">
-    <div class="wrap">
-      <div class="foot__grid">
-        <div class="foot__col">
-          <div class="foot__brand">POAP KINGS</div>
-          <p class="foot__tag">{{ site.tagline }}. Different flags. Same grind. Worldwide push.</p>
-        </div>
-        <div class="foot__col">
-          <h4>The Clan</h4>
-          <a href="/">Home</a>
-          <a href="/roster">Roster</a>
-          <a href="/wars">Clan Wars</a>
-          <a href="/vault">Vault</a>
-          <a href="/members">Members</a>
-        </div>
-        <div class="foot__col">
-          <h4>Members</h4>
-          <a href="/members">Members Hub</a>
-          <a href="/members/setup/">Clan Setup</a>
-          <a href="/faq">FAQ</a>
-          <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord</a>
-        </div>
-        <div class="foot__col">
-          <h4>Projects</h4>
-          <a href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">POAP.xyz</a>
-          <a href="https://github.com/jthingelstad/poapkings.com" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </div>
-      <div class="foot__bot">
-        <div>
-          Content <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>{% if supercellDisclaimer %} · Not affiliated with <a href="https://supercell.com" target="_blank" rel="noreferrer">Supercell</a>{% endif %}
-        </div>
-        <div><span class="tinylytics_hits"></span> hits</div>
-      </div>
+    <div class="wrap site-foot__row">
+      <img class="site-foot__crest" src="/assets/poapkings.png" alt="" />
+      <span class="site-foot__brand">POAP KINGS</span>
+      <span class="site-foot__tag">{{ site.tagline }} · #{{ site.clanTag }}</span>
+      <span class="site-foot__links">
+        <a href="https://drop.poapkings.com" target="_blank" rel="noreferrer">Elixir Drop</a>
+        <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord</a>
+        <a href="https://github.com/jthingelstad/poapkings.com" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://collections.poap.xyz/organizations/poap-kings" target="_blank" rel="noreferrer">POAP.xyz</a>
+        <span class="site-foot__hits"><span class="tinylytics_hits"></span> hits</span>
+      </span>
+    </div>
+    <div class="wrap site-foot__legal">
+      Content <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>{% if supercellDisclaimer %} · This content is not affiliated with, endorsed, sponsored, or specifically approved by <a href="https://supercell.com" target="_blank" rel="noreferrer">Supercell</a> and Supercell is not responsible for it. See Supercell's <a href="https://supercell.com/en/fan-content-policy/" target="_blank" rel="noreferrer">Fan Content Policy</a>.{% endif %}
     </div>
   </footer>
 
@@ -230,6 +221,7 @@
       if (!toggle || !nav) return;
       function setOpen(open){
         toggle.setAttribute('aria-expanded', String(open));
+        toggle.textContent = open ? '✕' : '☰';
         nav.classList.toggle('is-open', open);
         document.body.classList.toggle('nav-open', open);
       }

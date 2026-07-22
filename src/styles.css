@@ -2929,3 +2929,146 @@ section.section--tight{ padding: clamp(22px, 4vw, 44px) 0 }
   .medal:hover{ transform: none }
   .pcard:hover{ transform: none }
 }
+
+/* ═════════════════════════════════════════════════════════
+   SITE REDESIGN — "POAP KINGS Site" (Claude Design import)
+   Global overrides + shell + responsive helpers. Appended last
+   so it wins over the legacy page styles above.
+   ═════════════════════════════════════════════════════════ */
+
+body{
+  background:
+    radial-gradient(1200px 700px at 20% 0%, rgba(109,40,217,.35), transparent 55%),
+    radial-gradient(900px 600px at 90% 12%, rgba(245,200,76,.16), transparent 55%),
+    radial-gradient(1000px 700px at 50% 100%, rgba(109,40,217,.2), transparent 60%),
+    linear-gradient(180deg, #070610, #0b0920);
+  background-color:#070610;
+  background-attachment:fixed;
+  color:#f7f4ff;
+  font-family:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+a{ color:#d7c8ff; text-decoration:none }
+a:hover{ color:#f5c84c }
+
+/* <main> is a full-width flex child; each page provides its own
+   centered max-width:1180px wrapper, matching the design. */
+.pageMain{ flex:1 1 auto; width:100% }
+/* Shared centered page container used by the redesigned templates */
+.pk-page{ width:100%; max-width:1180px; margin:0 auto; padding:0 24px }
+.pk-page--narrow{ max-width:900px }
+.pk-page--mid{ max-width:1000px }
+.pk-page--elixir{ max-width:1040px }
+
+/* ── Header ─────────────────────────────────────────────── */
+.site-head{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:blur(14px);
+  background:rgba(7,6,16,.72);
+  border-bottom:1px solid rgba(215,200,255,.1);
+}
+.site-head__nav{
+  width:100%; max-width:1180px; margin:0 auto; padding:12px 24px;
+  display:flex; align-items:center; gap:18px;
+}
+.site-head__brand{
+  display:flex; align-items:center; gap:11px; color:#f7f4ff;
+}
+.site-head__crest{ width:38px; height:38px; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,.5)) }
+.site-head__wordmark{ font-family:'Supercell Magic', system-ui, sans-serif; font-size:15px; letter-spacing:.02em; line-height:1 }
+.site-head__links{ display:flex; gap:2px; margin-left:8px }
+.site-head__link{
+  font-size:.86rem; font-weight:600; padding:8px 12px; border-radius:9px;
+  color:#c8c1e6; cursor:pointer;
+}
+.site-head__link:hover{ color:#f7f4ff }
+.site-head__link.is-active{ background:rgba(109,40,217,.28); color:#f7f4ff }
+.site-head__right{ margin-left:auto; display:flex; align-items:center; gap:10px }
+.site-head__members{
+  font-size:.86rem; font-weight:700; padding:8px 15px; border-radius:10px; cursor:pointer;
+  border:1px solid rgba(215,200,255,.28); background:rgba(109,40,217,.14); color:#d7c8ff;
+}
+.site-head__members:hover{ border-color:rgba(245,200,76,.6); color:#f7f4ff }
+.site-head__members.is-active{ border-color:rgba(245,200,76,.6); background:rgba(109,40,217,.3); color:#fff }
+.site-head__join{
+  font-family:'Supercell Magic', system-ui, sans-serif; font-size:.82rem;
+  padding:11px 20px; border:0; border-radius:12px; cursor:pointer;
+  background:linear-gradient(135deg,#f5c84c,#c98c10); color:#2a1500;
+  box-shadow:0 4px 20px rgba(245,200,76,.32);
+}
+.site-head__join:hover{ filter:brightness(1.08) }
+.site-head__join--full{ background:linear-gradient(135deg,#c084fc,#6d28d9); color:#f7f4ff; box-shadow:0 4px 20px rgba(109,40,217,.4) }
+.pk-hamburger{
+  display:none; width:44px; height:44px; align-items:center; justify-content:center;
+  border:1px solid rgba(215,200,255,.24); border-radius:12px;
+  background:rgba(109,40,217,.14); color:#f7f4ff; cursor:pointer; font-size:1.2rem;
+}
+.site-head__drawer{ display:none; border-top:1px solid rgba(215,200,255,.1); padding:10px 16px 16px; flex-direction:column; gap:4px }
+.site-head__drawer.is-open{ display:flex }
+.site-head__drawer-link{
+  text-align:left; font-size:1rem; font-weight:600; padding:14px 16px; border-radius:12px;
+  background:rgba(18,13,40,.6); color:#f7f4ff;
+}
+.site-head__drawer-link.is-active{ background:rgba(109,40,217,.3) }
+.site-head__drawer-link--members{ font-weight:700; border:1px solid rgba(245,200,76,.4); background:rgba(109,40,217,.24) }
+
+/* ── Footer ─────────────────────────────────────────────── */
+.site-foot{ border-top:1px solid rgba(215,200,255,.1); margin-top:auto }
+.site-foot__row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding:28px 24px; color:#c8c1e6; font-size:.82rem }
+.site-foot__crest{ width:30px; height:30px; object-fit:contain }
+.site-foot__brand{ font-family:'Supercell Magic', system-ui, sans-serif; color:#f7f4ff; font-size:.85rem }
+.site-foot__tag{ color:#8a83a6 }
+.site-foot__links{ margin-left:auto; display:flex; gap:18px; align-items:center; flex-wrap:wrap }
+.site-foot__links a{ color:#c8c1e6 }
+.site-foot__links a:hover{ color:#f5c84c }
+.site-foot__hits{ color:#8a83a6 }
+.site-foot__legal{ padding:0 24px 24px; color:#6f6890; font-size:.7rem; line-height:1.5 }
+
+/* ── Interactive pills / chips (roster sort, explorer controls) ── */
+.pk-pill{
+  font-size:.78rem; font-weight:700; padding:8px 15px; border-radius:999px; cursor:pointer;
+  font-family:'Inter', system-ui, sans-serif;
+  border:1px solid rgba(215,200,255,.2); background:rgba(18,13,40,.72); color:#c8c1e6;
+}
+.pk-pill:hover{ border-color:#d7c8ff; color:#fff }
+.pk-pill.is-active{ border-color:#f5c84c; background:rgba(245,200,76,.13); color:#f5c84c }
+.pk-chip{
+  display:inline-flex; align-items:center; gap:7px; font-size:.76rem; font-weight:700;
+  padding:8px 13px; border-radius:999px; cursor:pointer; font-family:'Inter', system-ui, sans-serif;
+  border:1px solid rgba(215,200,255,.2); background:rgba(18,13,40,.72); color:#c8c1e6;
+}
+.pk-chip:hover{ border-color:#d7c8ff }
+.pk-chip.is-active{ background:rgba(255,255,255,.05); color:#f7f4ff }
+.pk-chip__dot{ width:9px; height:9px; border-radius:50%; display:inline-block }
+
+/* ── Layout helpers from the design (+ responsive) ──────── */
+@media (max-width:900px){
+  .pk-hero{ grid-template-columns:1fr !important; gap:28px !important }
+  .pk-grid-2{ grid-template-columns:1fr !important }
+  .pk-grid-3{ grid-template-columns:1fr !important }
+  .pk-split{ grid-template-columns:1fr !important }
+  .pk-explorer-chart{ grid-template-columns:1fr !important }
+}
+@media (max-width:760px){
+  .pk-nav-links{ display:none !important }
+  .pk-hide-mobile{ display:none !important }
+  .pk-hamburger{ display:inline-flex !important }
+  .pk-col-opt{ display:none !important }
+  .pk-roster-head, .pk-roster-row{ grid-template-columns:38px minmax(0,1fr) auto !important }
+}
+@media (max-width:620px){
+  .pk-req4{ grid-template-columns:1fr 1fr !important }
+  .pk-tech3{ grid-template-columns:1fr 1fr !important }
+  .pk-explorer-controls{ grid-template-columns:1fr !important }
+  .pk-elixir-hero{ grid-template-columns:1fr !important; text-align:center; justify-items:center }
+}
+/* Tighten the header on small phones so the wordmark + JOIN + star + menu fit */
+@media (max-width:480px){
+  .site-head__nav{ padding:10px 14px; gap:10px }
+  .site-head__brand{ gap:8px }
+  .site-head__wordmark{ font-size:14px }
+  .site-head__right{ gap:7px }
+  .site-head__join{ padding:10px 14px; font-size:.78rem }
+}

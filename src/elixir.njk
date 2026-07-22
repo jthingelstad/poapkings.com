@@ -1,127 +1,79 @@
 ---
+permalink: /elixir/
 layout: base.njk
-title: Elixir — AI Bot for POAP KINGS
-description: "Elixir is the AI-powered chronicler and advisor for POAP KINGS — channel-native subagents, an awareness loop, deck review, tournament tracking, and scoped memory, all from Discord."
+title: Meet Elixir — the POAP KINGS clan agent
+description: "Elixir is the POAP KINGS clan agent — publishing our data, running the weekly Elder Standing, telling the clan's story, and coaching every member. Built like real software."
 ogImage: /assets/elixir.png
 ogImageAlt: Elixir bot avatar
 mainId: top
 supercellDisclaimer: true
 ---
-<section class="section" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(28px, 4vw, 48px);">
-  <div class="hero-grid">
+<div class="pk-page pk-page--elixir" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
+  <a href="/" style="display:inline-block;color:#d7c8ff;font-weight:700;font-size:.82rem;margin-bottom:20px;">← Back home</a>
+
+  <section class="pk-elixir-hero" style="display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;border:1px solid rgba(139,92,246,.5);border-radius:24px;background:radial-gradient(circle at 88% 8%,rgba(245,60,255,.2),transparent 44%),linear-gradient(145deg,rgba(88,28,235,.4),rgba(38,22,78,.7));box-shadow:0 18px 60px rgba(0,0,0,.5);padding:clamp(28px,4vw,44px);">
+    <img src="/assets/elixir.png" alt="Elixir, the POAP KINGS clan agent" style="width:clamp(120px,18vw,180px);height:clamp(120px,18vw,180px);object-fit:contain;filter:drop-shadow(0 16px 32px rgba(0,0,0,.55));">
     <div>
-      <span class="eyebrow eyebrow--purple">Sub-project · Microsite</span>
-      <h1 class="h-display h1 mt-4">Elixir</h1>
-      <p class="lede mt-5">
-        The AI-powered chronicler and advisor for <strong style="color:#fff">POAP KINGS</strong>. Elixir runs 24/7 inside the clan's Discord, watching the Clash Royale API on a heartbeat, deciding what's worth saying, and remembering everything.
-      </p>
-      <div class="ctaRow mt-6">
-        <a class="btn btn--purple" href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer">View on GitHub</a>
-        <a class="btn btn--ghost" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Join Discord</a>
+      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#f5c84c;">Our clan agent</span>
+      <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2.2rem,5vw,3.4rem);margin:12px 0 0;">Meet Elixir</h1>
+      <p style="font-size:1.1rem;line-height:1.6;color:#e7e2f7;margin:16px 0 0;max-width:34em;text-wrap:pretty;">Built by and for POAP KINGS, Elixir keeps the clan honest, organized, and remembered — publishing our data, running the weekly Elder Standing, telling the clan's story, and coaching every member. If you've seen a number on this site, Elixir put it there.</p>
+    </div>
+  </section>
+
+  <section style="margin-top:44px;">
+    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">What Elixir does</span>
+    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">One agent, many jobs</h2>
+    <div class="pk-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;">
+      {%- set elixirJobs = [
+        { num: '01', title: 'Publishes the Elder Standing', body: 'Every Tuesday, Elixir posts a transparent ranking of who\'s competing for the clan — so Elder is never a mystery or a favor.' },
+        { num: '02', title: 'Tracks the whole roster', body: 'Trophies, donations, tenure, wins, and collection, pulled from the Clash Royale API and refreshed daily. Every number on this site is Elixir\'s work.' },
+        { num: '03', title: 'Welcomes recruits', body: 'A strong application — or a great run in Elixir Drop — is met with a friendly nudge to join, not a form letter.' },
+        { num: '04', title: 'Tells the clan\'s story', body: 'Every week Elixir sends a clan recap email — who climbed, who carried war, the milestones and the near-misses. The story of the week, written down so it isn\'t forgotten.' },
+        { num: '05', title: 'Coaches every member', body: 'A personal weekly arena recap lands in each member\'s inbox: your highlights, what moved, and specific coaching on exactly where to sharpen next.' },
+        { num: '06', title: 'Powers Elixir Drop', body: 'Elixir is the face and voice of our game, cheering good elixir reads and ribbing the misses.' }
+      ] -%}
+      {%- for j in elixirJobs %}
+      <article style="border:1px solid rgba(215,200,255,.14);border-radius:18px;background:rgba(18,13,40,.6);padding:24px;">
+        <div style="font-family:'Supercell Magic',system-ui,sans-serif;color:#6d28d9;font-size:1.4rem;">{{ j.num }}</div>
+        <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.1rem;margin:8px 0 6px;">{{ j.title }}</h3>
+        <p style="color:#c8c1e6;line-height:1.55;margin:0;">{{ j.body }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section style="margin-top:44px;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Under the hood</span>
+        <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">Built like real software</h2>
       </div>
-      <div class="ctaRow mt-5" style="gap:8px">
-        <span class="pill">Claude Sonnet</span>
-        <span class="pill">Claude Haiku</span>
-        <span class="pill">Anthropic tool use</span>
-        <span class="pill">SQLite + FTS</span>
-        <span class="pill">discord.py</span>
-        <span class="pill">CR API</span>
-        <span class="pill">Pillow</span>
+      <a href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.82rem;padding:11px 20px;border-radius:12px;border:1.5px solid rgba(215,200,255,.24);color:#d7c8ff;white-space:nowrap;">View the code on GitHub →</a>
+    </div>
+    <p style="font-size:1.05rem;line-height:1.6;color:#c8c1e6;margin:16px 0 0;max-width:52em;text-wrap:pretty;">Elixir pairs a <strong style="color:#fff;">deterministic data engine</strong> with an <strong style="color:#fff;">LLM awareness loop</strong>. Clash Royale data flows through a single API ingress into append-only receipts and durable event streams — and <strong style="color:#fff;">code, not the model, owns every promotion, demotion, and kick</strong>. A cheap model gates the expensive one on the post-or-stay-quiet call, which cut running cost by roughly 10×.</p>
+    <div class="pk-tech3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;">
+      {%- set techFacts = [
+        { label: 'Language', value: 'Python 3.14' },
+        { label: 'AI models', value: 'Claude Haiku 4.5, Sonnet 5 & Opus 4.8' },
+        { label: 'Chat platform', value: 'discord.py' },
+        { label: 'Data store', value: 'SQLite · event-sourced' },
+        { label: 'Scheduling', value: 'APScheduler on launchd' },
+        { label: 'Quality gates', value: 'ruff · mypy · pytest 80%+' }
+      ] -%}
+      {%- for t in techFacts %}
+      <div style="border:1px solid rgba(215,200,255,.14);border-radius:14px;background:rgba(18,13,40,.55);padding:18px;">
+        <span style="font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#c8c1e6;display:block;">{{ t.label }}</span>
+        <strong style="display:block;margin-top:6px;font-size:1rem;color:#f7f4ff;line-height:1.3;">{{ t.value }}</strong>
       </div>
+      {%- endfor %}
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="hero-art__ring"></div>
-      <img src="/assets/elixir.png" alt="" />
-    </div>
-  </div>
-</section>
+  </section>
 
-<hr class="rule" />
-
-<section class="section">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow eyebrow--purple">What Elixir does</span>
-      <h2 class="h-display h2 mt-3">Eight things,<br/>not one thing.</h2>
-      <p class="lede mt-3">Elixir isn't a single bot — it's a constellation of channel-native subagents, each with its own context, memory, and purpose.</p>
+  <a href="https://drop.poapkings.com" target="_blank" rel="noreferrer" style="margin-top:44px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border:1px solid rgba(245,200,76,.28);border-radius:20px;background:radial-gradient(circle at 12% 90%,rgba(109,40,217,.3),transparent 45%),linear-gradient(145deg,rgba(38,22,78,.85),rgba(11,9,32,.92));box-shadow:0 18px 60px rgba(0,0,0,.45);padding:28px;color:inherit;">
+    <div>
+      <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.4rem;margin:0 0 6px;">Elixir also runs a game</h3>
+      <p style="color:#c8c1e6;line-height:1.55;margin:0;max-width:44em;">Elixir Drop is our card-and-cost trainer — the same mascot, cheering your reads and ribbing the misses.</p>
     </div>
-  </div>
-
-  <ol class="reasons">
-    <li class="reason">
-      <div class="reason__num">01</div>
-      <h3 class="h-display h3">Channel-native subagents</h3>
-      <p>Dedicated agents run in <code>#river-race</code>, <code>#player-highlights</code>, <code>#clan-events</code>, <code>#ask-elixir</code>, and <code>#website-updates</code> — each with its own scope and tone.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">02</div>
-      <h3 class="h-display h3">Awareness loop</h3>
-      <p>One agent turn per tick sees the full situation — signals, time, standings, memory — then chooses what to post or to stay silent. No noise, just signal.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">03</div>
-      <h3 class="h-display h3">Deck review</h3>
-      <p>Grounded in your actual losses. Validates suggestions against your collection so the advice is buildable, not hypothetical. Build-from-scratch supported for war.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">04</div>
-      <h3 class="h-display h3">Tournament tracking</h3>
-      <p><code>/elixir tournament watch</code> follows brackets and posts LLM-written recaps with card-draft analysis. Highlights moments without spamming.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">05</div>
-      <h3 class="h-display h3">Clan memory</h3>
-      <p>Leadership notes, public observations, and notification memory give the clan continuity without requiring the website to mirror Elixir's full internal record.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">06</div>
-      <h3 class="h-display h3">Elixir Drop</h3>
-      <p>A standalone training game at <a href="https://drop.poapkings.com" target="_blank" rel="noreferrer">drop.poapkings.com</a> — drill elixir costs across seven modes: Practice, Surge, Blitz, Survival, Higher/Lower, Focus, and Deck Budget. Built and run by POAP KINGS.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">07</div>
-      <h3 class="h-display h3">Omnipresent scouting</h3>
-      <p>A unified <code>cr_api</code> tool lets Elixir scout any clan or player by tag — useful for war prep, recruiting, and answering "who is this opponent?"</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">08</div>
-      <h3 class="h-display h3">Scoped memory</h3>
-      <p>Public, leadership-only, and notification memories — with weekly synthesis that retires stale entries and forms longer-arc memories.</p>
-    </li>
-  </ol>
-</section>
-
-<hr class="rule" />
-
-<section class="section">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow eyebrow--purple">How it works</span>
-      <h2 class="h-display h2 mt-3">Observe.<br/>Situate. Reason.<br/>Remember.</h2>
-      <p class="lede mt-3">A single agent turn per tick — but with the full situation in context, so the bot can choose silence when there's nothing worth saying.</p>
-    </div>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step__n">1</div>
-      <h3 class="h-display h3">Observe</h3>
-      <p>Hourly heartbeat pulls fresh data from the Clash Royale API and diffs against known state — member lists, war status, donations, trophies.</p>
-    </div>
-    <div class="step">
-      <div class="step__n">2</div>
-      <h3 class="h-display h3">Situate</h3>
-      <p>Builds one Situation payload: signals, time/phase, standings, scoped memory. The whole picture, not a slice.</p>
-    </div>
-    <div class="step">
-      <div class="step__n">3</div>
-      <h3 class="h-display h3">Reason</h3>
-      <p>One agent turn with tool access decides what (if anything) to post, where, and in what voice. Often, it stays silent.</p>
-    </div>
-    <div class="step">
-      <div class="step__n">4</div>
-      <h3 class="h-display h3">Remember</h3>
-      <p>Writes scoped memories — public, leadership, or notification-only — and can self-schedule revisits for future ticks.</p>
-    </div>
-  </div>
-</section>
+    <span style="flex:0 0 auto;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;color:#f5c84c;">Play Elixir Drop →</span>
+  </a>
+</div>

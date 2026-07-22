@@ -2,341 +2,52 @@
 permalink: /roster/
 layout: base.njk
 title: Roster | POAP KINGS | A Clash Royale Clan with Proof
-description: "POAP KINGS roster — current clan members, roles, trophies, career wins, years played, collection score, badge count, and clan rank."
+description: "POAP KINGS roster — current clan members, roles, trophies, career wins, years played, and collection score. Sort by any column."
 navActive: roster
+supercellDisclaimer: true
+extraScripts: '<script src="/roster.js" defer></script>'
 ---
-{%- set sortedMembers = roster.members | sortByRank -%}
+{%- set rows = roster.members | sortByDesc('trophies') -%}
 {%- set memberCount = roster.members | length -%}
-{%- set openSlots = 50 - memberCount -%}
-{%- set isFull = memberCount >= 50 -%}
 
-<header class="roster-head">
-  <div class="roster-head__copy">
-    <span class="eyebrow">The Kings · {{ roster.updated | formatDate }}</span>
-    <h1 class="h-display h1">Roster table</h1>
-    {% if isFull %}
-    <p class="lede"><strong style="color:var(--gold)">Clan is full — all 50 seats taken.</strong> Search and sort the current roster by rank, role, trophies, career wins, account depth, and donations. Want in? <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Join the waitlist in Discord</a>.</p>
-    {% else %}
-    <p class="lede">{{ memberCount }} active{% if openSlots > 0 %}, {{ openSlots }} open{% endif %}. Search and sort the current roster by rank, role, trophies, career wins, account depth, and donations.</p>
-    {% endif %}
-  </div>
-  <div class="roster-head__meta">
-    <div class="m"><div class="m__n">{{ memberCount }}</div><div class="m__l">Members</div></div>
-    {% if isFull %}
-    <div class="m m--full"><div class="m__n m__n--full"><span class="roster-full-dot"></span>FULL</div><div class="m__l">Waitlist open</div></div>
-    {% else %}
-    <div class="m"><div class="m__n">{{ openSlots }}</div><div class="m__l">Open slots</div></div>
-    {% endif %}
-    <div class="m"><div class="m__n">{{ clan.clanScore | formatNumber }}</div><div class="m__l">Clan trophies</div></div>
-  </div>
-</header>
+<div class="pk-page" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
+  <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">The people</span>
+  <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2rem,4.5vw,3rem);margin:12px 0 0;">The Roster</h1>
+  <p style="font-size:1.05rem;color:#c8c1e6;margin:14px 0 0;max-width:42em;">{{ memberCount }} members strong. Sort by any column. Want the trends and distributions? <a href="/data/" style="color:#f5c84c;text-decoration:underline;text-underline-offset:2px;">Explore the data →</a></p>
 
-<section class="roster-explorer" aria-labelledby="rosterExplorerTitle">
-  <div class="roster-explorer__top">
-    <div>
-      <span class="eyebrow">Roster explorer</span>
-      <h2 class="h-display h2 mt-3" id="rosterExplorerTitle">See the clan shape.</h2>
-      <p class="lede mt-3">Plot current members by the stats Clash Royale players understand: trophies, career wins, account age, collection score, badges, war wins, and donations.</p>
+  <div style="display:flex;align-items:center;gap:10px;margin-top:22px;flex-wrap:wrap;">
+    <span style="font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c8c1e6;">Sort by</span>
+    {%- set sortOptions = [
+      { key: 'trophies', label: 'Trophies' },
+      { key: 'wins', label: 'Career Wins' },
+      { key: 'years', label: 'Years' },
+      { key: 'collection', label: 'Collection' },
+      { key: 'donations', label: 'Donations' }
+    ] -%}
+    {%- for o in sortOptions %}
+    <button type="button" class="pk-pill{% if o.key == 'trophies' %} is-active{% endif %}" data-roster-sort="{{ o.key }}">{{ o.label }}</button>
+    {%- endfor %}
+    <span style="margin-left:auto;font-size:.78rem;color:#c8c1e6;">↻ Updated {{ roster.updated | formatDate }} · showing all {{ memberCount }}</span>
+  </div>
+
+  <div style="margin-top:16px;border:1px solid rgba(215,200,255,.16);border-radius:20px;overflow:hidden;background:rgba(11,9,32,.82);box-shadow:0 18px 60px rgba(0,0,0,.45);">
+    <div class="pk-roster-head" style="display:grid;grid-template-columns:48px minmax(0,1.6fr) 1fr 1fr .8fr 1fr;gap:12px;padding:14px 20px;border-bottom:1px solid rgba(215,200,255,.12);font-size:.66rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c8c1e6;">
+      <span>#</span><span>Player</span><span style="text-align:right;">Trophies</span><span class="pk-col-opt" style="text-align:right;">Career Wins</span><span class="pk-col-opt" style="text-align:right;">Years</span><span class="pk-col-opt" style="text-align:right;">Collection</span>
     </div>
-    <div class="axis-controls" aria-label="Scatterplot axes">
-      <label>
-        X axis
-        <select id="scatterX">
-          {% for dimension in rosterExplorer.dimensions %}
-          <option value="{{ dimension.key }}"{% if dimension.key == "years" %} selected{% endif %}>{{ dimension.label }}</option>
-          {% endfor %}
-        </select>
-      </label>
-      <label>
-        Y axis
-        <select id="scatterY">
-          {% for dimension in rosterExplorer.dimensions %}
-          <option value="{{ dimension.key }}"{% if dimension.key == "trophies" %} selected{% endif %}>{{ dimension.label }}</option>
-          {% endfor %}
-        </select>
-      </label>
+    <div id="rosterBody">
+      {%- for m in rows %}
+      <div class="pk-roster-row" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}" style="display:grid;grid-template-columns:48px minmax(0,1.6fr) 1fr 1fr .8fr 1fr;gap:12px;align-items:center;padding:12px 20px;border-bottom:1px solid rgba(215,200,255,.07);background:{% if loop.index0 % 2 %}rgba(18,13,40,.3){% else %}rgba(18,13,40,.5){% endif %};">
+        <span data-roster-rank style="font-family:'Supercell Magic',system-ui,sans-serif;color:#c8c1e6;font-size:.9rem;">{{ loop.index }}</span>
+        <span style="min-width:0;display:flex;flex-direction:column;gap:2px;">
+          <strong style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ m.name }}</strong>
+          <em style="font-style:normal;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:{{ m.role | roleColor }};">{{ m.role }}</em>
+        </span>
+        <strong style="text-align:right;font-family:'Supercell Magic',system-ui,sans-serif;color:#f5c84c;font-size:.92rem;">{{ m.trophies | formatNumber }}</strong>
+        <span class="pk-col-opt" style="text-align:right;color:#e7e2f7;font-variant-numeric:tabular-nums;">{{ m.cr_battle_wins | formatNumber }}</span>
+        <span class="pk-col-opt" style="text-align:right;color:#e7e2f7;">{{ m.cr_account_age_years }}y</span>
+        <span class="pk-col-opt" style="text-align:right;color:#e7e2f7;font-variant-numeric:tabular-nums;">{{ m.cr_collection_level | formatNumber }}</span>
+      </div>
+      {%- endfor %}
     </div>
   </div>
-  <div class="scatter-wrap">
-    <svg class="scatterplot" id="rosterScatter" viewBox="0 0 760 430" role="img" aria-label="Interactive roster scatterplot"></svg>
-    <div class="scatter-tip" id="scatterTip" hidden></div>
-  </div>
-</section>
-
-<div class="cardtools roster-table-tools">
-  <div class="cardtools__search">
-    <input id="rosterSearch" type="search" placeholder="Search name, tag, arena, stat..." aria-label="Search roster" />
-  </div>
-  <div class="cardtools__chips" id="roleChips">
-    <button class="chip is-active" data-role="all" type="button">All</button>
-    <button class="chip" data-role="leadership" type="button">Leadership</button>
-    <button class="chip" data-role="elder" type="button">Elders</button>
-    <button class="chip" data-role="member" type="button">Members</button>
-  </div>
-  <div class="cardtools__sort">
-    <label for="rosterSort">Sort</label>
-    <select id="rosterSort">
-      <option value="rank" selected>Clan rank</option>
-      <option value="trophies">Trophies</option>
-      <option value="wins">Career wins</option>
-      <option value="collection">Collection score</option>
-      <option value="years">Years played</option>
-      <option value="badges">Badges</option>
-      <option value="donations">Donations</option>
-      <option value="alpha">Alphabetical</option>
-    </select>
-  </div>
-  <div class="cardtools__count" aria-live="polite"><span id="rosterStatus">{{ memberCount }}</span> showing</div>
 </div>
-
-<div class="roster-table-wrap">
-  <table class="roster-table" id="rosterTable">
-    <caption class="sr-only">Current POAP KINGS clan roster</caption>
-    <thead>
-      <tr>
-        <th scope="col">Rank</th>
-        <th scope="col">Member</th>
-        <th scope="col">Role</th>
-        <th scope="col" class="num">Trophies</th>
-        <th scope="col" class="num">Wins</th>
-        <th scope="col" class="num">Collection</th>
-        <th scope="col" class="num">Years</th>
-        <th scope="col" class="num">Badges</th>
-        <th scope="col" class="num">Donated</th>
-        <th scope="col" class="num">War wins</th>
-        <th scope="col">Last seen</th>
-      </tr>
-    </thead>
-    <tbody id="rosterRows">
-      {% for m in sortedMembers %}
-      {%- set rawRole = m.role if m.role else "Member" -%}
-      {%- set roleSlug = rawRole | lower | replace("-", "") -%}
-      {%- set rawTag = m.tag | replace("#", "") -%}
-      <tr id="member-{{ rawTag | lower | e }}"
-        data-search="{{ m | searchText | e }}"
-        data-trophies="{{ m.trophies or 0 }}"
-        data-donations="{{ m.donations or 0 }}"
-        data-wins="{{ m.cr_battle_wins or 0 }}"
-        data-collection="{{ m.cr_collection_level or 0 }}"
-        data-years="{{ m.cr_account_age_days or 0 }}"
-        data-badges="{{ m.badge_count or 0 }}"
-        data-rank="{{ m.clan_rank or 999 }}"
-        data-name="{{ m.name | e }}"
-        data-role="{{ roleSlug }}">
-        <td class="roster-table__rank" data-label="Rank">#{{ m.clan_rank or "—" }}</td>
-        <td class="roster-table__member" data-label="Member">
-          <span class="roster-table__name">{{ m.name | e }}</span>
-          <span class="roster-table__sub">#{{ rawTag | upper | e }} · {{ m.arena or "Unranked" }}</span>
-        </td>
-        <td data-label="Role"><span class="roster-role roster-role--{{ roleSlug }}">{{ rawRole | e }}</span></td>
-        <td class="num" data-label="Trophies">{{ m.trophies | formatNumber }}</td>
-        <td class="num" data-label="Wins">{% if m.cr_battle_wins %}{{ m.cr_battle_wins | formatNumber }}{% else %}—{% endif %}</td>
-        <td class="num" data-label="Collection">{% if m.cr_collection_level %}{{ m.cr_collection_level | formatNumber }}{% else %}—{% endif %}</td>
-        <td class="num" data-label="Years" title="{% if m.cr_account_age_days %}{{ m.cr_account_age_days | formatNumber }} days played{% endif %}">{{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) }}</td>
-        <td class="num" data-label="Badges">{{ m.badge_count or 0 }}</td>
-        <td class="num" data-label="Donated">{{ m.donations | formatNumber }}</td>
-        <td class="num" data-label="War wins">{% if m.cr_clan_war_wins or m.cr_clan_war_wins == 0 %}{{ m.cr_clan_war_wins | formatNumber }}{% else %}—{% endif %}</td>
-        <td data-label="Last seen">{% if m.last_seen %}{{ m.last_seen | formatLastSeen }}{% else %}—{% endif %}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-
-{% if openSlots > 0 %}
-<button type="button" class="roster-open-note" data-modal-open="join" data-tinylytics-event="roster.open-slot">
-  <strong>{{ openSlots }} open slot{{ "s" if openSlots != 1 }}</strong>
-  <span>{{ clan.minTrophies | formatNumber }}+ trophies, daily play, good vibes.</span>
-</button>
-{% endif %}
-
-<div class="empty-state" id="rosterEmpty" hidden>
-  <h3>No members match that filter.</h3>
-  <p>Try another role, search term, or sort.</p>
-</div>
-
-<script id="rosterExplorerData" type="application/json">{{ rosterExplorer | dump | safe }}</script>
-<script>
-(function(){
-  var svg = document.getElementById('rosterScatter');
-  var dataEl = document.getElementById('rosterExplorerData');
-  var xEl = document.getElementById('scatterX');
-  var yEl = document.getElementById('scatterY');
-  var tip = document.getElementById('scatterTip');
-  if (!svg || !dataEl || !xEl || !yEl) return;
-  var data = JSON.parse(dataEl.textContent || '{}');
-  var members = (data.members || []).filter(function(member){ return member.trophies != null; });
-  var dimensions = {};
-  (data.dimensions || []).forEach(function(dimension){ dimensions[dimension.key] = dimension; });
-  var bounds = { left: 64, right: 724, top: 36, bottom: 374 };
-
-  function number(value){ return Number.isFinite(Number(value)) ? Number(value) : null; }
-  function format(value, key){
-    if (value == null) return '—';
-    if (dimensions[key] && dimensions[key].format === 'decimal') return Number(value).toFixed(1);
-    return Math.round(Number(value)).toLocaleString('en-US');
-  }
-  function escapeHtml(value){
-    return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch){
-      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch];
-    });
-  }
-  function extent(key){
-    var values = members.map(function(member){ return number(member[key]); }).filter(function(value){ return value != null; });
-    var min = Math.min.apply(Math, values);
-    var max = Math.max.apply(Math, values);
-    if (!Number.isFinite(min) || !Number.isFinite(max)) return [0, 1];
-    if (min === max) return [min - 1, max + 1];
-    var pad = (max - min) * 0.08;
-    return [Math.max(0, min - pad), max + pad];
-  }
-  function svgNode(name, attrs){
-    var node = document.createElementNS('http://www.w3.org/2000/svg', name);
-    Object.keys(attrs).forEach(function(key){ node.setAttribute(key, attrs[key]); });
-    return node;
-  }
-  function clear(){
-    while (svg.firstChild) svg.removeChild(svg.firstChild);
-  }
-  function showTip(member, x, y, xKey, yKey){
-    if (!tip) return;
-    tip.hidden = false;
-    tip.innerHTML = '<strong>' + escapeHtml(member.name) + '</strong><span>' + escapeHtml(dimensions[xKey].label) + ': ' + escapeHtml(format(member[xKey], xKey)) + '</span><span>' + escapeHtml(dimensions[yKey].label) + ': ' + escapeHtml(format(member[yKey], yKey)) + '</span>';
-    tip.style.left = Math.min(Math.max(x + 14, 10), svg.clientWidth - 180) + 'px';
-    tip.style.top = Math.max(y - 12, 10) + 'px';
-  }
-  function render(){
-    clear();
-    var xKey = xEl.value;
-    var yKey = yEl.value;
-    var xExtent = extent(xKey);
-    var yExtent = extent(yKey);
-    var xSpan = xExtent[1] - xExtent[0] || 1;
-    var ySpan = yExtent[1] - yExtent[0] || 1;
-
-    svg.appendChild(svgNode('line', { x1: bounds.left, y1: bounds.bottom, x2: bounds.right, y2: bounds.bottom, class: 'chart-axis' }));
-    svg.appendChild(svgNode('line', { x1: bounds.left, y1: bounds.top, x2: bounds.left, y2: bounds.bottom, class: 'chart-axis' }));
-    for (var i = 0; i <= 4; i += 1) {
-      var gx = bounds.left + (i / 4) * (bounds.right - bounds.left);
-      var gy = bounds.bottom - (i / 4) * (bounds.bottom - bounds.top);
-      svg.appendChild(svgNode('line', { x1: gx, y1: bounds.top, x2: gx, y2: bounds.bottom, class: 'chart-gridline' }));
-      svg.appendChild(svgNode('line', { x1: bounds.left, y1: gy, x2: bounds.right, y2: gy, class: 'chart-gridline' }));
-    }
-
-    members.forEach(function(member){
-      var xv = number(member[xKey]);
-      var yv = number(member[yKey]);
-      if (xv == null || yv == null) return;
-      var cx = bounds.left + ((xv - xExtent[0]) / xSpan) * (bounds.right - bounds.left);
-      var cy = bounds.bottom - ((yv - yExtent[0]) / ySpan) * (bounds.bottom - bounds.top);
-      var point = svgNode('circle', {
-        cx: cx.toFixed(1),
-        cy: cy.toFixed(1),
-        r: member.trophies >= 14000 ? 8 : member.trophies >= 12000 ? 6.5 : 5,
-        class: 'scatter-point' + (member.trophies >= 14000 ? ' scatter-point--elite' : ''),
-        tabindex: 0,
-        'aria-label': member.name + ', ' + dimensions[xKey].label + ' ' + format(member[xKey], xKey) + ', ' + dimensions[yKey].label + ' ' + format(member[yKey], yKey)
-      });
-      point.addEventListener('mousemove', function(event){
-        var rect = svg.getBoundingClientRect();
-        showTip(member, event.clientX - rect.left, event.clientY - rect.top, xKey, yKey);
-      });
-      point.addEventListener('mouseleave', function(){ if (tip) tip.hidden = true; });
-      point.addEventListener('focus', function(){
-        showTip(member, cx / 760 * svg.clientWidth, cy / 430 * svg.clientHeight, xKey, yKey);
-      });
-      point.addEventListener('blur', function(){ if (tip) tip.hidden = true; });
-      svg.appendChild(point);
-    });
-
-    svg.appendChild(svgNode('text', { x: bounds.right, y: 414, class: 'chart-label', 'text-anchor': 'end' }));
-    svg.lastChild.textContent = dimensions[xKey].label;
-    svg.appendChild(svgNode('text', { x: bounds.left, y: 24, class: 'chart-label', 'text-anchor': 'start' }));
-    svg.lastChild.textContent = dimensions[yKey].label;
-  }
-  xEl.addEventListener('change', render);
-  yEl.addEventListener('change', render);
-  render();
-})();
-</script>
-
-<script>
-(function(){
-  var body = document.getElementById('rosterRows');
-  var statusEl = document.getElementById('rosterStatus');
-  var emptyEl = document.getElementById('rosterEmpty');
-  var searchEl = document.getElementById('rosterSearch');
-  var sortEl = document.getElementById('rosterSort');
-  var chipWrap = document.getElementById('roleChips');
-  if (!body) return;
-
-  var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
-  var state = { role: 'all', q: '', sort: 'rank' };
-
-  function num(el, k){
-    var v = el.dataset[k];
-    return v == null || v === '' ? 0 : Number(v);
-  }
-
-  function str(el, k){
-    return el.dataset[k] || '';
-  }
-
-  function visibleByFilter(row){
-    var role = row.dataset.role || 'member';
-    if (state.role === 'leadership' && !/leader/.test(role)) return false;
-    if (state.role === 'elder' && role !== 'elder') return false;
-    if (state.role === 'member' && (role === 'elder' || /leader/.test(role))) return false;
-    if (state.q){
-      var hay = (row.dataset.search || '') + ' ' + (row.dataset.name || '').toLowerCase();
-      if (hay.indexOf(state.q) === -1) return false;
-    }
-    return true;
-  }
-
-  function compare(a, b){
-    switch (state.sort){
-      case 'trophies':   return num(b, 'trophies') - num(a, 'trophies');
-      case 'donations':  return num(b, 'donations') - num(a, 'donations');
-      case 'wins':       return num(b, 'wins') - num(a, 'wins');
-      case 'collection': return num(b, 'collection') - num(a, 'collection');
-      case 'years':      return num(b, 'years') - num(a, 'years');
-      case 'badges':     return num(b, 'badges') - num(a, 'badges');
-      case 'alpha':      return str(a, 'name').localeCompare(str(b, 'name'));
-      default:           return num(a, 'rank') - num(b, 'rank');
-    }
-  }
-
-  function render(){
-    var visible = rows.filter(visibleByFilter).sort(compare);
-    rows.forEach(function(row){ row.hidden = true; });
-    visible.forEach(function(row){
-      row.hidden = false;
-      body.appendChild(row);
-    });
-    if (statusEl) statusEl.textContent = visible.length;
-    if (emptyEl) emptyEl.hidden = visible.length > 0;
-  }
-
-  if (searchEl) searchEl.addEventListener('input', function(e){
-    state.q = e.target.value.trim().toLowerCase();
-    render();
-  });
-
-  if (sortEl) sortEl.addEventListener('change', function(e){
-    state.sort = e.target.value;
-    render();
-  });
-
-  if (chipWrap) chipWrap.addEventListener('click', function(e){
-    var btn = e.target.closest('.chip');
-    if (!btn) return;
-    chipWrap.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('is-active'); });
-    btn.classList.add('is-active');
-    state.role = btn.dataset.role || 'all';
-    render();
-  });
-
-  render();
-})();
-</script>

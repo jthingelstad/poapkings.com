@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: POAP KINGS | A Clash Royale Clan with Proof
-description: "POAP KINGS — a Clash Royale clan celebrating seasons, generosity, and Proof of Arena Push."
+description: "POAP KINGS — a Clash Royale clan built on active, positive play and a roster deep enough to prove it. We publish our data so serious players can see who they're joining."
 navActive: home
 mainId: top
 supercellDisclaimer: true
@@ -10,327 +10,198 @@ ogImageAlt: POAP KINGS crest
 ogImageWidth: 1200
 ogImageHeight: 1200
 ---
-{%- set isFull = clan.memberCount >= 50 -%}
-{%- set insightStats = clanInsights.headlineStats or [] -%}
-{%- set trophyLeaders = clanInsights.leaders.trophies or [] -%}
+{%- set members = rosterExplorer.members -%}
+{%- set memberCount = clan.memberCount -%}
+{%- set openSlots = 50 - memberCount -%}
+{%- set totalWins = members | sumBy('wins') -%}
+{%- set avgWins = (totalWins / memberCount) | round -%}
+{%- set avgTrophies = (clan.totalTrophies / memberCount) | round -%}
+{%- set elders = members | whereRole('Elder') | sortByDesc('years') -%}
+{%- set scatterPoints = members | homeScatter -%}
 
-<section class="section" data-section="hero" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(36px, 5vw, 60px);">
-  <div class="hero-grid">
+<div class="pk-page">
+
+  <section class="pk-hero" style="display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:clamp(44px,6vw,76px) 0 clamp(36px,5vw,56px);">
     <div>
-      <span class="eyebrow">CLAN TAG&nbsp;&nbsp;<span class="mono" style="color:var(--text-2);letter-spacing:.04em">#{{ site.clanTag }}</span></span>
-      <h1 class="h-display h1 mt-4">POAP<br/>KINGS</h1>
-      <p class="lede mt-5">
-        A <a href="https://clashroyale.com" target="_blank" rel="noreferrer" style="color:#fff;border-bottom:1px solid var(--hairline-2)">Clash Royale</a> clan built around active, positive gameplay — and something a little different.
-        We collect <strong style="color:#fff">POAPs</strong> as proof of participation and shared clan history.
-        Good vibes, real rewards, zero drama.
-      </p>
-      <div class="ctaRow mt-6">
-        {% if isFull %}
-        <button type="button" class="btn btn--purple" data-modal-open="join" data-tinylytics-event="home.waitlist">WAIT</button>
-        <a href="/roster" class="btn btn--ghost" data-tinylytics-event="home.see-roster">See the roster</a>
-        {% else %}
-        <button type="button" class="btn btn--gold" data-modal-open="join" data-tinylytics-event="home.join">JOIN</button>
-        <a href="/roster" class="btn btn--ghost" data-tinylytics-event="home.see-roster">See the roster</a>
-        {% endif %}
+      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Clan Tag&nbsp;&nbsp;<span style="font-family:ui-monospace,Menlo,monospace;color:#f5c84c;letter-spacing:.04em;">#{{ site.clanTag }}</span></span>
+      <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(3rem,6.5vw,5.2rem);line-height:1.12;margin:16px 0 0;background:linear-gradient(135deg,#fff 25%,#d7c8ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 rgba(0,0,0,.25));">POAP<br>KINGS</h1>
+      <p style="font-size:1.12rem;line-height:1.6;color:#c8c1e6;margin:20px 0 0;max-width:30em;text-wrap:pretty;">A <a href="https://clashroyale.com" target="_blank" rel="noreferrer" style="color:#fff;font-weight:600;">Clash Royale</a> clan built on active, positive play — and a roster deep enough to prove it. We publish our data so serious players can see exactly who they're joining.</p>
+      <div style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;">
+        <a href="/roster/" style="display:inline-flex;align-items:center;font-family:'Supercell Magic',system-ui,sans-serif;font-size:1rem;min-height:52px;padding:0 26px;border:0;border-radius:14px;background:#6d28d9;color:#f7f4ff;box-shadow:0 4px 24px rgba(109,40,217,.45);" data-tinylytics-event="home.see-roster">See the roster</a>
+        <a href="/data/" style="display:inline-flex;align-items:center;font-family:'Supercell Magic',system-ui,sans-serif;font-size:1rem;min-height:52px;padding:0 26px;border:1.5px solid rgba(215,200,255,.24);border-radius:14px;background:transparent;color:#c8c1e6;" data-tinylytics-event="home.explore-data">Explore the data</a>
       </div>
-      <div class="mt-5" style="color:var(--text-3);font-size:13px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-        <span class="kicker" style="color:var(--text-2)">Different flags. Same grind.</span>
-        <span class="tinylytics_countries" style="font-size:20px;letter-spacing:3px"></span>
-      </div>
+      <p style="margin:22px 0 0;font-size:.82rem;color:#c8c1e6;display:flex;align-items:center;gap:8px;"><span style="color:#22c55e;font-size:1.1em;">↻</span> Data updated {{ roster.updated | formatDate }} from the Clash Royale API.</p>
     </div>
 
-    <div class="hero-proof">
-      <div class="hero-proof__head">
-        <img src="/assets/poapkings.png" alt="" />
+    <div style="border:1px solid rgba(245,200,76,.25);border-radius:24px;background:radial-gradient(circle at 92% 8%,rgba(245,200,76,.08),transparent 40%),linear-gradient(150deg,rgba(38,22,78,.9),rgba(11,9,32,.94));box-shadow:0 18px 60px rgba(0,0,0,.5);padding:24px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <img src="/assets/poapkings.png" alt="" style="width:44px;height:44px;object-fit:contain;">
+        <div style="display:grid;">
+          <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c8c1e6;">Proof by numbers</span>
+          <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;">Roster snapshot</strong>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        {%- set heroStats = [
+          { label: 'Clan Trophies', value: clan.clanScore | formatNumber, detail: 'Across all ' + memberCount + ' members' },
+          { label: 'Avg Trophies', value: avgTrophies | formatNumber, detail: (clan.totalTrophies | formatNumber) + ' total' },
+          { label: 'Donations / week', value: clan.donationsPerWeek | formatNumber, detail: 'Whole-clan generosity' },
+          { label: 'Career Wins', value: totalWins | formatNumber, detail: (avgWins | formatNumber) + ' avg per member' }
+        ] -%}
+        {%- for s in heroStats %}
+        <div style="padding:15px 14px;border-radius:14px;">
+          <span style="font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c8c1e6;display:block;">{{ s.label }}</span>
+          <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.9rem;line-height:1.1;color:#f5c84c;display:block;margin-top:4px;">{{ s.value }}</strong>
+          <small style="color:#c8c1e6;font-size:.72rem;line-height:1.3;display:block;margin-top:3px;">{{ s.detail }}</small>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- testimonial -->
+  <section style="margin-top:40px;">
+    <figure style="margin:0;border:1px solid rgba(245,200,76,.22);border-radius:24px;background:radial-gradient(circle at 12% 0%,rgba(109,40,217,.28),transparent 45%),rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:clamp(28px,4vw,44px);">
+      <blockquote style="margin:0;font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.25rem,2.6vw,1.85rem);line-height:1.5;color:#f7f4ff;text-wrap:pretty;max-width:26em;">I've been playing Clash Royale for 10 years and I just want to say this is hands down <span style="color:#f5c84c;">THE best clan</span> I've ever been in. Y'all are great!</blockquote>
+      <figcaption style="display:flex;align-items:center;gap:12px;margin-top:22px;">
+        <div style="display:grid;">
+          <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;font-weight:400;">Th15_Guy</strong>
+          <span style="font-size:.76rem;color:#c8c1e6;">Elder · 10 years in Clash Royale · <span style="font-family:ui-monospace,Menlo,monospace;color:#f5c84c;">#QLGYYG0Q</span></span>
+        </div>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- requirements -->
+  <section class="pk-req-wrap" style="margin-top:40px;border:1px solid rgba(139,92,246,.35);border-radius:20px;background:linear-gradient(145deg,rgba(59,29,122,.28),rgba(11,9,32,.5));padding:24px 26px;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:9px;">
+        <span style="font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d7c8ff;">Are you a fit? · Requirements</span>
+      </div>
+    </div>
+    <div class="pk-req4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;">
+      {%- set requirements = [
+        { label: 'Min Trophies', value: clan.minTrophies | formatNumber },
+        { label: 'Clan Status', value: clan.clanStatus },
+        { label: 'Open Slots', value: openSlots + ' of 50' },
+        { label: 'War League', value: clan.clanWarTrophies | cwlTier }
+      ] -%}
+      {%- for r in requirements %}
+      <div style="padding:14px;border-radius:13px;">
+        <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.3rem;color:#f7f4ff;display:block;">{{ r.value }}</strong>
+        <span style="font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#c8c1e6;display:block;margin-top:5px;">{{ r.label }}</span>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <!-- mini trend + roster teaser -->
+  <section class="pk-split" style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;margin-top:20px;">
+    <article style="border:1px solid rgba(215,200,255,.14);border-radius:20px;background:rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:22px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
         <div>
-          <span class="kicker">Roster snapshot</span>
-          <strong>{{ roster.updated | formatDate }}</strong>
+          <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c8c1e6;">The whole roster, plotted</span>
+          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.15rem;margin:5px 0 0;">Collection depth × trophies</h3>
         </div>
+        <a href="/data/" style="color:#d7c8ff;font-weight:700;font-size:.78rem;">Full data page →</a>
       </div>
-      <div class="hero-proof__stats">
-        {% for stat in insightStats %}
-        <div>
-          <span>{{ stat.label }}</span>
-          <strong>{{ stat.value | formatNumber }}</strong>
-          <small>{{ stat.detail }}</small>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="hero-proof__bars" aria-label="Trophy distribution">
-        {% for bucket in clanInsights.trophyDistribution %}
-        <div class="hero-proof__bar">
-          <span>{{ bucket.label }}</span>
-          <div><i style="width: {{ (bucket.count / clan.memberCount * 100) if clan.memberCount else 0 }}%"></i></div>
-          <strong>{{ bucket.count }}</strong>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section--tight" data-section="trophy-strip" style="padding-top: 0;">
-  <div class="trophystrip">
-    <div class="trophystrip__cell">
-      <div class="trophystrip__n" data-count-up="{{ clan.clanScore }}" data-count-up-ms="1600">0</div>
-      <div class="trophystrip__label">Clan Trophies</div>
-    </div>
-    <div class="trophystrip__cell{% if isFull %} trophystrip__cell--full{% endif %}">
-      <div class="trophystrip__n"><span data-count-up="{{ clan.memberCount }}">0</span> / 50</div>
-      <div class="trophystrip__label">{% if isFull %}Clan full · waitlist{% else %}Members{% endif %}</div>
-    </div>
-    <div class="trophystrip__cell">
-      <div class="trophystrip__n">{{ clan.clanWarTrophies | cwlTier }}</div>
-      <div class="trophystrip__label">War League · {{ clan.clanWarTrophies | formatNumber }} trophies</div>
-    </div>
-    <div class="trophystrip__cell">
-      <div class="trophystrip__n"><span data-count-up="{{ clan.minTrophies }}">0</span>+</div>
-      <div class="trophystrip__label">Min Trophies</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" data-section="proof">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">Proof by numbers</span>
-      <h2 class="h-display h2 mt-3">A veteran roster, visible at a glance.</h2>
-      <p class="lede mt-3">The website now publishes the same kind of Clash Royale API data players care about: trophy depth, career wins, collection score, account tenure, and Clan Wars history.</p>
-    </div>
-    <a href="/wars/" class="btn--link">Clan Wars history →</a>
-  </div>
-
-  <div class="data-grid data-grid--home">
-    <article class="data-panel data-panel--wide">
-      <div class="data-panel__head">
-        <div>
-          <span class="kicker">Historical roster strength</span>
-          <h3 class="h-display h3">Daily clan trend</h3>
-        </div>
-        <span>{{ clanTrends.firstDate | formatDate }} – {{ clanTrends.latestDate | formatDate }}</span>
-      </div>
-      <svg class="line-chart" id="homeTrendChart" viewBox="0 0 720 260" role="img" aria-label="Clan score and top-player trend over time"></svg>
-      <div class="chart-legend">
-        <span><i class="legend-dot legend-dot--gold"></i> Clan score</span>
-        <span><i class="legend-dot legend-dot--cyan"></i> 12k+ members</span>
+      <svg viewBox="0 0 720 280" role="img" aria-label="Scatter plot of each clan member by collection level and trophy count" style="width:100%;height:auto;margin-top:14px;">
+        <line x1="60" y1="222" x2="700" y2="222" stroke="rgba(215,200,255,.18)" stroke-width="1"></line>
+        <line x1="60" y1="24" x2="60" y2="222" stroke="rgba(215,200,255,.18)" stroke-width="1"></line>
+        <text x="380" y="262" text-anchor="middle" fill="#8a83a6" font-size="13" font-family="Inter,sans-serif" font-weight="700">Collection level →</text>
+        <text x="20" y="123" text-anchor="middle" fill="#8a83a6" font-size="13" font-family="Inter,sans-serif" font-weight="700" transform="rotate(-90 20 123)">Trophies →</text>
+        {%- for p in scatterPoints %}
+        <circle cx="{{ p.cx }}" cy="{{ p.cy }}" r="6" fill="{{ p.fill }}" stroke="rgba(7,6,16,.6)" stroke-width="1.5" opacity="0.9"></circle>
+        {%- endfor %}
+      </svg>
+      <div style="display:flex;gap:18px;margin-top:6px;font-size:.76rem;color:#c8c1e6;flex-wrap:wrap;">
+        <span style="display:inline-flex;align-items:center;gap:6px;"><i style="width:10px;height:10px;border-radius:50%;background:#f5c84c;display:inline-block;"></i> Leadership</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;"><i style="width:10px;height:10px;border-radius:50%;background:#d7c8ff;display:inline-block;"></i> Elder</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;"><i style="width:10px;height:10px;border-radius:50%;background:#8b5cf6;display:inline-block;"></i> Member</span>
       </div>
     </article>
 
-    <article class="data-panel">
-      <div class="data-panel__head">
-        <div>
-          <span class="kicker">Current roster</span>
-          <h3 class="h-display h3">Trophy depth</h3>
-        </div>
-      </div>
-      <div class="distribution">
-        {% for bucket in clanInsights.trophyDistribution %}
-        <div class="distribution__row">
-          <span>{{ bucket.label }}</span>
-          <div><i style="width: {{ (bucket.count / clan.memberCount * 100) if clan.memberCount else 0 }}%"></i></div>
-          <strong>{{ bucket.count }}</strong>
-        </div>
-        {% endfor %}
-      </div>
-    </article>
-
-    <article class="data-panel">
-      <div class="data-panel__head">
-        <div>
-          <span class="kicker">Top ladder players</span>
-          <h3 class="h-display h3">Current leaders</h3>
-        </div>
-      </div>
-      <ol class="leader-list">
-        {% for leader in trophyLeaders | take(6) %}
-        <li>
-          <span>{{ leader.name }}</span>
-          <strong>{{ leader.value | formatNumber }}</strong>
+    <article style="border:1px solid rgba(215,200,255,.14);border-radius:20px;background:rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:22px;">
+      <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c8c1e6;">The backbone of the clan</span>
+      <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.15rem;margin:5px 0 4px;">Our Elders</h3>
+      <p style="color:#c8c1e6;font-size:.78rem;margin:0 0 14px;">Earned through wars, ranked, and generosity.</p>
+      <ol style="list-style:none;margin:0;padding:0;display:grid;gap:1px;">
+        {%- for l in elders | take(6) %}
+        <li style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 4px;border-bottom:1px solid rgba(215,200,255,.08);">
+          <span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.92rem;">{{ l.name }}</span>
+          <span style="font-size:.72rem;color:#c8c1e6;flex:0 0 auto;">{{ l.years }}y played</span>
         </li>
-        {% endfor %}
+        {%- endfor %}
       </ol>
+      <a href="/roster/" style="margin-top:14px;display:inline-block;color:#d7c8ff;font-weight:700;font-size:.78rem;">See full roster →</a>
     </article>
-  </div>
-</section>
+  </section>
 
-<script id="homeTrendData" type="application/json">{{ clanTrends.series | dump | safe }}</script>
-<script>
-(function(){
-  var el = document.getElementById('homeTrendChart');
-  var dataEl = document.getElementById('homeTrendData');
-  if (!el || !dataEl) return;
-  var rows = JSON.parse(dataEl.textContent || '[]').filter(function(row){
-    return row.clanScore != null && row.count12000Plus != null;
-  });
-  if (rows.length < 2) return;
+  <!-- why join -->
+  <section style="margin-top:52px;">
+    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Why join</span>
+    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">Not just another clan</h2>
+    <ol class="pk-grid-3" style="list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      {%- set reasons = [
+        { num: '01', title: 'Proof, not hype', body: "Our full roster and clan stats are public and refreshed daily. See exactly who you're joining before you apply — most clans ask you to just trust them." },
+        { num: '02', title: 'Structure you can see', body: 'Elder is earned through participation you control — wars, ranked, donations — reviewed every Tuesday, with standings shared openly. No favoritism, no guessing.' },
+        { num: '03', title: 'Real, clan-funded rewards', body: 'The top war earner each season gets a free Pass Royale, sent in-game. An actual reward for showing up, not a leaderboard badge.' },
+        { num: '04', title: 'Generosity is the flex', body: 'Cards donated every week by the whole clan, with Elders leading by example. Post a request and it fills fast — your upgrades never stall waiting on the clan.' },
+        { num: '05', title: 'We build our own tools', body: 'Elixir, our clan agent, runs the data and weekly standings. Elixir Drop, our game, sharpens your play. Almost no clan ships its own software.' },
+        { num: '06', title: 'Veteran, drama-free culture', body: 'A veteran roster with real staying power. Wars encouraged, not required — good vibes, and real life always comes first.' }
+      ] -%}
+      {%- for r in reasons %}
+      <li style="border:1px solid rgba(215,200,255,.14);border-radius:16px;background:rgba(18,13,40,.55);padding:22px;">
+        <div style="font-family:'Supercell Magic',system-ui,sans-serif;color:#6d28d9;font-size:1.4rem;">{{ r.num }}</div>
+        <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.05rem;margin:8px 0 6px;">{{ r.title }}</h3>
+        <p style="color:#c8c1e6;font-size:.92rem;line-height:1.55;margin:0;">{{ r.body }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
 
-  function extent(key){
-    var values = rows.map(function(row){ return Number(row[key]); }).filter(Number.isFinite);
-    return [Math.min.apply(Math, values), Math.max.apply(Math, values)];
-  }
-  function points(key, min, max){
-    var span = max - min || 1;
-    return rows.map(function(row, index){
-      var x = 44 + (index / Math.max(1, rows.length - 1)) * 632;
-      var y = 218 - ((Number(row[key]) - min) / span) * 170;
-      return x.toFixed(1) + ',' + y.toFixed(1);
-    }).join(' ');
-  }
-  function node(name, attrs){
-    var item = document.createElementNS('http://www.w3.org/2000/svg', name);
-    Object.keys(attrs).forEach(function(key){ item.setAttribute(key, attrs[key]); });
-    return item;
-  }
-
-  var score = extent('clanScore');
-  var elite = extent('count12000Plus');
-  el.appendChild(node('line', { x1: 44, y1: 218, x2: 676, y2: 218, class: 'chart-axis' }));
-  el.appendChild(node('line', { x1: 44, y1: 48, x2: 44, y2: 218, class: 'chart-axis' }));
-  el.appendChild(node('polyline', { points: points('clanScore', score[0], score[1]), class: 'chart-line chart-line--gold' }));
-  el.appendChild(node('polyline', { points: points('count12000Plus', elite[0], elite[1]), class: 'chart-line chart-line--cyan' }));
-})();
-</script>
-
-<section class="section" data-section="why">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">Why join</span>
-      <h2 class="h-display h2 mt-3">Not just another clan</h2>
-      <p class="lede mt-3">A place for players who enjoy progression, community, and being part of something from the beginning.</p>
+  <!-- built by POAP KINGS -->
+  <section style="margin-top:52px;">
+    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Built by POAP KINGS</span>
+    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">We build our own tools</h2>
+    <div class="pk-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;">
+      <a href="/elixir/" style="position:relative;overflow:hidden;border:1px solid rgba(139,92,246,.5);border-radius:20px;background:radial-gradient(circle at 88% 12%,rgba(245,60,255,.2),transparent 42%),linear-gradient(145deg,rgba(88,28,235,.4),rgba(38,22,78,.7));box-shadow:0 18px 60px rgba(0,0,0,.45);padding:28px;display:flex;flex-direction:column;justify-content:space-between;color:inherit;">
+        <div>
+          <span style="display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f5c84c;padding:4px 10px;border-radius:999px;background:rgba(245,200,76,.14);">Our clan agent</span>
+          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.5rem;margin:12px 0 8px;">Meet Elixir</h3>
+          <p style="color:#e7e2f7;line-height:1.6;margin:0;">Built by and for POAP KINGS, Elixir is our clan agent — publishing the weekly Elder Standing, tracking every member's stats, and welcoming recruits. The data on this site runs through Elixir.</p>
+          <span style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;color:#f5c84c;">Meet Elixir →</span>
+        </div>
+      </a>
+      <a href="https://drop.poapkings.com" target="_blank" rel="noreferrer" style="display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(245,200,76,.28);border-radius:20px;background:radial-gradient(circle at 12% 90%,rgba(109,40,217,.3),transparent 45%),linear-gradient(145deg,rgba(38,22,78,.85),rgba(11,9,32,.92));box-shadow:0 18px 60px rgba(0,0,0,.45);padding:28px;color:inherit;">
+        <div>
+          <span style="display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f5c84c;padding:4px 10px;border-radius:999px;background:rgba(245,200,76,.14);">Our game</span>
+          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.5rem;margin:12px 0 8px;">Elixir Drop</h3>
+          <p style="color:#c8c1e6;line-height:1.6;margin:0;">A fast little game we built and run to help players learn Clash Royale cards and elixir costs — and get quicker at reading the field.</p>
+        </div>
+        <span style="margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;color:#f5c84c;">Play Elixir Drop →</span>
+      </a>
     </div>
-  </div>
+  </section>
 
-  <ol class="reasons">
-    <li class="reason">
-      <div class="reason__num">01</div>
-      <h3 class="h-display h3">Collect unique POAPs</h3>
-      <p>Members collect on-chain badges tied to seasons, milestones and events. Your proof of Arena Push, season by season.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">02</div>
-      <h3 class="h-display h3">Compete for real rewards</h3>
-      <p>Strong Clan Wars contribution keeps eligible members in the running for clan-funded Pass Royale rewards.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">03</div>
-      <h3 class="h-display h3">Good vibes only</h3>
-      <p>War participation is encouraged but not required. No pressure, no spreadsheets — real life comes first.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">04</div>
-      <h3 class="h-display h3">Generosity is the flex</h3>
-      <p>Elders donate regularly. Help your clanmates, earn your title, and watch the donation totals climb.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">05</div>
-      <h3 class="h-display h3">Active community</h3>
-      <p>Active members expected. Idle accounts are removed to keep the clan healthy and donations flowing.</p>
-    </li>
-    <li class="reason">
-      <div class="reason__num">06</div>
-      <h3 class="h-display h3">Discord community</h3>
-      <p>Deck advice, matchup banter, Sunday Scrimmages, and the occasional meme. The clan lives beyond the game.</p>
-    </li>
-  </ol>
-</section>
-
-<hr class="rule" />
-
-<section class="section" data-section="how">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow eyebrow--purple">How it works</span>
-      <h2 class="h-display h2 mt-3">Simple cadence.<br/>Clear incentives.</h2>
-    </div>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step__n">1</div>
-      {% if isFull %}
-      <h3 class="h-display h3">Join the waitlist</h3>
-      <p>We're <strong>full right now</strong> — all 50 seats taken. Drop into our <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="color:var(--gold)">Discord</a> so we know you when a spot opens up. Minimum {{ clan.minTrophies | formatNumber }}+ trophies.</p>
-      {% else %}
-      <h3 class="h-display h3">Join the clan</h3>
-      <p>Search for <strong>POAP KINGS</strong> in-game, or use clan tag <span class="mono" style="color:var(--gold)">#{{ site.clanTag }}</span>. We're {{ clan.clanStatus | lower }} to anyone with {{ clan.minTrophies | formatNumber }}+ trophies.</p>
-      {% endif %}
-    </div>
-    <div class="step">
-      <div class="step__n">2</div>
-      <h3 class="h-display h3">Play &amp; donate</h3>
-      <p>Push ladder, join Clan Wars when you can, and donate to your clanmates. That's how you earn Elder.</p>
-    </div>
-    <div class="step">
-      <div class="step__n">3</div>
-      <h3 class="h-display h3">Collect the proof</h3>
-      <p>Each season, active members receive a POAP — a collectible badge that marks the moment.</p>
-    </div>
-  </div>
-</section>
-
-{% set recentVault = vault.poaps | sortVault | take(5) %}
-{% if recentVault and recentVault.length %}
-<section class="section" data-section="vault">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">The Vault</span>
-      <h2 class="h-display h2 mt-3">Recent drops</h2>
-      <p class="lede mt-3">On-chain badges commemorating seasons, milestones, scrimmages and events.</p>
-    </div>
-    <a href="/vault/" class="btn--link">Browse all POAPs →</a>
-  </div>
-
-  <div class="vault-grid">
-    {% for p in recentVault %}
-    {%- set eventUrl = ("https://poap.gallery/event/" + p.event_id) if p.event_id else "" -%}
-    {%- if eventUrl -%}
-    <a class="vault" href="{{ eventUrl | e }}" target="_blank" rel="noreferrer">
-    {%- else -%}
-    <div class="vault">
-    {%- endif %}
-      <div class="vault__img">
-        {% if p.image %}<img src="{{ p.image | e }}" alt="{{ (p.name or 'POAP') | e }}" />{% else %}<div style="font-size:36px;opacity:.5">★</div>{% endif %}
-      </div>
-      <div class="vault__body">
-        <span class="{{ p.type | typeClass }}">{{ (p.type or 'POAP') | e }}</span>
-        <div class="vault__name">{{ (p.name or 'Untitled POAP') | e }}</div>
-        {% if p.date %}<div class="vault__date">{{ p.date | formatDate }}</div>{% endif %}
-      </div>
-    {%- if eventUrl %}</a>{%- else %}</div>{%- endif %}
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
-<section class="section" data-section="join">
-  <div class="final-join">
-    {%- set spotsLeft = 50 - clan.memberCount -%}
+  <!-- final join -->
+  <section style="margin:56px 0 72px;border:1px solid rgba(245,200,76,.25);border-radius:24px;background:radial-gradient(circle at 90% 10%,rgba(245,200,76,.1),transparent 38%),linear-gradient(145deg,rgba(38,22,78,.9),rgba(11,9,32,.95));box-shadow:0 18px 60px rgba(0,0,0,.5);padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;" class="pk-split">
     <div>
-      <span class="eyebrow">Ready?</span>
-      {% if spotsLeft > 0 %}
-      <h2 class="h-display h2 mt-3">We're {{ clan.clanStatus | lower }}.<br/>{{ spotsLeft }} spot{{ "s" if spotsLeft != 1 }} left.</h2>
-      <p class="lede mt-4">If you've got {{ clan.minTrophies | formatNumber }}+ trophies, you can jump in right now. See you in Discord.</p>
-      {% else %}
-      <h2 class="h-display h2 mt-3">The clan<br/>is full.</h2>
-      <p class="lede mt-4">All 50 seats are taken for now — but roster turns over every season. Drop into Discord so we know you when a spot opens up.</p>
-      {% endif %}
+      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Ready?</span>
+      <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.02;margin:12px 0 0;">{% if openSlots > 0 %}We're invite only.<br>{{ openSlots }} spot{{ 's' if openSlots != 1 }} left.{% else %}We're invite only.<br>The clan is full.{% endif %}</h2>
+      <p style="font-size:1.05rem;color:#c8c1e6;margin:16px 0 0;">If you've got {{ clan.minTrophies | formatNumber }}+ trophies and show up for war, apply in-game and leadership will review it. See you in Discord.</p>
     </div>
-    <div class="final-join__side">
-      <dl class="final-join__dl">
-        <div><dt>Clan Name</dt><dd>POAP KINGS</dd></div>
-        <div><dt>Clan Tag</dt><dd class="mono">#{{ site.clanTag }}</dd></div>
-        <div><dt>Region</dt><dd>{{ clan.clanRegion }}</dd></div>
-        <div><dt>Type</dt><dd>{{ clan.clanStatus }}</dd></div>
+    <div>
+      <dl style="margin:0;display:grid;gap:1px;border-radius:14px;overflow:hidden;">
+        <div style="display:flex;justify-content:space-between;padding:12px 0;"><dt style="color:#c8c1e6;font-size:.85rem;">Clan Tag</dt><dd style="margin:0;font-family:ui-monospace,monospace;color:#f5c84c;">#{{ site.clanTag }}</dd></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0;"><dt style="color:#c8c1e6;font-size:.85rem;">Region</dt><dd style="margin:0;">{{ clan.clanRegion }}</dd></div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0;"><dt style="color:#c8c1e6;font-size:.85rem;">Type</dt><dd style="margin:0;">{{ clan.clanStatus }}</dd></div>
       </dl>
-      <div class="ctaRow mt-5">
-        {% if isFull %}
-        <button type="button" class="btn btn--purple" data-modal-open="join" data-tinylytics-event="home.final-waitlist">WAIT</button>
-        <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" class="btn btn--ghost" data-tinylytics-event="home.final-discord">Open Discord</a>
-        {% else %}
-        <button type="button" class="btn btn--gold" data-modal-open="join" data-tinylytics-event="home.final-join">JOIN</button>
-        <a href="/members/setup/" class="btn btn--ghost" data-tinylytics-event="home.clan-setup">Clan setup</a>
-        {% endif %}
+      <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+        <button type="button" data-modal-open="join" data-tinylytics-event="home.join" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;min-height:50px;padding:0 24px;display:inline-flex;align-items:center;border:0;border-radius:14px;cursor:pointer;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;box-shadow:0 4px 24px rgba(245,200,76,.35);">JOIN</button>
+        <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;min-height:50px;padding:0 24px;display:inline-flex;align-items:center;border-radius:14px;border:1.5px solid rgba(215,200,255,.24);color:#c8c1e6;">Open Discord</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</div>

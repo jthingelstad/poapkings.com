@@ -1,0 +1,130 @@
+---
+permalink: /data/
+layout: base.njk
+title: Clan Data | POAP KINGS | A Clash Royale Clan with Proof
+description: "Explore POAP KINGS Clash Royale API data — plot the roster on any two metrics and scrub the clan's whole history. Refreshed daily."
+navActive: data
+supercellDisclaimer: true
+extraScripts: '<script src="/data.js" defer></script>'
+---
+{%- set memberCount = clan.memberCount -%}
+<script id="explorerData" type="application/json">{{ rosterExplorer.members | explorerMembers | dump | safe }}</script>
+<script id="timelineData" type="application/json">{{ clanTrends.series | timelineSeries | dump | safe }}</script>
+
+<div class="pk-page" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
+  <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Proof by numbers</span>
+  <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2rem,4.5vw,3rem);margin:12px 0 0;">Clan Data</h1>
+  <p style="font-size:1.05rem;color:#c8c1e6;margin:14px 0 0;max-width:46em;">The same Clash Royale API data serious players care about — refreshed daily and fully explorable. Plot the roster on any two metrics, then scrub the clan's whole history.</p>
+
+  <!-- Roster Explorer -->
+  <section style="margin-top:26px;border:1px solid rgba(215,200,255,.14);border-radius:24px;background:rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:clamp(20px,3vw,28px);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div>
+        <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f5c84c;">Interactive</span>
+        <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.4rem,2.6vw,1.9rem);margin:5px 0 0;">Roster Explorer</h2>
+      </div>
+      <span style="font-size:.78rem;color:#c8c1e6;"><span id="shownCount">{{ memberCount }}</span> members plotted · each dot is a player</span>
+    </div>
+
+    <div class="pk-explorer-controls" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px;margin-top:20px;">
+      {%- set metricOpts = [
+        { val: 'trophies', label: 'Trophies' },
+        { val: 'wins', label: 'Career Wins' },
+        { val: 'years', label: 'Years Played' },
+        { val: 'collection', label: 'Collection' },
+        { val: 'donations', label: 'Donations/wk' }
+      ] -%}
+      {%- set axisGroups = [
+        { group: 'xKey', title: 'X axis', active: 'collection' },
+        { group: 'yKey', title: 'Y axis', active: 'trophies' },
+        { group: 'sizeKey', title: 'Dot size', active: 'wins' }
+      ] -%}
+      {%- for g in axisGroups %}
+      <div>
+        <span style="font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c8c1e6;display:block;margin-bottom:7px;">{{ g.title }}</span>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;" data-explorer-group="{{ g.group }}">
+          {%- for o in metricOpts %}
+          <button type="button" class="pk-pill{% if o.val == g.active %} is-active{% endif %}" data-val="{{ o.val }}">{{ o.label }}</button>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endfor %}
+      <div>
+        <span style="font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c8c1e6;display:block;margin-bottom:7px;">Color</span>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;" data-explorer-group="colorMode">
+          <button type="button" class="pk-pill is-active" data-val="role">Role</button>
+          <button type="button" class="pk-pill" data-val="value">By Y-value</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;">
+      <span style="font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c8c1e6;">Show</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;" data-explorer-group="roleFilter">
+        <button type="button" class="pk-pill is-active" data-val="all">All</button>
+        <button type="button" class="pk-pill" data-val="lead">Leadership</button>
+        <button type="button" class="pk-pill" data-val="elder">Elders</button>
+        <button type="button" class="pk-pill" data-val="member">Members</button>
+      </div>
+    </div>
+
+    <div class="pk-explorer-chart" style="display:grid;grid-template-columns:1fr 258px;gap:18px;margin-top:20px;">
+      <div style="border:1px solid rgba(215,200,255,.1);border-radius:16px;background:rgba(7,6,16,.4);padding:8px;">
+        <svg viewBox="0 0 760 420" role="img" aria-label="Scatter plot of clan members" style="width:100%;height:auto;display:block;">
+          <line x1="70" y1="372" x2="724" y2="372" stroke="rgba(215,200,255,.2)" stroke-width="1"></line>
+          <line x1="70" y1="32" x2="70" y2="372" stroke="rgba(215,200,255,.2)" stroke-width="1"></line>
+          <line id="xMedLine" x1="70" y1="32" x2="70" y2="372" stroke="rgba(245,200,76,.28)" stroke-width="1" stroke-dasharray="4 5"></line>
+          <line id="yMedLine" x1="70" y1="372" x2="724" y2="372" stroke="rgba(245,200,76,.28)" stroke-width="1" stroke-dasharray="4 5"></line>
+          <text id="xMedLabel" x="70" y="28" text-anchor="middle" fill="rgba(245,200,76,.7)" font-size="10" font-family="Inter,sans-serif" font-weight="700">median</text>
+          <text id="xMinL" x="70" y="392" fill="#8a83a6" font-size="12" font-family="Inter,sans-serif"></text>
+          <text id="xMaxL" x="724" y="392" text-anchor="end" fill="#8a83a6" font-size="12" font-family="Inter,sans-serif"></text>
+          <text id="yMinL" x="62" y="376" text-anchor="end" fill="#8a83a6" font-size="12" font-family="Inter,sans-serif"></text>
+          <text id="yMaxL" x="62" y="40" text-anchor="end" fill="#8a83a6" font-size="12" font-family="Inter,sans-serif"></text>
+          <text id="xAxisLabel" x="397" y="412" text-anchor="middle" fill="#d7c8ff" font-size="13" font-family="Inter,sans-serif" font-weight="700"></text>
+          <text id="yAxisLabel" x="20" y="202" text-anchor="middle" fill="#d7c8ff" font-size="13" font-family="Inter,sans-serif" font-weight="700" transform="rotate(-90 20 202)"></text>
+          <g id="scatterDots"></g>
+        </svg>
+      </div>
+      <aside style="border:1px solid rgba(215,200,255,.12);border-radius:16px;background:rgba(11,9,32,.6);padding:18px;display:flex;flex-direction:column;">
+        <span id="detailKicker" style="font-size:.6rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#c8c1e6;"></span>
+        <strong id="detailName" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.1rem;margin:10px 0 3px;line-height:1.2;"></strong>
+        <em id="detailRole" style="font-style:normal;font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#c8c1e6;"></em>
+        <div id="detailStats" style="display:grid;gap:1px;margin-top:14px;"></div>
+        <p style="margin:14px 0 0;font-size:.72rem;color:#8a83a6;line-height:1.45;">Hover any dot to inspect that member. Dashed gold lines mark the clan median.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Clan timeline -->
+  <section style="margin-top:20px;border:1px solid rgba(215,200,255,.14);border-radius:24px;background:rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:clamp(20px,3vw,28px);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div>
+        <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f5c84c;">Hover to inspect any day</span>
+        <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.4rem,2.6vw,1.9rem);margin:5px 0 0;">Clan timeline</h2>
+      </div>
+      <span style="font-size:.78rem;color:#c8c1e6;">as of <span id="timelineDate"></span></span>
+    </div>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;" id="timelineChips">
+      {%- set tMetrics = [
+        { key: 'clanScore', label: 'Clan trophies', color: '#f5c84c', on: true },
+        { key: 'members', label: 'Clan members', color: '#57d0e6', on: true },
+        { key: 'war', label: 'War trophies', color: '#c084fc', on: false },
+        { key: 'donations', label: 'Donations/wk', color: '#4ade80', on: false }
+      ] -%}
+      {%- for c in tMetrics %}
+      <button type="button" class="pk-chip{% if c.on %} is-active{% endif %}" data-series="{{ c.key }}" data-color="{{ c.color }}"{% if c.on %} style="border-color:{{ c.color }};"{% endif %}><i class="pk-chip__dot" style="background:{{ c.color }};"></i>{{ c.label }}</button>
+      {%- endfor %}
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:18px;" id="timelineCounters"></div>
+
+    <svg viewBox="0 0 760 280" role="img" aria-label="Selected clan metrics over time" style="width:100%;height:auto;margin-top:12px;">
+      <line x1="60" y1="250" x2="736" y2="250" stroke="rgba(215,200,255,.18)" stroke-width="1"></line>
+      <line id="timelineHead" x1="736" y1="24" x2="736" y2="250" stroke="rgba(245,200,76,.4)" stroke-width="1"></line>
+      <g id="timelineLines"></g>
+      <rect id="timelineHover" x="60" y="24" width="676" height="226" fill="transparent" style="cursor:crosshair;touch-action:none;"></rect>
+    </svg>
+    <div style="display:flex;gap:18px;margin-top:6px;font-size:.76rem;color:#c8c1e6;flex-wrap:wrap;" id="timelineLegend"></div>
+    <p style="margin:8px 0 0;font-size:.72rem;color:#8a83a6;">Hover the chart to read any day; each line is scaled to its own range so trends read clearly side by side.</p>
+  </section>
+</div>

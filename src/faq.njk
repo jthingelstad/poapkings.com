@@ -2,229 +2,92 @@
 permalink: /faq/
 layout: base.njk
 title: FAQ | POAP KINGS | A Clash Royale Clan with Proof
-description: "Frequently asked questions about POAP KINGS — clan wars, POAPs, Free Pass Royale, roles, and more."
+description: "Frequently asked questions about POAP KINGS — the clan, Clan Wars, the Free Pass Royale program, roles, and Discord."
 navActive: faq
 supercellDisclaimer: true
 ---
-    <section class="pageIntro card">
-      <h1 class="pageTitle">FAQ</h1>
-      <p class="sectionDesc">
-        Everything you need to know about <strong>POAP KINGS</strong> — the clan, the wars, the POAPs, and how it all works.
-      </p>
-    </section>
+{%- macro faqSection(id, heading, items) -%}
+  <h2 id="{{ id }}" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.3rem;margin:38px 0 12px;scroll-margin-top:80px;">{{ heading | safe }}</h2>
+  {%- for f in items %}
+  <div style="margin-bottom:22px;">
+    <h3 style="margin:0 0 8px;font-weight:700;font-size:1.02rem;color:#f7f4ff;">{{ f.q }}</h3>
+    <p style="color:#c8c1e6;line-height:1.65;margin:0;">{{ f.a }}</p>
+  </div>
+  {%- endfor %}
+{%- endmacro -%}
 
-    <section>
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">TL;DR</h2>
-        <ul class="list">
-          <li>{{ clan.clanStatus }} clan, {{ clan.minTrophies | formatNumber }} trophy minimum.</li>
-          <li>Be active, donate, don't be a jerk.</li>
-          <li>Wars encouraged, not required.</li>
-          <li>One disclosed alt account is allowed per player.</li>
-          <li>Top war earner each season gets a free Pass Royale.</li>
-          <li>Active members get a collectible POAP every season.</li>
-          <li>Elder is earned by donating relative to the clan and taking part in Clan Wars or Ranked — participation you control. It can be taken away.</li>
-          <li>No crypto knowledge needed to claim POAPs.</li>
-        </ul>
-      </div>
-    </section>
+{%- set faqAbout = [
+  { q: 'Why did you create POAP KINGS?', a: "Raquaza and King Levy have played Clash Royale for over three years, cycling through clans that never quite fit. King Thing picked it up more recently. We're all family, so we built the clan we wanted: structure, recognition, and something lasting to show for the grind." },
+  { q: 'Why the name POAP KINGS?', a: 'For us, POAP means "Proof of Arena Push" — the grind is real, so show the receipts. Kings because we aim high. It\'s become the whole identity of the clan: prove it, then prove it again.' }
+] -%}
+{%- set faqJoining = [
+  { q: 'How do I join?', a: "We're currently invite only. Search POAP KINGS or use tag #J2RGCRVG in Clash Royale. Minimum 7,000 trophies. Apply in-game and leadership will review it." },
+  { q: 'What are the clan rules?', a: 'Be active (don\'t ghost a whole season without a heads-up), be generous (donate when you can), be decent (no toxicity or drama), and take part in wars when you can. Real life comes first — just communicate.' },
+  { q: 'Can I have an alt account in the clan?', a: 'Yes — one alt per player, as long as you proactively tell leadership which account is your alt. Hidden alts can get both accounts kicked, and if the clan is near capacity, alts may be removed even when active.' }
+] -%}
+{%- set faqWars = [
+  { q: 'Do I have to participate in Clan Wars?', a: 'No — encouraged but not required. Consistent participation and good vibes matter more than strict requirements. That said, war performance is how you earn War Champ and Free Pass Royale eligibility.' },
+  { q: 'How is War Champ chosen?', a: 'Top Clan Wars point earner for the season, pulled directly from the Clash Royale API — no manual adjustments. Joining mid-season doesn\'t earn a handicap. Leadership breaks ties transparently.' }
+] -%}
+{%- set faqPass = [
+  { q: 'What is the Free Pass Royale Program?', a: 'The top eligible war point earner each season gets a free Pass Royale, sent in-game. Real reward, no gimmicks.' },
+  { q: 'How does eligibility work?', a: 'Highest war points among eligible players for the season. No back-to-back winners. Alt accounts can win, but eligibility follows the player. Points come straight from the Clash Royale API.' },
+  { q: 'How will I receive the pass?', a: 'Sent in-game to the account playing in the clan — no PayPal, Venmo, or cash. You must be Supercell ID friends with King Thing (Thingles) beforehand. Set that up on the Setup page so there are no delays when you win.' }
+] -%}
+{%- set faqRoles = [
+  { q: 'What are the roles?', a: 'Member (standard participant), Elder (earned by competing for the clan and donating generously — it can also be taken away), and Leadership (Co-Leaders and the Leader, appointed at leadership\'s discretion).' },
+  { q: 'How do I earn Elder?', a: 'Three things: about four weeks in the clan, competing for the clan (play Clan Wars or Ranked — Wars counts most), and donating generously relative to clanmates. Elders make up roughly 15–20% of the clan; the bar is the clan itself, not a fixed number.' },
+  { q: 'How are promotions handled?', a: 'Leadership reviews promotions and demotions each Tuesday, and Elixir shares a transparent weekly Elder Standing so everyone can see where they stand. Elder is the only role earned this way — please don\'t request a promotion.' }
+] -%}
+{%- set faqDiscord = [
+  { q: 'Do I need to join the Discord to be in the clan?', a: "No, but it's highly encouraged — it's where announcements and war coordination happen, so you won't miss anything. Please set your server nickname to your Clash Royale player name. Not on Discord? Use the email signup on the Members page instead." },
+  { q: 'What happens on the Discord server?', a: 'Announcements, clan promotion, deck and matchup talk, war coordination, and general chat. It\'s where the clan lives beyond in-game chat.' }
+] -%}
 
-    <section>
-      <h2 class="sectionTitle">About the Clan</h2>
-      <div class="faq-item">
-        <h3 class="faq-q">Why did you create <strong>POAP KINGS</strong>?</h3>
-        <p>Raquaza and King Levy have been playing Clash Royale for over three years, cycling through a variety of clans along the way. King Thing picked up the game a few months ago. We're all family, and after enough time in clans that didn't quite fit, we decided to build our own — one that matched our idea of what a clan should be. That was the genesis of <strong>POAP KINGS</strong>: structure, recognition, and something lasting to show for the grind.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Why the name <strong>POAP KINGS</strong>?</h3>
-        <p>King Thing loves making POAPs and sharing them with friends — it's a wonderful way to mark events and moments that matter. We decided to bring that passion into the Clash Royale clan world. POAP (Proof of Attendance Protocol) gives members a permanent, collectible record of each season. Kings because we aim high. "{{ site.tagline }}" is just our Clash-flavored spin on it.</p>
-      </div>
-    </section>
+<div class="pk-page pk-page--narrow" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
+  <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Everything you need to know</span>
+  <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2rem,4.5vw,3rem);margin:12px 0 0;">FAQ</h1>
+  <p style="font-size:1.05rem;color:#c8c1e6;margin:14px 0 0;">The clan, the wars, the rewards, and how it all works — for recruits and members alike.</p>
 
-    <section>
-      <h2 class="sectionTitle">Joining</h2>
-      <div class="faq-item">
-        <h3 class="faq-q">How do I join?</h3>
-        <p>We're currently {{ clan.clanStatus | lower }}. Search <strong>POAP KINGS</strong> or use tag <strong class="mono">#{{ site.clanTag }}</strong> in Clash Royale. Minimum <strong>{{ clan.minTrophies | formatNumber }} trophies</strong> to join.{% if clan.clanStatus != "Open" %} Just apply in-game and leadership will review it.{% endif %}</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What are the clan rules?</h3>
-        <ul class="list">
-          <li><strong>Be active</strong> — don't ghost a whole season without a heads-up.</li>
-          <li><strong>Be generous</strong> — donate when you can.</li>
-          <li><strong>Be decent</strong> — no toxicity, no drama.</li>
-          <li><strong>Wars encouraged</strong> — participate when possible. Real life comes first; just communicate.</li>
-        </ul>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Can I have an alt account in the clan?</h3>
-        <p>Yes. <strong>POAP KINGS</strong> allows one alt account per player, as long as you proactively tell leadership which account is your alt. Keeping that clear helps leadership manage activity, rewards, and roster space fairly.</p>
-        <ul class="list">
-          <li>You may have one primary account and one alt account in the clan.</li>
-          <li>You are expected to identify your alt account before it becomes an issue.</li>
-          <li>If the clan is near maximum capacity, alt accounts may be removed even if they are active.</li>
-          <li>If a player hides an alt account, both accounts may be kicked.</li>
-          <li>Both accounts are accountable for either account's behavior. If one account does something that results in a kick, the other account may also be kicked.</li>
-        </ul>
-      </div>
-    </section>
+  <div style="display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;">
+    {%- set chips = [
+      { href: '#faq-about', label: 'About' },
+      { href: '#faq-joining', label: 'Joining' },
+      { href: '#faq-wars', label: 'Clan Wars' },
+      { href: '#faq-pass', label: 'Free Pass Royale' },
+      { href: '#faq-roles', label: 'Roles' },
+      { href: '#faq-discord', label: 'Discord' }
+    ] -%}
+    {%- for c in chips %}
+    <a href="{{ c.href }}" style="font-size:.8rem;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid rgba(215,200,255,.2);background:rgba(18,13,40,.72);color:#d7c8ff;">{{ c.label }}</a>
+    {%- endfor %}
+  </div>
 
-    <section>
-      <h2 class="sectionTitle">Clan Wars</h2>
-      <div class="faq-item">
-        <h3 class="faq-q">Do I have to participate in Clan Wars?</h3>
-        <p>No. Encouraged but not required. Consistent participation and good vibes matter more than strict war requirements. That said, war performance is how you earn War Champ and Free Pass Royale eligibility.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How is War Champ chosen?</h3>
-        <p>Top Clan Wars point earner for the season, pulled directly from the Clash Royale API — no manual adjustments. Joining mid-season doesn't earn a handicap. Leadership breaks ties transparently.</p>
-      </div>
-    </section>
+  <div style="margin-top:22px;border:1px solid rgba(245,200,76,.22);border-radius:18px;background:linear-gradient(145deg,rgba(59,29,122,.24),rgba(11,9,32,.4));padding:22px;">
+    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.1rem;margin:0 0 12px;color:#f5c84c;">TL;DR</h2>
+    <ul style="margin:0;padding-left:20px;color:#c8c1e6;line-height:1.75;display:grid;gap:4px;">
+      <li>Invite Only clan, 7,000 trophy minimum.</li>
+      <li>Be active, donate, don't be a jerk.</li>
+      <li>Wars encouraged, not required.</li>
+      <li>One disclosed alt account allowed per player.</li>
+      <li>Top war earner each season gets a free Pass Royale.</li>
+      <li>Elder is earned through participation you control — and can be lost.</li>
+    </ul>
+  </div>
 
-    <section>
-      <h2 class="sectionTitle">Free Pass Royale Program</h2>
-      <div class="faq-item">
-        <h3 class="faq-q">What is the Free Pass Royale Program?</h3>
-        <p>Top eligible war point earner each season gets a free Pass Royale, sent in-game. Real reward, no gimmicks.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How does eligibility work?</h3>
-        <ul class="list">
-          <li>Highest war points among eligible players for the season.</li>
-          <li>No back-to-back winners — can't have won last month.</li>
-          <li>Alt accounts can win, but eligibility follows the player, not just the account.</li>
-          <li>Points straight from the Clash Royale API, no adjustments.</li>
-        </ul>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How are ties broken?</h3>
-        <ol class="list">
-          <li>Highest donations in the season wins.</li>
-          <li>Still tied? Longest tenure in the clan wins.</li>
-        </ol>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How will I receive the pass?</h3>
-        <p>Sent in-game to the account playing in the clan. No PayPal, Venmo, or cash transfers — in-game only. The pass cannot be sent to a different account.</p>
-        <p><em>Exception: If you are under 16 and clan leadership knows you in real life, leadership will work something out.</em></p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What are the requirements for the Pass transfer?</h3>
-        <p>Supercell has specific rules around donating a Pass Royale. Make sure you're set up ahead of time so there are no delays when you win. <a href="/members/setup/">Connect via Supercell Store</a> on the Setup page.</p>
-        <ul class="list">
-          <li>You must be a registered Supercell ID user.</li>
-          <li>Your Supercell ID must be at least 7 days old.</li>
-          <li>You must be Supercell ID Friends with King Thing (aka Thingles) for at least 1 day before a Pass can be sent.</li>
-          <li>You have 1 week to claim a donated Pass. If unclaimed, it will be returned and sent to the next eligible player.</li>
-          <li>You cannot re-donate a Pass that was received as a donation.</li>
-          <li>If you are not in the United States, Supercell may limit Pass transfers.</li>
-        </ul>
-      </div>
-    </section>
+  {{ faqSection('faq-about', 'About the Clan', faqAbout) }}
+  {{ faqSection('faq-joining', 'Joining', faqJoining) }}
+  {{ faqSection('faq-wars', 'Clan Wars', faqWars) }}
+  {{ faqSection('faq-pass', 'Free Pass Royale Program', faqPass) }}
+  {{ faqSection('faq-roles', 'Roles &amp; Promotion', faqRoles) }}
+  {{ faqSection('faq-discord', 'Discord', faqDiscord) }}
 
-    <section>
-      <h2 class="sectionTitle">POAPs</h2>
-      <div class="faq-item">
-        <h3 class="faq-q">What is a POAP?</h3>
-        <p>A POAP (Proof of Attendance Protocol) is a collectible digital token on the blockchain that marks your participation in a moment or event. Permanently yours, publicly verifiable. Learn more at <a href="https://poap.xyz" target="_blank" rel="noreferrer">poap.xyz</a>.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What kinds of POAPs does <strong>POAP KINGS</strong> issue?</h3>
-        <p>Two types:</p>
-        <ul class="list">
-          <li><strong>Clan POAPs</strong> — mark clan-wide milestones: seasons, War Champ, founding. Issued to active members. <strong>POAP KINGS</strong> logo appears at the <strong>top</strong> of the design.</li>
-          <li><strong>Member POAPs</strong> — recognize personal achievements like pushing past 10,000 trophies. These are yours to keep and share however you want, inside or outside the clan. Logo appears at the <strong>bottom</strong> of the design.</li>
-        </ul>
-        <p>Logo position is the quick tell: <strong>top = clan milestone, bottom = your milestone</strong>.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What specific POAPs are issued?</h3>
-        <ul class="list">
-          <li><strong>Seasonal</strong> — active members each season. <em>(Clan)</em></li>
-          <li><strong>War Champ</strong> — top war contributor featured on the season POAP. <em>(Clan)</em></li>
-          <li><strong>Achievement</strong> — personal milestones like 10k trophies. <em>(Member)</em></li>
-        </ul>
-        <p>Browse the public collection on the <a href="/vault/">Vault</a> page.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Do I need crypto knowledge to claim?</h3>
-        <p>Nope. You'll get a claim link — click it and follow the steps. You'll need a free wallet but no purchases or blockchain knowledge required. New to it? Ask in the clan and we'll get you set up.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What is a reservation?</h3>
-        <p>A reservation reserves a POAP for you to mint in the future — it doesn't mint it right away. Once reserved, you'll receive an email with instructions to mint your POAP. From there you can create a new wallet or use an existing one. You need to complete the minting step to actually receive the POAP.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="sectionTitle">Discord</h2>
-      <div class="faq-item">
-        <h3 class="faq-q">Does <strong>POAP KINGS</strong> have a Discord server?</h3>
-        <p>Yes! <strong>POAP KINGS</strong> has a <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord server</a> where clan members can connect more easily outside of in-game chat. It's especially useful for POAP drop communication, announcements, and sharing clan promotion.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">Do I need to join the Discord to be in the clan?</h3>
-        <p>No, but it's highly encouraged — similar to clan wars. Discord is particularly important for POAP claiming, so you'll want to be there if you don't want to miss a drop. Please set your server nickname to your Clash Royale player name so everyone knows who you are.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What happens on the Discord server?</h3>
-        <ul class="list">
-          <li><strong>Announcements</strong> — clan news and website updates.</li>
-          <li><strong>POAP drops</strong> — claim links are shared here.</li>
-          <li><strong>Clan promotion</strong> — links to help amplify the clan's reach.</li>
-          <li><strong>General chat</strong> — a channel for conversation beyond the game.</li>
-          <li><strong>POAP talk</strong> — a place to discuss POAPs.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="sectionTitle">Roles</h2>
-      <div class="faq-item">
-        <h3 class="faq-q">What's the clan composition?</h3>
-        <p>Elders make up roughly <strong>15–20% of the clan</strong>, plus leadership. It's a range we maintain, not a quota to fill — the number of Elders scales with the clan and stays proportional, never top-heavy. We'd rather leave an Elder slot open than hand it to someone who hasn't earned it.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What are the roles?</h3>
-        <ul class="list">
-          <li><strong>Member</strong> — standard participant</li>
-          <li><strong>Elder</strong> — earned by competing for the clan and giving back: playing Clan Wars or Ranked, plus generous donations — all of it in your control. Elder can be earned and it can be taken away.</li>
-          <li><strong>Leadership</strong> — Co-Leaders and the Leader; trusted veterans who run the clan. Leadership roles are appointed by leadership, not earned automatically.</li>
-        </ul>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How do I earn Elder?</h3>
-        <p>Three things decide it, and the bar is always the clan itself — there are no fixed numbers:</p>
-        <ul class="list">
-          <li><strong>Time in the clan</strong> — you're considered for Elder once you've been a member for about four weeks. No exceptions before that.</li>
-          <li><strong>Competing for the clan</strong> — this is the core of it, and it's all about participation you control: <strong>play Clan Wars</strong>, or <strong>play Ranked</strong>. You don't have to do both. Clan Wars counts for the most — it directly earns the clan Fame and moves us up the war leagues — while Ranked reps the clan and counts too, just a bit lighter. The more you play, the stronger your standing. It's about how much you take part, not how high your account has climbed: your league, King level, and arena don't factor in at all.</li>
-          <li><strong>Donations</strong> — Elders lead by example, so give generously relative to your clanmates.</li>
-        </ul>
-        <p>We rank everyone on those and the top of that list, within the 15–20% band, are the Elders. Playing actively matters — logging in without battling doesn't count.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How does demotion work?</h3>
-        <p>Elder isn't permanent. It's slightly easier to lose than to earn, by design — the role has to mean something. You'll be a demotion candidate if you stop competing for the clan entirely (no Clan Wars <em>and</em> no Ranked play), or if you slip well down the rankings while the clan has more Elders than the band allows. Because the band is competitive, an active clanmate participating harder can earn a seat ahead of you — that's not a knock on you, just the band staying earned. A single off week won't cost you the role — it takes a sustained drop, and getting back into wars or ranked keeps you safe.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">How are promotions handled?</h3>
-        <p>Clan leadership reviews promotions and demotions each Tuesday, guided by the standards above, and Elixir shares a transparent <strong>Elder Standing</strong> each week so everyone can see exactly where they stand — who's holding strong, who's rising, and who's on the bubble. Elder is the only role earned this way — Co-Leader and Leader are appointed at leadership's discretion. Please don't request a promotion.</p>
-      </div>
-      <div class="faq-item">
-        <h3 class="faq-q">What is the Members section?</h3>
-        <p>The members section of the site — roster, roles, clan history. <a href="/members">Visit Members</a>.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="card card-padded">
-        <h2 class="sectionTitle m-0 mb-xs">Still Have Questions?</h2>
-        <p class="sectionDesc m-0 mb-sm">
-          Ask in clan chat or reach out to leadership directly. No question is too basic.
-        </p>
-        <div class="ctaRow">
-          <button type="button" class="btn btnPrimary" data-modal-open="join" data-tinylytics-event="faq.join">{% if clan.memberCount >= 50 %}WAIT{% else %}JOIN{% endif %}</button>
-          <a class="btn btnGhost" href="/members" data-tinylytics-event="faq.members">Members</a>
-        </div>
-      </div>
-    </section>
+  <div style="margin-top:34px;border:1px solid rgba(215,200,255,.14);border-radius:18px;background:rgba(18,13,40,.55);padding:24px;text-align:center;">
+    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.2rem;margin:0 0 6px;">Still have questions?</h2>
+    <p style="color:#c8c1e6;margin:0 0 16px;">Ask in clan chat or reach out to leadership directly. No question is too basic.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <button type="button" data-modal-open="join" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;padding:12px 22px;border:0;border-radius:12px;cursor:pointer;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;">JOIN</button>
+      <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;padding:12px 22px;border-radius:12px;border:1.5px solid rgba(215,200,255,.24);background:transparent;color:#c8c1e6;">Open Discord</a>
+    </div>
+  </div>
+</div>

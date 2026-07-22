@@ -13,7 +13,6 @@ Tagline: {{ site.tagline | safe }}
 Join link: {{ site.joinUrl | safe }}
 Discord: {{ site.discordUrl | safe }}
 Roster last updated: {{ roster.updated | safe }}
-Vault last updated: {{ vault.updated | safe }}
 
 ---
 
@@ -56,45 +55,6 @@ POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season
 - **Clan war wins:** {{ m.cr_clan_war_wins | formatNumber | safe }}
 - **Badge count:** {{ m.badge_count or 0 }}
 {% if m.last_seen %}- **Last seen:** {{ m.last_seen | safe }}
-{% endif %}
-{% endfor -%}
-
----
-
-## Clan Wars
-
-{{ warHistory.summary.totalWeeks }} river race week{{ "s" if warHistory.summary.totalWeeks != 1 }} tracked. Average recorded rank: #{{ warHistory.summary.averageRank | formatDecimal(1) }}. Total war trophy change: {{ warHistory.summary.trophyChange | formatNumber | safe }}.
-
-{% for week in warHistory.weeks | reverse -%}
-### {{ week.weekLabel | safe }}
-
-- **Season:** {{ week.seasonId }}
-- **Section:** {{ week.sectionIndex }}
-- **Rank:** #{{ week.rank }}
-- **Fame:** {{ week.fame | formatNumber | safe }}
-- **War trophy change:** {% if week.trophyChange > 0 %}+{% endif %}{{ week.trophyChange | formatNumber | safe }}
-- **Clan score:** {{ week.clanScore | formatNumber | safe }}
-- **Created:** {{ week.createdDate | safe }}
-{% endfor -%}
-
----
-
-## POAP vault
-
-{{ vault.poaps | length }} POAP{{ "s" if (vault.poaps | length) != 1 }} in the vault. Organization page: https://collections.poap.xyz/organizations/poap-kings
-
-{% for p in vault.poaps | sortVault -%}
-### {{ (p.name or "Untitled POAP") | safe }}
-
-- **Type:** {{ (p.type or "POAP") | safe }}
-{% if p.date %}- **Date:** {{ p.date | safe }}
-{% endif -%}
-{% if p.event_id %}- **Event ID:** {{ p.event_id | safe }} · https://poap.gallery/event/{{ p.event_id | safe }}
-{% endif -%}
-{% if p.upcoming %}- **Status:** Upcoming
-{% endif -%}
-{% if p.description %}
-{{ p.description | safe }}
 {% endif %}
 {% endfor -%}
 

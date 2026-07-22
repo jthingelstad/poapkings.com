@@ -14,6 +14,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/members-promo.js");
   eleventyConfig.addPassthroughCopy("src/gamify.js");
   eleventyConfig.addPassthroughCopy("src/partials-trophy.js");
+  eleventyConfig.addPassthroughCopy("src/data.js");
+  eleventyConfig.addPassthroughCopy("src/roster.js");
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
   // --- Filters for build-time rendering ---
@@ -82,6 +84,66 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("min", (arr) => Math.min(...arr));
+
+  eleventyConfig.addFilter("sumBy", (arr, key) =>
+    (arr || []).reduce((total, item) => total + (Number(item[key]) || 0), 0),
+  );
+
+  eleventyConfig.addFilter("whereRole", (members, ...roles) =>
+    (members || []).filter((m) => roles.includes(m.role)),
+  );
+
+  eleventyConfig.addFilter("sortByDesc", (arr, key) =>
+    [...(arr || [])].sort((a, b) => (Number(b[key]) || 0) - (Number(a[key]) || 0)),
+  );
+
+  // Role → accent color, matching the redesign's roleColor().
+  const roleDotColor = (role) => {
+    if (role === "Co-Leader" || role === "Leader") return "#f5c84c";
+    if (role === "Elder") return "#d7c8ff";
+    return "#8b5cf6";
+  };
+  eleventyConfig.addFilter("roleColor", roleDotColor);
+
+  // Home-page mini scatter (collection level × trophies), fixed domains
+  // ported from the redesign's scatterPoints logic. SVG viewBox 720×280.
+  // Trim the daily trend series down to the fields the timeline chart needs.
+  // Drop failed API captures (null clan score / implausible member count) so a
+  // few corrupt snapshots don't spike the chart.
+  eleventyConfig.addFilter("timelineSeries", (series) =>
+    (series || [])
+      .filter((r) => r.clanScore != null && r.memberCount != null && r.memberCount >= 10)
+      .map((r) => ({
+        date: r.date,
+        clanScore: r.clanScore,
+        members: r.memberCount,
+        war: r.clanWarTrophies,
+        donations: r.donationsPerWeek,
+      })),
+  );
+
+  // Trim roster-explorer members to the fields the scatter explorer needs.
+  eleventyConfig.addFilter("explorerMembers", (members) =>
+    (members || []).map((m) => ({
+      name: m.name,
+      role: m.role,
+      trophies: m.trophies,
+      wins: m.wins,
+      years: m.years,
+      collection: m.collectionLevel,
+      donations: m.donations,
+    })),
+  );
+
+  eleventyConfig.addFilter("homeScatter", (members) =>
+    (members || []).map((m) => {
+      const collection = Math.min(2200, Math.max(1000, m.collectionLevel));
+      const trophies = Math.min(14000, Math.max(9500, m.trophies));
+      const cx = 60 + ((collection - 1000) / 1200) * 630;
+      const cy = 222 - ((trophies - 9500) / 4500) * 190;
+      return { cx: cx.toFixed(1), cy: cy.toFixed(1), fill: roleDotColor(m.role) };
+    }),
+  );
 
   // Clan War League tier name derived from clan war trophies.
   // CR's current CWL bracket (approximate, 200-trophy bands):

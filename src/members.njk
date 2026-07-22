@@ -2,136 +2,83 @@
 permalink: /members/
 layout: base.njk
 title: "Members | POAP KINGS | A Clash Royale Clan with Proof"
-description: "Members — onboarding and member resources for POAP KINGS."
+description: "Members hub — get into Discord, connect with leadership for Pass Royale rewards, get Elixir clan updates, and grab plug-and-play recruiting copy."
 navActive: members
+supercellDisclaimer: true
 extraScripts: '<script src="/members-promo.js" defer></script>'
 ---
-<section class="section" style="padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(28px, 4vw, 48px);">
-  <span class="eyebrow">Members hub</span>
-  <h1 class="h-display h1 mt-4" style="font-size: clamp(40px, 6vw, 68px)">Welcome KING…</h1>
-  <p class="lede mt-4">
-    Your resource hub for clan setup, Discord, promotion tools, and site updates. Everything you need as a <strong style="color:#fff">POAP KINGS</strong> member is right here.
-  </p>
-  <p class="lede mt-4"><strong style="color:#fff">New to the clan?</strong> Get connected with leaders, set up your wallet, and register for the roster.</p>
-  <div class="ctaRow mt-5">
-    <a class="btn btn--purple" href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" data-tinylytics-event="members.join-discord">Join Discord</a>
-    <a class="btn btn--gold" href="/members/setup/" data-tinylytics-event="members.clan-setup">Clan Setup</a>
-    <a class="btn btn--ghost" href="/faq" data-tinylytics-event="members.read-faq">Read the FAQ</a>
-  </div>
-</section>
+{%- set memberCount = clan.memberCount -%}
+{%- set totalWins = rosterExplorer.members | sumBy('wins') -%}
+{%- set winsK = (totalWins / 1000) | round -%}
+{%- set latest = clanTrends.series | last -%}
+{%- set minTrophies = clan.minTrophies | formatNumber -%}
+{%- set promoSubject = 'POAP KINGS #' + site.clanTag + ' · War-focused clan with real culture · ' + minTrophies + ' trophies · ' + memberCount + '/50 members' -%}
+{%- set promoBody = 'POAP KINGS (#' + site.clanTag + ') is recruiting — a war-focused Clash Royale clan with real structure. ' + memberCount + ' members, ' + latest.count12000Plus + ' players at 12k+ trophies, ' + latest.count14000Plus + ' sitting at 14,000, and ' + winsK + 'K+ career wins across the roster. Public roster and clan data, a Free Pass Royale program for top war earners, and a culture that actually remembers who shows up. ' + minTrophies + ' trophy minimum. See us at ' + site.url -%}
 
-<hr class="rule" />
-<section class="section">
-  <div class="section-head">
-    <div class="section-head__copy">
-      <span class="eyebrow">Promote the clan</span>
-      <h2 class="h-display h2 mt-3">Plug-and-play pitches</h2>
-      <p class="lede mt-3">Use these messages to recruit new players and grow <strong style="color:#fff">POAP KINGS</strong>.</p>
+<div style="background:linear-gradient(180deg,rgba(59,29,122,.22),transparent 320px);">
+<div class="pk-page pk-page--mid" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
+  <div style="display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d7c8ff;padding:6px 12px;border:1px solid rgba(139,92,246,.5);border-radius:999px;background:rgba(109,40,217,.2);">Members Zone</div>
+  <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2rem,4.5vw,3rem);margin:16px 0 0;">Welcome, KING.</h1>
+  <p style="font-size:1.08rem;color:#c8c1e6;margin:14px 0 0;max-width:44em;">Your hub for getting connected. Two things matter most: get into Discord, and connect with leadership so you're eligible for a free Pass Royale.</p>
+
+  <div class="pk-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px;">
+    <article style="border:1px solid rgba(139,92,246,.5);border-radius:20px;background:linear-gradient(145deg,rgba(88,28,235,.35),rgba(38,22,78,.6));box-shadow:0 18px 60px rgba(0,0,0,.45);padding:26px;display:flex;flex-direction:column;">
+      <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#d7c8ff;">Primary</span>
+      <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.4rem;margin:8px 0 8px;">Join our Discord</h2>
+      <p style="color:#e7e2f7;margin:0 0 20px;line-height:1.55;flex:1;">Announcements, deck talk, war coordination, and Sunday Scrimmages all happen here. Set your nickname to your Clash Royale name so we know who you are.</p>
+      <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="align-self:flex-start;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;padding:13px 26px;border-radius:14px;background:#6d28d9;color:#f7f4ff;box-shadow:0 4px 24px rgba(109,40,217,.5);">Open Discord</a>
+    </article>
+
+    <article style="border:1px solid rgba(215,200,255,.14);border-radius:20px;background:rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:26px;display:flex;flex-direction:column;">
+      <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c8c1e6;">Required for rewards</span>
+      <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.4rem;margin:8px 0 8px;">Connect with Leadership</h2>
+      <p style="color:#c8c1e6;margin:0 0 20px;line-height:1.55;flex:1;">Friend King Thing (Thingles) on the Supercell Store. This is required for us to send you a free Pass Royale if you win it — do it now so there are no delays later. Need the full walkthrough? See the <a href="/members/setup/" style="color:#f5c84c;">Clan Setup guide</a>.</p>
+      <a href="https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c" target="_blank" rel="noreferrer" style="align-self:flex-start;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;padding:13px 26px;border-radius:14px;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;box-shadow:0 4px 24px rgba(245,200,76,.35);">Connect with Thingles →</a>
+    </article>
+  </div>
+
+  <!-- Elixir email capture (no Discord needed) -->
+  <article class="pk-elixir-hero" style="margin-top:20px;border:1px solid rgba(245,200,76,.28);border-radius:20px;background:radial-gradient(circle at 8% 50%,rgba(109,40,217,.22),transparent 42%),rgba(18,13,40,.85);padding:26px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;">
+    <img src="/assets/elixir.png" alt="Elixir mascot" style="width:88px;height:88px;object-fit:contain;filter:drop-shadow(0 10px 20px rgba(0,0,0,.5));">
+    <div>
+      <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f5c84c;">Not on Discord? No problem.</span>
+      <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.3rem;margin:8px 0 6px;">Get clan updates from Elixir</h2>
+      <p style="color:#c8c1e6;margin:0 0 16px;line-height:1.55;max-width:44em;">Drop your email and Elixir will send season recaps, war reminders, and clan news straight to your inbox — no Discord account required.</p>
+      <form data-email-form style="display:flex;gap:10px;flex-wrap:wrap;max-width:520px;">
+        <select required style="flex:1 1 100%;border:1px solid rgba(215,200,255,.35);border-radius:13px;background:rgba(7,6,16,.8);color:#f7f4ff;padding:13px 14px;font:inherit;">
+          <option value="" disabled selected>Select your player name…</option>
+          {%- for m in roster.members | sort(false, false, 'name') %}
+          <option value="{{ m.name }}">{{ m.name }}</option>
+          {%- endfor %}
+        </select>
+        <input type="email" required placeholder="you@example.com" style="flex:1;min-width:200px;border:1px solid rgba(215,200,255,.35);border-radius:13px;background:rgba(7,6,16,.8);color:#f7f4ff;padding:13px 14px;font:inherit;">
+        <button type="submit" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;padding:0 22px;border-radius:13px;border:0;cursor:pointer;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;">Submit</button>
+      </form>
+      <p data-email-done hidden style="color:#bbf7d0;margin:12px 0 0;font-weight:600;">Thanks! Elixir will be in touch. ⚡</p>
     </div>
-  </div>
+  </article>
 
-  <div class="promoTabs" role="tablist" aria-label="Promote channel">
-    <button type="button" class="promoTab is-active" role="tab" aria-selected="true" aria-controls="promo-text" data-promo-tab="text">Text</button>
-    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-social" data-promo-tab="social">Social</button>
-    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-mail" data-promo-tab="mail">Mail</button>
-    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-discord" data-promo-tab="discord">Discord</button>
-    <button type="button" class="promoTab" role="tab" aria-selected="false" aria-controls="promo-reddit" data-promo-tab="reddit">Reddit</button>
-  </div>
-
-  <div class="promoChannels">
-    <div class="promoChannel" id="promo-text" role="tabpanel" data-promo-panel="text">
-      <div class="promoChannelHeader">
-        <h3 class="promoChannelLabel">Text</h3>
-        <div class="promoChannelButtons">
-          <a class="btn btn--ghost btn--sm promoSms" href="#" data-tinylytics-event="members.send-text">Send Message</a>
-          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-text">COPY</button>
+  <!-- promo tools -->
+  <section style="margin-top:44px;">
+    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Promote the clan</span>
+    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.4rem;margin:10px 0 0;">Plug-and-play pitches</h2>
+    <p style="color:#c8c1e6;margin:10px 0 18px;">Copy-ready recruiting copy. Use the <strong style="color:#fff;">subject</strong> when a title is needed (e.g. Reddit); the <strong style="color:#fff;">body</strong> stands on its own anywhere else (e.g. Discord).</p>
+    <div style="margin-top:12px;border:1px solid rgba(215,200,255,.14);border-radius:16px;background:rgba(11,9,32,.7);padding:20px;display:grid;gap:18px;">
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;">
+          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;margin:0;">Subject</h3>
+          <button type="button" class="promoCopy" data-copy-target="promoSubject" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.78rem;padding:8px 16px;border-radius:10px;border:0;cursor:pointer;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;">COPY</button>
         </div>
+        <input id="promoSubject" readonly value="{{ promoSubject }}" style="width:100%;border:1px solid rgba(215,200,255,.2);border-radius:12px;background:rgba(7,6,16,.7);color:#e7e2f7;padding:13px 14px;font:inherit;font-size:.9rem;">
       </div>
-      <p class="promoChannelHint">Send this to a friend who plays Clash Royale.</p>
-      <textarea class="promoChannelText" readonly rows="3">{{ promotionCopy.message.body | safe }}</textarea>
-    </div>
-
-    <div class="promoChannel" id="promo-social" role="tabpanel" data-promo-panel="social" hidden>
-      <div class="promoChannelHeader">
-        <h3 class="promoChannelLabel">Social</h3>
-        <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-social">COPY</button>
-      </div>
-      <p class="promoChannelHint">Post on X, Instagram, Threads, etc.</p>
-      <textarea class="promoChannelText" readonly rows="3">{{ promotionCopy.social.body | safe }}</textarea>
-    </div>
-
-    <div class="promoChannel" id="promo-mail" role="tabpanel" data-promo-panel="mail" hidden>
-      <div class="promoChannelHeader">
-        <h3 class="promoChannelLabel">Mail</h3>
-        <div class="promoChannelButtons">
-          <a class="btn btn--ghost btn--sm promoMailto" href="#" data-tinylytics-event="members.send-email">Send Email</a>
-          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-email">COPY</button>
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;">
+          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;margin:0;">Body</h3>
+          <button type="button" class="promoCopy" data-copy-target="promoBody" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.78rem;padding:8px 16px;border-radius:10px;border:0;cursor:pointer;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;">COPY</button>
         </div>
+        <textarea id="promoBody" readonly rows="6" style="width:100%;border:1px solid rgba(215,200,255,.2);border-radius:12px;background:rgba(7,6,16,.7);color:#e7e2f7;padding:14px;font:inherit;font-size:.9rem;line-height:1.5;resize:vertical;">{{ promoBody }}</textarea>
       </div>
-      <p class="promoChannelHint">Email-friendly pitch for friends or group chats.</p>
-      <label class="promoFieldLabel">Subject</label>
-      <input class="promoFieldInput" type="text" readonly value="{{ promotionCopy.email.subject | safe }}" />
-      <textarea class="promoChannelText" readonly rows="5">{{ promotionCopy.email.body | safe }}</textarea>
     </div>
-
-    <div class="promoChannel" id="promo-discord" role="tabpanel" data-promo-panel="discord" hidden>
-      <div class="promoChannelHeader">
-        <h3 class="promoChannelLabel">Discord</h3>
-        <div class="promoChannelButtons">
-          <a class="btn btn--ghost btn--sm" href="https://discord.com/channels/332526643182567425/354394732451069953" target="_blank" rel="noreferrer" data-tinylytics-event="members.open-discord">Open Discord</a>
-          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-discord">COPY</button>
-        </div>
-      </div>
-      <p class="promoChannelHint">Drop this in a Clash Royale or gaming Discord server.</p>
-      <textarea class="promoChannelText" readonly rows="4">{{ promotionCopy.discord.body | safe }}</textarea>
-    </div>
-
-    <div class="promoChannel" id="promo-reddit" role="tabpanel" data-promo-panel="reddit" hidden>
-      <div class="promoChannelHeader">
-        <h3 class="promoChannelLabel">Reddit</h3>
-        <div class="promoChannelButtons">
-          <a class="btn btn--ghost btn--sm" href="https://www.reddit.com/r/RoyaleRecruit/" target="_blank" rel="noreferrer" data-tinylytics-event="members.open-subreddit">Open Subreddit</a>
-          <button class="btn btn--gold btn--sm promoChannelCopy" type="button" data-tinylytics-event="members.copy-reddit">COPY</button>
-        </div>
-      </div>
-      <p class="promoChannelHint">Post this into r/RoyaleRecruit. Do not include the clan invite link!</p>
-      <label class="promoFieldLabel">Title</label>
-      <input class="promoFieldInput" type="text" readonly value="{{ promotionCopy.reddit.title | safe }}" />
-      <textarea class="promoChannelText" readonly rows="5">{{ promotionCopy.reddit.body | safe }}</textarea>
-    </div>
-  </div>
-
-  <script>
-    (function(){
-      var tablist = document.querySelector('.promoTabs[role="tablist"]');
-      if (!tablist) return;
-      var tabs = tablist.querySelectorAll('.promoTab');
-      var panels = document.querySelectorAll('[data-promo-panel]');
-      function select(key){
-        tabs.forEach(function(t){
-          var on = t.dataset.promoTab === key;
-          t.classList.toggle('is-active', on);
-          t.setAttribute('aria-selected', String(on));
-          t.tabIndex = on ? 0 : -1;
-        });
-        panels.forEach(function(p){ p.hidden = p.dataset.promoPanel !== key; });
-      }
-      tablist.addEventListener('click', function(e){
-        var btn = e.target.closest('.promoTab');
-        if (btn) select(btn.dataset.promoTab);
-      });
-      tablist.addEventListener('keydown', function(e){
-        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-        var list = Array.prototype.slice.call(tabs);
-        var cur = list.findIndex(function(t){ return t.classList.contains('is-active'); });
-        var next = e.key === 'ArrowRight' ? (cur + 1) % list.length : (cur - 1 + list.length) % list.length;
-        select(list[next].dataset.promoTab);
-        list[next].focus();
-      });
-    })();
-  </script>
-
-  <div class="ctaRow mt-5">
-    <a class="btn btn--purple btn--sm" href="https://tinylytics.app/public/{{ site.tinylyticsId }}?token=poapkings" target="_blank" rel="noreferrer" data-tinylytics-event="members.view-traffic">View site traffic →</a>
-  </div>
-</section>
+  </section>
+</div>
+</div>
