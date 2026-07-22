@@ -81,7 +81,9 @@
           <img class="starcount__icon" src="/assets/icons/star-level.png" alt="" aria-hidden="true" />
           <span class="starcount__n tinylytics_hits">★</span>
         </button>
-        <button type="button" class="pk-hamburger" data-nav-toggle aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">☰</button>
+        <button type="button" class="pk-hamburger" data-nav-toggle aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">
+          <span class="pk-hamburger__lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </div>
     </nav>
     <div class="site-head__drawer" id="navMenu">
@@ -221,7 +223,7 @@
       if (!toggle || !nav) return;
       function setOpen(open){
         toggle.setAttribute('aria-expanded', String(open));
-        toggle.textContent = open ? '✕' : '☰';
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         nav.classList.toggle('is-open', open);
         document.body.classList.toggle('nav-open', open);
       }
