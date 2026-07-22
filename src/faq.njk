@@ -6,12 +6,13 @@ description: "Frequently asked questions about POAP KINGS — the clan, Clan War
 navActive: faq
 supercellDisclaimer: true
 ---
+{% from "components.njk" import pageIntro, actionLink, actionButton %}
 {%- macro faqSection(id, heading, items) -%}
-  <h2 id="{{ id }}" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.3rem;margin:38px 0 12px;scroll-margin-top:80px;">{{ heading | safe }}</h2>
+  <h2 class="pk-faq-section__title" id="{{ id }}">{{ heading | safe }}</h2>
   {%- for f in items %}
-  <div style="margin-bottom:22px;">
-    <h3 style="margin:0 0 8px;font-weight:700;font-size:1.02rem;color:#f7f4ff;">{{ f.q }}</h3>
-    <p style="color:#c8c1e6;line-height:1.65;margin:0;">{{ f.a }}</p>
+  <div class="pk-faq-item">
+    <h3 class="pk-faq-item__question">{{ f.q }}</h3>
+    <p class="pk-faq-item__answer">{{ f.a }}</p>
   </div>
   {%- endfor %}
 {%- endmacro -%}
@@ -44,12 +45,10 @@ supercellDisclaimer: true
   { q: 'What happens on the Discord server?', a: 'Announcements, clan promotion, deck and matchup talk, war coordination, and general chat. It\'s where the clan lives beyond in-game chat.' }
 ] -%}
 
-<div class="pk-page pk-page--narrow" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
-  <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Everything you need to know</span>
-  <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2rem,4.5vw,3rem);margin:12px 0 0;">FAQ</h1>
-  <p style="font-size:1.05rem;color:#c8c1e6;margin:14px 0 0;">The clan, the wars, the rewards, and how it all works — for recruits and members alike.</p>
+<div class="pk-page pk-page--narrow pk-page-shell">
+  {{ pageIntro('Everything you need to know', 'FAQ', 'The clan, the wars, the rewards, and how it all works — for recruits and members alike.') }}
 
-  <div style="display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;">
+  <nav class="pk-faq-nav" aria-label="FAQ sections">
     {%- set chips = [
       { href: '#faq-about', label: 'About' },
       { href: '#faq-joining', label: 'Joining' },
@@ -59,13 +58,13 @@ supercellDisclaimer: true
       { href: '#faq-discord', label: 'Discord' }
     ] -%}
     {%- for c in chips %}
-    <a href="{{ c.href }}" style="font-size:.8rem;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid rgba(215,200,255,.2);background:rgba(18,13,40,.72);color:#d7c8ff;">{{ c.label }}</a>
+    <a class="pk-faq-nav__link" href="{{ c.href }}">{{ c.label }}</a>
     {%- endfor %}
-  </div>
+  </nav>
 
-  <div style="margin-top:22px;border:1px solid rgba(245,200,76,.22);border-radius:18px;background:linear-gradient(145deg,rgba(59,29,122,.24),rgba(11,9,32,.4));padding:22px;">
-    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.1rem;margin:0 0 12px;color:#f5c84c;">TL;DR</h2>
-    <ul style="margin:0;padding-left:20px;color:#c8c1e6;line-height:1.75;display:grid;gap:4px;">
+  <div class="pk-faq-summary">
+    <h2 class="pk-faq-summary__title">TL;DR</h2>
+    <ul class="pk-faq-summary__list">
       <li>Invite Only clan, 7,000 trophy minimum.</li>
       <li>Be active, donate, don't be a jerk.</li>
       <li>Wars encouraged, not required.</li>
@@ -82,12 +81,12 @@ supercellDisclaimer: true
   {{ faqSection('faq-roles', 'Roles &amp; Promotion', faqRoles) }}
   {{ faqSection('faq-discord', 'Discord', faqDiscord) }}
 
-  <div style="margin-top:34px;border:1px solid rgba(215,200,255,.14);border-radius:18px;background:rgba(18,13,40,.55);padding:24px;text-align:center;">
-    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.2rem;margin:0 0 6px;">Still have questions?</h2>
-    <p style="color:#c8c1e6;margin:0 0 16px;">Ask in clan chat or reach out to leadership directly. No question is too basic.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <button type="button" data-modal-open="join" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;padding:12px 22px;border:0;border-radius:12px;cursor:pointer;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;">JOIN</button>
-      <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;padding:12px 22px;border-radius:12px;border:1.5px solid rgba(215,200,255,.24);background:transparent;color:#c8c1e6;">Open Discord</a>
+  <div class="pk-faq-cta">
+    <h2 class="pk-faq-cta__title">Still have questions?</h2>
+    <p class="pk-faq-cta__copy">Ask in clan chat or reach out to leadership directly. No question is too basic.</p>
+    <div class="pk-faq-cta__actions">
+      {{ actionButton('JOIN', 'gold', 'join') }}
+      {{ actionLink(site.discordUrl, 'Open Discord', 'outline', '', true) }}
     </div>
   </div>
 </div>

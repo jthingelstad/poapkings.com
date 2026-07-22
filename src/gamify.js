@@ -1,10 +1,12 @@
-/* POAP KINGS gamify — count-ups only.
-   Star Level counter in the nav is rendered by Tinylytics' tinylytics_hits hook;
-   this script just animates [data-count-up] elements when they enter view. */
+import { animate } from 'motion/mini';
+
+/* POAP KINGS gamify — Motion for readable DOM feedback, PixiJS for the
+   progressive-enhancement particle layer. Tinylytics still owns the count. */
 (function(){
   'use strict';
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pixiModule;
 
   function fmt(n){ return n.toLocaleString('en-US') }
 
@@ -61,12 +63,12 @@
     });
   }
 
-  /* ── Star counter: decrement by one, then tick up with a full game-feel pop ── */
-  function spawnSparks(badge){
+  /* ── Star counter: Motion choreography + a lazy PixiJS particle layer ── */
+  function spawnFallbackSparks(badge, count){
     const rect = badge.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
-    const N = 8;
+    const N = count || 8;
     for (let i = 0; i < N; i++){
       const s = document.createElement('span');
       s.className = 'star-spark';
@@ -85,12 +87,208 @@
     }
   }
 
+  function loadPixi(){
+    if (!pixiModule) pixiModule = import('pixi.js');
+    return pixiModule;
+  }
+
+  function preloadPixi(){
+    if (reduce) return;
+    const start = function(){ loadPixi().catch(function(){}); };
+    if ('requestIdleCallback' in window){
+      window.requestIdleCallback(start, { timeout: 1200 });
+    } else {
+      setTimeout(start, 500);
+    }
+  }
+
+  async function spawnPixiBurst(badge, rankUp){
+    if (reduce || !badge || !badge.isConnected) return false;
+    let app;
+    let host;
+    let destroyed = false;
+    try {
+      const pixi = await loadPixi();
+      if (!badge.isConnected) return false;
+
+      host = document.createElement('div');
+      host.className = 'star-fx-layer';
+      host.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(host);
+
+      app = new pixi.Application();
+      await app.init({
+        resizeTo: window,
+        backgroundAlpha: 0,
+        antialias: true,
+        autoDensity: true,
+        resolution: Math.min(window.devicePixelRatio || 1, 2)
+      });
+      if (!badge.isConnected){
+        app.destroy(true, true);
+        host.remove();
+        return false;
+      }
+
+      app.canvas.className = 'star-fx-layer__canvas';
+      app.canvas.setAttribute('aria-hidden', 'true');
+      host.appendChild(app.canvas);
+
+      const rect = badge.getBoundingClientRect();
+      const originX = rect.left + rect.width / 2;
+      const originY = rect.top + rect.height / 2;
+      const count = rankUp ? 48 : 14;
+      const colors = rankUp
+        ? [0xf5c84c, 0xfff3c2, 0xffffff, 0x8b5cf6, 0xd7c8ff]
+        : [0xf5c84c, 0xfff3c2, 0x8b5cf6, 0xd7c8ff];
+      const particles = [];
+
+      for (let i = 0; i < count; i++){
+        const radius = (rankUp ? 4 : 3) + Math.random() * (rankUp ? 6 : 4);
+        const graphic = new pixi.Graphics();
+        if (i % 4 === 0){
+          graphic.circle(0, 0, radius * .58).fill({ color: colors[i % colors.length], alpha: .95 });
+        } else {
+          graphic.star(0, 0, 5, radius, radius * .44).fill({ color: colors[i % colors.length], alpha: .98 });
+        }
+        graphic.blendMode = 'add';
+        graphic.position.set(originX + (Math.random() - .5) * 16, originY + (Math.random() - .5) * 10);
+        app.stage.addChild(graphic);
+
+        const angle = (Math.PI * 2 * i) / count + (Math.random() - .5) * .5;
+        const speed = (rankUp ? 170 : 115) + Math.random() * (rankUp ? 260 : 155);
+        const maxLifeMs = (rankUp ? 780 : 620) + Math.random() * (rankUp ? 520 : 320);
+        particles.push({
+          graphic: graphic,
+          velocityX: Math.cos(angle) * speed,
+          velocityY: Math.sin(angle) * speed - (rankUp ? 105 : 70),
+          gravity: rankUp ? 390 : 430,
+          spin: (Math.random() - .5) * 12,
+          lifeMs: maxLifeMs,
+          maxLifeMs: maxLifeMs
+        });
+      }
+
+      function destroy(){
+        if (destroyed) return;
+        destroyed = true;
+        if (app) app.destroy(true, true);
+        if (host) host.remove();
+      }
+
+      app.ticker.add(function(ticker){
+        const seconds = ticker.deltaMS / 1000;
+        for (let i = particles.length - 1; i >= 0; i--){
+          const particle = particles[i];
+          particle.lifeMs -= ticker.deltaMS;
+          if (particle.lifeMs <= 0){
+            app.stage.removeChild(particle.graphic);
+            particle.graphic.destroy();
+            particles.splice(i, 1);
+            continue;
+          }
+          particle.velocityY += particle.gravity * seconds;
+          particle.graphic.x += particle.velocityX * seconds;
+          particle.graphic.y += particle.velocityY * seconds;
+          particle.graphic.rotation += particle.spin * seconds;
+          const remaining = particle.lifeMs / particle.maxLifeMs;
+          particle.graphic.alpha = Math.min(1, remaining * 2.2);
+          particle.graphic.scale.set(.45 + remaining * .75);
+        }
+        if (!particles.length) destroy();
+      });
+      setTimeout(destroy, 1800);
+      return true;
+    } catch (error){
+      if (app && !destroyed) app.destroy(true, true);
+      if (host) host.remove();
+      return false;
+    }
+  }
+
+  function isArenaRankUp(count){
+    const ranks = readRanks();
+    return !!(ranks && ranks.some(function(rank){
+      return rank.threshold > 0 && rank.threshold === count;
+    }));
+  }
+
+  function playParticleBurst(badge, rankUp){
+    if (reduce) return;
+    spawnPixiBurst(badge, rankUp).then(function(rendered){
+      if (!rendered) spawnFallbackSparks(badge, rankUp ? 16 : 8);
+    });
+  }
+
+  function playStarCelebration(badge, hitsEl, rankUp){
+    if (reduce) return;
+    const icon = badge.querySelector('.starcount__icon');
+    const flash = document.createElement('span');
+    flash.className = 'starcount__flash';
+    flash.setAttribute('aria-hidden', 'true');
+    badge.appendChild(flash);
+
+    const plus = document.createElement('span');
+    plus.className = 'starcount__plus';
+    plus.textContent = rankUp ? 'RANK UP!' : '+1';
+    plus.setAttribute('aria-hidden', 'true');
+    badge.appendChild(plus);
+
+    const controls = [
+      animate(badge, {
+        transform: ['scale(1)', 'scale(.88, 1.06)', 'scale(1.35, .85)', 'scale(.94, 1.08)', 'scale(1.06, .98)', 'scale(1)']
+      }, { duration: .9, times: [0, .12, .28, .48, .72, 1], ease: 'ease-out' }),
+      animate(hitsEl, {
+        transform: ['translateY(0)', 'translateY(-4px)', 'translateY(0)'],
+        color: ['#FFE9B3', '#FFFFFF', '#FFE9B3'],
+        textShadow: ['0 0 0 rgba(255,240,180,0)', '0 0 12px rgba(255,240,180,.95)', '0 0 0 rgba(255,240,180,0)']
+      }, { duration: .52, times: [0, .38, 1], ease: 'ease-out', delay: .16 }),
+      animate(flash, {
+        opacity: [0, 1, 0],
+        transform: ['scale(.55)', 'scale(1.15)', 'scale(1.75)']
+      }, { duration: .65, times: [0, .25, 1], ease: 'ease-out', delay: .12 }),
+      animate(plus, {
+        opacity: [0, 1, 1, 0],
+        transform: [
+          'translate(-50%, 6px) scale(.4) rotate(-8deg)',
+          'translate(-50%, -10px) scale(1.35) rotate(6deg)',
+          'translate(-50%, -24px) scale(1.08) rotate(-3deg)',
+          'translate(-50%, -60px) scale(1) rotate(0deg)'
+        ]
+      }, { duration: 1, times: [0, .18, .42, 1], ease: 'ease-out', delay: .12 })
+    ];
+    if (icon){
+      controls.push(animate(icon, {
+        transform: ['scale(1) rotate(0deg)', 'scale(1.65) rotate(180deg)', 'scale(.9) rotate(360deg)', 'scale(1) rotate(360deg)'],
+        filter: [
+          'drop-shadow(0 1px 2px rgba(0,0,0,.45))',
+          'drop-shadow(0 0 14px rgba(255,240,180,1)) brightness(1.4)',
+          'drop-shadow(0 0 5px rgba(245,200,76,.7))',
+          'drop-shadow(0 1px 2px rgba(0,0,0,.45))'
+        ]
+      }, { duration: .9, times: [0, .28, .58, 1], ease: 'ease-out', delay: .08 }));
+    }
+
+    playParticleBurst(badge, rankUp);
+
+    setTimeout(function(){
+      controls.forEach(function(control){
+        if (control && typeof control.cancel === 'function') control.cancel();
+      });
+      flash.remove();
+      plus.remove();
+    }, 1250);
+  }
+
   function initStarCounter(){
     const hitsEl = document.querySelector('.starcount .tinylytics_hits');
     const badge = document.querySelector('.starcount');
     if (!hitsEl || !badge) return;
     if (badge.dataset.starWired) return;
     badge.dataset.starWired = '1';
+    // Opening the rank card gets a small tactile burst without implying that
+    // the click itself added another visit/star.
+    badge.addEventListener('click', function(){ playParticleBurst(badge, false); });
 
     let tries = 0;
     const poll = setInterval(function(){
@@ -100,22 +298,9 @@
       if (Number.isFinite(n) && n > 0){
         clearInterval(poll);
         if (reduce) return;
-        // Number has landed — fire the pop once as a celebration of the visit.
-        badge.classList.add('is-anticipating');
+        // Number has landed — fire the celebration once for this visit.
         setTimeout(function(){
-          badge.classList.remove('is-anticipating');
-          badge.classList.add('is-popping');
-          hitsEl.classList.add('is-ticking');
-          spawnSparks(badge);
-          const plus = document.createElement('span');
-          plus.className = 'starcount__plus';
-          plus.textContent = '+1';
-          badge.appendChild(plus);
-          setTimeout(function(){
-            badge.classList.remove('is-popping');
-            hitsEl.classList.remove('is-ticking');
-            if (plus.parentNode) plus.parentNode.removeChild(plus);
-          }, 1000);
+          playStarCelebration(badge, hitsEl, isArenaRankUp(n));
         }, 180);
       } else if (tries > 40){
         clearInterval(poll); // give up after ~8s if Tinylytics never fills in
@@ -232,12 +417,19 @@
     });
   }
 
-  function boot(){ initCountUps(); initStarCounter(); initStarModal(); }
+  function boot(){ preloadPixi(); initCountUps(); initStarCounter(); initStarModal(); }
   if (document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', boot);
   } else {
     boot();
   }
 
-  window.POAPGamify = { countUp: countUp };
+  window.POAPGamify = {
+    countUp: countUp,
+    celebrateStar: function(rankUp){
+      const badge = document.querySelector('.starcount');
+      const hitsEl = badge && badge.querySelector('.tinylytics_hits');
+      if (badge && hitsEl) playStarCelebration(badge, hitsEl, !!rankUp);
+    }
+  };
 })();

@@ -2,6 +2,7 @@
 .env
 _site/
 node_modules/
+.cache/
 
 # Playwright MCP test artifacts (screenshots, accessibility snapshots)
 .playwright-mcp/

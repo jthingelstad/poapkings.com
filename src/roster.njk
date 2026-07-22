@@ -7,16 +7,15 @@ navActive: roster
 supercellDisclaimer: true
 extraScripts: '<script src="/roster.js" defer></script>'
 ---
+{% from "components.njk" import pageIntro %}
 {%- set rows = roster.members | sortByDesc('trophies') -%}
 {%- set memberCount = roster.members | length -%}
 
-<div class="pk-page" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
-  <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">The people</span>
-  <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2rem,4.5vw,3rem);margin:12px 0 0;">The Roster</h1>
-  <p style="font-size:1.05rem;color:#c8c1e6;margin:14px 0 0;max-width:42em;">{{ memberCount }} members strong. Sort by any column. Want the trends and distributions? <a href="/data/" style="color:#f5c84c;text-decoration:underline;text-underline-offset:2px;">Explore the data →</a></p>
+<div class="pk-page pk-page-shell">
+  {{ pageIntro('The people', 'The Roster', memberCount + ' members strong. Sort by any column. Want the trends and distributions? <a href="/data/">Explore the data →</a>') }}
 
-  <div style="display:flex;align-items:center;gap:10px;margin-top:22px;flex-wrap:wrap;">
-    <span style="font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c8c1e6;">Sort by</span>
+  <div class="pk-roster-toolbar">
+    <span class="pk-roster-toolbar__label">Sort by</span>
     {%- set sortOptions = [
       { key: 'trophies', label: 'Trophies' },
       { key: 'wins', label: 'Career Wins' },
@@ -27,25 +26,25 @@ extraScripts: '<script src="/roster.js" defer></script>'
     {%- for o in sortOptions %}
     <button type="button" class="pk-pill{% if o.key == 'trophies' %} is-active{% endif %}" data-roster-sort="{{ o.key }}">{{ o.label }}</button>
     {%- endfor %}
-    <span style="margin-left:auto;font-size:.78rem;color:#c8c1e6;">↻ Updated {{ roster.updated | formatDate }} · showing all {{ memberCount }}</span>
+    <span class="pk-roster-toolbar__status">↻ Updated {{ roster.updated | formatDate }} · showing all {{ memberCount }}</span>
   </div>
 
-  <div style="margin-top:16px;border:1px solid rgba(215,200,255,.16);border-radius:20px;overflow:hidden;background:rgba(11,9,32,.82);box-shadow:0 18px 60px rgba(0,0,0,.45);">
-    <div class="pk-roster-head" style="display:grid;grid-template-columns:48px minmax(0,1.6fr) 1fr 1fr .8fr 1fr;gap:12px;padding:14px 20px;border-bottom:1px solid rgba(215,200,255,.12);font-size:.66rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c8c1e6;">
-      <span>#</span><span>Player</span><span style="text-align:right;">Trophies</span><span class="pk-col-opt" style="text-align:right;">Career Wins</span><span class="pk-col-opt" style="text-align:right;">Years</span><span class="pk-col-opt" style="text-align:right;">Collection</span>
+  <div class="pk-roster-table">
+    <div class="pk-roster-head">
+      <span>#</span><span>Player</span><span class="pk-roster-cell--right">Trophies</span><span class="pk-col-opt pk-roster-cell--right">Career Wins</span><span class="pk-col-opt pk-roster-cell--right">Years</span><span class="pk-col-opt pk-roster-cell--right">Collection</span>
     </div>
     <div id="rosterBody">
       {%- for m in rows %}
-      <div class="pk-roster-row" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}" style="display:grid;grid-template-columns:48px minmax(0,1.6fr) 1fr 1fr .8fr 1fr;gap:12px;align-items:center;padding:12px 20px;border-bottom:1px solid rgba(215,200,255,.07);background:{% if loop.index0 % 2 %}rgba(18,13,40,.3){% else %}rgba(18,13,40,.5){% endif %};">
-        <span data-roster-rank style="font-family:'Supercell Magic',system-ui,sans-serif;color:#c8c1e6;font-size:.9rem;">{{ loop.index }}</span>
-        <span style="min-width:0;display:flex;flex-direction:column;gap:2px;">
-          <strong style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ m.name }}</strong>
-          <em style="font-style:normal;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:{{ m.role | roleColor }};">{{ m.role }}</em>
+      <div class="pk-roster-row" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}">
+        <span class="pk-roster-rank" data-roster-rank>{{ loop.index }}</span>
+        <span class="pk-roster-player">
+          <strong class="pk-roster-player__name">{{ m.name }}</strong>
+          <em class="pk-roster-player__role" style="--role-color:{{ m.role | roleColor }}">{{ m.role }}</em>
         </span>
-        <strong style="text-align:right;font-family:'Supercell Magic',system-ui,sans-serif;color:#f5c84c;font-size:.92rem;">{{ m.trophies | formatNumber }}</strong>
-        <span class="pk-col-opt" style="text-align:right;color:#e7e2f7;font-variant-numeric:tabular-nums;">{{ m.cr_battle_wins | formatNumber }}</span>
-        <span class="pk-col-opt" style="text-align:right;color:#e7e2f7;">{{ m.cr_account_age_years }}y</span>
-        <span class="pk-col-opt" style="text-align:right;color:#e7e2f7;font-variant-numeric:tabular-nums;">{{ m.cr_collection_level | formatNumber }}</span>
+        <strong class="pk-roster-trophies">{{ m.trophies | formatNumber }}</strong>
+        <span class="pk-col-opt pk-roster-value">{{ m.cr_battle_wins | formatNumber }}</span>
+        <span class="pk-col-opt pk-roster-value">{{ m.cr_account_age_years }}y</span>
+        <span class="pk-col-opt pk-roster-value">{{ m.cr_collection_level | formatNumber }}</span>
       </div>
       {%- endfor %}
     </div>

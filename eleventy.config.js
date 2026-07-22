@@ -1,5 +1,27 @@
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync } from "node:fs";
+import { build } from "esbuild";
+
+const clientOutputDir = ".cache/client";
+
+async function buildClientScripts() {
+  rmSync(clientOutputDir, { recursive: true, force: true });
+  mkdirSync(clientOutputDir, { recursive: true });
+  await build({
+    entryPoints: { gamify: "src/gamify.js" },
+    outdir: clientOutputDir,
+    bundle: true,
+    splitting: true,
+    format: "esm",
+    target: ["es2022"],
+    entryNames: "[name]",
+    chunkNames: "assets/js/[name]-[hash]",
+    assetNames: "assets/js/[name]-[hash]",
+    minify: true,
+    sourcemap: false,
+    logLevel: "warning",
+  });
+}
 
 export default function (eleventyConfig) {
   const normalizeMemberTag = (tag) => {
@@ -12,11 +34,13 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/app.js");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/members-promo.js");
-  eleventyConfig.addPassthroughCopy("src/gamify.js");
+  eleventyConfig.addPassthroughCopy({ [clientOutputDir]: "." });
   eleventyConfig.addPassthroughCopy("src/partials-trophy.js");
   eleventyConfig.addPassthroughCopy("src/data.js");
   eleventyConfig.addPassthroughCopy("src/roster.js");
   eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addWatchTarget("src/gamify.js");
+  eleventyConfig.on("eleventy.before", buildClientScripts);
 
   // --- Filters for build-time rendering ---
 
@@ -260,7 +284,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("bust", (url) => {
     try {
-      const content = readFileSync(`src${url}`);
+      const assetPath = url === "/gamify.js" ? `${clientOutputDir}${url}` : `src${url}`;
+      const content = readFileSync(assetPath);
       const hash = createHash("md5").update(content).digest("hex").slice(0, 8);
       return `${url}?v=${hash}`;
     } catch {

@@ -10,6 +10,7 @@ ogImageAlt: POAP KINGS crest
 ogImageWidth: 1200
 ogImageHeight: 1200
 ---
+{% from "components.njk" import sectionHeading, actionLink, actionButton %}
 {%- set members = rosterExplorer.members -%}
 {%- set memberCount = clan.memberCount -%}
 {%- set openSlots = 50 - memberCount -%}
@@ -21,27 +22,27 @@ ogImageHeight: 1200
 
 <div class="pk-page">
 
-  <section class="pk-hero" style="display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:clamp(44px,6vw,76px) 0 clamp(36px,5vw,56px);">
+  <section class="pk-hero pk-home-hero">
     <div>
-      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Clan Tag&nbsp;&nbsp;<span style="font-family:ui-monospace,Menlo,monospace;color:#f5c84c;letter-spacing:.04em;">#{{ site.clanTag }}</span></span>
-      <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(3rem,6.5vw,5.2rem);line-height:1.12;margin:16px 0 0;background:linear-gradient(135deg,#fff 25%,#d7c8ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 rgba(0,0,0,.25));">POAP<br>KINGS</h1>
-      <p style="font-size:1.12rem;line-height:1.6;color:#c8c1e6;margin:20px 0 0;max-width:30em;text-wrap:pretty;">A <a href="https://clashroyale.com" target="_blank" rel="noreferrer" style="color:#fff;font-weight:600;">Clash Royale</a> clan built on active, positive play — and a roster deep enough to prove it. We publish our data so serious players can see exactly who they're joining.</p>
-      <div style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;">
-        <a href="/roster/" style="display:inline-flex;align-items:center;font-family:'Supercell Magic',system-ui,sans-serif;font-size:1rem;min-height:52px;padding:0 26px;border:0;border-radius:14px;background:#6d28d9;color:#f7f4ff;box-shadow:0 4px 24px rgba(109,40,217,.45);" data-tinylytics-event="home.see-roster">See the roster</a>
-        <a href="/data/" style="display:inline-flex;align-items:center;font-family:'Supercell Magic',system-ui,sans-serif;font-size:1rem;min-height:52px;padding:0 26px;border:1.5px solid rgba(215,200,255,.24);border-radius:14px;background:transparent;color:#c8c1e6;" data-tinylytics-event="home.explore-data">Explore the data</a>
+      <span class="pk-eyebrow">Clan Tag&nbsp;&nbsp;<span class="pk-mono-gold">#{{ site.clanTag }}</span></span>
+      <h1 class="pk-home-title">POAP<br>KINGS</h1>
+      <p class="pk-home-lede">A <a href="https://clashroyale.com" target="_blank" rel="noreferrer">Clash Royale</a> clan built on active, positive play — and a roster deep enough to prove it. We publish our data so serious players can see exactly who they're joining.</p>
+      <div class="pk-home-actions">
+        {{ actionLink('/roster/', 'See the roster', 'purple', 'home.see-roster') }}
+        {{ actionLink('/data/', 'Explore the data', 'outline', 'home.explore-data') }}
       </div>
-      <p style="margin:22px 0 0;font-size:.82rem;color:#c8c1e6;display:flex;align-items:center;gap:8px;"><span style="color:#22c55e;font-size:1.1em;">↻</span> Data updated {{ roster.updated | formatDate }} from the Clash Royale API.</p>
+      <p class="pk-home-updated"><span class="pk-home-updated__icon">↻</span> Data updated {{ roster.updated | formatDate }} from the Clash Royale API.</p>
     </div>
 
-    <div style="border:1px solid rgba(245,200,76,.25);border-radius:24px;background:radial-gradient(circle at 92% 8%,rgba(245,200,76,.08),transparent 40%),linear-gradient(150deg,rgba(38,22,78,.9),rgba(11,9,32,.94));box-shadow:0 18px 60px rgba(0,0,0,.5);padding:24px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
-        <img src="/assets/poapkings.png" alt="" style="width:44px;height:44px;object-fit:contain;">
-        <div style="display:grid;">
-          <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c8c1e6;">Proof by numbers</span>
-          <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;">Roster snapshot</strong>
+    <div class="pk-stat-panel">
+      <div class="pk-stat-panel__head">
+        <img class="pk-stat-panel__crest" src="/assets/poapkings.png" alt="">
+        <div class="pk-stat-panel__label">
+          <span class="pk-micro-label">Proof by numbers</span>
+          <strong class="pk-stat-panel__title">Roster snapshot</strong>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="pk-stat-grid">
         {%- set heroStats = [
           { label: 'Clan Trophies', value: clan.clanScore | formatNumber, detail: 'Across all ' + memberCount + ' members' },
           { label: 'Avg Trophies', value: avgTrophies | formatNumber, detail: (clan.totalTrophies | formatNumber) + ' total' },
@@ -49,10 +50,10 @@ ogImageHeight: 1200
           { label: 'Career Wins', value: totalWins | formatNumber, detail: (avgWins | formatNumber) + ' avg per member' }
         ] -%}
         {%- for s in heroStats %}
-        <div style="padding:15px 14px;border-radius:14px;">
-          <span style="font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c8c1e6;display:block;">{{ s.label }}</span>
-          <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.9rem;line-height:1.1;color:#f5c84c;display:block;margin-top:4px;">{{ s.value }}</strong>
-          <small style="color:#c8c1e6;font-size:.72rem;line-height:1.3;display:block;margin-top:3px;">{{ s.detail }}</small>
+        <div class="pk-stat">
+          <span class="pk-stat__label">{{ s.label }}</span>
+          <strong class="pk-stat__value">{{ s.value }}</strong>
+          <small class="pk-stat__detail">{{ s.detail }}</small>
         </div>
         {%- endfor %}
       </div>
@@ -60,26 +61,22 @@ ogImageHeight: 1200
   </section>
 
   <!-- testimonial -->
-  <section style="margin-top:40px;">
-    <figure style="margin:0;border:1px solid rgba(245,200,76,.22);border-radius:24px;background:radial-gradient(circle at 12% 0%,rgba(109,40,217,.28),transparent 45%),rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:clamp(28px,4vw,44px);">
-      <blockquote style="margin:0;font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.25rem,2.6vw,1.85rem);line-height:1.5;color:#f7f4ff;text-wrap:pretty;max-width:26em;">I've been playing Clash Royale for 10 years and I just want to say this is hands down <span style="color:#f5c84c;">THE best clan</span> I've ever been in. Y'all are great!</blockquote>
-      <figcaption style="display:flex;align-items:center;gap:12px;margin-top:22px;">
-        <div style="display:grid;">
-          <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;font-weight:400;">Th15_Guy</strong>
-          <span style="font-size:.76rem;color:#c8c1e6;">Elder · 10 years in Clash Royale · <span style="font-family:ui-monospace,Menlo,monospace;color:#f5c84c;">#QLGYYG0Q</span></span>
+  <section class="pk-testimonial">
+    <figure class="pk-testimonial__card">
+      <blockquote class="pk-testimonial__quote">I've been playing Clash Royale for 10 years and I just want to say this is hands down <span class="pk-testimonial__highlight">THE best clan</span> I've ever been in. Y'all are great!</blockquote>
+      <figcaption class="pk-testimonial__caption">
+        <div class="pk-testimonial__byline">
+          <strong class="pk-testimonial__name">Th15_Guy</strong>
+          <span class="pk-testimonial__meta">Elder · 10 years in Clash Royale · <span class="pk-mono-gold">#QLGYYG0Q</span></span>
         </div>
       </figcaption>
     </figure>
   </section>
 
   <!-- requirements -->
-  <section class="pk-req-wrap" style="margin-top:40px;border:1px solid rgba(139,92,246,.35);border-radius:20px;background:linear-gradient(145deg,rgba(59,29,122,.28),rgba(11,9,32,.5));padding:24px 26px;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-      <div style="display:flex;align-items:center;gap:9px;">
-        <span style="font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d7c8ff;">Are you a fit? · Requirements</span>
-      </div>
-    </div>
-    <div class="pk-req4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;">
+  <section class="pk-req-wrap pk-requirements">
+    <span class="pk-requirements__label">Are you a fit? · Requirements</span>
+    <div class="pk-req4">
       {%- set requirements = [
         { label: 'Min Trophies', value: clan.minTrophies | formatNumber },
         { label: 'Clan Status', value: clan.clanStatus },
@@ -87,25 +84,25 @@ ogImageHeight: 1200
         { label: 'War League', value: clan.clanWarTrophies | cwlTier }
       ] -%}
       {%- for r in requirements %}
-      <div style="padding:14px;border-radius:13px;">
-        <strong style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.3rem;color:#f7f4ff;display:block;">{{ r.value }}</strong>
-        <span style="font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#c8c1e6;display:block;margin-top:5px;">{{ r.label }}</span>
+      <div class="pk-requirement">
+        <strong class="pk-requirement__value">{{ r.value }}</strong>
+        <span class="pk-requirement__label">{{ r.label }}</span>
       </div>
       {%- endfor %}
     </div>
   </section>
 
   <!-- mini trend + roster teaser -->
-  <section class="pk-split" style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;margin-top:20px;">
-    <article style="border:1px solid rgba(215,200,255,.14);border-radius:20px;background:rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:22px;">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;">
+  <section class="pk-split">
+    <article class="pk-mini-panel">
+      <div class="pk-mini-panel__head">
         <div>
-          <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c8c1e6;">The whole roster, plotted</span>
-          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.15rem;margin:5px 0 0;">Collection depth × trophies</h3>
+          <span class="pk-micro-label">The whole roster, plotted</span>
+          <h3 class="pk-mini-panel__title">Collection depth × trophies</h3>
         </div>
-        <a href="/data/" style="color:#d7c8ff;font-weight:700;font-size:.78rem;">Full data page →</a>
+        <a class="pk-mini-panel__link" href="/data/">Full data page →</a>
       </div>
-      <svg viewBox="0 0 720 280" role="img" aria-label="Scatter plot of each clan member by collection level and trophy count" style="width:100%;height:auto;margin-top:14px;">
+      <svg class="pk-mini-chart" viewBox="0 0 720 280" role="img" aria-label="Scatter plot of each clan member by collection level and trophy count">
         <line x1="60" y1="222" x2="700" y2="222" stroke="rgba(215,200,255,.18)" stroke-width="1"></line>
         <line x1="60" y1="24" x2="60" y2="222" stroke="rgba(215,200,255,.18)" stroke-width="1"></line>
         <text x="380" y="262" text-anchor="middle" fill="#8a83a6" font-size="13" font-family="Inter,sans-serif" font-weight="700">Collection level →</text>
@@ -114,34 +111,33 @@ ogImageHeight: 1200
         <circle cx="{{ p.cx }}" cy="{{ p.cy }}" r="6" fill="{{ p.fill }}" stroke="rgba(7,6,16,.6)" stroke-width="1.5" opacity="0.9"></circle>
         {%- endfor %}
       </svg>
-      <div style="display:flex;gap:18px;margin-top:6px;font-size:.76rem;color:#c8c1e6;flex-wrap:wrap;">
-        <span style="display:inline-flex;align-items:center;gap:6px;"><i style="width:10px;height:10px;border-radius:50%;background:#f5c84c;display:inline-block;"></i> Leadership</span>
-        <span style="display:inline-flex;align-items:center;gap:6px;"><i style="width:10px;height:10px;border-radius:50%;background:#d7c8ff;display:inline-block;"></i> Elder</span>
-        <span style="display:inline-flex;align-items:center;gap:6px;"><i style="width:10px;height:10px;border-radius:50%;background:#8b5cf6;display:inline-block;"></i> Member</span>
+      <div class="pk-chart-legend">
+        <span class="pk-chart-legend__item"><i class="pk-chart-legend__dot pk-chart-legend__dot--lead"></i> Leadership</span>
+        <span class="pk-chart-legend__item"><i class="pk-chart-legend__dot pk-chart-legend__dot--elder"></i> Elder</span>
+        <span class="pk-chart-legend__item"><i class="pk-chart-legend__dot pk-chart-legend__dot--member"></i> Member</span>
       </div>
     </article>
 
-    <article style="border:1px solid rgba(215,200,255,.14);border-radius:20px;background:rgba(18,13,40,.72);box-shadow:0 18px 60px rgba(0,0,0,.45);padding:22px;">
-      <span style="font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#c8c1e6;">The backbone of the clan</span>
-      <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.15rem;margin:5px 0 4px;">Our Elders</h3>
-      <p style="color:#c8c1e6;font-size:.78rem;margin:0 0 14px;">Earned through wars, ranked, and generosity.</p>
-      <ol style="list-style:none;margin:0;padding:0;display:grid;gap:1px;">
+    <article class="pk-mini-panel">
+      <span class="pk-micro-label">The backbone of the clan</span>
+      <h3 class="pk-mini-panel__title">Our Elders</h3>
+      <p class="pk-mini-panel__copy">Earned through wars, ranked, and generosity.</p>
+      <ol class="pk-elder-list">
         {%- for l in elders | take(6) %}
-        <li style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 4px;border-bottom:1px solid rgba(215,200,255,.08);">
-          <span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.92rem;">{{ l.name }}</span>
-          <span style="font-size:.72rem;color:#c8c1e6;flex:0 0 auto;">{{ l.years }}y played</span>
+        <li class="pk-elder-list__item">
+          <span class="pk-elder-list__name">{{ l.name }}</span>
+          <span class="pk-elder-list__years">{{ l.years }}y played</span>
         </li>
         {%- endfor %}
       </ol>
-      <a href="/roster/" style="margin-top:14px;display:inline-block;color:#d7c8ff;font-weight:700;font-size:.78rem;">See full roster →</a>
+      <a class="pk-mini-panel__link pk-mini-panel__link--spaced" href="/roster/">See full roster →</a>
     </article>
   </section>
 
   <!-- why join -->
-  <section style="margin-top:52px;">
-    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Why join</span>
-    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">Not just another clan</h2>
-    <ol class="pk-grid-3" style="list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+  <section class="pk-section pk-section--spacious">
+    {{ sectionHeading('Why join', 'Not just another clan') }}
+    <ol class="pk-grid-3 pk-reasons">
       {%- set reasons = [
         { num: '01', title: 'Proof, not hype', body: "Our full roster and clan stats are public and refreshed daily. See exactly who you're joining before you apply — most clans ask you to just trust them." },
         { num: '02', title: 'Structure you can see', body: 'Elder is earned through participation you control — wars, ranked, donations — reviewed every Tuesday, with standings shared openly. No favoritism, no guessing.' },
@@ -151,55 +147,54 @@ ogImageHeight: 1200
         { num: '06', title: 'Veteran, drama-free culture', body: 'A veteran roster with real staying power. Wars encouraged, not required — good vibes, and real life always comes first.' }
       ] -%}
       {%- for r in reasons %}
-      <li style="border:1px solid rgba(215,200,255,.14);border-radius:16px;background:rgba(18,13,40,.55);padding:22px;">
-        <div style="font-family:'Supercell Magic',system-ui,sans-serif;color:#6d28d9;font-size:1.4rem;">{{ r.num }}</div>
-        <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.05rem;margin:8px 0 6px;">{{ r.title }}</h3>
-        <p style="color:#c8c1e6;font-size:.92rem;line-height:1.55;margin:0;">{{ r.body }}</p>
+      <li class="pk-reason">
+        <div class="pk-reason__number">{{ r.num }}</div>
+        <h3 class="pk-reason__title">{{ r.title }}</h3>
+        <p class="pk-reason__copy">{{ r.body }}</p>
       </li>
       {%- endfor %}
     </ol>
   </section>
 
   <!-- built by POAP KINGS -->
-  <section style="margin-top:52px;">
-    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Built by POAP KINGS</span>
-    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">We build our own tools</h2>
-    <div class="pk-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;">
-      <a href="/elixir/" style="position:relative;overflow:hidden;border:1px solid rgba(139,92,246,.5);border-radius:20px;background:radial-gradient(circle at 88% 12%,rgba(245,60,255,.2),transparent 42%),linear-gradient(145deg,rgba(88,28,235,.4),rgba(38,22,78,.7));box-shadow:0 18px 60px rgba(0,0,0,.45);padding:28px;display:flex;flex-direction:column;justify-content:space-between;color:inherit;">
+  <section class="pk-section pk-section--spacious">
+    {{ sectionHeading('Built by POAP KINGS', 'We build our own tools') }}
+    <div class="pk-grid-2 pk-tools">
+      <a class="pk-tool-card pk-tool-card--elixir" href="/elixir/">
         <div>
-          <span style="display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f5c84c;padding:4px 10px;border-radius:999px;background:rgba(245,200,76,.14);">Our clan agent</span>
-          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.5rem;margin:12px 0 8px;">Meet Elixir</h3>
-          <p style="color:#e7e2f7;line-height:1.6;margin:0;">Built by and for POAP KINGS, Elixir is our clan agent — publishing the weekly Elder Standing, tracking every member's stats, and welcoming recruits. The data on this site runs through Elixir.</p>
-          <span style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;color:#f5c84c;">Meet Elixir →</span>
+          <span class="pk-tool-card__badge">Our clan agent</span>
+          <h3 class="pk-tool-card__title">Meet Elixir</h3>
+          <p class="pk-tool-card__copy">Built by and for POAP KINGS, Elixir is our clan agent — publishing the weekly Elder Standing, tracking every member's stats, and welcoming recruits. The data on this site runs through Elixir.</p>
+          <span class="pk-tool-card__cta pk-tool-card__cta--compact">Meet Elixir →</span>
         </div>
       </a>
-      <a href="https://drop.poapkings.com" target="_blank" rel="noreferrer" style="display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(245,200,76,.28);border-radius:20px;background:radial-gradient(circle at 12% 90%,rgba(109,40,217,.3),transparent 45%),linear-gradient(145deg,rgba(38,22,78,.85),rgba(11,9,32,.92));box-shadow:0 18px 60px rgba(0,0,0,.45);padding:28px;color:inherit;">
+      <a class="pk-tool-card" href="https://drop.poapkings.com" target="_blank" rel="noreferrer">
         <div>
-          <span style="display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f5c84c;padding:4px 10px;border-radius:999px;background:rgba(245,200,76,.14);">Our game</span>
-          <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.5rem;margin:12px 0 8px;">Elixir Drop</h3>
-          <p style="color:#c8c1e6;line-height:1.6;margin:0;">A fast little game we built and run to help players learn Clash Royale cards and elixir costs — and get quicker at reading the field.</p>
+          <span class="pk-tool-card__badge">Our game</span>
+          <h3 class="pk-tool-card__title">Elixir Drop</h3>
+          <p class="pk-tool-card__copy">A fast little game we built and run to help players learn Clash Royale cards and elixir costs — and get quicker at reading the field.</p>
         </div>
-        <span style="margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.9rem;color:#f5c84c;">Play Elixir Drop →</span>
+        <span class="pk-tool-card__cta">Play Elixir Drop →</span>
       </a>
     </div>
   </section>
 
   <!-- final join -->
-  <section style="margin:56px 0 72px;border:1px solid rgba(245,200,76,.25);border-radius:24px;background:radial-gradient(circle at 90% 10%,rgba(245,200,76,.1),transparent 38%),linear-gradient(145deg,rgba(38,22,78,.9),rgba(11,9,32,.95));box-shadow:0 18px 60px rgba(0,0,0,.5);padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;" class="pk-split">
+  <section class="pk-split pk-final-join">
     <div>
-      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Ready?</span>
-      <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.02;margin:12px 0 0;">{% if openSlots > 0 %}We're invite only.<br>{{ openSlots }} spot{{ 's' if openSlots != 1 }} left.{% else %}We're invite only.<br>The clan is full.{% endif %}</h2>
-      <p style="font-size:1.05rem;color:#c8c1e6;margin:16px 0 0;">If you've got {{ clan.minTrophies | formatNumber }}+ trophies and show up for war, apply in-game and leadership will review it. See you in Discord.</p>
+      <span class="pk-eyebrow">Ready?</span>
+      <h2 class="pk-final-join__title">{% if openSlots > 0 %}We're invite only.<br>{{ openSlots }} spot{{ 's' if openSlots != 1 }} left.{% else %}We're invite only.<br>The clan is full.{% endif %}</h2>
+      <p class="pk-final-join__copy">If you've got {{ clan.minTrophies | formatNumber }}+ trophies and show up for war, apply in-game and leadership will review it. See you in Discord.</p>
     </div>
     <div>
-      <dl style="margin:0;display:grid;gap:1px;border-radius:14px;overflow:hidden;">
-        <div style="display:flex;justify-content:space-between;padding:12px 0;"><dt style="color:#c8c1e6;font-size:.85rem;">Clan Tag</dt><dd style="margin:0;font-family:ui-monospace,monospace;color:#f5c84c;">#{{ site.clanTag }}</dd></div>
-        <div style="display:flex;justify-content:space-between;padding:12px 0;"><dt style="color:#c8c1e6;font-size:.85rem;">Region</dt><dd style="margin:0;">{{ clan.clanRegion }}</dd></div>
-        <div style="display:flex;justify-content:space-between;padding:12px 0;"><dt style="color:#c8c1e6;font-size:.85rem;">Type</dt><dd style="margin:0;">{{ clan.clanStatus }}</dd></div>
+      <dl class="pk-final-join__facts">
+        <div class="pk-final-join__fact"><dt>Clan Tag</dt><dd class="pk-mono-gold">#{{ site.clanTag }}</dd></div>
+        <div class="pk-final-join__fact"><dt>Region</dt><dd>{{ clan.clanRegion }}</dd></div>
+        <div class="pk-final-join__fact"><dt>Type</dt><dd>{{ clan.clanStatus }}</dd></div>
       </dl>
-      <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
-        <button type="button" data-modal-open="join" data-tinylytics-event="home.join" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;min-height:50px;padding:0 24px;display:inline-flex;align-items:center;border:0;border-radius:14px;cursor:pointer;background:linear-gradient(135deg,#f5c84c,#c98c10);color:#2a1500;box-shadow:0 4px 24px rgba(245,200,76,.35);">JOIN</button>
-        <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;min-height:50px;padding:0 24px;display:inline-flex;align-items:center;border-radius:14px;border:1.5px solid rgba(215,200,255,.24);color:#c8c1e6;">Open Discord</a>
+      <div class="pk-final-join__actions">
+        {{ actionButton('JOIN', 'gold', 'join', 'home.join') }}
+        {{ actionLink(site.discordUrl, 'Open Discord', 'outline', '', true) }}
       </div>
     </div>
   </section>

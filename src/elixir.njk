@@ -8,22 +8,22 @@ ogImageAlt: Elixir bot avatar
 mainId: top
 supercellDisclaimer: true
 ---
-<div class="pk-page pk-page--elixir" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
-  <a href="/" style="display:inline-block;color:#d7c8ff;font-weight:700;font-size:.82rem;margin-bottom:20px;">← Back home</a>
+{% from "components.njk" import backLink, sectionHeading, actionLink, numberedCard %}
+<div class="pk-page pk-page--elixir pk-page-shell">
+  {{ backLink('/', 'Back home') }}
 
-  <section class="pk-elixir-hero" style="display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;border:1px solid rgba(139,92,246,.5);border-radius:24px;background:radial-gradient(circle at 88% 8%,rgba(245,60,255,.2),transparent 44%),linear-gradient(145deg,rgba(88,28,235,.4),rgba(38,22,78,.7));box-shadow:0 18px 60px rgba(0,0,0,.5);padding:clamp(28px,4vw,44px);">
-    <img src="/assets/elixir.png" alt="Elixir, the POAP KINGS clan agent" style="width:clamp(120px,18vw,180px);height:clamp(120px,18vw,180px);object-fit:contain;filter:drop-shadow(0 16px 32px rgba(0,0,0,.55));">
+  <section class="pk-elixir-hero pk-elixir-banner">
+    <img class="pk-elixir-banner__image" src="/assets/elixir.png" alt="Elixir, the POAP KINGS clan agent">
     <div>
-      <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#f5c84c;">Our clan agent</span>
-      <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2.2rem,5vw,3.4rem);margin:12px 0 0;">Meet Elixir</h1>
-      <p style="font-size:1.1rem;line-height:1.6;color:#e7e2f7;margin:16px 0 0;max-width:34em;text-wrap:pretty;">Built by and for POAP KINGS, Elixir keeps the clan honest, organized, and remembered — publishing our data, running the weekly Elder Standing, telling the clan's story, and coaching every member. If you've seen a number on this site, Elixir put it there.</p>
+      <span class="pk-eyebrow pk-eyebrow--gold">Our clan agent</span>
+      <h1 class="pk-elixir-banner__title">Meet Elixir</h1>
+      <p class="pk-elixir-banner__copy">Built by and for POAP KINGS, Elixir keeps the clan honest, organized, and remembered — publishing our data, running the weekly Elder Standing, telling the clan's story, and coaching every member. If you've seen a number on this site, Elixir put it there.</p>
     </div>
   </section>
 
-  <section style="margin-top:44px;">
-    <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">What Elixir does</span>
-    <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">One agent, many jobs</h2>
-    <div class="pk-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;">
+  <section class="pk-section">
+    {{ sectionHeading('What Elixir does', 'One agent, many jobs') }}
+    <div class="pk-grid-3 pk-elixir-jobs">
       {%- set elixirJobs = [
         { num: '01', title: 'Publishes the Elder Standing', body: 'Every Tuesday, Elixir posts a transparent ranking of who\'s competing for the clan — so Elder is never a mystery or a favor.' },
         { num: '02', title: 'Tracks the whole roster', body: 'Trophies, donations, tenure, wins, and collection, pulled from the Clash Royale API and refreshed daily. Every number on this site is Elixir\'s work.' },
@@ -33,25 +33,15 @@ supercellDisclaimer: true
         { num: '06', title: 'Powers Elixir Drop', body: 'Elixir is the face and voice of our game, cheering good elixir reads and ribbing the misses.' }
       ] -%}
       {%- for j in elixirJobs %}
-      <article style="border:1px solid rgba(215,200,255,.14);border-radius:18px;background:rgba(18,13,40,.6);padding:24px;">
-        <div style="font-family:'Supercell Magic',system-ui,sans-serif;color:#6d28d9;font-size:1.4rem;">{{ j.num }}</div>
-        <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.1rem;margin:8px 0 6px;">{{ j.title }}</h3>
-        <p style="color:#c8c1e6;line-height:1.55;margin:0;">{{ j.body }}</p>
-      </article>
+      {{ numberedCard(j.num, j.title, j.body) }}
       {%- endfor %}
     </div>
   </section>
 
-  <section style="margin-top:44px;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-      <div>
-        <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Under the hood</span>
-        <h2 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:10px 0 0;">Built like real software</h2>
-      </div>
-      <a href="https://github.com/jthingelstad/elixir-bot" target="_blank" rel="noreferrer" style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:.82rem;padding:11px 20px;border-radius:12px;border:1.5px solid rgba(215,200,255,.24);color:#d7c8ff;white-space:nowrap;">View the code on GitHub →</a>
-    </div>
-    <p style="font-size:1.05rem;line-height:1.6;color:#c8c1e6;margin:16px 0 0;max-width:52em;text-wrap:pretty;">Elixir pairs a <strong style="color:#fff;">deterministic data engine</strong> with an <strong style="color:#fff;">LLM awareness loop</strong>. Clash Royale data flows through a single API ingress into append-only receipts and durable event streams — and <strong style="color:#fff;">code, not the model, owns every promotion, demotion, and kick</strong>. A cheap model gates the expensive one on the post-or-stay-quiet call, which cut running cost by roughly 10×.</p>
-    <div class="pk-tech3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;">
+  <section class="pk-section">
+    {{ sectionHeading('Under the hood', 'Built like real software', actionLink('https://github.com/jthingelstad/elixir-bot', 'View the code on GitHub →', 'outline', '', true)) }}
+    <p class="pk-elixir-tech-copy">Elixir pairs a <strong>deterministic data engine</strong> with an <strong>LLM awareness loop</strong>. Clash Royale data flows through a single API ingress into append-only receipts and durable event streams — and <strong>code, not the model, owns every promotion, demotion, and kick</strong>. A cheap model gates the expensive one on the post-or-stay-quiet call, which cut running cost by roughly 10×.</p>
+    <div class="pk-tech3">
       {%- set techFacts = [
         { label: 'Language', value: 'Python 3.14' },
         { label: 'AI models', value: 'Claude Haiku 4.5, Sonnet 5 & Opus 4.8' },
@@ -61,19 +51,19 @@ supercellDisclaimer: true
         { label: 'Quality gates', value: 'ruff · mypy · pytest 80%+' }
       ] -%}
       {%- for t in techFacts %}
-      <div style="border:1px solid rgba(215,200,255,.14);border-radius:14px;background:rgba(18,13,40,.55);padding:18px;">
-        <span style="font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#c8c1e6;display:block;">{{ t.label }}</span>
-        <strong style="display:block;margin-top:6px;font-size:1rem;color:#f7f4ff;line-height:1.3;">{{ t.value }}</strong>
+      <div class="pk-tech-fact">
+        <span class="pk-tech-fact__label">{{ t.label }}</span>
+        <strong class="pk-tech-fact__value">{{ t.value }}</strong>
       </div>
       {%- endfor %}
     </div>
   </section>
 
-  <a href="https://drop.poapkings.com" target="_blank" rel="noreferrer" style="margin-top:44px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border:1px solid rgba(245,200,76,.28);border-radius:20px;background:radial-gradient(circle at 12% 90%,rgba(109,40,217,.3),transparent 45%),linear-gradient(145deg,rgba(38,22,78,.85),rgba(11,9,32,.92));box-shadow:0 18px 60px rgba(0,0,0,.45);padding:28px;color:inherit;">
+  <a class="pk-elixir-game" href="https://drop.poapkings.com" target="_blank" rel="noreferrer">
     <div>
-      <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.4rem;margin:0 0 6px;">Elixir also runs a game</h3>
-      <p style="color:#c8c1e6;line-height:1.55;margin:0;max-width:44em;">Elixir Drop is our card-and-cost trainer — the same mascot, cheering your reads and ribbing the misses.</p>
+      <h3 class="pk-elixir-game__title">Elixir also runs a game</h3>
+      <p class="pk-elixir-game__copy">Elixir Drop is our card-and-cost trainer — the same mascot, cheering your reads and ribbing the misses.</p>
     </div>
-    <span style="flex:0 0 auto;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.95rem;color:#f5c84c;">Play Elixir Drop →</span>
+    <span class="pk-elixir-game__cta">Play Elixir Drop →</span>
   </a>
 </div>

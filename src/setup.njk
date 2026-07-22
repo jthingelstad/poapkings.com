@@ -7,13 +7,12 @@ navActive: members
 supercellDisclaimer: true
 excludeFromSitemap: true
 ---
-<div class="pk-page pk-page--mid" style="padding-top:clamp(36px,5vw,60px);padding-bottom:72px;">
-  <a href="/members/" style="display:inline-block;color:#d7c8ff;font-weight:700;font-size:.82rem;margin-bottom:20px;">← Back to Members</a>
-  <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#d7c8ff;">Members</span>
-  <h1 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:clamp(2rem,4.5vw,3rem);margin:12px 0 0;">Clan Setup</h1>
-  <p style="font-size:1.05rem;color:#c8c1e6;margin:14px 0 0;max-width:44em;">Four steps to get fully connected, eligible for a free Pass Royale, and on the roster.</p>
+{% from "components.njk" import pageIntro, backLink, numberedCard %}
+<div class="pk-page pk-page--mid pk-page-shell">
+  {{ backLink('/members/', 'Back to Members') }}
+  {{ pageIntro('Members', 'Clan Setup', 'Four steps to get fully connected, eligible for a free Pass Royale, and on the roster.') }}
 
-  <div class="pk-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;">
+  <div class="pk-grid-2 pk-setup-grid">
     {%- set steps = [
       { n: '1', title: 'Connect with Clan Leaders', body: 'You must friend King Thing (Thingles) on the Supercell Store to receive the free Pass Royale.', href: 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', cta: 'Connect with Thingles →', event: 'setup.connect-thingles' },
       { n: '2', title: 'Join the Discord Server', body: 'Join the POAP KINGS Discord for clan chatter that isn\'t limited like in-game chat. Set your nickname to your Clash Royale name.', href: site.discordUrl, cta: 'Join on Discord →', event: 'setup.join-discord' },
@@ -21,12 +20,7 @@ excludeFromSitemap: true
       { n: '4', title: 'Roster Registration', body: 'Submit the form so your details can be added to the clan website roster.', href: 'https://docs.google.com/forms/d/e/1FAIpQLSeDxNctUtkzBlWQqo8w92hseuqpzbCfHMHUO4W6St5hn9W5AQ/viewform?usp=header', cta: 'Roster Registration →', event: 'setup.roster-registration' }
     ] -%}
     {%- for s in steps %}
-    <article style="border:1px solid rgba(215,200,255,.14);border-radius:18px;background:rgba(18,13,40,.6);padding:24px;display:flex;flex-direction:column;">
-      <div style="font-family:'Supercell Magic',system-ui,sans-serif;color:#6d28d9;font-size:1.4rem;">{{ s.n }}</div>
-      <h3 style="font-family:'Supercell Magic',system-ui,sans-serif;font-size:1.1rem;margin:8px 0 6px;">{{ s.title }}</h3>
-      <p style="color:#c8c1e6;line-height:1.55;margin:0 0 18px;flex:1;">{{ s.body }}</p>
-      <a href="{{ s.href }}" target="_blank" rel="noreferrer" data-tinylytics-event="{{ s.event }}" style="align-self:flex-start;font-family:'Supercell Magic',system-ui,sans-serif;font-size:.85rem;padding:11px 20px;border-radius:12px;border:1.5px solid rgba(215,200,255,.24);color:#d7c8ff;">{{ s.cta }}</a>
-    </article>
+    {{ numberedCard(s.n, s.title, s.body, s.href, s.cta, s.event, true) }}
     {%- endfor %}
   </div>
 </div>

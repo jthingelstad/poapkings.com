@@ -1,0 +1,69 @@
+{# Shared presentation components. Keep page-specific data and copy in each page. #}
+
+{%- macro pageIntro(eyebrow, title, description = '', modifier = '') -%}
+<header class="pk-page-intro{% if modifier %} {{ modifier }}{% endif %}">
+  <span class="pk-eyebrow">{{ eyebrow | safe }}</span>
+  <h1 class="pk-page-intro__title">{{ title | safe }}</h1>
+  {%- if description %}
+  <p class="pk-page-intro__copy">{{ description | safe }}</p>
+  {%- endif %}
+</header>
+{%- endmacro -%}
+
+{%- macro backLink(href, label) -%}
+<a class="pk-back-link" href="{{ href }}">← {{ label }}</a>
+{%- endmacro -%}
+
+{%- macro sectionHeading(eyebrow, title, meta = '', modifier = '') -%}
+<header class="pk-section-heading{% if modifier %} {{ modifier }}{% endif %}">
+  <div>
+    <span class="pk-eyebrow">{{ eyebrow | safe }}</span>
+    <h2 class="pk-section-heading__title">{{ title | safe }}</h2>
+  </div>
+  {%- if meta %}
+  <span class="pk-section-heading__meta">{{ meta | safe }}</span>
+  {%- endif %}
+</header>
+{%- endmacro -%}
+
+{%- macro actionLink(href, label, variant = 'outline', event = '', external = false, modifier = '') -%}
+<a class="pk-action pk-action--{{ variant }}{% if modifier %} {{ modifier }}{% endif %}" href="{{ href }}"{% if external %} target="_blank" rel="noreferrer"{% endif %}{% if event %} data-tinylytics-event="{{ event }}"{% endif %}>{{ label | safe }}</a>
+{%- endmacro -%}
+
+{%- macro actionButton(label, variant = 'gold', modal = '', event = '', modifier = '') -%}
+<button class="pk-action pk-action--{{ variant }}{% if modifier %} {{ modifier }}{% endif %}" type="button"{% if modal %} data-modal-open="{{ modal }}"{% endif %}{% if event %} data-tinylytics-event="{{ event }}"{% endif %}>{{ label | safe }}</button>
+{%- endmacro -%}
+
+{%- macro numberedCard(number, title, body, href = '', cta = '', event = '', external = false) -%}
+<article class="pk-number-card">
+  <div class="pk-number-card__number">{{ number }}</div>
+  <h3 class="pk-number-card__title">{{ title }}</h3>
+  <p class="pk-number-card__copy">{{ body }}</p>
+  {%- if href %}
+  {{ actionLink(href, cta, 'outline', event, external, 'pk-number-card__action') }}
+  {%- endif %}
+</article>
+{%- endmacro -%}
+
+{%- macro infoCard(kicker, title, body, href, cta, variant = 'default', external = false) -%}
+<article class="pk-info-card pk-info-card--{{ variant }}">
+  <span class="pk-info-card__kicker">{{ kicker }}</span>
+  <h2 class="pk-info-card__title">{{ title }}</h2>
+  <div class="pk-info-card__copy">{{ body | safe }}</div>
+  {{ actionLink(href, cta, variant if variant != 'default' else 'purple', '', external, 'pk-info-card__action') }}
+</article>
+{%- endmacro -%}
+
+{%- macro promoField(label, id, value, multiline = false) -%}
+<div class="pk-promo-field">
+  <div class="pk-promo-field__head">
+    <h3 class="pk-promo-field__title">{{ label }}</h3>
+    <button class="pk-action pk-action--gold pk-action--compact promoCopy" type="button" data-copy-target="{{ id }}">COPY</button>
+  </div>
+  {%- if multiline %}
+  <textarea class="pk-promo-field__control pk-promo-field__control--textarea" id="{{ id }}" readonly rows="6">{{ value }}</textarea>
+  {%- else %}
+  <input class="pk-promo-field__control" id="{{ id }}" readonly value="{{ value }}">
+  {%- endif %}
+</div>
+{%- endmacro -%}

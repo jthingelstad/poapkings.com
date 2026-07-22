@@ -130,7 +130,7 @@
       {% else %}
       <span class="eyebrow">Join POAP KINGS</span>
       <h2 class="h-display h2 modal__title" id="joinModalTitle">Ready to<br/>push?</h2>
-      <p class="modal__body">The button below opens <strong style="color:#fff">Clash Royale</strong> on your phone and sends the clan invite straight to our leadership. Open the site on mobile to use it — on desktop, search for <strong>POAP KINGS</strong> in-game instead.</p>
+      <p class="modal__body">The button below opens <strong>Clash Royale</strong> on your phone and sends the clan invite straight to our leadership. Open the site on mobile to use it — on desktop, search for <strong>POAP KINGS</strong> in-game instead.</p>
       <dl class="modal__dl">
         <div><dt>Clan Name</dt><dd>POAP KINGS</dd></div>
         <div><dt>Clan Tag</dt><dd class="mono">#{{ site.clanTag }}</dd></div>
@@ -163,7 +163,7 @@
           <div class="rank-card__name" data-rank-name>{{ firstRank.name }}</div>
           <div class="rank-card__count"><span class="tinylytics_hits" data-rank-count>—</span> stars</div>
           <div class="rank-progress" data-rank-progress>
-            <div class="rank-progress__fill" data-rank-fill style="width:0%"></div>
+            <div class="rank-progress__fill" data-rank-fill></div>
           </div>
           <div class="rank-progress__label" data-rank-label>Loading…</div>
         </div>
@@ -242,7 +242,7 @@
   </script>
 
   {% if appJs %}<script src="{{ '/app.js' | bust }}"></script>{% endif %}
-  <script src="{{ '/gamify.js' | bust }}" defer></script>
+  <script type="module" src="{{ '/gamify.js' | bust }}"></script>
   <script src="{{ '/partials-trophy.js' | bust }}" defer></script>
   <script src="https://tinylytics.app/embed/{{ site.tinylyticsId }}.js?hits&kudos=%F0%9F%91%8F&countries&events&beacon" defer></script>
   {{ extraScripts | safe }}
