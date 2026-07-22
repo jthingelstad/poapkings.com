@@ -10,7 +10,7 @@ ogImageAlt: POAP KINGS crest
 ogImageWidth: 1200
 ogImageHeight: 1200
 ---
-{% from "components.njk" import sectionHeading, actionLink, actionButton %}
+{% from "components.njk" import sectionHeading, actionLink, actionButton, playerTagLink %}
 {%- set members = rosterExplorer.members -%}
 {%- set memberCount = clan.memberCount -%}
 {%- set openSlots = 50 - memberCount -%}
@@ -67,7 +67,7 @@ ogImageHeight: 1200
       <figcaption class="pk-testimonial__caption">
         <div class="pk-testimonial__byline">
           <strong class="pk-testimonial__name">Th15_Guy</strong>
-          <span class="pk-testimonial__meta">Elder · 10 years in Clash Royale · <span class="pk-mono-gold">#QLGYYG0Q</span></span>
+          <span class="pk-testimonial__meta">Elder · 10 years in Clash Royale · {{ playerTagLink('QLGYYG0Q', 'pk-testimonial__tag') }}</span>
         </div>
       </figcaption>
     </figure>

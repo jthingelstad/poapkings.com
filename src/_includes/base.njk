@@ -173,7 +173,7 @@
     </div>
   </div>
 
-  <script id="starRanksData" type="application/json">{{ starRanks.ranks | dump | safe }}</script>
+  <script id="starRanksData" type="application/json">{{ starRanks.ranks | jsonForScript | safe }}</script>
 
   <script>
     (function(){
@@ -241,9 +241,7 @@
     })();
   </script>
 
-  {% if appJs %}<script src="{{ '/app.js' | bust }}"></script>{% endif %}
   <script type="module" src="{{ '/gamify.js' | bust }}"></script>
-  <script src="{{ '/partials-trophy.js' | bust }}" defer></script>
   <script src="https://tinylytics.app/embed/{{ site.tinylyticsId }}.js?hits&kudos=%F0%9F%91%8F&countries&events&beacon" defer></script>
   {{ extraScripts | safe }}
 </body>

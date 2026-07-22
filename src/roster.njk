@@ -7,7 +7,7 @@ navActive: roster
 supercellDisclaimer: true
 extraScripts: '<script src="/roster.js" defer></script>'
 ---
-{% from "components.njk" import pageIntro %}
+{% from "components.njk" import pageIntro, playerTagLink %}
 {%- set rows = roster.members | sortByDesc('trophies') -%}
 {%- set memberCount = roster.members | length -%}
 
@@ -35,11 +35,14 @@ extraScripts: '<script src="/roster.js" defer></script>'
     </div>
     <div id="rosterBody">
       {%- for m in rows %}
-      <div class="pk-roster-row" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}">
+      <div class="pk-roster-row" id="member-{{ m.tag | memberSlug }}" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}">
         <span class="pk-roster-rank" data-roster-rank>{{ loop.index }}</span>
         <span class="pk-roster-player">
           <strong class="pk-roster-player__name">{{ m.name }}</strong>
-          <em class="pk-roster-player__role" style="--role-color:{{ m.role | roleColor }}">{{ m.role }}</em>
+          <span class="pk-roster-player__meta">
+            <em class="pk-roster-player__role {{ m.role | roleClass }}">{{ m.role }}</em>
+            {{ playerTagLink(m.tag, 'pk-roster-player__tag') }}
+          </span>
         </span>
         <strong class="pk-roster-trophies">{{ m.trophies | formatNumber }}</strong>
         <span class="pk-col-opt pk-roster-value">{{ m.cr_battle_wins | formatNumber }}</span>

@@ -104,7 +104,7 @@ Immediately before committing:
 
 Commit with the message `Refresh Clash Royale data` and push `main` normally. Never force-push. Record the resulting commit SHA.
 
-Monitor the `Deploy to GitHub Pages` run associated with that exact SHA until it completes. If it succeeds, verify HTTP success for the home, roster, Clan Wars, clan JSON, and roster JSON surfaces, and confirm the live clan/member facts match the committed refresh.
+Monitor the `Deploy to GitHub Pages` run associated with that exact SHA until it completes. If it succeeds, verify HTTP success for the home, roster, data explorer, clan JSON, and roster JSON surfaces, and confirm the live clan/member facts match the committed refresh. The retired `/wars/` and `/vault/` routes are not deployment checks.
 
 Do not patch code when deployment or live verification fails. Capture the exact failing run or URL and hand it off through the failure ledger.
 

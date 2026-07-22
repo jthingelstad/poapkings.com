@@ -10,59 +10,6 @@ import { animate } from 'motion/mini';
 
   function fmt(n){ return n.toLocaleString('en-US') }
 
-  function countUp(el, target, duration){
-    if (duration == null) duration = 1200;
-    if (reduce){ el.textContent = fmt(target); return; }
-    const start = Date.now();
-    const from = 0;
-    const iv = setInterval(function(){
-      const t = Math.min(1, (Date.now() - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const val = Math.round(from + (target - from) * eased);
-      el.textContent = fmt(val);
-      if (t >= 1){ clearInterval(iv); el.textContent = fmt(target); }
-    }, 16);
-  }
-
-  function initCountUps(){
-    const els = document.querySelectorAll('[data-count-up]');
-    function trigger(el){
-      if (el.dataset.countUpDone) return;
-      el.dataset.countUpDone = '1';
-      const target = Number(el.dataset.countUp || 0);
-      el.textContent = '0';
-      countUp(el, target, Number(el.dataset.countUpMs || 1200));
-    }
-    // Safety fallback: any element still un-triggered after 3s gets the final value
-    els.forEach(function(el){
-      const target = Number(el.dataset.countUp || 0);
-      setTimeout(function(){
-        if (!el.dataset.countUpDone){
-          el.dataset.countUpDone = '1';
-          el.textContent = fmt(target);
-        }
-      }, 3000);
-    });
-    if (!('IntersectionObserver' in window)){
-      els.forEach(trigger);
-      return;
-    }
-    const obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){
-          trigger(e.target);
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: .2 });
-    els.forEach(function(el){
-      const r = el.getBoundingClientRect();
-      const inView = r.top < (window.innerHeight || 0) && r.bottom > 0;
-      if (inView) trigger(el);
-      else obs.observe(el);
-    });
-  }
-
   /* ── Star counter: Motion choreography + a lazy PixiJS particle layer ── */
   function spawnFallbackSparks(badge, count){
     const rect = badge.getBoundingClientRect();
@@ -90,16 +37,6 @@ import { animate } from 'motion/mini';
   function loadPixi(){
     if (!pixiModule) pixiModule = import('pixi.js');
     return pixiModule;
-  }
-
-  function preloadPixi(){
-    if (reduce) return;
-    const start = function(){ loadPixi().catch(function(){}); };
-    if ('requestIdleCallback' in window){
-      window.requestIdleCallback(start, { timeout: 1200 });
-    } else {
-      setTimeout(start, 500);
-    }
   }
 
   async function spawnPixiBurst(badge, rankUp){
@@ -338,7 +275,7 @@ import { animate } from 'motion/mini';
     return 'default';
   }
   function placeArt(container, rank, zone){
-    container.innerHTML = '';
+    container.textContent = '';
     container.dataset.zone = zone;
     if (rank.image){
       var img = document.createElement('img');
@@ -350,7 +287,9 @@ import { animate } from 'motion/mini';
     } else {
       var ph = document.createElement('div');
       ph.className = 'rank-card__placeholder';
-      ph.innerHTML = '<span>' + rank.n + '</span>';
+      var rankNumber = document.createElement('span');
+      rankNumber.textContent = String(rank.n);
+      ph.appendChild(rankNumber);
       container.appendChild(ph);
     }
     container.classList.toggle('is-close', zone === 'close');
@@ -417,7 +356,7 @@ import { animate } from 'motion/mini';
     });
   }
 
-  function boot(){ preloadPixi(); initCountUps(); initStarCounter(); initStarModal(); }
+  function boot(){ initStarCounter(); initStarModal(); }
   if (document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', boot);
   } else {
@@ -425,7 +364,6 @@ import { animate } from 'motion/mini';
   }
 
   window.POAPGamify = {
-    countUp: countUp,
     celebrateStar: function(rankUp){
       const badge = document.querySelector('.starcount');
       const hitsEl = badge && badge.querySelector('.tinylytics_hits');

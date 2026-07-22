@@ -23,6 +23,7 @@
     function metricLabel(k) { return LABEL[k]; }
     function fmtMetric(k, v) { return k === "years" ? v + "y" : fmt(v); }
     function roleColor2(role) { return role === "Co-Leader" || role === "Leader" ? "#f5c84c" : role === "Elder" ? "#d7c8ff" : "#8b5cf6"; }
+    function roleClass(role) { return role === "Co-Leader" || role === "Leader" ? "pk-role--lead" : role === "Elder" ? "pk-role--elder" : "pk-role--member"; }
     function mix(a, b, t) { return Math.round(a + (b - a) * t); }
     function mixColor(t) { return "rgb(" + mix(109, 245, t) + "," + mix(40, 200, t) + "," + mix(217, 76, t) + ")"; }
 
@@ -55,6 +56,7 @@
         dotEls = pts.map(function (m, i) {
           var c = document.createElementNS(SVGNS, "circle");
           c.setAttribute("cx", "0"); c.setAttribute("cy", "0");
+          c.classList.add("pk-scatter-dot");
           c.addEventListener("mouseenter", function () { state.hover = i; render(); });
           c.addEventListener("mouseleave", function () { state.hover = -1; render(); });
           group.appendChild(c);
@@ -68,10 +70,11 @@
         var fy = ymax === ymin ? 0.5 : (m[yK] - ymin) / (ymax - ymin);
         var fill = state.colorMode === "role" ? roleColor2(m.role) : mixColor(fy);
         var on = hov === i;
-        dotEls[i].setAttribute("style",
-          "transform:translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px);r:" + r.toFixed(1) + "px;fill:" + fill +
-          ";fill-opacity:" + (on ? 1 : 0.82) + ";stroke:" + (on ? "#fff" : "rgba(7,6,16,.55)") + ";stroke-width:" + (on ? 3 : 1.5) +
-          ";transition:transform .65s cubic-bezier(.34,1.1,.5,1),r .4s ease,fill .35s ease,stroke .15s,fill-opacity .15s;cursor:pointer;");
+        dotEls[i].style.setProperty("--dot-x", x.toFixed(1) + "px");
+        dotEls[i].style.setProperty("--dot-y", y.toFixed(1) + "px");
+        dotEls[i].style.setProperty("--dot-color", fill);
+        dotEls[i].setAttribute("r", r.toFixed(1));
+        dotEls[i].classList.toggle("is-hovered", on);
       });
 
       // Medians
@@ -94,17 +97,19 @@
       el("detailKicker").textContent = (hov >= 0 && hov < pts.length) ? "Selected member" : ("Leads · " + metricLabel(yK));
       el("detailName").textContent = detail ? detail.name : "—";
       el("detailRole").textContent = detail ? detail.role : "";
-      el("detailRole").style.color = detail ? roleColor2(detail.role) : "#c8c1e6";
+      el("detailRole").className = "pk-detail-panel__role" + (detail ? " " + roleClass(detail.role) : "");
       var stats = el("detailStats");
       stats.textContent = "";
       if (detail) {
         METRICS.forEach(function (k) {
           var row = document.createElement("div");
-          row.style.cssText = "display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(215,200,255,.08);";
+          row.className = "pk-detail-panel__stat";
           var l = document.createElement("span");
-          l.style.cssText = "font-size:.78rem;color:#c8c1e6;"; l.textContent = metricLabel(k);
+          l.className = "pk-detail-panel__stat-label";
+          l.textContent = metricLabel(k);
           var v = document.createElement("strong");
-          v.style.cssText = "font-size:.85rem;color:#f7f4ff;font-variant-numeric:tabular-nums;"; v.textContent = fmtMetric(k, detail[k]);
+          v.className = "pk-detail-panel__stat-value";
+          v.textContent = fmtMetric(k, detail[k]);
           row.appendChild(l); row.appendChild(v); stats.appendChild(row);
         });
       }
@@ -189,16 +194,23 @@
       var legend = el("timelineLegend"); legend.textContent = "";
       active.forEach(function (m) {
         var d = document.createElement("div");
-        d.style.cssText = "padding:6px 0;";
-        d.innerHTML = '<strong style="font-family:\'Supercell Magic\',system-ui,sans-serif;font-size:1.9rem;color:' + m.color + ';display:block;line-height:1;font-variant-numeric:tabular-nums;"></strong><span style="font-size:.66rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#c8c1e6;"></span>';
-        d.children[0].textContent = tFmt(m.key, S[ti][m.key]);
-        d.children[1].textContent = m.label;
+        d.className = "pk-timeline-counter pk-series--" + m.key;
+        var value = document.createElement("strong");
+        value.className = "pk-timeline-counter__value";
+        value.textContent = tFmt(m.key, S[ti][m.key]);
+        var label = document.createElement("span");
+        label.className = "pk-timeline-counter__label";
+        label.textContent = m.label;
+        d.appendChild(value);
+        d.appendChild(label);
         counters.appendChild(d);
 
         var s = document.createElement("span");
-        s.style.cssText = "display:inline-flex;align-items:center;gap:6px;";
-        s.innerHTML = '<i style="width:10px;height:10px;border-radius:50%;background:' + m.color + ';display:inline-block;"></i>';
-        s.appendChild(document.createTextNode(" " + m.label));
+        s.className = "pk-chart-legend__item pk-series--" + m.key;
+        var dot = document.createElement("i");
+        dot.className = "pk-chart-legend__dot";
+        s.appendChild(dot);
+        s.appendChild(document.createTextNode(m.label));
         legend.appendChild(s);
       });
     }
@@ -210,7 +222,6 @@
       var key = btn.getAttribute("data-series");
       on[key] = !on[key];
       btn.classList.toggle("is-active", on[key]);
-      btn.style.borderColor = on[key] ? btn.getAttribute("data-color") : "";
       render();
     });
 

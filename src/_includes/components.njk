@@ -14,6 +14,11 @@
 <a class="pk-back-link" href="{{ href }}">← {{ label }}</a>
 {%- endmacro -%}
 
+{%- macro playerTagLink(tag, modifier = '') -%}
+{%- set normalizedTag = tag | playerTag -%}
+<a class="pk-player-tag{% if modifier %} {{ modifier }}{% endif %}" href="https://royaleapi.com/player/{{ normalizedTag }}" target="_blank" rel="noreferrer" aria-label="View player #{{ normalizedTag }} on RoyaleAPI">#{{ normalizedTag }}</a>
+{%- endmacro -%}
+
 {%- macro sectionHeading(eyebrow, title, meta = '', modifier = '') -%}
 <header class="pk-section-heading{% if modifier %} {{ modifier }}{% endif %}">
   <div>

@@ -43,7 +43,7 @@ POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season
 ### {{ m.name | safe }}
 
 - **Roster:** {{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}
-- **Tag:** #{{ m.tag | safe }}
+- **Tag:** [#{{ m.tag | playerTag | safe }}](https://royaleapi.com/player/{{ m.tag | playerTag | safe }})
 - **Role:** {{ (m.role or "Member") | safe }}
 - **Clan rank:** #{{ m.clan_rank }}
 - **Trophies:** {{ m.trophies | formatNumber | safe }}

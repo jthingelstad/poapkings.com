@@ -31,7 +31,7 @@ Canonical data lives in build-time JSON at `/data/*.json` and a full-content mar
 - [Sitemap]({{ site.url | safe }}/sitemap.xml)
 
 ## Members
-{% for m in roster.members | sortByRank %}- [{{ m.name | safe }}]({{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}): {{ (m.role or "Member") | safe }} · #{{ m.tag | safe }} · {{ m.trophies | formatNumber | safe }} trophies · {{ m.cr_battle_wins | formatNumber | safe }} wins · {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }} played · {{ m.arena | safe }}
+{% for m in roster.members | sortByRank %}- [{{ m.name | safe }}]({{ site.url | safe }}/roster/#member-{{ m.tag | memberSlug | safe }}): {{ (m.role or "Member") | safe }} · [#{{ m.tag | playerTag | safe }}](https://royaleapi.com/player/{{ m.tag | playerTag | safe }}) · {{ m.trophies | formatNumber | safe }} trophies · {{ m.cr_battle_wins | formatNumber | safe }} wins · {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }} played · {{ m.arena | safe }}
 {% endfor %}
 ## Optional
 - [AGENT.md (repo)](https://github.com/jthingelstad/poapkings.com/blob/main/AGENT.md): developer docs for this site

@@ -24,18 +24,30 @@ async function buildClientScripts() {
 }
 
 export default function (eleventyConfig) {
-  const normalizeMemberTag = (tag) => {
+  const playerTag = (tag) => {
     if (!tag) return "";
-    return String(tag).trim().replace(/^#/, "").toLowerCase();
+    return String(tag).trim().replace(/^#/, "").toUpperCase();
   };
+
+  const normalizeMemberTag = (tag) => playerTag(tag).toLowerCase();
+
+  const jsonForScript = (value) =>
+    JSON.stringify(value).replace(/[<>&\u2028\u2029]/g, (character) => {
+      const escapes = {
+        "<": "\\u003c",
+        ">": "\\u003e",
+        "&": "\\u0026",
+        "\u2028": "\\u2028",
+        "\u2029": "\\u2029",
+      };
+      return escapes[character];
+    });
 
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles.css");
-  eleventyConfig.addPassthroughCopy("src/app.js");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/members-promo.js");
   eleventyConfig.addPassthroughCopy({ [clientOutputDir]: "." });
-  eleventyConfig.addPassthroughCopy("src/partials-trophy.js");
   eleventyConfig.addPassthroughCopy("src/data.js");
   eleventyConfig.addPassthroughCopy("src/roster.js");
   eleventyConfig.addPassthroughCopy("src/CNAME");
@@ -62,22 +74,6 @@ export default function (eleventyConfig) {
     return raw;
   });
 
-  eleventyConfig.addFilter("formatLongDate", (input) => {
-    if (!input) return "";
-    if (input instanceof Date) {
-      if (isNaN(input.getTime())) return "";
-      return input.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
-    }
-    const raw = String(input).trim();
-    if (/^\d{4}-\d{2}-\d{2}/.test(raw)) {
-      const d = new Date(`${raw.slice(0, 10)}T00:00:00Z`);
-      if (!isNaN(d.getTime())) {
-        return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
-      }
-    }
-    return raw;
-  });
-
   eleventyConfig.addFilter("formatNumber", (n) => {
     if (n == null) return "0";
     return Number(n).toLocaleString("en-US");
@@ -90,24 +86,6 @@ export default function (eleventyConfig) {
     if (Number.isFinite(dayCount) && dayCount > 0) return `${dayCount.toLocaleString("en-US")}d`;
     return "—";
   });
-
-  eleventyConfig.addFilter("formatBadgeTitle", (badge) => {
-    if (!badge) return "";
-    const label = badge.label || badge.name || "Badge";
-    const progress = Number(badge.progress);
-    const target = Number(badge.target);
-    if (Number.isFinite(progress) && Number.isFinite(target) && target > 0) {
-      return `${label}: ${progress.toLocaleString("en-US")} / ${target.toLocaleString("en-US")}`;
-    }
-    if (Number.isFinite(progress)) {
-      return `${label}: ${progress.toLocaleString("en-US")}`;
-    }
-    const level = Number(badge.level);
-    if (Number.isFinite(level)) return `${label}: tier ${level}`;
-    return label;
-  });
-
-  eleventyConfig.addFilter("min", (arr) => Math.min(...arr));
 
   eleventyConfig.addFilter("sumBy", (arr, key) =>
     (arr || []).reduce((total, item) => total + (Number(item[key]) || 0), 0),
@@ -127,7 +105,11 @@ export default function (eleventyConfig) {
     if (role === "Elder") return "#d7c8ff";
     return "#8b5cf6";
   };
-  eleventyConfig.addFilter("roleColor", roleDotColor);
+  eleventyConfig.addFilter("roleClass", (role) => {
+    if (role === "Co-Leader" || role === "Leader") return "pk-role--lead";
+    if (role === "Elder") return "pk-role--elder";
+    return "pk-role--member";
+  });
 
   // Home-page mini scatter (collection level × trophies), fixed domains
   // ported from the redesign's scatterPoints logic. SVG viewBox 720×280.
@@ -201,80 +183,13 @@ export default function (eleventyConfig) {
     return value.toFixed(Number(digits) || 1);
   });
 
-  eleventyConfig.addFilter("formatLastSeen", (dateStr) => {
-    if (!dateStr) return "";
-    const raw = String(dateStr).trim();
-    const match = raw.match(
-      /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/,
-    );
-    if (!match) return raw;
-    const [, year, month, day, hour, minute, second] = match;
-    const d = new Date(
-      Date.UTC(
-        Number(year),
-        Number(month) - 1,
-        Number(day),
-        Number(hour),
-        Number(minute),
-        Number(second),
-      ),
-    );
-    if (Number.isNaN(d.getTime())) return raw;
-    return d.toLocaleString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
-      timeZone: "UTC",
-      timeZoneName: "short",
-    });
-  });
-
   eleventyConfig.addFilter("memberSlug", (tag) => {
     return normalizeMemberTag(tag);
   });
 
-  eleventyConfig.addFilter("typeClass", (type) => {
-    if (!type) return "typePill";
-    const t = type.toLowerCase();
-    if (t === "season") return "typePill typeSeason";
-    if (t === "milestone") return "typePill typeMilestone";
-    if (t === "member") return "typePill typeMember";
-    if (t === "event") return "typePill typeEvent";
-    return "typePill";
-  });
+  eleventyConfig.addFilter("playerTag", playerTag);
 
-  eleventyConfig.addFilter("newestPoapImage", (poaps) => {
-    let best = null;
-    for (const p of poaps || []) {
-      if (p.upcoming || !p.date || !p.image) continue;
-      if (!best || p.date > best.date) best = p;
-    }
-    return best ? best.image : "/assets/poapkings.png";
-  });
-
-  eleventyConfig.addFilter("sortVault", (poaps) => {
-    return [...(poaps || [])].sort(
-      (a, b) => (a.upcoming ? 1 : 0) - (b.upcoming ? 1 : 0),
-    );
-  });
-
-  eleventyConfig.addFilter("searchText", (m) => {
-    const role = m.role || "Member";
-    return [
-      m.name,
-      m.tag,
-      role,
-      m.arena,
-      m.cr_account_age_years ? `${m.cr_account_age_years} years played` : "",
-      m.cr_battle_wins ? `${m.cr_battle_wins} wins` : "",
-      m.cr_collection_level ? `${m.cr_collection_level} collection level` : "",
-    ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-  });
+  eleventyConfig.addFilter("jsonForScript", jsonForScript);
 
   eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));
 

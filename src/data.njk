@@ -9,8 +9,8 @@ extraScripts: '<script src="/data.js" defer></script>'
 ---
 {% from "components.njk" import pageIntro, sectionHeading %}
 {%- set memberCount = clan.memberCount -%}
-<script id="explorerData" type="application/json">{{ rosterExplorer.members | explorerMembers | dump | safe }}</script>
-<script id="timelineData" type="application/json">{{ clanTrends.series | timelineSeries | dump | safe }}</script>
+<script id="explorerData" type="application/json">{{ rosterExplorer.members | explorerMembers | jsonForScript | safe }}</script>
+<script id="timelineData" type="application/json">{{ clanTrends.series | timelineSeries | jsonForScript | safe }}</script>
 
 <div class="pk-page pk-page-shell">
   {{ pageIntro('Proof by numbers', 'Clan Data', 'The same Clash Royale API data serious players care about — refreshed daily and fully explorable. Plot the roster on any two metrics, then scrub the clan\'s whole history.') }}
@@ -93,13 +93,13 @@ extraScripts: '<script src="/data.js" defer></script>'
 
     <div class="pk-timeline-chips" id="timelineChips">
       {%- set tMetrics = [
-        { key: 'clanScore', label: 'Clan trophies', color: '#f5c84c', on: true },
-        { key: 'members', label: 'Clan members', color: '#57d0e6', on: true },
-        { key: 'war', label: 'War trophies', color: '#c084fc', on: false },
-        { key: 'donations', label: 'Donations/wk', color: '#4ade80', on: false }
+        { key: 'clanScore', label: 'Clan trophies', on: true },
+        { key: 'members', label: 'Clan members', on: true },
+        { key: 'war', label: 'War trophies', on: false },
+        { key: 'donations', label: 'Donations/wk', on: false }
       ] -%}
       {%- for c in tMetrics %}
-      <button type="button" class="pk-chip{% if c.on %} is-active{% endif %}" data-series="{{ c.key }}" data-color="{{ c.color }}" style="--chip-color:{{ c.color }}"><i class="pk-chip__dot"></i>{{ c.label }}</button>
+      <button type="button" class="pk-chip pk-series--{{ c.key }}{% if c.on %} is-active{% endif %}" data-series="{{ c.key }}"><i class="pk-chip__dot"></i>{{ c.label }}</button>
       {%- endfor %}
     </div>
 
