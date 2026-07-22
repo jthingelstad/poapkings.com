@@ -12,6 +12,7 @@ import {
   upsertRiverRaceLog,
   writeDataExports,
 } from "./clash-data-store.js";
+import { clanWarLeague } from "./clan-war-league.js";
 
 const API_BASE = "https://api.clashroyale.com/v1";
 const PROFILE_FETCH_CONCURRENCY = 5;
@@ -173,10 +174,10 @@ function displayLocation(location) {
   return location && typeof location === "object" && location.name ? location.name : "Not Set";
 }
 
-function displayLeague(warLeague) {
-  if (!warLeague) return "Unranked";
-  if (typeof warLeague === "object") return warLeague.name || "Unranked";
-  return String(warLeague);
+function displayLeague(warLeague, clanWarTrophies) {
+  const apiLeague = typeof warLeague === "object" ? warLeague?.name : warLeague;
+  if (apiLeague && String(apiLeague).trim() !== "Unranked") return String(apiLeague);
+  return clanWarLeague(clanWarTrophies);
 }
 
 function numberOrNull(value) {
@@ -350,7 +351,7 @@ function buildClanPayload(clanData) {
     donationsPerWeek: clanData.donationsPerWeek || 0,
     totalTrophies,
     minTrophies: clanData.requiredTrophies || 0,
-    clanLeague: displayLeague(clanData.warLeague),
+    clanLeague: displayLeague(clanData.warLeague, clanData.clanWarTrophies),
     clanStatus: displayClanType(clanData.type),
     clanRegion: displayLocation(clanData.location),
   };
