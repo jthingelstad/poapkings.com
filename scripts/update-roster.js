@@ -47,6 +47,38 @@ const PROFILE_FIELD_NAMES = [
   "badge_highlights",
 ];
 
+// Invisible / bidi control code points that render oddly in a display name.
+// Emoji glue is deliberately excluded so emoji survive intact: the zero-width
+// joiner (0x200D) and variation selectors (0xFE0E/0xFE0F) fall outside these
+// ranges. This mirrors the intent of elixir-bot's callable_name cleanup.
+const NAME_INVISIBLE_RANGES = [
+  [0x00, 0x1f], [0x7f, 0x9f], [0xad, 0xad],
+  [0x200b, 0x200c], [0x200e, 0x200f], [0x202a, 0x202e],
+  [0x2060, 0x2064], [0x2066, 0x206f], [0xfeff, 0xfeff],
+];
+const NAME_INVISIBLES = (() => {
+  const hex = (n) => `\\u${n.toString(16).padStart(4, "0")}`;
+  const body = NAME_INVISIBLE_RANGES.map(([a, b]) => (a === b ? hex(a) : `${hex(a)}-${hex(b)}`)).join("");
+  return new RegExp(`[${body}]`, "gu");
+})();
+
+// Normalize a Clash Royale display name for the site. NFKC compatibility
+// folding collapses fullwidth Latin (Ｓ→S), superscripts (²⁸→28), and ligatures
+// (ﬁ→fi) to a readable form while preserving accents (Sebastián stays intact)
+// and emoji (⚡ ♥️ ⚜️ are kept — unlike elixir-bot, which strips them). Invisible
+// and bidi control characters are removed and whitespace collapsed. Names that
+// collapse to nothing (pure non-decomposable ornamentation) fall back to the
+// literal name so we never drop a player.
+function normalizeMemberName(value) {
+  if (!value) return value || "";
+  const cleaned = value
+    .normalize("NFKC")
+    .replace(NAME_INVISIBLES, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return cleaned || value;
+}
+
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = join(repoRoot, "src", "_data");
 const sitePath = join(dataDir, "site.json");
@@ -292,7 +324,7 @@ function memberPayload(member, profile, previousMember) {
   const profileFields = profile ? profilePayload(profile) : preservedProfilePayload(previousMember);
 
   return {
-    name: member.name || "Unknown",
+    name: normalizeMemberName(member.name) || "Unknown",
     tag,
     role: ROLE_MAP[member.role] || "Member",
     trophies: member.trophies || 0,
