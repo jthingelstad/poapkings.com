@@ -10,14 +10,13 @@ excludeFromSitemap: true
 {% from "components.njk" import pageIntro, backLink, numberedCard %}
 <div class="pk-page pk-page--mid pk-page-shell">
   {{ backLink('/members/', 'Back to Members') }}
-  {{ pageIntro('Members', 'Clan Setup', 'Four steps to get fully connected, eligible for a free Pass Royale, and on the roster.') }}
+  {{ pageIntro('Members', 'Clan Setup', 'Three steps to get fully connected, eligible for a free Pass Royale, and on the roster.') }}
 
   <div class="pk-grid-2 pk-setup-grid">
     {%- set steps = [
       { n: '1', title: 'Connect with Clan Leaders', body: 'You must friend King Thing (Thingles) on the Supercell Store to receive the free Pass Royale.', href: 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', cta: 'Connect with Thingles →', event: 'setup.connect-thingles' },
       { n: '2', title: 'Join the Discord Server', body: 'Join the POAP KINGS Discord for clan chatter that isn\'t limited like in-game chat. Set your nickname to your Clash Royale name.', href: site.discordUrl, cta: 'Join on Discord →', event: 'setup.join-discord' },
-      { n: '3', title: 'Install POAP Home', body: 'This is where you\'ll mint and manage the POAPs you receive while in the clan.', href: 'https://home.poap.xyz', cta: 'Open POAP Home →', event: 'setup.install-poap-home' },
-      { n: '4', title: 'Roster Registration', body: 'Submit the form so your details can be added to the clan website roster.', href: 'https://docs.google.com/forms/d/e/1FAIpQLSeDxNctUtkzBlWQqo8w92hseuqpzbCfHMHUO4W6St5hn9W5AQ/viewform?usp=header', cta: 'Roster Registration →', event: 'setup.roster-registration' }
+      { n: '3', title: 'Roster Registration', body: 'Submit the form so your details can be added to the clan website roster.', href: 'https://docs.google.com/forms/d/e/1FAIpQLSeDxNctUtkzBlWQqo8w92hseuqpzbCfHMHUO4W6St5hn9W5AQ/viewform?usp=header', cta: 'Roster Registration →', event: 'setup.roster-registration' }
     ] -%}
     {%- for s in steps %}
     {{ numberedCard(s.n, s.title, s.body, s.href, s.cta, s.event, true) }}
