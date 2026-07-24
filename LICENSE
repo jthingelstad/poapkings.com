@@ -1,0 +1,35 @@
+POAP KINGS website
+Copyright (c) 2026 Jamie Thingelstad
+
+The original content of this repository — the source code (Eleventy templates,
+styles, and scripts), site copy, and the project's own artwork (for example
+`src/assets/poapkings.png`, `src/assets/elixir.png`, and the `favicon/` and
+`icons/` sets) — is licensed under the Creative Commons Attribution-ShareAlike
+4.0 International License (CC BY-SA 4.0), matching the notice shown in the site
+footer.
+
+    https://creativecommons.org/licenses/by-sa/4.0/
+
+---
+
+THIRD-PARTY ASSETS (NOT COVERED BY THE LICENSE ABOVE)
+
+The license above covers only the project author's own work. It does NOT cover
+Clash Royale artwork, fonts, card/clan data, or other Supercell intellectual
+property present in this repository, including:
+
+  - the official "Clash" fonts, `src/assets/Clash_Regular.otf` and
+    `src/assets/Clash_Bold.otf` (© 2016 Supercell);
+  - the Clash Royale arena artwork under `src/assets/arenas/`;
+  - Clash Royale clan and river-race data retrieved from the official
+    Clash Royale API.
+
+Those assets are © Supercell and are used under Supercell's Fan Content Policy
+(https://www.supercell.com/fan-content-policy): non-commercial, attributed, and
+not affiliated with or endorsed by Supercell. They are not the author's to
+relicense. If you fork or reuse this project, you are responsible for your own
+compliance with Supercell's Fan Content Policy for any Supercell assets.
+
+This material is unofficial and is not endorsed by Supercell. For more
+information see Supercell's Fan Content Policy:
+www.supercell.com/fan-content-policy.

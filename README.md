@@ -123,4 +123,6 @@ Pushing `main` runs the production build and deploys `_site/`. GitHub Pages must
 
 ## Supercell disclaimer
 
-This content is not affiliated with, endorsed, sponsored, or specifically approved by Supercell, and Supercell is not responsible for it. See Supercell's [Fan Content Policy](https://supercell.com/en/fan-content-policy/).
+This is an unofficial, non-commercial fan site. Clash Royale is a trademark of Supercell; the "Clash" fonts (`src/assets/Clash_*.otf`), the arena artwork (`src/assets/arenas/`), and the clan/river-race data are Supercell's intellectual property, used under Supercell's Fan Content Policy (see [`LICENSE`](LICENSE) and the per-directory notes in [`src/assets/`](src/assets/README.md)).
+
+> This material is unofficial and is not endorsed by Supercell. For more information see Supercell's Fan Content Policy: www.supercell.com/fan-content-policy.

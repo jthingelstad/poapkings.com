@@ -11,15 +11,10 @@
   src: url("./assets/Clash_Bold.otf") format("opentype");
   font-weight:700; font-style:normal; font-display:swap;
 }
-@font-face{
-  font-family:"Supercell Magic";
-  src: url("./assets/Supercell-Magic-Regular.ttf") format("truetype");
-  font-weight:400; font-style:normal; font-display:swap;
-}
 
 :root{
   /* Type */
-  --display: "Clash", "Supercell Magic", "Luckiest Guy", system-ui, sans-serif;
+  --display: "Clash", "Luckiest Guy", system-ui, sans-serif;
   --body: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 
   /* Brand palette */
@@ -978,7 +973,7 @@ a:hover{ color:#f5c84c }
   display:flex; align-items:center; gap:11px; color:#f7f4ff;
 }
 .site-head__crest{ width:38px; height:38px; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,.5)) }
-.site-head__wordmark{ font-family:'Supercell Magic', system-ui, sans-serif; font-size:15px; letter-spacing:.02em; line-height:1 }
+.site-head__wordmark{ font-family:'Clash', system-ui, sans-serif; font-size:15px; letter-spacing:.02em; line-height:1 }
 .site-head__links{ display:flex; gap:2px; margin-left:8px }
 .site-head__link{
   font-size:.86rem; font-weight:600; padding:8px 12px; border-radius:9px;
@@ -1002,7 +997,7 @@ a:hover{ color:#f5c84c }
 .site-head__join{
   display:inline-flex; align-items:center; justify-content:center;
   height:var(--nav-control-height); min-height:var(--nav-control-height);
-  font-family:'Supercell Magic', system-ui, sans-serif; font-size:.82rem;
+  font-family:'Clash', system-ui, sans-serif; font-size:.82rem;
   padding:0 18px; border:1px solid rgba(255,255,255,.18); border-radius:var(--nav-control-radius); cursor:pointer;
   background:linear-gradient(135deg,#f5c84c,#c98c10); color:#2a1500;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 4px 16px rgba(245,200,76,.26);
@@ -1070,7 +1065,7 @@ a:hover{ color:#f5c84c }
 .site-foot{ border-top:1px solid rgba(215,200,255,.1); margin-top:auto }
 .site-foot__row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding:28px 24px; color:#c8c1e6; font-size:.82rem }
 .site-foot__crest{ width:30px; height:30px; object-fit:contain }
-.site-foot__brand{ font-family:'Supercell Magic', system-ui, sans-serif; color:#f7f4ff; font-size:.85rem }
+.site-foot__brand{ font-family:'Clash', system-ui, sans-serif; color:#f7f4ff; font-size:.85rem }
 .site-foot__tag{ color:#8a83a6 }
 .site-foot__links{ margin-left:auto; display:flex; gap:18px; align-items:center; flex-wrap:wrap }
 .site-foot__links a{ color:#c8c1e6 }
@@ -1102,7 +1097,7 @@ a:hover{ color:#f5c84c }
 /* ── Shared Eleventy components ─────────────────────────── */
 .pk-page-shell{ padding-top:clamp(36px,5vw,60px); padding-bottom:72px }
 .pk-page-intro__title{
-  font-family:'Supercell Magic',system-ui,sans-serif;
+  font-family:'Clash',system-ui,sans-serif;
   font-size:clamp(2rem,4.5vw,3rem); margin:12px 0 0;
 }
 .pk-page-intro__copy{ font-size:1.05rem; color:#c8c1e6; margin:14px 0 0; max-width:46em }
@@ -1117,7 +1112,7 @@ a:hover{ color:#f5c84c }
 .pk-section--spacious{ margin-top:52px }
 .pk-section-heading{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap }
 .pk-section-heading__title{
-  font-family:'Supercell Magic',system-ui,sans-serif;
+  font-family:'Clash',system-ui,sans-serif;
   font-size:clamp(1.5rem,3vw,2.1rem); margin:10px 0 0;
 }
 .pk-section-heading__meta{ font-size:.78rem; color:#c8c1e6 }
@@ -1125,7 +1120,7 @@ a:hover{ color:#f5c84c }
 .pk-grid-3{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px }
 .pk-action{
   display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px;
-  border-radius:13px; border:0; cursor:pointer; font-family:'Supercell Magic',system-ui,sans-serif;
+  border-radius:13px; border:0; cursor:pointer; font-family:'Clash',system-ui,sans-serif;
   font-size:.9rem; line-height:1.2; text-align:center;
 }
 .pk-action--compact{ min-height:0; padding:8px 16px; border-radius:10px; font-size:.78rem }
@@ -1137,8 +1132,8 @@ a:hover{ color:#f5c84c }
   border:1px solid rgba(215,200,255,.14); border-radius:18px; background:rgba(18,13,40,.6);
   padding:24px; display:flex; flex-direction:column;
 }
-.pk-number-card__number{ font-family:'Supercell Magic',system-ui,sans-serif; color:#6d28d9; font-size:1.4rem }
-.pk-number-card__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.1rem; margin:8px 0 6px }
+.pk-number-card__number{ font-family:'Clash',system-ui,sans-serif; color:#6d28d9; font-size:1.4rem }
+.pk-number-card__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.1rem; margin:8px 0 6px }
 .pk-number-card__copy{ color:#c8c1e6; line-height:1.55; margin:0; flex:1 }
 .pk-number-card__action{ align-self:flex-start; margin-top:18px; min-height:0; padding:11px 20px; border-radius:12px; font-size:.85rem }
 .pk-setup-grid{ margin-top:30px }
@@ -1149,7 +1144,7 @@ a:hover{ color:#f5c84c }
 .pk-info-card--purple{ border-color:rgba(139,92,246,.5); background:linear-gradient(145deg,rgba(88,28,235,.35),rgba(38,22,78,.6)) }
 .pk-info-card__kicker{ font-size:.66rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#c8c1e6 }
 .pk-info-card--purple .pk-info-card__kicker{ color:#d7c8ff }
-.pk-info-card__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.4rem; margin:8px 0 }
+.pk-info-card__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.4rem; margin:8px 0 }
 .pk-info-card__copy{ color:#c8c1e6; margin:0 0 20px; line-height:1.55; flex:1 }
 .pk-info-card--purple .pk-info-card__copy{ color:#e7e2f7 }
 .pk-info-card__copy a{ color:#f5c84c }
@@ -1165,10 +1160,10 @@ a:hover{ color:#f5c84c }
   margin-top:22px; border:1px solid rgba(245,200,76,.22); border-radius:18px;
   background:linear-gradient(145deg,rgba(59,29,122,.24),rgba(11,9,32,.4)); padding:22px;
 }
-.pk-faq-summary__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.1rem; margin:0 0 12px; color:#f5c84c }
+.pk-faq-summary__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.1rem; margin:0 0 12px; color:#f5c84c }
 .pk-faq-summary__list{ margin:0; padding-left:20px; color:#c8c1e6; line-height:1.75; display:grid; gap:4px }
 .pk-faq-section__title{
-  font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.3rem;
+  font-family:'Clash',system-ui,sans-serif; font-size:1.3rem;
   margin:38px 0 12px; scroll-margin-top:80px;
 }
 .pk-faq-item{ margin-bottom:22px }
@@ -1178,7 +1173,7 @@ a:hover{ color:#f5c84c }
   margin-top:34px; border:1px solid rgba(215,200,255,.14); border-radius:18px;
   background:rgba(18,13,40,.55); padding:24px; text-align:center;
 }
-.pk-faq-cta__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.2rem; margin:0 0 6px }
+.pk-faq-cta__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.2rem; margin:0 0 6px }
 .pk-faq-cta__copy{ color:#c8c1e6; margin:0 0 16px }
 .pk-faq-cta__actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap }
 
@@ -1199,7 +1194,7 @@ a:hover{ color:#f5c84c }
 .pk-roster-row:nth-child(even){ background:rgba(18,13,40,.3) }
 .pk-roster-row:target{ background:rgba(109,40,217,.22); box-shadow:inset 3px 0 #f5c84c }
 .pk-roster-cell--right{ text-align:right }
-.pk-roster-rank{ font-family:'Supercell Magic',system-ui,sans-serif; color:#c8c1e6; font-size:.9rem }
+.pk-roster-rank{ font-family:'Clash',system-ui,sans-serif; color:#c8c1e6; font-size:.9rem }
 .pk-roster-player{ min-width:0; display:flex; flex-direction:column; gap:2px }
 .pk-roster-player__name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
 .pk-roster-player__meta{ display:flex; align-items:center; gap:7px; min-width:0; flex-wrap:wrap }
@@ -1218,7 +1213,7 @@ a:hover{ color:#f5c84c }
 }
 .pk-player-tag:hover{ border-color:rgba(245,200,76,.6); background:rgba(245,200,76,.08); color:#f5c84c }
 .pk-player-tag:focus-visible{ outline:2px solid #f5c84c; outline-offset:2px }
-.pk-roster-trophies{ text-align:right; font-family:'Supercell Magic',system-ui,sans-serif; color:#f5c84c; font-size:.92rem }
+.pk-roster-trophies{ text-align:right; font-family:'Clash',system-ui,sans-serif; color:#f5c84c; font-size:.92rem }
 .pk-roster-value{ text-align:right; color:#e7e2f7; font-variant-numeric:tabular-nums }
 
 /* ── Members ───────────────────────────────────────────── */
@@ -1228,7 +1223,7 @@ a:hover{ color:#f5c84c }
   text-transform:uppercase; color:#d7c8ff; padding:6px 12px; border:1px solid rgba(139,92,246,.5);
   border-radius:999px; background:rgba(109,40,217,.2);
 }
-.pk-members-title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:clamp(2rem,4.5vw,3rem); margin:16px 0 0 }
+.pk-members-title{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(2rem,4.5vw,3rem); margin:16px 0 0 }
 .pk-members-intro{ font-size:1.08rem; color:#c8c1e6; margin:14px 0 0; max-width:44em }
 .pk-members-cards{ gap:20px; margin-top:30px }
 .pk-email-card{
@@ -1238,7 +1233,7 @@ a:hover{ color:#f5c84c }
 }
 .pk-email-card__mascot{ width:88px; height:88px; object-fit:contain; filter:drop-shadow(0 10px 20px rgba(0,0,0,.5)) }
 .pk-email-card__kicker{ font-size:.66rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#f5c84c }
-.pk-email-card__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.3rem; margin:8px 0 6px }
+.pk-email-card__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.3rem; margin:8px 0 6px }
 .pk-email-card__copy{ color:#c8c1e6; margin:0 0 16px; line-height:1.55; max-width:44em }
 .pk-email-form{ display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; max-width:620px }
 .pk-form-field{
@@ -1260,7 +1255,7 @@ a:hover{ color:#f5c84c }
   background:rgba(11,9,32,.7); padding:20px; display:grid; gap:18px;
 }
 .pk-promo-field__head{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px }
-.pk-promo-field__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:.9rem; margin:0 }
+.pk-promo-field__title{ font-family:'Clash',system-ui,sans-serif; font-size:.9rem; margin:0 }
 .pk-promo-field__control{
   width:100%; border:1px solid rgba(215,200,255,.2); border-radius:12px;
   background:rgba(7,6,16,.7); color:#e7e2f7; padding:13px 14px; font:inherit; font-size:.9rem;
@@ -1287,7 +1282,7 @@ a:hover{ color:#f5c84c }
   padding:18px; display:flex; flex-direction:column;
 }
 .pk-detail-panel__kicker{ font-size:.6rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:#c8c1e6 }
-.pk-detail-panel__name{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.1rem; margin:10px 0 3px; line-height:1.2 }
+.pk-detail-panel__name{ font-family:'Clash',system-ui,sans-serif; font-size:1.1rem; margin:10px 0 3px; line-height:1.2 }
 .pk-detail-panel__role{ font-style:normal; font-size:.66rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--role-color,#c8c1e6) }
 .pk-detail-panel__stats{ display:grid; gap:1px; margin-top:14px }
 .pk-detail-panel__stat{ display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(215,200,255,.08) }
@@ -1307,7 +1302,7 @@ a:hover{ color:#f5c84c }
 .pk-timeline-counters{ display:flex; flex-wrap:wrap; gap:14px 34px; margin-top:18px }
 .pk-timeline-counter{ padding:6px 0 }
 .pk-timeline-counter__value{
-  display:block; color:var(--series-color); font-family:'Supercell Magic',system-ui,sans-serif;
+  display:block; color:var(--series-color); font-family:'Clash',system-ui,sans-serif;
   font-size:1.9rem; font-variant-numeric:tabular-nums; line-height:1;
 }
 .pk-timeline-counter__label{ font-size:.66rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:#c8c1e6 }
@@ -1325,7 +1320,7 @@ a:hover{ color:#f5c84c }
   box-shadow:0 18px 60px rgba(0,0,0,.5); padding:clamp(28px,4vw,44px);
 }
 .pk-elixir-banner__image{ width:clamp(120px,18vw,180px); height:clamp(120px,18vw,180px); object-fit:contain; filter:drop-shadow(0 16px 32px rgba(0,0,0,.55)) }
-.pk-elixir-banner__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:clamp(2.2rem,5vw,3.4rem); margin:12px 0 0 }
+.pk-elixir-banner__title{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(2.2rem,5vw,3.4rem); margin:12px 0 0 }
 .pk-elixir-banner__copy{ font-size:1.1rem; line-height:1.6; color:#e7e2f7; margin:16px 0 0; max-width:34em; text-wrap:pretty }
 .pk-elixir-jobs{ margin-top:24px }
 .pk-elixir-tech-copy{ font-size:1.05rem; line-height:1.6; color:#c8c1e6; margin:16px 0 0; max-width:52em; text-wrap:pretty }
@@ -1340,14 +1335,14 @@ a:hover{ color:#f5c84c }
   background:radial-gradient(circle at 12% 90%,rgba(109,40,217,.3),transparent 45%),linear-gradient(145deg,rgba(38,22,78,.85),rgba(11,9,32,.92));
   box-shadow:0 18px 60px rgba(0,0,0,.45); padding:28px; color:inherit;
 }
-.pk-elixir-game__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.4rem; margin:0 0 6px }
+.pk-elixir-game__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.4rem; margin:0 0 6px }
 .pk-elixir-game__copy{ color:#c8c1e6; line-height:1.55; margin:0; max-width:44em }
-.pk-elixir-game__cta{ flex:0 0 auto; font-family:'Supercell Magic',system-ui,sans-serif; font-size:.95rem; color:#f5c84c }
+.pk-elixir-game__cta{ flex:0 0 auto; font-family:'Clash',system-ui,sans-serif; font-size:.95rem; color:#f5c84c }
 
 /* ── Home ──────────────────────────────────────────────── */
 .pk-home-hero{ display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center; padding:clamp(44px,6vw,76px) 0 clamp(36px,5vw,56px) }
 .pk-home-title{
-  font-family:'Supercell Magic',system-ui,sans-serif; font-size:clamp(3rem,6.5vw,5.2rem); line-height:1.12; margin:16px 0 0;
+  font-family:'Clash',system-ui,sans-serif; font-size:clamp(3rem,6.5vw,5.2rem); line-height:1.12; margin:16px 0 0;
   background:linear-gradient(135deg,#fff 25%,#d7c8ff 100%); -webkit-background-clip:text; background-clip:text;
   -webkit-text-fill-color:transparent; filter:drop-shadow(0 3px 0 rgba(0,0,0,.25));
 }
@@ -1366,11 +1361,11 @@ a:hover{ color:#f5c84c }
 .pk-stat-panel__crest{ width:44px; height:44px; object-fit:contain }
 .pk-stat-panel__label{ display:grid }
 .pk-micro-label{ font-size:.66rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#c8c1e6 }
-.pk-stat-panel__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:.95rem }
+.pk-stat-panel__title{ font-family:'Clash',system-ui,sans-serif; font-size:.95rem }
 .pk-stat-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px }
 .pk-stat{ padding:15px 14px; border-radius:14px }
 .pk-stat__label{ font-size:.62rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#c8c1e6; display:block }
-.pk-stat__value{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:clamp(1.5rem,7.5vw,1.9rem); line-height:1.1; color:#f5c84c; display:block; margin-top:4px }
+.pk-stat__value{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.5rem,7.5vw,1.9rem); line-height:1.1; color:#f5c84c; display:block; margin-top:4px }
 .pk-stat__detail{ color:#c8c1e6; font-size:.72rem; line-height:1.3; display:block; margin-top:3px }
 .pk-testimonial{ margin-top:40px }
 .pk-testimonial__card{
@@ -1378,23 +1373,23 @@ a:hover{ color:#f5c84c }
   background:radial-gradient(circle at 12% 0%,rgba(109,40,217,.28),transparent 45%),rgba(18,13,40,.72);
   box-shadow:0 18px 60px rgba(0,0,0,.45); padding:clamp(28px,4vw,44px);
 }
-.pk-testimonial__quote{ margin:0; font-family:'Supercell Magic',system-ui,sans-serif; font-size:clamp(1.25rem,2.6vw,1.85rem); line-height:1.5; color:#f7f4ff; text-wrap:pretty; max-width:26em }
+.pk-testimonial__quote{ margin:0; font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.25rem,2.6vw,1.85rem); line-height:1.5; color:#f7f4ff; text-wrap:pretty; max-width:26em }
 .pk-testimonial__highlight{ color:#f5c84c }
 .pk-testimonial__caption{ display:flex; align-items:center; gap:12px; margin-top:22px }
 .pk-testimonial__byline{ display:grid }
-.pk-testimonial__name{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:.9rem; font-weight:400 }
+.pk-testimonial__name{ font-family:'Clash',system-ui,sans-serif; font-size:.9rem; font-weight:400 }
 .pk-testimonial__meta{ font-size:.76rem; color:#c8c1e6 }
 .pk-mono-gold{ font-family:ui-monospace,Menlo,monospace; color:#f5c84c; letter-spacing:.04em }
 .pk-requirements{ margin-top:40px; border:1px solid rgba(139,92,246,.35); border-radius:20px; background:linear-gradient(145deg,rgba(59,29,122,.28),rgba(11,9,32,.5)); padding:24px 26px }
 .pk-requirements__label{ font-size:.66rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#d7c8ff }
 .pk-req4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px }
 .pk-requirement{ padding:14px; border-radius:13px }
-.pk-requirement__value{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.3rem; color:#f7f4ff; display:block }
+.pk-requirement__value{ font-family:'Clash',system-ui,sans-serif; font-size:1.3rem; color:#f7f4ff; display:block }
 .pk-requirement__label{ font-size:.68rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#c8c1e6; display:block; margin-top:5px }
 .pk-split{ display:grid; grid-template-columns:1.5fr 1fr; gap:20px; margin-top:20px }
 .pk-mini-panel{ border:1px solid rgba(215,200,255,.14); border-radius:20px; background:rgba(18,13,40,.72); box-shadow:0 18px 60px rgba(0,0,0,.45); padding:22px }
 .pk-mini-panel__head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px }
-.pk-mini-panel__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.15rem; margin:5px 0 0 }
+.pk-mini-panel__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.15rem; margin:5px 0 0 }
 .pk-mini-panel__link{ color:#d7c8ff; font-weight:700; font-size:.78rem }
 .pk-mini-chart{ width:100%; height:auto; margin-top:14px }
 .pk-chart-legend__dot{ width:10px; height:10px; border-radius:50%; display:inline-block }
@@ -1404,12 +1399,12 @@ a:hover{ color:#f5c84c }
 .pk-mini-panel__copy{ color:#c8c1e6; font-size:.78rem; margin:0 0 14px }
 .pk-elder-list{ list-style:none; margin:0; padding:0; display:grid; gap:1px }
 .pk-elder-list__item{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:9px 4px; border-bottom:1px solid rgba(215,200,255,.08) }
-.pk-elder-list__name{ min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:'Supercell Magic',system-ui,sans-serif; font-size:.92rem }
+.pk-elder-list__name{ min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:'Clash',system-ui,sans-serif; font-size:.92rem }
 .pk-elder-list__years{ font-size:.72rem; color:#c8c1e6; flex:0 0 auto }
 .pk-reasons{ list-style:none; margin:24px 0 0; padding:0 }
 .pk-reason{ border:1px solid rgba(215,200,255,.14); border-radius:16px; background:rgba(18,13,40,.55); padding:22px }
-.pk-reason__number{ font-family:'Supercell Magic',system-ui,sans-serif; color:#6d28d9; font-size:1.4rem }
-.pk-reason__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.05rem; margin:8px 0 6px }
+.pk-reason__number{ font-family:'Clash',system-ui,sans-serif; color:#6d28d9; font-size:1.4rem }
+.pk-reason__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.05rem; margin:8px 0 6px }
 .pk-reason__copy{ color:#c8c1e6; font-size:.92rem; line-height:1.55; margin:0 }
 .pk-tools{ margin-top:24px }
 .pk-tool-card{
@@ -1419,17 +1414,17 @@ a:hover{ color:#f5c84c }
 }
 .pk-tool-card--elixir{ position:relative; overflow:hidden; border-color:rgba(139,92,246,.5); background:radial-gradient(circle at 88% 12%,rgba(245,60,255,.2),transparent 42%),linear-gradient(145deg,rgba(88,28,235,.4),rgba(38,22,78,.7)) }
 .pk-tool-card__badge{ display:inline-block; font-size:.6rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#f5c84c; padding:4px 10px; border-radius:999px; background:rgba(245,200,76,.14) }
-.pk-tool-card__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:1.5rem; margin:12px 0 8px }
+.pk-tool-card__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.5rem; margin:12px 0 8px }
 .pk-tool-card__copy{ color:#c8c1e6; line-height:1.6; margin:0 }
 .pk-tool-card--elixir .pk-tool-card__copy{ color:#e7e2f7 }
-.pk-tool-card__cta{ margin-top:20px; display:inline-flex; align-items:center; gap:8px; font-family:'Supercell Magic',system-ui,sans-serif; font-size:.9rem; color:#f5c84c }
+.pk-tool-card__cta{ margin-top:20px; display:inline-flex; align-items:center; gap:8px; font-family:'Clash',system-ui,sans-serif; font-size:.9rem; color:#f5c84c }
 .pk-final-join{
   margin:56px 0 72px; border:1px solid rgba(245,200,76,.25); border-radius:24px;
   background:radial-gradient(circle at 90% 10%,rgba(245,200,76,.1),transparent 38%),linear-gradient(145deg,rgba(38,22,78,.9),rgba(11,9,32,.95));
   box-shadow:0 18px 60px rgba(0,0,0,.5); padding:clamp(28px,4vw,44px);
   display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center;
 }
-.pk-final-join__title{ font-family:'Supercell Magic',system-ui,sans-serif; font-size:clamp(1.7rem,3.4vw,2.6rem); line-height:1.02; margin:12px 0 0 }
+.pk-final-join__title{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.7rem,3.4vw,2.6rem); line-height:1.02; margin:12px 0 0 }
 .pk-final-join__copy{ font-size:1.05rem; color:#c8c1e6; margin:16px 0 0 }
 .pk-final-join__facts{ margin:0; display:grid; gap:1px; border-radius:14px; overflow:hidden }
 .pk-final-join__fact{ display:flex; justify-content:space-between; padding:12px 0 }
