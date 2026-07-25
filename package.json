@@ -13,7 +13,8 @@
     "update-roster": "node scripts/update-roster.js"
   },
   "overrides": {
-    "js-yaml": "4.2.0"
+    "@11ty/recursive-copy": "5.0.2",
+    "js-yaml": "4.3.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
