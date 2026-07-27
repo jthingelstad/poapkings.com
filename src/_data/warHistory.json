@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T23:03:41Z",
+  "generatedAt": "2026-07-27T23:03:09Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -317,7 +317,7 @@
     {
       "averageRank": 1,
       "seasonId": 134,
-      "trophyChange": 40,
+      "trophyChange": 60,
       "weeks": [
         {
           "clanScore": 820,
@@ -344,29 +344,42 @@
           "totalClans": 5,
           "trophyChange": 20,
           "weekLabel": "S134 W2"
+        },
+        {
+          "clanScore": 860,
+          "createdDate": "20260727T093005.000Z",
+          "fame": 10000,
+          "finishTime": "20260726T093003.000Z",
+          "isColosseum": false,
+          "rank": 1,
+          "seasonId": 134,
+          "sectionIndex": 2,
+          "totalClans": 5,
+          "trophyChange": 20,
+          "weekLabel": "S134 W3"
         }
       ],
-      "wins": 2
+      "wins": 3
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 840,
-      "createdDate": "20260720T093005.000Z",
+      "clanScore": 860,
+      "createdDate": "20260727T093005.000Z",
       "fame": 10000,
-      "finishTime": "20260719T093004.000Z",
+      "finishTime": "20260726T093003.000Z",
       "isColosseum": false,
       "rank": 1,
       "seasonId": 134,
-      "sectionIndex": 1,
+      "sectionIndex": 2,
       "totalClans": 5,
       "trophyChange": 20,
-      "weekLabel": "S134 W2"
+      "weekLabel": "S134 W3"
     },
-    "totalWeeks": 23,
-    "trophyChange": 860,
-    "wins": 23
+    "totalWeeks": 24,
+    "trophyChange": 880,
+    "wins": 24
   },
   "weeks": [
     {
@@ -667,6 +680,19 @@
       "totalClans": 5,
       "trophyChange": 20,
       "weekLabel": "S134 W2"
+    },
+    {
+      "clanScore": 860,
+      "createdDate": "20260727T093005.000Z",
+      "fame": 10000,
+      "finishTime": "20260726T093003.000Z",
+      "isColosseum": false,
+      "rank": 1,
+      "seasonId": 134,
+      "sectionIndex": 2,
+      "totalClans": 5,
+      "trophyChange": 20,
+      "weekLabel": "S134 W3"
     }
   ]
 }
