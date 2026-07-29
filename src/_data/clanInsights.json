@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 126181,
+    "clanScore": 126371,
     "clanWarTrophies": 880,
-    "donationsPerWeek": 2770,
+    "donationsPerWeek": 4230,
     "memberCount": 45,
     "name": "POAP KINGS",
     "openSlots": 5,
     "tag": null
   },
-  "generatedAt": "2026-07-28T23:02:27Z",
+  "generatedAt": "2026-07-29T23:01:14Z",
   "headlineStats": [
     {
       "detail": "8 members are at 14k+",
@@ -23,19 +23,19 @@
       "value": 13
     },
     {
-      "detail": "172.1K total wins across roster",
+      "detail": "172.4K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 3825
+      "value": 3830
     },
     {
       "detail": "45 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1583.5
+      "value": 1585.6
     }
   ],
-  "latestSnapshotDate": "2026-07-28",
+  "latestSnapshotDate": "2026-07-29",
   "leaders": {
     "collection": [
       {
@@ -60,7 +60,7 @@
         "name": "Aaqib Javed",
         "role": "Member",
         "tag": "#2G2RPVPP",
-        "value": 2070
+        "value": 2072
       },
       {
         "name": "OllieTurtle",
@@ -78,13 +78,13 @@
         "name": "sikander sidhu",
         "role": "Member",
         "tag": "#JYRQ8U92C",
-        "value": 1810
+        "value": 1811
       },
       {
-        "name": "sniperhendo",
-        "role": "Member",
-        "tag": "#YC8LLR8Q2",
-        "value": 1809
+        "name": "Th15_Guy",
+        "role": "Elder",
+        "tag": "#QLGYYG0Q",
+        "value": 1810
       }
     ],
     "tenure": [
@@ -145,9 +145,21 @@
         "value": 14000
       },
       {
+        "name": "Vijay",
+        "role": "Co-Leader",
+        "tag": "#C920YGLC2",
+        "value": 14000
+      },
+      {
         "name": "Shafith Nihal♥️",
         "role": "Elder",
         "tag": "#2P9GRU2Q0",
+        "value": 14000
+      },
+      {
+        "name": "L-Drxgo⚡",
+        "role": "Member",
+        "tag": "#2CY2RJL9G",
         "value": 14000
       },
       {
@@ -166,18 +178,6 @@
         "name": "OllieTurtle",
         "role": "Elder",
         "tag": "#RJ9RRQPVU",
-        "value": 14000
-      },
-      {
-        "name": "Vijay",
-        "role": "Co-Leader",
-        "tag": "#C920YGLC2",
-        "value": 14000
-      },
-      {
-        "name": "L-Drxgo⚡",
-        "role": "Member",
-        "tag": "#2CY2RJL9G",
         "value": 14000
       },
       {
@@ -242,43 +242,43 @@
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
-        "value": 24962
+        "value": 24963
       },
       {
         "name": "Aaqib Javed",
         "role": "Member",
         "tag": "#2G2RPVPP",
-        "value": 23057
+        "value": 23072
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 11602
+        "value": 11643
       },
       {
         "name": "sikander sidhu",
         "role": "Member",
         "tag": "#JYRQ8U92C",
-        "value": 10486
+        "value": 10503
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 9571
+        "value": 9573
       },
       {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 6574
+        "value": 6579
       },
       {
         "name": "Shafith Nihal♥️",
         "role": "Elder",
         "tag": "#2P9GRU2Q0",
-        "value": 6035
+        "value": 6039
       },
       {
         "name": "OllieTurtle",
@@ -289,13 +289,13 @@
     ]
   },
   "metrics": {
-    "averageBadgeCount": 103.3,
-    "averageCollectionLevel": 1583.5,
-    "averageTrophies": 11155,
-    "averageWins": 3825,
+    "averageBadgeCount": 103.4,
+    "averageCollectionLevel": 1585.6,
+    "averageTrophies": 11175,
+    "averageWins": 3830,
     "averageYearsPlayed": 5.7,
     "medianTrophies": 12213,
-    "totalWins": 172124
+    "totalWins": 172356
   },
   "tenureDistribution": [
     {
@@ -321,11 +321,11 @@
       "label": "<9k"
     },
     {
-      "count": 6,
+      "count": 5,
       "label": "9k-10.9k"
     },
     {
-      "count": 4,
+      "count": 5,
       "label": "11k-11.9k"
     },
     {
