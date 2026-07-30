@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 126371,
+    "clanScore": 126206,
     "clanWarTrophies": 880,
-    "donationsPerWeek": 4230,
+    "donationsPerWeek": 5480,
     "memberCount": 45,
     "name": "POAP KINGS",
     "openSlots": 5,
     "tag": null
   },
-  "generatedAt": "2026-07-29T23:01:14Z",
+  "generatedAt": "2026-07-30T23:03:47Z",
   "headlineStats": [
     {
       "detail": "8 members are at 14k+",
@@ -23,26 +23,26 @@
       "value": 13
     },
     {
-      "detail": "172.4K total wins across roster",
+      "detail": "172.5K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 3830
+      "value": 3834
     },
     {
       "detail": "45 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1585.6
+      "value": 1586.8
     }
   ],
-  "latestSnapshotDate": "2026-07-29",
+  "latestSnapshotDate": "2026-07-30",
   "leaders": {
     "collection": [
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 2129
+        "value": 2130
       },
       {
         "name": "dez42",
@@ -75,29 +75,29 @@
         "value": 1837
       },
       {
+        "name": "sniperhendo",
+        "role": "Member",
+        "tag": "#YC8LLR8Q2",
+        "value": 1823
+      },
+      {
         "name": "sikander sidhu",
         "role": "Member",
         "tag": "#JYRQ8U92C",
         "value": 1811
-      },
-      {
-        "name": "Th15_Guy",
-        "role": "Elder",
-        "tag": "#QLGYYG0Q",
-        "value": 1810
       }
     ],
     "tenure": [
       {
-        "name": "Aaqib Javed",
-        "role": "Member",
-        "tag": "#2G2RPVPP",
-        "value": 10
-      },
-      {
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
+        "value": 10
+      },
+      {
+        "name": "Aaqib Javed",
+        "role": "Member",
+        "tag": "#2G2RPVPP",
         "value": 10
       },
       {
@@ -125,53 +125,29 @@
         "value": 10
       },
       {
-        "name": "Shafith Nihal♥️",
-        "role": "Elder",
-        "tag": "#2P9GRU2Q0",
-        "value": 9
-      },
-      {
         "name": "L-Drxgo⚡",
         "role": "Member",
         "tag": "#2CY2RJL9G",
+        "value": 9
+      },
+      {
+        "name": "Shafith Nihal♥️",
+        "role": "Elder",
+        "tag": "#2P9GRU2Q0",
         "value": 9
       }
     ],
     "trophies": [
       {
-        "name": "pax",
+        "name": "dez42",
         "role": "Elder",
-        "tag": "#UCP028JQ8",
+        "tag": "#9Q9QRCPPU",
         "value": 14000
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 14000
-      },
-      {
-        "name": "Shafith Nihal♥️",
-        "role": "Elder",
-        "tag": "#2P9GRU2Q0",
-        "value": 14000
-      },
-      {
-        "name": "L-Drxgo⚡",
-        "role": "Member",
-        "tag": "#2CY2RJL9G",
-        "value": 14000
-      },
-      {
-        "name": "Aaqib Javed",
-        "role": "Member",
-        "tag": "#2G2RPVPP",
-        "value": 14000
-      },
-      {
-        "name": "dez42",
-        "role": "Elder",
-        "tag": "#9Q9QRCPPU",
         "value": 14000
       },
       {
@@ -185,6 +161,30 @@
         "role": "Elder",
         "tag": "#8U2P0JPR",
         "value": 14000
+      },
+      {
+        "name": "L-Drxgo⚡",
+        "role": "Member",
+        "tag": "#2CY2RJL9G",
+        "value": 14000
+      },
+      {
+        "name": "Shafith Nihal♥️",
+        "role": "Elder",
+        "tag": "#2P9GRU2Q0",
+        "value": 14000
+      },
+      {
+        "name": "pax",
+        "role": "Elder",
+        "tag": "#UCP028JQ8",
+        "value": 14000
+      },
+      {
+        "name": "Aaqib Javed",
+        "role": "Member",
+        "tag": "#2G2RPVPP",
+        "value": 14000
       }
     ],
     "warWins": [
@@ -192,7 +192,7 @@
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 1755
+        "value": 1757
       },
       {
         "name": "Vijay",
@@ -210,7 +210,7 @@
         "name": "pax",
         "role": "Elder",
         "tag": "#UCP028JQ8",
-        "value": 655
+        "value": 658
       },
       {
         "name": "sikander sidhu",
@@ -222,7 +222,7 @@
         "name": "Sandeep",
         "role": "Member",
         "tag": "#UQ2R9RGVP",
-        "value": 418
+        "value": 420
       },
       {
         "name": "Th15_Guy",
@@ -234,7 +234,7 @@
         "name": "Tere",
         "role": "Member",
         "tag": "#U08P889Y0",
-        "value": 349
+        "value": 350
       }
     ],
     "wins": [
@@ -242,60 +242,60 @@
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
-        "value": 24963
+        "value": 24984
       },
       {
         "name": "Aaqib Javed",
         "role": "Member",
         "tag": "#2G2RPVPP",
-        "value": 23072
+        "value": 23103
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 11643
+        "value": 11680
       },
       {
         "name": "sikander sidhu",
         "role": "Member",
         "tag": "#JYRQ8U92C",
-        "value": 10503
+        "value": 10510
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 9573
+        "value": 9574
       },
       {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 6579
+        "value": 6581
       },
       {
         "name": "Shafith Nihal♥️",
         "role": "Elder",
         "tag": "#2P9GRU2Q0",
-        "value": 6039
+        "value": 6048
       },
       {
         "name": "OllieTurtle",
         "role": "Elder",
         "tag": "#RJ9RRQPVU",
-        "value": 5960
+        "value": 5970
       }
     ]
   },
   "metrics": {
-    "averageBadgeCount": 103.4,
-    "averageCollectionLevel": 1585.6,
-    "averageTrophies": 11175,
-    "averageWins": 3830,
+    "averageBadgeCount": 103.7,
+    "averageCollectionLevel": 1586.8,
+    "averageTrophies": 11149,
+    "averageWins": 3834,
     "averageYearsPlayed": 5.7,
     "medianTrophies": 12213,
-    "totalWins": 172356
+    "totalWins": 172510
   },
   "tenureDistribution": [
     {
@@ -321,11 +321,11 @@
       "label": "<9k"
     },
     {
-      "count": 5,
+      "count": 6,
       "label": "9k-10.9k"
     },
     {
-      "count": 5,
+      "count": 4,
       "label": "11k-11.9k"
     },
     {
