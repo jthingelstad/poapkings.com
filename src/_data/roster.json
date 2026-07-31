@@ -1,219 +1,29 @@
 {
-  "updated": "2026-07-30T23:03:47Z",
+  "updated": "2026-07-31T23:03:14Z",
   "members": [
-    {
-      "name": "dez42",
-      "tag": "9Q9QRCPPU",
-      "role": "Elder",
-      "trophies": 14000,
-      "arena": "Spirit Square",
-      "clan_rank": 1,
-      "previous_clan_rank": 1,
-      "donations": 28,
-      "donations_received": 0,
-      "last_seen": "20260730T224221.000Z",
-      "exp_level": 78,
-      "best_trophies": 14000,
-      "battle_count": 19910,
-      "three_crown_wins": 3513,
-      "cr_account_age_days": 3056,
-      "cr_account_age_years": 8,
-      "cr_battle_wins": 9574,
-      "cr_collection_level": 2075,
-      "cr_collection_level_badge_tier": 8,
-      "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 1757,
-      "cr_clan_donations": 21019,
-      "badge_count": 143,
-      "badge_highlights": [
-        {
-          "name": "YearsPlayed",
-          "label": "Years Played",
-          "category": "career",
-          "is_one_time": false,
-          "level": 8,
-          "max_level": 11,
-          "progress": 3056,
-          "target": 3285,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/T9iTL2NzRUCMK5KoV3p9to5vxhUUvsooT-DMxwIvSCg.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/T9iTL2NzRUCMK5KoV3p9to5vxhUUvsooT-DMxwIvSCg.png"
-        },
-        {
-          "name": "BattleWins",
-          "label": "Battle Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 7,
-          "max_level": 8,
-          "progress": 9574,
-          "target": 10000,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
-        },
-        {
-          "name": "CollectionLevel",
-          "label": "Collection Level",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 8,
-          "max_level": 8,
-          "progress": 2075,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-        },
-        {
-          "name": "ClanWarWins",
-          "label": "Clan War Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 7,
-          "max_level": 8,
-          "progress": 1757,
-          "target": 2500,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/FpS6HBCXGrTjCaPS9Z5HkV4bhtSdjTdS7ojcNeMZ0ZA.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/FpS6HBCXGrTjCaPS9Z5HkV4bhtSdjTdS7ojcNeMZ0ZA.png"
-        },
-        {
-          "name": "ClanDonations",
-          "label": "Clan Donations",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 5,
-          "max_level": 8,
-          "progress": 21019,
-          "target": 25000,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
-        }
-      ]
-    },
-    {
-      "name": "Vijay",
-      "tag": "C920YGLC2",
-      "role": "Co-Leader",
-      "trophies": 14000,
-      "arena": "Spirit Square",
-      "clan_rank": 2,
-      "previous_clan_rank": 3,
-      "donations": 642,
-      "donations_received": 400,
-      "last_seen": "20260730T211103.000Z",
-      "exp_level": 82,
-      "best_trophies": 14000,
-      "battle_count": 26302,
-      "three_crown_wins": 4019,
-      "cr_account_age_days": 1576,
-      "cr_account_age_years": 4,
-      "cr_battle_wins": 11680,
-      "cr_collection_level": 2130,
-      "cr_collection_level_badge_tier": 8,
-      "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 980,
-      "cr_clan_donations": 136128,
-      "badge_count": 153,
-      "badge_highlights": [
-        {
-          "name": "YearsPlayed",
-          "label": "Years Played",
-          "category": "career",
-          "is_one_time": false,
-          "level": 4,
-          "max_level": 11,
-          "progress": 1576,
-          "target": 1825,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
-        },
-        {
-          "name": "BattleWins",
-          "label": "Battle Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 8,
-          "max_level": 8,
-          "progress": 11680,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
-        },
-        {
-          "name": "CollectionLevel",
-          "label": "Collection Level",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 8,
-          "max_level": 8,
-          "progress": 2130,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-        },
-        {
-          "name": "ClanWarWins",
-          "label": "Clan War Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 6,
-          "max_level": 8,
-          "progress": 980,
-          "target": 1000,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
-        },
-        {
-          "name": "ClanDonations",
-          "label": "Clan Donations",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 8,
-          "max_level": 8,
-          "progress": 136128,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/7oTq2WTilSOYgWWTp_CsNL1322phB9GlXWhImSXXNvE.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/7oTq2WTilSOYgWWTp_CsNL1322phB9GlXWhImSXXNvE.png"
-        }
-      ]
-    },
     {
       "name": "OllieTurtle",
       "tag": "RJ9RRQPVU",
       "role": "Elder",
       "trophies": 14000,
       "arena": "Spirit Square",
-      "clan_rank": 3,
-      "previous_clan_rank": 7,
-      "donations": 64,
-      "donations_received": 120,
-      "last_seen": "20260730T204540.000Z",
+      "clan_rank": 1,
+      "previous_clan_rank": 1,
+      "donations": 136,
+      "donations_received": 200,
+      "last_seen": "20260731T225657.000Z",
       "exp_level": 76,
       "best_trophies": 14000,
-      "battle_count": 10242,
-      "three_crown_wins": 1420,
-      "cr_account_age_days": 1759,
+      "battle_count": 10249,
+      "three_crown_wins": 1422,
+      "cr_account_age_days": 1760,
       "cr_account_age_years": 4,
-      "cr_battle_wins": 5970,
+      "cr_battle_wins": 5973,
       "cr_collection_level": 1936,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 145,
-      "cr_clan_donations": 43338,
+      "cr_clan_donations": 43410,
       "badge_count": 147,
       "badge_highlights": [
         {
@@ -223,7 +33,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 11,
-          "progress": 1759,
+          "progress": 1760,
           "target": 1825,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
@@ -237,7 +47,7 @@
           "is_one_time": false,
           "level": 7,
           "max_level": 8,
-          "progress": 5970,
+          "progress": 5973,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
@@ -278,7 +88,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 43338,
+          "progress": 43410,
           "target": 50000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
@@ -293,23 +103,23 @@
       "role": "Elder",
       "trophies": 14000,
       "arena": "Spirit Square",
-      "clan_rank": 4,
-      "previous_clan_rank": 8,
-      "donations": 74,
-      "donations_received": 160,
-      "last_seen": "20260730T192113.000Z",
+      "clan_rank": 2,
+      "previous_clan_rank": 4,
+      "donations": 138,
+      "donations_received": 280,
+      "last_seen": "20260731T205011.000Z",
       "exp_level": 78,
       "best_trophies": 14000,
-      "battle_count": 46000,
-      "three_crown_wins": 8346,
-      "cr_account_age_days": 3800,
+      "battle_count": 46015,
+      "three_crown_wins": 8349,
+      "cr_account_age_days": 3801,
       "cr_account_age_years": 10,
-      "cr_battle_wins": 24984,
+      "cr_battle_wins": 24991,
       "cr_collection_level": 2075,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 273,
-      "cr_clan_donations": 25816,
+      "cr_clan_donations": 25880,
       "badge_count": 148,
       "badge_highlights": [
         {
@@ -319,7 +129,7 @@
           "is_one_time": false,
           "level": 10,
           "max_level": 11,
-          "progress": 3800,
+          "progress": 3801,
           "target": 4015,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/VI28fEl7qdSZ0CZxr6pWT1jCOkkr-OjwEJ30901DKKA.png"
@@ -333,7 +143,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 24984,
+          "progress": 24991,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
           },
@@ -372,7 +182,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 25816,
+          "progress": 25880,
           "target": 50000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
@@ -382,124 +192,28 @@
       ]
     },
     {
-      "name": "L-Drxgo⚡",
-      "tag": "2CY2RJL9G",
-      "role": "Member",
-      "trophies": 14000,
-      "arena": "Spirit Square",
-      "clan_rank": 5,
-      "previous_clan_rank": 5,
-      "donations": 288,
-      "donations_received": 40,
-      "last_seen": "20260730T190716.000Z",
-      "exp_level": 73,
-      "best_trophies": 14000,
-      "battle_count": 9914,
-      "three_crown_wins": 1987,
-      "cr_account_age_days": 3425,
-      "cr_account_age_years": 9,
-      "cr_battle_wins": 5355,
-      "cr_collection_level": 1837,
-      "cr_collection_level_badge_tier": 8,
-      "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 271,
-      "cr_clan_donations": 24393,
-      "badge_count": 132,
-      "badge_highlights": [
-        {
-          "name": "YearsPlayed",
-          "label": "Years Played",
-          "category": "career",
-          "is_one_time": false,
-          "level": 9,
-          "max_level": 11,
-          "progress": 3425,
-          "target": 3650,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/3TeHoCb_VUTGDRtC3j5H-wn6e_ROJ1rhOe5w-fZzqIM.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/3TeHoCb_VUTGDRtC3j5H-wn6e_ROJ1rhOe5w-fZzqIM.png"
-        },
-        {
-          "name": "BattleWins",
-          "label": "Battle Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 7,
-          "max_level": 8,
-          "progress": 5355,
-          "target": 10000,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
-        },
-        {
-          "name": "CollectionLevel",
-          "label": "Collection Level",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 8,
-          "max_level": 8,
-          "progress": 1837,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-        },
-        {
-          "name": "ClanWarWins",
-          "label": "Clan War Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 5,
-          "max_level": 8,
-          "progress": 271,
-          "target": 500,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
-        },
-        {
-          "name": "ClanDonations",
-          "label": "Clan Donations",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 5,
-          "max_level": 8,
-          "progress": 24393,
-          "target": 25000,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
-        }
-      ]
-    },
-    {
       "name": "Shafith Nihal♥️",
       "tag": "2P9GRU2Q0",
       "role": "Elder",
       "trophies": 14000,
       "arena": "Spirit Square",
-      "clan_rank": 6,
-      "previous_clan_rank": 4,
-      "donations": 294,
-      "donations_received": 280,
-      "last_seen": "20260730T190353.000Z",
+      "clan_rank": 3,
+      "previous_clan_rank": 6,
+      "donations": 340,
+      "donations_received": 320,
+      "last_seen": "20260731T191428.000Z",
       "exp_level": 71,
       "best_trophies": 14000,
-      "battle_count": 11133,
+      "battle_count": 11143,
       "three_crown_wins": 2735,
-      "cr_account_age_days": 3565,
+      "cr_account_age_days": 3566,
       "cr_account_age_years": 9,
-      "cr_battle_wins": 6048,
-      "cr_collection_level": 1734,
+      "cr_battle_wins": 6058,
+      "cr_collection_level": 1739,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 3,
-      "cr_clan_donations": 31562,
+      "cr_clan_donations": 31608,
       "badge_count": 148,
       "badge_highlights": [
         {
@@ -509,7 +223,7 @@
           "is_one_time": false,
           "level": 9,
           "max_level": 11,
-          "progress": 3565,
+          "progress": 3566,
           "target": 3650,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/3TeHoCb_VUTGDRtC3j5H-wn6e_ROJ1rhOe5w-fZzqIM.png"
@@ -523,7 +237,7 @@
           "is_one_time": false,
           "level": 7,
           "max_level": 8,
-          "progress": 6048,
+          "progress": 6058,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
@@ -537,7 +251,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 1734,
+          "progress": 1739,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -564,7 +278,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 31562,
+          "progress": 31608,
           "target": 50000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
@@ -574,28 +288,218 @@
       ]
     },
     {
+      "name": "L-Drxgo⚡",
+      "tag": "2CY2RJL9G",
+      "role": "Member",
+      "trophies": 14000,
+      "arena": "Spirit Square",
+      "clan_rank": 4,
+      "previous_clan_rank": 5,
+      "donations": 460,
+      "donations_received": 40,
+      "last_seen": "20260731T185923.000Z",
+      "exp_level": 73,
+      "best_trophies": 14000,
+      "battle_count": 9949,
+      "three_crown_wins": 1990,
+      "cr_account_age_days": 3426,
+      "cr_account_age_years": 9,
+      "cr_battle_wins": 5375,
+      "cr_collection_level": 1839,
+      "cr_collection_level_badge_tier": 8,
+      "cr_collection_level_badge_max_tier": 8,
+      "cr_clan_war_wins": 273,
+      "cr_clan_donations": 24565,
+      "badge_count": 132,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "is_one_time": false,
+          "level": 9,
+          "max_level": 11,
+          "progress": 3426,
+          "target": 3650,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/3TeHoCb_VUTGDRtC3j5H-wn6e_ROJ1rhOe5w-fZzqIM.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/3TeHoCb_VUTGDRtC3j5H-wn6e_ROJ1rhOe5w-fZzqIM.png"
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 7,
+          "max_level": 8,
+          "progress": 5375,
+          "target": 10000,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 8,
+          "progress": 1839,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 5,
+          "max_level": 8,
+          "progress": 273,
+          "target": 500,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 5,
+          "max_level": 8,
+          "progress": 24565,
+          "target": 25000,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
+        }
+      ]
+    },
+    {
+      "name": "Vijay",
+      "tag": "C920YGLC2",
+      "role": "Co-Leader",
+      "trophies": 14000,
+      "arena": "Spirit Square",
+      "clan_rank": 5,
+      "previous_clan_rank": 3,
+      "donations": 806,
+      "donations_received": 480,
+      "last_seen": "20260731T184106.000Z",
+      "exp_level": 82,
+      "best_trophies": 14000,
+      "battle_count": 26356,
+      "three_crown_wins": 4021,
+      "cr_account_age_days": 1577,
+      "cr_account_age_years": 4,
+      "cr_battle_wins": 11699,
+      "cr_collection_level": 2130,
+      "cr_collection_level_badge_tier": 8,
+      "cr_collection_level_badge_max_tier": 8,
+      "cr_clan_war_wins": 980,
+      "cr_clan_donations": 136292,
+      "badge_count": 153,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "is_one_time": false,
+          "level": 4,
+          "max_level": 11,
+          "progress": 1577,
+          "target": 1825,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 8,
+          "progress": 11699,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 8,
+          "progress": 2130,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 6,
+          "max_level": 8,
+          "progress": 980,
+          "target": 1000,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 8,
+          "progress": 136292,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/7oTq2WTilSOYgWWTp_CsNL1322phB9GlXWhImSXXNvE.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/7oTq2WTilSOYgWWTp_CsNL1322phB9GlXWhImSXXNvE.png"
+        }
+      ]
+    },
+    {
       "name": "pax",
       "tag": "UCP028JQ8",
       "role": "Elder",
       "trophies": 14000,
       "arena": "Spirit Square",
-      "clan_rank": 7,
-      "previous_clan_rank": 2,
-      "donations": 100,
-      "donations_received": 360,
-      "last_seen": "20260730T172935.000Z",
+      "clan_rank": 6,
+      "previous_clan_rank": 7,
+      "donations": 108,
+      "donations_received": 480,
+      "last_seen": "20260731T180419.000Z",
       "exp_level": 68,
       "best_trophies": 14000,
-      "battle_count": 7481,
+      "battle_count": 7488,
       "three_crown_wins": 1406,
-      "cr_account_age_days": 517,
+      "cr_account_age_days": 518,
       "cr_account_age_years": 1,
-      "cr_battle_wins": 4377,
+      "cr_battle_wins": 4382,
       "cr_collection_level": 1607,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 658,
-      "cr_clan_donations": 28361,
+      "cr_clan_war_wins": 659,
+      "cr_clan_donations": 28369,
       "badge_count": 140,
       "badge_highlights": [
         {
@@ -605,7 +509,7 @@
           "is_one_time": false,
           "level": 1,
           "max_level": 11,
-          "progress": 517,
+          "progress": 518,
           "target": 730,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Jp5cLGokbSds2hf55-7QlnLpQnlOFivp8GL5ghqXY7M.png"
@@ -619,7 +523,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 4377,
+          "progress": 4382,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -646,7 +550,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 658,
+          "progress": 659,
           "target": 1000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
@@ -660,12 +564,108 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 28361,
+          "progress": 28369,
           "target": 50000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
           },
           "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
+        }
+      ]
+    },
+    {
+      "name": "dez42",
+      "tag": "9Q9QRCPPU",
+      "role": "Elder",
+      "trophies": 14000,
+      "arena": "Spirit Square",
+      "clan_rank": 7,
+      "previous_clan_rank": 2,
+      "donations": 56,
+      "donations_received": 0,
+      "last_seen": "20260731T162125.000Z",
+      "exp_level": 78,
+      "best_trophies": 14000,
+      "battle_count": 19927,
+      "three_crown_wins": 3516,
+      "cr_account_age_days": 3057,
+      "cr_account_age_years": 8,
+      "cr_battle_wins": 9587,
+      "cr_collection_level": 2075,
+      "cr_collection_level_badge_tier": 8,
+      "cr_collection_level_badge_max_tier": 8,
+      "cr_clan_war_wins": 1760,
+      "cr_clan_donations": 21047,
+      "badge_count": 143,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 11,
+          "progress": 3057,
+          "target": 3285,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/T9iTL2NzRUCMK5KoV3p9to5vxhUUvsooT-DMxwIvSCg.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/T9iTL2NzRUCMK5KoV3p9to5vxhUUvsooT-DMxwIvSCg.png"
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 7,
+          "max_level": 8,
+          "progress": 9587,
+          "target": 10000,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 8,
+          "progress": 2075,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 7,
+          "max_level": 8,
+          "progress": 1760,
+          "target": 2500,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/FpS6HBCXGrTjCaPS9Z5HkV4bhtSdjTdS7ojcNeMZ0ZA.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/FpS6HBCXGrTjCaPS9Z5HkV4bhtSdjTdS7ojcNeMZ0ZA.png"
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 5,
+          "max_level": 8,
+          "progress": 21047,
+          "target": 25000,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
         }
       ]
     },
@@ -676,22 +676,22 @@
       "trophies": 14000,
       "arena": "Spirit Square",
       "clan_rank": 8,
-      "previous_clan_rank": 6,
-      "donations": 449,
-      "donations_received": 320,
-      "last_seen": "20260730T164833.000Z",
+      "previous_clan_rank": 8,
+      "donations": 617,
+      "donations_received": 400,
+      "last_seen": "20260731T161712.000Z",
       "exp_level": 80,
       "best_trophies": 14000,
-      "battle_count": 40563,
-      "three_crown_wins": 5119,
-      "cr_account_age_days": 3806,
+      "battle_count": 40607,
+      "three_crown_wins": 5129,
+      "cr_account_age_days": 3807,
       "cr_account_age_years": 10,
-      "cr_battle_wins": 23103,
-      "cr_collection_level": 2072,
+      "cr_battle_wins": 23137,
+      "cr_collection_level": 2080,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 112,
-      "cr_clan_donations": 5707,
+      "cr_clan_donations": 5875,
       "badge_count": 158,
       "badge_highlights": [
         {
@@ -701,7 +701,7 @@
           "is_one_time": false,
           "level": 10,
           "max_level": 11,
-          "progress": 3806,
+          "progress": 3807,
           "target": 4015,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/VI28fEl7qdSZ0CZxr6pWT1jCOkkr-OjwEJ30901DKKA.png"
@@ -715,7 +715,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 23103,
+          "progress": 23137,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
           },
@@ -728,7 +728,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 2072,
+          "progress": 2080,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -754,7 +754,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 5707,
+          "progress": 5875,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
@@ -767,25 +767,25 @@
       "name": "TDuck",
       "tag": "PLCCYUQL",
       "role": "Elder",
-      "trophies": 13875,
+      "trophies": 13900,
       "arena": "Spirit Square",
       "clan_rank": 9,
       "previous_clan_rank": 9,
-      "donations": 165,
-      "donations_received": 280,
-      "last_seen": "20260730T175234.000Z",
+      "donations": 217,
+      "donations_received": 400,
+      "last_seen": "20260731T193113.000Z",
       "exp_level": 76,
       "best_trophies": 13964,
-      "battle_count": 12347,
+      "battle_count": 12355,
       "three_crown_wins": 2058,
-      "cr_account_age_days": 3798,
+      "cr_account_age_days": 3799,
       "cr_account_age_years": 10,
-      "cr_battle_wins": 6581,
+      "cr_battle_wins": 6585,
       "cr_collection_level": 1767,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 144,
-      "cr_clan_donations": 12909,
+      "cr_clan_donations": 12961,
       "badge_count": 89,
       "badge_highlights": [
         {
@@ -795,7 +795,7 @@
           "is_one_time": false,
           "level": 10,
           "max_level": 11,
-          "progress": 3798,
+          "progress": 3799,
           "target": 4015,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/VI28fEl7qdSZ0CZxr6pWT1jCOkkr-OjwEJ30901DKKA.png"
@@ -809,7 +809,7 @@
           "is_one_time": false,
           "level": 7,
           "max_level": 8,
-          "progress": 6581,
+          "progress": 6585,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/ESFjdvjDaVO2KOaUfni9fe2DiHjvzKn-FuOeZRKeDEs.png"
@@ -849,7 +849,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 12909,
+          "progress": 12961,
           "target": 25000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
@@ -866,21 +866,21 @@
       "arena": "Spirit Square",
       "clan_rank": 10,
       "previous_clan_rank": 10,
-      "donations": 96,
-      "donations_received": 0,
-      "last_seen": "20260730T031500.000Z",
+      "donations": 111,
+      "donations_received": 40,
+      "last_seen": "20260731T034350.000Z",
       "exp_level": 66,
       "best_trophies": 13940,
       "battle_count": 5384,
       "three_crown_wins": 1925,
-      "cr_account_age_days": 2337,
+      "cr_account_age_days": 2338,
       "cr_account_age_years": 6,
       "cr_battle_wins": 3417,
       "cr_collection_level": 1823,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 5,
-      "cr_clan_donations": 19514,
+      "cr_clan_donations": 19529,
       "badge_count": 147,
       "badge_highlights": [
         {
@@ -890,7 +890,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 11,
-          "progress": 2337,
+          "progress": 2338,
           "target": 2555,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/nSXiP2cMAriEEqxrxiaPpbocBvRmRxZTaNPpCg5wlmY.png"
@@ -945,7 +945,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 19514,
+          "progress": 19529,
           "target": 25000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
@@ -958,25 +958,25 @@
       "name": "The Joesma",
       "tag": "PR8YLQ2CV",
       "role": "Member",
-      "trophies": 13810,
+      "trophies": 13814,
       "arena": "Spirit Square",
       "clan_rank": 11,
       "previous_clan_rank": 11,
-      "donations": 86,
+      "donations": 106,
       "donations_received": 0,
-      "last_seen": "20260730T195956.000Z",
+      "last_seen": "20260731T222536.000Z",
       "exp_level": 62,
-      "best_trophies": 13810,
-      "battle_count": 4621,
-      "three_crown_wins": 855,
-      "cr_account_age_days": 2607,
+      "best_trophies": 13843,
+      "battle_count": 4623,
+      "three_crown_wins": 856,
+      "cr_account_age_days": 2608,
       "cr_account_age_years": 7,
-      "cr_battle_wins": 2644,
+      "cr_battle_wins": 2645,
       "cr_collection_level": 1733,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 6,
-      "cr_clan_donations": 8905,
+      "cr_clan_donations": 8925,
       "badge_count": 119,
       "badge_highlights": [
         {
@@ -986,7 +986,7 @@
           "is_one_time": false,
           "level": 7,
           "max_level": 11,
-          "progress": 2607,
+          "progress": 2608,
           "target": 2920,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/EolhUOLM3CSxlLqRTHQ9VXQbgizGhYkgWya5gPQqjLo.png"
@@ -1000,7 +1000,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 2644,
+          "progress": 2645,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -1041,7 +1041,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 8905,
+          "progress": 8925,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
@@ -1054,25 +1054,25 @@
       "name": "raquaza",
       "tag": "UL2V9QRG0",
       "role": "Co-Leader",
-      "trophies": 13704,
+      "trophies": 13734,
       "arena": "Spirit Square",
       "clan_rank": 12,
       "previous_clan_rank": 12,
-      "donations": 214,
+      "donations": 264,
       "donations_received": 0,
-      "last_seen": "20260730T130614.000Z",
+      "last_seen": "20260731T205240.000Z",
       "exp_level": 70,
       "best_trophies": 13765,
-      "battle_count": 4675,
+      "battle_count": 4676,
       "three_crown_wins": 1357,
-      "cr_account_age_days": 1599,
+      "cr_account_age_days": 1600,
       "cr_account_age_years": 4,
-      "cr_battle_wins": 2443,
+      "cr_battle_wins": 2444,
       "cr_collection_level": 1696,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 200,
-      "cr_clan_donations": 13307,
+      "cr_clan_donations": 13357,
       "badge_count": 131,
       "badge_highlights": [
         {
@@ -1082,7 +1082,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 11,
-          "progress": 1599,
+          "progress": 1600,
           "target": 1825,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
@@ -1096,7 +1096,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 2443,
+          "progress": 2444,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -1137,7 +1137,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 13307,
+          "progress": 13357,
           "target": 25000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
@@ -1150,25 +1150,25 @@
       "name": "Sandeep",
       "tag": "UQ2R9RGVP",
       "role": "Member",
-      "trophies": 13694,
+      "trophies": 13632,
       "arena": "Spirit Square",
       "clan_rank": 13,
       "previous_clan_rank": 13,
-      "donations": 38,
-      "donations_received": 160,
-      "last_seen": "20260730T174351.000Z",
+      "donations": 58,
+      "donations_received": 200,
+      "last_seen": "20260731T174601.000Z",
       "exp_level": 62,
       "best_trophies": 13725,
-      "battle_count": 8839,
+      "battle_count": 8857,
       "three_crown_wins": 1663,
-      "cr_account_age_days": 1526,
+      "cr_account_age_days": 1527,
       "cr_account_age_years": 4,
-      "cr_battle_wins": 3958,
-      "cr_collection_level": 1739,
+      "cr_battle_wins": 3964,
+      "cr_collection_level": 1740,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 420,
-      "cr_clan_donations": 1741,
+      "cr_clan_war_wins": 424,
+      "cr_clan_donations": 1761,
       "badge_count": 132,
       "badge_highlights": [
         {
@@ -1178,7 +1178,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 11,
-          "progress": 1526,
+          "progress": 1527,
           "target": 1825,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
@@ -1192,7 +1192,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 3958,
+          "progress": 3964,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -1206,7 +1206,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 1739,
+          "progress": 1740,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -1219,7 +1219,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 420,
+          "progress": 424,
           "target": 500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
@@ -1233,7 +1233,7 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 1741,
+          "progress": 1761,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
@@ -1246,25 +1246,25 @@
       "name": "King Levy",
       "tag": "U8RYG9Y2U",
       "role": "Co-Leader",
-      "trophies": 13625,
+      "trophies": 13596,
       "arena": "Spirit Square",
       "clan_rank": 14,
       "previous_clan_rank": 14,
-      "donations": 272,
+      "donations": 316,
       "donations_received": 40,
-      "last_seen": "20260730T222017.000Z",
+      "last_seen": "20260731T225654.000Z",
       "exp_level": 72,
       "best_trophies": 13709,
-      "battle_count": 4160,
+      "battle_count": 4161,
       "three_crown_wins": 812,
-      "cr_account_age_days": 1613,
+      "cr_account_age_days": 1614,
       "cr_account_age_years": 4,
       "cr_battle_wins": 2136,
       "cr_collection_level": 1737,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 261,
-      "cr_clan_donations": 17452,
+      "cr_clan_donations": 17496,
       "badge_count": 103,
       "badge_highlights": [
         {
@@ -1274,7 +1274,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 11,
-          "progress": 1613,
+          "progress": 1614,
           "target": 1825,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
@@ -1329,7 +1329,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 17452,
+          "progress": 17496,
           "target": 25000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
@@ -1348,14 +1348,14 @@
       "previous_clan_rank": 15,
       "donations": 18,
       "donations_received": 0,
-      "last_seen": "20260730T183148.000Z",
+      "last_seen": "20260731T215739.000Z",
       "exp_level": 53,
       "best_trophies": 13562,
-      "battle_count": 5601,
+      "battle_count": 5624,
       "three_crown_wins": 1123,
-      "cr_account_age_days": 2980,
+      "cr_account_age_days": 2981,
       "cr_account_age_years": 8,
-      "cr_battle_wins": 2667,
+      "cr_battle_wins": 2676,
       "cr_collection_level": 1648,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
@@ -1370,7 +1370,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 11,
-          "progress": 2980,
+          "progress": 2981,
           "target": 3285,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/T9iTL2NzRUCMK5KoV3p9to5vxhUUvsooT-DMxwIvSCg.png"
@@ -1384,7 +1384,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 2667,
+          "progress": 2676,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -1435,41 +1435,56 @@
       ]
     },
     {
-      "name": "Chanco",
-      "tag": "20R8QRLYLP",
+      "name": "sikander sidhu",
+      "tag": "JYRQ8U92C",
       "role": "Member",
-      "trophies": 13305,
+      "trophies": 13372,
       "arena": "Little Prince's Tavern",
       "clan_rank": 16,
       "previous_clan_rank": 18,
-      "donations": 384,
-      "donations_received": 40,
-      "last_seen": "20260730T220154.000Z",
-      "exp_level": 65,
-      "best_trophies": 13334,
-      "battle_count": 4287,
-      "three_crown_wins": 1303,
-      "cr_battle_wins": 2270,
-      "cr_collection_level": 1758,
+      "donations": 55,
+      "donations_received": 360,
+      "last_seen": "20260731T190313.000Z",
+      "exp_level": 69,
+      "best_trophies": 13456,
+      "battle_count": 25282,
+      "three_crown_wins": 4207,
+      "cr_account_age_days": 1678,
+      "cr_account_age_years": 4,
+      "cr_battle_wins": 10556,
+      "cr_collection_level": 1818,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 127,
-      "cr_clan_donations": 13352,
-      "badge_count": 66,
+      "cr_clan_war_wins": 589,
+      "cr_clan_donations": 31475,
+      "badge_count": 138,
       "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "is_one_time": false,
+          "level": 4,
+          "max_level": 11,
+          "progress": 1678,
+          "target": 1825,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
+        },
         {
           "name": "BattleWins",
           "label": "Battle Wins",
           "category": "career",
           "is_one_time": false,
-          "level": 5,
+          "level": 8,
           "max_level": 8,
-          "progress": 2270,
-          "target": 2500,
+          "progress": 10556,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
         },
         {
           "name": "CollectionLevel",
@@ -1478,7 +1493,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 1758,
+          "progress": 1818,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -1489,28 +1504,28 @@
           "label": "Clan War Wins",
           "category": "career",
           "is_one_time": false,
-          "level": 4,
+          "level": 6,
           "max_level": 8,
-          "progress": 127,
-          "target": 250,
+          "progress": 589,
+          "target": 1000,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
         },
         {
           "name": "ClanDonations",
           "label": "Clan Donations",
           "category": "collection",
           "is_one_time": false,
-          "level": 5,
+          "level": 6,
           "max_level": 8,
-          "progress": 13352,
-          "target": 25000,
+          "progress": 31475,
+          "target": 50000,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
         }
       ]
     },
@@ -1529,7 +1544,7 @@
       "best_trophies": 13272,
       "battle_count": 8802,
       "three_crown_wins": 2231,
-      "cr_account_age_days": 2171,
+      "cr_account_age_days": 2172,
       "cr_account_age_years": 5,
       "cr_battle_wins": 4448,
       "cr_collection_level": 1735,
@@ -1546,7 +1561,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 11,
-          "progress": 2171,
+          "progress": 2172,
           "target": 2190,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/oqcHoJf6dNP_OFjYisgmo3tPptwYqAxv1tPzYpCWb5w.png"
@@ -1611,56 +1626,41 @@
       ]
     },
     {
-      "name": "sikander sidhu",
-      "tag": "JYRQ8U92C",
+      "name": "Chanco",
+      "tag": "20R8QRLYLP",
       "role": "Member",
-      "trophies": 13104,
+      "trophies": 13189,
       "arena": "Little Prince's Tavern",
       "clan_rank": 18,
       "previous_clan_rank": 16,
-      "donations": 42,
-      "donations_received": 240,
-      "last_seen": "20260730T155111.000Z",
-      "exp_level": 69,
-      "best_trophies": 13334,
-      "battle_count": 25203,
-      "three_crown_wins": 4195,
-      "cr_account_age_days": 1677,
-      "cr_account_age_years": 4,
-      "cr_battle_wins": 10510,
-      "cr_collection_level": 1811,
+      "donations": 558,
+      "donations_received": 40,
+      "last_seen": "20260731T225621.000Z",
+      "exp_level": 65,
+      "best_trophies": 13361,
+      "battle_count": 4313,
+      "three_crown_wins": 1306,
+      "cr_battle_wins": 2281,
+      "cr_collection_level": 1759,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 583,
-      "cr_clan_donations": 31462,
-      "badge_count": 138,
+      "cr_clan_war_wins": 129,
+      "cr_clan_donations": 13526,
+      "badge_count": 67,
       "badge_highlights": [
-        {
-          "name": "YearsPlayed",
-          "label": "Years Played",
-          "category": "career",
-          "is_one_time": false,
-          "level": 4,
-          "max_level": 11,
-          "progress": 1677,
-          "target": 1825,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
-        },
         {
           "name": "BattleWins",
           "label": "Battle Wins",
           "category": "career",
           "is_one_time": false,
-          "level": 8,
+          "level": 5,
           "max_level": 8,
-          "progress": 10510,
+          "progress": 2281,
+          "target": 2500,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/GjBLSroASSMeDGJvXXAaL_GJW0YKkQfOuY5ZW4QQu-Y.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
         },
         {
           "name": "CollectionLevel",
@@ -1669,7 +1669,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 1811,
+          "progress": 1759,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -1680,28 +1680,28 @@
           "label": "Clan War Wins",
           "category": "career",
           "is_one_time": false,
-          "level": 6,
+          "level": 4,
           "max_level": 8,
-          "progress": 583,
-          "target": 1000,
+          "progress": 129,
+          "target": 250,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
         },
         {
           "name": "ClanDonations",
           "label": "Clan Donations",
           "category": "collection",
           "is_one_time": false,
-          "level": 6,
+          "level": 5,
           "max_level": 8,
-          "progress": 31462,
-          "target": 50000,
+          "progress": 13526,
+          "target": 25000,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
         }
       ]
     },
@@ -1713,21 +1713,21 @@
       "arena": "Little Prince's Tavern",
       "clan_rank": 19,
       "previous_clan_rank": 19,
-      "donations": 234,
-      "donations_received": 120,
-      "last_seen": "20260730T174221.000Z",
+      "donations": 268,
+      "donations_received": 160,
+      "last_seen": "20260731T152231.000Z",
       "exp_level": 57,
       "best_trophies": 13090,
-      "battle_count": 7402,
-      "three_crown_wins": 2055,
-      "cr_account_age_days": 3465,
+      "battle_count": 7413,
+      "three_crown_wins": 2056,
+      "cr_account_age_days": 3466,
       "cr_account_age_years": 9,
-      "cr_battle_wins": 3900,
+      "cr_battle_wins": 3904,
       "cr_collection_level": 1705,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 686,
-      "cr_clan_donations": 27633,
+      "cr_clan_war_wins": 687,
+      "cr_clan_donations": 27667,
       "badge_count": 130,
       "badge_highlights": [
         {
@@ -1737,7 +1737,7 @@
           "is_one_time": false,
           "level": 9,
           "max_level": 11,
-          "progress": 3465,
+          "progress": 3466,
           "target": 3650,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/3TeHoCb_VUTGDRtC3j5H-wn6e_ROJ1rhOe5w-fZzqIM.png"
@@ -1751,7 +1751,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 3900,
+          "progress": 3904,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -1778,7 +1778,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 686,
+          "progress": 687,
           "target": 1000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/WgWS0A2vy4RHUYIFhvNu9AZPsQURS6XY5JySYfqPtAk.png"
@@ -1792,7 +1792,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 27633,
+          "progress": 27667,
           "target": 50000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vPTwqJDRx-UyJSQWddV6oUkkyl7Ymgi9w5jshyuTgpM.png"
@@ -1805,23 +1805,23 @@
       "name": "Ditaka",
       "tag": "VGJJLC9PR",
       "role": "Member",
-      "trophies": 12596,
+      "trophies": 12512,
       "arena": "Ultimate Clash Pit",
       "clan_rank": 20,
       "previous_clan_rank": 20,
-      "donations": 74,
-      "donations_received": 200,
-      "last_seen": "20260730T185422.000Z",
+      "donations": 144,
+      "donations_received": 280,
+      "last_seen": "20260731T212704.000Z",
       "exp_level": 61,
       "best_trophies": 12716,
-      "battle_count": 2910,
-      "three_crown_wins": 1110,
-      "cr_battle_wins": 1605,
-      "cr_collection_level": 1629,
+      "battle_count": 2920,
+      "three_crown_wins": 1112,
+      "cr_battle_wins": 1607,
+      "cr_collection_level": 1635,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 0,
-      "cr_clan_donations": 4402,
+      "cr_clan_donations": 4472,
       "badge_count": 47,
       "badge_highlights": [
         {
@@ -1831,7 +1831,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 1605,
+          "progress": 1607,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -1845,7 +1845,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 1629,
+          "progress": 1635,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -1858,7 +1858,7 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 4402,
+          "progress": 4472,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
@@ -1871,23 +1871,23 @@
       "name": "King Thing",
       "tag": "20JJJ2CCRU",
       "role": "Leader",
-      "trophies": 12433,
+      "trophies": 12493,
       "arena": "Magic Academy",
       "clan_rank": 21,
-      "previous_clan_rank": 22,
-      "donations": 240,
-      "donations_received": 400,
-      "last_seen": "20260730T190230.000Z",
+      "previous_clan_rank": 21,
+      "donations": 348,
+      "donations_received": 520,
+      "last_seen": "20260731T225247.000Z",
       "exp_level": 63,
-      "best_trophies": 12459,
-      "battle_count": 1772,
-      "three_crown_wins": 576,
-      "cr_battle_wins": 1086,
-      "cr_collection_level": 1722,
+      "best_trophies": 12495,
+      "battle_count": 1779,
+      "three_crown_wins": 580,
+      "cr_battle_wins": 1092,
+      "cr_collection_level": 1723,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 218,
-      "cr_clan_donations": 12113,
+      "cr_clan_war_wins": 222,
+      "cr_clan_donations": 12221,
       "badge_count": 79,
       "badge_highlights": [
         {
@@ -1897,7 +1897,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 1086,
+          "progress": 1092,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -1911,7 +1911,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 1722,
+          "progress": 1723,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -1924,7 +1924,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 218,
+          "progress": 222,
           "target": 250,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
@@ -1938,7 +1938,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 12113,
+          "progress": 12221,
           "target": 25000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/J12DE8Lx-z1mXydZiQj7YTQ1SdX9ZxK4LaNSXkkr7vs.png"
@@ -1951,25 +1951,25 @@
       "name": "SNOOPY",
       "tag": "JQGJYCURJ",
       "role": "Member",
-      "trophies": 12413,
+      "trophies": 12443,
       "arena": "Magic Academy",
       "clan_rank": 22,
-      "previous_clan_rank": 21,
-      "donations": 28,
-      "donations_received": 40,
-      "last_seen": "20260727T182511.000Z",
+      "previous_clan_rank": 22,
+      "donations": 38,
+      "donations_received": 80,
+      "last_seen": "20260731T134143.000Z",
       "exp_level": 35,
       "best_trophies": 12496,
-      "battle_count": 2086,
-      "three_crown_wins": 924,
-      "cr_account_age_days": 1862,
+      "battle_count": 2090,
+      "three_crown_wins": 925,
+      "cr_account_age_days": 1863,
       "cr_account_age_years": 5,
-      "cr_battle_wins": 1201,
+      "cr_battle_wins": 1204,
       "cr_collection_level": 1476,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 71,
-      "cr_clan_donations": 2133,
+      "cr_clan_war_wins": 73,
+      "cr_clan_donations": 2143,
       "badge_count": 53,
       "badge_highlights": [
         {
@@ -1979,7 +1979,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 11,
-          "progress": 1862,
+          "progress": 1863,
           "target": 2190,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/oqcHoJf6dNP_OFjYisgmo3tPptwYqAxv1tPzYpCWb5w.png"
@@ -1993,7 +1993,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 1201,
+          "progress": 1204,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -2020,7 +2020,7 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 71,
+          "progress": 73,
           "target": 100,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/q_EcWT52wxQyNMPCpcWrcrAK1iKNLesurdFeUIdGr3Q.png"
@@ -2034,7 +2034,7 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 2133,
+          "progress": 2143,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
@@ -2051,19 +2051,19 @@
       "arena": "Magic Academy",
       "clan_rank": 23,
       "previous_clan_rank": 23,
-      "donations": 286,
-      "donations_received": 320,
-      "last_seen": "20260730T220404.000Z",
+      "donations": 356,
+      "donations_received": 400,
+      "last_seen": "20260731T194521.000Z",
       "exp_level": 55,
       "best_trophies": 12475,
-      "battle_count": 5901,
-      "three_crown_wins": 1172,
-      "cr_battle_wins": 3100,
+      "battle_count": 5911,
+      "three_crown_wins": 1174,
+      "cr_battle_wins": 3108,
       "cr_collection_level": 1630,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 146,
-      "cr_clan_donations": 5833,
+      "cr_clan_war_wins": 152,
+      "cr_clan_donations": 5903,
       "badge_count": 129,
       "badge_highlights": [
         {
@@ -2073,7 +2073,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 3100,
+          "progress": 3108,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -2100,7 +2100,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 146,
+          "progress": 152,
           "target": 250,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
@@ -2114,103 +2114,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 5833,
-          "target": 10000,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
-        }
-      ]
-    },
-    {
-      "name": "Tere",
-      "tag": "U08P889Y0",
-      "role": "Member",
-      "trophies": 11451,
-      "arena": "Musketeer Street",
-      "clan_rank": 24,
-      "previous_clan_rank": 25,
-      "donations": 94,
-      "donations_received": 280,
-      "last_seen": "20260730T220723.000Z",
-      "exp_level": 59,
-      "best_trophies": 11484,
-      "battle_count": 2941,
-      "three_crown_wins": 1854,
-      "cr_account_age_days": 1595,
-      "cr_account_age_years": 4,
-      "cr_battle_wins": 1669,
-      "cr_collection_level": 1530,
-      "cr_collection_level_badge_tier": 8,
-      "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 350,
-      "cr_clan_donations": 9469,
-      "badge_count": 124,
-      "badge_highlights": [
-        {
-          "name": "YearsPlayed",
-          "label": "Years Played",
-          "category": "career",
-          "is_one_time": false,
-          "level": 4,
-          "max_level": 11,
-          "progress": 1595,
-          "target": 1825,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
-        },
-        {
-          "name": "BattleWins",
-          "label": "Battle Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 5,
-          "max_level": 8,
-          "progress": 1669,
-          "target": 2500,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
-        },
-        {
-          "name": "CollectionLevel",
-          "label": "Collection Level",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 8,
-          "max_level": 8,
-          "progress": 1530,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
-        },
-        {
-          "name": "ClanWarWins",
-          "label": "Clan War Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 5,
-          "max_level": 8,
-          "progress": 350,
-          "target": 500,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
-        },
-        {
-          "name": "ClanDonations",
-          "label": "Clan Donations",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 4,
-          "max_level": 8,
-          "progress": 9469,
+          "progress": 5903,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
@@ -2223,25 +2127,25 @@
       "name": "AHMOメŞΛDØW",
       "tag": "UVQ8RJYG9",
       "role": "Member",
-      "trophies": 11351,
-      "arena": "Musketeer Street",
-      "clan_rank": 25,
-      "previous_clan_rank": 26,
-      "donations": 307,
-      "donations_received": 240,
-      "last_seen": "20260730T215752.000Z",
+      "trophies": 11540,
+      "arena": "Summit of Heroes",
+      "clan_rank": 24,
+      "previous_clan_rank": 25,
+      "donations": 427,
+      "donations_received": 320,
+      "last_seen": "20260731T212023.000Z",
       "exp_level": 42,
-      "best_trophies": 11404,
-      "battle_count": 3465,
-      "three_crown_wins": 547,
-      "cr_account_age_days": 405,
+      "best_trophies": 11659,
+      "battle_count": 3542,
+      "three_crown_wins": 555,
+      "cr_account_age_days": 406,
       "cr_account_age_years": 1,
-      "cr_battle_wins": 1868,
+      "cr_battle_wins": 1908,
       "cr_collection_level": 1416,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 32,
-      "cr_clan_donations": 2212,
+      "cr_clan_donations": 2332,
       "badge_count": 65,
       "badge_highlights": [
         {
@@ -2251,7 +2155,7 @@
           "is_one_time": false,
           "level": 1,
           "max_level": 11,
-          "progress": 405,
+          "progress": 406,
           "target": 730,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Jp5cLGokbSds2hf55-7QlnLpQnlOFivp8GL5ghqXY7M.png"
@@ -2265,7 +2169,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 1868,
+          "progress": 1908,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -2306,12 +2210,108 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 2212,
+          "progress": 2332,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
           },
           "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
+        }
+      ]
+    },
+    {
+      "name": "Tere",
+      "tag": "U08P889Y0",
+      "role": "Member",
+      "trophies": 11451,
+      "arena": "Musketeer Street",
+      "clan_rank": 25,
+      "previous_clan_rank": 24,
+      "donations": 126,
+      "donations_received": 320,
+      "last_seen": "20260731T224831.000Z",
+      "exp_level": 59,
+      "best_trophies": 11484,
+      "battle_count": 2946,
+      "three_crown_wins": 1854,
+      "cr_account_age_days": 1596,
+      "cr_account_age_years": 4,
+      "cr_battle_wins": 1674,
+      "cr_collection_level": 1530,
+      "cr_collection_level_badge_tier": 8,
+      "cr_collection_level_badge_max_tier": 8,
+      "cr_clan_war_wins": 351,
+      "cr_clan_donations": 9501,
+      "badge_count": 124,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "is_one_time": false,
+          "level": 4,
+          "max_level": 11,
+          "progress": 1596,
+          "target": 1825,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 5,
+          "max_level": 8,
+          "progress": 1674,
+          "target": 2500,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 8,
+          "progress": 1530,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 5,
+          "max_level": 8,
+          "progress": 351,
+          "target": 500,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/gTrItst0t65YbLBDgLwdNi-3ANANjfv1zB6hcEzc8Ug.png"
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 4,
+          "max_level": 8,
+          "progress": 9501,
+          "target": 10000,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
         }
       ]
     },
@@ -2322,7 +2322,7 @@
       "trophies": 11273,
       "arena": "Musketeer Street",
       "clan_rank": 26,
-      "previous_clan_rank": 27,
+      "previous_clan_rank": 26,
       "donations": 50,
       "donations_received": 120,
       "last_seen": "20260730T190646.000Z",
@@ -2330,7 +2330,7 @@
       "best_trophies": 11273,
       "battle_count": 4252,
       "three_crown_wins": 2784,
-      "cr_account_age_days": 3759,
+      "cr_account_age_days": 3760,
       "cr_account_age_years": 10,
       "cr_battle_wins": 2096,
       "cr_collection_level": 1810,
@@ -2347,7 +2347,7 @@
           "is_one_time": false,
           "level": 10,
           "max_level": 11,
-          "progress": 3759,
+          "progress": 3760,
           "target": 4015,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/VI28fEl7qdSZ0CZxr6pWT1jCOkkr-OjwEJ30901DKKA.png"
@@ -2415,20 +2415,20 @@
       "name": "Alfablack",
       "tag": "2YG98VVQ",
       "role": "Member",
-      "trophies": 11061,
+      "trophies": 11112,
       "arena": "Musketeer Street",
       "clan_rank": 27,
-      "previous_clan_rank": 28,
+      "previous_clan_rank": 27,
       "donations": 24,
       "donations_received": 40,
-      "last_seen": "20260730T214840.000Z",
+      "last_seen": "20260731T215920.000Z",
       "exp_level": 46,
-      "best_trophies": 11091,
-      "battle_count": 6727,
+      "best_trophies": 11175,
+      "battle_count": 6733,
       "three_crown_wins": 3708,
-      "cr_account_age_days": 3801,
+      "cr_account_age_days": 3802,
       "cr_account_age_years": 10,
-      "cr_battle_wins": 3773,
+      "cr_battle_wins": 3777,
       "cr_collection_level": 1514,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
@@ -2443,7 +2443,7 @@
           "is_one_time": false,
           "level": 10,
           "max_level": 11,
-          "progress": 3801,
+          "progress": 3802,
           "target": 4015,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/VI28fEl7qdSZ0CZxr6pWT1jCOkkr-OjwEJ30901DKKA.png"
@@ -2457,7 +2457,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 3773,
+          "progress": 3777,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -2511,23 +2511,23 @@
       "name": "shimmeringhost",
       "tag": "2209PJPVGG",
       "role": "Elder",
-      "trophies": 10931,
+      "trophies": 10901,
       "arena": "Royal Road",
       "clan_rank": 28,
-      "previous_clan_rank": 29,
-      "donations": 186,
+      "previous_clan_rank": 28,
+      "donations": 274,
       "donations_received": 0,
-      "last_seen": "20260730T104454.000Z",
+      "last_seen": "20260731T044704.000Z",
       "exp_level": 46,
       "best_trophies": 10985,
-      "battle_count": 1569,
+      "battle_count": 1578,
       "three_crown_wins": 622,
-      "cr_battle_wins": 955,
-      "cr_collection_level": 1399,
-      "cr_collection_level_badge_tier": 7,
+      "cr_battle_wins": 958,
+      "cr_collection_level": 1400,
+      "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 40,
-      "cr_clan_donations": 5364,
+      "cr_clan_donations": 5452,
       "badge_count": 51,
       "badge_highlights": [
         {
@@ -2537,7 +2537,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 955,
+          "progress": 958,
           "target": 1000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/jM1LK131aF9pZ9PROP2rGWSdthvNTEN3GxK7LdIVtr0.png"
@@ -2549,14 +2549,13 @@
           "label": "Collection Level",
           "category": "collection",
           "is_one_time": false,
-          "level": 7,
+          "level": 8,
           "max_level": 8,
-          "progress": 1399,
-          "target": 1400,
+          "progress": 1400,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/_TuidQHb6mPuDDIzJnTGBWZufPsPXlMXCfqJtSf6mFQ.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/_TuidQHb6mPuDDIzJnTGBWZufPsPXlMXCfqJtSf6mFQ.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
         },
         {
           "name": "ClanWarWins",
@@ -2579,7 +2578,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 5364,
+          "progress": 5452,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
@@ -2595,15 +2594,15 @@
       "trophies": 10836,
       "arena": "Royal Road",
       "clan_rank": 29,
-      "previous_clan_rank": 30,
+      "previous_clan_rank": 29,
       "donations": 0,
       "donations_received": 0,
-      "last_seen": "20260730T002501.000Z",
+      "last_seen": "20260731T023613.000Z",
       "exp_level": 59,
       "best_trophies": 10868,
       "battle_count": 5973,
       "three_crown_wins": 1310,
-      "cr_account_age_days": 1751,
+      "cr_account_age_days": 1752,
       "cr_account_age_years": 4,
       "cr_battle_wins": 2777,
       "cr_collection_level": 1642,
@@ -2620,7 +2619,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 11,
-          "progress": 1751,
+          "progress": 1752,
           "target": 1825,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/DvW4PDPHJTEtm5zvENjX17xGuTvKAyqBr-QXP1jNEdI.png"
@@ -2688,25 +2687,25 @@
       "name": "Andy",
       "tag": "2LRYLQPL",
       "role": "Member",
-      "trophies": 10422,
+      "trophies": 10453,
       "arena": "Lumberlove Cabin",
       "clan_rank": 30,
-      "previous_clan_rank": 31,
-      "donations": 136,
-      "donations_received": 120,
-      "last_seen": "20260728T173518.000Z",
+      "previous_clan_rank": 30,
+      "donations": 150,
+      "donations_received": 160,
+      "last_seen": "20260731T175652.000Z",
       "exp_level": 44,
-      "best_trophies": 10422,
-      "battle_count": 5024,
+      "best_trophies": 10453,
+      "battle_count": 5029,
       "three_crown_wins": 1737,
-      "cr_account_age_days": 3795,
+      "cr_account_age_days": 3796,
       "cr_account_age_years": 10,
-      "cr_battle_wins": 2924,
+      "cr_battle_wins": 2926,
       "cr_collection_level": 1276,
       "cr_collection_level_badge_tier": 7,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 101,
-      "cr_clan_donations": 3653,
+      "cr_clan_donations": 3667,
       "badge_count": 59,
       "badge_highlights": [
         {
@@ -2716,7 +2715,7 @@
           "is_one_time": false,
           "level": 10,
           "max_level": 11,
-          "progress": 3795,
+          "progress": 3796,
           "target": 4015,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/VI28fEl7qdSZ0CZxr6pWT1jCOkkr-OjwEJ30901DKKA.png"
@@ -2730,7 +2729,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 2924,
+          "progress": 2926,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
@@ -2771,7 +2770,7 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 3653,
+          "progress": 3667,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
@@ -2781,23 +2780,119 @@
       ]
     },
     {
+      "name": "God Bless You",
+      "tag": "U92P8PQG0",
+      "role": "Member",
+      "trophies": 10433,
+      "arena": "Lumberlove Cabin",
+      "clan_rank": 31,
+      "previous_clan_rank": 32,
+      "donations": 8,
+      "donations_received": 320,
+      "last_seen": "20260731T135625.000Z",
+      "exp_level": 40,
+      "best_trophies": 10433,
+      "battle_count": 2653,
+      "three_crown_wins": 783,
+      "cr_account_age_days": 1017,
+      "cr_account_age_years": 2,
+      "cr_battle_wins": 1495,
+      "cr_collection_level": 1492,
+      "cr_collection_level_badge_tier": 8,
+      "cr_collection_level_badge_max_tier": 8,
+      "cr_clan_war_wins": 227,
+      "cr_clan_donations": 213,
+      "badge_count": 119,
+      "badge_highlights": [
+        {
+          "name": "YearsPlayed",
+          "label": "Years Played",
+          "category": "career",
+          "is_one_time": false,
+          "level": 2,
+          "max_level": 11,
+          "progress": 1017,
+          "target": 1095,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/SlmLq0AclBHaPRaCN14pqR1KAd3eYP2u4Ih4vqQcVmw.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/SlmLq0AclBHaPRaCN14pqR1KAd3eYP2u4Ih4vqQcVmw.png"
+        },
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 5,
+          "max_level": 8,
+          "progress": 1495,
+          "target": 2500,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 8,
+          "max_level": 8,
+          "progress": 1492,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 4,
+          "max_level": 8,
+          "progress": 227,
+          "target": 250,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 1,
+          "max_level": 8,
+          "progress": 213,
+          "target": 500,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/8q7mW1LlZFi_6fanSAMH6_374Z9feIvP07DBQE5e8wk.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/8q7mW1LlZFi_6fanSAMH6_374Z9feIvP07DBQE5e8wk.png"
+        }
+      ]
+    },
+    {
       "name": "ABC234",
       "tag": "V289UYLRY",
       "role": "Member",
-      "trophies": 10356,
+      "trophies": 10408,
       "arena": "Lumberlove Cabin",
-      "clan_rank": 31,
-      "previous_clan_rank": null,
+      "clan_rank": 32,
+      "previous_clan_rank": 31,
       "donations": 0,
-      "donations_received": 40,
-      "last_seen": "20260730T192207.000Z",
+      "donations_received": 80,
+      "last_seen": "20260731T144604.000Z",
       "exp_level": 45,
       "best_trophies": 10420,
-      "battle_count": 1714,
-      "three_crown_wins": 354,
-      "cr_account_age_days": 390,
+      "battle_count": 1718,
+      "three_crown_wins": 355,
+      "cr_account_age_days": 391,
       "cr_account_age_years": 1,
-      "cr_battle_wins": 1058,
+      "cr_battle_wins": 1061,
       "cr_collection_level": 1528,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
@@ -2812,7 +2907,7 @@
           "is_one_time": false,
           "level": 1,
           "max_level": 11,
-          "progress": 390,
+          "progress": 391,
           "target": 730,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Jp5cLGokbSds2hf55-7QlnLpQnlOFivp8GL5ghqXY7M.png"
@@ -2826,7 +2921,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 1058,
+          "progress": 1061,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -2877,57 +2972,57 @@
       ]
     },
     {
-      "name": "God Bless You",
-      "tag": "U92P8PQG0",
+      "name": "I Hate Witch",
+      "tag": "20LP8UPJ8R",
       "role": "Member",
-      "trophies": 10263,
+      "trophies": 10056,
       "arena": "Lumberlove Cabin",
-      "clan_rank": 32,
-      "previous_clan_rank": 32,
-      "donations": 0,
-      "donations_received": 240,
-      "last_seen": "20260730T173621.000Z",
-      "exp_level": 40,
-      "best_trophies": 10263,
-      "battle_count": 2633,
-      "three_crown_wins": 779,
-      "cr_account_age_days": 1016,
-      "cr_account_age_years": 2,
-      "cr_battle_wins": 1481,
-      "cr_collection_level": 1492,
+      "clan_rank": 33,
+      "previous_clan_rank": null,
+      "donations": 36,
+      "donations_received": 120,
+      "last_seen": "20260731T215106.000Z",
+      "exp_level": 41,
+      "best_trophies": 10329,
+      "battle_count": 6398,
+      "three_crown_wins": 951,
+      "cr_account_age_days": 444,
+      "cr_account_age_years": 1,
+      "cr_battle_wins": 3062,
+      "cr_collection_level": 1518,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 224,
-      "cr_clan_donations": 205,
-      "badge_count": 119,
+      "cr_clan_war_wins": 68,
+      "cr_clan_donations": 5618,
+      "badge_count": 129,
       "badge_highlights": [
         {
           "name": "YearsPlayed",
           "label": "Years Played",
           "category": "career",
           "is_one_time": false,
-          "level": 2,
+          "level": 1,
           "max_level": 11,
-          "progress": 1016,
-          "target": 1095,
+          "progress": 444,
+          "target": 730,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/SlmLq0AclBHaPRaCN14pqR1KAd3eYP2u4Ih4vqQcVmw.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/Jp5cLGokbSds2hf55-7QlnLpQnlOFivp8GL5ghqXY7M.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/SlmLq0AclBHaPRaCN14pqR1KAd3eYP2u4Ih4vqQcVmw.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/Jp5cLGokbSds2hf55-7QlnLpQnlOFivp8GL5ghqXY7M.png"
         },
         {
           "name": "BattleWins",
           "label": "Battle Wins",
           "category": "career",
           "is_one_time": false,
-          "level": 5,
+          "level": 6,
           "max_level": 8,
-          "progress": 1481,
-          "target": 2500,
+          "progress": 3062,
+          "target": 5000,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/Hh18NG8LhvwZrcmtGR8rSKRezmhOxCilxqhroDLBnys.png"
         },
         {
           "name": "CollectionLevel",
@@ -2936,7 +3031,7 @@
           "is_one_time": false,
           "level": 8,
           "max_level": 8,
-          "progress": 1492,
+          "progress": 1518,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/vlnuFrtu6rT5pQSQjqjT6OW32K2gJmb8zYYG01UF1f4.png"
           },
@@ -2947,28 +3042,28 @@
           "label": "Clan War Wins",
           "category": "career",
           "is_one_time": false,
-          "level": 4,
+          "level": 3,
           "max_level": 8,
-          "progress": 224,
-          "target": 250,
+          "progress": 68,
+          "target": 100,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/q_EcWT52wxQyNMPCpcWrcrAK1iKNLesurdFeUIdGr3Q.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/wEbE9f0PyqFnH8Tx5DUNfTYu93P9MCh7zMKjWYuu5OY.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/q_EcWT52wxQyNMPCpcWrcrAK1iKNLesurdFeUIdGr3Q.png"
         },
         {
           "name": "ClanDonations",
           "label": "Clan Donations",
           "category": "collection",
           "is_one_time": false,
-          "level": 1,
+          "level": 4,
           "max_level": 8,
-          "progress": 205,
-          "target": 500,
+          "progress": 5618,
+          "target": 10000,
           "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/8q7mW1LlZFi_6fanSAMH6_374Z9feIvP07DBQE5e8wk.png"
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
           },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/8q7mW1LlZFi_6fanSAMH6_374Z9feIvP07DBQE5e8wk.png"
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
         }
       ]
     },
@@ -2978,23 +3073,23 @@
       "role": "Member",
       "trophies": 9001,
       "arena": "Valkalla",
-      "clan_rank": 33,
+      "clan_rank": 34,
       "previous_clan_rank": 33,
-      "donations": 210,
+      "donations": 266,
       "donations_received": 120,
-      "last_seen": "20260730T200918.000Z",
+      "last_seen": "20260731T221216.000Z",
       "exp_level": 33,
       "best_trophies": 9033,
-      "battle_count": 2956,
-      "three_crown_wins": 514,
-      "cr_account_age_days": 413,
+      "battle_count": 2965,
+      "three_crown_wins": 515,
+      "cr_account_age_days": 414,
       "cr_account_age_years": 1,
-      "cr_battle_wins": 1755,
+      "cr_battle_wins": 1761,
       "cr_collection_level": 1460,
       "cr_collection_level_badge_tier": 8,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 0,
-      "cr_clan_donations": 5060,
+      "cr_clan_donations": 5116,
       "badge_count": 108,
       "badge_highlights": [
         {
@@ -3004,7 +3099,7 @@
           "is_one_time": false,
           "level": 1,
           "max_level": 11,
-          "progress": 413,
+          "progress": 414,
           "target": 730,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Jp5cLGokbSds2hf55-7QlnLpQnlOFivp8GL5ghqXY7M.png"
@@ -3018,7 +3113,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 1755,
+          "progress": 1761,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -3045,7 +3140,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 5060,
+          "progress": 5116,
           "target": 10000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/aTyebr5jxkOad8nu-zmk7keMs87ed_yroqQ7U6KKAiU.png"
@@ -3060,7 +3155,7 @@
       "role": "Member",
       "trophies": 8512,
       "arena": "PANCAKES!",
-      "clan_rank": 34,
+      "clan_rank": 35,
       "previous_clan_rank": 34,
       "donations": 10,
       "donations_received": 40,
@@ -3069,7 +3164,7 @@
       "best_trophies": 8512,
       "battle_count": 1309,
       "three_crown_wins": 273,
-      "cr_account_age_days": 398,
+      "cr_account_age_days": 399,
       "cr_account_age_years": 1,
       "cr_battle_wins": 797,
       "cr_collection_level": 1367,
@@ -3086,7 +3181,7 @@
           "is_one_time": false,
           "level": 1,
           "max_level": 11,
-          "progress": 398,
+          "progress": 399,
           "target": 730,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/Jp5cLGokbSds2hf55-7QlnLpQnlOFivp8GL5ghqXY7M.png"
@@ -3141,18 +3236,18 @@
       "name": "round hamster",
       "tag": "VR0QRP2PG",
       "role": "Member",
-      "trophies": 7953,
+      "trophies": 7982,
       "arena": "Boot Camp",
-      "clan_rank": 35,
+      "clan_rank": 36,
       "previous_clan_rank": 35,
       "donations": 0,
       "donations_received": 0,
-      "last_seen": "20260727T100350.000Z",
+      "last_seen": "20260731T021100.000Z",
       "exp_level": 36,
-      "best_trophies": 7953,
-      "battle_count": 1373,
+      "best_trophies": 7982,
+      "battle_count": 1374,
       "three_crown_wins": 395,
-      "cr_battle_wins": 803,
+      "cr_battle_wins": 804,
       "cr_collection_level": 1358,
       "cr_collection_level_badge_tier": 7,
       "cr_collection_level_badge_max_tier": 8,
@@ -3167,7 +3262,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 803,
+          "progress": 804,
           "target": 1000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/jM1LK131aF9pZ9PROP2rGWSdthvNTEN3GxK7LdIVtr0.png"
@@ -3210,7 +3305,7 @@
       "role": "Member",
       "trophies": 7628,
       "arena": "Boot Camp",
-      "clan_rank": 36,
+      "clan_rank": 37,
       "previous_clan_rank": 36,
       "donations": 0,
       "donations_received": 0,
@@ -3288,23 +3383,23 @@
       "name": "bonus",
       "tag": "20GPQPC9RV",
       "role": "Member",
-      "trophies": 7600,
+      "trophies": 7500,
       "arena": "Boot Camp",
-      "clan_rank": 37,
+      "clan_rank": 38,
       "previous_clan_rank": 37,
-      "donations": 85,
-      "donations_received": 240,
-      "last_seen": "20260730T194803.000Z",
+      "donations": 101,
+      "donations_received": 280,
+      "last_seen": "20260731T210506.000Z",
       "exp_level": 32,
       "best_trophies": 7772,
-      "battle_count": 4064,
-      "three_crown_wins": 623,
-      "cr_battle_wins": 2037,
-      "cr_collection_level": 1379,
+      "battle_count": 4110,
+      "three_crown_wins": 629,
+      "cr_battle_wins": 2060,
+      "cr_collection_level": 1380,
       "cr_collection_level_badge_tier": 7,
       "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 44,
-      "cr_clan_donations": 2311,
+      "cr_clan_war_wins": 46,
+      "cr_clan_donations": 2327,
       "badge_count": 105,
       "badge_highlights": [
         {
@@ -3314,7 +3409,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 8,
-          "progress": 2037,
+          "progress": 2060,
           "target": 2500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/CieJfquVnq21pi7rxzDMLXC6oBKQ7KFT_8N6zadEEeE.png"
@@ -3328,7 +3423,7 @@
           "is_one_time": false,
           "level": 7,
           "max_level": 8,
-          "progress": 1379,
+          "progress": 1380,
           "target": 1400,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/_TuidQHb6mPuDDIzJnTGBWZufPsPXlMXCfqJtSf6mFQ.png"
@@ -3342,7 +3437,7 @@
           "is_one_time": false,
           "level": 2,
           "max_level": 8,
-          "progress": 44,
+          "progress": 46,
           "target": 50,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/84WGzFfbSpBPG4AL5kH7xWgufTL-My-uF2X754cFrms.png"
@@ -3356,7 +3451,88 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 2311,
+          "progress": 2327,
+          "target": 5000,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
+        }
+      ]
+    },
+    {
+      "name": "Mega Goblin",
+      "tag": "229QY8UL9U",
+      "role": "Member",
+      "trophies": 7301,
+      "arena": "Dragon Spa",
+      "clan_rank": 39,
+      "previous_clan_rank": 39,
+      "donations": 118,
+      "donations_received": 320,
+      "last_seen": "20260731T203303.000Z",
+      "exp_level": 1,
+      "best_trophies": 7301,
+      "battle_count": 622,
+      "three_crown_wins": 96,
+      "cr_battle_wins": 454,
+      "cr_collection_level": 1102,
+      "cr_collection_level_badge_tier": 6,
+      "cr_collection_level_badge_max_tier": 8,
+      "cr_clan_war_wins": 20,
+      "cr_clan_donations": 1268,
+      "badge_count": 57,
+      "badge_highlights": [
+        {
+          "name": "BattleWins",
+          "label": "Battle Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 3,
+          "max_level": 8,
+          "progress": 454,
+          "target": 500,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/m4b1Oh9yVMtxYqd2OW-BzGxTc7biRROEHopeinsynGU.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/m4b1Oh9yVMtxYqd2OW-BzGxTc7biRROEHopeinsynGU.png"
+        },
+        {
+          "name": "CollectionLevel",
+          "label": "Collection Level",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 6,
+          "max_level": 8,
+          "progress": 1102,
+          "target": 1200,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/qE8qmfIq6d3V2AmzXMiaffhYjhPdwOWd4OZ1EXK-MPg.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/qE8qmfIq6d3V2AmzXMiaffhYjhPdwOWd4OZ1EXK-MPg.png"
+        },
+        {
+          "name": "ClanWarWins",
+          "label": "Clan War Wins",
+          "category": "career",
+          "is_one_time": false,
+          "level": 1,
+          "max_level": 8,
+          "progress": 20,
+          "target": 25,
+          "icon_urls": {
+            "large": "https://api-assets.clashroyale.com/playerbadges/512/J1cscDN2IYNZM7MUAVNqAw3QzGiR9ZRLxvbjf_gGBpE.png"
+          },
+          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J1cscDN2IYNZM7MUAVNqAw3QzGiR9ZRLxvbjf_gGBpE.png"
+        },
+        {
+          "name": "ClanDonations",
+          "label": "Clan Donations",
+          "category": "collection",
+          "is_one_time": false,
+          "level": 3,
+          "max_level": 8,
+          "progress": 1268,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
@@ -3371,7 +3547,7 @@
       "role": "Member",
       "trophies": 7299,
       "arena": "Dragon Spa",
-      "clan_rank": 38,
+      "clan_rank": 40,
       "previous_clan_rank": 38,
       "donations": 0,
       "donations_received": 0,
@@ -3380,7 +3556,7 @@
       "best_trophies": 7389,
       "battle_count": 1308,
       "three_crown_wins": 450,
-      "cr_account_age_days": 1888,
+      "cr_account_age_days": 1889,
       "cr_account_age_years": 5,
       "cr_battle_wins": 728,
       "cr_collection_level": 1402,
@@ -3397,7 +3573,7 @@
           "is_one_time": false,
           "level": 5,
           "max_level": 11,
-          "progress": 1888,
+          "progress": 1889,
           "target": 2190,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/oqcHoJf6dNP_OFjYisgmo3tPptwYqAxv1tPzYpCWb5w.png"
@@ -3462,107 +3638,26 @@
       ]
     },
     {
-      "name": "Mega Goblin",
-      "tag": "229QY8UL9U",
-      "role": "Member",
-      "trophies": 7185,
-      "arena": "Dragon Spa",
-      "clan_rank": 39,
-      "previous_clan_rank": 40,
-      "donations": 108,
-      "donations_received": 200,
-      "last_seen": "20260730T190523.000Z",
-      "exp_level": 1,
-      "best_trophies": 7187,
-      "battle_count": 604,
-      "three_crown_wins": 94,
-      "cr_battle_wins": 443,
-      "cr_collection_level": 1074,
-      "cr_collection_level_badge_tier": 6,
-      "cr_collection_level_badge_max_tier": 8,
-      "cr_clan_war_wins": 17,
-      "cr_clan_donations": 1258,
-      "badge_count": 57,
-      "badge_highlights": [
-        {
-          "name": "BattleWins",
-          "label": "Battle Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 3,
-          "max_level": 8,
-          "progress": 443,
-          "target": 500,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/m4b1Oh9yVMtxYqd2OW-BzGxTc7biRROEHopeinsynGU.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/m4b1Oh9yVMtxYqd2OW-BzGxTc7biRROEHopeinsynGU.png"
-        },
-        {
-          "name": "CollectionLevel",
-          "label": "Collection Level",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 6,
-          "max_level": 8,
-          "progress": 1074,
-          "target": 1200,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/qE8qmfIq6d3V2AmzXMiaffhYjhPdwOWd4OZ1EXK-MPg.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/qE8qmfIq6d3V2AmzXMiaffhYjhPdwOWd4OZ1EXK-MPg.png"
-        },
-        {
-          "name": "ClanWarWins",
-          "label": "Clan War Wins",
-          "category": "career",
-          "is_one_time": false,
-          "level": 1,
-          "max_level": 8,
-          "progress": 17,
-          "target": 25,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/J1cscDN2IYNZM7MUAVNqAw3QzGiR9ZRLxvbjf_gGBpE.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/J1cscDN2IYNZM7MUAVNqAw3QzGiR9ZRLxvbjf_gGBpE.png"
-        },
-        {
-          "name": "ClanDonations",
-          "label": "Clan Donations",
-          "category": "collection",
-          "is_one_time": false,
-          "level": 3,
-          "max_level": 8,
-          "progress": 1258,
-          "target": 5000,
-          "icon_urls": {
-            "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
-          },
-          "icon_url": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
-        }
-      ]
-    },
-    {
       "name": "Waltadr",
       "tag": "20G9RY299P",
       "role": "Member",
       "trophies": 7160,
       "arena": "Dragon Spa",
-      "clan_rank": 40,
-      "previous_clan_rank": 39,
-      "donations": 54,
-      "donations_received": 160,
-      "last_seen": "20260730T223106.000Z",
+      "clan_rank": 41,
+      "previous_clan_rank": 40,
+      "donations": 64,
+      "donations_received": 200,
+      "last_seen": "20260731T215655.000Z",
       "exp_level": 32,
       "best_trophies": 7160,
-      "battle_count": 1380,
+      "battle_count": 1381,
       "three_crown_wins": 220,
-      "cr_battle_wins": 843,
+      "cr_battle_wins": 844,
       "cr_collection_level": 1307,
       "cr_collection_level_badge_tier": 7,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 47,
-      "cr_clan_donations": 3005,
+      "cr_clan_donations": 3015,
       "badge_count": 77,
       "badge_highlights": [
         {
@@ -3572,7 +3667,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 843,
+          "progress": 844,
           "target": 1000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/jM1LK131aF9pZ9PROP2rGWSdthvNTEN3GxK7LdIVtr0.png"
@@ -3614,7 +3709,7 @@
           "is_one_time": false,
           "level": 3,
           "max_level": 8,
-          "progress": 3005,
+          "progress": 3015,
           "target": 5000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8mR3rsDpDmwlsPQoxIoj7cyT4nsMWs7fMSSYjpEkVUs.png"
@@ -3629,7 +3724,7 @@
       "role": "Member",
       "trophies": 7033,
       "arena": "Dragon Spa",
-      "clan_rank": 41,
+      "clan_rank": 42,
       "previous_clan_rank": 41,
       "donations": 20,
       "donations_received": 40,
@@ -3694,23 +3789,23 @@
       "name": "alex",
       "tag": "20G0JGQLPL",
       "role": "Member",
-      "trophies": 6626,
+      "trophies": 6715,
       "arena": "Silent Sanctuary",
-      "clan_rank": 42,
+      "clan_rank": 43,
       "previous_clan_rank": 42,
-      "donations": 80,
+      "donations": 88,
       "donations_received": 80,
-      "last_seen": "20260729T210424.000Z",
+      "last_seen": "20260731T001838.000Z",
       "exp_level": 27,
       "best_trophies": 6716,
-      "battle_count": 1160,
-      "three_crown_wins": 326,
-      "cr_battle_wins": 656,
-      "cr_collection_level": 1176,
+      "battle_count": 1167,
+      "three_crown_wins": 327,
+      "cr_battle_wins": 661,
+      "cr_collection_level": 1185,
       "cr_collection_level_badge_tier": 6,
       "cr_collection_level_badge_max_tier": 8,
       "cr_clan_war_wins": 0,
-      "cr_clan_donations": 248,
+      "cr_clan_donations": 256,
       "badge_count": 69,
       "badge_highlights": [
         {
@@ -3720,7 +3815,7 @@
           "is_one_time": false,
           "level": 4,
           "max_level": 8,
-          "progress": 656,
+          "progress": 661,
           "target": 1000,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/jM1LK131aF9pZ9PROP2rGWSdthvNTEN3GxK7LdIVtr0.png"
@@ -3734,7 +3829,7 @@
           "is_one_time": false,
           "level": 6,
           "max_level": 8,
-          "progress": 1176,
+          "progress": 1185,
           "target": 1200,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/qE8qmfIq6d3V2AmzXMiaffhYjhPdwOWd4OZ1EXK-MPg.png"
@@ -3748,7 +3843,7 @@
           "is_one_time": false,
           "level": 1,
           "max_level": 8,
-          "progress": 248,
+          "progress": 256,
           "target": 500,
           "icon_urls": {
             "large": "https://api-assets.clashroyale.com/playerbadges/512/8q7mW1LlZFi_6fanSAMH6_374Z9feIvP07DBQE5e8wk.png"
@@ -3763,7 +3858,7 @@
       "role": "Member",
       "trophies": 6334,
       "arena": "Royal Crypt",
-      "clan_rank": 43,
+      "clan_rank": 44,
       "previous_clan_rank": 43,
       "donations": 0,
       "donations_received": 0,
@@ -3830,7 +3925,7 @@
       "role": "Member",
       "trophies": 5751,
       "arena": "Executioner's Kitchen",
-      "clan_rank": 44,
+      "clan_rank": 45,
       "previous_clan_rank": 44,
       "donations": 0,
       "donations_received": 0,
@@ -3897,7 +3992,7 @@
       "role": "Member",
       "trophies": 5274,
       "arena": "Miner's Mine",
-      "clan_rank": 45,
+      "clan_rank": 46,
       "previous_clan_rank": 45,
       "donations": 0,
       "donations_received": 0,
