@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T23:02:59Z",
+  "generatedAt": "2026-08-03T23:02:26Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -317,7 +317,7 @@
     {
       "averageRank": 1,
       "seasonId": 134,
-      "trophyChange": 60,
+      "trophyChange": 160,
       "weeks": [
         {
           "clanScore": 820,
@@ -357,29 +357,42 @@
           "totalClans": 5,
           "trophyChange": 20,
           "weekLabel": "S134 W3"
+        },
+        {
+          "clanScore": 880,
+          "createdDate": "20260803T093005.000Z",
+          "fame": 51900,
+          "finishTime": "19691231T235959.000Z",
+          "isColosseum": true,
+          "rank": 1,
+          "seasonId": 134,
+          "sectionIndex": 3,
+          "totalClans": 5,
+          "trophyChange": 100,
+          "weekLabel": "S134 W4"
         }
       ],
-      "wins": 3
+      "wins": 4
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 860,
-      "createdDate": "20260727T093005.000Z",
-      "fame": 10000,
-      "finishTime": "20260726T093003.000Z",
-      "isColosseum": false,
+      "clanScore": 880,
+      "createdDate": "20260803T093005.000Z",
+      "fame": 51900,
+      "finishTime": "19691231T235959.000Z",
+      "isColosseum": true,
       "rank": 1,
       "seasonId": 134,
-      "sectionIndex": 2,
+      "sectionIndex": 3,
       "totalClans": 5,
-      "trophyChange": 20,
-      "weekLabel": "S134 W3"
+      "trophyChange": 100,
+      "weekLabel": "S134 W4"
     },
-    "totalWeeks": 24,
-    "trophyChange": 880,
-    "wins": 24
+    "totalWeeks": 25,
+    "trophyChange": 980,
+    "wins": 25
   },
   "weeks": [
     {
@@ -693,6 +706,19 @@
       "totalClans": 5,
       "trophyChange": 20,
       "weekLabel": "S134 W3"
+    },
+    {
+      "clanScore": 880,
+      "createdDate": "20260803T093005.000Z",
+      "fame": 51900,
+      "finishTime": "19691231T235959.000Z",
+      "isColosseum": true,
+      "rank": 1,
+      "seasonId": 134,
+      "sectionIndex": 3,
+      "totalClans": 5,
+      "trophyChange": 100,
+      "weekLabel": "S134 W4"
     }
   ]
 }
