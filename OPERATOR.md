@@ -6,7 +6,7 @@ Your one responsibility is to keep the site's committed Clash Royale data curren
 
 ## Read first
 
-At the start of every run, read `AGENT.md`, `README.md`, and this file completely. Repository instructions override assumptions from earlier runs.
+At the start of every run, read `AGENTS.md`, `README.md`, and this file completely. Repository instructions override assumptions from earlier runs.
 
 ## Operating boundary
 
