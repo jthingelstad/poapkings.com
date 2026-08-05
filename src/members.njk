@@ -63,8 +63,8 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
   <section class="pk-section">
     {{ sectionHeading('How Elder works', 'Participation, not prestige') }}
     <p class="pk-promo-intro">Elder is earned by playing, and every input is something you
-      control. Nothing here rewards trophies, card levels, or how long you have been in the
-      clan. Elders should be <strong>20–30% of the clan</strong> — at {{ memberCount }} members
+      control. Nothing here rewards trophies, card levels, or the Ranked league you
+      reach. Elders should be <strong>20–30% of the clan</strong> — at {{ memberCount }} members
       that is <strong>{{ elderFloor }}–{{ elderCeil }}</strong>, and we aim at
       <strong>{{ elderTarget }}</strong>, the middle of the range rather than the bottom.</p>
     <div class="pk-grid-2 pk-setup-grid">
@@ -72,11 +72,11 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
         { n: '1', title: 'Who is considered',
           body: 'You need 28+ days in the clan, and you need to still be competing: at least one war day with a deck played in the last 14 days, or 5 or more ranked battles in the last 14.' },
         { n: '2', title: 'What is scored',
-          body: 'Three things, each ranked against the rest of the clan — war rate (decks used out of decks available over 28 days), ranked battles played, and donations averaged over four weeks. War is weighted 65% and donations 35%. Ranked counts participation, not the league you reach.' },
+          body: 'Three things, each ranked against the rest of the clan — war rate (decks used out of decks available over 28 days), ranked battles played, and donations averaged over four weeks. Competing is 65% of your score and donations are 35%. Within the competing half war leads, and ranked fills part of what war leaves, so doing both beats doing either. Finishing a war day counts extra: all four decks is worth about 2.7x two decks, not 2x. Doing none of something scores zero for it.' },
         { n: '3', title: 'How many Elders',
-          body: 'Two players too close to separate can both get in, up to ' + elderCeil + '. If nobody has earned it the count simply sits lower — nobody is promoted to hit a number. Sitting above the target is safe: the badge is lost by stopping playing, or by being clearly out-ranked, and a near-tie always keeps the current Elder.' },
+          body: 'Two players too close to separate can both get in, up to ' + elderCeil + '. If nobody has earned it the count simply sits lower — nobody is promoted to hit a number. Sitting above the target is safe: the badge is lost by stopping playing, or by being clearly out-ranked. A near-tie keeps the current Elder — unless the member challenging them has been in the clan longer. Time served never earns Elder on its own, but it settles a close call.' },
         { n: '4', title: 'Sustained, not a snapshot',
-          body: 'Qualifying once does nothing. It takes three qualifying weeks in a row before a promotion even reaches leadership, who make the final call. Going the other way, walking away from war and ranked entirely costs the badge in two weeks.' }
+          body: 'Qualifying once does nothing. It takes three qualifying weeks in a row before a promotion even reaches leadership, who make the final call. Going the other way, walking away from war and ranked entirely costs the badge in two weeks; losing it to a higher-ranked member takes three.' }
       ] -%}
       {%- for e in elderSteps %}
       {{ numberedCard(e.n, e.title, e.body) }}
