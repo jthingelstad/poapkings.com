@@ -38,10 +38,17 @@ extraScripts: '<script src="/roster.js" defer></script>'
       <div class="pk-roster-row" id="member-{{ m.tag | memberSlug }}" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}">
         <span class="pk-roster-rank" data-roster-rank>{{ loop.index }}</span>
         <span class="pk-roster-player">
-          <strong class="pk-roster-player__name">{{ m.name }}</strong>
-          <span class="pk-roster-player__meta">
-            <em class="pk-roster-player__role {{ m.role | roleClass }}">{{ m.role }}</em>
-            {{ playerTagLink(m.tag, 'pk-roster-player__tag') }}
+          {%- if m.favorite_card and m.favorite_card.image_url %}
+          <span class="pk-roster-player__favorite" role="img" aria-label="Favorite card: {{ m.favorite_card.name }}" title="Favorite card: {{ m.favorite_card.name }}">
+            <img src="{{ m.favorite_card.image_url }}" alt="" width="285" height="420" loading="lazy" decoding="async">
+          </span>
+          {%- endif %}
+          <span class="pk-roster-player__identity">
+            <strong class="pk-roster-player__name">{{ m.name }}</strong>
+            <span class="pk-roster-player__meta">
+              <em class="pk-roster-player__role {{ m.role | roleClass }}">{{ m.role }}</em>
+              {{ playerTagLink(m.tag, 'pk-roster-player__tag') }}
+            </span>
           </span>
         </span>
         <strong class="pk-roster-trophies">{{ m.trophies | formatNumber }}</strong>

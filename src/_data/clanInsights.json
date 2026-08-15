@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 130481,
+    "clanScore": 130469,
     "clanWarTrophies": 1000,
-    "donationsPerWeek": 8392,
+    "donationsPerWeek": 8480,
     "memberCount": 48,
     "name": "POAP KINGS",
     "openSlots": 2,
     "tag": null
   },
-  "generatedAt": "2026-08-14T23:02:25Z",
+  "generatedAt": "2026-08-15T01:38:49Z",
   "headlineStats": [
     {
       "detail": "13 members are at 14k+",
@@ -139,21 +139,27 @@
     ],
     "trophies": [
       {
+        "name": "Vijay",
+        "role": "Co-Leader",
+        "tag": "#C920YGLC2",
+        "value": 14000
+      },
+      {
+        "name": "L-Drxgo⚡",
+        "role": "Member",
+        "tag": "#2CY2RJL9G",
+        "value": 14000
+      },
+      {
         "name": "OllieTurtle",
         "role": "Elder",
         "tag": "#RJ9RRQPVU",
         "value": 14000
       },
       {
-        "name": "dez42",
-        "role": "Elder",
-        "tag": "#9Q9QRCPPU",
-        "value": 14000
-      },
-      {
-        "name": "pax",
-        "role": "Elder",
-        "tag": "#UCP028JQ8",
+        "name": "pink chellie",
+        "role": "Member",
+        "tag": "#PJRGGQLCU",
         "value": 14000
       },
       {
@@ -169,21 +175,15 @@
         "value": 14000
       },
       {
-        "name": "L-Drxgo⚡",
+        "name": "The Joesma",
         "role": "Member",
-        "tag": "#2CY2RJL9G",
+        "tag": "#PR8YLQ2CV",
         "value": 14000
       },
       {
-        "name": "pink chellie",
-        "role": "Member",
-        "tag": "#PJRGGQLCU",
-        "value": 14000
-      },
-      {
-        "name": "Aaqib Javed",
+        "name": "dez42",
         "role": "Elder",
-        "tag": "#2G2RPVPP",
+        "tag": "#9Q9QRCPPU",
         "value": 14000
       }
     ],
@@ -222,7 +222,7 @@
         "name": "sikander sidhu",
         "role": "Member",
         "tag": "#JYRQ8U92C",
-        "value": 603
+        "value": 604
       },
       {
         "name": "Sandeep",
@@ -272,7 +272,7 @@
         "name": "pink chellie",
         "role": "Member",
         "tag": "#PJRGGQLCU",
-        "value": 9234
+        "value": 9236
       },
       {
         "name": "TDuck",
@@ -294,8 +294,8 @@
     "averageTrophies": 11523,
     "averageWins": 4095,
     "averageYearsPlayed": 5.9,
-    "medianTrophies": 12576,
-    "totalWins": 196555
+    "medianTrophies": 12561,
+    "totalWins": 196574
   },
   "tenureDistribution": [
     {

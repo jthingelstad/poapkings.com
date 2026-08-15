@@ -46,6 +46,7 @@ const PROFILE_FIELD_NAMES = [
   "cr_clan_donations",
   "badge_count",
   "badge_highlights",
+  "favorite_card",
 ];
 
 // Invisible / bidi control code points that render oddly in a display name.
@@ -257,6 +258,24 @@ function normalizeBadge(badge, overrides = {}) {
   return payload;
 }
 
+function favoriteCardPayload(card) {
+  if (!card || typeof card !== "object" || !card.name) return null;
+  const imageUrl =
+    card.iconUrls?.medium ||
+    card.icon_urls?.medium ||
+    card.icon_url ||
+    "";
+  if (!imageUrl) return null;
+
+  const payload = {
+    name: card.name,
+    image_url: imageUrl,
+  };
+  const id = numberOrNull(card.id);
+  if (id != null) payload.id = id;
+  return payload;
+}
+
 function profilePayload(profile) {
   if (!profile || typeof profile !== "object") return {};
   const badges = profile.badges || [];
@@ -265,6 +284,7 @@ function profilePayload(profile) {
   const warWinsBadge = findBadge(badges, ["ClanWarWins", "ClanWarsVeteran"]);
   const collectionBadge = findBadge(badges, ["CollectionLevel"]);
   const donationBadge = findBadge(badges, ["ClanDonations"]);
+  const favoriteCard = favoriteCardPayload(profile.currentFavouriteCard);
   const accountAgeDays = badgeProgress(yearsBadge);
   const accountAgeYears = pickNumber(badgeLevel(yearsBadge), accountAgeDays == null ? null : Math.floor(accountAgeDays / 365));
   const battleWins = pickNumber(profile.wins, badgeProgress(battleWinsBadge));
@@ -286,6 +306,7 @@ function profilePayload(profile) {
   assignNumber(payload, "cr_clan_war_wins", clanWarWins);
   assignNumber(payload, "cr_clan_donations", clanDonations);
   if (Array.isArray(badges)) payload.badge_count = badges.length;
+  if (favoriteCard) payload.favorite_card = favoriteCard;
 
   const badgeHighlights = [
     normalizeBadge(yearsBadge),

@@ -1195,7 +1195,13 @@ a:hover{ color:#f5c84c }
 .pk-roster-row:target{ background:rgba(109,40,217,.22); box-shadow:inset 3px 0 #f5c84c }
 .pk-roster-cell--right{ text-align:right }
 .pk-roster-rank{ font-family:'Clash',system-ui,sans-serif; color:#c8c1e6; font-size:.9rem }
-.pk-roster-player{ min-width:0; display:flex; flex-direction:column; gap:2px }
+.pk-roster-player{ min-width:0; display:flex; align-items:center; gap:10px }
+.pk-roster-player__favorite{
+  flex:0 0 34px; width:34px; display:flex; align-items:center; justify-content:center;
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.34));
+}
+.pk-roster-player__favorite img{ display:block; width:100%; height:auto }
+.pk-roster-player__identity{ min-width:0; display:flex; flex-direction:column; gap:2px }
 .pk-roster-player__name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
 .pk-roster-player__meta{ display:flex; align-items:center; gap:7px; min-width:0; flex-wrap:wrap }
 .pk-roster-player__role{
@@ -1449,6 +1455,10 @@ a:hover{ color:#f5c84c }
   .pk-hamburger{ display:inline-flex !important }
   .pk-col-opt{ display:none !important }
   .pk-roster-head, .pk-roster-row{ grid-template-columns:38px minmax(0,1fr) auto !important }
+}
+@media (max-width:480px){
+  .pk-roster-player{ gap:8px }
+  .pk-roster-player__favorite{ flex-basis:30px; width:30px }
 }
 @media (max-width:620px){
   .pk-req4{ grid-template-columns:1fr 1fr !important }
