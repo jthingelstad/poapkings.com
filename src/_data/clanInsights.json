@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 130469,
+    "clanScore": 130958,
     "clanWarTrophies": 1000,
-    "donationsPerWeek": 8480,
-    "memberCount": 48,
+    "donationsPerWeek": 9898,
+    "memberCount": 50,
     "name": "POAP KINGS",
-    "openSlots": 2,
+    "openSlots": 0,
     "tag": null
   },
-  "generatedAt": "2026-08-15T01:38:49Z",
+  "generatedAt": "2026-08-15T23:03:31Z",
   "headlineStats": [
     {
       "detail": "13 members are at 14k+",
@@ -20,22 +20,22 @@
       "detail": "6 average years played",
       "key": "veterans",
       "label": "6+ Year Accounts",
-      "value": 17
+      "value": 18
     },
     {
-      "detail": "196.6K total wins across roster",
+      "detail": "198.3K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 4095
+      "value": 3967
     },
     {
-      "detail": "48 members at 1k+",
+      "detail": "50 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1643.1
+      "value": 1628.3
     }
   ],
-  "latestSnapshotDate": "2026-08-14",
+  "latestSnapshotDate": "2026-08-15",
   "leaders": {
     "collection": [
       {
@@ -48,7 +48,7 @@
         "name": "pink chellie",
         "role": "Member",
         "tag": "#PJRGGQLCU",
-        "value": 2137
+        "value": 2138
       },
       {
         "name": "Aaqib Javed",
@@ -95,15 +95,15 @@
         "value": 10
       },
       {
-        "name": "Aaqib Javed",
-        "role": "Elder",
-        "tag": "#2G2RPVPP",
-        "value": 10
-      },
-      {
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
+        "value": 10
+      },
+      {
+        "name": "Aaqib Javed",
+        "role": "Elder",
+        "tag": "#2G2RPVPP",
         "value": 10
       },
       {
@@ -125,37 +125,19 @@
         "value": 10
       },
       {
-        "name": "L-Drxgo⚡",
-        "role": "Member",
-        "tag": "#2CY2RJL9G",
-        "value": 9
-      },
-      {
         "name": "Shafith Nihal♥️",
         "role": "Elder",
         "tag": "#2P9GRU2Q0",
         "value": 9
-      }
-    ],
-    "trophies": [
-      {
-        "name": "Vijay",
-        "role": "Co-Leader",
-        "tag": "#C920YGLC2",
-        "value": 14000
       },
       {
         "name": "L-Drxgo⚡",
         "role": "Member",
         "tag": "#2CY2RJL9G",
-        "value": 14000
-      },
-      {
-        "name": "OllieTurtle",
-        "role": "Elder",
-        "tag": "#RJ9RRQPVU",
-        "value": 14000
-      },
+        "value": 9
+      }
+    ],
+    "trophies": [
       {
         "name": "pink chellie",
         "role": "Member",
@@ -163,9 +145,9 @@
         "value": 14000
       },
       {
-        "name": "King Levy",
-        "role": "Co-Leader",
-        "tag": "#U8RYG9Y2U",
+        "name": "pax",
+        "role": "Elder",
+        "tag": "#UCP028JQ8",
         "value": 14000
       },
       {
@@ -175,9 +157,27 @@
         "value": 14000
       },
       {
-        "name": "The Joesma",
+        "name": "Shafith Nihal♥️",
+        "role": "Elder",
+        "tag": "#2P9GRU2Q0",
+        "value": 14000
+      },
+      {
+        "name": "Fullboat",
+        "role": "Elder",
+        "tag": "#8U2P0JPR",
+        "value": 14000
+      },
+      {
+        "name": "sniperhendo",
         "role": "Member",
-        "tag": "#PR8YLQ2CV",
+        "tag": "#YC8LLR8Q2",
+        "value": 14000
+      },
+      {
+        "name": "Vijay",
+        "role": "Co-Leader",
+        "tag": "#C920YGLC2",
         "value": 14000
       },
       {
@@ -192,13 +192,13 @@
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 1775
+        "value": 1777
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 990
+        "value": 993
       },
       {
         "name": "pink chellie",
@@ -216,7 +216,7 @@
         "name": "pax",
         "role": "Elder",
         "tag": "#UCP028JQ8",
-        "value": 680
+        "value": 684
       },
       {
         "name": "sikander sidhu",
@@ -228,7 +228,7 @@
         "name": "Sandeep",
         "role": "Elder",
         "tag": "#UQ2R9RGVP",
-        "value": 446
+        "value": 449
       },
       {
         "name": "Th15_Guy",
@@ -242,60 +242,60 @@
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
-        "value": 25067
+        "value": 25080
       },
       {
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 23652
+        "value": 23664
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 11971
+        "value": 11980
       },
       {
         "name": "sikander sidhu",
         "role": "Member",
         "tag": "#JYRQ8U92C",
-        "value": 10852
+        "value": 10855
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 9754
+        "value": 9759
       },
       {
         "name": "pink chellie",
         "role": "Member",
         "tag": "#PJRGGQLCU",
-        "value": 9236
+        "value": 9250
       },
       {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 6688
+        "value": 6692
       },
       {
         "name": "Shafith Nihal♥️",
         "role": "Elder",
         "tag": "#2P9GRU2Q0",
-        "value": 6161
+        "value": 6167
       }
     ]
   },
   "metrics": {
-    "averageBadgeCount": 109.4,
-    "averageCollectionLevel": 1643.1,
-    "averageTrophies": 11523,
-    "averageWins": 4095,
+    "averageBadgeCount": 107.9,
+    "averageCollectionLevel": 1628.3,
+    "averageTrophies": 11367,
+    "averageWins": 3967,
     "averageYearsPlayed": 5.9,
     "medianTrophies": 12561,
-    "totalWins": 196574
+    "totalWins": 198328
   },
   "tenureDistribution": [
     {
@@ -307,7 +307,7 @@
       "label": "3-4.9 years"
     },
     {
-      "count": 5,
+      "count": 6,
       "label": "5-6.9 years"
     },
     {
@@ -317,7 +317,7 @@
   ],
   "trophyDistribution": [
     {
-      "count": 11,
+      "count": 13,
       "label": "<9k"
     },
     {
