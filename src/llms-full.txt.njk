@@ -18,7 +18,7 @@ Roster last updated: {{ roster.updated | safe }}
 
 ## About POAP KINGS
 
-POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season and notable milestone is commemorated by an on-chain POAP ("Proof of Attendance Protocol") badge. The current roster is refreshed locally from the Clash Royale API and pushed when it changes.
+POAP KINGS is a Clash Royale clan that celebrates effort with proof. The clan originally published POAP digital collectibles for seasons and milestones. The POAP company and product have since ceased operating, so new collectibles can no longer be published. The clan kept its name and what it came to mean internally: "Proof of Arena Push." The current roster is refreshed locally from the Clash Royale API and pushed when it changes.
 
 - **Clan tag:** #{{ site.clanTag | safe }}
 - **League:** {{ clan.clanLeague | safe }}
@@ -34,6 +34,34 @@ POAP KINGS is a Clash Royale clan that celebrates effort with proof. Each season
 - **Average career wins:** {{ clanInsights.metrics.averageWins | formatNumber | safe }}
 - **Average years played:** {{ clanInsights.metrics.averageYearsPlayed | formatDecimal(1) | safe }}
 - **Average collection score:** {{ clanInsights.metrics.averageCollectionLevel | formatNumber | safe }}
+
+---
+
+## Season Recognition
+
+[Season Recognition]({{ site.url | safe }}/recognition/) records durable results from completed Clan Wars seasons. Live races remain provisional until a season closes.
+
+- **War Champ:** season points podium; only rank 1 holds the title. Equal points are ordered by season donations.
+- **Iron King:** unranked participation honor for using every available deck on every finalized battle day. Any number of members can earn it.
+- **Rookie MVP:** season points podium among members in their first recorded POAP KINGS Clan Wars season.
+- **Donation Champ:** season donation podium.
+- **Pass Royale recipient:** clan-funded in-game gift for the highest-ranked eligible player. This reward may rotate away from War Champ; the title never moves.
+
+{% for season in recognition.seasons -%}
+### Season {{ season.seasonId }} — ended {{ season.endedAt | formatDate | safe }}
+
+- **War Champ podium:** {% for player in season.warChamp %}#{{ player.rank }} {{ player.name | safe }} ({{ player.metricValue | formatNumber | safe }} points){% if not loop.last %}; {% endif %}{% endfor %}
+- **Iron Kings:** {% for player in season.ironKings %}{{ player.name | safe }}{% if not loop.last %}, {% endif %}{% else %}None recorded{% endfor %}
+- **Rookie MVP podium:** {% for player in season.rookieMvp %}#{{ player.rank }} {{ player.name | safe }} ({{ player.metricValue | formatNumber | safe }} points){% if not loop.last %}; {% endif %}{% else %}None recorded{% endfor %}
+- **Donation Champ podium:** {% for player in season.donationChamp %}#{{ player.rank }} {{ player.name | safe }} ({{ player.metricValue | formatNumber | safe }} donations){% if not loop.last %}; {% endif %}{% else %}None recorded{% endfor %}
+- **Pass Royale recipient:** {{ season.freePass.name | safe }}
+
+{% endfor -%}
+---
+
+## Elixir
+
+[Elixir]({{ site.url | safe }}/elixir/) is the POAP KINGS clan agent. Elixir runs the weekly Elder Standing, maintains deterministic season recognition, tells the clan's story, and coaches members. The public website has its own separate publishing workflow; Elixir does not publish the website.
 
 ---
 

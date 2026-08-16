@@ -24,7 +24,7 @@ extraScripts: '<script src="/roster.js" defer></script>'
       { key: 'donations', label: 'Donations' }
     ] -%}
     {%- for o in sortOptions %}
-    <button type="button" class="pk-pill{% if o.key == 'trophies' %} is-active{% endif %}" data-roster-sort="{{ o.key }}">{{ o.label }}</button>
+    <button type="button" class="pk-pill{% if o.key == 'trophies' %} is-active{% endif %}" data-roster-sort="{{ o.key }}" aria-pressed="{% if o.key == 'trophies' %}true{% else %}false{% endif %}">{{ o.label }}</button>
     {%- endfor %}
     <span class="pk-roster-toolbar__status">↻ Updated {{ roster.updated | formatDate }} · showing all {{ memberCount }}</span>
   </div>
@@ -35,6 +35,7 @@ extraScripts: '<script src="/roster.js" defer></script>'
     </div>
     <div id="rosterBody">
       {%- for m in rows %}
+      {%- set honors = recognition | memberHonors(m.tag, 2) -%}
       <div class="pk-roster-row" id="member-{{ m.tag | memberSlug }}" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}">
         <span class="pk-roster-rank" data-roster-rank>{{ loop.index }}</span>
         <span class="pk-roster-player">
@@ -49,6 +50,13 @@ extraScripts: '<script src="/roster.js" defer></script>'
               <em class="pk-roster-player__role {{ m.role | roleClass }}">{{ m.role }}</em>
               {{ playerTagLink(m.tag, 'pk-roster-player__tag') }}
             </span>
+            {%- if honors.length %}
+            <span class="pk-roster-player__honors" aria-label="Recent season honors">
+              {%- for honor in honors %}
+              <a class="pk-honor pk-honor--{{ honor.key }}" href="/recognition/#season-{{ honor.seasonId }}">{{ honor.label }}</a>
+              {%- endfor %}
+            </span>
+            {%- endif %}
           </span>
         </span>
         <strong class="pk-roster-trophies">{{ m.trophies | formatNumber }}</strong>

@@ -21,17 +21,14 @@
   <meta property="og:description" content="{{ description }}" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
   <meta property="og:type" content="website" />
-  {%- if ogImage -%}
-  {%- set fullOgImage = ogImage if ogImage.startsWith('http') else (site.url + ogImage) -%}
+  {%- set shareImage = ogImage or '/assets/poapkings.png' -%}
+  {%- set fullOgImage = shareImage if shareImage.startsWith('http') else (site.url + shareImage) -%}
   <meta property="og:image" content="{{ fullOgImage }}" />
   <meta property="og:image:alt" content="{{ ogImageAlt or title }}" />
   {%- if ogImageWidth %}<meta property="og:image:width" content="{{ ogImageWidth }}" />{% endif %}
   {%- if ogImageHeight %}<meta property="og:image:height" content="{{ ogImageHeight }}" />{% endif %}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="{{ fullOgImage }}" />
-  {%- else -%}
-  <meta name="twitter:card" content="summary" />
-  {%- endif %}
   <meta name="twitter:title" content="{{ title }}" />
   <meta name="twitter:description" content="{{ description }}" />
 
@@ -45,6 +42,17 @@
     "description": "{{ site.tagline }} — A Clash Royale clan with proof."
   }
   </script>
+  {%- if page.url == '/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "POAP KINGS",
+    "alternateName": "POAP KINGS Clash Royale Clan",
+    "url": "{{ site.url }}/"
+  }
+  </script>
+  {%- endif %}
 
   <link rel="webmention" href="https://tinylytics.app/webmention/{{ site.tinylyticsId }}" />
 
@@ -104,6 +112,8 @@
       <span class="site-foot__brand">POAP KINGS</span>
       <span class="site-foot__tag">{{ site.tagline }} · #{{ site.clanTag }}</span>
       <span class="site-foot__links">
+        <a href="/recognition/">Recognition</a>
+        <a href="/elixir/">Elixir</a>
         <a href="/elixir-drop/">Elixir Drop</a>
         <a href="{{ site.discordUrl }}" target="_blank" rel="noreferrer">Discord</a>
         <a href="https://github.com/jthingelstad/poapkings.com" target="_blank" rel="noreferrer">GitHub</a>
@@ -211,7 +221,22 @@
         if (e.target.closest('[data-modal-close]')) close();
       });
       document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape' && current) close();
+        if (!current) return;
+        if (e.key === 'Escape') { close(); return; }
+        if (e.key !== 'Tab') return;
+        var focusable = Array.from(current.querySelectorAll(
+          '.modal__panel a[href], .modal__panel button:not([disabled]), .modal__panel input:not([disabled]), .modal__panel select:not([disabled]), .modal__panel textarea:not([disabled]), .modal__panel [tabindex]:not([tabindex="-1"])'
+        )).filter(function(el){ return el.offsetParent !== null; });
+        if (!focusable.length) { e.preventDefault(); return; }
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && (document.activeElement === first || !current.contains(document.activeElement))) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       });
     })();
 

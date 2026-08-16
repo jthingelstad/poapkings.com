@@ -10,6 +10,7 @@
     "start": "eleventy --serve",
     "postinstall": "patch-package",
     "backfill-data": "node scripts/backfill-cr-history.js",
+    "update-recognition": "node scripts/update-recognition.js",
     "update-roster": "node scripts/update-roster.js"
   },
   "overrides": {

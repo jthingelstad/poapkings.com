@@ -20,6 +20,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
 {%- set elderFloor = (memberCount * 0.20) | round -%}
 {%- set elderCeil = (memberCount * 0.30) | round -%}
 {%- set elderTarget = ((elderFloor + elderCeil) / 2) | round -%}
+{%- set latestRecognition = recognition.seasons[0] -%}
 {%- set promoSubject = 'POAP KINGS #' + site.clanTag + ' · War-focused clan with real culture · ' + minTrophies + ' trophies · ' + memberCount + '/50 members' -%}
 {%- set promoBody = 'POAP KINGS (#' + site.clanTag + ') is recruiting — a war-focused Clash Royale clan with real structure. ' + memberCount + ' members, ' + latest.count12000Plus + ' players at 12k+ trophies, ' + latest.count14000Plus + ' sitting at 14,000, and ' + winsK + 'K+ career wins across the roster. Public roster and clan data, a Free Pass Royale program that rewards the highest-ranked eligible war player, and a culture that actually remembers who shows up. ' + minTrophies + ' trophy minimum. See us at ' + site.url -%}
 
@@ -58,6 +59,15 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
       <p class="pk-email-done" data-email-done hidden>Draft ready. <a class="pk-email-done__link" data-email-mailto href="mailto:Jamie@thingelstad.com">Open it in your email app →</a></p>
     </div>
   </article>
+
+  <section class="pk-members-recognition">
+    <div>
+      <span class="pk-eyebrow pk-eyebrow--gold">Season {{ latestRecognition.seasonId }} · final</span>
+      <h2>Recognition that sticks.</h2>
+      <p><strong>{{ latestRecognition.warChamp[0].name }}</strong> is the latest War Champ. <strong>{{ latestRecognition.ironKings | length }}</strong> members completed the Iron King standard, and <strong>{{ latestRecognition.rookieMvp[0].name }}</strong> earned Rookie MVP.</p>
+    </div>
+    <a class="pk-action pk-action--outline" href="/recognition/">See completed seasons →</a>
+  </section>
 
   <!-- how elder works -->
   <section class="pk-section">

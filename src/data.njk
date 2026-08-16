@@ -37,7 +37,7 @@ extraScripts: '<script src="/data.js" defer></script>'
         <span class="pk-control-label">{{ g.title }}</span>
         <div class="pk-control-row" data-explorer-group="{{ g.group }}">
           {%- for o in metricOpts %}
-          <button type="button" class="pk-pill{% if o.val == g.active %} is-active{% endif %}" data-val="{{ o.val }}">{{ o.label }}</button>
+          <button type="button" class="pk-pill{% if o.val == g.active %} is-active{% endif %}" data-val="{{ o.val }}" aria-pressed="{% if o.val == g.active %}true{% else %}false{% endif %}">{{ o.label }}</button>
           {%- endfor %}
         </div>
       </div>
@@ -45,18 +45,18 @@ extraScripts: '<script src="/data.js" defer></script>'
       <div>
         <span class="pk-control-label">Color</span>
         <div class="pk-control-row" data-explorer-group="colorMode">
-          <button type="button" class="pk-pill is-active" data-val="role">Role</button>
-          <button type="button" class="pk-pill" data-val="value">By Y-value</button>
+          <button type="button" class="pk-pill is-active" data-val="role" aria-pressed="true">Role</button>
+          <button type="button" class="pk-pill" data-val="value" aria-pressed="false">By Y-value</button>
         </div>
       </div>
     </div>
     <div class="pk-control-row pk-control-row--spaced">
       <span class="pk-control-label pk-control-label--inline">Show</span>
       <div class="pk-control-row" data-explorer-group="roleFilter">
-        <button type="button" class="pk-pill is-active" data-val="all">All</button>
-        <button type="button" class="pk-pill" data-val="lead">Leadership</button>
-        <button type="button" class="pk-pill" data-val="elder">Elders</button>
-        <button type="button" class="pk-pill" data-val="member">Members</button>
+        <button type="button" class="pk-pill is-active" data-val="all" aria-pressed="true">All</button>
+        <button type="button" class="pk-pill" data-val="lead" aria-pressed="false">Leadership</button>
+        <button type="button" class="pk-pill" data-val="elder" aria-pressed="false">Elders</button>
+        <button type="button" class="pk-pill" data-val="member" aria-pressed="false">Members</button>
       </div>
     </div>
 
@@ -82,14 +82,14 @@ extraScripts: '<script src="/data.js" defer></script>'
         <strong class="pk-detail-panel__name" id="detailName"></strong>
         <em class="pk-detail-panel__role" id="detailRole"></em>
         <div class="pk-detail-panel__stats" id="detailStats"></div>
-        <p class="pk-detail-panel__help">Hover any dot to inspect that member. Dashed gold lines mark the clan median.</p>
+        <p class="pk-detail-panel__help">Hover, tap, or focus any dot to inspect that member. Dashed gold lines mark the clan median.</p>
       </aside>
     </div>
   </section>
 
   <!-- Clan timeline -->
   <section class="pk-data-panel">
-    {{ sectionHeading('Hover to inspect any day', 'Clan timeline', 'as of <span id="timelineDate"></span>', 'pk-section-heading--gold pk-section-heading--data') }}
+    {{ sectionHeading('Hover or drag to inspect any day', 'Clan timeline', 'as of <span id="timelineDate"></span>', 'pk-section-heading--gold pk-section-heading--data') }}
 
     <div class="pk-timeline-chips" id="timelineChips">
       {%- set tMetrics = [
@@ -99,7 +99,7 @@ extraScripts: '<script src="/data.js" defer></script>'
         { key: 'donations', label: 'Donations/wk', on: false }
       ] -%}
       {%- for c in tMetrics %}
-      <button type="button" class="pk-chip pk-series--{{ c.key }}{% if c.on %} is-active{% endif %}" data-series="{{ c.key }}"><i class="pk-chip__dot"></i>{{ c.label }}</button>
+      <button type="button" class="pk-chip pk-series--{{ c.key }}{% if c.on %} is-active{% endif %}" data-series="{{ c.key }}" aria-pressed="{% if c.on %}true{% else %}false{% endif %}"><i class="pk-chip__dot"></i>{{ c.label }}</button>
       {%- endfor %}
     </div>
 
@@ -112,6 +112,6 @@ extraScripts: '<script src="/data.js" defer></script>'
       <rect class="pk-timeline-hover" id="timelineHover" x="60" y="24" width="676" height="226" fill="transparent"></rect>
     </svg>
     <div class="pk-chart-legend" id="timelineLegend"></div>
-    <p class="pk-chart-note">Hover the chart to read any day; each line is scaled to its own range so trends read clearly side by side.</p>
+    <p class="pk-chart-note">Hover or drag across the chart to read any day; each line is scaled to its own range so trends read clearly side by side.</p>
   </section>
 </div>

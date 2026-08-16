@@ -20,8 +20,12 @@
 
   pills.forEach(function (pill) {
     pill.addEventListener("click", function () {
-      pills.forEach(function (p) { p.classList.remove("is-active"); });
+      pills.forEach(function (p) {
+        p.classList.remove("is-active");
+        p.setAttribute("aria-pressed", "false");
+      });
       pill.classList.add("is-active");
+      pill.setAttribute("aria-pressed", "true");
       apply(pill.getAttribute("data-roster-sort"));
     });
   });

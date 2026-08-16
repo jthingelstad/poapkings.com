@@ -2,7 +2,7 @@
 permalink: /elixir/
 layout: base.njk
 title: Meet Elixir — the POAP KINGS clan agent
-description: "Elixir is the POAP KINGS clan agent — publishing our data, running the weekly Elder Standing, telling the clan's story, and coaching every member. Built like real software."
+description: "Elixir is the POAP KINGS clan agent — running recognition and the weekly Elder Standing, telling the clan's story, and coaching every member. Built like real software."
 ogImage: /assets/elixir.png
 ogImageAlt: Elixir bot avatar
 mainId: top
@@ -17,7 +17,7 @@ supercellDisclaimer: true
     <div>
       <span class="pk-eyebrow pk-eyebrow--gold">Our clan agent</span>
       <h1 class="pk-elixir-banner__title">Meet Elixir</h1>
-      <p class="pk-elixir-banner__copy">Built by and for POAP KINGS, Elixir keeps the clan honest, organized, and remembered — publishing our data, running the weekly Elder Standing, telling the clan's story, and coaching every member. If you've seen a number on this site, Elixir put it there.</p>
+      <p class="pk-elixir-banner__copy">Built by and for POAP KINGS, Elixir keeps the clan honest, organized, and remembered — running standings and recognition, telling the clan's story, and coaching every member.</p>
     </div>
   </section>
 
@@ -26,8 +26,8 @@ supercellDisclaimer: true
     <div class="pk-grid-3 pk-elixir-jobs">
       {%- set elixirJobs = [
         { num: '01', title: 'Publishes the Elder Standing', body: 'Every Tuesday, Elixir posts a transparent ranking of who\'s competing for the clan — so Elder is never a mystery or a favor.' },
-        { num: '02', title: 'Tracks the whole roster', body: 'Trophies, donations, tenure, wins, and collection, pulled from the Clash Royale API and refreshed daily. Every number on this site is Elixir\'s work.' },
-        { num: '03', title: 'Welcomes recruits', body: 'A strong application — or a great run in Elixir Drop — is met with a friendly nudge to join, not a form letter.' },
+        { num: '02', title: 'Runs season recognition', body: 'War Champ, Iron King, Rookie MVP, Donation Champ, and the Free Pass rotation all come from deterministic rules and durable season results.' },
+        { num: '03', title: 'Knows the whole roster', body: 'Trophies, donations, tenure, battles, war results, and member history give Elixir the context to answer questions without guessing.' },
         { num: '04', title: 'Tells the clan\'s story', body: 'Every week Elixir sends a clan recap email — who climbed, who carried war, the milestones and the near-misses. The story of the week, written down so it isn\'t forgotten.' },
         { num: '05', title: 'Coaches every member', body: 'A personal weekly arena recap lands in each member\'s inbox: your highlights, what moved, and specific coaching on exactly where to sharpen next.' },
         { num: '06', title: 'Powers Elixir Drop', body: 'Elixir is the face and voice of our game, cheering good elixir reads and ribbing the misses.' }
@@ -36,6 +36,7 @@ supercellDisclaimer: true
       {{ numberedCard(j.num, j.title, j.body) }}
       {%- endfor %}
     </div>
+    <p class="pk-elixir-recognition-link">See the durable results Elixir records on the <a href="/recognition/">Season Recognition page →</a></p>
   </section>
 
   <section class="pk-section">
@@ -44,7 +45,7 @@ supercellDisclaimer: true
     <div class="pk-tech3">
       {%- set techFacts = [
         { label: 'Language', value: 'Python 3.14' },
-        { label: 'AI models', value: 'Claude Haiku 4.5, Sonnet 5 & Opus 4.8' },
+        { label: 'AI models', value: 'Claude Haiku, Sonnet & Opus' },
         { label: 'Chat platform', value: 'discord.py' },
         { label: 'Data store', value: 'SQLite · event-sourced' },
         { label: 'Scheduling', value: 'APScheduler on launchd' },

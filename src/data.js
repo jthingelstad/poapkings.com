@@ -56,9 +56,23 @@
         dotEls = pts.map(function (m, i) {
           var c = document.createElementNS(SVGNS, "circle");
           c.setAttribute("cx", "0"); c.setAttribute("cy", "0");
+          c.setAttribute("tabindex", "0");
+          c.setAttribute("role", "button");
+          c.setAttribute("aria-label", "Inspect " + m.name);
           c.classList.add("pk-scatter-dot");
           c.addEventListener("mouseenter", function () { state.hover = i; render(); });
-          c.addEventListener("mouseleave", function () { state.hover = -1; render(); });
+          c.addEventListener("mouseleave", function () {
+            if (document.activeElement !== c) { state.hover = -1; render(); }
+          });
+          c.addEventListener("focus", function () { state.hover = i; render(); });
+          c.addEventListener("blur", function () { state.hover = -1; render(); });
+          c.addEventListener("click", function () { state.hover = i; render(); });
+          c.addEventListener("keydown", function (e) {
+            if (e.key !== "Enter" && e.key !== " ") return;
+            e.preventDefault();
+            state.hover = i;
+            render();
+          });
           group.appendChild(c);
           return c;
         });
@@ -122,8 +136,12 @@
         var btn = e.target.closest("[data-val]");
         if (!btn) return;
         state[key] = btn.getAttribute("data-val");
-        grp.querySelectorAll(".pk-pill").forEach(function (p) { p.classList.remove("is-active"); });
+        grp.querySelectorAll(".pk-pill").forEach(function (p) {
+          p.classList.remove("is-active");
+          p.setAttribute("aria-pressed", "false");
+        });
         btn.classList.add("is-active");
+        btn.setAttribute("aria-pressed", "true");
         dotEls = []; // force rebuild in case filter changed count
         render();
       });
@@ -222,6 +240,7 @@
       var key = btn.getAttribute("data-series");
       on[key] = !on[key];
       btn.classList.toggle("is-active", on[key]);
+      btn.setAttribute("aria-pressed", String(on[key]));
       render();
     });
 

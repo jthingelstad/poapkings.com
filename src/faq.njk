@@ -12,14 +12,14 @@ supercellDisclaimer: true
   {%- for f in items %}
   <div class="pk-faq-item">
     <h3 class="pk-faq-item__question">{{ f.q }}</h3>
-    <p class="pk-faq-item__answer">{{ f.a }}</p>
+    <p class="pk-faq-item__answer">{{ f.a | safe }}</p>
   </div>
   {%- endfor %}
 {%- endmacro -%}
 
 {%- set faqAbout = [
   { q: 'Why did you create POAP KINGS?', a: "Raquaza and King Levy have played Clash Royale for over three years, cycling through clans that never quite fit. King Thing picked it up more recently. We're all family, so we built the clan we wanted: structure, recognition, and something lasting to show for the grind." },
-  { q: 'Why the name POAP KINGS?', a: 'For us, POAP means "Proof of Arena Push" — the grind is real, so show the receipts. Kings because we aim high. It\'s become the whole identity of the clan: prove it, then prove it again.' }
+  { q: 'Why the name POAP KINGS?', a: 'The clan began by publishing POAP digital collectibles for seasons and milestones. The POAP company and product have since ceased operating, so new collectibles can no longer be published. We kept the name and what it came to mean inside the clan: "Proof of Arena Push" — the grind is real, so show the receipts.' }
 ] -%}
 {%- set faqJoining = [
   { q: 'How do I join?', a: "We're currently invite only. Search POAP KINGS or use tag #J2RGCRVG in Clash Royale. Minimum 7,000 trophies. Apply in-game and leadership will review it." },
@@ -28,7 +28,8 @@ supercellDisclaimer: true
 ] -%}
 {%- set faqWars = [
   { q: 'Do I have to participate in Clan Wars?', a: 'No — encouraged but not required. Consistent participation and good vibes matter more than strict requirements. That said, war performance is how you earn War Champ and Free Pass Royale eligibility.' },
-  { q: 'How is War Champ chosen?', a: 'The season\'s top Clan Wars point earner is named War Champ, based on points pulled directly from the Clash Royale API — no manual adjustments. Joining mid-season doesn\'t earn a handicap, and leadership breaks ties transparently. War Champ is a performance title and stays with the top scorer even if someone else receives the Free Pass Royale.' }
+  { q: 'How is War Champ chosen?', a: 'The season\'s top Clan Wars point earner is named War Champ, based on points pulled directly from the Clash Royale API — no manual adjustments. Joining mid-season doesn\'t earn a handicap. Equal points are ordered by cards donated during the season. War Champ is a performance title and stays with the top scorer even if someone else receives the Free Pass Royale.' },
+  { q: 'What are Iron King, Rookie MVP, and Donation Champ?', a: 'Iron King is an unranked participation honor earned by every member who uses all four decks on every finalized battle day of the season. Rookie MVP is the points podium among members in their first recorded POAP KINGS Clan Wars season. Donation Champ is the season donation podium. Completed results live on the <a href="/recognition/">Season Recognition page</a>.' }
 ] -%}
 {%- set faqPass = [
   { q: 'What is the Free Pass Royale Program?', a: 'Each season, the highest-ranked eligible war point earner receives one Pass Royale as an in-game gift through Supercell ID. POAP KINGS funds the prize; Supercell does not sponsor or endorse the program.' },
@@ -71,6 +72,7 @@ supercellDisclaimer: true
       <li>Wars encouraged, not required.</li>
       <li>One disclosed alt account allowed per player.</li>
       <li>War Champ goes to the top war earner; the highest-ranked eligible player receives the Pass Royale.</li>
+      <li>Iron King, Rookie MVP, and Donation Champ recognize different kinds of season contribution.</li>
       <li>Elder is earned through participation you control — and can be lost.</li>
     </ul>
   </div>

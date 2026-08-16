@@ -175,6 +175,36 @@ export default function (eleventyConfig) {
     return [...(members || [])].sort((a, b) => (a.clan_rank || 999) - (b.clan_rank || 999));
   });
 
+  eleventyConfig.addFilter("memberHonors", (recognition, tag, limit = 2) => {
+    const normalizedTag = playerTag(tag);
+    const honors = [];
+    const seen = new Set();
+    const add = (key, label, seasonId) => {
+      if (seen.has(key)) return;
+      seen.add(key);
+      honors.push({ key, label, seasonId });
+    };
+    for (const season of recognition?.seasons || []) {
+      const champ = season.warChamp?.find(
+        (entry) => playerTag(entry.tag) === normalizedTag && Number(entry.rank) === 1,
+      );
+      if (champ) add("war-champ", "War Champ", season.seasonId);
+      if (season.ironKings?.some((entry) => playerTag(entry.tag) === normalizedTag)) {
+        add("iron-king", "Iron King", season.seasonId);
+      }
+      const rookie = season.rookieMvp?.find(
+        (entry) => playerTag(entry.tag) === normalizedTag && Number(entry.rank) === 1,
+      );
+      if (rookie) add("rookie-mvp", "Rookie MVP", season.seasonId);
+      const donor = season.donationChamp?.find(
+        (entry) => playerTag(entry.tag) === normalizedTag && Number(entry.rank) === 1,
+      );
+      if (donor) add("donation-champ", "Donation Champ", season.seasonId);
+      if (honors.length >= Number(limit)) break;
+    }
+    return honors.slice(0, Number(limit));
+  });
+
   eleventyConfig.addFilter("bust", (url) => {
     try {
       const assetPath = url === "/gamify.js" ? `${clientOutputDir}${url}` : `src${url}`;

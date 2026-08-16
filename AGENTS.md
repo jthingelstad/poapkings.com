@@ -18,6 +18,7 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy
 - `src/members.njk` → `/members/`
 - `src/setup.njk` → `/members/setup/`
 - `src/elixir.njk` → `/elixir/`
+- `src/recognition.njk` → `/recognition/`
 - `src/404.njk` → custom 404 page
 
 The former `/wars/` and `/vault/` pages are retired. Do not add them to navigation, sitemaps, operator checks, or documentation unless the product decision is explicitly reversed. `src/_data/warHistory.json` remains an updater-owned historical export and is not a public endpoint.
@@ -32,6 +33,7 @@ The former `/wars/` and `/vault/` pages are retired. Do not add them to navigati
 - `src/_data/clanInsights.json` — Aggregate roster metrics.
 - `src/_data/clanTrends.json` — Historical clan series.
 - `src/_data/rosterExplorer.json` — Visualization-ready current roster rows.
+- `src/_data/recognition.json` — Privacy-safe completed-season honors imported read-only from Elixir.
 - `src/_data/warHistory.json` — Retained updater-owned river-race history.
 - `src/styles.css` — Current site design system and page styles.
 - `src/gamify.js` — Motion choreography and dynamically imported PixiJS star particles.
@@ -39,7 +41,7 @@ The former `/wars/` and `/vault/` pages are retired. Do not add them to navigati
 - `src/roster.js` — Client-side roster sorting.
 - `src/members-promo.js` — Members email-draft and copy behavior.
 - `eleventy.config.js` — Eleventy configuration, Nunjucks filters, and esbuild client bundling.
-- `scripts/` — Clash Royale updater and SQLite data-store tooling.
+- `scripts/` — Clash Royale updater, recognition importer, and SQLite data-store tooling.
 - `data/clash-royale.sqlite` — Committed build-time data store; never a browser dependency.
 
 ## Build and preview
@@ -69,7 +71,7 @@ The local server is `http://localhost:8080`. Pushing `main` triggers `.github/wo
 - `formatDate`, `formatNumber`, `formatYearsPlayed`, `formatDecimal`
 - `sumBy`, `whereRole`, `sortByDesc`, `sortByRank`, `take`
 - `roleClass`, `homeScatter`, `timelineSeries`, `explorerMembers`, `cwlTier`
-- `memberSlug`, `playerTag`, `jsonForScript`, `bust`
+- `memberSlug`, `memberHonors`, `playerTag`, `jsonForScript`, `bust`
 
 Remove filters when their last template consumer is removed.
 
@@ -93,6 +95,14 @@ The updater reads `CR_API_KEY` from the shell or `../elixir-bot/.env`, fetches c
 
 Use `npm --silent run update-roster -- --dry-run --exit-code` for a non-writing probe. Exit `0` means no change; exit `2` means data would change. Use `npm run backfill-data` only for an explicitly requested historical import, never in the daily operator flow.
 
+Completed recognition is a separate, deliberately non-daily workflow:
+
+```bash
+npm run update-recognition
+```
+
+It opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and updates only `src/_data/recognition.json` from Elixir's durable, closed-season awards ledger. `npm --silent run update-recognition -- --check` is the non-writing freshness probe; exit `2` means the projection would change. This workflow does not broaden `OPERATOR.md` and must not add website publishing back to Elixir.
+
 ## LLM and JSON surfaces
 
 - `src/llms.txt.njk` → `/llms.txt`
@@ -102,6 +112,7 @@ Use `npm --silent run update-roster -- --dry-run --exit-code` for a non-writing 
 - `src/data/insights.njk` → `/data/insights.json`
 - `src/data/roster-explorer.njk` → `/data/roster-explorer.json`
 - `src/data/trends.njk` → `/data/trends.json`
+- `src/data/recognition.njk` → `/data/recognition.json`
 - `src/data/site.njk` → `/data/site.json`
 
 All are generated at build time. Change their source templates or source data, not the generated output.

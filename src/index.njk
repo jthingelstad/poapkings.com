@@ -7,8 +7,8 @@ mainId: top
 supercellDisclaimer: true
 ogImage: /assets/poapkings.png
 ogImageAlt: POAP KINGS crest
-ogImageWidth: 1200
-ogImageHeight: 1200
+ogImageWidth: 1004
+ogImageHeight: 1000
 ---
 {% from "components.njk" import sectionHeading, actionLink, actionButton, playerTagLink %}
 {%- set members = rosterExplorer.members -%}
@@ -19,6 +19,7 @@ ogImageHeight: 1200
 {%- set avgTrophies = (clan.totalTrophies / memberCount) | round -%}
 {%- set elders = members | whereRole('Elder') | sortByDesc('years') -%}
 {%- set scatterPoints = members | homeScatter -%}
+{%- set latestRecognition = recognition.seasons[0] -%}
 
 <div class="pk-page">
 
@@ -92,6 +93,33 @@ ogImageHeight: 1200
     </div>
   </section>
 
+  <!-- latest completed season recognition -->
+  <section class="pk-home-recognition" aria-labelledby="home-recognition-title">
+    <div class="pk-home-recognition__intro">
+      <span class="pk-eyebrow pk-eyebrow--gold">Season {{ latestRecognition.seasonId }} · final</span>
+      <h2 id="home-recognition-title">The clan remembers who showed up.</h2>
+      <p>Recognition is earned from completed season data—not vibes, favorites, or a provisional leaderboard.</p>
+      <a href="/recognition/">See every honor and completed season →</a>
+    </div>
+    <div class="pk-home-recognition__honors">
+      <div>
+        <span>War Champ</span>
+        <strong>{{ latestRecognition.warChamp[0].name }}</strong>
+        <small>{{ latestRecognition.warChamp[0].metricValue | formatNumber }} points</small>
+      </div>
+      <div>
+        <span>Iron Kings</span>
+        <strong>{% for player in latestRecognition.ironKings %}{{ player.name }}{% if not loop.last %}, {% endif %}{% endfor %}</strong>
+        <small>Every deck, every battle day</small>
+      </div>
+      <div>
+        <span>Rookie MVP</span>
+        <strong>{{ latestRecognition.rookieMvp[0].name }}</strong>
+        <small>{{ latestRecognition.rookieMvp[0].metricValue | formatNumber }} points</small>
+      </div>
+    </div>
+  </section>
+
   <!-- mini trend + roster teaser -->
   <section class="pk-split">
     <article class="pk-mini-panel">
@@ -143,7 +171,7 @@ ogImageHeight: 1200
         { num: '02', title: 'Structure you can see', body: 'Elder is earned through participation you control — wars, ranked, donations — reviewed every Tuesday, with standings shared openly. No favoritism, no guessing.' },
         { num: '03', title: 'Real, clan-funded rewards', body: 'Each season\'s top war point earner is named War Champ. The highest-ranked eligible player receives a gifted Pass Royale through Supercell ID — an actual reward for showing up, not just a leaderboard badge.' },
         { num: '04', title: 'Generosity is the flex', body: 'Cards donated every week by the whole clan, with Elders leading by example. Post a request and it fills fast — your upgrades never stall waiting on the clan.' },
-        { num: '05', title: 'We build our own tools', body: 'Elixir, our clan agent, runs the data and weekly standings. Elixir Drop, our game, sharpens your play. Almost no clan ships its own software.' },
+        { num: '05', title: 'We build our own tools', body: 'Elixir runs recognition, standings, coaching, and the clan\'s weekly story. Elixir Drop, our game, sharpens your play. Almost no clan ships its own software.' },
         { num: '06', title: 'Veteran, drama-free culture', body: 'A veteran roster with real staying power. Wars encouraged, not required — good vibes, and real life always comes first.' }
       ] -%}
       {%- for r in reasons %}
@@ -164,7 +192,7 @@ ogImageHeight: 1200
         <div>
           <span class="pk-tool-card__badge">Our clan agent</span>
           <h3 class="pk-tool-card__title">Meet Elixir</h3>
-          <p class="pk-tool-card__copy">Built by and for POAP KINGS, Elixir is our clan agent — publishing the weekly Elder Standing, tracking every member's stats, and welcoming recruits. The data on this site runs through Elixir.</p>
+          <p class="pk-tool-card__copy">Built by and for POAP KINGS, Elixir runs the weekly Elder Standing, tracks season recognition, coaches members, and makes sure the clan remembers who showed up.</p>
           <span class="pk-tool-card__cta pk-tool-card__cta--compact">Meet Elixir →</span>
         </div>
       </a>
@@ -172,7 +200,7 @@ ogImageHeight: 1200
         <div>
           <span class="pk-tool-card__badge">Our game</span>
           <h3 class="pk-tool-card__title">Elixir Drop</h3>
-          <p class="pk-tool-card__copy">A fast little game we built and run to help players learn Clash Royale cards and elixir costs — and get quicker at reading the field.</p>
+          <p class="pk-tool-card__copy">A free browser trainer that builds instant recall of Clash Royale card elixir costs through six fast game modes.</p>
         </div>
         <div class="pk-tool-card__actions">
           <a class="pk-tool-card__cta" href="/elixir-drop/">Learn more →</a>

@@ -15,10 +15,14 @@ Visit [poapkings.com](https://poapkings.com).
 - **Data** — Interactive roster scatterplot and historical clan timeline.
 - **Members** — Discord/setup links, Elixir email signup draft, and current recruiting copy.
 - **Elixir** — Overview of the clan agent and its responsibilities.
+- **Recognition** — Durable completed-season War Champ, Iron King, Rookie MVP, Donation Champ, and Pass Royale results.
+- **Elixir Drop** — Marketing home for the clan's free Clash Royale elixir-cost trainer.
 - **FAQ** — Clan, war, rewards, Discord, and role guidance.
 - **Machine-readable surfaces** — `/llms.txt`, `/llms-full.txt`, and current `/data/*.json` exports.
 
 The former Wars and Vault pages are retired. Historical river-race data remains in the updater-owned data set, but it is not published as a standalone route.
+
+The clan originally published POAP digital collectibles for seasons and milestones. The POAP company and product ceased operating, so new collectibles can no longer be published. POAP KINGS keeps its name and uses “Proof of Arena Push” as the clan meaning.
 
 ## Local development
 
@@ -65,6 +69,22 @@ npm --silent run update-roster -- --dry-run --exit-code
 
 Exit `0` means no changes; exit `2` means fresh data is available. Historical data can be imported with `npm run backfill-data`. Daily automation is governed by [`OPERATOR.md`](OPERATOR.md).
 
+## Recognition data
+
+Completed-season recognition is imported separately from Elixir's durable awards ledger:
+
+```bash
+npm run update-recognition
+```
+
+The importer opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and writes the privacy-safe `src/_data/recognition.json` projection. It never publishes the site and is not part of the daily data operator. Check freshness without writing with:
+
+```bash
+npm --silent run update-recognition -- --check
+```
+
+Exit `0` means current; exit `2` means a completed season is ready to import.
+
 ## Current public routes
 
 - `/`
@@ -74,6 +94,9 @@ Exit `0` means no changes; exit `2` means fresh data is available. Historical da
 - `/members/`
 - `/members/setup/`
 - `/elixir/`
+- `/recognition/`
+- `/elixir-drop/`
+- `/elixir-drop/free-pass/`
 - `/llms.txt`
 - `/llms-full.txt`
 - `/data/clan.json`
@@ -81,6 +104,7 @@ Exit `0` means no changes; exit `2` means fresh data is available. Historical da
 - `/data/insights.json`
 - `/data/roster-explorer.json`
 - `/data/trends.json`
+- `/data/recognition.json`
 - `/data/site.json`
 
 ## Project structure
@@ -100,6 +124,8 @@ src/
   members.njk             Members hub
   setup.njk               Member setup guide
   elixir.njk              Elixir overview
+  recognition.njk          Completed-season recognition
+  elixir-drop.njk          Elixir Drop marketing page
   gamify.js               Motion effects and on-demand PixiJS star particles
   data.js                 Data explorer and timeline interactions
   roster.js               Roster sorting

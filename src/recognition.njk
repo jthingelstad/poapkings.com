@@ -1,0 +1,139 @@
+---
+permalink: /recognition/
+layout: base.njk
+title: Recognition | POAP KINGS Clash Royale Clan
+description: "POAP KINGS season honors — War Champ, Iron King, Rookie MVP, Donation Champ, and the clan-funded Free Pass Royale recipient."
+ogImage: /assets/poapkings.png
+ogImageAlt: POAP KINGS season recognition
+mainId: top
+supercellDisclaimer: true
+---
+{% from "components.njk" import pageIntro, sectionHeading, playerTagLink %}
+{%- set latest = recognition.seasons[0] -%}
+
+<div class="pk-page pk-page-shell">
+  {{ pageIntro('Earned in the arena', 'Season Recognition', 'POAP KINGS remembers the players who compete, contribute, and show up for the clan. These are durable results from completed Clan Wars seasons—not a live or provisional leaderboard.') }}
+
+  <section class="pk-recognition-latest" aria-labelledby="latest-recognition">
+    <header class="pk-recognition-latest__head">
+      <div>
+        <span class="pk-eyebrow pk-eyebrow--gold">Latest completed season</span>
+        <h2 class="pk-recognition-latest__title" id="latest-recognition">Season {{ latest.seasonId }}</h2>
+        <p class="pk-recognition-latest__meta">Ended {{ latest.endedAt | formatDate }} · Clan finish #{{ latest.finalRank }}</p>
+      </div>
+      <span class="pk-recognition-latest__state">Final</span>
+    </header>
+
+    <div class="pk-recognition-summary">
+      <article class="pk-recognition-summary__card pk-recognition-summary__card--gold">
+        <span>War Champ</span>
+        <strong>{{ latest.warChamp[0].name }}</strong>
+        <small>{{ latest.warChamp[0].metricValue | formatNumber }} points · {{ playerTagLink(latest.warChamp[0].tag) }}</small>
+      </article>
+      <article class="pk-recognition-summary__card">
+        <span>Iron Kings</span>
+        <strong>{% for player in latest.ironKings %}{{ player.name }}{% if not loop.last %}, {% endif %}{% endfor %}</strong>
+        <small>Every deck, every battle day</small>
+      </article>
+      <article class="pk-recognition-summary__card">
+        <span>Rookie MVP</span>
+        <strong>{{ latest.rookieMvp[0].name }}</strong>
+        <small>{{ latest.rookieMvp[0].metricValue | formatNumber }} points · {{ playerTagLink(latest.rookieMvp[0].tag) }}</small>
+      </article>
+      <article class="pk-recognition-summary__card">
+        <span>Pass Royale recipient</span>
+        <strong>{{ latest.freePass.name }}</strong>
+        <small>Clan-funded in-game gift</small>
+      </article>
+    </div>
+  </section>
+
+  <section class="pk-section pk-section--spacious">
+    {{ sectionHeading('How it works', 'Different achievements, clearly separated') }}
+    <div class="pk-grid-2 pk-recognition-rules">
+      <article class="pk-recognition-rule">
+        <span class="pk-recognition-rule__mark">01</span>
+        <h3>War Champ</h3>
+        <p>The season points race. The top three earn podium recognition; only first place holds the War Champ title. Equal points are ordered by cards donated during the season.</p>
+      </article>
+      <article class="pk-recognition-rule">
+        <span class="pk-recognition-rule__mark">02</span>
+        <h3>Iron King</h3>
+        <p>A participation honor for using every available deck on every finalized battle day. It is unranked: everyone who completes the full season earns it.</p>
+      </article>
+      <article class="pk-recognition-rule">
+        <span class="pk-recognition-rule__mark">03</span>
+        <h3>Rookie MVP</h3>
+        <p>The season points podium among members competing in their first recorded POAP KINGS Clan Wars season.</p>
+      </article>
+      <article class="pk-recognition-rule">
+        <span class="pk-recognition-rule__mark">04</span>
+        <h3>Donation Champ</h3>
+        <p>The top three season donation totals, recognizing the players who keep the whole clan upgrading.</p>
+      </article>
+    </div>
+    <p class="pk-recognition-reward-note"><strong>The Pass Royale is a reward, not a title.</strong> War Champ always stays with the top scorer. The gifted pass goes to the highest-ranked eligible player under the repeat-winner and Supercell delivery rules described in the <a href="/faq/#faq-pass">FAQ</a>.</p>
+  </section>
+
+  <section class="pk-section pk-section--spacious">
+    {{ sectionHeading('The record', 'Completed seasons', 'Updated from Elixir after each season closes') }}
+    <div class="pk-recognition-seasons">
+      {%- for season in recognition.seasons %}
+      <article class="pk-recognition-season" id="season-{{ season.seasonId }}">
+        <header class="pk-recognition-season__head">
+          <div>
+            <span class="pk-eyebrow">Season {{ season.seasonId }}</span>
+            <h3>Ended {{ season.endedAt | formatDate }}</h3>
+          </div>
+          <span>Clan finish #{{ season.finalRank }}</span>
+        </header>
+        <div class="pk-recognition-season__grid">
+          <section>
+            <h4>War Champ podium</h4>
+            <ol class="pk-recognition-list pk-recognition-list--ranked">
+              {%- for player in season.warChamp %}
+              <li><span class="pk-recognition-rank">{{ player.rank }}</span><strong>{{ player.name }}</strong><small>{{ player.metricValue | formatNumber }} pts</small></li>
+              {%- endfor %}
+            </ol>
+          </section>
+          <section>
+            <h4>Iron Kings</h4>
+            <ul class="pk-recognition-list">
+              {%- for player in season.ironKings %}
+              <li><strong>{{ player.name }}</strong><small>{{ player.metricValue | formatNumber }} battle days</small></li>
+              {%- else %}
+              <li><span>No Iron Kings recorded.</span></li>
+              {%- endfor %}
+            </ul>
+          </section>
+          <section>
+            <h4>Rookie MVP podium</h4>
+            <ol class="pk-recognition-list pk-recognition-list--ranked">
+              {%- for player in season.rookieMvp %}
+              <li><span class="pk-recognition-rank">{{ player.rank }}</span><strong>{{ player.name }}</strong><small>{{ player.metricValue | formatNumber }} pts</small></li>
+              {%- else %}
+              <li><span>No Rookie MVP recorded.</span></li>
+              {%- endfor %}
+            </ol>
+          </section>
+          <section>
+            <h4>Donation Champ podium</h4>
+            <ol class="pk-recognition-list pk-recognition-list--ranked">
+              {%- for player in season.donationChamp %}
+              <li><span class="pk-recognition-rank">{{ player.rank }}</span><strong>{{ player.name }}</strong><small>{{ player.metricValue | formatNumber }}</small></li>
+              {%- else %}
+              <li><span>No Donation Champ recorded.</span></li>
+              {%- endfor %}
+            </ol>
+          </section>
+        </div>
+        <footer class="pk-recognition-season__reward">
+          <span>Pass Royale recipient</span>
+          <strong>{{ season.freePass.name }}</strong>
+          {% if season.freePass.tag != season.warChamp[0].tag %}<small>Pass rotated to the next eligible player.</small>{% endif %}
+        </footer>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+</div>
