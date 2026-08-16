@@ -1,0 +1,95 @@
+---
+permalink: /elixir-drop/
+layout: base.njk
+title: Elixir Drop — Learn Clash Royale Elixir Costs | POAP KINGS
+description: "Elixir Drop is a free browser game for learning Clash Royale card elixir costs through Practice, Surge, Higher / Lower, Trade, Survival, and Rain."
+ogImage: https://drop.poapkings.com/assets/og-image.png
+ogImageAlt: Elixir Drop — a Clash Royale elixir-cost learning game
+ogImageWidth: 1200
+ogImageHeight: 630
+mainId: top
+supercellDisclaimer: true
+---
+{% from "components.njk" import backLink, sectionHeading, actionLink, numberedCard %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "VideoGame"],
+  "name": "Elixir Drop",
+  "url": "https://drop.poapkings.com/",
+  "description": "Elixir Drop is a free browser game for learning Clash Royale card elixir costs through fast, replayable games.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "POAP KINGS",
+    "url": "https://poapkings.com/"
+  }
+}
+</script>
+
+<div class="pk-page pk-page--drop pk-page-shell">
+  {{ backLink('/', 'Back home') }}
+
+  <section class="pk-drop-hero">
+    <div class="pk-drop-hero__copy">
+      <span class="pk-eyebrow pk-eyebrow--gold">Free browser game</span>
+      <h1 class="pk-drop-hero__title">Elixir Drop<sup>*</sup></h1>
+      <p class="pk-drop-hero__footnote">* Run by POAP KINGS.</p>
+      <p class="pk-drop-hero__lede">Elixir Drop is a free browser game for learning Clash Royale card elixir costs through fast, replayable games.</p>
+      <div class="pk-drop-actions">
+        {{ actionLink('https://drop.poapkings.com/', 'Play now →', 'gold', 'elixir-drop.play', true) }}
+        {{ actionLink('https://drop.poapkings.com/#/practice', 'Start with Practice', 'outline', 'elixir-drop.practice', true) }}
+      </div>
+    </div>
+    <a class="pk-drop-hero__art" href="https://drop.poapkings.com/" target="_blank" rel="noreferrer" aria-label="Open Elixir Drop">
+      <img src="https://drop.poapkings.com/assets/og-image.png" alt="Elixir Drop game artwork" width="1200" height="630">
+    </a>
+  </section>
+
+  <section class="pk-section pk-section--spacious">
+    {{ sectionHeading('Learn by playing', 'One skill. Six ways to train.') }}
+    <p class="pk-drop-section-copy">Knowing card costs instantly leaves more attention for everything else happening in a match. Each Elixir Drop mode pushes that recall from a different angle.</p>
+    <div class="pk-grid-3 pk-drop-modes">
+      {%- set modes = [
+        { num: '01', title: 'Practice', body: 'No clock and no rankings. Learn at your own pace and revisit the cards that catch you.' },
+        { num: '02', title: 'Surge', body: 'Name the elixir cost of 15 cards as quickly and accurately as you can.' },
+        { num: '03', title: 'Higher / Lower', body: 'Compare two cards and decide which one costs more before the clock closes.' },
+        { num: '04', title: 'Trade', body: 'Read the elixir swing and decide whether the exchange leaves you up, down, or even.' },
+        { num: '05', title: 'Survival', body: 'One wrong cost ends the run. Keep going for as long as your recall holds.' },
+        { num: '06', title: 'Rain', body: 'Clear falling cards by cost before they land as the pace keeps getting faster.' }
+      ] -%}
+      {%- for mode in modes %}
+      {{ numberedCard(mode.num, mode.title, mode.body) }}
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="pk-drop-split">
+    <article class="pk-drop-panel">
+      <span class="pk-eyebrow">Start without pressure</span>
+      <h2 class="pk-drop-panel__title">Practice first</h2>
+      <p>Practice is endless, unranked, and available without an account. Use it to learn the catalog before racing the clock.</p>
+      {{ actionLink('https://drop.poapkings.com/#/practice', 'Open Practice →', 'purple', 'elixir-drop.practice-panel', true) }}
+    </article>
+    <article class="pk-drop-panel pk-drop-panel--gold">
+      <span class="pk-eyebrow pk-eyebrow--gold">Season challenge</span>
+      <h2 class="pk-drop-panel__title">Finish first. Win a pass.</h2>
+      <p>Selected seasonal competitions award one gifted Pass Royale to the highest-ranked eligible player when the Clan Wars season ends.</p>
+      {{ actionLink('/elixir-drop/free-pass/', 'Read the Free Pass rules →', 'gold', 'elixir-drop.free-pass') }}
+    </article>
+  </section>
+
+  <section class="pk-drop-final">
+    <span class="pk-eyebrow pk-eyebrow--gold">Ready?</span>
+    <h2 class="pk-drop-final__title">How fast can you read the field?</h2>
+    <p>Play free in your browser. Sign in only when you want to save scores and compete on the leaderboards.</p>
+    {{ actionLink('https://drop.poapkings.com/', 'Play Elixir Drop →', 'gold', 'elixir-drop.play-final', true) }}
+  </section>
+</div>
