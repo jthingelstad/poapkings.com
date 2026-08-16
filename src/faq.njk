@@ -28,12 +28,13 @@ supercellDisclaimer: true
 ] -%}
 {%- set faqWars = [
   { q: 'Do I have to participate in Clan Wars?', a: 'No — encouraged but not required. Consistent participation and good vibes matter more than strict requirements. That said, war performance is how you earn War Champ and Free Pass Royale eligibility.' },
-  { q: 'How is War Champ chosen?', a: 'Top Clan Wars point earner for the season, pulled directly from the Clash Royale API — no manual adjustments. Joining mid-season doesn\'t earn a handicap. Leadership breaks ties transparently.' }
+  { q: 'How is War Champ chosen?', a: 'The season\'s top Clan Wars point earner is named War Champ, based on points pulled directly from the Clash Royale API — no manual adjustments. Joining mid-season doesn\'t earn a handicap, and leadership breaks ties transparently. War Champ is a performance title and stays with the top scorer even if someone else receives the Free Pass Royale.' }
 ] -%}
 {%- set faqPass = [
-  { q: 'What is the Free Pass Royale Program?', a: 'The top eligible war point earner each season gets a free Pass Royale, sent in-game. Real reward, no gimmicks.' },
-  { q: 'How does eligibility work?', a: 'Highest war points among eligible players for the season. No back-to-back winners. Alt accounts can win, but eligibility follows the player. Points come straight from the Clash Royale API.' },
-  { q: 'How will I receive the pass?', a: 'Sent in-game to the account playing in the clan — no PayPal, Venmo, or cash. You must be Supercell ID friends with King Thing (Thingles) beforehand. Set that up on the Setup page so there are no delays when you win.' }
+  { q: 'What is the Free Pass Royale Program?', a: 'Each season, the highest-ranked eligible war point earner receives one Pass Royale as an in-game gift through Supercell ID. POAP KINGS funds the prize; Supercell does not sponsor or endorse the program.' },
+  { q: 'How does eligibility work?', a: 'There are no back-to-back winners. Alt accounts can win, but eligibility follows the player, not each account. A player must also be able to receive the gift under Supercell\'s requirements at delivery. If War Champ is excluded by the repeat-winner rule or cannot receive the gift, the pass rolls down to the next eligible player; the War Champ title does not move.' },
+  { q: 'What does Supercell require to receive a pass?', a: 'The recipient must have a registered Supercell ID and a Clash Royale account at King Level 7 or higher. Both Supercell IDs must be at least seven days old, and the recipient must have been Supercell ID friends with King Thing (Thingles) for at least one day. Young Player accounts for players under 16 cannot receive gifted passes, and regional restrictions may also prevent delivery. These are Supercell rules and may change.' },
+  { q: 'How will I receive the pass?', a: 'The pass is sent in-game to the winning account in the clan and must be claimed within Supercell\'s claim window, currently one week. Set up Supercell ID friendship on the Setup page before the season ends. There is no PayPal, Venmo, cash, store credit, substitute prize, or other compensation if a player cannot receive the gift.' }
 ] -%}
 {%- set faqRoles = [
   { q: 'What are the roles?', a: 'Member (standard participant), Elder (earned by competing for the clan and donating generously — it can also be taken away), and Leadership (Co-Leaders and the Leader, appointed at leadership\'s discretion).' },
@@ -69,7 +70,7 @@ supercellDisclaimer: true
       <li>Be active, donate, don't be a jerk.</li>
       <li>Wars encouraged, not required.</li>
       <li>One disclosed alt account allowed per player.</li>
-      <li>Top war earner each season gets a free Pass Royale.</li>
+      <li>War Champ goes to the top war earner; the highest-ranked eligible player receives the Pass Royale.</li>
       <li>Elder is earned through participation you control — and can be lost.</li>
     </ul>
   </div>
@@ -78,6 +79,10 @@ supercellDisclaimer: true
   {{ faqSection('faq-joining', 'Joining', faqJoining) }}
   {{ faqSection('faq-wars', 'Clan Wars', faqWars) }}
   {{ faqSection('faq-pass', 'Free Pass Royale Program', faqPass) }}
+  <div class="pk-faq-item">
+    <h3 class="pk-faq-item__question">Where can I read the official requirements?</h3>
+    <p class="pk-faq-item__answer">See Supercell&rsquo;s <a href="https://support.supercell.com/supercell-store/en/articles/pass-activation-and-donation-2.html" target="_blank" rel="noreferrer">Pass gifting help</a> and <a href="https://supercell.com/en/tournament-guidelines/" target="_blank" rel="noreferrer">Tournament Guidelines</a>. Eligibility is checked against the current rules when the prize is delivered.</p>
+  </div>
   {{ faqSection('faq-roles', 'Roles &amp; Promotion', faqRoles) }}
   {{ faqSection('faq-discord', 'Discord', faqDiscord) }}
 

@@ -2,7 +2,7 @@
 permalink: /members/setup/
 layout: base.njk
 title: Clan Setup | POAP KINGS | A Clash Royale Clan with Proof
-description: "Get set up as a POAP KINGS member in four easy steps."
+description: "Get set up as a POAP KINGS member in three easy steps."
 navActive: members
 supercellDisclaimer: true
 excludeFromSitemap: true
@@ -10,11 +10,11 @@ excludeFromSitemap: true
 {% from "components.njk" import pageIntro, backLink, numberedCard %}
 <div class="pk-page pk-page--mid pk-page-shell">
   {{ backLink('/members/', 'Back to Members') }}
-  {{ pageIntro('Members', 'Clan Setup', 'Three steps to get fully connected, eligible for a free Pass Royale, and on the roster.') }}
+  {{ pageIntro('Members', 'Clan Setup', 'Three steps to get fully connected, prepared for Free Pass Royale delivery, and on the roster.') }}
 
   <div class="pk-grid-2 pk-setup-grid">
     {%- set steps = [
-      { n: '1', title: 'Connect with Clan Leaders', body: 'You must friend King Thing (Thingles) on the Supercell Store to receive the free Pass Royale.', href: 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', cta: 'Connect with Thingles →', event: 'setup.connect-thingles' },
+      { n: '1', title: 'Connect with Clan Leaders', body: 'Friend King Thing (Thingles) on the Supercell Store at least one day before delivery. You must also meet Supercell\'s current gifting requirements; see the Free Pass Royale section of the FAQ.', href: 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', cta: 'Connect with Thingles →', event: 'setup.connect-thingles' },
       { n: '2', title: 'Join the Discord Server', body: 'Join the POAP KINGS Discord for clan chatter that isn\'t limited like in-game chat. Set your nickname to your Clash Royale name.', href: site.discordUrl, cta: 'Join on Discord →', event: 'setup.join-discord' },
       { n: '3', title: 'Roster Registration', body: 'Submit the form so your details can be added to the clan website roster.', href: 'https://docs.google.com/forms/d/e/1FAIpQLSeDxNctUtkzBlWQqo8w92hseuqpzbCfHMHUO4W6St5hn9W5AQ/viewform?usp=header', cta: 'Roster Registration →', event: 'setup.roster-registration' }
     ] -%}

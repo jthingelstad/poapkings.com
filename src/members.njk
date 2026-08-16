@@ -21,17 +21,17 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
 {%- set elderCeil = (memberCount * 0.30) | round -%}
 {%- set elderTarget = ((elderFloor + elderCeil) / 2) | round -%}
 {%- set promoSubject = 'POAP KINGS #' + site.clanTag + ' · War-focused clan with real culture · ' + minTrophies + ' trophies · ' + memberCount + '/50 members' -%}
-{%- set promoBody = 'POAP KINGS (#' + site.clanTag + ') is recruiting — a war-focused Clash Royale clan with real structure. ' + memberCount + ' members, ' + latest.count12000Plus + ' players at 12k+ trophies, ' + latest.count14000Plus + ' sitting at 14,000, and ' + winsK + 'K+ career wins across the roster. Public roster and clan data, a Free Pass Royale program for top war earners, and a culture that actually remembers who shows up. ' + minTrophies + ' trophy minimum. See us at ' + site.url -%}
+{%- set promoBody = 'POAP KINGS (#' + site.clanTag + ') is recruiting — a war-focused Clash Royale clan with real structure. ' + memberCount + ' members, ' + latest.count12000Plus + ' players at 12k+ trophies, ' + latest.count14000Plus + ' sitting at 14,000, and ' + winsK + 'K+ career wins across the roster. Public roster and clan data, a Free Pass Royale program that rewards the highest-ranked eligible war player, and a culture that actually remembers who shows up. ' + minTrophies + ' trophy minimum. See us at ' + site.url -%}
 
 <div class="pk-members-backdrop">
 <div class="pk-page pk-page--mid pk-page-shell">
   <div class="pk-members-badge">Members Zone</div>
   <h1 class="pk-members-title">Welcome, KING.</h1>
-  <p class="pk-members-intro">Your hub for getting connected. Two things matter most: get into Discord, and connect with leadership so you're eligible for a free Pass Royale.</p>
+  <p class="pk-members-intro">Your hub for getting connected. Two things matter most: get into Discord, and connect with leadership so you are ready to receive a Free Pass Royale if you are eligible and win.</p>
 
   <div class="pk-grid-2 pk-members-cards">
     {{ infoCard('Primary', 'Join our Discord', 'Announcements, deck talk, war coordination, and Sunday Scrimmages all happen here. Set your nickname to your Clash Royale name so we know who you are.', site.discordUrl, 'Open Discord', 'purple', true) }}
-    {{ infoCard('Required for rewards', 'Connect with Leadership', 'Friend King Thing (Thingles) on the Supercell Store. This is required for us to send you a free Pass Royale if you win it — do it now so there are no delays later. Need the full walkthrough? See the <a href="/members/setup/">Clan Setup guide</a>.', 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', 'Connect with Thingles →', 'gold', true) }}
+    {{ infoCard('Required for rewards', 'Connect with Leadership', 'Friend King Thing (Thingles) on the Supercell Store at least one day before delivery. Friendship is required but does not guarantee eligibility: your accounts must also meet Supercell\'s current gifting requirements. See the <a href="/faq/#faq-pass">Free Pass FAQ</a> and <a href="/members/setup/">Clan Setup guide</a>.', 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', 'Connect with Thingles →', 'gold', true) }}
   </div>
 
   <!-- Elixir email capture (no Discord needed) -->
