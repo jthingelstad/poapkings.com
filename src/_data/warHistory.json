@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T23:02:40Z",
+  "generatedAt": "2026-08-17T23:02:17Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -377,7 +377,7 @@
     {
       "averageRank": 1,
       "seasonId": 135,
-      "trophyChange": 20,
+      "trophyChange": 40,
       "weeks": [
         {
           "clanScore": 980,
@@ -391,29 +391,42 @@
           "totalClans": 5,
           "trophyChange": 20,
           "weekLabel": "S135 W1"
+        },
+        {
+          "clanScore": 1000,
+          "createdDate": "20260817T093406.000Z",
+          "fame": 10000,
+          "finishTime": "20260816T093404.000Z",
+          "isColosseum": false,
+          "rank": 1,
+          "seasonId": 135,
+          "sectionIndex": 1,
+          "totalClans": 5,
+          "trophyChange": 20,
+          "weekLabel": "S135 W2"
         }
       ],
-      "wins": 1
+      "wins": 2
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 980,
-      "createdDate": "20260810T093406.000Z",
+      "clanScore": 1000,
+      "createdDate": "20260817T093406.000Z",
       "fame": 10000,
-      "finishTime": "20260809T093404.000Z",
+      "finishTime": "20260816T093404.000Z",
       "isColosseum": false,
       "rank": 1,
       "seasonId": 135,
-      "sectionIndex": 0,
+      "sectionIndex": 1,
       "totalClans": 5,
       "trophyChange": 20,
-      "weekLabel": "S135 W1"
+      "weekLabel": "S135 W2"
     },
-    "totalWeeks": 26,
-    "trophyChange": 1000,
-    "wins": 26
+    "totalWeeks": 27,
+    "trophyChange": 1020,
+    "wins": 27
   },
   "weeks": [
     {
@@ -753,6 +766,19 @@
       "totalClans": 5,
       "trophyChange": 20,
       "weekLabel": "S135 W1"
+    },
+    {
+      "clanScore": 1000,
+      "createdDate": "20260817T093406.000Z",
+      "fame": 10000,
+      "finishTime": "20260816T093404.000Z",
+      "isColosseum": false,
+      "rank": 1,
+      "seasonId": 135,
+      "sectionIndex": 1,
+      "totalClans": 5,
+      "trophyChange": 20,
+      "weekLabel": "S135 W2"
     }
   ]
 }
