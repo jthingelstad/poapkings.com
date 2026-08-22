@@ -8,7 +8,7 @@ supercellDisclaimer: true
 extraScripts: '<script src="/roster.js" defer></script>'
 ---
 {% from "components.njk" import pageIntro, playerTagLink %}
-{%- set rows = roster.members | sortByDesc('trophies') -%}
+{%- set rows = roster.members | sortByRank -%}
 {%- set memberCount = roster.members | length -%}
 
 <div class="pk-page pk-page-shell">
@@ -17,6 +17,7 @@ extraScripts: '<script src="/roster.js" defer></script>'
   <div class="pk-roster-toolbar">
     <span class="pk-roster-toolbar__label">Sort by</span>
     {%- set sortOptions = [
+      { key: 'clanRank', label: 'Clan Rank' },
       { key: 'trophies', label: 'Trophies' },
       { key: 'wins', label: 'Career Wins' },
       { key: 'years', label: 'Years' },
@@ -24,7 +25,7 @@ extraScripts: '<script src="/roster.js" defer></script>'
       { key: 'donations', label: 'Donations' }
     ] -%}
     {%- for o in sortOptions %}
-    <button type="button" class="pk-pill{% if o.key == 'trophies' %} is-active{% endif %}" data-roster-sort="{{ o.key }}" aria-pressed="{% if o.key == 'trophies' %}true{% else %}false{% endif %}">{{ o.label }}</button>
+    <button type="button" class="pk-pill{% if o.key == 'clanRank' %} is-active{% endif %}" data-roster-sort="{{ o.key }}" aria-pressed="{% if o.key == 'clanRank' %}true{% else %}false{% endif %}">{{ o.label }}</button>
     {%- endfor %}
     <span class="pk-roster-toolbar__status">↻ Updated {{ roster.updated | formatDate }} · showing all {{ memberCount }}</span>
   </div>
@@ -36,7 +37,7 @@ extraScripts: '<script src="/roster.js" defer></script>'
     <div id="rosterBody">
       {%- for m in rows %}
       {%- set honors = recognition | memberHonors(m.tag, 2) -%}
-      <div class="pk-roster-row" id="member-{{ m.tag | memberSlug }}" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}">
+      <div class="pk-roster-row" id="member-{{ m.tag | memberSlug }}" data-clan-rank="{{ m.clan_rank }}" data-trophies="{{ m.trophies }}" data-wins="{{ m.cr_battle_wins }}" data-years="{{ m.cr_account_age_years }}" data-collection="{{ m.cr_collection_level }}" data-donations="{{ m.donations }}">
         <span class="pk-roster-rank" data-roster-rank>{{ loop.index }}</span>
         <span class="pk-roster-player">
           {%- if m.favorite_card and m.favorite_card.image_url %}
