@@ -167,6 +167,12 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("playerTag", playerTag);
 
+  // Flatten a segmented testimonial quote to plain text for the LLM surfaces.
+  eleventyConfig.addFilter("quoteText", (quote) => {
+    if (!Array.isArray(quote)) return String(quote ?? "");
+    return quote.map((part) => (part && part.highlight) || part || "").join("");
+  });
+
   eleventyConfig.addFilter("jsonForScript", jsonForScript);
 
   eleventyConfig.addFilter("take", (arr, n) => (arr || []).slice(0, n));

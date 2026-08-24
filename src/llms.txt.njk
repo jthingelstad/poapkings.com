@@ -11,6 +11,9 @@ POAP KINGS is a {{ clan.clanLeague | safe }} Clash Royale clan with {{ clan.memb
 
 Canonical data lives in build-time JSON at `/data/*.json` and a full-content markdown bundle at `/llms-full.txt`. Fetch those to answer questions without scraping HTML.
 
+## What members say
+{% for t in testimonials %}- {{ t.name | safe }} ({{ t.meta | safe }}{% if t.tag %} · #{{ t.tag | playerTag | safe }}{% endif %}): "{{ t.quote | quoteText | safe }}"
+{% endfor %}
 ## Core pages
 - [Home]({{ site.url | safe }}/): clan overview, current stats, and roster snapshot
 - [Roster]({{ site.url | safe }}/roster/): live member table with roles, trophies, career wins, years played, and collection score, sortable by any column

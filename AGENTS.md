@@ -35,6 +35,8 @@ The former `/wars/` and `/vault/` pages are retired. Do not add them to navigati
 - `src/_data/rosterExplorer.json` — Visualization-ready current roster rows.
 - `src/_data/recognition.json` — Privacy-safe completed-season honors imported read-only from Elixir.
 - `src/_data/warHistory.json` — Retained updater-owned river-race history.
+- `src/_data/testimonials.json` — Hand-maintained member quotes for the home page carousel and the LLM surfaces. Not updater-owned.
+- `src/_data/clanState.js` — Derived clan capacity facts (`isFull`, `openSlots`, `maxMembers`, `memberCount`). The single source of truth for whether the clan is full; templates must not recompute it.
 - `src/styles.css` — Current site design system and page styles.
 - `src/gamify.js` — Motion choreography and dynamically imported PixiJS star particles.
 - `src/data.js` — Roster explorer and timeline behavior.
@@ -65,13 +67,14 @@ The local server is `http://localhost:8080`. Pushing `main` triggers `.github/wo
 - JSON embedded in `<script type="application/json">` must use `jsonForScript | safe`, never `dump | safe`.
 - `gamify.js` is bundled by esbuild. PixiJS must remain a dynamic import that loads only when the star count resolves or a star interaction needs particles.
 - Static CSS/JS references use the `bust` filter for content-hash query strings.
+- Join calls to action read `clanState.isFull` and must never hardcode a JOIN/WAIT label. A testimonial quote is an array of strings and `{ "highlight": "..." }` segments; render it with the `quoteText` filter on text surfaces.
 
 ## Current custom filters
 
 - `formatDate`, `formatNumber`, `formatYearsPlayed`, `formatDecimal`
 - `sumBy`, `whereRole`, `sortByDesc`, `sortByRank`, `take`
 - `roleClass`, `homeScatter`, `timelineSeries`, `explorerMembers`, `cwlTier`
-- `memberSlug`, `memberHonors`, `playerTag`, `jsonForScript`, `bust`
+- `memberSlug`, `memberHonors`, `playerTag`, `jsonForScript`, `quoteText`, `bust`
 
 Remove filters when their last template consumer is removed.
 
