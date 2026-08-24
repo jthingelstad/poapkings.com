@@ -1415,17 +1415,18 @@ a:hover{ color:#f5c84c }
 }
 .pk-testimonial__controls{ display:none; align-items:center; justify-content:center; gap:16px; margin-top:20px }
 .pk-testimonial--live .pk-testimonial__controls{ display:flex }
+/* Bare chevrons: the 38px box is an invisible tap target, not a visible ring. */
 .pk-testimonial__arrow{
   display:grid; place-items:center; width:38px; height:38px; padding:0;
-  border-radius:50%; cursor:pointer; font-size:1.5rem; line-height:1;
-  font-family:'Clash',system-ui,sans-serif; color:#f5c84c;
-  border:1px solid rgba(245,200,76,.4); background:rgba(18,13,40,.72);
-  transition:background .25s ease, border-color .25s ease, transform .25s ease;
+  cursor:pointer; font-size:1.7rem; line-height:1;
+  font-family:'Clash',system-ui,sans-serif; color:rgba(245,200,76,.6);
+  border:0; background:transparent; border-radius:8px;
+  transition:color .25s ease, transform .25s ease;
 }
 .pk-testimonial__arrow > span{ margin-top:-.18em }
-.pk-testimonial__arrow:hover{ background:rgba(245,200,76,.16); border-color:#f5c84c; transform:scale(1.08) }
-.pk-testimonial__arrow:active{ transform:scale(.96) }
-.pk-testimonial__arrow:focus-visible{ outline:2px solid #f5c84c; outline-offset:3px }
+.pk-testimonial__arrow:hover{ color:#f5c84c; transform:scale(1.15) }
+.pk-testimonial__arrow:active{ transform:scale(.95) }
+.pk-testimonial__arrow:focus-visible{ outline:2px solid #f5c84c; outline-offset:2px }
 .pk-testimonial__dots{ display:flex; justify-content:center; gap:9px }
 .pk-testimonial__dot{
   width:9px; height:9px; padding:0; border-radius:50%; cursor:pointer;
