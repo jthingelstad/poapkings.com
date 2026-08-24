@@ -60,7 +60,7 @@
 </head>
 
 <body{% if navActive %} data-nav="{{ navActive }}"{% endif %}>
-  {%- set isFull = clan.memberCount >= 50 -%}
+  {%- set isFull = clanState.isFull -%}
   {%- set navLinks = [
     { url: "/", key: "home", label: "Home" },
     { url: "/roster/", key: "roster", label: "Roster" },

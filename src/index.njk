@@ -13,7 +13,7 @@ ogImageHeight: 1000
 {% from "components.njk" import sectionHeading, actionLink, actionButton, playerTagLink %}
 {%- set members = rosterExplorer.members -%}
 {%- set memberCount = clan.memberCount -%}
-{%- set openSlots = 50 - memberCount -%}
+{%- set openSlots = clanState.openSlots -%}
 {%- set totalWins = members | sumBy('wins') -%}
 {%- set avgWins = (totalWins / memberCount) | round -%}
 {%- set avgTrophies = (clan.totalTrophies / memberCount) | round -%}
@@ -77,10 +77,18 @@ ogImageHeight: 1000
       {%- endfor %}
     </div>
     {%- if testimonials.length > 1 %}
-    <div class="pk-testimonial__dots">
-      {%- for t in testimonials %}
-      <button type="button" class="pk-testimonial__dot{% if loop.first %} is-active{% endif %}" data-testimonial-dot aria-label="Show quote {{ loop.index }} of {{ testimonials.length }}"{% if loop.first %} aria-current="true"{% endif %}></button>
-      {%- endfor %}
+    <div class="pk-testimonial__controls">
+      <button type="button" class="pk-testimonial__arrow" data-testimonial-prev aria-label="Previous quote">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <div class="pk-testimonial__dots">
+        {%- for t in testimonials %}
+        <button type="button" class="pk-testimonial__dot{% if loop.first %} is-active{% endif %}" data-testimonial-dot aria-label="Show quote {{ loop.index }} of {{ testimonials.length }}"{% if loop.first %} aria-current="true"{% endif %}></button>
+        {%- endfor %}
+      </div>
+      <button type="button" class="pk-testimonial__arrow" data-testimonial-next aria-label="Next quote">
+        <span aria-hidden="true">›</span>
+      </button>
     </div>
     {%- endif %}
   </section>
@@ -235,7 +243,7 @@ ogImageHeight: 1000
         <div class="pk-final-join__fact"><dt>Type</dt><dd>{{ clan.clanStatus }}</dd></div>
       </dl>
       <div class="pk-final-join__actions">
-        {{ actionButton('JOIN', 'gold', 'join', 'home.join') }}
+        {{ actionButton('JOIN THE WAITLIST' if clanState.isFull else 'JOIN', 'gold', 'join', 'home.waitlist' if clanState.isFull else 'home.join') }}
         {{ actionLink(site.discordUrl, 'Open Discord', 'outline', '', true) }}
       </div>
     </div>

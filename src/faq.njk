@@ -92,7 +92,7 @@ supercellDisclaimer: true
     <h2 class="pk-faq-cta__title">Still have questions?</h2>
     <p class="pk-faq-cta__copy">Ask in clan chat or reach out to leadership directly. No question is too basic.</p>
     <div class="pk-faq-cta__actions">
-      {{ actionButton('JOIN', 'gold', 'join') }}
+      {{ actionButton('JOIN THE WAITLIST' if clanState.isFull else 'JOIN', 'gold', 'join') }}
       {{ actionLink(site.discordUrl, 'Open Discord', 'outline', '', true) }}
     </div>
   </div>

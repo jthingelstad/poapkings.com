@@ -362,6 +362,8 @@ import { animate } from 'motion/mini';
     if (!root) return;
     const slides = Array.from(root.querySelectorAll('[data-testimonial-slide]'));
     const dots = Array.from(root.querySelectorAll('[data-testimonial-dot]'));
+    const prevBtn = root.querySelector('[data-testimonial-prev]');
+    const nextBtn = root.querySelector('[data-testimonial-next]');
     if (slides.length < 2) return;
 
     const INTERVAL = 8000;
@@ -398,8 +400,18 @@ import { animate } from 'motion/mini';
 
     function restart(){ stop(); start() }
 
+    function goTo(next){ show(next); restart() }
+
     dots.forEach(function(dot, i){
-      dot.addEventListener('click', function(){ show(i); restart() });
+      dot.addEventListener('click', function(){ goTo(i) });
+    });
+    if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(index - 1) });
+    if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(index + 1) });
+
+    // Arrow keys work once anything in the carousel has focus.
+    root.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowLeft'){ e.preventDefault(); goTo(index - 1) }
+      else if (e.key === 'ArrowRight'){ e.preventDefault(); goTo(index + 1) }
     });
 
     root.addEventListener('pointerenter', function(){ hovered = true; stop() });

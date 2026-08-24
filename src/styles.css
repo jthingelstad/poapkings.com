@@ -1413,8 +1413,20 @@ a:hover{ color:#f5c84c }
   opacity:1; visibility:visible; pointer-events:auto;
   transition:opacity .45s ease, visibility 0s;
 }
-.pk-testimonial__dots{ display:none; justify-content:center; gap:9px; margin-top:18px }
-.pk-testimonial--live .pk-testimonial__dots{ display:flex }
+.pk-testimonial__controls{ display:none; align-items:center; justify-content:center; gap:16px; margin-top:20px }
+.pk-testimonial--live .pk-testimonial__controls{ display:flex }
+.pk-testimonial__arrow{
+  display:grid; place-items:center; width:38px; height:38px; padding:0;
+  border-radius:50%; cursor:pointer; font-size:1.5rem; line-height:1;
+  font-family:'Clash',system-ui,sans-serif; color:#f5c84c;
+  border:1px solid rgba(245,200,76,.4); background:rgba(18,13,40,.72);
+  transition:background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.pk-testimonial__arrow > span{ margin-top:-.18em }
+.pk-testimonial__arrow:hover{ background:rgba(245,200,76,.16); border-color:#f5c84c; transform:scale(1.08) }
+.pk-testimonial__arrow:active{ transform:scale(.96) }
+.pk-testimonial__arrow:focus-visible{ outline:2px solid #f5c84c; outline-offset:3px }
+.pk-testimonial__dots{ display:flex; justify-content:center; gap:9px }
 .pk-testimonial__dot{
   width:9px; height:9px; padding:0; border-radius:50%; cursor:pointer;
   border:1px solid rgba(245,200,76,.45); background:transparent;
@@ -1426,8 +1438,11 @@ a:hover{ color:#f5c84c }
 @media (prefers-reduced-motion:reduce){
   .pk-testimonial--live .pk-testimonial__card,
   .pk-testimonial--live .pk-testimonial__card.is-active{ transition:none }
-  .pk-testimonial__dot{ transition:none }
-  .pk-testimonial__dot:hover{ transform:none }
+  .pk-testimonial__dot,
+  .pk-testimonial__arrow{ transition:none }
+  .pk-testimonial__dot:hover,
+  .pk-testimonial__arrow:hover,
+  .pk-testimonial__arrow:active{ transform:none }
 }
 .pk-testimonial__quote{ margin:0; font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.25rem,2.6vw,1.85rem); line-height:1.5; color:#f7f4ff; text-wrap:pretty; max-width:26em }
 .pk-testimonial__highlight{ color:#f5c84c }
