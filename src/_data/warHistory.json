@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T23:02:39Z",
+  "generatedAt": "2026-08-24T23:01:25Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -377,7 +377,7 @@
     {
       "averageRank": 1,
       "seasonId": 135,
-      "trophyChange": 40,
+      "trophyChange": 60,
       "weeks": [
         {
           "clanScore": 980,
@@ -404,29 +404,42 @@
           "totalClans": 5,
           "trophyChange": 20,
           "weekLabel": "S135 W2"
+        },
+        {
+          "clanScore": 1020,
+          "createdDate": "20260824T093405.000Z",
+          "fame": 10000,
+          "finishTime": "20260823T093404.000Z",
+          "isColosseum": false,
+          "rank": 1,
+          "seasonId": 135,
+          "sectionIndex": 2,
+          "totalClans": 5,
+          "trophyChange": 20,
+          "weekLabel": "S135 W3"
         }
       ],
-      "wins": 2
+      "wins": 3
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 1000,
-      "createdDate": "20260817T093406.000Z",
+      "clanScore": 1020,
+      "createdDate": "20260824T093405.000Z",
       "fame": 10000,
-      "finishTime": "20260816T093404.000Z",
+      "finishTime": "20260823T093404.000Z",
       "isColosseum": false,
       "rank": 1,
       "seasonId": 135,
-      "sectionIndex": 1,
+      "sectionIndex": 2,
       "totalClans": 5,
       "trophyChange": 20,
-      "weekLabel": "S135 W2"
+      "weekLabel": "S135 W3"
     },
-    "totalWeeks": 27,
-    "trophyChange": 1020,
-    "wins": 27
+    "totalWeeks": 28,
+    "trophyChange": 1040,
+    "wins": 28
   },
   "weeks": [
     {
@@ -779,6 +792,19 @@
       "totalClans": 5,
       "trophyChange": 20,
       "weekLabel": "S135 W2"
+    },
+    {
+      "clanScore": 1020,
+      "createdDate": "20260824T093405.000Z",
+      "fame": 10000,
+      "finishTime": "20260823T093404.000Z",
+      "isColosseum": false,
+      "rank": 1,
+      "seasonId": 135,
+      "sectionIndex": 2,
+      "totalClans": 5,
+      "trophyChange": 20,
+      "weekLabel": "S135 W3"
     }
   ]
 }
