@@ -1394,10 +1394,40 @@ a:hover{ color:#f5c84c }
 .pk-stat__value{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.5rem,7.5vw,1.9rem); line-height:1.1; color:#f5c84c; display:block; margin-top:4px }
 .pk-stat__detail{ color:#c8c1e6; font-size:.72rem; line-height:1.3; display:block; margin-top:3px }
 .pk-testimonial{ margin-top:40px }
+.pk-testimonial__stage{ display:grid; gap:18px }
 .pk-testimonial__card{
   margin:0; border:1px solid rgba(245,200,76,.22); border-radius:24px;
   background:radial-gradient(circle at 12% 0%,rgba(109,40,217,.28),transparent 45%),rgba(18,13,40,.72);
   box-shadow:0 18px 60px rgba(0,0,0,.45); padding:clamp(28px,4vw,44px);
+}
+/* Carousel: every quote ships in the DOM. Without JS they stack vertically and
+   all read fine. The script adds .pk-testimonial--live, which collapses them
+   into one grid cell and hands visibility over to .is-active. */
+.pk-testimonial--live .pk-testimonial__stage{ gap:0 }
+.pk-testimonial--live .pk-testimonial__card{
+  grid-area:1/1;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .45s ease, visibility 0s linear .45s;
+}
+.pk-testimonial--live .pk-testimonial__card.is-active{
+  opacity:1; visibility:visible; pointer-events:auto;
+  transition:opacity .45s ease, visibility 0s;
+}
+.pk-testimonial__dots{ display:none; justify-content:center; gap:9px; margin-top:18px }
+.pk-testimonial--live .pk-testimonial__dots{ display:flex }
+.pk-testimonial__dot{
+  width:9px; height:9px; padding:0; border-radius:50%; cursor:pointer;
+  border:1px solid rgba(245,200,76,.45); background:transparent;
+  transition:background .25s ease, transform .25s ease, border-color .25s ease;
+}
+.pk-testimonial__dot:hover{ border-color:#f5c84c; transform:scale(1.2) }
+.pk-testimonial__dot.is-active{ background:#f5c84c; border-color:#f5c84c }
+.pk-testimonial__dot:focus-visible{ outline:2px solid #f5c84c; outline-offset:3px }
+@media (prefers-reduced-motion:reduce){
+  .pk-testimonial--live .pk-testimonial__card,
+  .pk-testimonial--live .pk-testimonial__card.is-active{ transition:none }
+  .pk-testimonial__dot{ transition:none }
+  .pk-testimonial__dot:hover{ transform:none }
 }
 .pk-testimonial__quote{ margin:0; font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.25rem,2.6vw,1.85rem); line-height:1.5; color:#f7f4ff; text-wrap:pretty; max-width:26em }
 .pk-testimonial__highlight{ color:#f5c84c }

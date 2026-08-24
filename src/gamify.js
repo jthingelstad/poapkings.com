@@ -356,7 +356,76 @@ import { animate } from 'motion/mini';
     });
   }
 
-  function boot(){ initStarCounter(); initStarModal(); }
+  /* ── Testimonial carousel: crossfade the member quotes on the home page ── */
+  function initTestimonialCarousel(){
+    const root = document.querySelector('[data-testimonial-carousel]');
+    if (!root) return;
+    const slides = Array.from(root.querySelectorAll('[data-testimonial-slide]'));
+    const dots = Array.from(root.querySelectorAll('[data-testimonial-dot]'));
+    if (slides.length < 2) return;
+
+    const INTERVAL = 8000;
+    let index = 0;
+    let timer = null;
+    let hovered = false;
+    let onScreen = true;
+
+    root.classList.add('pk-testimonial--live');
+
+    function show(next){
+      index = (next + slides.length) % slides.length;
+      slides.forEach(function(slide, i){
+        const active = i === index;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.forEach(function(dot, i){
+        const active = i === index;
+        dot.classList.toggle('is-active', active);
+        if (active) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    }
+
+    function stop(){ if (timer){ clearInterval(timer); timer = null } }
+
+    function start(){
+      // Reduced motion: no auto-rotation. The dots still reach every quote.
+      if (reduce || timer) return;
+      if (hovered || !onScreen || document.hidden) return;
+      timer = setInterval(function(){ show(index + 1) }, INTERVAL);
+    }
+
+    function restart(){ stop(); start() }
+
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ show(i); restart() });
+    });
+
+    root.addEventListener('pointerenter', function(){ hovered = true; stop() });
+    root.addEventListener('pointerleave', function(){ hovered = false; start() });
+    root.addEventListener('focusin', function(){ hovered = true; stop() });
+    root.addEventListener('focusout', function(){
+      if (!root.contains(document.activeElement)){ hovered = false; start() }
+    });
+
+    document.addEventListener('visibilitychange', function(){
+      if (document.hidden) stop(); else start();
+    });
+
+    if ('IntersectionObserver' in window){
+      const io = new IntersectionObserver(function(entries){
+        onScreen = entries[0].isIntersecting;
+        if (onScreen) start(); else stop();
+      }, { threshold: .2 });
+      io.observe(root);
+    }
+
+    show(0);
+    start();
+  }
+
+  function boot(){ initStarCounter(); initStarModal(); initTestimonialCarousel(); }
   if (document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', boot);
   } else {

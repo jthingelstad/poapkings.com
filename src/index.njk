@@ -62,16 +62,27 @@ ogImageHeight: 1000
   </section>
 
   <!-- testimonial -->
-  <section class="pk-testimonial">
-    <figure class="pk-testimonial__card">
-      <blockquote class="pk-testimonial__quote">I've been playing Clash Royale for 10 years and I just want to say this is hands down <span class="pk-testimonial__highlight">THE best clan</span> I've ever been in. Y'all are great!</blockquote>
-      <figcaption class="pk-testimonial__caption">
-        <div class="pk-testimonial__byline">
-          <strong class="pk-testimonial__name">Th15_Guy</strong>
-          <span class="pk-testimonial__meta">Elder · 10 years in Clash Royale · {{ playerTagLink('QLGYYG0Q', 'pk-testimonial__tag') }}</span>
-        </div>
-      </figcaption>
-    </figure>
+  <section class="pk-testimonial"{% if testimonials.length > 1 %} data-testimonial-carousel aria-roledescription="carousel" aria-label="What members say"{% endif %}>
+    <div class="pk-testimonial__stage">
+      {%- for t in testimonials %}
+      <figure class="pk-testimonial__card{% if loop.first %} is-active{% endif %}" data-testimonial-slide aria-hidden="{{ 'false' if loop.first else 'true' }}">
+        <blockquote class="pk-testimonial__quote">{% for part in t.quote %}{% if part.highlight %}<span class="pk-testimonial__highlight">{{ part.highlight }}</span>{% else %}{{ part }}{% endif %}{% endfor %}</blockquote>
+        <figcaption class="pk-testimonial__caption">
+          <div class="pk-testimonial__byline">
+            <strong class="pk-testimonial__name">{{ t.name }}</strong>
+            <span class="pk-testimonial__meta">{{ t.meta }}{% if t.tag %} · {{ playerTagLink(t.tag, 'pk-testimonial__tag') }}{% endif %}</span>
+          </div>
+        </figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+    {%- if testimonials.length > 1 %}
+    <div class="pk-testimonial__dots">
+      {%- for t in testimonials %}
+      <button type="button" class="pk-testimonial__dot{% if loop.first %} is-active{% endif %}" data-testimonial-dot aria-label="Show quote {{ loop.index }} of {{ testimonials.length }}"{% if loop.first %} aria-current="true"{% endif %}></button>
+      {%- endfor %}
+    </div>
+    {%- endif %}
   </section>
 
   <!-- requirements -->
