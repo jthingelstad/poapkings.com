@@ -1,7 +1,7 @@
 {
   "firstDate": "2026-03-11",
-  "generatedAt": "2026-09-04T23:02:15Z",
-  "latestDate": "2026-09-04",
+  "generatedAt": "2026-09-05T23:02:03Z",
+  "latestDate": "2026-09-05",
   "series": [
     {
       "averageCollectionLevel": null,
@@ -2720,6 +2720,24 @@
       "openSlots": 0,
       "totalTrophies": 564763,
       "trackedMembers": 50
+    },
+    {
+      "averageCollectionLevel": 1628.1,
+      "averageTrophies": 11401,
+      "averageWins": 3960,
+      "averageYearsPlayed": 5.7,
+      "clanScore": 130848,
+      "clanWarTrophies": 1060,
+      "count12000Plus": 28,
+      "count14000Plus": 14,
+      "count6YearsPlus": 17,
+      "countCollection1000Plus": 48,
+      "date": "2026-09-05",
+      "donationsPerWeek": 8582,
+      "memberCount": 49,
+      "openSlots": 1,
+      "totalTrophies": 558640,
+      "trackedMembers": 49
     }
   ]
 }
