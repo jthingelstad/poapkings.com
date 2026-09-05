@@ -1,0 +1,71 @@
+---
+permalink: /elixir-mcp/
+layout: base.njk
+title: Elixir MCP — Clash Royale History for Your AI Agent | POAP KINGS
+description: "Elixir MCP records the Clash Royale history the official API doesn't keep — battles, progression, and clan life — and serves it to your own AI agent over MCP."
+mainId: top
+supercellDisclaimer: true
+---
+{% from "components.njk" import backLink, sectionHeading, actionLink, numberedCard %}
+<div class="pk-page pk-page--elixir pk-page-shell">
+  {{ backLink('/', 'Back home') }}
+
+  <section class="pk-elixir-hero pk-elixir-banner">
+    <div>
+      <span class="pk-eyebrow pk-eyebrow--gold">Our history recorder</span>
+      <h1 class="pk-elixir-banner__title">Elixir MCP</h1>
+      <p class="pk-elixir-banner__copy">The Clash Royale API only knows the present — a rotating ~30-battle log, no trophy timeline, no season history. Elixir MCP records battles, progression, and clan life as they happen, and serves the history to <strong>your own AI agent</strong> over MCP. Your agent brings the brain; we bring the memory.</p>
+      <div class="pk-drop-actions">
+        {{ actionLink('https://elixir.poapkings.com/', 'Open Elixir MCP →', 'gold', 'elixir-mcp.open', true) }}
+        {{ actionLink('https://elixir.poapkings.com/data/dashboard', 'See the data', 'outline', 'elixir-mcp.data', true) }}
+      </div>
+    </div>
+  </section>
+
+  <section class="pk-section">
+    {{ sectionHeading('What Elixir MCP does', 'A memory the game never had') }}
+    <div class="pk-grid-3 pk-elixir-jobs">
+      {%- set mcpJobs = [
+        { num: '01', title: 'Records continuously', body: 'Every battle stored once, no matter how many clanmates observed it — plus daily snapshots, war weeks, and roster history, kept indefinitely.' },
+        { num: '02', title: 'Serves your agent', body: 'Connect Claude or any MCP client to one URL and ask questions the game can\'t answer: win-rate trends, trophy graphs, deck history with receipts.' },
+        { num: '03', title: 'Runs on collectors', body: 'Operator-run machines with card-name identities do the fetching — a Mac in a closet, a NAS at a cabin. Running one earns your agent extra daily calls.' },
+        { num: '04', title: 'Powers clan routines', body: 'A daily Clan Pulse digest and war-day events feed scheduled agents: who\'s quiet, who has decks left today, who joined and left — facts, never judgments.' },
+        { num: '05', title: 'Stays honest', body: 'Every number ships its sample size, coverage tools disclose exactly how complete the record is, and capture gaps are measured and published.' },
+        { num: '06', title: 'Built in the open', body: 'The recorder, the MCP server, the web app, and the collector are all public code — and the data dashboard is public too.' }
+      ] -%}
+      {%- for j in mcpJobs %}
+      {{ numberedCard(j.num, j.title, j.body) }}
+      {%- endfor %}
+    </div>
+    <p class="pk-elixir-recognition-link">Access is request-approved while the recorder grows — <a href="https://elixir.poapkings.com/" target="_blank" rel="noreferrer">request it on the site →</a></p>
+  </section>
+
+  <section class="pk-section">
+    {{ sectionHeading('Under the hood', 'Built like real software', actionLink('https://github.com/jthingelstad/elixir-mcp', 'View the code on GitHub →', 'outline', 'elixir-mcp.github', true)) }}
+    <p class="pk-elixir-tech-copy">Elixir MCP is a <strong>serverless recorder</strong> with one deliberate exception: the cloud has no route to the Clash Royale API at all. Only the <strong>collector fleet</strong> holds IP-bound keys, leasing work from a queue the service prioritizes by expected yield — and the whole fleet shares <strong>one global rate budget</strong>, so more collectors mean resilience, never more API load.</p>
+    <div class="pk-tech3">
+      {%- set mcpTechFacts = [
+        { label: 'Cloud', value: 'AWS Lambda · SQS · RDS' },
+        { label: 'Agent door', value: 'Remote MCP · OAuth 2.1' },
+        { label: 'Collectors', value: 'Go · self-updating' },
+        { label: 'Data store', value: 'PostgreSQL + S3 archive' },
+        { label: 'Tool surface', value: '35 contract-versioned tools' },
+        { label: 'Quality gates', value: 'CI-gated public monorepo' }
+      ] -%}
+      {%- for t in mcpTechFacts %}
+      <div class="pk-tech-fact">
+        <span class="pk-tech-fact__label">{{ t.label }}</span>
+        <strong class="pk-tech-fact__value">{{ t.value }}</strong>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <a class="pk-elixir-game" href="/elixir/">
+    <div>
+      <h3 class="pk-elixir-game__title">Meet the agent it feeds</h3>
+      <p class="pk-elixir-game__copy">Elixir, our clan agent, reads recorded game facts from Elixir MCP — standings, war intelligence, and player history with receipts.</p>
+    </div>
+    <span class="pk-elixir-game__cta">Meet Elixir →</span>
+  </a>
+</div>
