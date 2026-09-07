@@ -1,8 +1,113 @@
 {
-  "updated": "2026-08-03T11:17:22Z",
+  "updated": "2026-09-07T10:15:59Z",
   "source": "Elixir durable awards ledger",
   "state": "completed seasons only",
   "seasons": [
+    {
+      "seasonId": 135,
+      "startedAt": "2026-08-03T11:17:22Z",
+      "endedAt": "2026-09-07T10:15:59Z",
+      "finalRank": 1,
+      "warChamp": [
+        {
+          "rank": 1,
+          "name": "King Thing",
+          "tag": "20JJJ2CCRU",
+          "metricValue": 12550,
+          "metricUnit": "points"
+        },
+        {
+          "rank": 2,
+          "name": "dez42",
+          "tag": "9Q9QRCPPU",
+          "metricValue": 11450,
+          "metricUnit": "points"
+        },
+        {
+          "rank": 3,
+          "name": "Sandeep",
+          "tag": "UQ2R9RGVP",
+          "metricValue": 11100,
+          "metricUnit": "points"
+        }
+      ],
+      "freePass": {
+        "rank": 1,
+        "name": "King Thing",
+        "tag": "20JJJ2CCRU",
+        "metricValue": 12550,
+        "metricUnit": "points"
+      },
+      "ironKings": [
+        {
+          "rank": 1,
+          "name": "Chanco",
+          "tag": "20R8QRLYLP",
+          "metricValue": 20,
+          "metricUnit": "battle_days"
+        },
+        {
+          "rank": 1,
+          "name": "Fullboat",
+          "tag": "8U2P0JPR",
+          "metricValue": 20,
+          "metricUnit": "battle_days"
+        },
+        {
+          "rank": 1,
+          "name": "Mega Goblin",
+          "tag": "229QY8UL9U",
+          "metricValue": 20,
+          "metricUnit": "battle_days"
+        }
+      ],
+      "rookieMvp": [
+        {
+          "rank": 1,
+          "name": "Ak",
+          "tag": "UCRLVL29U",
+          "metricValue": 2250,
+          "metricUnit": "points"
+        },
+        {
+          "rank": 2,
+          "name": "NOBITA",
+          "tag": "JRVV9VC0C",
+          "metricValue": 1600,
+          "metricUnit": "points"
+        },
+        {
+          "rank": 3,
+          "name": "£eoππe§§;",
+          "tag": "VJG09L9YY",
+          "metricValue": 100,
+          "metricUnit": "points"
+        }
+      ],
+      "donationChamp": [
+        {
+          "rank": 1,
+          "name": "Vijay",
+          "tag": "C920YGLC2",
+          "metricValue": 5775,
+          "metricUnit": "donations"
+        },
+        {
+          "rank": 2,
+          "name": "Chanco",
+          "tag": "20R8QRLYLP",
+          "metricValue": 4465,
+          "metricUnit": "donations"
+        },
+        {
+          "rank": 3,
+          "name": "L-Drxgo",
+          "tag": "2CY2RJL9G",
+          "metricValue": 4021,
+          "metricUnit": "donations"
+        }
+      ]
+    },
     {
       "seasonId": 134,
       "startedAt": "2026-07-06T10:15:42Z",
@@ -482,104 +587,6 @@
           "name": "Vijay",
           "tag": "C920YGLC2",
           "metricValue": 1546,
-          "metricUnit": "donations"
-        }
-      ]
-    },
-    {
-      "seasonId": 129,
-      "startedAt": "2026-02-16T09:47:06Z",
-      "endedAt": "2026-02-22T09:52:37Z",
-      "finalRank": 1,
-      "warChamp": [
-        {
-          "rank": 1,
-          "name": "King Levy",
-          "tag": "U8RYG9Y2U",
-          "metricValue": 7700,
-          "metricUnit": "points"
-        },
-        {
-          "rank": 2,
-          "name": "JaxikoLane",
-          "tag": "VPY0Y2209",
-          "metricValue": 7000,
-          "metricUnit": "points"
-        },
-        {
-          "rank": 3,
-          "name": "King Thing",
-          "tag": "20JJJ2CCRU",
-          "metricValue": 6700,
-          "metricUnit": "points"
-        }
-      ],
-      "freePass": {
-        "rank": 1,
-        "name": "King Levy",
-        "tag": "U8RYG9Y2U",
-        "metricValue": 7700,
-        "metricUnit": "points"
-      },
-      "ironKings": [
-        {
-          "rank": 1,
-          "name": "JaxikoLane",
-          "tag": "VPY0Y2209",
-          "metricValue": 12,
-          "metricUnit": "battle_days"
-        },
-        {
-          "rank": 1,
-          "name": "King Thing",
-          "tag": "20JJJ2CCRU",
-          "metricValue": 12,
-          "metricUnit": "battle_days"
-        }
-      ],
-      "rookieMvp": [
-        {
-          "rank": 1,
-          "name": "King Levy",
-          "tag": "U8RYG9Y2U",
-          "metricValue": 7700,
-          "metricUnit": "points"
-        },
-        {
-          "rank": 2,
-          "name": "JaxikoLane",
-          "tag": "VPY0Y2209",
-          "metricValue": 7000,
-          "metricUnit": "points"
-        },
-        {
-          "rank": 3,
-          "name": "King Thing",
-          "tag": "20JJJ2CCRU",
-          "metricValue": 6700,
-          "metricUnit": "points"
-        }
-      ],
-      "donationChamp": [
-        {
-          "rank": 1,
-          "name": "Chanco",
-          "tag": "20R8QRLYLP",
-          "metricValue": 344,
-          "metricUnit": "donations"
-        },
-        {
-          "rank": 2,
-          "name": "JaxikoLane",
-          "tag": "VPY0Y2209",
-          "metricValue": 316,
-          "metricUnit": "donations"
-        },
-        {
-          "rank": 3,
-          "name": "raquaza",
-          "tag": "UL2V9QRG0",
-          "metricValue": 312,
           "metricUnit": "donations"
         }
       ]
