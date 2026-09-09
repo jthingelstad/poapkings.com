@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 130593,
+    "clanScore": 130876,
     "clanWarTrophies": 1160,
-    "donationsPerWeek": 2634,
-    "memberCount": 48,
+    "donationsPerWeek": 3918,
+    "memberCount": 49,
     "name": "POAP KINGS",
-    "openSlots": 2,
+    "openSlots": 1,
     "tag": null
   },
-  "generatedAt": "2026-09-08T23:02:38Z",
+  "generatedAt": "2026-09-09T23:03:56Z",
   "headlineStats": [
     {
       "detail": "14 members are at 14k+",
@@ -23,19 +23,19 @@
       "value": 17
     },
     {
-      "detail": "194.1K total wins across roster",
+      "detail": "195K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 4043
+      "value": 3980
     },
     {
-      "detail": "48 members at 1k+",
+      "detail": "49 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1638.4
+      "value": 1627.8
     }
   ],
-  "latestSnapshotDate": "2026-09-08",
+  "latestSnapshotDate": "2026-09-09",
   "leaders": {
     "collection": [
       {
@@ -84,20 +84,20 @@
         "name": "sniperhendo",
         "role": "Member",
         "tag": "#YC8LLR8Q2",
-        "value": 1857
+        "value": 1858
       }
     ],
     "tenure": [
       {
-        "name": "Aaqib Javed",
-        "role": "Elder",
-        "tag": "#2G2RPVPP",
-        "value": 10
-      },
-      {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
+        "value": 10
+      },
+      {
+        "name": "Aaqib Javed",
+        "role": "Elder",
+        "tag": "#2G2RPVPP",
         "value": 10
       },
       {
@@ -139,21 +139,21 @@
     ],
     "trophies": [
       {
-        "name": "Vijay",
-        "role": "Co-Leader",
-        "tag": "#C920YGLC2",
-        "value": 14000
-      },
-      {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
         "value": 14000
       },
       {
-        "name": "L-Drxgo⚡",
+        "name": "The Joesma",
         "role": "Member",
-        "tag": "#2CY2RJL9G",
+        "tag": "#PR8YLQ2CV",
+        "value": 14000
+      },
+      {
+        "name": "Vijay",
+        "role": "Co-Leader",
+        "tag": "#C920YGLC2",
         "value": 14000
       },
       {
@@ -163,9 +163,15 @@
         "value": 14000
       },
       {
-        "name": "Kurd Paraw",
+        "name": "L-Drxgo⚡",
         "role": "Member",
-        "tag": "#2G09Q20QC",
+        "tag": "#2CY2RJL9G",
+        "value": 14000
+      },
+      {
+        "name": "TDuck",
+        "role": "Elder",
+        "tag": "#PLCCYUQL",
         "value": 14000
       },
       {
@@ -175,15 +181,9 @@
         "value": 14000
       },
       {
-        "name": "Sandeep",
+        "name": "Fullboat",
         "role": "Elder",
-        "tag": "#UQ2R9RGVP",
-        "value": 14000
-      },
-      {
-        "name": "King Levy",
-        "role": "Co-Leader",
-        "tag": "#U8RYG9Y2U",
+        "tag": "#8U2P0JPR",
         "value": 14000
       }
     ],
@@ -248,31 +248,31 @@
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 23967
+        "value": 24005
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 12482
+        "value": 12507
       },
       {
         "name": "sikander sidhu",
         "role": "Elder",
         "tag": "#JYRQ8U92C",
-        "value": 11193
+        "value": 11194
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 9936
+        "value": 9939
       },
       {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 6789
+        "value": 6792
       },
       {
         "name": "Shafith Nihal♥️",
@@ -284,18 +284,18 @@
         "name": "OllieTurtle",
         "role": "Elder",
         "tag": "#RJ9RRQPVU",
-        "value": 6202
+        "value": 6207
       }
     ]
   },
   "metrics": {
-    "averageBadgeCount": 110,
-    "averageCollectionLevel": 1638.4,
-    "averageTrophies": 11497,
-    "averageWins": 4043,
+    "averageBadgeCount": 108.6,
+    "averageCollectionLevel": 1627.8,
+    "averageTrophies": 11434,
+    "averageWins": 3980,
     "averageYearsPlayed": 5.7,
     "medianTrophies": 12500,
-    "totalWins": 194066
+    "totalWins": 195001
   },
   "tenureDistribution": [
     {
@@ -307,7 +307,7 @@
       "label": "3-4.9 years"
     },
     {
-      "count": 3,
+      "count": 4,
       "label": "5-6.9 years"
     },
     {
@@ -317,15 +317,15 @@
   ],
   "trophyDistribution": [
     {
-      "count": 12,
+      "count": 13,
       "label": "<9k"
     },
     {
-      "count": 5,
+      "count": 4,
       "label": "9k-10.9k"
     },
     {
-      "count": 3,
+      "count": 4,
       "label": "11k-11.9k"
     },
     {
