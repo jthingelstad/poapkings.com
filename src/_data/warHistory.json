@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T23:19:28Z",
+  "generatedAt": "2026-09-23T23:18:03Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -450,7 +450,7 @@
     {
       "averageRank": 1,
       "seasonId": 136,
-      "trophyChange": 20,
+      "trophyChange": 40,
       "weeks": [
         {
           "clanScore": 1160,
@@ -464,29 +464,42 @@
           "totalClans": 5,
           "trophyChange": 20,
           "weekLabel": "S136 W1"
+        },
+        {
+          "clanScore": 1180,
+          "createdDate": "20260921T093805.000Z",
+          "fame": 10000,
+          "finishTime": "20260920T093805.000Z",
+          "isColosseum": false,
+          "rank": 1,
+          "seasonId": 136,
+          "sectionIndex": 1,
+          "totalClans": 5,
+          "trophyChange": 20,
+          "weekLabel": "S136 W2"
         }
       ],
-      "wins": 1
+      "wins": 2
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 1160,
-      "createdDate": "20260914T093805.000Z",
+      "clanScore": 1180,
+      "createdDate": "20260921T093805.000Z",
       "fame": 10000,
-      "finishTime": "20260913T093804.000Z",
+      "finishTime": "20260920T093805.000Z",
       "isColosseum": false,
       "rank": 1,
       "seasonId": 136,
-      "sectionIndex": 0,
+      "sectionIndex": 1,
       "totalClans": 5,
       "trophyChange": 20,
-      "weekLabel": "S136 W1"
+      "weekLabel": "S136 W2"
     },
-    "totalWeeks": 31,
-    "trophyChange": 1180,
-    "wins": 31
+    "totalWeeks": 32,
+    "trophyChange": 1200,
+    "wins": 32
   },
   "weeks": [
     {
@@ -891,6 +904,19 @@
       "totalClans": 5,
       "trophyChange": 20,
       "weekLabel": "S136 W1"
+    },
+    {
+      "clanScore": 1180,
+      "createdDate": "20260921T093805.000Z",
+      "fame": 10000,
+      "finishTime": "20260920T093805.000Z",
+      "isColosseum": false,
+      "rank": 1,
+      "seasonId": 136,
+      "sectionIndex": 1,
+      "totalClans": 5,
+      "trophyChange": 20,
+      "weekLabel": "S136 W2"
     }
   ]
 }
