@@ -1,14 +1,22 @@
 version: 2
-# Dependabot updates are PR-only. Dependency updates are handled directly on
-# main by the weekly maintenance process; vulnerability alerts remain enabled.
+# Dependency updates arrive as pull requests and land through the same
+# `validate` check as any other change; vulnerability alerts stay enabled.
 updates:
   - package-ecosystem: npm
     directory: "/"
-    open-pull-requests-limit: 0
     schedule:
       interval: weekly
+    open-pull-requests-limit: 3
+    # One weekly PR for minor and patch bumps, so they are merged, not ignored.
+    groups:
+      minor-and-patch:
+        patterns: ["*"]
+        update-types: [minor, patch]
+    commit-message:
+      prefix: deps
   - package-ecosystem: github-actions
     directory: "/"
-    open-pull-requests-limit: 0
     schedule:
-      interval: weekly
+      interval: monthly
+    commit-message:
+      prefix: ci
