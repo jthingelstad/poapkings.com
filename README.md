@@ -77,7 +77,7 @@ Completed-season recognition is imported separately from Elixir's durable awards
 npm run update-recognition
 ```
 
-The importer opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and writes the privacy-safe `src/_data/recognition.json` projection. It never publishes the site and is not part of the daily data operator. Check freshness without writing with:
+The importer opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and writes the privacy-safe `src/_data/recognition.json` projection. It never publishes the site and is not part of the daily data operator; its result is published by a pull request that changes only that file. Check freshness without writing with:
 
 ```bash
 npm --silent run update-recognition -- --check
@@ -145,7 +145,7 @@ data/clash-royale.sqlite  Build-time data store
 - Tinylytics for privacy-focused analytics ([public stats](https://tinylytics.app/public/NnbTPjJ2AWXF8GZDuy54))
 - GitHub Actions and GitHub Pages
 
-Pushing `main` runs the production build and deploys `_site/`. GitHub Pages must use **GitHub Actions** as its source.
+`main` takes only pull requests. Every pull request runs the `validate` check (install, build, workflow lint); a merge to `main` runs it again and then deploys `_site/`. GitHub Pages must use **GitHub Actions** as its source. [`AGENTS.md`](AGENTS.md) has the landing steps.
 
 ## Supercell disclaimer
 

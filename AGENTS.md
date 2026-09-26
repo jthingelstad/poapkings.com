@@ -57,7 +57,28 @@ npm run build
 npm start
 ```
 
-The local server is `http://localhost:8080`. Pushing `main` triggers `.github/workflows/deploy.yml`, which builds and publishes `_site/` through GitHub Pages.
+The local server is `http://localhost:8080`. `.github/workflows/deploy.yml` runs the `validate` job (install, advisory audit, build, `sh scripts/test-workflows.sh`) on every pull request and push. A merge to `main` runs it again on the merge commit and, when it passes, publishes `_site/` through GitHub Pages; a manual dispatch on `main` takes the same path.
+
+## Landing changes
+
+Since 2026-09-26, `main` takes only pull requests, merged on a green `validate` check. There is no bypass, Jamie's account included; the agents push as it, so a direct push to `main` is refused (GH013). That refusal is the rule working: never work around it.
+
+```bash
+git switch -c <topic>/<slug>        # before the first edit
+git commit ...                       # stage explicit paths
+git push -u origin HEAD
+gh pr create --fill
+gh pr merge --auto --rebase --delete-branch
+gh pr checks --watch --fail-fast
+git switch main && git pull --ff-only   # once merged
+```
+
+- If `main` moves under an open PR: `gh pr update-branch --rebase`.
+- A rebase merge gives the commit a new SHA on `main`. Anything that watches "my commit's deploy" reads the merge SHA from `gh pr view <n> --json mergeCommit --jq .mergeCommit.oid`, then the Pages run for that SHA.
+- A check that fails and then passes on re-run is a flake, and a flake is a defect: fix it in the PR or record it the same day.
+- Unfinished work stays an open PR; the checkout goes back to `main`.
+- Outside contributors: fork, then PR. Same check.
+- The data operator's refresh and the recognition refresh land the same way; `OPERATOR.md` has the operator's exact steps.
 
 ## Rendering conventions
 
@@ -105,7 +126,7 @@ Completed recognition is a separate, deliberately non-daily workflow:
 npm run update-recognition
 ```
 
-It opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and updates only `src/_data/recognition.json` from Elixir's durable, closed-season awards ledger. `npm --silent run update-recognition -- --check` is the non-writing freshness probe; exit `2` means the projection would change. This workflow does not broaden `OPERATOR.md` and must not add website publishing back to Elixir.
+It opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and updates only `src/_data/recognition.json` from Elixir's durable, closed-season awards ledger. `npm --silent run update-recognition -- --check` is the non-writing freshness probe; exit `2` means the projection would change. Publishing it is a pull request like any other change: on a clean `main`, `git switch -c data/recognition-<YYYY-MM-DD>`, run the importer, commit only `src/_data/recognition.json`, and land it as in *Landing changes*; the site updates when the merge's Pages run succeeds. It is run by hand or by the domain Turn the Clock objective. This workflow does not broaden `OPERATOR.md` and must not add website publishing back to Elixir.
 
 ## LLM and JSON surfaces
 
