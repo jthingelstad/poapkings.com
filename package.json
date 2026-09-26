@@ -20,11 +20,11 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "esbuild": "^0.28.1",
+    "esbuild": "^0.28.2",
     "patch-package": "^8.0.1"
   },
   "dependencies": {
-    "motion": "^13.1.1",
-    "pixi.js": "^8.19.0"
+    "motion": "^13.4.2",
+    "pixi.js": "^8.21.0"
   }
 }
