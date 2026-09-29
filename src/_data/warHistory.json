@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T23:19:39Z",
+  "generatedAt": "2026-09-29T07:13:53Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -450,7 +450,7 @@
     {
       "averageRank": 1,
       "seasonId": 136,
-      "trophyChange": 40,
+      "trophyChange": 60,
       "weeks": [
         {
           "clanScore": 1160,
@@ -477,29 +477,42 @@
           "totalClans": 5,
           "trophyChange": 20,
           "weekLabel": "S136 W2"
+        },
+        {
+          "clanScore": 1200,
+          "createdDate": "20260928T093805.000Z",
+          "fame": 10305,
+          "finishTime": "20260928T093805.000Z",
+          "isColosseum": false,
+          "rank": 1,
+          "seasonId": 136,
+          "sectionIndex": 2,
+          "totalClans": null,
+          "trophyChange": 20,
+          "weekLabel": "S136 W3"
         }
       ],
-      "wins": 2
+      "wins": 3
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 1180,
-      "createdDate": "20260921T093805.000Z",
-      "fame": 10000,
-      "finishTime": "20260920T093805.000Z",
+      "clanScore": 1200,
+      "createdDate": "20260928T093805.000Z",
+      "fame": 10305,
+      "finishTime": "20260928T093805.000Z",
       "isColosseum": false,
       "rank": 1,
       "seasonId": 136,
-      "sectionIndex": 1,
-      "totalClans": 5,
+      "sectionIndex": 2,
+      "totalClans": null,
       "trophyChange": 20,
-      "weekLabel": "S136 W2"
+      "weekLabel": "S136 W3"
     },
-    "totalWeeks": 32,
-    "trophyChange": 1200,
-    "wins": 32
+    "totalWeeks": 33,
+    "trophyChange": 1220,
+    "wins": 33
   },
   "weeks": [
     {
@@ -917,6 +930,19 @@
       "totalClans": 5,
       "trophyChange": 20,
       "weekLabel": "S136 W2"
+    },
+    {
+      "clanScore": 1200,
+      "createdDate": "20260928T093805.000Z",
+      "fame": 10305,
+      "finishTime": "20260928T093805.000Z",
+      "isColosseum": false,
+      "rank": 1,
+      "seasonId": 136,
+      "sectionIndex": 2,
+      "totalClans": null,
+      "trophyChange": 20,
+      "weekLabel": "S136 W3"
     }
   ]
 }
