@@ -360,6 +360,51 @@ export function upsertRiverRaceLog(db, { clanTag, items }) {
   return count;
 }
 
+// Elixir's war_history weeks (the JSON API since 2026-09-29): one row per
+// closed week for our clan. A week the game's own log already recorded
+// keeps that row, with its standings and participants; Elixir adds the
+// weeks after it. Elixir does not say how many clans raced (total_clans).
+export function upsertElixirWarWeeks(db, { weeks }) {
+  if (!Array.isArray(weeks) || weeks.length === 0) {
+    return 0;
+  }
+  const insertWeek = db.prepare(`
+    INSERT INTO river_race_weeks (
+      season_id, section_index, created_date, our_rank, trophy_change, our_fame,
+      total_clans, finish_time, our_clan_score, is_colosseum
+    ) VALUES (?, ?, ?, ?, ?, ?, NULL, ?, ?, ?)
+    ON CONFLICT(season_id, section_index) DO NOTHING
+  `);
+  const gameTime = (iso) => (iso ? String(iso).replace(/[-:]/g, "") : null);
+  let count = 0;
+  db.exec("BEGIN");
+  try {
+    for (const week of weeks) {
+      const seasonId = numberOrNull(week.season_id);
+      const sectionIndex = numberOrNull(week.section_index);
+      if (seasonId === null || sectionIndex === null || week.in_progress || week.our_rank == null) {
+        continue;
+      }
+      count += insertWeek.run(
+        seasonId,
+        sectionIndex,
+        gameTime(week.closed_at ?? week.finished),
+        numberOrNull(week.our_rank),
+        numberOrNull(week.trophy_change),
+        numberOrNull(week.our_fame),
+        gameTime(week.finished),
+        numberOrNull(week.our_clan_war_trophies),
+        week.is_colosseum ? 1 : 0,
+      ).changes;
+    }
+    db.exec("COMMIT");
+  } catch (error) {
+    db.exec("ROLLBACK");
+    throw error;
+  }
+  return count;
+}
+
 export function generateDataExports(db, { clan, roster }) {
   const members = Array.isArray(roster?.members) ? roster.members : [];
   const currentMembers = members.map((member) => toExplorerMember(member)).filter((member) => member.tag);

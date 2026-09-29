@@ -9,12 +9,20 @@ import {
   generateDataExports,
   openDataDb,
   upsertCurrentSnapshot,
+  upsertElixirWarWeeks,
   upsertRiverRaceLog,
   writeDataExports,
 } from "./clash-data-store.js";
 import { clanWarLeague } from "./clan-war-league.js";
 
 const API_BASE = "https://api.clashroyale.com/v1";
+// Elixir records all three clans; its JSON API is the default source since
+// 2026-09-29. The game API path stays as --source cr, the rollback.
+const ELIXIR_API_BASE = "https://elixir.poapkings.com/api/v1";
+const ELIXIR_CARDS_URL = "https://elixir.poapkings.com/api/public/cards";
+const SOURCES = ["elixir", "cr"];
+// Elixir serves a clan's location as the game's id; the names we show.
+const LOCATION_NAMES = { 57000006: "International" };
 const PROFILE_FETCH_CONCURRENCY = 5;
 const VALID_TAG_CHARS = new Set("0289PYLQGRJCUV".split(""));
 const ROLE_MAP = {
@@ -86,7 +94,10 @@ const dataDir = join(repoRoot, "src", "_data");
 const sitePath = join(dataDir, "site.json");
 const clanPath = join(dataDir, "clan.json");
 const rosterPath = join(dataDir, "roster.json");
+const ourClansPath = join(dataDir, "ourClans.json");
+const clanNetworkPath = join(dataDir, "clanNetwork.json");
 const defaultCrApiEnvPath = resolve(repoRoot, "..", "elixir-bot", ".env");
+const defaultElixirEnvPath = join(repoRoot, ".env");
 
 const args = process.argv.slice(2);
 
@@ -104,16 +115,22 @@ function printHelp() {
   console.log(`Usage: npm run update-roster -- [options]
 
 Options:
+  --source NAME      elixir (default) reads Elixir's JSON API for all three
+                     clans; cr reads the Clash Royale API for the home clan,
+                     the rollback path.
   --clan-tag TAG     Clan tag to fetch. Defaults to src/_data/site.json.
-  --env-file PATH    Env file containing CR_API_KEY. Defaults to ../elixir-bot/.env.
-  --skip-profiles    Fetch only the clan roster and preserve existing profile fields.
-  --skip-wars        Skip the clan war log fetch.
+  --env-file PATH    Env file holding the source's key. Defaults to .env here
+                     for elixir (ELIXIR_API_KEY), ../elixir-bot/.env for cr
+                     (CR_API_KEY).
+  --skip-profiles    cr only: fetch only the clan roster and preserve existing
+                     profile fields.
+  --skip-wars        Skip the war history fetch.
   --dry-run          Fetch and compare without writing files.
   --exit-code        Exit 2 when data changed or would change.
   --help             Show this help.
 
-The script uses CR_API_KEY from the current environment first, then falls back
-to the local CR API env file so the key is not copied into this repo.`);
+Each key is read from the current environment first, then from the env file,
+and is never printed.`);
 }
 
 function readJson(path, fallback = null) {
@@ -145,12 +162,12 @@ function parseEnvFile(path) {
   return env;
 }
 
-function requireApiKey(envPath) {
-  const fromProcess = (process.env.CR_API_KEY || "").trim();
+function requireApiKey(envPath, name = "CR_API_KEY") {
+  const fromProcess = (process.env[name] || "").trim();
   if (fromProcess) return fromProcess;
-  const fromFile = (parseEnvFile(envPath).CR_API_KEY || "").trim();
+  const fromFile = (parseEnvFile(envPath)[name] || "").trim();
   if (fromFile) return fromFile;
-  throw new Error(`CR_API_KEY is not set and was not found in ${envPath}`);
+  throw new Error(`${name} is not set and was not found in ${envPath}`);
 }
 
 function normalizeTag(raw) {
@@ -393,6 +410,115 @@ function buildRosterPayload(clanData, now, profileByTag, previousRoster) {
   };
 }
 
+// The game's compact timestamp (20260927T223621.000Z), which roster.json
+// and the data store have always carried.
+function gameTimestamp(iso) {
+  return iso ? String(iso).replace(/[-:]/g, "") : "";
+}
+
+function elixirFavoriteCard(cardId, cardsById) {
+  const card = cardId == null ? null : cardsById.get(Number(cardId));
+  return card ? favoriteCardPayload(card) : null;
+}
+
+// Elixir's lifetime block is the latest profile read; a member whose profile
+// it has not read yet keeps the fields the site last had. The site's clan
+// war wins and clan donations were the ClanWarWins and ClanDonations badges'
+// progress, which Elixir does not serve per member: its war_day_wins is the
+// retired Clan Wars counter (0 on newer accounts) and total_donations the
+// lifetime counter, so neither stands in for them.
+function elixirProfilePayload(member, cardsById) {
+  const life = member.lifetime;
+  if (!life) return null;
+  const payload = {};
+  assignNumber(payload, "best_trophies", life.best_trophies);
+  assignNumber(payload, "battle_count", life.battle_count);
+  assignNumber(payload, "three_crown_wins", life.three_crown_wins);
+  assignNumber(payload, "cr_account_age_days", member.account_age_days);
+  assignNumber(payload, "cr_account_age_years", member.years_played);
+  assignNumber(payload, "cr_battle_wins", life.wins);
+  assignNumber(payload, "cr_collection_level", life.collection_level);
+  assignNumber(payload, "badge_count", member.badge_count);
+  const favoriteCard = elixirFavoriteCard(member.favorite_card_id, cardsById);
+  if (favoriteCard) payload.favorite_card = favoriteCard;
+  return payload;
+}
+
+function elixirMemberPayload(member, previousMember, cardsById) {
+  const profileFields =
+    elixirProfilePayload(member, cardsById) ?? preservedProfilePayload(previousMember);
+  return {
+    name: normalizeMemberName(member.name) || "Unknown",
+    tag: normalizeTag(member.player_tag),
+    role: ROLE_MAP[member.role] || "Member",
+    trophies: member.trophies || 0,
+    arena: member.arena?.name || "",
+    clan_rank: member.clan_rank || 0,
+    previous_clan_rank: member.previous_clan_rank || null,
+    donations: member.donations_this_week || 0,
+    donations_received: member.donations_received_this_week || 0,
+    last_seen: gameTimestamp(member.last_seen_in_game),
+    ...profileFields,
+  };
+}
+
+function elixirClanPayload(roster, previousClan = {}) {
+  const members = roster.members || [];
+  const location = LOCATION_NAMES[roster.location_id];
+  return {
+    memberCount: roster.member_count ?? members.length,
+    clanScore: roster.clan_score || 0,
+    clanWarTrophies: roster.clan_war_trophies || 0,
+    donationsPerWeek: roster.donations_per_week || 0,
+    totalTrophies: members.reduce((sum, member) => sum + (member.trophies || 0), 0),
+    minTrophies: roster.required_trophies || 0,
+    clanLeague: clanWarLeague(roster.clan_war_trophies || 0),
+    clanStatus: displayClanType(roster.type),
+    clanRegion: location || previousClan.clanRegion || "Not Set",
+  };
+}
+
+function elixirRosterPayload(roster, now, previousRoster, cardsById) {
+  const previousByTag = previousMembersByTag(previousRoster);
+  const members = (roster.members || [])
+    .map((member) =>
+      elixirMemberPayload(member, previousByTag.get(normalizeTag(member.player_tag)), cardsById),
+    )
+    .sort((a, b) => (a.clan_rank || 999) - (b.clan_rank || 999) || a.name.localeCompare(b.name));
+  return { updated: now, members };
+}
+
+// The data store's clan row reads the game's field names.
+function elixirSnapshotClan(clanTag, roster, nextClan) {
+  return {
+    tag: `#${clanTag}`,
+    name: roster.name ?? null,
+    type: roster.type ?? null,
+    location: { name: nextClan.clanRegion },
+    members: nextClan.memberCount,
+    clanScore: nextClan.clanScore,
+    clanWarTrophies: nextClan.clanWarTrophies,
+    donationsPerWeek: nextClan.donationsPerWeek,
+    requiredTrophies: nextClan.minTrophies,
+  };
+}
+
+// The sister clans' facts for /clans/, the ones the home clan's card shows.
+function clanNetworkPayload(rostersByTag, previousNetwork = {}) {
+  const clans = {};
+  for (const [tag, roster] of rostersByTag) {
+    const facts = elixirClanPayload(roster, previousNetwork.clans?.[tag]);
+    clans[tag] = {
+      name: roster.name ?? null,
+      memberCount: facts.memberCount,
+      minTrophies: facts.minTrophies,
+      clanWarTrophies: facts.clanWarTrophies,
+      clanStatus: facts.clanStatus,
+    };
+  }
+  return { clans };
+}
+
 function withoutUpdated(roster) {
   const copy = { ...(roster || {}) };
   delete copy.updated;
@@ -427,6 +553,40 @@ async function fetchPlayer(playerTag, apiKey) {
   return fetchApi(url, apiKey, `player #${tag}`);
 }
 
+async function fetchElixir(path, apiKey, description) {
+  const response = await fetch(`${ELIXIR_API_BASE}${path}`, {
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${apiKey}`,
+      "User-Agent": "poapkings.com-roster-updater",
+    },
+  });
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(
+      `Elixir API returned ${response.status} ${response.statusText} for ${description}: ${body.slice(0, 240)}`,
+    );
+  }
+  return (await response.json()).data;
+}
+
+async function fetchElixirRoster(clanTag, apiKey) {
+  return fetchElixir(`/clans/${encodeURIComponent(`#${clanTag}`)}/roster`, apiKey, `roster #${clanTag}`);
+}
+
+async function fetchElixirWarHistory(clanTag, apiKey) {
+  return fetchElixir(`/clans/${encodeURIComponent(`#${clanTag}`)}/war-history`, apiKey, `war history #${clanTag}`);
+}
+
+async function fetchCardCatalog() {
+  const response = await fetch(ELIXIR_CARDS_URL, {
+    headers: { Accept: "application/json", "User-Agent": "poapkings.com-roster-updater" },
+  });
+  if (!response.ok) throw new Error(`Elixir card catalog returned ${response.status} ${response.statusText}`);
+  const { cards } = await response.json();
+  return new Map((cards || []).map((card) => [Number(card.id), card]));
+}
+
 function createScratchDb() {
   const tempDir = mkdtempSync(join(tmpdir(), "poapkings-roster-"));
   const tempDbPath = join(tempDir, "clash-royale.sqlite");
@@ -443,7 +603,7 @@ function createScratchDb() {
   };
 }
 
-function updateDataStore(db, { shouldRecordCurrentSnapshot, clanTag, now, clanData, nextClan, nextRoster, riverRaceLog }) {
+function updateDataStore(db, { shouldRecordCurrentSnapshot, clanTag, now, clanData, nextClan, nextRoster, riverRaceLog, warWeeks }) {
   if (shouldRecordCurrentSnapshot) {
     upsertCurrentSnapshot(db, {
       snapshotDate: null,
@@ -454,7 +614,8 @@ function updateDataStore(db, { shouldRecordCurrentSnapshot, clanTag, now, clanDa
       rosterPayload: nextRoster,
     });
   }
-  upsertRiverRaceLog(db, { clanTag, items: riverRaceLog?.items ?? [] });
+  if (warWeeks) upsertElixirWarWeeks(db, { weeks: warWeeks });
+  else upsertRiverRaceLog(db, { clanTag, items: riverRaceLog?.items ?? [] });
   return generateDataExports(db, { clan: nextClan, roster: nextRoster });
 }
 
@@ -501,6 +662,56 @@ async function fetchPlayerProfiles(members, apiKey) {
   return new Map(pairs);
 }
 
+async function readElixir({ clanTag, envPath, skipWars, previousClan, previousRoster, now }) {
+  const apiKey = requireApiKey(envPath, "ELIXIR_API_KEY");
+  const sisterTags = (readJson(ourClansPath, {}).clans || [])
+    .map((clan) => normalizeTag(clan.tag))
+    .filter((tag) => tag !== clanTag);
+  const [roster, cardsById, warHistory, ...sisters] = await Promise.all([
+    fetchElixirRoster(clanTag, apiKey),
+    fetchCardCatalog(),
+    skipWars ? null : fetchElixirWarHistory(clanTag, apiKey),
+    ...sisterTags.map((tag) => fetchElixirRoster(tag, apiKey)),
+  ]);
+  const nextClan = elixirClanPayload(roster, previousClan);
+  const withProfiles = (roster.members || []).filter((member) => member.lifetime).length;
+  return {
+    clanData: elixirSnapshotClan(clanTag, roster, nextClan),
+    nextClan,
+    nextRoster: elixirRosterPayload(roster, now, previousRoster, cardsById),
+    warWeeks: warHistory?.weeks ?? [],
+    nextNetwork: clanNetworkPayload(
+      new Map(sisterTags.map((tag, index) => [tag, sisters[index]])),
+      readJson(clanNetworkPath, {}),
+    ),
+    report: [
+      `Read #${clanTag} from Elixir: ${withProfiles}/${roster.members?.length ?? 0} members with a recorded profile.`,
+      skipWars ? "Skipped war history fetch." : `Fetched war history weeks: ${warHistory?.weeks?.length ?? 0}.`,
+      `Read ${sisterTags.length} sister clans: ${sisterTags.map((tag, index) => `${sisters[index].name} ${sisters[index].member_count}/50`).join(", ")}.`,
+    ],
+  };
+}
+
+async function readClashRoyale({ clanTag, envPath, skipProfiles, skipWars, previousRoster, now }) {
+  const apiKey = requireApiKey(envPath, "CR_API_KEY");
+  const clanData = await fetchClan(clanTag, apiKey);
+  const clanMembers = clanData.memberList || [];
+  const profileByTag = skipProfiles ? new Map() : await fetchPlayerProfiles(clanMembers, apiKey);
+  const riverRaceLog = skipWars ? { items: [] } : await fetchRiverRaceLog(clanTag, apiKey);
+  return {
+    clanData,
+    nextClan: buildClanPayload(clanData),
+    nextRoster: buildRosterPayload(clanData, now, profileByTag, previousRoster),
+    riverRaceLog,
+    report: [
+      skipProfiles
+        ? "Skipped player profile fetch; preserved existing profile fields where available."
+        : `Fetched player profiles: ${profileByTag.size}/${clanMembers.length}.`,
+      skipWars ? "Skipped clan war log fetch." : `Fetched river race log weeks: ${riverRaceLog.items?.length ?? 0}.`,
+    ],
+  };
+}
+
 async function main() {
   if (hasArg("--help")) {
     printHelp();
@@ -511,36 +722,35 @@ async function main() {
   const skipProfiles = hasArg("--skip-profiles");
   const skipWars = hasArg("--skip-wars");
   const exitCodeSignal = hasArg("--exit-code");
+  const source = argValue("--source") || "elixir";
+  if (!SOURCES.includes(source)) throw new Error(`--source must be one of ${SOURCES.join(", ")}`);
   const site = readJson(sitePath, {});
   const clanTag = normalizeTag(argValue("--clan-tag") || site.clanTag);
-  const envPath = resolve(argValue("--env-file") || process.env.CR_API_ENV || process.env.ELIXIR_BOT_ENV || defaultCrApiEnvPath);
-  const apiKey = requireApiKey(envPath);
+  const envPath = resolve(
+    argValue("--env-file") ||
+      (source === "elixir"
+        ? defaultElixirEnvPath
+        : process.env.CR_API_ENV || process.env.ELIXIR_BOT_ENV || defaultCrApiEnvPath),
+  );
 
   const previousClan = readJson(clanPath, {});
   const previousRoster = readJson(rosterPath, {});
-  const clanData = await fetchClan(clanTag, apiKey);
-  const clanMembers = clanData.memberList || [];
-  const profileByTag = skipProfiles ? new Map() : await fetchPlayerProfiles(clanMembers, apiKey);
+  const previousNetwork = readJson(clanNetworkPath, null);
   const now = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
-  const nextClan = buildClanPayload(clanData);
-  const nextRoster = buildRosterPayload(clanData, now, profileByTag, previousRoster);
-  const riverRaceLog = skipWars ? { items: [] } : await fetchRiverRaceLog(clanTag, apiKey);
+  const read = source === "elixir"
+    ? await readElixir({ clanTag, envPath, skipWars, previousClan, previousRoster, now })
+    : await readClashRoyale({ clanTag, envPath, skipProfiles, skipWars, previousRoster, now });
+  const { clanData, nextClan, nextRoster, riverRaceLog, warWeeks, nextNetwork } = read;
 
   const clanChanged = stableJson(previousClan) !== stableJson(nextClan);
   const rosterChanged = stableJson(withoutUpdated(previousRoster)) !== stableJson(withoutUpdated(nextRoster));
+  const networkChanged = Boolean(nextNetwork) && stableJson(previousNetwork) !== stableJson(nextNetwork);
   const shouldRecordCurrentSnapshot = clanChanged || rosterChanged || !existsSync(dataDbPath);
+  const store = { shouldRecordCurrentSnapshot, clanTag, now, clanData, nextClan, nextRoster, riverRaceLog, warWeeks };
   const scratch = createScratchDb();
   let exportChangedFiles = [];
   try {
-    const scratchExports = updateDataStore(scratch.db, {
-      shouldRecordCurrentSnapshot,
-      clanTag,
-      now,
-      clanData,
-      nextClan,
-      nextRoster,
-      riverRaceLog,
-    });
+    const scratchExports = updateDataStore(scratch.db, store);
     exportChangedFiles = writeDataExports(scratchExports, { dryRun: true }).map(relativePath);
   } finally {
     scratch.cleanup();
@@ -549,6 +759,7 @@ async function main() {
   const changedFiles = [];
   if (clanChanged) changedFiles.push("src/_data/clan.json");
   if (rosterChanged) changedFiles.push("src/_data/roster.json");
+  if (networkChanged) changedFiles.push("src/_data/clanNetwork.json");
   if (shouldRecordCurrentSnapshot || exportChangedFiles.length) changedFiles.push("data/clash-royale.sqlite");
   changedFiles.push(...exportChangedFiles);
 
@@ -556,18 +767,10 @@ async function main() {
   if (!dryRun && changed) {
     if (clanChanged) writeIfChanged(clanPath, nextClan, dryRun);
     if (rosterChanged) writeIfChanged(rosterPath, nextRoster, dryRun);
+    if (networkChanged) writeIfChanged(clanNetworkPath, nextNetwork, dryRun);
     const db = openDataDb();
     try {
-      const exports = updateDataStore(db, {
-        shouldRecordCurrentSnapshot,
-        clanTag,
-        now,
-        clanData,
-        nextClan,
-        nextRoster,
-        riverRaceLog,
-      });
-      writeDataExports(exports, { dryRun });
+      writeDataExports(updateDataStore(db, store), { dryRun });
     } finally {
       db.close();
     }
@@ -582,18 +785,9 @@ async function main() {
     console.log("No clan roster changes detected.");
   }
   console.log(
-    `Fetched #${clanTag}: ${nextClan.memberCount}/50 members, ${nextClan.clanScore.toLocaleString("en-US")} clan score, ${nextClan.donationsPerWeek.toLocaleString("en-US")} donations/week.`,
+    `Fetched #${clanTag} (${source}): ${nextClan.memberCount}/50 members, ${nextClan.clanScore.toLocaleString("en-US")} clan score, ${nextClan.donationsPerWeek.toLocaleString("en-US")} donations/week.`,
   );
-  if (skipProfiles) {
-    console.log("Skipped player profile fetch; preserved existing profile fields where available.");
-  } else {
-    console.log(`Fetched player profiles: ${profileByTag.size}/${clanMembers.length}.`);
-  }
-  if (skipWars) {
-    console.log("Skipped clan war log fetch.");
-  } else {
-    console.log(`Fetched river race log weeks: ${riverRaceLog.items?.length ?? 0}.`);
-  }
+  for (const line of read.report) console.log(line);
   if (exitCodeSignal && changed) {
     process.exitCode = 2;
   }

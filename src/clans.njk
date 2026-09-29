@@ -24,12 +24,20 @@ supercellDisclaimer: true
         <h2 class="pk-clan__name" id="clan-{{ c.key }}">{{ c.name }}</h2>
         <p class="pk-clan__motto">{{ c.motto }}</p>
         <p class="pk-clan__pitch">{{ c.pitch }}</p>
+        {%- set live = clanNetwork.clans[c.tag] if (clanNetwork and clanNetwork.clans) else null %}
         {%- if c.home %}
         <dl class="pk-clan__facts">
           <div><dt>Members</dt><dd>{{ clanState.memberCount }} of {{ clanState.maxMembers }}</dd></div>
           <div><dt>Min trophies</dt><dd>{{ clan.minTrophies | formatNumber }}</dd></div>
           <div><dt>War league</dt><dd>{{ clan.clanWarTrophies | cwlTier }}</dd></div>
           <div><dt>Status</dt><dd>{{ clan.clanStatus }}</dd></div>
+        </dl>
+        {%- elif live %}
+        <dl class="pk-clan__facts">
+          <div><dt>Members</dt><dd>{{ live.memberCount }} of {{ clanState.maxMembers }}</dd></div>
+          <div><dt>Min trophies</dt><dd>{{ live.minTrophies | formatNumber }}</dd></div>
+          <div><dt>War league</dt><dd>{{ live.clanWarTrophies | cwlTier }}</dd></div>
+          <div><dt>Status</dt><dd>{{ live.clanStatus }}</dd></div>
         </dl>
         {%- endif %}
         <div class="pk-clan__actions">
