@@ -46,7 +46,7 @@ The former `/wars/` and `/vault/` pages are retired. Do not add them to navigati
 - `src/gamify.js` — Motion choreography and dynamically imported PixiJS star particles.
 - `src/data.js` — Roster explorer and timeline behavior.
 - `src/roster.js` — Client-side roster sorting.
-- `src/members-promo.js` — Members email-draft and copy behavior.
+- `src/members-promo.js` — Members page copy-to-clipboard for the recruiting pitch.
 - `eleventy.config.js` — Eleventy configuration, Nunjucks filters, and esbuild client bundling.
 - `scripts/` — Clash Royale updater, recognition importer, and SQLite data-store tooling.
 - `data/clash-royale.sqlite` — Committed build-time data store; never a browser dependency.
