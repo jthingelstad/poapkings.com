@@ -1,7 +1,8 @@
 # Assets — fonts and imagery
 
 Most files here are POAP KINGS' own art (`poapkings.png`, `elixir.png`, `404.jpg`,
-`favicon/`, `icons/`). Two categories are **Supercell's** intellectual property, used
+`favicon/`, `icons/`, the Elixir logo `elixir-logo.webp`, and the network's clan logos in
+`clans/`). Two categories are **Supercell's** intellectual property, used
 as fan kit assets under Supercell's Fan Content Policy:
 
 ## Fonts — `Clash_Regular.otf`, `Clash_Bold.otf`

@@ -1,0 +1,69 @@
+---
+permalink: /clans/
+layout: base.njk
+title: Our Clans | POAP KINGS, Ship It! and Elixir Kings
+description: "The POAP KINGS network: three Clash Royale clans, POAP KINGS, Ship It! and Elixir Kings, sharing one Discord and running on Elixir."
+navActive: clans
+mainId: top
+supercellDisclaimer: true
+---
+{% from "components.njk" import pageIntro, sectionHeading, actionLink, actionButton %}
+{%- set poweredEvent = 'clans' -%}
+<div class="pk-page pk-page-shell">
+  {{ pageIntro('The POAP KINGS network', 'Three clans. One Discord.', 'POAP KINGS started it; Ship It! and Elixir Kings are its newest siblings. Every clan has its own Elixir agent in our shared Discord, and the whole network runs on Elixir.') }}
+
+  <div class="pk-clans">
+    {%- for c in ourClans.clans %}
+    <article class="pk-clan pk-clan--{{ c.key }}{% if c.home %} pk-clan--home{% endif %}" id="{{ c.key }}" aria-labelledby="clan-{{ c.key }}">
+      <img class="pk-clan__logo" src="{{ c.logo }}" alt="{{ c.name }} clan logo" width="512" height="512"{% if not loop.first %} loading="lazy"{% endif %}>
+      <div class="pk-clan__body">
+        <div class="pk-clan__chips">
+          <span class="pk-clan__kind">{{ c.kind }}</span>
+          {%- if not c.home %}<span class="pk-clan__new">New</span>{% endif %}
+        </div>
+        <h2 class="pk-clan__name" id="clan-{{ c.key }}">{{ c.name }}</h2>
+        <p class="pk-clan__motto">{{ c.motto }}</p>
+        <p class="pk-clan__pitch">{{ c.pitch }}</p>
+        {%- if c.home %}
+        <dl class="pk-clan__facts">
+          <div><dt>Members</dt><dd>{{ clanState.memberCount }} of {{ clanState.maxMembers }}</dd></div>
+          <div><dt>Min trophies</dt><dd>{{ clan.minTrophies | formatNumber }}</dd></div>
+          <div><dt>War league</dt><dd>{{ clan.clanWarTrophies | cwlTier }}</dd></div>
+          <div><dt>Status</dt><dd>{{ clan.clanStatus }}</dd></div>
+        </dl>
+        {%- endif %}
+        <div class="pk-clan__actions">
+          <span class="pk-clan__tag">Clan tag <span class="pk-mono-gold">#{{ c.tag }}</span></span>
+          {%- if c.home %}
+          {{ actionButton('JOIN THE WAITLIST' if clanState.isFull else 'JOIN', 'gold', 'join', 'clans.waitlist' if clanState.isFull else 'clans.join', 'pk-action--compact') }}
+          {{ actionLink('/roster/', 'See the roster', 'outline', 'clans.roster', false, 'pk-action--compact') }}
+          {%- else %}
+          {{ actionLink('https://royaleapi.com/clan/' + c.tag, 'View on RoyaleAPI ↗', 'outline', 'clans.royaleapi-' + c.key, true, 'pk-action--compact') }}
+          {%- endif %}
+        </div>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+
+  <section class="pk-section pk-clans-how">
+    {{ sectionHeading('Joining', 'Pick a clan, then come say hi') }}
+    <div class="pk-grid-2">
+      <article class="pk-number-card">
+        <div class="pk-number-card__number">01</div>
+        <h3 class="pk-number-card__title">Request to join in-game</h3>
+        <p class="pk-number-card__copy">In Clash Royale, search for the clan's tag and send a request; a leader reviews it. POAP KINGS asks for {{ clan.minTrophies | formatNumber }}+ trophies and players who show up for war.</p>
+      </article>
+      <article class="pk-number-card">
+        <div class="pk-number-card__number">02</div>
+        <h3 class="pk-number-card__title">One Discord for all three</h3>
+        <p class="pk-number-card__copy">Every clan in the network shares the POAP KINGS Discord. Each has its own channel and its own Elixir agent there: ask it about your battles, your decks or the war, and it answers from the record.</p>
+        {{ actionLink(site.discordUrl, 'Open Discord', 'outline', 'clans.discord', true, 'pk-number-card__action') }}
+      </article>
+    </div>
+  </section>
+
+  <div class="pk-section pk-section--spacious">
+    {% include "powered-by-elixir.njk" %}
+  </div>
+</div>

@@ -2,21 +2,21 @@
 permalink: /members/
 layout: base.njk
 title: "Members | POAP KINGS | A Clash Royale Clan with Proof"
-description: "Members hub — get into Discord, connect with leadership for Pass Royale rewards, get Elixir clan updates, and grab plug-and-play recruiting copy."
+description: "Members hub — get into Discord, connect with leadership for Pass Royale rewards, get the clan's week from Elixir, and grab plug-and-play recruiting copy."
 navActive: members
 supercellDisclaimer: true
 extraScripts: '<script src="/members-promo.js" defer></script>'
 ---
-{% from "components.njk" import sectionHeading, infoCard, promoField, numberedCard %}
+{% from "components.njk" import sectionHeading, infoCard, promoField, numberedCard, actionLink %}
 {%- set memberCount = clan.memberCount -%}
 {%- set totalWins = rosterExplorer.members | sumBy('wins') -%}
 {%- set winsK = (totalWins / 1000) | round -%}
 {%- set latest = clanTrends.series | last -%}
 {%- set minTrophies = clan.minTrophies | formatNumber -%}
 {#- Elder band: a share of the CURRENT roster, so these numbers follow the clan
-    rather than going stale. The percentages and thresholds are clan policy and
-    live in elixir-bot/engine/management.py — if they change there, change them
-    here. -#}
+    rather than going stale. The percentages and thresholds are clan policy:
+    POAP KINGS' policy in Elixir Clan holds them since elixir-bot retired
+    (2026-09-26). If they change there, change them here. -#}
 {%- set elderFloor = (memberCount * 0.20) | round -%}
 {%- set elderCeil = (memberCount * 0.30) | round -%}
 {%- set elderTarget = ((elderFloor + elderCeil) / 2) | round -%}
@@ -35,28 +35,14 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
     {{ infoCard('Required for rewards', 'Connect with Leadership', 'Friend King Thing (Thingles) on the Supercell Store at least one day before delivery. Friendship is required but does not guarantee eligibility: your accounts must also meet Supercell\'s current gifting requirements. See the <a href="/faq/#faq-pass">Free Pass FAQ</a> and <a href="/members/setup/">Clan Setup guide</a>.', 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', 'Connect with Thingles →', 'gold', true) }}
   </div>
 
-  <!-- Elixir email capture (no Discord needed) -->
+  <!-- Elixir's weekly email (no Discord needed) -->
   <article class="pk-elixir-hero pk-email-card">
-    <img class="pk-email-card__mascot" src="/assets/elixir.png" alt="Elixir mascot">
+    <img class="pk-email-card__mascot" src="/assets/elixir-logo.webp" alt="Elixir logo" width="512" height="512">
     <div>
       <span class="pk-email-card__kicker">Not on Discord? No problem.</span>
-      <h2 class="pk-email-card__title">Get clan updates from Elixir</h2>
-      <p class="pk-email-card__copy">Create a prefilled email to Jamie with your player name and address. Your email app will let you review it before anything is sent.</p>
-      <form class="pk-email-form" action="mailto:Jamie@thingelstad.com" method="get" data-email-form data-email-to="Jamie@thingelstad.com">
-        <label class="pk-form-field pk-form-field--full" for="elixirPlayer">Player name
-        <select class="pk-form-control" id="elixirPlayer" name="player" required>
-          <option value="" disabled selected>Select your player name…</option>
-          {%- for m in roster.members | sort(false, false, 'name') %}
-          <option value="{{ m.name }}">{{ m.name }}</option>
-          {%- endfor %}
-        </select>
-        </label>
-        <label class="pk-form-field" for="elixirEmail">Email
-          <input class="pk-form-control" id="elixirEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-        </label>
-        <button class="pk-action pk-action--gold" type="submit" data-tinylytics-event="members.email-draft">Create email</button>
-      </form>
-      <p class="pk-email-done" data-email-done hidden>Draft ready. <a class="pk-email-done__link" data-email-mailto href="mailto:Jamie@thingelstad.com">Open it in your email app →</a></p>
+      <h2 class="pk-email-card__title">Get the clan's week from Elixir</h2>
+      <p class="pk-email-card__copy">With an Elixir account you get a Monday report on the clan's week (the war, who joined and left, standouts, and the roster) and a Tuesday recap of your own battles. Accounts are approved by hand, and every kind of email is a switch you can turn off.</p>
+      {{ actionLink('https://elixir.poapkings.com/console/signin?request', 'Request an Elixir account ↗', 'gold', 'members.elixir-request', true) }}
     </div>
   </article>
 
