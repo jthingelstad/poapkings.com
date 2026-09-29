@@ -1,0 +1,32 @@
+{
+  "clans": [
+    {
+      "key": "poapkings",
+      "name": "POAP KINGS",
+      "tag": "J2RGCRVG",
+      "logo": "/assets/clans/poapkings.webp",
+      "kind": "The flagship",
+      "motto": "Proof of Arena Push.",
+      "pitch": "Where it all started: a war clan with a public roster, Elder earned by showing up, and recognition that remembers who did.",
+      "home": true
+    },
+    {
+      "key": "shipit",
+      "name": "Ship It!",
+      "tag": "GCYQR9VY",
+      "logo": "/assets/clans/shipit.webp",
+      "kind": "Casual",
+      "motto": "Every war is a boat. Every deck is a build.",
+      "pitch": "A casual clan in the POAP KINGS network. Good vibes only."
+    },
+    {
+      "key": "elixirkings",
+      "name": "Elixir Kings",
+      "tag": "GJ09RJP8",
+      "logo": "/assets/clans/elixirkings.webp",
+      "kind": "The makers",
+      "motto": "The Elixir clan!",
+      "pitch": "Home of the people who make Elixir Drop, the card-cost trainer, and Elixir Clan."
+    }
+  ]
+}

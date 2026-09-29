@@ -19,6 +19,8 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy
 - `src/members.njk` → `/members/`
 - `src/setup.njk` → `/members/setup/`
 - `src/elixir.njk` → `/elixir/`
+- `src/elixir-mcp.njk` → `/elixir-mcp/`, a redirect to `/elixir/` so old links land
+- `src/clans.njk` → `/clans/`
 - `src/recognition.njk` → `/recognition/`
 - `src/404.njk` → custom 404 page
 
@@ -28,6 +30,7 @@ The former `/wars/` and `/vault/` pages are retired. Do not add them to navigati
 
 - `src/_includes/base.njk` — Shared HTML shell, navigation, footer, join/star modals, and global scripts.
 - `src/_includes/components.njk` — Reusable Nunjucks presentation components.
+- `src/_includes/powered-by-elixir.njk` — The one "Powered by Elixir" band, on the home and clans pages. Elixir is for any clan, so it links out to elixir.poapkings.com rather than presenting Elixir as this clan's private tool; `/elixir/` says how our clans use it.
 - `src/_data/site.json` — Canonical URL, clan tag, Tinylytics ID, Discord URL, and join URL.
 - `src/_data/clan.json` — Current clan facts.
 - `src/_data/roster.json` — Current roster and player-profile facts.
@@ -36,6 +39,7 @@ The former `/wars/` and `/vault/` pages are retired. Do not add them to navigati
 - `src/_data/rosterExplorer.json` — Visualization-ready current roster rows.
 - `src/_data/recognition.json` — Privacy-safe completed-season honors imported read-only from Elixir.
 - `src/_data/warHistory.json` — Retained updater-owned river-race history.
+- `src/_data/ourClans.json` — Hand-maintained identity of the three clans in the POAP KINGS network (name, tag, logo, kind, motto, pitch), read by `/clans/`, the home page and the LLM surfaces. Not updater-owned. The mottos and pitches follow each clan's in-game description; there are no live numbers for Ship It! or Elixir Kings until a data source exists, so do not type any in.
 - `src/_data/testimonials.json` — Hand-maintained member quotes for the home page carousel and the LLM surfaces. Not updater-owned.
 - `src/_data/clanState.js` — Derived clan capacity facts (`isFull`, `openSlots`, `maxMembers`, `memberCount`). The single source of truth for whether the clan is full; templates must not recompute it.
 - `src/styles.css` — Current site design system and page styles.
@@ -126,7 +130,7 @@ Completed recognition is a separate, deliberately non-daily workflow:
 npm run update-recognition
 ```
 
-It opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and updates only `src/_data/recognition.json` from Elixir's durable, closed-season awards ledger. `npm --silent run update-recognition -- --check` is the non-writing freshness probe; exit `2` means the projection would change. Publishing it is a pull request like any other change: on a clean `main`, `git switch -c data/recognition-<YYYY-MM-DD>`, run the importer, commit only `src/_data/recognition.json`, and land it as in *Landing changes*; the site updates when the merge's Pages run succeeds. It is run by hand or by the domain Turn the Clock objective. This workflow does not broaden `OPERATOR.md` and must not add website publishing back to Elixir.
+It opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and updates only `src/_data/recognition.json` from Elixir's durable, closed-season awards ledger. `npm --silent run update-recognition -- --check` is the non-writing freshness probe; exit `2` means the projection would change. Publishing it is a pull request like any other change: on a clean `main`, `git switch -c data/recognition-<YYYY-MM-DD>`, run the importer, commit only `src/_data/recognition.json`, and land it as in *Landing changes*; the site updates when the merge's Pages run succeeds. It is run by hand or by the domain Season Coordinator (formerly Turn the Clock). This workflow does not broaden `OPERATOR.md` and must not add website publishing back to Elixir.
 
 ## LLM and JSON surfaces
 

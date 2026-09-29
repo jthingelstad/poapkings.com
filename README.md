@@ -10,11 +10,12 @@ Visit [poapkings.com](https://poapkings.com).
 
 ## Site
 
-- **Home** — Current clan snapshot, requirements, roster highlights, and POAP KINGS tools.
+- **Home** — Current clan snapshot, requirements, roster highlights, our clans, and the Powered by Elixir band.
 - **Roster** — Sortable current roster with roles, player tags linked to RoyaleAPI, trophies, career wins, years played, and collection score.
 - **Data** — Interactive roster scatterplot and historical clan timeline.
-- **Members** — Discord/setup links, Elixir email signup draft, and current recruiting copy.
-- **Elixir** — Overview of the clan agent and its responsibilities.
+- **Members** — Discord/setup links, an Elixir account for the weekly clan email, and current recruiting copy.
+- **Our clans** — The POAP KINGS network: POAP KINGS, Ship It! and Elixir Kings, sharing one Discord.
+- **Elixir** — How the clans use Elixir, the Clash Royale platform POAP KINGS built, with links out to elixir.poapkings.com. The old `/elixir-mcp/` page redirects here.
 - **Recognition** — Durable completed-season War Champ, Iron King, Rookie MVP, Donation Champ, and Pass Royale results.
 - **Elixir Drop** — Marketing home for the clan's free Clash Royale elixir-cost trainer.
 - **FAQ** — Clan, war, rewards, Discord, and role guidance.

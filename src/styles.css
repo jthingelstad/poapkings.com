@@ -1258,19 +1258,6 @@ a:hover{ color:#f5c84c }
 .pk-email-card__kicker{ font-size:.66rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#f5c84c }
 .pk-email-card__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.3rem; margin:8px 0 6px }
 .pk-email-card__copy{ color:#c8c1e6; margin:0 0 16px; line-height:1.55; max-width:44em }
-.pk-email-form{ display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; max-width:620px }
-.pk-form-field{
-  display:grid; gap:6px; flex:1 1 260px; font-size:.72rem; font-weight:800;
-  letter-spacing:.08em; text-transform:uppercase; color:#d7c8ff;
-}
-.pk-form-field--full{ flex-basis:100% }
-.pk-form-control{
-  width:100%; border:1px solid rgba(215,200,255,.35); border-radius:13px;
-  background:rgba(7,6,16,.8); color:#f7f4ff; padding:13px 14px;
-  font:inherit; text-transform:none; letter-spacing:normal;
-}
-.pk-email-done{ color:#bbf7d0; margin:12px 0 0; font-weight:600 }
-.pk-email-done__link{ display:inline-flex; align-items:center; white-space:nowrap; color:#f5c84c; text-decoration:underline; text-underline-offset:3px }
 .pk-promo-intro{ color:#c8c1e6; margin:10px 0 18px }
 .pk-promo-intro strong, .pk-emphasis{ color:#fff }
 .pk-promo-panel{
@@ -1346,6 +1333,7 @@ a:hover{ color:#f5c84c }
 .pk-elixir-banner__image{ width:clamp(120px,18vw,180px); height:clamp(120px,18vw,180px); object-fit:contain; filter:drop-shadow(0 16px 32px rgba(0,0,0,.55)) }
 .pk-elixir-banner__title{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(2.2rem,5vw,3.4rem); margin:12px 0 0 }
 .pk-elixir-banner__copy{ font-size:1.1rem; line-height:1.6; color:#e7e2f7; margin:16px 0 0; max-width:34em; text-wrap:pretty }
+.pk-elixir-banner__copy a{ color:#f5c84c; text-decoration:underline; text-underline-offset:2px }
 .pk-elixir-jobs{ margin-top:24px }
 .pk-elixir-recognition-link{ margin:18px 0 0; color:#c8c1e6 }
 .pk-elixir-recognition-link a{ color:#f5c84c; font-weight:800 }
@@ -1364,6 +1352,82 @@ a:hover{ color:#f5c84c }
 .pk-elixir-game__title{ font-family:'Clash',system-ui,sans-serif; font-size:1.4rem; margin:0 0 6px }
 .pk-elixir-game__copy{ color:#c8c1e6; line-height:1.55; margin:0; max-width:44em }
 .pk-elixir-game__cta{ flex:0 0 auto; font-family:'Clash',system-ui,sans-serif; font-size:.95rem; color:#f5c84c }
+
+/* ── Our clans ─────────────────────────────────────────── */
+.pk-clans{ display:grid; gap:18px; margin-top:32px }
+.pk-clan{
+  display:grid; grid-template-columns:minmax(0,200px) minmax(0,1fr); gap:clamp(20px,4vw,40px); align-items:center;
+  scroll-margin-top:96px; border:1px solid rgba(215,200,255,.16); border-radius:24px;
+  background:radial-gradient(circle at 10% 50%,var(--pk-clan-glow,rgba(109,40,217,.24)),transparent 46%),linear-gradient(145deg,rgba(38,22,78,.8),rgba(11,9,32,.92));
+  box-shadow:0 18px 60px rgba(0,0,0,.42); padding:clamp(22px,3.5vw,36px);
+}
+.pk-clan--home{ border-color:rgba(245,200,76,.34); --pk-clan-glow:rgba(245,200,76,.16) }
+.pk-clan--shipit{ --pk-clan-glow:rgba(59,130,246,.26) }
+.pk-clan--elixirkings{ --pk-clan-glow:rgba(217,70,239,.24) }
+.pk-clan__logo{ width:100%; height:auto; aspect-ratio:1; object-fit:contain; filter:drop-shadow(0 16px 28px rgba(0,0,0,.5)) }
+.pk-clan__chips{ display:flex; flex-wrap:wrap; gap:8px }
+.pk-clan__kind,.pk-clan__new,.pk-clan-card__kind{ display:inline-block; font-size:.6rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; border-radius:999px }
+.pk-clan__kind,.pk-clan-card__kind{ color:#f5c84c; background:rgba(245,200,76,.14) }
+.pk-clan__new{ color:#d7c8ff; background:rgba(215,200,255,.12) }
+.pk-clan__name{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.8rem,3.4vw,2.5rem); line-height:1.05; margin:10px 0 0 }
+.pk-clan__motto{ margin:8px 0 0; font-weight:700; color:#e7e2f7 }
+.pk-clan__pitch{ margin:8px 0 0; color:#c8c1e6; line-height:1.6; max-width:40em; text-wrap:pretty }
+.pk-clan__facts{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:18px 0 0 }
+.pk-clan__facts div{ border:1px solid rgba(215,200,255,.12); border-radius:12px; background:rgba(7,6,16,.35); padding:10px 12px }
+.pk-clan__facts dt{ font-size:.6rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:#c8c1e6 }
+.pk-clan__facts dd{ margin:4px 0 0; font-weight:800; color:#f7f4ff }
+.pk-clan__actions{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:20px }
+.pk-clan__tag{ margin-right:auto; font-size:.85rem; color:#c8c1e6 }
+.pk-clans-how .pk-grid-2{ margin-top:20px }
+.pk-clan-cards{ margin-top:24px }
+.pk-clan-card{
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px;
+  border:1px solid rgba(215,200,255,.14); border-radius:20px; background:rgba(18,13,40,.55);
+  padding:22px 20px 20px; color:inherit; text-decoration:none; transition:transform .18s ease, border-color .18s ease;
+}
+.pk-clan-card--home{ border-color:rgba(245,200,76,.34); background:radial-gradient(circle at 50% 0%,rgba(245,200,76,.1),transparent 55%),rgba(18,13,40,.55) }
+.pk-clan-card:hover{ transform:translateY(-2px); border-color:rgba(245,200,76,.5) }
+.pk-clan-card__logo{ width:132px; height:132px; object-fit:contain; margin-bottom:6px; filter:drop-shadow(0 12px 22px rgba(0,0,0,.5)) }
+.pk-clan-card__name{ font-family:'Clash',system-ui,sans-serif; font-size:1.35rem; margin:4px 0 0 }
+.pk-clan-card__motto{ margin:0; color:#c8c1e6; font-size:.9rem; line-height:1.5 }
+.pk-clan-card__tag{ margin-top:auto; padding-top:8px; font-size:.82rem }
+
+/* ── Powered by Elixir ─────────────────────────────────── */
+.pk-powered{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:clamp(24px,4vw,44px); align-items:center;
+  border:1px solid rgba(139,92,246,.5); border-radius:24px;
+  background:radial-gradient(circle at 88% 8%,rgba(245,60,255,.2),transparent 44%),linear-gradient(145deg,rgba(88,28,235,.4),rgba(38,22,78,.7));
+  box-shadow:0 18px 60px rgba(0,0,0,.5); padding:clamp(26px,4vw,44px);
+}
+.pk-powered__logo{ width:clamp(150px,20vw,240px); height:auto; aspect-ratio:1; object-fit:contain; filter:drop-shadow(0 16px 32px rgba(0,0,0,.55)) }
+.pk-powered__title{ font-family:'Clash',system-ui,sans-serif; font-size:clamp(1.6rem,3.2vw,2.3rem); line-height:1.08; margin:10px 0 0 }
+.pk-powered__copy{ font-size:1.02rem; line-height:1.6; color:#e7e2f7; margin:14px 0 0; max-width:40em; text-wrap:pretty }
+.pk-powered__products{ list-style:none; margin:20px 0 0; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px }
+.pk-powered__product{
+  display:grid; gap:2px; height:100%; border:1px solid rgba(215,200,255,.18); border-radius:14px;
+  background:rgba(11,9,32,.45); padding:12px 14px; color:inherit; text-decoration:none; transition:border-color .18s ease;
+}
+.pk-powered__product:hover{ border-color:rgba(245,200,76,.5) }
+.pk-powered__product strong{ font-family:'Clash',system-ui,sans-serif; font-size:.95rem; color:#fff }
+.pk-powered__product span{ font-size:.82rem; line-height:1.45; color:#c8c1e6 }
+.pk-powered__actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px }
+.pk-tech-fact--link{ color:inherit; text-decoration:none; transition:border-color .18s ease }
+.pk-tech-fact--link:hover{ border-color:rgba(245,200,76,.5) }
+@media (max-width:760px){
+  .pk-clan{ grid-template-columns:minmax(0,1fr) }
+  .pk-clan__logo{ width:150px; justify-self:center }
+  .pk-clan__facts{ grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .pk-powered{ grid-template-columns:minmax(0,1fr) }
+  .pk-powered__logo{ width:150px; justify-self:center }
+}
+@media (max-width:520px){
+  .pk-powered__products{ grid-template-columns:minmax(0,1fr) }
+  .pk-clan__tag{ flex-basis:100% }
+}
+@media (prefers-reduced-motion:reduce){
+  .pk-clan-card{ transition:none }
+  .pk-clan-card:hover{ transform:none }
+}
 
 /* ── Home ──────────────────────────────────────────────── */
 .pk-home-hero{ display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center; padding:clamp(44px,6vw,76px) 0 clamp(36px,5vw,56px) }

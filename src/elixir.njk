@@ -1,64 +1,77 @@
 ---
 permalink: /elixir/
 layout: base.njk
-title: Meet Elixir — the POAP KINGS clan agent
-description: "Elixir is the POAP KINGS clan agent — running recognition and the weekly Elder Standing, telling the clan's story, and coaching every member. Built like real software."
+title: Elixir — the platform our clans run on | POAP KINGS
+description: "Elixir is the Clash Royale platform POAP KINGS built. It records battles, rosters and river races, answers in each clan's Discord and your inbox, and runs Elixir Clan and Elixir Drop. Open to any clan."
 ogImage: /assets/elixir.png
-ogImageAlt: Elixir bot avatar
+ogImageAlt: Elixir mascot
 mainId: top
 supercellDisclaimer: true
 ---
+{#- How our clans use Elixir. Elixir is for any clan and its own site does
+    the explaining, so this page says what members get and links out. -#}
 {% from "components.njk" import backLink, sectionHeading, actionLink, numberedCard %}
 <div class="pk-page pk-page--elixir pk-page-shell">
   {{ backLink('/', 'Back home') }}
 
   <section class="pk-elixir-hero pk-elixir-banner">
-    <img class="pk-elixir-banner__image" src="/assets/elixir.png" alt="Elixir, the POAP KINGS clan agent">
+    <img class="pk-elixir-banner__image" src="/assets/elixir-logo.webp" alt="Elixir logo" width="512" height="512">
     <div>
-      <span class="pk-eyebrow pk-eyebrow--gold">Our clan agent</span>
-      <h1 class="pk-elixir-banner__title">Meet Elixir</h1>
-      <p class="pk-elixir-banner__copy">Built by and for POAP KINGS, Elixir keeps the clan honest, organized, and remembered — running standings and recognition, telling the clan's story, and coaching every member.</p>
+      <span class="pk-eyebrow pk-eyebrow--gold">Powered by Elixir</span>
+      <h1 class="pk-elixir-banner__title">Elixir</h1>
+      <p class="pk-elixir-banner__copy">Elixir is the Clash Royale platform POAP KINGS built, and all three of <a href="/clans/">our clans</a> run on it. It records the history the game forgets — battles, rosters, river races — and answers from it: in our Discord, in your inbox, and to your own AI agent.</p>
+      <div class="pk-drop-actions">
+        {{ actionLink('https://elixir.poapkings.com/', 'Visit Elixir ↗', 'gold', 'elixir.visit', true) }}
+        {{ actionLink('https://elixir.poapkings.com/console/signin?request', 'Request access', 'outline', 'elixir.request', true) }}
+      </div>
     </div>
   </section>
 
   <section class="pk-section">
-    {{ sectionHeading('What Elixir does', 'One agent, many jobs') }}
+    {{ sectionHeading('In our clans', 'What Elixir does for members') }}
     <div class="pk-grid-3 pk-elixir-jobs">
       {%- set elixirJobs = [
-        { num: '01', title: 'Publishes the Elder Standing', body: 'Every Tuesday, Elixir posts a transparent ranking of who\'s competing for the clan — so Elder is never a mystery or a favor.' },
-        { num: '02', title: 'Runs season recognition', body: 'War Champ, Iron King, Rookie MVP, Donation Champ, and the Free Pass rotation all come from deterministic rules and durable season results.' },
-        { num: '03', title: 'Knows the whole roster', body: 'Trophies, donations, tenure, battles, war results, and member history give Elixir the context to answer questions without guessing.' },
-        { num: '04', title: 'Tells the clan\'s story', body: 'Every week Elixir sends a clan recap email — who climbed, who carried war, the milestones and the near-misses. The story of the week, written down so it isn\'t forgotten.' },
-        { num: '05', title: 'Coaches every member', body: 'A personal weekly arena recap lands in each member\'s inbox: your highlights, what moved, and specific coaching on exactly where to sharpen next.' },
-        { num: '06', title: 'Powers Elixir Drop', body: 'Elixir is the face and voice of our game, cheering good elixir reads and ribbing the misses.' }
+        { num: '01', title: 'An agent in Discord', body: 'Each clan in the network has its own Elixir agent in our Discord. Ask it about your battles, your decks or the war; every fact it gives is read from Elixir moments before it says it.' },
+        { num: '02', title: 'Posts what happened', body: 'The same agent posts the clan\'s news as it happens, straight from Elixir\'s record of the clan rather than anyone\'s memory.' },
+        { num: '03', title: 'Remembers every battle', body: 'The game shows your last few dozen battles. Elixir keeps every one it records, with river races and roster history, so there is a record to answer from.' },
+        { num: '04', title: 'A weekly email', body: 'With an Elixir account you get a Monday report on your clan\'s week and a Tuesday recap of your own battles. Every kind of email is a switch you control.' },
+        { num: '05', title: 'Elixir Clan for leaders', body: 'Standing, the Elder band and the actions waiting for a leader, judged by each clan\'s own written policy, never by a default.' },
+        { num: '06', title: 'Elixir Drop', body: 'Our free card-cost trainer. Its seasons follow the Clan Wars clock, which it reads from Elixir.' }
       ] -%}
       {%- for j in elixirJobs %}
       {{ numberedCard(j.num, j.title, j.body) }}
       {%- endfor %}
     </div>
-    <p class="pk-elixir-recognition-link">See the durable results Elixir records on the <a href="/recognition/">Season Recognition page →</a></p>
   </section>
 
   <section class="pk-section">
-    {{ sectionHeading('Under the hood', 'Built like real software', actionLink('https://github.com/jthingelstad/elixir-bot', 'View the code on GitHub →', 'outline', '', true)) }}
-    <p class="pk-elixir-tech-copy">Elixir pairs a <strong>deterministic data engine</strong> with an <strong>LLM awareness loop</strong>. Clash Royale data flows through a single API ingress into append-only receipts and durable event streams — and <strong>code, not the model, owns every promotion, demotion, and kick</strong>. A cheap model gates the expensive one on the post-or-stay-quiet call, which cut running cost by roughly 10×.</p>
+    {{ sectionHeading('For any clan', 'Built by POAP KINGS, open to everyone', actionLink('https://github.com/jthingelstad/elixir-mcp', 'View the code on GitHub →', 'outline', 'elixir.github', true)) }}
+    <p class="pk-elixir-tech-copy">Elixir started as POAP KINGS' own clan bot. It is now a platform <strong>any clan or player can use</strong>, and its own site is the place to learn about it: what it records, how to connect an agent, and the record it has built so far. Access is granted by hand while the record grows. Elixir is free, sponsor-supported, and <strong>built in the open</strong>.</p>
     <div class="pk-tech3">
-      {%- set techFacts = [
-        { label: 'Language', value: 'Python 3.14' },
-        { label: 'AI models', value: 'Claude Haiku, Sonnet & Opus' },
-        { label: 'Chat platform', value: 'discord.py' },
-        { label: 'Data store', value: 'SQLite · event-sourced' },
-        { label: 'Scheduling', value: 'APScheduler on launchd' },
-        { label: 'Quality gates', value: 'ruff · mypy · pytest 80%+' }
+      {%- set elixirLinks = [
+        { label: 'The platform', value: 'elixir.poapkings.com', href: 'https://elixir.poapkings.com/', key: 'home' },
+        { label: 'For clan leaders', value: 'Elixir Clan', href: 'https://elixir.poapkings.com/clan', key: 'clan' },
+        { label: 'Our game', value: 'Elixir Drop', href: 'https://drop.poapkings.com/', key: 'drop' },
+        { label: 'For your clan\'s Discord', value: 'The Discord agent', href: 'https://github.com/jthingelstad/elixir-mcp-discord', key: 'discord' },
+        { label: 'How it works', value: 'Elixir docs', href: 'https://elixir.poapkings.com/docs', key: 'docs' },
+        { label: 'What it has recorded', value: 'The corpus', href: 'https://elixir.poapkings.com/data', key: 'data' }
       ] -%}
-      {%- for t in techFacts %}
-      <div class="pk-tech-fact">
-        <span class="pk-tech-fact__label">{{ t.label }}</span>
-        <strong class="pk-tech-fact__value">{{ t.value }}</strong>
-      </div>
+      {%- for l in elixirLinks %}
+      <a class="pk-tech-fact pk-tech-fact--link" href="{{ l.href }}" target="_blank" rel="noreferrer" data-tinylytics-event="elixir.link-{{ l.key }}">
+        <span class="pk-tech-fact__label">{{ l.label }}</span>
+        <strong class="pk-tech-fact__value">{{ l.value }} ↗</strong>
+      </a>
       {%- endfor %}
     </div>
   </section>
+
+  <a class="pk-elixir-game" href="/clans/">
+    <div>
+      <h3 class="pk-elixir-game__title">Meet the clans it runs</h3>
+      <p class="pk-elixir-game__copy">POAP KINGS, Ship It! and Elixir Kings: three clans, one Discord, each with its own Elixir agent.</p>
+    </div>
+    <span class="pk-elixir-game__cta">Our clans →</span>
+  </a>
 
   <a class="pk-elixir-game" href="/elixir-drop/">
     <div>
@@ -66,13 +79,5 @@ supercellDisclaimer: true
       <p class="pk-elixir-game__copy">Elixir Drop is our card-and-cost trainer — the same mascot, cheering your reads and ribbing the misses.</p>
     </div>
     <span class="pk-elixir-game__cta">Learn about Elixir Drop →</span>
-  </a>
-
-  <a class="pk-elixir-game" href="/elixir-mcp/">
-    <div>
-      <h3 class="pk-elixir-game__title">And its memory is a product</h3>
-      <p class="pk-elixir-game__copy">Elixir MCP records the clan's Clash Royale history and serves it to your own AI agent — the same recorded facts Elixir reads from.</p>
-    </div>
-    <span class="pk-elixir-game__cta">Learn about Elixir MCP →</span>
   </a>
 </div>

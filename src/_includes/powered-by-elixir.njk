@@ -1,0 +1,29 @@
+{#- The one "Powered by Elixir" band, shared by the home and clans pages.
+    Elixir is for any clan, so this links out to Elixir's own site rather
+    than describing Elixir as POAP KINGS' private tool; /elixir/ is how our
+    clans use it. The including page sets `poweredEvent` (its Tinylytics
+    event prefix). -#}
+{% from "components.njk" import actionLink %}
+<section class="pk-powered" aria-labelledby="powered-title">
+  <img class="pk-powered__logo" src="/assets/elixir-logo.webp" alt="Elixir" width="512" height="512" loading="lazy">
+  <div class="pk-powered__body">
+    <span class="pk-eyebrow pk-eyebrow--gold">Powered by Elixir</span>
+    <h2 class="pk-powered__title" id="powered-title">We built the platform our clans run on.</h2>
+    <p class="pk-powered__copy">Elixir records the Clash Royale history the game forgets — battles, rosters, river races — and answers from it: in each clan's Discord channel, in your inbox, and to your own AI agent. It started as POAP KINGS' clan bot. Now any clan can use it.</p>
+    <ul class="pk-powered__products">
+      {%- set elixirProducts = [
+        { key: 'elixir', name: 'Elixir', blurb: 'Your Clash record, for your own AI agent', href: 'https://elixir.poapkings.com/' },
+        { key: 'clan', name: 'Elixir Clan', blurb: 'Standing, Elder and leader actions, by your clan\'s own rules', href: 'https://elixir.poapkings.com/clan' },
+        { key: 'drop', name: 'Elixir Drop', blurb: 'The free card-cost trainer', href: 'https://drop.poapkings.com/' },
+        { key: 'discord', name: 'Discord agent', blurb: 'The bot in our Discord; run one for your clan', href: 'https://github.com/jthingelstad/elixir-mcp-discord' }
+      ] -%}
+      {%- for p in elixirProducts %}
+      <li><a class="pk-powered__product" href="{{ p.href }}" target="_blank" rel="noreferrer" data-tinylytics-event="{{ poweredEvent }}.elixir-{{ p.key }}"><strong>{{ p.name }}</strong><span>{{ p.blurb }}</span></a></li>
+      {%- endfor %}
+    </ul>
+    <div class="pk-powered__actions">
+      {{ actionLink('https://elixir.poapkings.com/', 'Visit Elixir ↗', 'gold', poweredEvent + '.elixir-visit', true) }}
+      {{ actionLink('/elixir/', 'How our clans use it →', 'outline', poweredEvent + '.elixir-learn') }}
+    </div>
+  </div>
+</section>
