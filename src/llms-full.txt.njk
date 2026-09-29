@@ -108,8 +108,8 @@ Selected seasonal competitions award one gifted Pass Royale to the highest-ranke
 - **Career wins:** {{ m.cr_battle_wins | formatNumber | safe }}
 - **Collection score:** {{ m.cr_collection_level | formatNumber | safe }}
 - **Years played:** {{ m.cr_account_age_years | formatYearsPlayed(m.cr_account_age_days) | safe }}{% if m.cr_account_age_days %} ({{ m.cr_account_age_days | formatNumber | safe }} days){% endif %}
-- **Clan war wins:** {{ m.cr_clan_war_wins | formatNumber | safe }}
-- **Badge count:** {{ m.badge_count or 0 }}
+{% if m.cr_clan_war_wins is defined %}- **Clan war wins:** {{ m.cr_clan_war_wins | formatNumber | safe }}
+{% endif %}- **Badge count:** {{ m.badge_count or 0 }}
 {% if m.last_seen %}- **Last seen:** {{ m.last_seen | safe }}
 {% endif %}
 {% endfor -%}

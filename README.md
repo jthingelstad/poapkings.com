@@ -50,12 +50,13 @@ Refresh the roster and generated data locally with:
 npm run update-roster
 ```
 
-The Clash Royale API key is IP restricted, so this command belongs on the local host rather than in GitHub Actions. It reads `CR_API_KEY` from the shell first and falls back to `../elixir-bot/.env`. Never commit or print the key.
+It reads all three clans from Elixir's JSON API with the site's own integration key, `ELIXIR_API_KEY` from the shell first and then this checkout's `.env`, so it belongs on the local host rather than in GitHub Actions. `--source cr` reads the IP-restricted Clash Royale API instead (`CR_API_KEY`, from the shell or `../elixir-bot/.env`), the rollback until the Elixir source has run clean for a week. Never commit or print either key.
 
 Updater-owned artifacts:
 
 - `src/_data/clan.json` — Current clan facts.
 - `src/_data/roster.json` — Current members and profile facts.
+- `src/_data/clanNetwork.json` — The sister clans' live facts for `/clans/`.
 - `src/_data/clanInsights.json` — Aggregate roster metrics.
 - `src/_data/clanTrends.json` — Daily historical series.
 - `src/_data/rosterExplorer.json` — Current visualization rows.
