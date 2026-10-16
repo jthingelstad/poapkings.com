@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T23:16:39Z",
+  "generatedAt": "2026-10-16T10:49:01Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -450,7 +450,7 @@
     {
       "averageRank": 1,
       "seasonId": 136,
-      "trophyChange": 60,
+      "trophyChange": 160,
       "weeks": [
         {
           "clanScore": 1160,
@@ -490,29 +490,63 @@
           "totalClans": null,
           "trophyChange": 20,
           "weekLabel": "S136 W3"
+        },
+        {
+          "clanScore": 1220,
+          "createdDate": "20261005T093804.000Z",
+          "fame": 32950,
+          "finishTime": "20261005T093804.000Z",
+          "isColosseum": true,
+          "rank": 1,
+          "seasonId": 136,
+          "sectionIndex": 3,
+          "totalClans": null,
+          "trophyChange": 100,
+          "weekLabel": "S136 W4"
         }
       ],
-      "wins": 3
+      "wins": 4
+    },
+    {
+      "averageRank": 1,
+      "seasonId": 137,
+      "trophyChange": 20,
+      "weeks": [
+        {
+          "clanScore": 1320,
+          "createdDate": "20261012T094805.000Z",
+          "fame": 10305,
+          "finishTime": "20261012T094805.000Z",
+          "isColosseum": false,
+          "rank": 1,
+          "seasonId": 137,
+          "sectionIndex": 0,
+          "totalClans": null,
+          "trophyChange": 20,
+          "weekLabel": "S137 W1"
+        }
+      ],
+      "wins": 1
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 1200,
-      "createdDate": "20260928T093805.000Z",
+      "clanScore": 1320,
+      "createdDate": "20261012T094805.000Z",
       "fame": 10305,
-      "finishTime": "20260928T093805.000Z",
+      "finishTime": "20261012T094805.000Z",
       "isColosseum": false,
       "rank": 1,
-      "seasonId": 136,
-      "sectionIndex": 2,
+      "seasonId": 137,
+      "sectionIndex": 0,
       "totalClans": null,
       "trophyChange": 20,
-      "weekLabel": "S136 W3"
+      "weekLabel": "S137 W1"
     },
-    "totalWeeks": 33,
-    "trophyChange": 1220,
-    "wins": 33
+    "totalWeeks": 35,
+    "trophyChange": 1340,
+    "wins": 35
   },
   "weeks": [
     {
@@ -943,6 +977,32 @@
       "totalClans": null,
       "trophyChange": 20,
       "weekLabel": "S136 W3"
+    },
+    {
+      "clanScore": 1220,
+      "createdDate": "20261005T093804.000Z",
+      "fame": 32950,
+      "finishTime": "20261005T093804.000Z",
+      "isColosseum": true,
+      "rank": 1,
+      "seasonId": 136,
+      "sectionIndex": 3,
+      "totalClans": null,
+      "trophyChange": 100,
+      "weekLabel": "S136 W4"
+    },
+    {
+      "clanScore": 1320,
+      "createdDate": "20261012T094805.000Z",
+      "fame": 10305,
+      "finishTime": "20261012T094805.000Z",
+      "isColosseum": false,
+      "rank": 1,
+      "seasonId": 137,
+      "sectionIndex": 0,
+      "totalClans": null,
+      "trophyChange": 20,
+      "weekLabel": "S137 W1"
     }
   ]
 }
