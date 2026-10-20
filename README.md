@@ -79,7 +79,7 @@ Completed-season recognition is imported separately from Elixir's durable awards
 npm run update-recognition
 ```
 
-The importer opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and writes the privacy-safe `src/_data/recognition.json` projection. It never publishes the site and is not part of the daily data operator; its result is published by a pull request that changes only that file. Check freshness without writing with:
+The importer opens `ELIXIR_DB_PATH`, a restored copy of elixir-bot's frozen `elixir-v51.db`, read-only and writes the privacy-safe `src/_data/recognition.json` projection. It never publishes the site and is not part of the daily data operator; its result is published by a pull request that changes only that file. Check freshness without writing with:
 
 ```bash
 npm --silent run update-recognition -- --check

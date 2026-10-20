@@ -16,7 +16,6 @@ import {
 } from "./clash-data-store.js";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const defaultSource = resolve(repoRoot, "..", "elixir-bot", "elixir-v5.db");
 const dataDir = resolve(repoRoot, "src", "_data");
 const clanPath = resolve(dataDir, "clan.json");
 const rosterPath = resolve(dataDir, "roster.json");
@@ -35,7 +34,7 @@ function printHelp() {
   console.log(`Usage: node scripts/backfill-cr-history.js [options]
 
 Options:
-  --source PATH   Source SQLite DB. Defaults to ../elixir-bot/elixir-v5.db.
+  --source PATH   Source SQLite DB (required): a restored copy of elixir-bot's elixir-v5.db.
   --reset         Delete data/clash-royale.sqlite before importing.
   --no-export     Import SQLite history without rewriting generated JSON.
   --help          Show this help.
@@ -229,7 +228,10 @@ function main() {
     return;
   }
 
-  const sourcePath = resolve(argValue("--source") || defaultSource);
+  if (!argValue("--source")) {
+    throw new Error("--source is required: a restored copy of elixir-bot's elixir-v5.db.");
+  }
+  const sourcePath = resolve(argValue("--source"));
   if (!existsSync(sourcePath)) {
     throw new Error(`Source database not found: ${sourcePath}`);
   }

@@ -126,7 +126,7 @@ The updater reads Elixir's JSON API (`https://elixir.poapkings.com/api/v1`, [int
 
 What Elixir does not serve, the site no longer carries: `exp_level` (retired by the game), `badge_highlights`, the Collection Level badge tier, and the clan war wins and clan donations the ClanWarWins and ClanDonations badges counted (Elixir's `war_day_wins` is the retired Clan Wars counter, not the same number). A member whose profile Elixir has not read yet keeps the profile fields the site last had. A war week the game's own log recorded keeps its row, standings and participants; Elixir adds the weeks after it, without the number of clans in the race.
 
-`npm run update-roster -- --source cr` is the rollback until 2026-10-06: the Clash Royale API for the home clan only, with `CR_API_KEY` from the shell or `../elixir-bot/.env`, IP restricted to this host. Once the Elixir source has refreshed cleanly for a week, remove that path and this paragraph.
+`npm run update-roster -- --source cr` is the rollback until 2026-10-06: the Clash Royale API for the home clan only, with `CR_API_KEY` from the shell or this checkout's `.env`, IP restricted to this host. Once the Elixir source has refreshed cleanly for a week, remove that path and this paragraph.
 
 Use `npm --silent run update-roster -- --dry-run --exit-code` for a non-writing probe. Exit `0` means no change; exit `2` means data would change. Use `npm run backfill-data` only for an explicitly requested historical import, never in the daily operator flow.
 
@@ -136,7 +136,7 @@ Completed recognition is a separate, deliberately non-daily workflow:
 npm run update-recognition
 ```
 
-It opens `ELIXIR_DB_PATH` or `../elixir-bot/elixir-v51.db` read-only and updates only `src/_data/recognition.json` from Elixir's durable, closed-season awards ledger. `npm --silent run update-recognition -- --check` is the non-writing freshness probe; exit `2` means the projection would change. Publishing it is a pull request like any other change: on a clean `main`, `git switch -c data/recognition-<YYYY-MM-DD>`, run the importer, commit only `src/_data/recognition.json`, and land it as in *Landing changes*; the site updates when the merge's Pages run succeeds. It is run by hand or by the domain Season Coordinator (formerly Turn the Clock). This workflow does not broaden `OPERATOR.md` and must not add website publishing back to Elixir.
+It opens `ELIXIR_DB_PATH`, a restored copy of elixir-bot's frozen `elixir-v51.db` (the bot's checkout was removed on 2026-10-20), read-only and updates only `src/_data/recognition.json` from Elixir's durable, closed-season awards ledger. `npm --silent run update-recognition -- --check` is the non-writing freshness probe; exit `2` means the projection would change. Publishing it is a pull request like any other change: on a clean `main`, `git switch -c data/recognition-<YYYY-MM-DD>`, run the importer, commit only `src/_data/recognition.json`, and land it as in *Landing changes*; the site updates when the merge's Pages run succeeds. It is run by hand or by the domain Season Coordinator (formerly Turn the Clock). This workflow does not broaden `OPERATOR.md` and must not add website publishing back to Elixir.
 
 ## LLM and JSON surfaces
 
