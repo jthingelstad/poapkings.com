@@ -96,7 +96,7 @@ const clanPath = join(dataDir, "clan.json");
 const rosterPath = join(dataDir, "roster.json");
 const ourClansPath = join(dataDir, "ourClans.json");
 const clanNetworkPath = join(dataDir, "clanNetwork.json");
-const defaultCrApiEnvPath = resolve(repoRoot, "..", "elixir-bot", ".env");
+const defaultCrApiEnvPath = join(repoRoot, ".env");
 const defaultElixirEnvPath = join(repoRoot, ".env");
 
 const args = process.argv.slice(2);
@@ -120,8 +120,7 @@ Options:
                      the rollback path.
   --clan-tag TAG     Clan tag to fetch. Defaults to src/_data/site.json.
   --env-file PATH    Env file holding the source's key. Defaults to .env here
-                     for elixir (ELIXIR_API_KEY), ../elixir-bot/.env for cr
-                     (CR_API_KEY).
+                     (ELIXIR_API_KEY for elixir, CR_API_KEY for cr).
   --skip-profiles    cr only: fetch only the clan roster and preserve existing
                      profile fields.
   --skip-wars        Skip the war history fetch.

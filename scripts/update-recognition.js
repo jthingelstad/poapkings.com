@@ -5,14 +5,17 @@ import { DatabaseSync } from "node:sqlite";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outputPath = resolve(projectRoot, "src/_data/recognition.json");
-const databasePath = resolve(
-  projectRoot,
-  process.env.ELIXIR_DB_PATH || "../elixir-bot/elixir-v51.db",
-);
+// elixir-bot's checkout, which held the database, was removed on 2026-10-20;
+// point ELIXIR_DB_PATH at a restored copy of its frozen elixir-v51.db.
+const databasePath = process.env.ELIXIR_DB_PATH
+  ? resolve(projectRoot, process.env.ELIXIR_DB_PATH)
+  : "";
 const checkOnly = process.argv.includes("--check");
 
-if (!existsSync(databasePath)) {
-  console.error("Elixir database not found. Set ELIXIR_DB_PATH to a readable v5.1 database.");
+if (!databasePath || !existsSync(databasePath)) {
+  console.error(
+    "Elixir database not found. Set ELIXIR_DB_PATH to a restored copy of elixir-bot's frozen elixir-v51.db.",
+  );
   process.exit(1);
 }
 
