@@ -50,7 +50,7 @@ Refresh the roster and generated data locally with:
 npm run update-roster
 ```
 
-It reads all three clans from Elixir's JSON API with the site's own integration key, `ELIXIR_API_KEY` from the shell first and then this checkout's `.env`, so it belongs on the local host rather than in GitHub Actions. `--source cr` reads the IP-restricted Clash Royale API instead (`CR_API_KEY`, from the shell or `../elixir-bot/.env`), the rollback until the Elixir source has run clean for a week. Never commit or print either key.
+It reads all three clans from Elixir's JSON API with the site's own integration key, `ELIXIR_API_KEY` from the shell first and then this checkout's `.env`, so it belongs on the local host rather than in GitHub Actions. `--source cr` reads the IP-restricted Clash Royale API instead (`CR_API_KEY`, from the shell or this checkout's `.env`), the rollback until the Elixir source has run clean for a week. Never commit or print either key.
 
 Updater-owned artifacts:
 
