@@ -1,6 +1,6 @@
 # poapkings.com
 
-Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy and deployed to GitHub Pages.
+Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy. Every merge to `main` publishes it to GitHub Pages and to S3 + CloudFront; the DNS still points at Pages until Jamie moves it (see *S3 and CloudFront*).
 
 ## Read first
 
@@ -62,7 +62,21 @@ npm run build
 npm start
 ```
 
-The local server is `http://localhost:8080`. `.github/workflows/deploy.yml` runs the `validate` job (install, advisory audit, build, `sh scripts/test-workflows.sh`) on every pull request and push. A merge to `main` runs it again on the merge commit and, when it passes, publishes `_site/` through GitHub Pages; a manual dispatch on `main` takes the same path.
+The local server is `http://localhost:8080`. `.github/workflows/deploy.yml` runs the `validate` job (install, advisory audit, build, `npm test`, `sh scripts/test-workflows.sh`) on every pull request and push. A merge to `main` runs it again on the merge commit and, when it passes, publishes `_site/` through GitHub Pages (`deploy`) and to S3 + CloudFront (`deploy-aws`); a manual dispatch on `main` takes the same path.
+
+## S3 and CloudFront
+
+Approved by Jamie on 2026-10-27 ("Approved: move things4good.xyz, poapkings.com and rwbookclub.com from GitHub Pages to S3 + CloudFront"), in the shape escape.thingelstad.com moved on 2026-10-26. Three stacks in `infra/`, tagged `Application=Elixir`, `Project=poapkings` (`infra/deployment.json` records them and their outputs):
+
+- `poapkings-certificate`: `poapkings.com` with `www.poapkings.com`, validated by two CNAMEs at Namecheap.
+- `poapkings-site`: the private versioned bucket, the distribution (both names), the viewer-request function (`infra/viewer-request.mjs`), the redirect key value store, the response headers (CORS `*`, as Pages gave), the `/poapkings/web-access` access log (14 days, no IP, no query) and a 5xx alarm on Drop's `elixir-drop-alarms` topic.
+- `poapkings-delivery`: the role `deploy-aws` assumes through OIDC, trusted only for this repository's `production` environment.
+
+Infrastructure is deployed from the Mac as the cloud-engineer identity, never from CI: edit `infra/templates.mjs`, `npm run infra:generate`, `npm run infra -- site|delivery|certificate` (add `--plan` to see the change set). `scripts/deploy-aws.mjs` refuses to publish while the live site stack differs from `infra/generated/site.json`.
+
+The viewer-request function sends any `www.` host to the apex with path and query, answers each redirect page (a meta refresh in the build, collected into `_site/_redirects.json` by `eleventy.config.js`) as a 301, adds the slash to bare paths and serves `index.html` for directories. File types and caching are `scripts/publish-plan.mjs`; `npm test` fails on a built file it does not type.
+
+Cutover (Jamie's DNS): once the certificate is issued, `npm run infra -- site` attaches both names; then point the apex and `www` at the distribution. Pages, its `deploy` job and `src/CNAME` go after that.
 
 ## Landing changes
 
@@ -79,7 +93,7 @@ git switch main && git pull --ff-only   # once merged
 ```
 
 - If `main` moves under an open PR: `gh pr update-branch --rebase`.
-- A rebase merge gives the commit a new SHA on `main`. Anything that watches "my commit's deploy" reads the merge SHA from `gh pr view <n> --json mergeCommit --jq .mergeCommit.oid`, then the Pages run for that SHA.
+- A rebase merge gives the commit a new SHA on `main`. Anything that watches "my commit's deploy" reads the merge SHA from `gh pr view <n> --json mergeCommit --jq .mergeCommit.oid`, then the deploy run for that SHA.
 - A check that fails and then passes on re-run is a flake, and a flake is a defect: fix it in the PR or record it the same day.
 - Unfinished work stays an open PR; the checkout goes back to `main`.
 - Outside contributors: fork, then PR. Same check.

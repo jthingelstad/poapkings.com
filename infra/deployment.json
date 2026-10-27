@@ -1,0 +1,37 @@
+{
+  "account": "999153317627",
+  "region": "us-east-1",
+  "domain": "poapkings.com",
+  "stacks": {
+    "certificate": "poapkings-certificate",
+    "site": "poapkings-site",
+    "delivery": "poapkings-delivery"
+  },
+  "stackTags": {
+    "Application": "Elixir",
+    "Project": "poapkings",
+    "Repository": "jthingelstad/poapkings.com",
+    "ManagedBy": "cloudformation",
+    "Environment": "production"
+  },
+  "siteBucket": "poapkings-site-sitebucket-5xx3ir409ygr",
+  "distributionId": "E37VYYZ4RB1WBB",
+  "cloudfrontDomain": "d1yo68hmacoc3c.cloudfront.net",
+  "redirectStoreArn": "arn:aws:cloudfront::999153317627:key-value-store/d4872511-b26a-40b1-afe1-bd2abc955a21",
+  "deploymentRoleArn": "arn:aws:iam::999153317627:role/poapkings-delivery-DeploymentRole-q223zBX7BDZ8",
+  "certificateArn": "arn:aws:acm:us-east-1:999153317627:certificate/46ad7805-8488-4713-b709-68c90ab04627",
+  "certificateValidation": [
+    {
+      "domain": "poapkings.com",
+      "type": "CNAME",
+      "name": "_3637005b5db8dd1eeaf579c29e29d4dd.poapkings.com.",
+      "value": "_e538a744b882870216d1d6612b7b4d3f.jkddzztszm.acm-validations.aws."
+    },
+    {
+      "domain": "www.poapkings.com",
+      "type": "CNAME",
+      "name": "_062bdfdc9637fd7914ae4d3914858040.www.poapkings.com.",
+      "value": "_0d011add746364ec5ea095f9c893ab55.wzccmgtwzk.acm-validations.aws."
+    }
+  ]
+}
