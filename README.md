@@ -2,7 +2,7 @@
 
 **Proof of Arena Push** — the official website for the POAP KINGS Clash Royale clan.
 
-Built with [Eleventy](https://www.11ty.dev/) and deployed to [GitHub Pages](https://pages.github.com/).
+Built with [Eleventy](https://www.11ty.dev/) and published to [GitHub Pages](https://pages.github.com/) and to S3 + CloudFront (moving to CloudFront; `AGENTS.md`, *S3 and CloudFront*).
 
 **Clan Tag:** #J2RGCRVG · **Status:** Invite Only · **Minimum Trophies:** 7,000
 
@@ -145,9 +145,9 @@ data/clash-royale.sqlite  Build-time data store
 - [Motion](https://motion.dev/) for DOM choreography
 - [PixiJS](https://pixijs.com/) for on-demand star particles
 - Tinylytics for privacy-focused analytics ([public stats](https://tinylytics.app/public/NnbTPjJ2AWXF8GZDuy54))
-- GitHub Actions and GitHub Pages
+- GitHub Actions, GitHub Pages, and S3 + CloudFront (`infra/`)
 
-`main` takes only pull requests. Every pull request runs the `validate` check (install, build, workflow lint); a merge to `main` runs it again and then deploys `_site/`. GitHub Pages must use **GitHub Actions** as its source. [`AGENTS.md`](AGENTS.md) has the landing steps.
+`main` takes only pull requests. Every pull request runs the `validate` check (install, build, workflow lint); a merge to `main` runs it again and then deploys `_site/` to Pages and to S3 + CloudFront. GitHub Pages must use **GitHub Actions** as its source. [`AGENTS.md`](AGENTS.md) has the landing steps.
 
 ## Supercell disclaimer
 

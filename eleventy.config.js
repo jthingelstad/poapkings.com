@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, rmSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { build } from "esbuild";
 import { clanWarLeague } from "./scripts/clan-war-league.js";
 
@@ -54,6 +55,20 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addWatchTarget("src/gamify.js");
   eleventyConfig.on("eleventy.before", buildClientScripts);
+
+  // The redirect map for S3 + CloudFront (infra/viewer-request.mjs): every page the build writes with a
+  // meta refresh (/elixir-mcp/, /discord/), keyed by its URL, so the edge answers it as a real 301.
+  // GitHub Pages serves the same pages as they are. Not published; the deploy loads it into CloudFront.
+  eleventyConfig.on("eleventy.after", ({ dir, results }) => {
+    const redirects = {};
+    for (const { url, content } of results) {
+      const refresh = typeof content === "string" && url?.endsWith("/")
+        ? content.match(/<meta\s+http-equiv="refresh"\s+content="0;\s*url=([^"]+)"/i)
+        : null;
+      if (refresh) redirects[url] = refresh[1].replaceAll("&amp;", "&");
+    }
+    writeFileSync(join(dir.output, "_redirects.json"), JSON.stringify(redirects, null, 2) + "\n");
+  });
 
   // --- Filters for build-time rendering ---
 

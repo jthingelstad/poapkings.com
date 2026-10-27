@@ -11,7 +11,11 @@
     "postinstall": "patch-package",
     "backfill-data": "node scripts/backfill-cr-history.js",
     "update-recognition": "node scripts/update-recognition.js",
-    "update-roster": "node scripts/update-roster.js"
+    "update-roster": "node scripts/update-roster.js",
+    "test": "node --test tests/",
+    "infra:generate": "node infra/templates.mjs",
+    "infra": "node scripts/infra.mjs",
+    "deploy:aws": "node scripts/deploy-aws.mjs"
   },
   "overrides": {
     "@11ty/recursive-copy": "5.0.2",
@@ -20,6 +24,11 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@aws-sdk/client-acm": "^3.1157.0",
+    "@aws-sdk/client-cloudformation": "^3.1157.0",
+    "@aws-sdk/client-cloudfront": "^3.1157.0",
+    "@aws-sdk/client-s3": "^3.1157.0",
+    "@aws-sdk/client-sts": "^3.1157.0",
     "esbuild": "^0.28.2",
     "patch-package": "^8.0.1"
   },
