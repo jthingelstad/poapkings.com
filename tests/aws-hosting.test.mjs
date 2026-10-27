@@ -103,6 +103,7 @@ test("the build: every file is typed, and the redirect map is its meta-refresh p
   assert.deepEqual(untyped, [], "add these extensions to publish-plan.mjs");
   const extensionless = plan.filter((file) => !file.key.split("/").pop().includes(".")).map((file) => `/${file.key}`);
   assert.deepEqual(extensionless, FILES, "an extensionless file needs its place in FILES (viewer-request.mjs)");
+  assert.ok(!existsSync("_site/CNAME"), "GitHub Pages is retired; the build writes no CNAME");
   const redirects = JSON.parse(readFileSync("_site/_redirects.json", "utf8"));
   assert.equal(redirects["/elixir-mcp/"], "/elixir/");
   assert.match(redirects["/discord/"], /^https:\/\/discord\.gg\//);

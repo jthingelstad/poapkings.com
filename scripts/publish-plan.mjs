@@ -1,12 +1,12 @@
 // What a deploy to S3 publishes, and how each file is served: its content type and Cache-Control.
-// GitHub Pages typed files by extension and cached everything ten minutes; this table is the control it
-// never gave. tests/aws-hosting.test.mjs fails when the build writes a file this table does not type, so
+// GitHub Pages, the host until 2026-10-27, typed files by extension and cached everything ten minutes;
+// this table is the control it never gave. tests/aws-hosting.test.mjs fails when the build writes a file this table does not type, so
 // a new kind of file is a decision, not octet-stream by default.
 import { readdirSync, readFileSync } from 'node:fs';
 import { extname, join, relative, sep } from 'node:path';
 
-// The redirect map goes to the key value store instead; CNAME is GitHub Pages' own file.
-export const NOT_PUBLISHED = new Set(['_redirects.json', 'CNAME']);
+// The redirect map goes to the key value store instead.
+export const NOT_PUBLISHED = new Set(['_redirects.json']);
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8',

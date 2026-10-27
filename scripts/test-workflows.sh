@@ -38,6 +38,11 @@ for f in "$WF"/*.yml; do
   if [ -z "$missing" ]; then ok "$name: every job sets its own permissions"
   else no "$name: every job sets its own permissions" "$missing"; fi
 
+  # GitHub Pages was retired on 2026-10-27; the site deploys only to S3 + CloudFront.
+  pages="$(grep -nE 'actions/(upload-pages-artifact|deploy-pages|configure-pages)@|pages:[[:space:]]*write' "$f")"
+  if [ -z "$pages" ]; then ok "$name: nothing deploys to GitHub Pages"
+  else no "$name: nothing deploys to GitHub Pages" "$pages"; fi
+
   checkouts="$(grep -c 'uses: actions/checkout@' "$f")"
   kept="$(grep -c 'persist-credentials: false' "$f")"
   if [ "$checkouts" = "$kept" ]; then ok "$name: no checkout persists the token"
