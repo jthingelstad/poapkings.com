@@ -12,7 +12,7 @@
     "backfill-data": "node scripts/backfill-cr-history.js",
     "update-recognition": "node scripts/update-recognition.js",
     "update-roster": "node scripts/update-roster.js",
-    "test": "node --test tests/",
+    "test": "node --test \"tests/*.test.mjs\"",
     "infra:generate": "node infra/templates.mjs",
     "infra": "node scripts/infra.mjs",
     "deploy:aws": "node scripts/deploy-aws.mjs"
