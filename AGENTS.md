@@ -1,6 +1,6 @@
 # poapkings.com
 
-Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy. Every merge to `main` publishes it to GitHub Pages and to S3 + CloudFront; the DNS still points at Pages until Jamie moves it (see *S3 and CloudFront*).
+Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy. Every merge to `main` publishes it to S3 + CloudFront (see *S3 and CloudFront*).
 
 ## Read first
 
@@ -62,7 +62,7 @@ npm run build
 npm start
 ```
 
-The local server is `http://localhost:8080`. `.github/workflows/deploy.yml` runs the `validate` job (install, advisory audit, build, `npm test`, `sh scripts/test-workflows.sh`) on every pull request and push. A merge to `main` runs it again on the merge commit and, when it passes, publishes `_site/` through GitHub Pages (`deploy`) and to S3 + CloudFront (`deploy-aws`); a manual dispatch on `main` takes the same path.
+The local server is `http://localhost:8080`. `.github/workflows/deploy.yml` runs the `validate` job (install, advisory audit, build, `npm test`, `sh scripts/test-workflows.sh`) on every pull request and push. A merge to `main` runs it again on the merge commit and, when it passes, publishes `_site/` to S3 + CloudFront (`deploy-aws`); a manual dispatch on `main` takes the same path.
 
 ## S3 and CloudFront
 
@@ -76,7 +76,7 @@ Infrastructure is deployed from the Mac as the cloud-engineer identity, never fr
 
 The viewer-request function sends any `www.` host to the apex with path and query, answers each redirect page (a meta refresh in the build, collected into `_site/_redirects.json` by `eleventy.config.js`) as a 301, adds the slash to bare paths and serves `index.html` for directories. File types and caching are `scripts/publish-plan.mjs`; `npm test` fails on a built file it does not type.
 
-Cutover (Jamie's DNS): once the certificate is issued, `npm run infra -- site` attaches both names; then point the apex and `www` at the distribution. Pages, its `deploy` job and `src/CNAME` go after that.
+The DNS (Namecheap, Jamie's) moved the apex and `www` to the distribution on 2026-10-27, and GitHub Pages was then disabled: its job, `src/CNAME` and the `github-pages` environment are gone. Do not bring them back.
 
 ## Landing changes
 

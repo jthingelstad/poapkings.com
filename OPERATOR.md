@@ -17,7 +17,7 @@ You may:
 - Validate updater-generated JSON and SQLite data.
 - Run the repository's existing install and build gates, plus its advisory dependency audit.
 - Commit an internally consistent generated-data refresh on a `data/refresh-<YYYY-MM-DD>` branch, push that branch, open one pull request for it, and arm rebase auto-merge.
-- Watch that pull request's `validate` check, monitor the GitHub Pages deployment of its exact merge commit, and verify the live site.
+- Watch that pull request's `validate` check, monitor the S3 + CloudFront deployment of its exact merge commit, and verify the live site.
 - Disable auto-merge on the operator's own refresh pull request when its run fails.
 - Create or update one GitHub issue for an actionable operator failure.
 
@@ -123,7 +123,7 @@ Never force-push. Record the pull request number and URL. `gh pr checks` must ex
 
 Read the merge commit: `gh pr view <n> --json mergeCommit --jq .mergeCommit.oid`. A rebase merge gives the refresh a new SHA on `main`, so this merge SHA, not the branch commit, is the one that deploys. Record both.
 
-Monitor the `Deploy to GitHub Pages` push run for that exact merge SHA (`gh run list --workflow deploy.yml --event push --commit <merge-sha>`, then `gh run watch <id> --exit-status`) until it completes; its `validate`, `deploy` (GitHub Pages) and `deploy-aws` (S3 + CloudFront) jobs must all succeed. The pull request's own run on the branch commit only validates; it deploys nothing. If the deploy succeeds, verify HTTP success for the home, roster, data explorer, clan JSON, and roster JSON surfaces, and confirm the live clan/member facts match the merged refresh. The retired `/wars/` and `/vault/` routes are not deployment checks.
+Monitor the `Deploy to S3 and CloudFront` push run for that exact merge SHA (`gh run list --workflow deploy.yml --event push --commit <merge-sha>`, then `gh run watch <id> --exit-status`) until it completes; both its `validate` and `deploy-aws` jobs must succeed. The pull request's own run on the branch commit only validates; it deploys nothing. If the deploy succeeds, verify HTTP success for the home, roster, data explorer, clan JSON, and roster JSON surfaces, and confirm the live clan/member facts match the merged refresh. The retired `/wars/` and `/vault/` routes are not deployment checks.
 
 Finally return the checkout to `main`: `git switch main && git pull --ff-only`, confirm `main` equals `origin/main` and contains the merge SHA, and that the worktree is clean. Once `git diff --quiet data/refresh-<YYYY-MM-DD> origin/main -- <the eight allowed paths>` confirms the refresh is on `main`, delete the local branch with `git branch -D data/refresh-<YYYY-MM-DD>` (a rebase merge leaves it looking unmerged to `git branch -d`).
 
@@ -133,7 +133,7 @@ Do not patch code when checks, deployment, or live verification fail. Capture th
 
 - If the operator is the only writer and a refresh fails before commit, restore only the allowed generated files written by this run so the checkout returns to its verified clean baseline; if the refresh branch was already created, switch back to `main` and delete that empty branch with `git branch -d`. If any unexpected path or concurrent change exists, touch nothing further.
 - If the refresh was committed but did not merge (push refused, pull request not created, `validate` failed, or merge did not complete), leave the pull request open as the handoff (when one was created), disable its auto-merge with `gh pr merge --disable-auto <n>` so a stale refresh never lands unattended, keep the local refresh branch, and switch the clean checkout back to `main`. Do not re-run checks, push to the branch, or merge it by any other path. The next run stops at the open-pull-request check until someone lands or closes it.
-- If the refresh merged but the Pages deployment or live verification failed, do not revert or re-deploy; switch back to `main` with `git pull --ff-only` and report the exact run or URL.
+- If the refresh merged but the S3 + CloudFront deployment or live verification failed, do not revert or re-deploy; switch back to `main` with `git pull --ff-only` and report the exact run or URL.
 - Search open GitHub issues before reporting an actionable failure. Update the matching issue when one exists; otherwise open one focused issue with the date, phase, exact non-secret error, the refresh pull request and run URLs when they exist, and evidence needed to reproduce it.
 - Do not create or update an operator failure issue solely for dependency-audit findings; leave those findings to the weekly Agentic Sys Admin review.
 - Do not create issues for healthy no-op runs or a one-off condition that leaves no actionable work.

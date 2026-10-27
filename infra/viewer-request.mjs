@@ -11,8 +11,8 @@
 //
 // S3 behind Origin Access Control serves no directory indexes, so "/roster/" is rewritten to its
 // index.html and "/roster" is sent to the slash form. A path whose last segment has a dot is a file and
-// passes through, and so do the extensionless files the build publishes (FILES; there are none: CNAME
-// is GitHub Pages' and is not uploaded).
+// passes through, and so do the extensionless files the build publishes (FILES, which a test keeps equal
+// to the build; there are none).
 export const FILES = [];
 
 export const viewerRequestCode = `import cf from 'cloudfront';

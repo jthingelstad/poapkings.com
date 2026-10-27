@@ -52,13 +52,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ [clientOutputDir]: "." });
   eleventyConfig.addPassthroughCopy("src/data.js");
   eleventyConfig.addPassthroughCopy("src/roster.js");
-  eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addWatchTarget("src/gamify.js");
   eleventyConfig.on("eleventy.before", buildClientScripts);
 
   // The redirect map for S3 + CloudFront (infra/viewer-request.mjs): every page the build writes with a
   // meta refresh (/elixir-mcp/, /discord/), keyed by its URL, so the edge answers it as a real 301.
-  // GitHub Pages serves the same pages as they are. Not published; the deploy loads it into CloudFront.
+  // Not published; the deploy loads it into CloudFront.
   eleventyConfig.on("eleventy.after", ({ dir, results }) => {
     const redirects = {};
     for (const { url, content } of results) {
