@@ -327,7 +327,7 @@
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
         "LogGroupName": "/poapkings/web-access",
-        "RetentionInDays": 14
+        "RetentionInDays": 731
       }
     },
     "AccessLogSource": {

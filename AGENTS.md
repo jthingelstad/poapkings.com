@@ -69,7 +69,7 @@ The local server is `http://localhost:8080`. `.github/workflows/deploy.yml` runs
 Approved by Jamie on 2026-10-27 ("Approved: move things4good.xyz, poapkings.com and rwbookclub.com from GitHub Pages to S3 + CloudFront"), in the shape escape.thingelstad.com moved on 2026-10-26. Three stacks in `infra/`, tagged `Application=Elixir`, `Project=poapkings` (`infra/deployment.json` records them and their outputs):
 
 - `poapkings-certificate`: `poapkings.com` with `www.poapkings.com`, validated by two CNAMEs at Namecheap.
-- `poapkings-site`: the private versioned bucket, the distribution (both names), the viewer-request function (`infra/viewer-request.mjs`), the redirect key value store, the response headers (CORS `*`, as Pages gave), the `/poapkings/web-access` access log (14 days, no IP, no query) and a 5xx alarm on Drop's `elixir-drop-alarms` topic.
+- `poapkings-site`: the private versioned bucket, the distribution (both names), the viewer-request function (`infra/viewer-request.mjs`), the redirect key value store, the response headers (CORS `*`, as Pages gave), the `/poapkings/web-access` access log (24 months, 731 days; no IP, no query) and a 5xx alarm on Drop's `elixir-drop-alarms` topic.
 - `poapkings-delivery`: the role `deploy-aws` assumes through OIDC, trusted only for this repository's `production` environment.
 
 Infrastructure is deployed from the Mac as the cloud-engineer identity, never from CI: edit `infra/templates.mjs`, `npm run infra:generate`, `npm run infra -- site|delivery|certificate` (add `--plan` to see the change set). `scripts/deploy-aws.mjs` refuses to publish while the live site stack differs from `infra/generated/site.json`.
