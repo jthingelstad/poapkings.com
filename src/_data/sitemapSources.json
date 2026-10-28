@@ -4,5 +4,6 @@
   "src/data.njk": ["_data/clan.json", "_data/clanTrends.json", "_data/roster.json", "_data/rosterExplorer.json"],
   "src/members.njk": ["_data/clan.json", "_data/clanTrends.json", "_data/recognition.json", "_data/roster.json", "_data/rosterExplorer.json"],
   "src/roster.njk": ["_data/roster.json", "_data/recognition.json"],
-  "src/recognition.njk": ["_data/recognition.json"]
+  "src/recognition.njk": ["_data/recognition.json"],
+  "src/faq.njk": ["_data/clan.json"]
 }
