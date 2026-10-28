@@ -1,5 +1,6 @@
+import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { build } from "esbuild";
 import { clanWarLeague } from "./scripts/clan-war-league.js";
@@ -23,6 +24,26 @@ async function buildClientScripts() {
     sourcemap: false,
     logLevel: "warning",
   });
+}
+
+// The sitemap's <lastmod>: when a page's content last really changed, which is the newest commit
+// touching its template or any file src/_data/sitemapSources.json names for it (paths under src/: the
+// data files and partials whose content the page shows). The map lives apart from the templates so that
+// editing it does not redate the pages it describes. The layout and the shared chrome are left out,
+// so a header tweak does not mark every page changed. A shallow clone would date every page by its one
+// commit, so the build refuses one; the validate job checks out full history.
+let shallowChecked = false;
+function gitLastmod(paths) {
+  if (!shallowChecked) {
+    if (execFileSync("git", ["rev-parse", "--is-shallow-repository"], { encoding: "utf8" }).trim() === "true")
+      throw new Error("sitemap lastmod needs full git history: this clone is shallow (fetch-depth: 0)");
+    shallowChecked = true;
+  }
+  const committed = execFileSync("git", ["log", "-1", "--format=%cI", "--", ...paths], { encoding: "utf8" }).trim();
+  if (committed) return new Date(committed).toISOString().replace(/\.\d{3}Z$/, "Z");
+  // Not committed yet (a local build of a new page): the newest file time stands in until it is.
+  const newest = Math.max(...paths.map((path) => statSync(path).mtimeMs));
+  return new Date(newest).toISOString().replace(/\.\d{3}Z$/, "Z");
 }
 
 export default function (eleventyConfig) {
@@ -223,6 +244,11 @@ export default function (eleventyConfig) {
       if (honors.length >= Number(limit)) break;
     }
     return honors.slice(0, Number(limit));
+  });
+
+  eleventyConfig.addFilter("sitemapLastmod", (page, sources) => {
+    const template = page.inputPath.replace(/^\.\//, "");
+    return gitLastmod([template, ...(sources[template] || []).map((source) => join("src", source))]);
   });
 
   eleventyConfig.addFilter("bust", (url) => {

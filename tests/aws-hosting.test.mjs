@@ -113,3 +113,18 @@ test("the build: every file is typed, and the redirect map is its meta-refresh p
     assert.equal(refresh, url in redirects, `${url}: a meta-refresh page and a redirect map entry go together`);
   }
 });
+
+test("the build: every sitemap URL carries a W3C datetime lastmod, none of them the build's own clock", { skip: !existsSync("_site/index.html") && "no build" }, () => {
+  const xml = readFileSync("_site/sitemap.xml", "utf8");
+  const urls = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
+  assert.ok(urls.length > 0, "the sitemap lists pages");
+  const dates = urls.map((body) => {
+    const loc = body.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    const lastmod = body.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1];
+    assert.match(lastmod ?? "", /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$/, `${loc}: lastmod`);
+    assert.ok(!Number.isNaN(Date.parse(lastmod)) && Date.parse(lastmod) <= Date.now(), `${loc}: lastmod ${lastmod}`);
+    assert.doesNotMatch(body, /<(priority|changefreq)>/, `${loc}: lastmod only`);
+    return lastmod;
+  });
+  assert.ok(new Set(dates).size > 1, "every page sharing one date means the build stamped its own time");
+});
