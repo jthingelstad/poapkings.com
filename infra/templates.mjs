@@ -213,11 +213,11 @@ export const site = template(
       }
     },
     // Access logs, the same shape as the other sites' (/escape/web-access, /thingelstad-xyz/web-access):
-    // CloudFront's standard logging into CloudWatch Logs, kept 14 days, with no client IP and no query
+    // CloudFront's standard logging into CloudWatch Logs, kept 24 months (731 days), with no client IP and no query
     // string. No path on this site carries a token, so the path stays.
     AccessLogGroup: {
       Type: 'AWS::Logs::LogGroup',
-      Properties: { LogGroupName: '/poapkings/web-access', RetentionInDays: 14 }
+      Properties: { LogGroupName: '/poapkings/web-access', RetentionInDays: 731 }
     },
     AccessLogSource: {
       Type: 'AWS::Logs::DeliverySource',
