@@ -108,6 +108,7 @@ git switch main && git pull --ff-only   # once merged
 - JSON embedded in `<script type="application/json">` must use `jsonForScript | safe`, never `dump | safe`.
 - `gamify.js` is bundled by esbuild. PixiJS must remain a dynamic import that loads only when the star count resolves or a star interaction needs particles.
 - Static CSS/JS references use the `bust` filter for content-hash query strings.
+- `/sitemap.xml` dates each page by the newest commit touching its template or the data files and partials `src/_data/sitemapSources.json` names for it. A page that shows a data file's content lists it there; the layout and shared chrome stay out. The build refuses a shallow clone, so CI checks out full history.
 - Join calls to action read `clanState.isFull` and must never hardcode a JOIN/WAIT label. A testimonial quote is an array of strings and `{ "highlight": "..." }` segments; render it with the `quoteText` filter on text surfaces.
 
 ## Current custom filters

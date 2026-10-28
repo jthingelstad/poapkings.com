@@ -8,6 +8,7 @@ eleventyExcludeFromCollections: true
 {%- if page.url and not page.data.excludeFromSitemap %}
   <url>
     <loc>{{ site.url }}{{ page.url }}</loc>
+    <lastmod>{{ page | sitemapLastmod(sitemapSources) }}</lastmod>
   </url>
 {%- endif %}
 {%- endfor %}
