@@ -106,6 +106,7 @@ test("the build: every file is typed, and the redirect map is its meta-refresh p
   assert.ok(!existsSync("_site/CNAME"), "GitHub Pages is retired; the build writes no CNAME");
   const redirects = JSON.parse(readFileSync("_site/_redirects.json", "utf8"));
   assert.equal(redirects["/elixir-mcp/"], "/elixir/");
+  assert.equal(redirects["/elixir-drop/free-pass/"], "/elixir-drop/");
   assert.match(redirects["/discord/"], /^https:\/\/discord\.gg\//);
   for (const file of plan.filter((f) => f.key.endsWith("index.html"))) {
     const refresh = /http-equiv="refresh"/i.test(readFileSync(file.path, "utf8"));
