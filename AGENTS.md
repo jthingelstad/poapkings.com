@@ -21,6 +21,8 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy
 - `src/elixir.njk` → `/elixir/`
 - `src/elixir-mcp.njk` → `/elixir-mcp/`, a redirect to `/elixir/` so old links land
 - `src/clans.njk` → `/clans/`
+- `src/elixir-drop.njk` → `/elixir-drop/`
+- `src/elixir-drop-free-pass.njk` → `/elixir-drop/free-pass/`, a redirect to `/elixir-drop/`; the Drop Free Pass Challenge was dropped on 2026-11-02
 - `src/recognition.njk` → `/recognition/`
 - `src/404.njk` → custom 404 page
 
