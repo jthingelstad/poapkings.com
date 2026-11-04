@@ -21,6 +21,8 @@ Static multi-page site for the POAP KINGS Clash Royale clan, built with Eleventy
 - `src/elixir.njk` → `/elixir/`
 - `src/elixir-mcp.njk` → `/elixir-mcp/`, a redirect to `/elixir/` so old links land
 - `src/clans.njk` → `/clans/`
+- `src/elixir-drop.njk` → `/elixir-drop/`
+- `src/elixir-drop-free-pass.njk` → `/elixir-drop/free-pass/`, a redirect to `/elixir-drop/`; the Drop Free Pass Challenge was dropped on 2026-11-02
 - `src/recognition.njk` → `/recognition/`
 - `src/404.njk` → custom 404 page
 
@@ -69,7 +71,7 @@ The local server is `http://localhost:8080`. `.github/workflows/deploy.yml` runs
 Approved by Jamie on 2026-10-27 ("Approved: move things4good.xyz, poapkings.com and rwbookclub.com from GitHub Pages to S3 + CloudFront"), in the shape escape.thingelstad.com moved on 2026-10-26. Three stacks in `infra/`, tagged `Application=Elixir`, `Project=poapkings` (`infra/deployment.json` records them and their outputs):
 
 - `poapkings-certificate`: `poapkings.com` with `www.poapkings.com`, validated by two CNAMEs at Namecheap.
-- `poapkings-site`: the private versioned bucket, the distribution (both names), the viewer-request function (`infra/viewer-request.mjs`), the redirect key value store, the response headers (CORS `*`, as Pages gave), the `/poapkings/web-access` access log (24 months, 731 days; no IP, no query) and a 5xx alarm on Drop's `elixir-drop-alarms` topic.
+- `poapkings-site`: the private versioned bucket, the distribution (both names), the viewer-request function (`infra/viewer-request.mjs`), the redirect key value store, the response headers (CORS `*`, as Pages gave), the `/poapkings/web-access` access log (24 months, 731 days; no IP, no query). Its 5xx alarm was removed on 2026-11-03 (the account keeps alarms only where someone acts on them). The distribution uses the shared `edge` web ACL (projects-sysadmin `edge-waf` stack; rules count only until tuned).
 - `poapkings-delivery`: the role `deploy-aws` assumes through OIDC, trusted only for this repository's `production` environment.
 
 Infrastructure is deployed from the Mac as the cloud-engineer identity, never from CI: edit `infra/templates.mjs`, `npm run infra:generate`, `npm run infra -- site|delivery|certificate` (add `--plan` to see the change set). `scripts/deploy-aws.mjs` refuses to publish while the live site stack differs from `infra/generated/site.json`.

@@ -98,7 +98,6 @@ Exit `0` means current; exit `2` means a completed season is ready to import.
 - `/elixir/`
 - `/recognition/`
 - `/elixir-drop/`
-- `/elixir-drop/free-pass/`
 - `/llms.txt`
 - `/llms-full.txt`
 - `/data/clan.json`
