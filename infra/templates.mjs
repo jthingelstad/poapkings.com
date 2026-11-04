@@ -3,12 +3,12 @@
 // (`npm run infra -- <stack>`), never from CI:
 //
 //   certificate  poapkings.com and www.poapkings.com, validated by two CNAMEs at Namecheap
-//   site         the bucket, the distribution, its function and redirect store, headers, access log,
-//                5xx alarm
+//   site         the bucket, the distribution, its function and redirect store, headers, access log
 //   delivery     the role GitHub Actions assumes to publish a build (scripts/deploy-aws.mjs)
 //
 // The shape is escape.thingelstad.com's (2026-10-26). Stack tags (Application Elixir, Project poapkings)
-// are in infra/deployment.json; the alarm goes to Drop's topic, which feeds projects-ops-alerts.
+// are in infra/deployment.json. The site has no alarm since 2026-11-03: the account keeps alarms only
+// where someone acts on them.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -20,8 +20,6 @@ const ref = (name) => ({ Ref: name });
 const sub = (value) => ({ 'Fn::Sub': value });
 const get = (name, field) => ({ 'Fn::GetAtt': [name, field] });
 const custom = (a, b) => ({ 'Fn::If': ['CustomDomain', a, b] });
-// The clash-royale family's alarm topic (Drop's), subscribed to the shared projects-ops-alerts queue.
-const alarmTopic = sub('arn:${AWS::Partition}:sns:us-east-1:${AWS::AccountId}:elixir-drop-alarms');
 // AWS managed CachingOptimized: no cookies, headers or query strings in the key, so ?ref= variants share
 // one cached copy; it honours the Cache-Control each object is uploaded with. The Host header is not in
 // the key either, which is safe because the function answers every www. request before the cache.
@@ -159,6 +157,8 @@ export const site = template(
           PriceClass: 'PriceClass_100',
           IPV6Enabled: true,
           HttpVersion: 'http2and3',
+          // The shared web ACL from projects-sysadmin's edge-waf stack, counting only until tuned.
+          WebACLId: { 'Fn::ImportValue': 'edge-waf-WebAclArn' },
           DefaultRootObject: 'index.html',
           Aliases: custom([DOMAIN, WWW], ref('AWS::NoValue')),
           ViewerCertificate: custom(
@@ -189,27 +189,6 @@ export const site = template(
             { ErrorCode: 404, ResponseCode: 404, ResponsePagePath: '/404.html', ErrorCachingMinTTL: 60 }
           ]
         }
-      }
-    },
-    DistributionErrorAlarm: {
-      Type: 'AWS::CloudWatch::Alarm',
-      Properties: {
-        AlarmName: sub('${AWS::StackName}-distribution-5xx'),
-        AlarmDescription: `CloudFront returned more than 5% 5xx responses for ${DOMAIN} in two of three five-minute windows.`,
-        Namespace: 'AWS/CloudFront',
-        MetricName: '5xxErrorRate',
-        Dimensions: [
-          { Name: 'DistributionId', Value: ref('Distribution') },
-          { Name: 'Region', Value: 'Global' }
-        ],
-        Statistic: 'Average',
-        Period: 300,
-        EvaluationPeriods: 3,
-        DatapointsToAlarm: 2,
-        Threshold: 5,
-        ComparisonOperator: 'GreaterThanThreshold',
-        TreatMissingData: 'notBreaching',
-        AlarmActions: [alarmTopic]
       }
     },
     // Access logs, the same shape as the other sites' (/escape/web-access, /thingelstad-xyz/web-access):
