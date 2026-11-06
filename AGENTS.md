@@ -75,6 +75,7 @@ Approved by Jamie on 2026-10-27 ("Approved: move things4good.xyz, poapkings.com 
 - `poapkings-delivery`: the role `deploy-aws` assumes through OIDC, trusted only for this repository's `production` environment.
 
 Infrastructure is deployed from the Mac as the cloud-engineer identity, never from CI: edit `infra/templates.mjs`, `npm run infra:generate`, `npm run infra -- site|delivery|certificate` (add `--plan` to see the change set). `scripts/deploy-aws.mjs` refuses to publish while the live site stack differs from `infra/generated/site.json`.
+The redirect store is read and written only when `_redirects.json` differs from the record of the last finished sync (`scripts/redirect-record.mjs`, at `_deploy/redirects-synced` in the bucket, unreachable through the distribution); `npm run deploy:aws -- --sync-redirects` forces a full sync, which is what corrects a hand edit to the store.
 
 The viewer-request function sends any `www.` host to the apex with path and query, answers each redirect page (a meta refresh in the build, collected into `_site/_redirects.json` by `eleventy.config.js`) as a 301, adds the slash to bare paths and serves `index.html` for directories. File types and caching are `scripts/publish-plan.mjs`; `npm test` fails on a built file it does not type.
 
