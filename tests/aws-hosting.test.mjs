@@ -129,3 +129,13 @@ test("the build: every sitemap URL carries a W3C datetime lastmod, none of them 
   });
   assert.ok(new Set(dates).size > 1, "every page sharing one date means the build stamped its own time");
 });
+
+test("the site's script policy allows no inline script, and no page has one", () => {
+  const csp =
+    site.Resources.Headers.Properties.ResponseHeadersPolicyConfig.SecurityHeadersConfig
+      .ContentSecurityPolicy.ContentSecurityPolicy;
+  assert.match(csp, /script-src 'self' https:\/\/tinylytics\.app;/);
+  assert.doesNotMatch(csp, /script-src[^;]*unsafe/);
+  for (const file of ["src/_includes/base.njk", "src/_includes/redirect.njk", "src/404.njk"])
+    assert.doesNotMatch(readFileSync(file, "utf8"), /<script>/, file);
+});

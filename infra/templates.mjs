@@ -140,6 +140,13 @@ export const site = template(
             OriginOverride: true
           },
           SecurityHeadersConfig: {
+            // Player names are free text and reach these pages. Templates escape
+            // them (tests/hostile-names.test.mjs); this stops a script if one slips.
+            ContentSecurityPolicy: {
+              ContentSecurityPolicy:
+                "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' https://tinylytics.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://tinylytics.app",
+              Override: true,
+            },
             ContentTypeOptions: { Override: true },
             FrameOptions: { FrameOption: 'SAMEORIGIN', Override: true },
             ReferrerPolicy: { ReferrerPolicy: 'strict-origin-when-cross-origin', Override: true },
@@ -157,7 +164,7 @@ export const site = template(
           PriceClass: 'PriceClass_100',
           IPV6Enabled: true,
           HttpVersion: 'http2and3',
-          // The shared web ACL from projects-sysadmin's edge-waf stack, counting only until tuned.
+          // The shared web ACL from projects-sysadmin's edge-waf stack.
           WebACLId: { 'Fn::ImportValue': 'edge-waf-WebAclArn' },
           DefaultRootObject: 'index.html',
           Aliases: custom([DOMAIN, WWW], ref('AWS::NoValue')),

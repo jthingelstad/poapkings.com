@@ -72,6 +72,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/members-promo.js");
   eleventyConfig.addPassthroughCopy({ [clientOutputDir]: "." });
   eleventyConfig.addPassthroughCopy("src/data.js");
+  eleventyConfig.addPassthroughCopy("src/modals.js");
   eleventyConfig.addPassthroughCopy("src/roster.js");
   eleventyConfig.addWatchTarget("src/gamify.js");
   eleventyConfig.on("eleventy.before", buildClientScripts);
