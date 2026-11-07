@@ -35,7 +35,9 @@ import { animate } from 'motion/mini';
   }
 
   function loadPixi(){
-    if (!pixiModule) pixiModule = import('pixi.js');
+    // The site's script policy has no 'unsafe-eval', so PixiJS takes its
+    // eval-free shader path; without it, init throws and no burst plays.
+    if (!pixiModule) pixiModule = import('pixi.js/unsafe-eval').then(function(){ return import('pixi.js') });
     return pixiModule;
   }
 
@@ -137,7 +139,10 @@ import { animate } from 'motion/mini';
       setTimeout(destroy, 1800);
       return true;
     } catch (error){
-      if (app && !destroyed) app.destroy(true, true);
+      // An app whose init threw cannot be destroyed cleanly; drop it.
+      if (app && !destroyed){
+        try { app.destroy(true, true) } catch (_) {}
+      }
       if (host) host.remove();
       return false;
     }

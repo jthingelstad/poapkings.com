@@ -139,3 +139,9 @@ test("the site's script policy allows no inline script, and no page has one", ()
   for (const file of ["src/_includes/base.njk", "src/_includes/redirect.njk", "src/404.njk"])
     assert.doesNotMatch(readFileSync(file, "utf8"), /<script>/i, file);
 });
+
+test("with no 'unsafe-eval' in the script policy, PixiJS loads its eval-free path first", () => {
+  // Without it, Application.init throws under the policy and no star burst plays (2026-11-07).
+  const gamify = readFileSync("src/gamify.js", "utf8");
+  assert.match(gamify, /import\('pixi\.js\/unsafe-eval'\)\.then\(function\(\)\{ return import\('pixi\.js'\) \}\)/);
+});
