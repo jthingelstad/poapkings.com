@@ -137,5 +137,5 @@ test("the site's script policy allows no inline script, and no page has one", ()
   assert.match(csp, /script-src 'self' https:\/\/tinylytics\.app;/);
   assert.doesNotMatch(csp, /script-src[^;]*unsafe/);
   for (const file of ["src/_includes/base.njk", "src/_includes/redirect.njk", "src/404.njk"])
-    assert.doesNotMatch(readFileSync(file, "utf8"), /<script>/, file);
+    assert.doesNotMatch(readFileSync(file, "utf8"), /<script>/i, file);
 });
