@@ -51,6 +51,7 @@ The former `/wars/` and `/vault/` pages are retired. Do not add them to navigati
 - `src/roster.js` — Client-side roster sorting.
 - `src/members-promo.js` — Members page copy-to-clipboard for the recruiting pitch.
 - `eleventy.config.js` — Eleventy configuration, Nunjucks filters, and esbuild client bundling.
+- `scripts/format-date.js` — The date filters. `formatUpdated` prints the "Data updated" lines on the US Central day, where the evening refresh runs; `formatDate` keeps the UTC day for everything else.
 - `scripts/` — Clash Royale updater, recognition importer, and SQLite data-store tooling.
 - `data/clash-royale.sqlite` — Committed build-time data store; never a browser dependency.
 

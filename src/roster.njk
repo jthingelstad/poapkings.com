@@ -27,7 +27,7 @@ extraScripts: '<script src="/roster.js" defer></script>'
     {%- for o in sortOptions %}
     <button type="button" class="pk-pill{% if o.key == 'clanRank' %} is-active{% endif %}" data-roster-sort="{{ o.key }}" aria-pressed="{% if o.key == 'clanRank' %}true{% else %}false{% endif %}">{{ o.label }}</button>
     {%- endfor %}
-    <span class="pk-roster-toolbar__status">↻ Updated {{ roster.updated | formatDate }} · showing all {{ memberCount }}</span>
+    <span class="pk-roster-toolbar__status">↻ Updated {{ roster.updated | formatUpdated }} · showing all {{ memberCount }}</span>
   </div>
 
   <div class="pk-roster-table">
