@@ -4,6 +4,7 @@ import { mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:f
 import { join } from "node:path";
 import { build } from "esbuild";
 import { clanWarLeague } from "./scripts/clan-war-league.js";
+import { formatDate, formatUpdated } from "./scripts/format-date.js";
 
 const clientOutputDir = ".cache/client";
 
@@ -93,23 +94,8 @@ export default function (eleventyConfig) {
 
   // --- Filters for build-time rendering ---
 
-  eleventyConfig.addFilter("formatDate", (dateStr) => {
-    if (!dateStr) return "";
-    const raw = String(dateStr).trim();
-    if (/^\d{4}-\d{2}-\d{2}T/.test(raw)) {
-      const d = new Date(raw);
-      if (!isNaN(d.getTime())) {
-        return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
-      }
-    }
-    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
-      const d = new Date(`${raw}T00:00:00Z`);
-      if (!isNaN(d.getTime())) {
-        return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
-      }
-    }
-    return raw;
-  });
+  eleventyConfig.addFilter("formatDate", formatDate);
+  eleventyConfig.addFilter("formatUpdated", formatUpdated);
 
   eleventyConfig.addFilter("formatNumber", (n) => {
     if (n == null) return "0";
