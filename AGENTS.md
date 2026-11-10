@@ -117,7 +117,7 @@ git switch main && git pull --ff-only   # once merged
 
 ## Current custom filters
 
-- `formatDate`, `formatNumber`, `formatYearsPlayed`, `formatDecimal`
+- `formatDate`, `formatUpdated`, `formatNumber`, `formatYearsPlayed`, `formatDecimal`
 - `sumBy`, `whereRole`, `sortByDesc`, `sortByRank`, `take`
 - `roleClass`, `homeScatter`, `timelineSeries`, `explorerMembers`, `cwlTier`
 - `memberSlug`, `memberHonors`, `playerTag`, `jsonForScript`, `quoteText`, `bust`
