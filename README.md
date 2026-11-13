@@ -50,7 +50,7 @@ Refresh the roster and generated data locally with:
 npm run update-roster
 ```
 
-It reads all three clans from Elixir's JSON API with the site's own integration key, `ELIXIR_API_KEY` from the shell first and then this checkout's `.env`, so it belongs on the local host rather than in GitHub Actions. `--source cr` reads the IP-restricted Clash Royale API instead (`CR_API_KEY`, from the shell or this checkout's `.env`), the rollback until the Elixir source has run clean for a week. Never commit or print either key.
+It reads the official Clash Royale API: the home clan, each member's profile, the river race log, and the two sister clans. The key, `CR_API_KEY`, is IP-restricted to Otto's host and comes from the shell, then this checkout's `.env`, then `../drop.poapkings.com/.env`, so the updater runs on that host and never in GitHub Actions or the browser. Never commit or print it.
 
 Updater-owned artifacts:
 
