@@ -10,7 +10,7 @@ supercellDisclaimer: true
 {% from "components.njk" import pageIntro, sectionHeading, actionLink, actionButton %}
 {%- set poweredEvent = 'clans' -%}
 <div class="pk-page pk-page-shell">
-  {{ pageIntro('The POAP KINGS network', 'Three clans. One Discord.', 'POAP KINGS started it; Ship It! and Elixir Kings are its newest siblings. Every clan has its own Elixir agent in our shared Discord, and the whole network runs on Elixir.') }}
+  {{ pageIntro('The POAP KINGS network', 'Three clans. One Discord.', 'POAP KINGS started it; Ship It! and Elixir Kings are its newest siblings. The clans share one Discord, and the whole network runs on Elixir.') }}
 
   <div class="pk-clans">
     {%- for c in ourClans.clans %}
@@ -65,7 +65,7 @@ supercellDisclaimer: true
       <article class="pk-number-card">
         <div class="pk-number-card__number">02</div>
         <h3 class="pk-number-card__title">One Discord for all three</h3>
-        <p class="pk-number-card__copy">Every clan in the network shares the POAP KINGS Discord. Each has its own channel and its own Elixir agent there: ask it about your battles, your decks or the war, and it answers from the record.</p>
+        <p class="pk-number-card__copy">Every clan in the network shares the POAP KINGS Discord. Each clan has its own channel there.</p>
         {{ actionLink(site.discordUrl, 'Open Discord', 'outline', 'clans.discord', true, 'pk-number-card__action') }}
       </article>
     </div>

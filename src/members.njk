@@ -15,7 +15,7 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
 {%- set minTrophies = clan.minTrophies | formatNumber -%}
 {#- Elder band: a share of the CURRENT roster, so these numbers follow the clan
     rather than going stale. The percentages and thresholds are clan policy:
-    POAP KINGS' policy in Elixir Clan holds them since elixir-bot retired
+    POAP KINGS' policy in Elixir's Clan holds them since elixir-bot retired
     (2026-09-26). If they change there, change them here. -#}
 {%- set elderFloor = (memberCount * 0.20) | round -%}
 {%- set elderCeil = (memberCount * 0.30) | round -%}
@@ -35,14 +35,14 @@ extraScripts: '<script src="/members-promo.js" defer></script>'
     {{ infoCard('Required for rewards', 'Connect with Leadership', 'Friend King Thing (Thingles) on the Supercell Store at least one day before delivery. Friendship is required but does not guarantee eligibility: your accounts must also meet Supercell\'s current gifting requirements. See the <a href="/faq/#faq-pass">Free Pass FAQ</a> and <a href="/members/setup/">Clan Setup guide</a>.', 'https://link.clashroyale.com/?supercell_id&p=16-2db22667-604d-4726-a68d-8f1337d26a5c', 'Connect with Thingles →', 'gold', true) }}
   </div>
 
-  <!-- Elixir's weekly email (no Discord needed) -->
+  <!-- Elixir's digest (no Discord needed) -->
   <article class="pk-elixir-hero pk-email-card">
     <img class="pk-email-card__mascot" src="/assets/elixir-logo.webp" alt="Elixir logo" width="512" height="512">
     <div>
       <span class="pk-email-card__kicker">Not on Discord? No problem.</span>
       <h2 class="pk-email-card__title">Get the clan's week from Elixir</h2>
-      <p class="pk-email-card__copy">With an Elixir account you get a Monday report on the clan's week (the war, who joined and left, standouts, and the roster) and a Tuesday recap of your own battles. Accounts are approved by hand, and every kind of email is a switch you can turn off.</p>
-      {{ actionLink('https://elixir.poapkings.com/console/signin?request', 'Request an Elixir account ↗', 'gold', 'members.elixir-request', true) }}
+      <p class="pk-email-card__copy">With an Elixir account you get one digest: the people you follow and the clan's week, with the war in it, on Monday or every day. Accounts are free, and every kind of email is a switch you can turn off.</p>
+      {{ actionLink('https://elixir.poapkings.com/signin?signup', 'Create an Elixir account ↗', 'gold', 'members.elixir-request', true) }}
     </div>
   </article>
 
