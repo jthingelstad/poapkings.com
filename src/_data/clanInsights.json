@@ -1,41 +1,41 @@
 {
   "clan": {
-    "clanScore": 133173,
+    "clanScore": 132412,
     "clanWarTrophies": 1500,
-    "donationsPerWeek": 6662,
-    "memberCount": 48,
+    "donationsPerWeek": 7977,
+    "memberCount": 47,
     "name": "POAP KINGS",
-    "openSlots": 2,
+    "openSlots": 3,
     "tag": null
   },
-  "generatedAt": "2026-11-14T00:15:01Z",
+  "generatedAt": "2026-11-15T00:15:02Z",
   "headlineStats": [
     {
-      "detail": "23 members are at 14k+",
+      "detail": "22 members are at 14k+",
       "key": "topTrophyPlayers",
       "label": "12k+ Trophy Players",
-      "value": 31
+      "value": 30
     },
     {
-      "detail": "6 average years played",
+      "detail": "5 average years played",
       "key": "veterans",
       "label": "6+ Year Accounts",
-      "value": 18
+      "value": 17
     },
     {
-      "detail": "220.6K total wins across roster",
+      "detail": "205.5K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 4597
+      "value": 4373
     },
     {
-      "detail": "48 members at 1k+",
+      "detail": "47 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1714
+      "value": 1703.8
     }
   ],
-  "latestSnapshotDate": "2026-11-13",
+  "latestSnapshotDate": "2026-11-14",
   "leaders": {
     "collection": [
       {
@@ -45,16 +45,10 @@
         "value": 2234
       },
       {
-        "name": "kowshik king",
-        "role": "Member",
-        "tag": "#Q009LP8JV",
-        "value": 2233
-      },
-      {
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 2208
+        "value": 2215
       },
       {
         "name": "Kurd Paraw",
@@ -66,7 +60,7 @@
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 2190
+        "value": 2191
       },
       {
         "name": "Fullboat",
@@ -85,6 +79,12 @@
         "role": "Elder",
         "tag": "#2CY2RJL9G",
         "value": 1965
+      },
+      {
+        "name": "sniperhendo",
+        "role": "Member",
+        "tag": "#YC8LLR8Q2",
+        "value": 1938
       }
     ],
     "tenure": [
@@ -95,9 +95,9 @@
         "value": 10
       },
       {
-        "name": "Alfablack",
-        "role": "Member",
-        "tag": "#2YG98VVQ",
+        "name": "TDuck",
+        "role": "Elder",
+        "tag": "#PLCCYUQL",
         "value": 10
       },
       {
@@ -107,9 +107,9 @@
         "value": 10
       },
       {
-        "name": "TDuck",
-        "role": "Elder",
-        "tag": "#PLCCYUQL",
+        "name": "Alfablack",
+        "role": "Member",
+        "tag": "#2YG98VVQ",
         "value": 10
       },
       {
@@ -139,9 +139,9 @@
     ],
     "trophies": [
       {
-        "name": "OllieTurtle",
+        "name": "Fullboat",
         "role": "Elder",
-        "tag": "#RJ9RRQPVU",
+        "tag": "#8U2P0JPR",
         "value": 14000
       },
       {
@@ -151,21 +151,21 @@
         "value": 14000
       },
       {
-        "name": "Fullboat",
+        "name": "OllieTurtle",
         "role": "Elder",
-        "tag": "#8U2P0JPR",
+        "tag": "#RJ9RRQPVU",
         "value": 14000
       },
       {
-        "name": "Vijay",
-        "role": "Co-Leader",
-        "tag": "#C920YGLC2",
-        "value": 14000
-      },
-      {
-        "name": "GLAS-eyes1034",
+        "name": "duki suzuki",
         "role": "Member",
-        "tag": "#VQCPLY0GR",
+        "tag": "#9QQLPJRLV",
+        "value": 14000
+      },
+      {
+        "name": "raquaza",
+        "role": "Co-Leader",
+        "tag": "#UL2V9QRG0",
         "value": 14000
       },
       {
@@ -175,15 +175,15 @@
         "value": 14000
       },
       {
-        "name": "King Levy",
-        "role": "Co-Leader",
-        "tag": "#U8RYG9Y2U",
+        "name": "L-Drxgo⚡",
+        "role": "Elder",
+        "tag": "#2CY2RJL9G",
         "value": 14000
       },
       {
-        "name": "Alfablack",
-        "role": "Member",
-        "tag": "#2YG98VVQ",
+        "name": "Vijay",
+        "role": "Co-Leader",
+        "tag": "#C920YGLC2",
         "value": 14000
       }
     ],
@@ -193,60 +193,60 @@
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
-        "value": 25355
+        "value": 25360
       },
       {
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 25049
-      },
-      {
-        "name": "kowshik king",
-        "role": "Member",
-        "tag": "#Q009LP8JV",
-        "value": 15415
+        "value": 25086
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 13563
+        "value": 13589
       },
       {
         "name": "sikander sidhu",
         "role": "Elder",
         "tag": "#JYRQ8U92C",
-        "value": 11710
+        "value": 11713
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 10190
+        "value": 10244
       },
       {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 7159
+        "value": 7165
       },
       {
         "name": "duki suzuki",
         "role": "Member",
         "tag": "#9QQLPJRLV",
-        "value": 6754
+        "value": 6758
+      },
+      {
+        "name": "OllieTurtle",
+        "role": "Elder",
+        "tag": "#RJ9RRQPVU",
+        "value": 6425
       }
     ]
   },
   "metrics": {
-    "averageBadgeCount": 117,
-    "averageCollectionLevel": 1714,
-    "averageTrophies": 12024,
-    "averageWins": 4597,
+    "averageBadgeCount": 116,
+    "averageCollectionLevel": 1703.8,
+    "averageTrophies": 12000,
+    "averageWins": 4373,
     "averageYearsPlayed": 5.5,
-    "medianTrophies": 13337,
-    "totalWins": 220646
+    "medianTrophies": 13294,
+    "totalWins": 205546
   },
   "tenureDistribution": [
     {
@@ -258,7 +258,7 @@
       "label": "3-4.9 years"
     },
     {
-      "count": 6,
+      "count": 5,
       "label": "5-6.9 years"
     },
     {
@@ -268,11 +268,11 @@
   ],
   "trophyDistribution": [
     {
-      "count": 10,
+      "count": 9,
       "label": "<9k"
     },
     {
-      "count": 2,
+      "count": 3,
       "label": "9k-10.9k"
     },
     {
@@ -284,7 +284,7 @@
       "label": "12k-13.9k"
     },
     {
-      "count": 23,
+      "count": 22,
       "label": "14k+"
     }
   ]
