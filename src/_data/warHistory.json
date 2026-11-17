@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T00:15:01Z",
+  "generatedAt": "2026-11-17T00:15:02Z",
   "seasons": [
     {
       "averageRank": 1,
@@ -570,7 +570,7 @@
     {
       "averageRank": 1,
       "seasonId": 138,
-      "trophyChange": 20,
+      "trophyChange": 40,
       "weeks": [
         {
           "clanScore": 1480,
@@ -584,29 +584,42 @@
           "totalClans": 5,
           "trophyChange": 20,
           "weekLabel": "S138 W1"
+        },
+        {
+          "clanScore": 1500,
+          "createdDate": "20261116T094206.000Z",
+          "fame": 10000,
+          "finishTime": "20261115T094203.000Z",
+          "isColosseum": false,
+          "rank": 1,
+          "seasonId": 138,
+          "sectionIndex": 1,
+          "totalClans": 5,
+          "trophyChange": 20,
+          "weekLabel": "S138 W2"
         }
       ],
-      "wins": 1
+      "wins": 2
     }
   ],
   "summary": {
     "averageRank": 1,
     "latestWeek": {
-      "clanScore": 1480,
-      "createdDate": "20261109T094206.000Z",
+      "clanScore": 1500,
+      "createdDate": "20261116T094206.000Z",
       "fame": 10000,
-      "finishTime": "20261108T094203.000Z",
+      "finishTime": "20261115T094203.000Z",
       "isColosseum": false,
       "rank": 1,
       "seasonId": 138,
-      "sectionIndex": 0,
+      "sectionIndex": 1,
       "totalClans": 5,
       "trophyChange": 20,
-      "weekLabel": "S138 W1"
+      "weekLabel": "S138 W2"
     },
-    "totalWeeks": 39,
-    "trophyChange": 1500,
-    "wins": 39
+    "totalWeeks": 40,
+    "trophyChange": 1520,
+    "wins": 40
   },
   "weeks": [
     {
@@ -1115,6 +1128,19 @@
       "totalClans": 5,
       "trophyChange": 20,
       "weekLabel": "S138 W1"
+    },
+    {
+      "clanScore": 1500,
+      "createdDate": "20261116T094206.000Z",
+      "fame": 10000,
+      "finishTime": "20261115T094203.000Z",
+      "isColosseum": false,
+      "rank": 1,
+      "seasonId": 138,
+      "sectionIndex": 1,
+      "totalClans": 5,
+      "trophyChange": 20,
+      "weekLabel": "S138 W2"
     }
   ]
 }
