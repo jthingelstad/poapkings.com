@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 132759,
+    "clanScore": 132781,
     "clanWarTrophies": 1520,
-    "donationsPerWeek": 4680,
+    "donationsPerWeek": 5880,
     "memberCount": 47,
     "name": "POAP KINGS",
     "openSlots": 3,
     "tag": null
   },
-  "generatedAt": "2026-11-20T00:15:02Z",
+  "generatedAt": "2026-11-21T00:15:20Z",
   "headlineStats": [
     {
       "detail": "22 members are at 14k+",
@@ -23,19 +23,19 @@
       "value": 17
     },
     {
-      "detail": "208.4K total wins across roster",
+      "detail": "208.6K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 4433
+      "value": 4439
     },
     {
       "detail": "47 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1706.5
+      "value": 1707.1
     }
   ],
-  "latestSnapshotDate": "2026-11-19",
+  "latestSnapshotDate": "2026-11-20",
   "leaders": {
     "collection": [
       {
@@ -48,7 +48,7 @@
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 2222
+        "value": 2224
       },
       {
         "name": "Kurd Paraw",
@@ -84,7 +84,7 @@
         "name": "sniperhendo",
         "role": "Member",
         "tag": "#YC8LLR8Q2",
-        "value": 1938
+        "value": 1943
       }
     ],
     "tenure": [
@@ -145,15 +145,27 @@
         "value": 14000
       },
       {
-        "name": "King Levy",
+        "name": "raquaza",
         "role": "Co-Leader",
-        "tag": "#U8RYG9Y2U",
+        "tag": "#UL2V9QRG0",
         "value": 14000
       },
       {
         "name": "L-Drxgo⚡",
         "role": "Elder",
         "tag": "#2CY2RJL9G",
+        "value": 14000
+      },
+      {
+        "name": "Sandeep",
+        "role": "Elder",
+        "tag": "#UQ2R9RGVP",
+        "value": 14000
+      },
+      {
+        "name": "alex",
+        "role": "Member",
+        "tag": "#P8URQGR2U",
         "value": 14000
       },
       {
@@ -173,18 +185,6 @@
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
         "value": 14000
-      },
-      {
-        "name": "Fullboat",
-        "role": "Elder",
-        "tag": "#8U2P0JPR",
-        "value": 14000
-      },
-      {
-        "name": "Kurd Paraw",
-        "role": "Elder",
-        "tag": "#2G09Q20QC",
-        "value": 14000
       }
     ],
     "warWins": [],
@@ -193,60 +193,60 @@
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
-        "value": 25362
+        "value": 25366
       },
       {
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 25167
+        "value": 25179
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 13745
+        "value": 13784
       },
       {
         "name": "sikander sidhu",
         "role": "Elder",
         "tag": "#JYRQ8U92C",
-        "value": 11748
+        "value": 11753
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 10250
+        "value": 10255
       },
       {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 7191
+        "value": 7197
       },
       {
         "name": "duki suzuki",
         "role": "Member",
         "tag": "#9QQLPJRLV",
-        "value": 6787
+        "value": 6795
       },
       {
         "name": "L-Drxgo⚡",
         "role": "Elder",
         "tag": "#2CY2RJL9G",
-        "value": 6448
+        "value": 6466
       }
     ]
   },
   "metrics": {
     "averageBadgeCount": 116.9,
-    "averageCollectionLevel": 1706.5,
-    "averageTrophies": 12071,
-    "averageWins": 4433,
+    "averageCollectionLevel": 1707.1,
+    "averageTrophies": 12075,
+    "averageWins": 4439,
     "averageYearsPlayed": 5.6,
-    "medianTrophies": 13385,
-    "totalWins": 208363
+    "medianTrophies": 13413,
+    "totalWins": 208613
   },
   "tenureDistribution": [
     {
