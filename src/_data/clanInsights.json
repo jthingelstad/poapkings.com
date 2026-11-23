@@ -1,20 +1,20 @@
 {
   "clan": {
-    "clanScore": 132804,
+    "clanScore": 132864,
     "clanWarTrophies": 1520,
-    "donationsPerWeek": 6849,
+    "donationsPerWeek": 8272,
     "memberCount": 47,
     "name": "POAP KINGS",
     "openSlots": 3,
     "tag": null
   },
-  "generatedAt": "2026-11-22T00:15:02Z",
+  "generatedAt": "2026-11-23T00:15:02Z",
   "headlineStats": [
     {
       "detail": "22 members are at 14k+",
       "key": "topTrophyPlayers",
       "label": "12k+ Trophy Players",
-      "value": 31
+      "value": 32
     },
     {
       "detail": "6 average years played",
@@ -23,26 +23,26 @@
       "value": 17
     },
     {
-      "detail": "208.8K total wins across roster",
+      "detail": "209K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 4443
+      "value": 4446
     },
     {
       "detail": "47 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1707.6
+      "value": 1708.1
     }
   ],
-  "latestSnapshotDate": "2026-11-21",
+  "latestSnapshotDate": "2026-11-22",
   "leaders": {
     "collection": [
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 2249
+        "value": 2250
       },
       {
         "name": "Aaqib Javed",
@@ -78,7 +78,7 @@
         "name": "L-Drxgo⚡",
         "role": "Elder",
         "tag": "#2CY2RJL9G",
-        "value": 1973
+        "value": 1974
       },
       {
         "name": "sniperhendo",
@@ -139,9 +139,21 @@
     ],
     "trophies": [
       {
+        "name": "Vijay",
+        "role": "Co-Leader",
+        "tag": "#C920YGLC2",
+        "value": 14000
+      },
+      {
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
+        "value": 14000
+      },
+      {
+        "name": "Fullboat",
+        "role": "Elder",
+        "tag": "#8U2P0JPR",
         "value": 14000
       },
       {
@@ -157,15 +169,9 @@
         "value": 14000
       },
       {
-        "name": "Vijay",
-        "role": "Co-Leader",
-        "tag": "#C920YGLC2",
-        "value": 14000
-      },
-      {
-        "name": "alex",
-        "role": "Member",
-        "tag": "#P8URQGR2U",
+        "name": "TDuck",
+        "role": "Elder",
+        "tag": "#PLCCYUQL",
         "value": 14000
       },
       {
@@ -175,15 +181,9 @@
         "value": 14000
       },
       {
-        "name": "Kurd Paraw",
-        "role": "Elder",
-        "tag": "#2G09Q20QC",
-        "value": 14000
-      },
-      {
-        "name": "Fullboat",
-        "role": "Elder",
-        "tag": "#8U2P0JPR",
+        "name": "The Joesma",
+        "role": "Member",
+        "tag": "#PR8YLQ2CV",
         "value": 14000
       }
     ],
@@ -193,25 +193,25 @@
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
-        "value": 25368
+        "value": 25373
       },
       {
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 25188
+        "value": 25195
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 13816
+        "value": 13827
       },
       {
         "name": "sikander sidhu",
         "role": "Elder",
         "tag": "#JYRQ8U92C",
-        "value": 11762
+        "value": 11766
       },
       {
         "name": "dez42",
@@ -223,7 +223,7 @@
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 7198
+        "value": 7201
       },
       {
         "name": "duki suzuki",
@@ -235,18 +235,18 @@
         "name": "L-Drxgo⚡",
         "role": "Elder",
         "tag": "#2CY2RJL9G",
-        "value": 6477
+        "value": 6486
       }
     ]
   },
   "metrics": {
     "averageBadgeCount": 117,
-    "averageCollectionLevel": 1707.6,
-    "averageTrophies": 12082,
-    "averageWins": 4443,
+    "averageCollectionLevel": 1708.1,
+    "averageTrophies": 12093,
+    "averageWins": 4446,
     "averageYearsPlayed": 5.6,
-    "medianTrophies": 13413,
-    "totalWins": 208805
+    "medianTrophies": 13382,
+    "totalWins": 208978
   },
   "tenureDistribution": [
     {
@@ -276,11 +276,11 @@
       "label": "9k-10.9k"
     },
     {
-      "count": 5,
+      "count": 4,
       "label": "11k-11.9k"
     },
     {
-      "count": 9,
+      "count": 10,
       "label": "12k-13.9k"
     },
     {
