@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 132864,
-    "clanWarTrophies": 1520,
-    "donationsPerWeek": 8272,
+    "clanScore": 132874,
+    "clanWarTrophies": 1540,
+    "donationsPerWeek": 1192,
     "memberCount": 47,
     "name": "POAP KINGS",
     "openSlots": 3,
     "tag": null
   },
-  "generatedAt": "2026-11-23T00:15:02Z",
+  "generatedAt": "2026-11-24T00:15:01Z",
   "headlineStats": [
     {
       "detail": "22 members are at 14k+",
@@ -23,19 +23,19 @@
       "value": 17
     },
     {
-      "detail": "209K total wins across roster",
+      "detail": "209.2K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 4446
+      "value": 4451
     },
     {
       "detail": "47 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1708.1
+      "value": 1709
     }
   ],
-  "latestSnapshotDate": "2026-11-22",
+  "latestSnapshotDate": "2026-11-23",
   "leaders": {
     "collection": [
       {
@@ -54,13 +54,13 @@
         "name": "Kurd Paraw",
         "role": "Elder",
         "tag": "#2G09Q20QC",
-        "value": 2205
+        "value": 2207
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 2191
+        "value": 2193
       },
       {
         "name": "Fullboat",
@@ -95,15 +95,15 @@
         "value": 10
       },
       {
-        "name": "Fullboat",
-        "role": "Elder",
-        "tag": "#8U2P0JPR",
-        "value": 10
-      },
-      {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
+        "value": 10
+      },
+      {
+        "name": "Fullboat",
+        "role": "Elder",
+        "tag": "#8U2P0JPR",
         "value": 10
       },
       {
@@ -125,15 +125,15 @@
         "value": 10
       },
       {
-        "name": "L-Drxgo⚡",
-        "role": "Elder",
-        "tag": "#2CY2RJL9G",
-        "value": 9
-      },
-      {
         "name": "Kurd Paraw",
         "role": "Elder",
         "tag": "#2G09Q20QC",
+        "value": 9
+      },
+      {
+        "name": "L-Drxgo⚡",
+        "role": "Elder",
+        "tag": "#2CY2RJL9G",
         "value": 9
       }
     ],
@@ -151,9 +151,9 @@
         "value": 14000
       },
       {
-        "name": "Fullboat",
+        "name": "ryguy67",
         "role": "Elder",
-        "tag": "#8U2P0JPR",
+        "tag": "#V8Q8PUL0U",
         "value": 14000
       },
       {
@@ -163,9 +163,15 @@
         "value": 14000
       },
       {
-        "name": "L-Drxgo⚡",
+        "name": "dez42",
         "role": "Elder",
-        "tag": "#2CY2RJL9G",
+        "tag": "#9Q9QRCPPU",
+        "value": 14000
+      },
+      {
+        "name": "The Joesma",
+        "role": "Member",
+        "tag": "#PR8YLQ2CV",
         "value": 14000
       },
       {
@@ -175,15 +181,9 @@
         "value": 14000
       },
       {
-        "name": "ryguy67",
+        "name": "Kurd Paraw",
         "role": "Elder",
-        "tag": "#V8Q8PUL0U",
-        "value": 14000
-      },
-      {
-        "name": "The Joesma",
-        "role": "Member",
-        "tag": "#PR8YLQ2CV",
+        "tag": "#2G09Q20QC",
         "value": 14000
       }
     ],
@@ -199,25 +199,25 @@
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 25195
+        "value": 25207
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 13827
+        "value": 13831
       },
       {
         "name": "sikander sidhu",
         "role": "Elder",
         "tag": "#JYRQ8U92C",
-        "value": 11766
+        "value": 11776
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 10256
+        "value": 10272
       },
       {
         "name": "TDuck",
@@ -229,24 +229,24 @@
         "name": "duki suzuki",
         "role": "Member",
         "tag": "#9QQLPJRLV",
-        "value": 6795
+        "value": 6798
       },
       {
         "name": "L-Drxgo⚡",
         "role": "Elder",
         "tag": "#2CY2RJL9G",
-        "value": 6486
+        "value": 6491
       }
     ]
   },
   "metrics": {
-    "averageBadgeCount": 117,
-    "averageCollectionLevel": 1708.1,
-    "averageTrophies": 12093,
-    "averageWins": 4446,
+    "averageBadgeCount": 117.1,
+    "averageCollectionLevel": 1709,
+    "averageTrophies": 12096,
+    "averageWins": 4451,
     "averageYearsPlayed": 5.6,
-    "medianTrophies": 13382,
-    "totalWins": 208978
+    "medianTrophies": 13384,
+    "totalWins": 209194
   },
   "tenureDistribution": [
     {
