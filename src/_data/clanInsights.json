@@ -1,14 +1,14 @@
 {
   "clan": {
-    "clanScore": 132891,
+    "clanScore": 132830,
     "clanWarTrophies": 1540,
-    "donationsPerWeek": 2290,
+    "donationsPerWeek": 3435,
     "memberCount": 47,
     "name": "POAP KINGS",
     "openSlots": 3,
     "tag": null
   },
-  "generatedAt": "2026-11-25T00:15:01Z",
+  "generatedAt": "2026-11-26T00:15:01Z",
   "headlineStats": [
     {
       "detail": "22 members are at 14k+",
@@ -23,19 +23,19 @@
       "value": 17
     },
     {
-      "detail": "209.4K total wins across roster",
+      "detail": "209.6K total wins across roster",
       "key": "battleWins",
       "label": "Average Wins",
-      "value": 4455
+      "value": 4459
     },
     {
       "detail": "47 members at 1k+",
       "key": "collectionDepth",
       "label": "Average Collection Score",
-      "value": 1709.6
+      "value": 1710.4
     }
   ],
-  "latestSnapshotDate": "2026-11-24",
+  "latestSnapshotDate": "2026-11-25",
   "leaders": {
     "collection": [
       {
@@ -54,7 +54,7 @@
         "name": "Kurd Paraw",
         "role": "Elder",
         "tag": "#2G09Q20QC",
-        "value": 2212
+        "value": 2213
       },
       {
         "name": "dez42",
@@ -95,15 +95,15 @@
         "value": 10
       },
       {
-        "name": "TDuck",
-        "role": "Elder",
-        "tag": "#PLCCYUQL",
-        "value": 10
-      },
-      {
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
+        "value": 10
+      },
+      {
+        "name": "TDuck",
+        "role": "Elder",
+        "tag": "#PLCCYUQL",
         "value": 10
       },
       {
@@ -131,19 +131,13 @@
         "value": 9
       },
       {
-        "name": "Kurd Paraw",
-        "role": "Elder",
-        "tag": "#2G09Q20QC",
+        "name": "MONICA",
+        "role": "Member",
+        "tag": "#VGC22YGP",
         "value": 9
       }
     ],
     "trophies": [
-      {
-        "name": "Aaqib Javed",
-        "role": "Elder",
-        "tag": "#2G2RPVPP",
-        "value": 14000
-      },
       {
         "name": "Vijay",
         "role": "Co-Leader",
@@ -151,15 +145,15 @@
         "value": 14000
       },
       {
-        "name": "TDuck",
+        "name": "Aaqib Javed",
         "role": "Elder",
-        "tag": "#PLCCYUQL",
+        "tag": "#2G2RPVPP",
         "value": 14000
       },
       {
-        "name": "OllieTurtle",
+        "name": "dez42",
         "role": "Elder",
-        "tag": "#RJ9RRQPVU",
+        "tag": "#9Q9QRCPPU",
         "value": 14000
       },
       {
@@ -169,21 +163,27 @@
         "value": 14000
       },
       {
-        "name": "sniperhendo",
-        "role": "Member",
-        "tag": "#YC8LLR8Q2",
-        "value": 14000
-      },
-      {
-        "name": "The Joesma",
-        "role": "Member",
-        "tag": "#PR8YLQ2CV",
-        "value": 14000
-      },
-      {
         "name": "ryguy67",
         "role": "Elder",
         "tag": "#V8Q8PUL0U",
+        "value": 14000
+      },
+      {
+        "name": "King Levy",
+        "role": "Co-Leader",
+        "tag": "#U8RYG9Y2U",
+        "value": 14000
+      },
+      {
+        "name": "alex",
+        "role": "Member",
+        "tag": "#P8URQGR2U",
+        "value": 14000
+      },
+      {
+        "name": "Fullboat",
+        "role": "Elder",
+        "tag": "#8U2P0JPR",
         "value": 14000
       }
     ],
@@ -193,60 +193,60 @@
         "name": "Fullboat",
         "role": "Elder",
         "tag": "#8U2P0JPR",
-        "value": 25373
+        "value": 25375
       },
       {
         "name": "Aaqib Javed",
         "role": "Elder",
         "tag": "#2G2RPVPP",
-        "value": 25233
+        "value": 25244
       },
       {
         "name": "Vijay",
         "role": "Co-Leader",
         "tag": "#C920YGLC2",
-        "value": 13833
+        "value": 13844
       },
       {
         "name": "sikander sidhu",
         "role": "Elder",
         "tag": "#JYRQ8U92C",
-        "value": 11777
+        "value": 11783
       },
       {
         "name": "dez42",
         "role": "Elder",
         "tag": "#9Q9QRCPPU",
-        "value": 10276
+        "value": 10277
       },
       {
         "name": "TDuck",
         "role": "Elder",
         "tag": "#PLCCYUQL",
-        "value": 7207
+        "value": 7211
       },
       {
         "name": "duki suzuki",
         "role": "Member",
         "tag": "#9QQLPJRLV",
-        "value": 6800
+        "value": 6805
       },
       {
         "name": "L-Drxgo⚡",
         "role": "Elder",
         "tag": "#2CY2RJL9G",
-        "value": 6502
+        "value": 6521
       }
     ]
   },
   "metrics": {
-    "averageBadgeCount": 117.2,
-    "averageCollectionLevel": 1709.6,
-    "averageTrophies": 12101,
-    "averageWins": 4455,
+    "averageBadgeCount": 117.3,
+    "averageCollectionLevel": 1710.4,
+    "averageTrophies": 12087,
+    "averageWins": 4459,
     "averageYearsPlayed": 5.6,
     "medianTrophies": 13413,
-    "totalWins": 209368
+    "totalWins": 209571
   },
   "tenureDistribution": [
     {
