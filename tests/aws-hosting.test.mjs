@@ -10,7 +10,7 @@ import { cacheControlFor, contentTypeFor, publishPlan } from "../scripts/publish
 
 const store = {
   "/elixir-mcp/": "/elixir/",
-  "/discord/": "https://discord.gg/kBD62fYHWx",
+  "/discord/": "https://discord.gg/MuuvUkEAaH",
 };
 const cf = {
   kvs: () => ({
@@ -48,7 +48,7 @@ test("a redirect page is a 301 to its target, keeping the query", async () => {
   const bare = await request("/elixir-mcp");
   assert.equal(bare.headers.location.value, "/elixir/");
   const discord = await request("/discord/");
-  assert.equal(discord.headers.location.value, "https://discord.gg/kBD62fYHWx");
+  assert.equal(discord.headers.location.value, "https://discord.gg/MuuvUkEAaH");
 });
 
 test("directory URLs serve index.html; a bare path gets its slash; files pass", async () => {
